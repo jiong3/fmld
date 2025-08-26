@@ -315,7 +315,7 @@ fn parse_word_line(word_line: &str) -> IResult<&str, Vec<WordTagGroup>> {
 }
 
 fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
-    let pinyin_parser = delimited(multispace0, alphanumeric1, multispace0);
+    let pinyin_parser = delimited(multispace0, take_while1(|c: char| !"|,".contains(c)), multispace0);
     separated_list1(char(','), pinyin_parser).parse(pinyin_list)
 }
 

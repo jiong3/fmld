@@ -1,0 +1,39 @@
+mod txt_parser;
+use txt_parser::*;
+
+mod txt_to_db;
+use txt_to_db::*;
+
+mod db_to_txt;
+use db_to_txt::*;
+
+use std::fs::File;
+use std::fs::remove_file;
+use std::io::BufWriter;
+use std::io::{self, BufRead, BufReader};
+use std::path::Path;
+
+use rusqlite::{Connection, Error as SqliteError};
+
+fn main() -> io::Result<()> {
+    let path = Path::new("./tests/tst_dict2.txt");
+    let file = File::open(path)?;
+    let reader = BufReader::new(file);
+    remove_file("test.db").unwrap_or(());
+    let db_conn = Connection::open("test.db").unwrap();
+    // Create an iterator that yields Strings and stops on the first error.
+    let lines_iterator = reader.lines().map_while(io::Result::ok); // TODO move this into TxtToDb??
+    let mut txt2db = TxtToDb::new(&db_conn);
+    txt2db.txt_to_db(lines_iterator);
+    println!("Errors: {:?}", txt2db.errors);
+
+    let path_out = Path::new("test.txt");
+    let file_out = File::create(path_out)?;
+    let mut writer_out = BufWriter::new(file_out);
+
+    
+    let mut db2txt = DbToTxt::new(&db_conn, &mut writer_out);
+    println!("generating txt");
+    db2txt.generate_txt_file();
+    Ok(())
+}

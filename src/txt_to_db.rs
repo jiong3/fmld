@@ -1,0 +1,790 @@
+use rusqlite::{Connection, Error as SqliteError};
+
+use core::ascii;
+use std::fs::File;
+use std::io::{self, BufRead, BufReader};
+use std::path::Path;
+
+use crate::txt_parser::*;
+
+use std::{fmt, mem};
+
+type SqliteId = i64;
+
+const DB_SCHEMA: &str = r#"
+/* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
+CREATE TABLE IF NOT EXISTS "dict_definition" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"shared_id" INTEGER NOT NULL,
+	"word_id" INTEGER NOT NULL,
+	"definition" TEXT NOT NULL,
+	"ext_def_id" INTEGER NOT NULL,
+	"class_id" INTEGER NOT NULL,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("class_id") REFERENCES "dict_class"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+/* tags allow a flexible assignment of entries to classes, which includes parts-of-speech, spoken vs written language, usage in Taiwan vs China etc. */
+CREATE TABLE IF NOT EXISTS "dict_tag" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"tag" TEXT NOT NULL,
+	"type" TEXT NOT NULL,
+	"ascii_symbol" TEXT,
+	PRIMARY KEY("id")
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_tag_index_0"
+ON "dict_tag" ("tag", "type");
+CREATE TABLE IF NOT EXISTS "dict_word" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"shared_id" INTEGER NOT NULL,
+	"trad" TEXT NOT NULL,
+	"simp" TEXT NOT NULL,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS "dict_pron" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"pinyin_num" TEXT NOT NULL,
+	"pinyin_mark" TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_pron_index_0"
+ON "dict_pron" ("pinyin_num");
+/* pron_shared_id can be the same for multiple dict_pron_definition */
+CREATE TABLE IF NOT EXISTS "dict_pron_definition" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"pron_shared_id" INTEGER NOT NULL,
+	"definition_id" INTEGER NOT NULL,
+	"pron_id" INTEGER NOT NULL,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("definition_id") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("pron_shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. The type of the relationship is indicated by the tags linked to the entry shared_id. */
+CREATE TABLE IF NOT EXISTS "dict_reference" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"shared_id" INTEGER NOT NULL,
+	"ref_type_id" INTEGER NOT NULL,
+	"word_id_src" INTEGER NOT NULL,
+	"definition_id_src" INTEGER,
+	"word_id_dst" INTEGER NOT NULL,
+	"definition_id_dst" INTEGER,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("word_id_dst") REFERENCES "dict_word"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("word_id_src") REFERENCES "dict_word"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("definition_id_src") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("definition_id_dst") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("ref_type_id") REFERENCES "dict_ref_type"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+/* dict_shared enables linking tags, notes or references to different entries in other tables
+rank indicates the order of the element, it is a continuous counter
+rank_relative can be used to add new elements with a certain order between two successive rank counters */
+CREATE TABLE IF NOT EXISTS "dict_shared" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"rank" INTEGER NOT NULL,
+	"rank_relative" INTEGER,
+	"note_id" INTEGER,
+	"comment_id" INTEGER,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("comment_id") REFERENCES "dict_comment"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("note_id") REFERENCES "dict_note"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS "dict_shared_tag" (
+	"for_shared_id" INTEGER NOT NULL,
+	"tag_id" INTEGER NOT NULL,
+	PRIMARY KEY("for_shared_id", "tag_id"),
+	FOREIGN KEY ("tag_id") REFERENCES "dict_tag"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("for_shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_shared_tag_index_0"
+ON "dict_shared_tag" ("for_shared_id", "tag_id");
+/* ext_note_id is a globally unique id for each note (but same id for different translations), exported into txt format */
+CREATE TABLE IF NOT EXISTS "dict_note" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"note" TEXT NOT NULL,
+	"ext_note_id" INTEGER NOT NULL,
+	PRIMARY KEY("id")
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_note_index_0"
+ON "dict_note" ("ext_note_id");
+CREATE TABLE IF NOT EXISTS "dict_comment" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"comment" TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+
+/* part of speech */
+CREATE TABLE IF NOT EXISTS "dict_class" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"name" TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_class_index_0"
+ON "dict_class" ("name");
+CREATE TABLE IF NOT EXISTS "dict_ref_type" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"type" TEXT NOT NULL,
+	"ascii_symbol" TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_ref_type_index_0"
+ON "dict_ref_type" ("type");
+
+"#;
+
+#[derive(Debug, PartialEq)]
+struct CrossReferenceEntry {
+    shared_id: SqliteId,
+    ref_type: char,
+    src_word_id: SqliteId,
+    src_definition_id: Option<SqliteId>,
+    dst_word: Word,
+    dst_ext_def_id: Option<u32>,
+}
+
+#[derive(Debug)]
+struct NoteReferenceEntry {
+    target_shared_id: SqliteId,
+    ext_note_id: u32,
+}
+
+#[derive(Debug, PartialEq, Copy, Clone)]
+enum DictNode {
+    Word((SqliteId, SqliteId)),                 // shared_id, word_id
+    Pinyin((SqliteId, SqliteId)),               // shared_id, pron_id
+    Class(SqliteId),                            // class_id
+    Definition((SqliteId, SqliteId, SqliteId)), // shared_id, word_id, definition_id
+    CrossReference(SqliteId),                   // shared_id,
+}
+
+#[derive(Debug)] // TODO Display
+pub struct TxtToDbErrorLine {
+    pub source_line_start: u32,
+    pub source_line_num: u32,
+    pub indentation: u32,
+    // TODO add complete line here? pub line: String,
+    pub error: TxtToDbError,
+}
+
+#[derive(Debug)]
+pub enum TxtToDbError {
+    ParseError { source: String },
+    SqliteError { source: SqliteError },
+    InvalidAsciiTag(char),
+    NoUsableParentNode,
+}
+
+pub type Result<T> = std::result::Result<T, TxtToDbError>;
+
+impl fmt::Display for TxtToDbError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::ParseError { source } => write!(f, "{}", source),
+            Self::SqliteError { source } => write!(f, "{}", source),
+            Self::InvalidAsciiTag(ascii_tag) => write!(f, "Invalid ASCII tag: {}", ascii_tag),
+            Self::NoUsableParentNode => write!(
+                f,
+                "No usable parent node, check indentation and if the entry is compatible to previous line."
+            ),
+        }
+    }
+}
+
+impl From<String> for TxtToDbError {
+    fn from(err: String) -> Self {
+        Self::ParseError { source: err }
+    }
+}
+
+impl From<SqliteError> for TxtToDbError {
+    fn from(err: SqliteError) -> Self {
+        Self::SqliteError { source: err }
+    }
+}
+
+impl std::error::Error for TxtToDbError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match *self {
+            TxtToDbError::ParseError { ref source } => None, // TODO
+            TxtToDbError::SqliteError { ref source } => Some(source),
+            TxtToDbError::InvalidAsciiTag(_) => None,
+            TxtToDbError::NoUsableParentNode => None,
+        }
+    }
+}
+
+#[derive(Debug)]
+pub struct TxtToDb<'a> {
+    conn: &'a Connection,
+    rank_counter: u64,
+    line_stack: Vec<Vec<DictNode>>,
+    cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
+    note_references: Vec<NoteReferenceEntry>,
+    pub errors: Vec<TxtToDbErrorLine>,
+}
+
+impl<'a> TxtToDb<'a> {
+    pub fn new(conn: &'a Connection) -> Self {
+        // TODO proper error handling instead of unwrap, use default init for rest?
+        conn.execute_batch(DB_SCHEMA).unwrap();
+        TxtToDb {
+            conn,
+            rank_counter: 0,
+            line_stack: vec![],
+            cross_references: vec![],
+            note_references: vec![],
+            errors: vec![],
+        }
+    }
+
+    pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>) {
+        let parser = ParserIterator::new(lines.into_iter());
+        for parsed_line in parser {
+            match parsed_line.line {
+                Ok(parsed) => {
+                    println!("Parsed: {:?}", parsed);
+                    let r = self.add_line_to_db(parsed_line.indentation, parsed);
+                    if let Err(r) = r {
+                        self.errors.push(TxtToDbErrorLine {
+                            source_line_start: parsed_line.source_line_start,
+                            source_line_num: parsed_line.source_line_num,
+                            indentation: parsed_line.indentation,
+                            error: r,
+                        });
+                    }
+                }
+                Err(e) => {
+                    self.errors.push(TxtToDbErrorLine {
+                        source_line_start: parsed_line.source_line_start,
+                        source_line_num: parsed_line.source_line_num,
+                        indentation: parsed_line.indentation,
+                        error: TxtToDbError::ParseError { source: e },
+                    });
+                }
+            }
+        }
+        self.complete_cross_reference_entries();
+        self.complete_id_reference_entries();
+    }
+
+    fn add_tag_for_entry(
+        &mut self,
+        shared_id: SqliteId,
+        tag_ascii: Option<char>,
+        tag_txt: &str,
+        tag_type: &str,
+    ) -> Result<()> {
+        self.conn.execute(
+            "INSERT OR IGNORE INTO dict_tag (tag, type, ascii_symbol) VALUES (?1,?2,?3)",
+            (tag_txt, tag_type, tag_ascii.map(|c| c.to_string())),
+        )?;
+        let tag_id: SqliteId = self.conn.query_row(
+            "SELECT id FROM dict_tag WHERE tag=?1 AND type=?2",
+            (tag_txt, tag_type),
+            |row| row.get(0),
+        )?;
+        self.conn.execute(
+            "INSERT INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1,?2)",
+            (shared_id, tag_id),
+        )?;
+        Ok(())
+    }
+
+    fn add_tags_for_entry(
+        &mut self,
+        shared_id: SqliteId,
+        entry_type: &DictNode,
+        tags: &Tags,
+    ) -> Result<()> {
+        for tag in tags {
+            let (ascii_tag, tag_txt, tag_type) = tag_to_txt(entry_type, tag)?;
+            self.add_tag_for_entry(shared_id, ascii_tag, &tag_txt, &tag_type)?;
+        }
+        Ok(())
+    }
+
+    fn create_shared_entry(&mut self) -> Result<SqliteId> {
+        self.rank_counter += 1;
+        self.conn.execute(
+            "INSERT INTO dict_shared (rank) VALUES (?1)",
+            (self.rank_counter,),
+        )?;
+        Ok(self.conn.last_insert_rowid())
+    }
+
+    fn create_word_entry(&mut self, word: &Word, tags: &Tags) -> Result<DictNode> {
+        let trad = &word.trad;
+        let simp = word.simp.as_ref().unwrap_or(&word.trad);
+        let shared_id = self.create_shared_entry()?;
+        self.conn.execute(
+            "INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1,?2,?3)",
+            (shared_id, trad, simp),
+        )?;
+        let word_entry = DictNode::Word((shared_id, self.conn.last_insert_rowid()));
+        self.add_tags_for_entry(shared_id, &word_entry, tags)?;
+        Ok(word_entry)
+    }
+
+    fn create_pinyin_entry(&mut self, pinyin: &str, tags: &Tags) -> Result<DictNode> {
+        let shared_id = self.create_shared_entry()?;
+
+        self.conn.execute(
+            "INSERT OR IGNORE INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1,?2)",
+            (pinyin, ""),
+        )?;
+        let pron_id: SqliteId = self.conn.query_row(
+            "SELECT id FROM dict_pron WHERE pinyin_num=?1",
+            (pinyin,),
+            |row| row.get(0),
+        )?;
+        let pinyin_entry = DictNode::Pinyin((shared_id, pron_id));
+        self.add_tags_for_entry(shared_id, &pinyin_entry, &tags)?;
+
+        Ok(pinyin_entry)
+    }
+
+    fn create_class_entry(&self, class_name: &str) -> Result<DictNode> {
+        self.conn.execute(
+            "INSERT OR IGNORE INTO dict_class (name) VALUES (?1)",
+            (class_name,),
+        )?;
+        let class_id: SqliteId = self.conn.query_row(
+            "SELECT id FROM dict_class WHERE name=?1",
+            (class_name,),
+            |row| row.get(0),
+        )?;
+        Ok(DictNode::Class(class_id))
+    }
+
+    fn create_definition_entry(
+        &mut self,
+        word_id: SqliteId,
+        definition_tag: &DefinitionTag,
+        class: SqliteId,
+    ) -> Result<DictNode> {
+        let shared_id = self.create_shared_entry()?;
+        self.conn.execute(
+            "INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id) VALUES (?1,?2,?3,?4,?5)",
+            (shared_id, word_id, &definition_tag.definition, definition_tag.id, class),
+        )?;
+        let definition_id = self.conn.last_insert_rowid();
+        let definition_entry = DictNode::Definition((shared_id, word_id, definition_id));
+        self.add_tags_for_entry(shared_id, &definition_entry, &definition_tag.tags)?;
+        Ok(definition_entry)
+    }
+
+    fn create_pron_definition_entry(
+        &mut self,
+        pron_shared_id: SqliteId,
+        pron_id: SqliteId,
+        definition_id: SqliteId,
+    ) -> Result<SqliteId> {
+        self.conn.execute(
+            "INSERT INTO dict_pron_definition (pron_shared_id, pron_id, definition_id) VALUES (?1,?2,?3)",
+            (pron_shared_id, pron_id, definition_id),
+        )?;
+        Ok(self.conn.last_insert_rowid())
+    }
+
+    fn create_cross_reference_entry(
+        &mut self,
+        ref_type: char,
+        word_id_src: SqliteId,
+        definition_id_src: Option<SqliteId>,
+        word_dst: Word,
+        ext_def_id_dst: Option<u32>,
+        tags: &Tags,
+    ) -> Result<DictNode> {
+        let shared_id = self.create_shared_entry()?;
+        let ref_entry = DictNode::CrossReference(shared_id);
+        self.add_tags_for_entry(shared_id, &ref_entry, tags)?;
+        self.cross_references.push(CrossReferenceEntry {
+            shared_id: shared_id,
+            ref_type: ref_type,
+            src_word_id: word_id_src,
+            src_definition_id: definition_id_src,
+            dst_word: word_dst,
+            dst_ext_def_id: ext_def_id_dst,
+        });
+
+        Ok(ref_entry)
+    }
+
+    // TODO error if entries are not in dictionary
+    fn complete_cross_reference_entries(&mut self) -> Result<()> {
+        for reference in mem::take(&mut self.cross_references) {
+            // identify target word and definition
+            let trad = &reference.dst_word.trad;
+            let simp = &reference
+                .dst_word
+                .simp
+                .as_ref()
+                .unwrap_or(&reference.dst_word.trad);
+            let dst_word_id: SqliteId = self.conn.query_row(
+                "SELECT id FROM dict_word WHERE trad=?1 AND simp=?2",
+                (trad, simp),
+                |row| row.get(0),
+            )?;
+            let dst_definition_id: Option<SqliteId> = {
+                if let Some(dst_ext_ref_id) = reference.dst_ext_def_id {
+                    let dst_definition_id: SqliteId = self.conn.query_row(
+                        "SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2",
+                        (dst_word_id, dst_ext_ref_id),
+                        |row| row.get(0),
+                    )?;
+                    Some(dst_definition_id)
+                } else {
+                    None
+                }
+            };
+
+            // create/get reference type
+            let ref_type_full = match reference.ref_type {
+                '=' => "equal",
+                '~' => "similar",
+                '!' => "opposite",
+                '?' => "could-be-confused-with",
+                '<' => "part-of",
+                '>' => "contains",
+                'V' => "word-variant-of",
+                'v' => "character-variant-of",
+                'M' => "used-with-measure-word",
+                '&' => "collocation",
+                'G' => "word-group",
+                _ => todo!(), // TODO error not a valid reference type + ascii symbol
+            };
+
+            self.conn.execute(
+                "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol) VALUES (?1,?2)",
+                (ref_type_full, reference.ref_type.to_string()),
+            )?;
+            let ref_type_id: SqliteId = self.conn.query_row(
+                "SELECT id FROM dict_ref_type WHERE type=?1 ",
+                (ref_type_full,),
+                |row| row.get(0),
+            )?;
+            // create reference and link to shared_id
+            self.conn.execute(
+                "INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)",
+                (reference.shared_id, ref_type_id, reference.src_word_id, reference.src_definition_id, dst_word_id, dst_definition_id),
+            )?;
+        }
+        Ok(())
+    }
+
+    fn complete_id_reference_entries(&mut self) -> Result<()> {
+        for reference in mem::take(&mut self.note_references) {
+            let note_id = self.conn.query_row(
+                "SELECT id FROM dict_note WHERE ext_note_id=?1",
+                (reference.ext_note_id,),
+                |row| row.get(0),
+            )?;
+            self.add_note_to_entry(note_id, reference.target_shared_id)?;
+        }
+        Ok(())
+    }
+
+    fn create_note(&self, ext_note_id: u32,note_txt: &str) -> Result<SqliteId> {
+        self.conn.execute(
+            "INSERT INTO dict_note (note, ext_note_id) VALUES (?1,?2)",
+            (note_txt, ext_note_id),
+        )?;
+
+        Ok(self.conn.last_insert_rowid())
+    }
+
+    fn add_note_to_entry(&self, note_id: SqliteId, target_shared_id: SqliteId) -> Result<usize> {
+        let rows_updated = self.conn.execute(
+            "UPDATE dict_shared SET note_id=?1 WHERE id=?2 ",
+            (note_id, target_shared_id),
+        )?;
+        if rows_updated == 0 {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        Ok(1)
+    }
+
+    fn create_comment(&mut self, comment_txt: &str) -> Result<SqliteId> {
+        self.conn.execute(
+            "INSERT INTO dict_comment (comment) VALUES (?1)",
+            (comment_txt,),
+        )?;
+
+        Ok(self.conn.last_insert_rowid())
+    }
+
+    fn add_comment_to_entry(
+        &mut self,
+        comment_id: SqliteId,
+        target_shared_id: SqliteId,
+    ) -> Result<usize> {
+        let rows_updated = self.conn.execute(
+            "UPDATE dict_shared SET comment_id=?1 WHERE id=?2 ",
+            (comment_id, target_shared_id),
+        )?;
+        if rows_updated == 0 {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        Ok(1)
+    }
+
+    fn add_line_to_db(&mut self, indentation: u32, line: DictLine) -> Result<()> {
+        self.line_stack.truncate(indentation as usize);
+
+        let line_items = match line {
+            DictLine::Word(word_tag_groups) => {
+                let mut line_items = vec![];
+                for word_tag_group in word_tag_groups {
+                    for word in word_tag_group.words {
+                        let word_entry = self.create_word_entry(&word, &word_tag_group.tags)?;
+                        if line_items.is_empty() {
+                            line_items.push(word_entry);
+                        } else {
+                            // add variant cross reference to first item
+                            if let DictNode::Word((_, word_id)) = word_entry {
+                                if let Some(DictNode::Word((_, main_word_id))) = line_items.last() {
+                                    self.create_cross_reference_entry(
+                                        'v',
+                                        word_id,
+                                        None,
+                                        word.clone(),
+                                        None,
+                                        &word_tag_group.tags,
+                                    )?;
+                                } else {
+                                    debug_assert!(false);
+                                }
+                            }
+                        }
+                    }
+                }
+                line_items
+            }
+            DictLine::Pinyin(pinyin_tag_groups) => {
+                let mut line_items = vec![];
+                for PinyinTagGroup { pinyins, ref tags } in pinyin_tag_groups {
+                    for pinyin in pinyins {
+                        let pinyin_entry = self.create_pinyin_entry(&pinyin, tags)?;
+                        line_items.push(pinyin_entry);
+                        // if pinyin is nested one level below another pinyin, also add it to that list to make the link to definitions easier
+                        if self.line_stack.len() == 2 {
+                            self.line_stack[1].push(pinyin_entry);
+                        }
+                    }
+                }
+                line_items
+            }
+            DictLine::Class(class_name) => {
+                let class_entry = self.create_class_entry(&class_name)?;
+                vec![class_entry]
+            }
+            DictLine::Definition(definition_tag) => {
+                let mut line_items = vec![];
+                if let Some(DictNode::Word((_, word_id))) =
+                    self.line_stack.first().and_then(|v| v.first())
+                {
+                    if let Some(DictNode::Class(class_id)) =
+                        self.line_stack.get(2).and_then(|v| v.first())
+                    {
+                        let definition_entry =
+                            self.create_definition_entry(*word_id, &definition_tag, *class_id)?;
+                        if let DictNode::Definition((_, _, definition_id)) = definition_entry {
+                            // add links between definition and pronunciation
+                            let pinyin_entries = self.line_stack.get(1).unwrap().clone();
+                            for pinyin_entry in pinyin_entries {
+                                if let DictNode::Pinyin((pron_shared_id, pron_id)) = pinyin_entry {
+                                    self.create_pron_definition_entry(
+                                        pron_shared_id,
+                                        pron_id,
+                                        definition_id,
+                                    )?;
+                                } else {
+                                    return Err(TxtToDbError::NoUsableParentNode);
+                                }
+                            }
+                        } else {
+                            debug_assert!(false)
+                        }
+
+                        line_items.push(definition_entry);
+                    } else {
+                        return Err(TxtToDbError::NoUsableParentNode);
+                    }
+                } else {
+                    return Err(TxtToDbError::NoUsableParentNode);
+                }
+                line_items
+            }
+            DictLine::CrossReference(reference_tag_groups) => {
+                let mut line_items = vec![];
+                if let Some(DictNode::Word((_, src_word_id))) =
+                    self.line_stack.first().and_then(|v| v.first().copied())
+                {
+                    let src_definition_id: Option<SqliteId> = {
+                        if let Some(DictNode::Definition((_, _, src_definition_id))) =
+                            self.line_stack.last().and_then(|v| v.first().copied())
+                        {
+                            Some(src_definition_id)
+                        } else {
+                            None
+                        }
+                    };
+
+                    for reference_tag_group in reference_tag_groups {
+                        for reference in reference_tag_group.references {
+                            let dst_definition_id: Option<u32> = reference.target_id.map(|i| i.1);
+                            let ref_entry = self.create_cross_reference_entry(
+                                reference_tag_group.ref_type,
+                                src_word_id,
+                                src_definition_id,
+                                reference.target_word,
+                                dst_definition_id,
+                                &reference_tag_group.tags,
+                            )?;
+                            line_items.push(ref_entry);
+                        }
+                    }
+                }
+                line_items
+            }
+            DictLine::Note(note) => {
+                let note_id: Option<SqliteId> = {
+                    if !note.is_link {
+                        Some(self.create_note(note.id, &note.note)?)
+                    } else {
+                        None
+                    }
+                };
+                let mut num_targets = 0;
+                if let Some(prev_dict_nodes) = self.line_stack.last() {
+                    for dict_node in prev_dict_nodes.clone() {
+                        let shared_id = get_shared_id_for_dict_node(&dict_node)?;
+                        if note.is_link {
+                            self.note_references.push(NoteReferenceEntry {
+                                target_shared_id: shared_id,
+                                ext_note_id: note.id,
+                            });
+                            num_targets += 1;
+                        } else {
+                            num_targets += self.add_note_to_entry(note_id.unwrap(), shared_id)?;
+                        }
+                    }
+                }
+                if num_targets == 0 {
+                    return Err(TxtToDbError::NoUsableParentNode);
+                }
+                vec![]
+            }
+            DictLine::Comment(comment) => {
+                let comment_id = self.create_comment(&comment)?;
+                if self.line_stack.is_empty() {
+                    // create new shared entry to attach comment for the initial header comment
+                    if self.rank_counter == 0 {
+                        let shared_id = self.create_shared_entry()?;
+                        self.add_comment_to_entry(comment_id, shared_id)?;
+                    } else {
+                        return Err(TxtToDbError::NoUsableParentNode);
+                    }
+                } else {
+                    let mut num_targets = 0;
+                    if let Some(prev_dict_nodes) = self.line_stack.last() {
+                        for dict_node in prev_dict_nodes.clone() {
+                            let shared_id = get_shared_id_for_dict_node(&dict_node)?;
+                            num_targets += self.add_comment_to_entry(comment_id, shared_id)?;
+                        }
+                    }
+                    if num_targets == 0 {
+                        return Err(TxtToDbError::NoUsableParentNode);
+                    }
+                }
+                vec![]
+            }
+        };
+        self.line_stack.push(line_items);
+        Ok(())
+    }
+}
+
+fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
+    let shared_id = match dict_node {
+        DictNode::Word((shared_id, _)) => shared_id,
+        DictNode::Pinyin((shared_id, _)) => shared_id,
+        DictNode::Class(_) => {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        DictNode::Definition((shared_id, _, _)) => shared_id,
+        DictNode::CrossReference(shared_id) => shared_id,
+    };
+    Ok(*shared_id)
+}
+
+fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'static str)> {
+    match ascii_tag {
+        'T' => Some(("taiwan-only", "country")),
+        't' => Some(("taiwan-chiefly", "country")),
+        'C' => Some(("china-only", "country")),
+        'c' => Some(("china-chiefly", "country")),
+        'A' => Some(("ai-only", "ai")),
+        'a' => Some(("ai-human", "ai")),
+        'w' => Some(("wiktionary", "source")),
+        'm' => Some(("mdbg", "source")),
+        '+' => Some(("high", "relevance")),
+        '-' => Some(("low", "relevance")),
+        _ => None,
+    }
+}
+
+fn tag_to_txt(entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String, String)> {
+    match tag {
+        Tag::Full(full_tag) => {
+            return Ok((None, full_tag.to_owned(), "definition".to_owned()));
+        }
+        Tag::Ascii(ascii_tag) => {
+            let tag_str = match entry_type {
+                DictNode::Word(_) => match ascii_tag {
+                    _ => tag_to_txt_ascii_common(ascii_tag),
+                },
+                DictNode::Definition(_) => match ascii_tag {
+                    _ => tag_to_txt_ascii_common(ascii_tag),
+                },
+                _ => tag_to_txt_ascii_common(ascii_tag),
+            };
+            if let Some(t) = tag_str {
+                Ok((Some(*ascii_tag), t.0.to_owned(), t.1.to_owned()))
+            } else {
+                Err(TxtToDbError::InvalidAsciiTag(*ascii_tag))
+            }
+        }
+    }
+}

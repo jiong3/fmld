@@ -106,7 +106,6 @@ impl<'a> DbToTxt<'a> {
         }
     }
 
-    /// Generates a text file from the SQLite database.
     pub fn generate_txt_file(&mut self) -> Result<()> {
         let mut stmt = self
             .conn
@@ -129,8 +128,9 @@ impl<'a> DbToTxt<'a> {
             JOIN dict_word w ON def.word_id = w.id
             JOIN dict_class c ON def.class_id = c.id
             LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-            LEFT JOIN dict_pron p ON pdp.pron_id = p.id
-            LEFT JOIN dict_shared p_s ON pdp.pron_shared_id = p_s.id
+            LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
+            LEFT JOIN dict_pron p ON sp.pron_id = p.id
+            LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
             GROUP BY def.id
             ORDER BY s.rank, s.rank_relative;
             "#,
@@ -231,8 +231,9 @@ impl<'a> DbToTxt<'a> {
                 p_s.comment_id
             FROM dict_definition def
             LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-            LEFT JOIN dict_pron p ON pdp.pron_id = p.id
-            LEFT JOIN dict_shared p_s ON pdp.pron_shared_id = p_s.id
+            LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
+            LEFT JOIN dict_pron p ON sp.pron_id = p.id
+            LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
             WHERE def.id = ?1 AND p_s.id = ?2
             "#,
             )

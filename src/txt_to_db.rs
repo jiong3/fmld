@@ -29,6 +29,8 @@ CREATE TABLE IF NOT EXISTS "dict_definition" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_definition_index_0"
+ON "dict_definition" ("word_id", "ext_def_id");
 /* tags allow a flexible assignment of entries to classes, which includes parts-of-speech, spoken vs written language, usage in Taiwan vs China etc. */
 CREATE TABLE IF NOT EXISTS "dict_tag" (
 	"id" INTEGER NOT NULL UNIQUE,
@@ -50,6 +52,7 @@ CREATE TABLE IF NOT EXISTS "dict_word" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+
 CREATE TABLE IF NOT EXISTS "dict_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"pinyin_num" TEXT NOT NULL,
@@ -59,22 +62,19 @@ CREATE TABLE IF NOT EXISTS "dict_pron" (
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_pron_index_0"
 ON "dict_pron" ("pinyin_num");
-/* pron_shared_id can be the same for multiple dict_pron_definition */
 CREATE TABLE IF NOT EXISTS "dict_pron_definition" (
 	"id" INTEGER NOT NULL UNIQUE,
-	"pron_shared_id" INTEGER NOT NULL,
+	"shared_pron_id" INTEGER NOT NULL,
 	"definition_id" INTEGER NOT NULL,
-	"pron_id" INTEGER NOT NULL,
 	PRIMARY KEY("id"),
-	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("definition_id") REFERENCES "dict_definition"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("pron_shared_id") REFERENCES "dict_shared"("id")
+	FOREIGN KEY ("shared_pron_id") REFERENCES "dict_shared_pron"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. The type of the relationship is indicated by the tags linked to the entry shared_id. */
+
+/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. */
 CREATE TABLE IF NOT EXISTS "dict_reference" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
@@ -98,6 +98,8 @@ CREATE TABLE IF NOT EXISTS "dict_reference" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
+ON "dict_reference" ("word_id_src", "definition_id_src");
 /* dict_shared enables linking tags, notes or references to different entries in other tables
 rank indicates the order of the element, it is a continuous counter
 rank_relative can be used to add new elements with a certain order between two successive rank counters */
@@ -113,6 +115,7 @@ CREATE TABLE IF NOT EXISTS "dict_shared" (
 	FOREIGN KEY ("note_id") REFERENCES "dict_note"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
+
 
 CREATE TABLE IF NOT EXISTS "dict_shared_tag" (
 	"for_shared_id" INTEGER NOT NULL,
@@ -160,6 +163,25 @@ CREATE TABLE IF NOT EXISTS "dict_ref_type" (
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_ref_type_index_0"
 ON "dict_ref_type" ("type");
+CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"shared_id" INTEGER NOT NULL,
+	"pron_id" INTEGER NOT NULL,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_word_index_0"
+ON "dict_word" ("trad", "simp");
+
+CREATE INDEX IF NOT EXISTS "dict_shared_index_0"
+ON "dict_shared" ("rank", "rank_relative");
+
+CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
+ON "dict_pron_definition" ("definition_id");
 
 "#;
 
@@ -182,7 +204,7 @@ struct NoteReferenceEntry {
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum DictNode {
     Word((SqliteId, SqliteId)),                 // shared_id, word_id
-    Pinyin((SqliteId, SqliteId)),               // shared_id, pron_id
+    Pinyin((SqliteId, SqliteId)),               // shared_id, shared_pron_id
     Class(SqliteId),                            // class_id
     Definition((SqliteId, SqliteId, SqliteId)), // shared_id, word_id, definition_id
     CrossReference(SqliteId),                   // shared_id,
@@ -269,11 +291,12 @@ impl<'a> TxtToDb<'a> {
     }
 
     pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>) {
+        self.conn.execute("BEGIN TRANSACTION", ()).unwrap();
         let parser = ParserIterator::new(lines.into_iter());
         for parsed_line in parser {
             match parsed_line.line {
                 Ok(parsed) => {
-                    println!("Parsed: {:?}", parsed);
+                    //println!("Parsed: {:?}", parsed);
                     let r = self.add_line_to_db(parsed_line.indentation, parsed);
                     if let Err(r) = r {
                         self.errors.push(TxtToDbErrorLine {
@@ -296,6 +319,7 @@ impl<'a> TxtToDb<'a> {
         }
         self.complete_cross_reference_entries();
         self.complete_id_reference_entries();
+        self.conn.execute("COMMIT", ()).unwrap();
     }
 
     fn add_tag_for_entry(
@@ -358,7 +382,6 @@ impl<'a> TxtToDb<'a> {
 
     fn create_pinyin_entry(&mut self, pinyin: &str, tags: &Tags) -> Result<DictNode> {
         let shared_id = self.create_shared_entry()?;
-
         self.conn.execute(
             "INSERT OR IGNORE INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1,?2)",
             (pinyin, ""),
@@ -368,7 +391,12 @@ impl<'a> TxtToDb<'a> {
             (pinyin,),
             |row| row.get(0),
         )?;
-        let pinyin_entry = DictNode::Pinyin((shared_id, pron_id));
+        self.conn.execute(
+            "INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1,?2)",
+            (shared_id, pron_id),
+        )?;
+        let shared_pron_id = self.conn.last_insert_rowid();
+        let pinyin_entry = DictNode::Pinyin((shared_id, shared_pron_id));
         self.add_tags_for_entry(shared_id, &pinyin_entry, &tags)?;
 
         Ok(pinyin_entry)
@@ -406,13 +434,12 @@ impl<'a> TxtToDb<'a> {
 
     fn create_pron_definition_entry(
         &mut self,
-        pron_shared_id: SqliteId,
-        pron_id: SqliteId,
+        shared_pron_id: SqliteId,
         definition_id: SqliteId,
     ) -> Result<SqliteId> {
         self.conn.execute(
-            "INSERT INTO dict_pron_definition (pron_shared_id, pron_id, definition_id) VALUES (?1,?2,?3)",
-            (pron_shared_id, pron_id, definition_id),
+            "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1,?2)",
+            (shared_pron_id, definition_id),
         )?;
         Ok(self.conn.last_insert_rowid())
     }
@@ -471,9 +498,9 @@ impl<'a> TxtToDb<'a> {
 
             // create/get reference type
             let ref_type_full = match reference.ref_type {
-                '=' => "equal",
-                '~' => "similar",
-                '!' => "opposite",
+                '=' => "synonym-equal",
+                '~' => "synonym-similar",
+                '!' => "antonym",
                 '?' => "could-be-confused-with",
                 '<' => "part-of",
                 '>' => "contains",
@@ -515,7 +542,7 @@ impl<'a> TxtToDb<'a> {
         Ok(())
     }
 
-    fn create_note(&self, ext_note_id: u32,note_txt: &str) -> Result<SqliteId> {
+    fn create_note(&self, ext_note_id: u32, note_txt: &str) -> Result<SqliteId> {
         self.conn.execute(
             "INSERT INTO dict_note (note, ext_note_id) VALUES (?1,?2)",
             (note_txt, ext_note_id),
@@ -623,10 +650,9 @@ impl<'a> TxtToDb<'a> {
                             // add links between definition and pronunciation
                             let pinyin_entries = self.line_stack.get(1).unwrap().clone();
                             for pinyin_entry in pinyin_entries {
-                                if let DictNode::Pinyin((pron_shared_id, pron_id)) = pinyin_entry {
+                                if let DictNode::Pinyin((_, shared_pron_id)) = pinyin_entry {
                                     self.create_pron_definition_entry(
-                                        pron_shared_id,
-                                        pron_id,
+                                        shared_pron_id,
                                         definition_id,
                                     )?;
                                 } else {

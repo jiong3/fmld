@@ -410,16 +410,11 @@ impl<'a> TxtToDb<'a> {
         let mut stmt = self
             .conn
             .prepare_cached("INSERT OR IGNORE INTO dict_class (name) VALUES (?1)")?;
-        stmt.execute(
-            (class_name,),
-        )?;
+        stmt.execute((class_name,))?;
         let mut stmt = self
             .conn
             .prepare_cached("SELECT id FROM dict_class WHERE name=?1")?;
-        let class_id: SqliteId = stmt.query_row(
-            (class_name,),
-            |row| row.get(0),
-        )?;
+        let class_id: SqliteId = stmt.query_row((class_name,), |row| row.get(0))?;
         Ok(DictNode::Class(class_id))
     }
 
@@ -433,9 +428,13 @@ impl<'a> TxtToDb<'a> {
         let mut stmt = self
             .conn
             .prepare_cached("INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id) VALUES (?1,?2,?3,?4,?5)")?;
-        stmt.execute(
-            (shared_id, word_id, &definition_tag.definition, definition_tag.id, class),
-        )?;
+        stmt.execute((
+            shared_id,
+            word_id,
+            &definition_tag.definition,
+            definition_tag.id,
+            class,
+        ))?;
         let definition_id = self.conn.last_insert_rowid();
         let definition_entry = DictNode::Definition((shared_id, word_id, definition_id));
         self.add_tags_for_entry(shared_id, &definition_entry, &definition_tag.tags)?;
@@ -447,12 +446,10 @@ impl<'a> TxtToDb<'a> {
         shared_pron_id: SqliteId,
         definition_id: SqliteId,
     ) -> Result<SqliteId> {
-        let mut stmt = self
-            .conn
-            .prepare_cached("INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1,?2)")?;
-        stmt.execute(
-            (shared_pron_id, definition_id),
+        let mut stmt = self.conn.prepare_cached(
+            "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1,?2)",
         )?;
+        stmt.execute((shared_pron_id, definition_id))?;
         Ok(self.conn.last_insert_rowid())
     }
 
@@ -537,9 +534,14 @@ impl<'a> TxtToDb<'a> {
             let mut stmt = self
             .conn
             .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)")?;
-            stmt.execute(
-                (reference.shared_id, ref_type_id, reference.src_word_id, reference.src_definition_id, dst_word_id, dst_definition_id),
-            )?;
+            stmt.execute((
+                reference.shared_id,
+                ref_type_id,
+                reference.src_word_id,
+                reference.src_definition_id,
+                dst_word_id,
+                dst_definition_id,
+            ))?;
         }
         Ok(())
     }
@@ -604,175 +606,195 @@ impl<'a> TxtToDb<'a> {
         self.line_stack.truncate(indentation as usize);
 
         let line_items = match line {
-            DictLine::Word(word_tag_groups) => {
-                let mut line_items = vec![];
-                for word_tag_group in word_tag_groups {
-                    for word in word_tag_group.words {
-                        let word_entry = self.create_word_entry(&word, &word_tag_group.tags)?;
-                        if line_items.is_empty() {
-                            line_items.push(word_entry);
-                        } else {
-                            // add variant cross reference to first item
-                            if let DictNode::Word((_, word_id)) = word_entry {
-                                if let Some(DictNode::Word((_, main_word_id))) = line_items.last() {
-                                    self.create_cross_reference_entry(
-                                        'v',
-                                        word_id,
-                                        None,
-                                        word.clone(),
-                                        None,
-                                        &word_tag_group.tags,
-                                    )?;
-                                } else {
-                                    debug_assert!(false);
-                                }
-                            }
-                        }
-                    }
-                }
-                line_items
-            }
-            DictLine::Pinyin(pinyin_tag_groups) => {
-                let mut line_items = vec![];
-                for PinyinTagGroup { pinyins, ref tags } in pinyin_tag_groups {
-                    for pinyin in pinyins {
-                        let pinyin_entry = self.create_pinyin_entry(&pinyin, tags)?;
-                        line_items.push(pinyin_entry);
-                        // if pinyin is nested one level below another pinyin, also add it to that list to make the link to definitions easier
-                        if self.line_stack.len() == 2 {
-                            self.line_stack[1].push(pinyin_entry);
-                        }
-                    }
-                }
-                line_items
-            }
+            DictLine::Word(word_tag_groups) => self.add_word_line_to_db(word_tag_groups)?,
+            DictLine::Pinyin(pinyin_tag_groups) => self.add_pinyin_line_to_db(pinyin_tag_groups)?,
             DictLine::Class(class_name) => {
                 let class_entry = self.create_class_entry(&class_name)?;
                 vec![class_entry]
             }
             DictLine::Definition(definition_tag) => {
-                let mut line_items = vec![];
-                if let Some(DictNode::Word((_, word_id))) =
-                    self.line_stack.first().and_then(|v| v.first())
-                {
-                    if let Some(DictNode::Class(class_id)) =
-                        self.line_stack.get(2).and_then(|v| v.first())
-                    {
-                        let definition_entry =
-                            self.create_definition_entry(*word_id, &definition_tag, *class_id)?;
-                        if let DictNode::Definition((_, _, definition_id)) = definition_entry {
-                            // add links between definition and pronunciation
-                            let pinyin_entries = self.line_stack.get(1).unwrap().clone();
-                            for pinyin_entry in pinyin_entries {
-                                if let DictNode::Pinyin((_, shared_pron_id)) = pinyin_entry {
-                                    self.create_pron_definition_entry(
-                                        shared_pron_id,
-                                        definition_id,
-                                    )?;
-                                } else {
-                                    return Err(TxtToDbError::NoUsableParentNode);
-                                }
-                            }
-                        } else {
-                            debug_assert!(false)
-                        }
-
-                        line_items.push(definition_entry);
-                    } else {
-                        return Err(TxtToDbError::NoUsableParentNode);
-                    }
-                } else {
-                    return Err(TxtToDbError::NoUsableParentNode);
-                }
-                line_items
+                self.add_definition_line_to_db(definition_tag)?
             }
             DictLine::CrossReference(reference_tag_groups) => {
-                let mut line_items = vec![];
-                if let Some(DictNode::Word((_, src_word_id))) =
-                    self.line_stack.first().and_then(|v| v.first().copied())
-                {
-                    let src_definition_id: Option<SqliteId> = {
-                        if let Some(DictNode::Definition((_, _, src_definition_id))) =
-                            self.line_stack.last().and_then(|v| v.first().copied())
-                        {
-                            Some(src_definition_id)
-                        } else {
-                            None
-                        }
-                    };
-
-                    for reference_tag_group in reference_tag_groups {
-                        for reference in reference_tag_group.references {
-                            let dst_definition_id: Option<u32> = reference.target_id.map(|i| i.1);
-                            let ref_entry = self.create_cross_reference_entry(
-                                reference_tag_group.ref_type,
-                                src_word_id,
-                                src_definition_id,
-                                reference.target_word,
-                                dst_definition_id,
-                                &reference_tag_group.tags,
-                            )?;
-                            line_items.push(ref_entry);
-                        }
-                    }
-                }
-                line_items
+                self.add_cross_reference_line_to_db(reference_tag_groups)?
             }
-            DictLine::Note(note) => {
-                let note_id: Option<SqliteId> = {
-                    if !note.is_link {
-                        Some(self.create_note(note.id, &note.note)?)
-                    } else {
-                        None
-                    }
-                };
-                let mut num_targets = 0;
-                if let Some(prev_dict_nodes) = self.line_stack.last() {
-                    for dict_node in prev_dict_nodes.clone() {
-                        let shared_id = get_shared_id_for_dict_node(&dict_node)?;
-                        if note.is_link {
-                            self.note_references.push(NoteReferenceEntry {
-                                target_shared_id: shared_id,
-                                ext_note_id: note.id,
-                            });
-                            num_targets += 1;
-                        } else {
-                            num_targets += self.add_note_to_entry(note_id.unwrap(), shared_id)?;
-                        }
-                    }
-                }
-                if num_targets == 0 {
-                    return Err(TxtToDbError::NoUsableParentNode);
-                }
-                vec![]
-            }
-            DictLine::Comment(comment) => {
-                let comment_id = self.create_comment(&comment)?;
-                if self.line_stack.is_empty() {
-                    // create new shared entry to attach comment for the initial header comment
-                    if self.rank_counter == 0 {
-                        let shared_id = self.create_shared_entry()?;
-                        self.add_comment_to_entry(comment_id, shared_id)?;
-                    } else {
-                        return Err(TxtToDbError::NoUsableParentNode);
-                    }
-                } else {
-                    let mut num_targets = 0;
-                    if let Some(prev_dict_nodes) = self.line_stack.last() {
-                        for dict_node in prev_dict_nodes.clone() {
-                            let shared_id = get_shared_id_for_dict_node(&dict_node)?;
-                            num_targets += self.add_comment_to_entry(comment_id, shared_id)?;
-                        }
-                    }
-                    if num_targets == 0 {
-                        return Err(TxtToDbError::NoUsableParentNode);
-                    }
-                }
-                vec![]
-            }
+            DictLine::Note(note) => self.add_note_line_to_db(note)?,
+            DictLine::Comment(comment) => self.add_comment_line_to_db(comment)?,
         };
         self.line_stack.push(line_items);
         Ok(())
+    }
+
+    fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
+        let mut line_items = vec![];
+        for word_tag_group in word_tag_groups {
+            for word in word_tag_group.words {
+                let word_entry = self.create_word_entry(&word, &word_tag_group.tags)?;
+                if line_items.is_empty() {
+                    line_items.push(word_entry);
+                } else {
+                    // add variant cross reference to first item
+                    if let DictNode::Word((_, word_id)) = word_entry {
+                        if let Some(DictNode::Word((_, main_word_id))) = line_items.last() {
+                            self.create_cross_reference_entry(
+                                'v',
+                                word_id,
+                                None,
+                                word.clone(),
+                                None,
+                                &word_tag_group.tags,
+                            )?;
+                        } else {
+                            debug_assert!(false);
+                        }
+                    }
+                }
+            }
+        }
+        Ok(line_items)
+    }
+
+    fn add_comment_line_to_db(&mut self, comment: String) -> Result<Vec<DictNode>> {
+        let comment_id = self.create_comment(&comment)?;
+        if self.line_stack.is_empty() {
+            // create new shared entry to attach comment for the initial header comment
+            if self.rank_counter == 0 {
+                let shared_id = self.create_shared_entry()?;
+                self.add_comment_to_entry(comment_id, shared_id)?;
+            } else {
+                return Err(TxtToDbError::NoUsableParentNode);
+            }
+        } else {
+            let mut num_targets = 0;
+            if let Some(prev_dict_nodes) = self.line_stack.last() {
+                for dict_node in prev_dict_nodes.clone() {
+                    let shared_id = get_shared_id_for_dict_node(&dict_node)?;
+                    num_targets += self.add_comment_to_entry(comment_id, shared_id)?;
+                }
+            }
+            if num_targets == 0 {
+                return Err(TxtToDbError::NoUsableParentNode);
+            }
+        }
+        Ok(vec![])
+    }
+
+    fn add_note_line_to_db(&mut self, note: Note) -> Result<Vec<DictNode>> {
+        let note_id: Option<SqliteId> = {
+            if !note.is_link {
+                Some(self.create_note(note.id, &note.note)?)
+            } else {
+                None
+            }
+        };
+        let mut num_targets = 0;
+        if let Some(prev_dict_nodes) = self.line_stack.last() {
+            for dict_node in prev_dict_nodes.clone() {
+                let shared_id = get_shared_id_for_dict_node(&dict_node)?;
+                if note.is_link {
+                    self.note_references.push(NoteReferenceEntry {
+                        target_shared_id: shared_id,
+                        ext_note_id: note.id,
+                    });
+                    num_targets += 1;
+                } else {
+                    num_targets += self.add_note_to_entry(note_id.unwrap(), shared_id)?;
+                }
+            }
+        }
+        if num_targets == 0 {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        Ok(vec![])
+    }
+
+    fn add_cross_reference_line_to_db(
+        &mut self,
+        reference_tag_groups: Vec<ReferenceTagGroup>,
+    ) -> Result<Vec<DictNode>> {
+        let mut line_items = vec![];
+        if let Some(DictNode::Word((_, src_word_id))) =
+            self.line_stack.first().and_then(|v| v.first().copied())
+        {
+            let src_definition_id: Option<SqliteId> = {
+                if let Some(DictNode::Definition((_, _, src_definition_id))) =
+                    self.line_stack.last().and_then(|v| v.first().copied())
+                {
+                    Some(src_definition_id)
+                } else {
+                    None
+                }
+            };
+
+            for reference_tag_group in reference_tag_groups {
+                for reference in reference_tag_group.references {
+                    let dst_definition_id: Option<u32> = reference.target_id.map(|i| i.1);
+                    let ref_entry = self.create_cross_reference_entry(
+                        reference_tag_group.ref_type,
+                        src_word_id,
+                        src_definition_id,
+                        reference.target_word,
+                        dst_definition_id,
+                        &reference_tag_group.tags,
+                    )?;
+                    line_items.push(ref_entry);
+                }
+            }
+        }
+        Ok(line_items)
+    }
+
+    fn add_definition_line_to_db(
+        &mut self,
+        definition_tag: DefinitionTag,
+    ) -> Result<Vec<DictNode>> {
+        let mut line_items = vec![];
+        if let Some(DictNode::Word((_, word_id))) = self.line_stack.first().and_then(|v| v.first())
+        {
+            if let Some(DictNode::Class(class_id)) = self.line_stack.get(2).and_then(|v| v.first())
+            {
+                let definition_entry =
+                    self.create_definition_entry(*word_id, &definition_tag, *class_id)?;
+                if let DictNode::Definition((_, _, definition_id)) = definition_entry {
+                    // add links between definition and pronunciation
+                    let pinyin_entries = self.line_stack.get(1).unwrap().clone();
+                    for pinyin_entry in pinyin_entries {
+                        if let DictNode::Pinyin((_, shared_pron_id)) = pinyin_entry {
+                            self.create_pron_definition_entry(shared_pron_id, definition_id)?;
+                        } else {
+                            return Err(TxtToDbError::NoUsableParentNode);
+                        }
+                    }
+                } else {
+                    debug_assert!(false)
+                }
+
+                line_items.push(definition_entry);
+            } else {
+                return Err(TxtToDbError::NoUsableParentNode);
+            }
+        } else {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        Ok(line_items)
+    }
+
+    fn add_pinyin_line_to_db(
+        &mut self,
+        pinyin_tag_groups: Vec<PinyinTagGroup>,
+    ) -> Result<Vec<DictNode>> {
+        let mut line_items = vec![];
+        for PinyinTagGroup { pinyins, ref tags } in pinyin_tag_groups {
+            for pinyin in pinyins {
+                let pinyin_entry = self.create_pinyin_entry(&pinyin, tags)?;
+                line_items.push(pinyin_entry);
+                // if pinyin is nested one level below another pinyin, also add it to that list to make the link to definitions easier
+                if self.line_stack.len() == 2 {
+                    self.line_stack[1].push(pinyin_entry);
+                }
+            }
+        }
+        Ok(line_items)
     }
 }
 

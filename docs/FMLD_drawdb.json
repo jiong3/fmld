@@ -1,0 +1,1089 @@
+{
+  "tables": [
+    {
+      "id": 0,
+      "name": "dict_definition",
+      "x": -714.687802278274,
+      "y": -499.296423539806,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "id": "iVS5r06yfl7SbCc9ladkJ",
+          "name": "shared_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "word_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "definition",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 65535
+        },
+        {
+          "id": "AjcgJ6q_vy9soUjE5DKuJ",
+          "name": "ext_def_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "vYtUxhjeOPNGNx2Ziv2is",
+          "name": "class_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_definition_index_0",
+          "unique": true,
+          "fields": [
+            "word_id",
+            "ext_def_id"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746100193114
+    },
+    {
+      "id": 1,
+      "name": "dict_tag",
+      "x": -27.155222960566107,
+      "y": -714.8351585558036,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "tag",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 65535
+        },
+        {
+          "id": "iQzcR-aVPJ05EbeR8Ve_v",
+          "name": "type",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "id": "ozxj0_g1qEAr2HMhGnH0L",
+          "name": "ascii_symbol",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        }
+      ],
+      "comment": "tags allow a flexible assignment of entries to classes, which includes parts-of-speech, spoken vs written language, usage in Taiwan vs China etc.",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_tag_index_0",
+          "unique": true,
+          "fields": [
+            "tag",
+            "type"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746100620116
+    },
+    {
+      "id": 3,
+      "name": "dict_word",
+      "x": -1090.8912372901787,
+      "y": -382.957755987351,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "id": "iAeHsmXCRem5xAtEllP2x",
+          "name": "shared_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "QR-A4NJhsRXd3J1ly8uej",
+          "name": "trad",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "name": "simp",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_word_index_0",
+          "unique": true,
+          "fields": [
+            "trad",
+            "simp"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746100807874
+    },
+    {
+      "id": 5,
+      "name": "dict_pron",
+      "x": -20.576109970237667,
+      "y": -482.34261449925623,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "id": "mU2au1WPkPPC9Faq7_2rO",
+          "name": "pinyin_num",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "name": "pinyin_mark",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_pron_index_0",
+          "unique": true,
+          "fields": [
+            "pinyin_num"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746101210469,
+      "locked": false
+    },
+    {
+      "id": 6,
+      "name": "dict_pron_definition",
+      "x": -352.1317235438985,
+      "y": -451.50928116592263,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "id": "fkZUNiH1zy6Vo57Iox1_j",
+          "name": "shared_pron_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "definition_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_pron_definition_index_0",
+          "unique": false,
+          "fields": [
+            "definition_id"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746101855571
+    },
+    {
+      "id": 11,
+      "name": "dict_reference",
+      "x": -1090.290085577381,
+      "y": -705.9466685997025,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "id": "bu-vxEF-46JbB_cplJuLu",
+          "name": "shared_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "Bf8-CEidQXAJXw4157Adj",
+          "name": "ref_type_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "word_id_src",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "fWZ0LdVy0EQfi7R9jET0E",
+          "name": "definition_id_src",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "word_id_dst",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "JBxUEOC5OmUU-hlCMLLpv",
+          "name": "definition_id_dst",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "Relationship from a to b, e.g. measureword, antonym, synonym or variant.",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_reference_index_0",
+          "unique": false,
+          "fields": [
+            "word_id_src",
+            "definition_id_src"
+          ]
+        }
+      ],
+      "color": "#175e7a",
+      "key": 1746103364896
+    },
+    {
+      "id": "3oUii-jw_vC3MUObWiOUZ",
+      "name": "dict_shared",
+      "x": -694.8735415066964,
+      "y": -760.0443597518607,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "HXcP6wE4S_Eg08OJpkNAR"
+        },
+        {
+          "id": "pLIpQnGfYzvphtFdSL7XT",
+          "name": "rank",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "JcazF4A_x4hgpAZanTwrw",
+          "name": "rank_relative",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "K5Nt4ro9e4jSwm7rNmH7A",
+          "name": "note_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "W-DYII7QEtpzXo2_Kcnwq",
+          "name": "comment_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "dict_shared enables linking tags, notes or references to different entries in other tables\nrank indicates the order of the element, it is a continuous counter\nrank_relative can be used to add new elements with a certain order between two successive rank counters",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_shared_index_0",
+          "unique": false,
+          "fields": [
+            "rank",
+            "rank_relative"
+          ]
+        }
+      ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "-trprl8f8mTLugPxbO_MN",
+      "name": "dict_shared_tag",
+      "x": -356.84086155654796,
+      "y": -823.8887994735868,
+      "locked": false,
+      "fields": [
+        {
+          "name": "for_shared_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": "a0GLDPZBcWCDQlq8Y82Vb"
+        },
+        {
+          "id": "7bLRbA8hlG1QBSXSyw0Pf",
+          "name": "tag_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_shared_tag_index_0",
+          "unique": true,
+          "fields": [
+            "for_shared_id",
+            "tag_id"
+          ]
+        }
+      ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "x02rwQUunH5FFy5Rw8Qkc",
+      "name": "dict_note",
+      "x": -683.5582617558912,
+      "y": -971.6930451817963,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "IIi4jePwonGGOOHCz4OCD"
+        },
+        {
+          "id": "S04CTUFMcmoFUq7wQfiyn",
+          "name": "note",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "id": "JvSJQQVJz_au5oKtn7LtA",
+          "name": "ext_note_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "ext_note_id is a globally unique id for each note (but same id for different translations), exported into txt format",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_note_index_0",
+          "unique": true,
+          "fields": [
+            "ext_note_id"
+          ]
+        }
+      ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "daQqn_8b9mDIZrPWTZsKB",
+      "name": "dict_comment",
+      "x": -379.5329507220365,
+      "y": -977.9116613719008,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "Fd2vAD6NYOkPo0GfVXv31"
+        },
+        {
+          "id": "fX6veH3g4X-DFgpfqNgmI",
+          "name": "comment",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    },
+    {
+      "id": "OobDksejkxWbFZQ2QTPXe",
+      "name": "dict_class",
+      "x": -349.0670069635422,
+      "y": -262.2680420129592,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "bJRcDonj2F8vnERc0ahXU"
+        },
+        {
+          "id": "xHxoSNKCNarn2Pw5StQ5c",
+          "name": "name",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        }
+      ],
+      "comment": "part of speech",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_class_index_0",
+          "unique": true,
+          "fields": [
+            "name"
+          ]
+        }
+      ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "tZk654aRbmP9wfO7RUZvN",
+      "name": "dict_ref_type",
+      "x": -1083.733673630209,
+      "y": -892.934708679626,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "oAV1pvAgsBRGP6KER5ITX"
+        },
+        {
+          "id": "dIK4CZqYMhSIBSaw89p5n",
+          "name": "type",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "id": "guiWfDIuO1QN8ukWjJCQX",
+          "name": "ascii_symbol",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [
+        {
+          "id": 0,
+          "name": "dict_ref_type_index_0",
+          "unique": true,
+          "fields": [
+            "type"
+          ]
+        }
+      ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "fAQ_HoQcsJXyxZvoTMYWu",
+      "name": "dict_shared_pron",
+      "x": -359.7336736302097,
+      "y": -644.9347086796258,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "QUKmWsX55rAeNfOOirrGX"
+        },
+        {
+          "id": "9pbWpnAwO-6nH6blaCVou",
+          "name": "shared_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "yc3H3ZAw3LsPlvw0AkFIp",
+          "name": "pron_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
+    }
+  ],
+  "relationships": [
+    {
+      "startTableId": 6,
+      "startFieldId": 2,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_pinyin_sense_sense_id_dict_sense",
+      "id": 0
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": 1,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_sense_word_id_dict_word",
+      "id": 1
+    },
+    {
+      "startTableId": "-trprl8f8mTLugPxbO_MN",
+      "startFieldId": "7bLRbA8hlG1QBSXSyw0Pf",
+      "endTableId": 1,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_tag_tag_id_dict_tag",
+      "id": 2
+    },
+    {
+      "startTableId": "-trprl8f8mTLugPxbO_MN",
+      "startFieldId": "a0GLDPZBcWCDQlq8Y82Vb",
+      "endTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "endFieldId": "HXcP6wE4S_Eg08OJpkNAR",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_tag_shared_id_dict_shared",
+      "id": 3
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": "bu-vxEF-46JbB_cplJuLu",
+      "endTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "endFieldId": "HXcP6wE4S_Eg08OJpkNAR",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_related_shared_id_dict_shared",
+      "id": 4
+    },
+    {
+      "startTableId": 3,
+      "startFieldId": "iAeHsmXCRem5xAtEllP2x",
+      "endTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "endFieldId": "HXcP6wE4S_Eg08OJpkNAR",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_word_shared_id_dict_shared",
+      "id": 5
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": 2,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_reference_word_id_dst_dict_word",
+      "id": 6
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": 1,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_reference_word_id_src_dict_word",
+      "id": 7
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": "iVS5r06yfl7SbCc9ladkJ",
+      "endTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "endFieldId": "HXcP6wE4S_Eg08OJpkNAR",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_sense_shared_id_dict_shared",
+      "id": 8
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": "fWZ0LdVy0EQfi7R9jET0E",
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_reference_definition_id_src_dict_definition",
+      "id": 9
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": "JBxUEOC5OmUU-hlCMLLpv",
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_reference_definition_id_dst_dict_definition",
+      "id": 10
+    },
+    {
+      "startTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "startFieldId": "W-DYII7QEtpzXo2_Kcnwq",
+      "endTableId": "daQqn_8b9mDIZrPWTZsKB",
+      "endFieldId": "Fd2vAD6NYOkPo0GfVXv31",
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_comment_id_dict_comment",
+      "id": 11
+    },
+    {
+      "startTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "startFieldId": "K5Nt4ro9e4jSwm7rNmH7A",
+      "endTableId": "x02rwQUunH5FFy5Rw8Qkc",
+      "endFieldId": "IIi4jePwonGGOOHCz4OCD",
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_note_id_dict_note",
+      "id": 12
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": "vYtUxhjeOPNGNx2Ziv2is",
+      "endTableId": "OobDksejkxWbFZQ2QTPXe",
+      "endFieldId": "bJRcDonj2F8vnERc0ahXU",
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_definition_class_id_dict_class",
+      "id": 13
+    },
+    {
+      "startTableId": 11,
+      "startFieldId": "Bf8-CEidQXAJXw4157Adj",
+      "endTableId": "tZk654aRbmP9wfO7RUZvN",
+      "endFieldId": "oAV1pvAgsBRGP6KER5ITX",
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_reference_type_id_dict_ref_type",
+      "id": 14
+    },
+    {
+      "startTableId": "fAQ_HoQcsJXyxZvoTMYWu",
+      "startFieldId": "9pbWpnAwO-6nH6blaCVou",
+      "endTableId": "3oUii-jw_vC3MUObWiOUZ",
+      "endFieldId": "HXcP6wE4S_Eg08OJpkNAR",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_pron_shared_id_dict_shared",
+      "id": 15
+    },
+    {
+      "startTableId": "fAQ_HoQcsJXyxZvoTMYWu",
+      "startFieldId": "yc3H3ZAw3LsPlvw0AkFIp",
+      "endTableId": 5,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_shared_pron_pron_id_dict_pron",
+      "id": 16
+    },
+    {
+      "startTableId": 6,
+      "startFieldId": "fkZUNiH1zy6Vo57Iox1_j",
+      "endTableId": "fAQ_HoQcsJXyxZvoTMYWu",
+      "endFieldId": "QUKmWsX55rAeNfOOirrGX",
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_pron_definition_shared_pron_id_dict_shared_pron",
+      "id": 17
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "sqlite",
+  "title": "FMLD"
+}

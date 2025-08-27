@@ -258,19 +258,22 @@ fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
     let parse_full_tags = delimited(multispace0, many0(parse_full_tag), multispace0);
     let parse_ascii_full_tags = pair(parse_ascii_tags, parse_full_tags);
 
-    let (remainder, tags) = delimited(
-        delimited(multispace0, char('|'), multispace0),
+    let (remainder, tags) = delimited(multispace0, opt(delimited(
+        terminated(char('|'), multispace0),
         parse_ascii_full_tags,
-        delimited(multispace0, char('|'), multispace0),
-    )
+        preceded(multispace0, char('|')),
+    )), multispace0)
     .parse(tag_str)?;
-    let mut all_tags: Vec<Tag> = tags.0.iter().map(|c| Tag::Ascii(*c)).collect();
-    let full_tags: Vec<Tag> = tags
-        .1
-        .iter()
-        .map(|s| Tag::Full(s.trim().to_owned()))
-        .collect();
-    all_tags.extend(full_tags);
+    let mut all_tags: Vec<Tag> = vec![];
+    if let Some(tags) = tags {
+        all_tags.extend(tags.0.iter().map(|c| Tag::Ascii(*c)).collect::<Vec<Tag>>());
+        let full_tags: Vec<Tag> = tags
+            .1
+            .iter()
+            .map(|s| Tag::Full(s.trim().to_owned()))
+            .collect();
+        all_tags.extend(full_tags);
+    }
     Ok((remainder, all_tags))
 }
 

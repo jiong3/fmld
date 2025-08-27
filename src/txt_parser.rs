@@ -24,11 +24,11 @@ Format Description
 
 The grammar is more or less as follows:
 
-entry_line = "W" word_tag_group {, word_tag_group}
-pinyin_line = "P" pinyin_tag_group {, pinyin_tag_group}
+entry_line = "W" word_tag_group {; word_tag_group}
+pinyin_line = "P" pinyin_tag_group {; pinyin_tag_group}
 class_line = "C|" ascii_word
 definition_line = "D" id tags_full ...
-cross_reference_line = "X" ascii_character reference_tag_group {, reference_tag_group}
+cross_reference_line = "X" ascii_character reference_tag_group {; reference_tag_group}
 comment_line = "#" ...
 note_line = "N" id "|" ...
 note_reference_line "N->" id ...
@@ -46,8 +46,8 @@ word_entry = hanzi_word [("／" | "/") hanzi_word]
 reference = word_entry [letter id]
 tags_ascii = "|" {tag_letter} "|"
 tags_full = "|" {letter} {"#" tag_word} "|"
-word_tag_group = tags_ascii word_entry {, word_entry}
-pinyin_tag_group = tags_ascii pinyin {, pinyin}
+word_tag_group = tags_ascii word_entry {; word_entry}
+pinyin_tag_group = tags_ascii pinyin {; pinyin}
 reference_tag_group = tags_ascii reference
 
 */
@@ -277,12 +277,12 @@ fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
 fn parse_word(word_str: &str) -> IResult<&str, Word> {
     let simp_trad = delimited(
         multispace0::<&str, _>,
-        take_while1(|c: char| !"|#,/／".contains(c)),
+        take_while1(|c: char| !"|#;/／".contains(c)),
         multispace0,
     );
     let simp = delimited(
         multispace0,
-        take_while1(|c: char| !"#|,".contains(c)),
+        take_while1(|c: char| !"#|;".contains(c)),
         multispace0,
     );
 
@@ -297,7 +297,7 @@ fn parse_word(word_str: &str) -> IResult<&str, Word> {
 }
 
 fn parse_word_list(word_list: &str) -> IResult<&str, Vec<Word>> {
-    separated_list1(char(','), parse_word).parse(word_list)
+    separated_list1(char(';'), parse_word).parse(word_list)
 }
 
 fn parse_word_tag_group(tag_group_str: &str) -> IResult<&str, WordTagGroup> {
@@ -315,8 +315,8 @@ fn parse_word_line(word_line: &str) -> IResult<&str, Vec<WordTagGroup>> {
 }
 
 fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
-    let pinyin_parser = delimited(multispace0, take_while1(|c: char| !"|,".contains(c)), multispace0);
-    separated_list1(char(','), pinyin_parser).parse(pinyin_list)
+    let pinyin_parser = delimited(multispace0, take_while1(|c: char| !"|;".contains(c)), multispace0);
+    separated_list1(char(';'), pinyin_parser).parse(pinyin_list)
 }
 
 fn parse_pinyin_tag_group(tag_group_str: &str) -> IResult<&str, PinyinTagGroup> {
@@ -389,7 +389,7 @@ fn parse_reference(reference: &str) -> IResult<&str, Reference> {
 }
 
 fn parse_reference_tag_group(tag_group_str: &str) -> IResult<&str, ReferenceTagGroup> {
-    let ref_list_parse = separated_list1(char(','), parse_reference);
+    let ref_list_parse = separated_list1(char(';'), parse_reference);
     let (remainder, (ref_type, tags, references)) =
         (anychar, parse_tags, ref_list_parse).parse(tag_group_str)?;
     Ok((

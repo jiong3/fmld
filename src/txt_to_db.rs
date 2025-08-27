@@ -291,7 +291,11 @@ impl<'a> TxtToDb<'a> {
     }
 
     pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>) {
-        self.conn.execute("BEGIN TRANSACTION", ()).unwrap();
+        self.conn
+            .execute_batch(
+                "PRAGMA synchronous = OFF; PRAGMA journal_mode = MEMORY; BEGIN TRANSACTION",
+            )
+            .unwrap();
         let parser = ParserIterator::new(lines.into_iter());
         for parsed_line in parser {
             match parsed_line.line {
@@ -329,19 +333,20 @@ impl<'a> TxtToDb<'a> {
         tag_txt: &str,
         tag_type: &str,
     ) -> Result<()> {
-        self.conn.execute(
+        let mut stmt = self.conn.prepare_cached(
             "INSERT OR IGNORE INTO dict_tag (tag, type, ascii_symbol) VALUES (?1,?2,?3)",
-            (tag_txt, tag_type, tag_ascii.map(|c| c.to_string())),
         )?;
-        let tag_id: SqliteId = self.conn.query_row(
-            "SELECT id FROM dict_tag WHERE tag=?1 AND type=?2",
-            (tag_txt, tag_type),
-            |row| row.get(0),
-        )?;
-        self.conn.execute(
-            "INSERT INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1,?2)",
-            (shared_id, tag_id),
-        )?;
+        stmt.execute((tag_txt, tag_type, tag_ascii.map(|c| c.to_string())))?;
+
+        let mut stmt = self
+            .conn
+            .prepare_cached("SELECT id FROM dict_tag WHERE tag=?1 AND type=?2")?;
+        let tag_id: SqliteId = stmt.query_row((tag_txt, tag_type), |row| row.get(0))?;
+
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1,?2)")?;
+        stmt.execute((shared_id, tag_id))?;
         Ok(())
     }
 
@@ -360,10 +365,10 @@ impl<'a> TxtToDb<'a> {
 
     fn create_shared_entry(&mut self) -> Result<SqliteId> {
         self.rank_counter += 1;
-        self.conn.execute(
-            "INSERT INTO dict_shared (rank) VALUES (?1)",
-            (self.rank_counter,),
-        )?;
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_shared (rank) VALUES (?1)")?;
+        stmt.execute((self.rank_counter,))?;
         Ok(self.conn.last_insert_rowid())
     }
 
@@ -371,10 +376,10 @@ impl<'a> TxtToDb<'a> {
         let trad = &word.trad;
         let simp = word.simp.as_ref().unwrap_or(&word.trad);
         let shared_id = self.create_shared_entry()?;
-        self.conn.execute(
-            "INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1,?2,?3)",
-            (shared_id, trad, simp),
-        )?;
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1,?2,?3)")?;
+        stmt.execute((shared_id, trad, simp))?;
         let word_entry = DictNode::Word((shared_id, self.conn.last_insert_rowid()));
         self.add_tags_for_entry(shared_id, &word_entry, tags)?;
         Ok(word_entry)
@@ -382,19 +387,18 @@ impl<'a> TxtToDb<'a> {
 
     fn create_pinyin_entry(&mut self, pinyin: &str, tags: &Tags) -> Result<DictNode> {
         let shared_id = self.create_shared_entry()?;
-        self.conn.execute(
+        let mut stmt = self.conn.prepare_cached(
             "INSERT OR IGNORE INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1,?2)",
-            (pinyin, ""),
         )?;
-        let pron_id: SqliteId = self.conn.query_row(
-            "SELECT id FROM dict_pron WHERE pinyin_num=?1",
-            (pinyin,),
-            |row| row.get(0),
-        )?;
-        self.conn.execute(
-            "INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1,?2)",
-            (shared_id, pron_id),
-        )?;
+        stmt.execute((pinyin, ""))?;
+        let mut stmt = self
+            .conn
+            .prepare_cached("SELECT id FROM dict_pron WHERE pinyin_num=?1")?;
+        let pron_id: SqliteId = stmt.query_row((pinyin,), |row| row.get(0))?;
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1,?2)")?;
+        stmt.execute((shared_id, pron_id))?;
         let shared_pron_id = self.conn.last_insert_rowid();
         let pinyin_entry = DictNode::Pinyin((shared_id, shared_pron_id));
         self.add_tags_for_entry(shared_id, &pinyin_entry, &tags)?;
@@ -403,12 +407,16 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn create_class_entry(&self, class_name: &str) -> Result<DictNode> {
-        self.conn.execute(
-            "INSERT OR IGNORE INTO dict_class (name) VALUES (?1)",
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT OR IGNORE INTO dict_class (name) VALUES (?1)")?;
+        stmt.execute(
             (class_name,),
         )?;
-        let class_id: SqliteId = self.conn.query_row(
-            "SELECT id FROM dict_class WHERE name=?1",
+        let mut stmt = self
+            .conn
+            .prepare_cached("SELECT id FROM dict_class WHERE name=?1")?;
+        let class_id: SqliteId = stmt.query_row(
             (class_name,),
             |row| row.get(0),
         )?;
@@ -422,8 +430,10 @@ impl<'a> TxtToDb<'a> {
         class: SqliteId,
     ) -> Result<DictNode> {
         let shared_id = self.create_shared_entry()?;
-        self.conn.execute(
-            "INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id) VALUES (?1,?2,?3,?4,?5)",
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id) VALUES (?1,?2,?3,?4,?5)")?;
+        stmt.execute(
             (shared_id, word_id, &definition_tag.definition, definition_tag.id, class),
         )?;
         let definition_id = self.conn.last_insert_rowid();
@@ -437,8 +447,10 @@ impl<'a> TxtToDb<'a> {
         shared_pron_id: SqliteId,
         definition_id: SqliteId,
     ) -> Result<SqliteId> {
-        self.conn.execute(
-            "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1,?2)",
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1,?2)")?;
+        stmt.execute(
             (shared_pron_id, definition_id),
         )?;
         Ok(self.conn.last_insert_rowid())
@@ -522,8 +534,10 @@ impl<'a> TxtToDb<'a> {
                 |row| row.get(0),
             )?;
             // create reference and link to shared_id
-            self.conn.execute(
-                "INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)",
+            let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)")?;
+            stmt.execute(
                 (reference.shared_id, ref_type_id, reference.src_word_id, reference.src_definition_id, dst_word_id, dst_definition_id),
             )?;
         }
@@ -787,6 +801,7 @@ fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'static s
         'm' => Some(("mdbg", "source")),
         '+' => Some(("high", "relevance")),
         '-' => Some(("low", "relevance")),
+        'x' => Some(("deleted", "relevance")),
         _ => None,
     }
 }

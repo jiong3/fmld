@@ -6,8 +6,9 @@ use itertools::Itertools;
 
 type SqliteId = i64; // TODO common public
 
-const INDENT_STR: &str = "\t"; // only one byte characters allowed
+const INDENT_STR: &str = " "; // only one byte characters allowed
 const WORD_SEP: &str = "／";
+const ITEMS_SEP: &str = ";";
 
 // --- Error Handling ---
 #[derive(Debug)]
@@ -82,11 +83,18 @@ struct CrossReferenceData {
     reference_str: String,
 }
 
-// TODO format word trad/simp
 
-fn format_multiline(s: String, indent_level: usize, indent_char: &str) -> String {
+fn format_multiline(s: &str, indent_level: usize, indent_char: &str) -> String {
    let indented_newline = format!("\n{}", indent_char.repeat(indent_level+2));
     s.lines().join(&indented_newline)
+}
+
+fn format_word(trad: &str, simp: &str) -> String {
+    if trad == simp {
+        trad.to_owned()
+    } else {
+        format!("{}{}{}", trad, WORD_SEP, simp)
+    }
 }
 
 // --- Main Struct and Implementation ---
@@ -204,11 +212,8 @@ impl<'a> DbToTxt<'a> {
 
     fn write_word_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
         let tags = self.get_formatted_tags(entry.word_shared_id)?;
-        let word_str = if entry.trad == entry.simp {
-            entry.trad.clone()
-        } else {
-            format!("{}{}{}", entry.trad, WORD_SEP, entry.simp)
-        };
+        let word_str = format_word(&entry.trad, &entry.simp);
+        // TODO character variants (Xv reference, same word with different characters) should be listed in the same line, separated by ;
         writeln!(self.writer, "W{}{}", tags, word_str)?;
         self.write_shared_items(entry.word_shared_id, 1)?;
         self.write_cross_references(entry.word_id, None, 1)?;
@@ -220,10 +225,9 @@ impl<'a> DbToTxt<'a> {
         def_id: SqliteId,
         pinyin_shared_ids: &Vec<SqliteId>,
     ) -> Result<()> {
-        // Prepare the SQL statement once
         let mut stmt = self
             .conn
-            .prepare(
+            .prepare_cached(
                 r#"
             SELECT
                 p.pinyin_num,
@@ -257,7 +261,7 @@ impl<'a> DbToTxt<'a> {
 
         let pinyin_data = pinyin_data?;
 
-        // 2. Group the data and format it into lines
+        // group the data and format it into lines
         let mut indent_level = 1;
         for ((note_id, comment_id), tag_group) in
             &pinyin_data
@@ -269,7 +273,7 @@ impl<'a> DbToTxt<'a> {
                 .chunk_by(|item| item.tags.clone())
                 .into_iter()
                 .map(|(tags, tag_group)| {
-                    let pinyins = tag_group.map(|item| item.pinyin_num).join(", ");
+                    let pinyins = tag_group.map(|item| item.pinyin_num).join(ITEMS_SEP);
                     format!("{}{}", tags, pinyins)
                 })
                 .join(" ");
@@ -300,15 +304,15 @@ impl<'a> DbToTxt<'a> {
             INDENT_STR.repeat(3),
             entry.ext_def_id,
             tags,
-            entry.definition
+            format_multiline(&entry.definition, 3, INDENT_STR),
         )?;
         self.write_shared_items(entry.def_shared_id, 4)?;
-        self.write_cross_references(entry.word_id, Some(entry.ext_def_id), 4)?;
+        self.write_cross_references(entry.word_id, Some(entry.def_id), 4)?;
         Ok(())
     }
 
     fn get_formatted_tags(&self, shared_id: SqliteId) -> rusqlite::Result<String> {
-        let mut stmt = self.conn.prepare(
+        let mut stmt = self.conn.prepare_cached(
             "SELECT t.ascii_symbol, t.tag, t.type FROM dict_shared_tag st JOIN dict_tag t ON st.tag_id = t.id WHERE st.for_shared_id = ?1",
         )?;
         let mut rows = stmt.query([shared_id])?;
@@ -339,7 +343,7 @@ impl<'a> DbToTxt<'a> {
     fn write_shared_items(&mut self, shared_id: SqliteId, indent: usize) -> Result<()> {
         let mut stmt = self
             .conn
-            .prepare("SELECT comment_id, note_id FROM dict_shared WHERE id = ?1")?;
+            .prepare_cached("SELECT comment_id, note_id FROM dict_shared WHERE id = ?1")?;
         let (comment_id, note_id): (Option<SqliteId>, Option<SqliteId>) =
             stmt.query_row([shared_id], |row| Ok((row.get(0)?, row.get(1)?)))?;
         self.write_shared_items_from_ids(comment_id, note_id, indent)
@@ -352,20 +356,24 @@ impl<'a> DbToTxt<'a> {
         indent: usize,
     ) -> Result<()> {
         let indentation = INDENT_STR.repeat(indent);
+        let mut stmt = self
+            .conn
+            .prepare_cached("SELECT comment FROM dict_comment WHERE id = ?1")?;
         // Write Comment
         if let Some(id) = comment_id {
-            let comment: String = self.conn.query_row(
-                "SELECT comment FROM dict_comment WHERE id = ?1",
+            let comment: String = stmt.query_row(
                 [id],
                 |row| row.get(0),
             )?;
-            let comment = format_multiline(comment, indent, INDENT_STR);
+            let comment = format_multiline(&comment, indent, INDENT_STR);
             writeln!(self.writer, "{}# {}", indentation, comment)?;
         }
         // Write Note
         if let Some(id) = note_id {
-            let (note_txt, ext_id): (String, SqliteId) = self.conn.query_row(
-                "SELECT note, ext_note_id FROM dict_note WHERE id = ?1",
+            let mut stmt = self
+            .conn
+            .prepare_cached("SELECT note, ext_note_id FROM dict_note WHERE id = ?1")?;
+            let (note_txt, ext_id): (String, SqliteId) = stmt.query_row(
                 [id],
                 |row| Ok((row.get(0)?, row.get(1)?)),
             )?;
@@ -373,7 +381,7 @@ impl<'a> DbToTxt<'a> {
                 // indent == 0 hack for initial header pointer to highest note id
                 writeln!(self.writer, "{}N->{}", indentation, ext_id)?;
             } else {
-                let note_txt = format_multiline(note_txt, indent, INDENT_STR);
+                let note_txt = format_multiline(&note_txt, indent, INDENT_STR);
                 writeln!(self.writer, "{}N{} {}", indentation, ext_id, note_txt)?;
                 self.written_notes.insert(ext_id);
             }
@@ -392,10 +400,10 @@ impl<'a> DbToTxt<'a> {
     fn write_cross_references(
         &mut self,
         src_word_id: SqliteId,
-        src_ext_def_id: Option<u32>,
+        src_def_id: Option<SqliteId>,
         indent: usize,
     ) -> Result<()> {
-        let mut stmt = self.conn.prepare(r#"
+        let mut stmt = self.conn.prepare_cached(r#"
             SELECT
                 rt.ascii_symbol,
                 r.shared_id,
@@ -412,26 +420,20 @@ impl<'a> DbToTxt<'a> {
             LEFT JOIN dict_definition def_src ON r.definition_id_src = def_src.id
             WHERE
                 r.word_id_src = ?1 AND
-                ((?2 IS NULL AND r.definition_id_src IS NULL) OR def_src.ext_def_id = ?2)
+                ((?2 IS NULL AND r.definition_id_src IS NULL) OR def_src.id = ?2)
             ORDER BY s.rank, s.rank_relative
         "#)?;
 
         // 1. Fetch all data into a Vec of CrossReferenceData structs.
         let cross_ref_data_result: rusqlite::Result<Vec<CrossReferenceData>> = stmt
             .query_map(
-                (src_word_id, src_ext_def_id),
+                (src_word_id, src_def_id),
                 |row| {
                     let shared_id: SqliteId = row.get(1)?;
                     let trad: String = row.get(4)?;
                     let simp: String = row.get(5)?;
                     let dst_ext_def_id: Option<u32> = row.get(6)?;
-
-                    let word_str = if trad == simp {
-                        trad
-                    } else {
-                        format!("{}{}{}", trad, WORD_SEP, simp)
-                    };
-
+                    let word_str = format_word(&trad, &simp);
                     let reference_str = if let Some(id) = dst_ext_def_id {
                         format!("{}#D{}", word_str, id)
                     } else {
@@ -476,7 +478,7 @@ impl<'a> DbToTxt<'a> {
                 .chunk_by(|item| item.tags.clone())
                 .into_iter()
                 .map(|(tags, sub_group)| {
-                    let references = sub_group.map(|item| item.reference_str.clone()).join(", ");
+                    let references = sub_group.map(|item| item.reference_str.clone()).join(ITEMS_SEP);
                     format!("{}{}", tags, references)
                 })
                 .collect();

@@ -1,11 +1,5 @@
-mod txt_parser;
-use txt_parser::*;
-
-mod txt_to_db;
-use txt_to_db::*;
-
-mod db_to_txt;
-use db_to_txt::*;
+use fmld::txt_to_db::*;
+use fmld::db_to_txt::*;
 
 use std::fs::File;
 use std::fs::remove_file;
@@ -17,6 +11,7 @@ use rusqlite::{Connection, Error as SqliteError};
 
 fn main() -> io::Result<()> {
     let path = Path::new("./tests/tst_dict2.txt");
+    let path = Path::new("/Users/wibr/Daten/Dropbox/j3/dict/output/dict_test.txt");
     let file = File::open(path)?;
     let reader = BufReader::new(file);
     remove_file("test.db").unwrap_or(());

@@ -30,7 +30,7 @@ class_line = "C|" ascii_word
 definition_line = "D" id tags_full ...
 cross_reference_line = "X" ascii_character reference_tag_group {; reference_tag_group}
 comment_line = "#" ...
-note_line = "N" id "|" ...
+note_line = "N" id ...
 note_reference_line "N->" id ...
 
 letter = A-Za-z | "-"
@@ -46,9 +46,9 @@ word_entry = hanzi_word [("／" | "/") hanzi_word]
 reference = word_entry [letter id]
 tags_ascii = "|" {tag_letter} "|"
 tags_full = "|" {letter} {"#" tag_word} "|"
-word_tag_group = tags_ascii word_entry {; word_entry}
-pinyin_tag_group = tags_ascii pinyin {; pinyin}
-reference_tag_group = tags_ascii reference
+word_tag_group = [tags_ascii] word_entry {; word_entry}
+pinyin_tag_group = [tags_ascii] pinyin {; pinyin}
+reference_tag_group = [tags_ascii] reference
 
 */
 
@@ -233,7 +233,7 @@ fn parse_line(line: &str) -> Result<DictLine, String> {
     let line_parser = alt((
         map(preceded(char('W'), parse_word_line), DictLine::Word),
         map(preceded(char('P'), parse_pinyin_line), DictLine::Pinyin),
-        map(preceded(tag("C|"), parse_class_line), DictLine::Class),
+        map(preceded(char('C'), parse_class_line), DictLine::Class),
         map(
             preceded(char('D'), parse_definition_line),
             DictLine::Definition,
@@ -325,7 +325,7 @@ fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
 fn parse_pinyin_tag_group(tag_group_str: &str) -> IResult<&str, PinyinTagGroup> {
     let (remainder, tag_group) = pair(parse_tags, parse_pinyin_list).parse(tag_group_str)?;
     let tags = tag_group.0;
-    let pinyins = tag_group.1.iter().map(|s| s.to_string()).collect();
+    let pinyins = tag_group.1.iter().map(|s| s.trim().to_string()).collect();
     Ok((remainder, PinyinTagGroup { tags, pinyins }))
 }
 
@@ -362,7 +362,7 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
     let (remainder, (is_link, id, note)) = all_consuming((
         opt(value(true, tag("->"))),
         u32,
-        preceded(opt(delimited(multispace0, char('|'), multispace0)), rest),
+        preceded(multispace0, rest),
     ))
     .parse(note_line)?;
     Ok((

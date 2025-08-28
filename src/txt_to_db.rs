@@ -1,5 +1,7 @@
 use rusqlite::{Connection, Error as SqliteError};
 
+use crate::pinyin;
+
 use core::ascii;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
@@ -300,7 +302,6 @@ impl<'a> TxtToDb<'a> {
         for parsed_line in parser {
             match parsed_line.line {
                 Ok(parsed) => {
-                    //println!("Parsed: {:?}", parsed);
                     let r = self.add_line_to_db(parsed_line.indentation, parsed);
                     if let Err(r) = r {
                         self.errors.push(TxtToDbErrorLine {
@@ -385,16 +386,16 @@ impl<'a> TxtToDb<'a> {
         Ok(word_entry)
     }
 
-    fn create_pinyin_entry(&mut self, pinyin: &str, tags: &Tags) -> Result<DictNode> {
+    fn create_pinyin_entry(&mut self, pinyin_num: &str, tags: &Tags) -> Result<DictNode> {
         let shared_id = self.create_shared_entry()?;
         let mut stmt = self.conn.prepare_cached(
             "INSERT OR IGNORE INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1,?2)",
         )?;
-        stmt.execute((pinyin, ""))?;
+        stmt.execute((pinyin_num, pinyin::pinyin_mark_from_num(pinyin_num)))?;
         let mut stmt = self
             .conn
             .prepare_cached("SELECT id FROM dict_pron WHERE pinyin_num=?1")?;
-        let pron_id: SqliteId = stmt.query_row((pinyin,), |row| row.get(0))?;
+        let pron_id: SqliteId = stmt.query_row((pinyin_num,), |row| row.get(0))?;
         let mut stmt = self
             .conn
             .prepare_cached("INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1,?2)")?;

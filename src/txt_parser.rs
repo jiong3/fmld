@@ -2,54 +2,53 @@
 Format Description
 
 - encoded in utf-8
-- single space indentation creates a child element
-- double space indentation relative to previous line continues previous line
+- single indentation creates a child element
+- double indentation relative to previous line continues previous line (intended for notes and comments)
 - the first letter indicates the content of the line:
   * W: word
   * P: pronunciation in pinyin with tone marks, including 5 for neutral tone
   * C: class / part-of-speech
   * D: definition
   * X: cross-reference, the X is followed by another character indicating the type of reference (e.g. variant, measure word, collocation, ...)
-  * #: comment (meta information etc. which should not be exposed to readers of the dictionary)
+  * #: comment (meta information etc. which is not relevant to readers of the dictionary)
   * N: note, e.g. more detailed explanations
    * N->: direct reference to a note entry to avoid duplications in the text representation
 - allowed child elements for each entry type:
   * W: P, X, #, N
-  * P: P (one level), C, #, N
+  * P: P (one level, to attach notes to individual pinyins), C, #, N
   * C: D
   * D: X, #, N
   * X: #, N
   * #: none
   * N: none
 
-The grammar is more or less as follows:
 
-entry_line = "W" word_tag_group {; word_tag_group}
-pinyin_line = "P" pinyin_tag_group {; pinyin_tag_group}
-class_line = "C|" ascii_word
-definition_line = "D" id tags_full ...
-cross_reference_line = "X" ascii_character reference_tag_group {; reference_tag_group}
+Grammar
+
+{} is repeated zero or more times (like *)
+[] is repeated zero or one time (optional)
+
+entry_line = "W" tags_ascii word_entry {; word_entry} {tags_ascii word_entry {; word_entry}}
+pinyin_line = "P" tags_ascii pinyin {; pinyin} {tags_ascii pinyin {; pinyin}}
+class_line = "C" ascii_word
+definition_line = "D" id [tags_full] ...
+cross_reference_line = "X" ascii_symbol tags_ascii reference {; reference} {tags_ascii reference {; reference}}
 comment_line = "#" ...
 note_line = "N" id ...
 note_reference_line "N->" id ...
 
-letter = A-Za-z | "-"
-tag_letter = ascii character - "|" - whitespace
-tag_word = letter {letter}
-hanzi = chinese character | letter
+id = 1-9 {0-9}
+ascii_symbol = any non-special, visible ASCII character excluding |
+tag_letter = A-Za-z0-9 and "-"
+tag_word = tag_letter {tag_letter}
+hanzi = anything except "|#;/／"
 hanzi_word = hanzi {hanzi}
-id = number
-tone = "1" | "2" | "3" | "4" | "5"
-pinyin_syllable = letter {letter} tone
-pinyin = pinyin_syllable {pinyin_syllable}
+pinyin_letter = A-Za-z0-9 and "ê. -,"
+pinyin = pinyin_letter {pinyin_letter}
 word_entry = hanzi_word [("／" | "/") hanzi_word]
-reference = word_entry [letter id]
-tags_ascii = "|" {tag_letter} "|"
-tags_full = "|" {letter} {"#" tag_word} "|"
-word_tag_group = [tags_ascii] word_entry {; word_entry}
-pinyin_tag_group = [tags_ascii] pinyin {; pinyin}
-reference_tag_group = [tags_ascii] reference
-
+reference = word_entry [#D id]
+tags_ascii = "|" {ascii_symbol} "|"
+tags_full = "|" {ascii_symbol} {"#" tag_word} "|"
 */
 
 use nom::{
@@ -124,12 +123,14 @@ pub enum DictLine {
     Comment(String),
 }
 
+
 #[derive(Debug, PartialEq)]
 pub struct ParsedLine {
     pub source_line_start: u32,
     pub source_line_num: u32,
     pub indentation: u32,
-    pub line: Result<DictLine, String>, // TODO can probably done better with a proper error type
+    pub line: String,
+    pub parsed_line: Result<DictLine, String>, // TODO can probably done better with a proper error type
 }
 
 #[derive(Debug, PartialEq, Default)]
@@ -206,11 +207,13 @@ where
                 });
 
                 if let Some(return_line) = return_line {
+                    let parsed_line = parse_line(&return_line.line);
                     return Some(ParsedLine {
                         source_line_start: return_line.source_line_start,
                         source_line_num: return_line.num_source_lines,
                         indentation: cur_indentation as u32,
-                        line: parse_line(&return_line.line),
+                        line: return_line.line,
+                        parsed_line: parsed_line,
                     });
                 }
                 continue;
@@ -218,11 +221,13 @@ where
             break;
         }
         if let Some(return_line) = self.cur_line.take() {
+            let parsed_line = parse_line(&return_line.line);
             return Some(ParsedLine {
                 source_line_start: return_line.source_line_start,
                 source_line_num: return_line.num_source_lines,
                 indentation: self.cur_indentation as u32,
-                line: parse_line(&return_line.line),
+                line: return_line.line,
+                parsed_line: parsed_line,
             });
         }
         None
@@ -254,7 +259,7 @@ fn parse_line(line: &str) -> Result<DictLine, String> {
 fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
     let parse_ascii_tag = delimited(multispace0, none_of("#|"), multispace0);
     let parse_ascii_tags = many0(parse_ascii_tag);
-    let parse_full_tag = preceded(char('#'), take_while1(|c: char| c != '|' && c != '#'));
+    let parse_full_tag = preceded(char('#'), take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'));
     let parse_full_tags = delimited(multispace0, many0(parse_full_tag), multispace0);
     let parse_ascii_full_tags = pair(parse_ascii_tags, parse_full_tags);
 
@@ -318,7 +323,7 @@ fn parse_word_line(word_line: &str) -> IResult<&str, Vec<WordTagGroup>> {
 }
 
 fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
-    let pinyin_parser = delimited(multispace0, take_while1(|c: char| !"|;".contains(c)), multispace0);
+    let pinyin_parser = delimited(multispace0, take_while1(|c: char| c.is_ascii_alphanumeric() || "ê. -,".contains(c)), multispace0);
     separated_list1(char(';'), pinyin_parser).parse(pinyin_list)
 }
 

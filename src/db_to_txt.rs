@@ -1,14 +1,14 @@
+use itertools::Itertools;
 use rusqlite::{Connection, Error as SqliteError, Row};
 use std::collections::{HashMap, HashSet};
 use std::fmt;
 use std::io::Write;
-use itertools::Itertools;
 
 type SqliteId = i64; // TODO common public
 
 const INDENT_STR: &str = " "; // only one byte characters allowed
 const WORD_SEP: &str = "／";
-const ITEMS_SEP: &str = ";";
+const ITEMS_SEP: &str = "; ";
 
 // --- Error Handling ---
 #[derive(Debug)]
@@ -83,9 +83,8 @@ struct CrossReferenceData {
     reference_str: String,
 }
 
-
 fn format_multiline(s: &str, indent_level: usize, indent_char: &str) -> String {
-   let indented_newline = format!("\n{}", indent_char.repeat(indent_level+2));
+    let indented_newline = format!("\n{}", indent_char.repeat(indent_level + 2));
     s.lines().join(&indented_newline)
 }
 
@@ -247,8 +246,10 @@ impl<'a> DbToTxt<'a> {
         let pinyin_data: Result<Vec<PinyinData>> = pinyin_shared_ids
             .iter()
             .map(|pron_shared_id| {
-                let (pinyin_num, note_id, comment_id) =
-                    stmt.query_row([def_id, *pron_shared_id], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?)))?;
+                let (pinyin_num, note_id, comment_id) = stmt
+                    .query_row([def_id, *pron_shared_id], |r| {
+                        Ok((r.get(0)?, r.get(1)?, r.get(2)?))
+                    })?;
                 let tags = self.get_formatted_tags(*pron_shared_id)?;
                 Ok(PinyinData {
                     pinyin_num,
@@ -263,10 +264,9 @@ impl<'a> DbToTxt<'a> {
 
         // group the data and format it into lines
         let mut indent_level = 1;
-        for ((note_id, comment_id), tag_group) in
-            &pinyin_data
-                .into_iter()
-                .chunk_by(|item| (item.note_id, item.comment_id))
+        for ((note_id, comment_id), tag_group) in &pinyin_data
+            .into_iter()
+            .chunk_by(|item| (item.note_id, item.comment_id))
         {
             let tags_pinyins = tag_group
                 .into_iter()
@@ -334,7 +334,8 @@ impl<'a> DbToTxt<'a> {
         // TODO sort tags
         let space = if full_tags.is_empty() { "" } else { " " };
         if ascii_tags.is_empty() && full_tags.is_empty() {
-            Ok(" ".to_owned())
+            // leaving out the || would require checks in case there is a tag group without tags coming after a group with tags on the same line
+            Ok("|| ".to_owned())
         } else {
             Ok(format!("|{}{}{}| ", ascii_tags, space, full_tags))
         }
@@ -361,22 +362,17 @@ impl<'a> DbToTxt<'a> {
             .prepare_cached("SELECT comment FROM dict_comment WHERE id = ?1")?;
         // Write Comment
         if let Some(id) = comment_id {
-            let comment: String = stmt.query_row(
-                [id],
-                |row| row.get(0),
-            )?;
+            let comment: String = stmt.query_row([id], |row| row.get(0))?;
             let comment = format_multiline(&comment, indent, INDENT_STR);
             writeln!(self.writer, "{}# {}", indentation, comment)?;
         }
         // Write Note
         if let Some(id) = note_id {
             let mut stmt = self
-            .conn
-            .prepare_cached("SELECT note, ext_note_id FROM dict_note WHERE id = ?1")?;
-            let (note_txt, ext_id): (String, SqliteId) = stmt.query_row(
-                [id],
-                |row| Ok((row.get(0)?, row.get(1)?)),
-            )?;
+                .conn
+                .prepare_cached("SELECT note, ext_note_id FROM dict_note WHERE id = ?1")?;
+            let (note_txt, ext_id): (String, SqliteId) =
+                stmt.query_row([id], |row| Ok((row.get(0)?, row.get(1)?)))?;
             if self.written_notes.contains(&ext_id) || indent == 0 {
                 // indent == 0 hack for initial header pointer to highest note id
                 writeln!(self.writer, "{}N->{}", indentation, ext_id)?;
@@ -403,7 +399,8 @@ impl<'a> DbToTxt<'a> {
         src_def_id: Option<SqliteId>,
         indent: usize,
     ) -> Result<()> {
-        let mut stmt = self.conn.prepare_cached(r#"
+        let mut stmt = self.conn.prepare_cached(
+            r#"
             SELECT
                 rt.ascii_symbol,
                 r.shared_id,
@@ -422,33 +419,31 @@ impl<'a> DbToTxt<'a> {
                 r.word_id_src = ?1 AND
                 ((?2 IS NULL AND r.definition_id_src IS NULL) OR def_src.id = ?2)
             ORDER BY s.rank, s.rank_relative
-        "#)?;
+        "#,
+        )?;
 
         // 1. Fetch all data into a Vec of CrossReferenceData structs.
         let cross_ref_data_result: rusqlite::Result<Vec<CrossReferenceData>> = stmt
-            .query_map(
-                (src_word_id, src_def_id),
-                |row| {
-                    let shared_id: SqliteId = row.get(1)?;
-                    let trad: String = row.get(4)?;
-                    let simp: String = row.get(5)?;
-                    let dst_ext_def_id: Option<u32> = row.get(6)?;
-                    let word_str = format_word(&trad, &simp);
-                    let reference_str = if let Some(id) = dst_ext_def_id {
-                        format!("{}#D{}", word_str, id)
-                    } else {
-                        word_str
-                    };
+            .query_map((src_word_id, src_def_id), |row| {
+                let shared_id: SqliteId = row.get(1)?;
+                let trad: String = row.get(4)?;
+                let simp: String = row.get(5)?;
+                let dst_ext_def_id: Option<u32> = row.get(6)?;
+                let word_str = format_word(&trad, &simp);
+                let reference_str = if let Some(id) = dst_ext_def_id {
+                    format!("{}#D{}", word_str, id)
+                } else {
+                    word_str
+                };
 
-                    Ok(CrossReferenceData {
-                        ref_type_symbol: row.get(0)?,
-                        tags: self.get_formatted_tags(shared_id)?,
-                        note_id: row.get(2)?,
-                        comment_id: row.get(3)?,
-                        reference_str,
-                    })
-                },
-            )?
+                Ok(CrossReferenceData {
+                    ref_type_symbol: row.get(0)?,
+                    tags: self.get_formatted_tags(shared_id)?,
+                    note_id: row.get(2)?,
+                    comment_id: row.get(3)?,
+                    reference_str,
+                })
+            })?
             .collect();
 
         let cross_ref_data = cross_ref_data_result?;
@@ -460,15 +455,10 @@ impl<'a> DbToTxt<'a> {
 
         // 2. Primary Grouping: Group by ref_type, note_id, and comment_id.
         // Each chunk from this operation represents exactly one line of output.
-        for ((ref_type, note_id, comment_id), group) in &cross_ref_data.into_iter().chunk_by(
-            |item| {
-                (
-                    item.ref_type_symbol.clone(),
-                    item.note_id,
-                    item.comment_id,
-                )
-            },
-        ) {
+        for ((ref_type, note_id, comment_id), group) in &cross_ref_data
+            .into_iter()
+            .chunk_by(|item| (item.ref_type_symbol.clone(), item.note_id, item.comment_id))
+        {
             let items: Vec<_> = group.collect();
 
             // 3. Secondary Grouping (within the line): Group by tags.
@@ -478,7 +468,9 @@ impl<'a> DbToTxt<'a> {
                 .chunk_by(|item| item.tags.clone())
                 .into_iter()
                 .map(|(tags, sub_group)| {
-                    let references = sub_group.map(|item| item.reference_str.clone()).join(ITEMS_SEP);
+                    let references = sub_group
+                        .map(|item| item.reference_str.clone())
+                        .join(ITEMS_SEP);
                     format!("{}{}", tags, references)
                 })
                 .collect();

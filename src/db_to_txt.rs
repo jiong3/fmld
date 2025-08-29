@@ -1,10 +1,13 @@
+// LLM generated with larger modifications
+// LLM input: parser file, txt_to_db.rs
+
 use itertools::Itertools;
 use rusqlite::{Connection, Error as SqliteError, Row};
 use std::collections::{HashMap, HashSet};
 use std::fmt;
 use std::io::Write;
 
-type SqliteId = i64; // TODO common public
+type SqliteId = i64;
 
 const INDENT_STR: &str = " "; // only one byte characters allowed
 const WORD_SEP: &str = "／";

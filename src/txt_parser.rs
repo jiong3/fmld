@@ -9,10 +9,21 @@ Format Description
   * P: pronunciation in pinyin with tone marks, including 5 for neutral tone
   * C: class / part-of-speech
   * D: definition
-  * X: cross-reference, the X is followed by another character indicating the type of reference (e.g. variant, measure word, collocation, ...)
+  * X: cross-reference, the X is followed by another character indicating the type of reference
+    * =: synonym-equal
+    * ~: synonym-similar
+    * !: antonym
+    * ?: could-be-confused-with
+    * <: part-of
+    * >: contains
+    * V: word-variant-of
+    * v: character-variant-of
+    * M: used-with-measure-word
+    * &: collocation
+    * G: word-group
   * #: comment (meta information etc. which is not relevant to readers of the dictionary)
   * N: note, e.g. more detailed explanations
-   * N->: direct reference to a note entry to avoid duplications in the text representation
+    * N->: direct reference to a note entry to avoid duplications in the text representation
 - allowed child elements for each entry type:
   * W: P, X, #, N
   * P: P (one level, to attach notes to individual pinyins), C, #, N
@@ -122,7 +133,6 @@ pub enum DictLine {
     Note(Note),
     Comment(String),
 }
-
 
 #[derive(Debug, PartialEq)]
 pub struct ParsedLine {
@@ -259,26 +269,30 @@ fn parse_line(line: &str) -> Result<DictLine, String> {
 fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
     let parse_ascii_tag = delimited(multispace0, none_of("#|"), multispace0);
     let parse_ascii_tags = many0(parse_ascii_tag);
-    let parse_full_tag = preceded(char('#'), take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'));
-    let parse_full_tags = delimited(multispace0, many0(parse_full_tag), multispace0);
+    let parse_full_tag = delimited(
+        multispace0,
+        preceded(
+            char('#'),
+            take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'),
+        ),
+        multispace0,
+    );
+    let parse_full_tags = many0(parse_full_tag);
     let parse_ascii_full_tags = pair(parse_ascii_tags, parse_full_tags);
 
-    let (remainder, tags) = delimited(multispace0, opt(delimited(
-        terminated(char('|'), multispace0),
+    let (remainder, tags) = delimited(
+        delimited(multispace0, char('|'), multispace0),
         parse_ascii_full_tags,
-        preceded(multispace0, char('|')),
-    )), multispace0)
+        delimited(multispace0, char('|'), multispace0),
+    )
     .parse(tag_str)?;
-    let mut all_tags: Vec<Tag> = vec![];
-    if let Some(tags) = tags {
-        all_tags.extend(tags.0.iter().map(|c| Tag::Ascii(*c)).collect::<Vec<Tag>>());
-        let full_tags: Vec<Tag> = tags
-            .1
-            .iter()
-            .map(|s| Tag::Full(s.trim().to_owned()))
-            .collect();
-        all_tags.extend(full_tags);
-    }
+    let mut all_tags: Vec<Tag> = tags.0.iter().map(|c| Tag::Ascii(*c)).collect();
+    let full_tags: Vec<Tag> = tags
+        .1
+        .iter()
+        .map(|s| Tag::Full(s.trim().to_owned()))
+        .collect();
+    all_tags.extend(full_tags);
     Ok((remainder, all_tags))
 }
 
@@ -323,7 +337,11 @@ fn parse_word_line(word_line: &str) -> IResult<&str, Vec<WordTagGroup>> {
 }
 
 fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
-    let pinyin_parser = delimited(multispace0, take_while1(|c: char| c.is_ascii_alphanumeric() || "ê. -,".contains(c)), multispace0);
+    let pinyin_parser = delimited(
+        multispace0,
+        take_while1(|c: char| c.is_ascii_alphanumeric() || "ê. -,".contains(c)),
+        multispace0,
+    );
     separated_list1(char(';'), pinyin_parser).parse(pinyin_list)
 }
 

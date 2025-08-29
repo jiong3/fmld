@@ -185,6 +185,26 @@ ON "dict_shared" ("rank", "rank_relative");
 CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
 ON "dict_pron_definition" ("definition_id");
 
+/* Views (for manual browsing) */
+CREATE VIEW trad_simp_class_pinyin_def AS
+SELECT
+    w.trad,
+    w.simp,
+    c.name AS class_name,
+    GROUP_CONCAT(p.pinyin_mark ORDER BY p_s.rank, p_s.rank_relative),
+    def.ext_def_id,
+    def.definition
+FROM dict_definition def
+JOIN dict_shared s ON def.shared_id = s.id
+JOIN dict_word w ON def.word_id = w.id
+JOIN dict_class c ON def.class_id = c.id
+LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
+LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
+LEFT JOIN dict_pron p ON sp.pron_id = p.id
+LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
+GROUP BY def.id
+ORDER BY s.rank, s.rank_relative;
+
 "#;
 
 #[derive(Debug, PartialEq)]
@@ -217,7 +237,7 @@ pub struct TxtToDbErrorLine {
     pub source_line_start: u32,
     pub source_line_num: u32,
     pub indentation: u32,
-    // TODO add complete line here? pub line: String,
+    pub line: String,
     pub error: TxtToDbError,
 }
 
@@ -227,6 +247,7 @@ pub enum TxtToDbError {
     SqliteError { source: SqliteError },
     InvalidAsciiTag(char),
     NoUsableParentNode,
+    UnknownReferenceType(char),
 }
 
 pub type Result<T> = std::result::Result<T, TxtToDbError>;
@@ -241,6 +262,7 @@ impl fmt::Display for TxtToDbError {
                 f,
                 "No usable parent node, check indentation and if the entry is compatible to previous line."
             ),
+            Self::UnknownReferenceType(ref_type) => write!(f, "Unknown reference type X?: {}", ref_type),
         }
     }
 }
@@ -264,6 +286,7 @@ impl std::error::Error for TxtToDbError {
             TxtToDbError::SqliteError { ref source } => Some(source),
             TxtToDbError::InvalidAsciiTag(_) => None,
             TxtToDbError::NoUsableParentNode => None,
+            TxtToDbError::UnknownReferenceType(_) => None, // TODO?
         }
     }
 }
@@ -299,24 +322,27 @@ impl<'a> TxtToDb<'a> {
             )
             .unwrap();
         let parser = ParserIterator::new(lines.into_iter());
-        for parsed_line in parser {
-            match parsed_line.line {
+        for line in parser {
+            // TODO skip errors until indentation is zero again
+            match line.parsed_line {
                 Ok(parsed) => {
-                    let r = self.add_line_to_db(parsed_line.indentation, parsed);
+                    let r = self.add_line_to_db(line.indentation, parsed);
                     if let Err(r) = r {
                         self.errors.push(TxtToDbErrorLine {
-                            source_line_start: parsed_line.source_line_start,
-                            source_line_num: parsed_line.source_line_num,
-                            indentation: parsed_line.indentation,
+                            source_line_start: line.source_line_start,
+                            source_line_num: line.source_line_num,
+                            indentation: line.indentation,
+                            line: line.line,
                             error: r,
                         });
                     }
                 }
                 Err(e) => {
                     self.errors.push(TxtToDbErrorLine {
-                        source_line_start: parsed_line.source_line_start,
-                        source_line_num: parsed_line.source_line_num,
-                        indentation: parsed_line.indentation,
+                        source_line_start: line.source_line_start,
+                        source_line_num: line.source_line_num,
+                        indentation: line.indentation,
+                        line: line.line,
                         error: TxtToDbError::ParseError { source: e },
                     });
                 }
@@ -519,7 +545,7 @@ impl<'a> TxtToDb<'a> {
                 'M' => "used-with-measure-word",
                 '&' => "collocation",
                 'G' => "word-group",
-                _ => todo!(), // TODO error not a valid reference type + ascii symbol
+                _ => return Err(TxtToDbError::UnknownReferenceType(reference.ref_type))
             };
 
             self.conn.execute(

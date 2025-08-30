@@ -134,20 +134,18 @@ pub enum DictLine {
     Comment(String),
 }
 
-#[derive(Debug, PartialEq)]
-pub struct ParsedLine {
+#[derive(Debug, PartialEq, Default)]
+pub struct LineInfo {
     pub source_line_start: u32,
     pub source_line_num: u32,
-    pub indentation: u32,
+    pub indentation: usize,
     pub line: String,
-    pub parsed_line: Result<DictLine, String>, // TODO can probably done better with a proper error type
 }
 
-#[derive(Debug, PartialEq, Default)]
-struct CurLine {
-    line: String,
-    source_line_start: u32,
-    num_source_lines: u32,
+#[derive(Debug, PartialEq)]
+pub struct ParsedLine {
+    pub line: LineInfo,
+    pub parsed_line: Result<DictLine, ()>,
 }
 
 #[derive(Debug, PartialEq, Default)]
@@ -157,8 +155,7 @@ where
 {
     inner: I,
     inner_line_count: u32,
-    cur_line: Option<CurLine>,
-    cur_indentation: usize,
+    cur_line: Option<LineInfo>,
 }
 
 impl<I> ParserIterator<I>
@@ -170,7 +167,6 @@ where
             inner: inner,
             inner_line_count: 0,
             cur_line: None,
-            cur_indentation: 0,
         }
     }
 }
@@ -187,42 +183,36 @@ where
             if let Some(line) = self.inner.next() {
                 self.inner_line_count += 1;
 
-                // count and remove leading spaces
-                let line_content = line.trim_start_matches(' '); // TODO detect indentation tab vs space based on header comment
+                // count and remove leading spaces or tabs, currently no check if they are mixed
+                let line_content = line.trim_start();
                 if line_content.len() < 2 {
                     break;
                 }
                 let indentation = line.len() - line_content.len();
-                // TODO check if line.trim() removes tabs, error in case tabs are used
 
                 // check if current line belongs to previous line (indentation +2)
-                if indentation > self.cur_indentation + 1 {
-                    if let Some(ref mut cur_line) = self.cur_line {
+                if let Some(ref mut cur_line) = self.cur_line {
+                    if indentation > cur_line.indentation + 1 {
                         cur_line.line.push_str("\n");
-                        cur_line.line.push_str(&line[self.cur_indentation + 2..]);
-                        cur_line.num_source_lines += 1;
+                        cur_line.line.push_str(&line[cur_line.indentation + 2..]);
+                        cur_line.source_line_num += 1;
+                        continue;
                     }
-                    // TODO else would be an error
-                    continue;
                 }
                 // new line, get current line so that it can be returned after storing the new line
                 let return_line = self.cur_line.take();
-                let cur_indentation = self.cur_indentation;
 
-                self.cur_indentation = indentation;
-                self.cur_line = Some(CurLine {
+                self.cur_line = Some(LineInfo {
                     line: line_content.to_owned(),
                     source_line_start: self.inner_line_count,
-                    num_source_lines: 1,
+                    source_line_num: 1,
+                    indentation: indentation
                 });
 
                 if let Some(return_line) = return_line {
                     let parsed_line = parse_line(&return_line.line);
                     return Some(ParsedLine {
-                        source_line_start: return_line.source_line_start,
-                        source_line_num: return_line.num_source_lines,
-                        indentation: cur_indentation as u32,
-                        line: return_line.line,
+                        line: return_line,
                         parsed_line: parsed_line,
                     });
                 }
@@ -233,10 +223,7 @@ where
         if let Some(return_line) = self.cur_line.take() {
             let parsed_line = parse_line(&return_line.line);
             return Some(ParsedLine {
-                source_line_start: return_line.source_line_start,
-                source_line_num: return_line.num_source_lines,
-                indentation: self.cur_indentation as u32,
-                line: return_line.line,
+                line: return_line,
                 parsed_line: parsed_line,
             });
         }
@@ -244,7 +231,7 @@ where
     }
 }
 
-fn parse_line(line: &str) -> Result<DictLine, String> {
+fn parse_line(line: &str) -> Result<DictLine, ()> {
     let line_parser = alt((
         map(preceded(char('W'), parse_word_line), DictLine::Word),
         map(preceded(char('P'), parse_pinyin_line), DictLine::Pinyin),
@@ -262,7 +249,7 @@ fn parse_line(line: &str) -> Result<DictLine, String> {
     ));
     match all_consuming(line_parser).parse(line) {
         Ok((_remainder, dict_line)) => Ok(dict_line),
-        Err(e) => Err(e.to_string()),
+        Err(e) => Err(()),
     }
 }
 

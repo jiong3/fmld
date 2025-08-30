@@ -1,11 +1,8 @@
 use rusqlite::{Connection, Error as SqliteError};
 
-use crate::pinyin;
+use nom;
 
-use core::ascii;
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
-use std::path::Path;
+use crate::pinyin;
 
 use crate::txt_parser::*;
 
@@ -215,12 +212,14 @@ struct CrossReferenceEntry {
     src_definition_id: Option<SqliteId>,
     dst_word: Word,
     dst_ext_def_id: Option<u32>,
+    err_line_idx: usize,
 }
 
 #[derive(Debug)]
 struct NoteReferenceEntry {
     target_shared_id: SqliteId,
     ext_note_id: u32,
+    err_line_idx: usize,
 }
 
 #[derive(Debug, PartialEq, Copy, Clone)]
@@ -229,25 +228,23 @@ enum DictNode {
     Pinyin((SqliteId, SqliteId)),               // shared_id, shared_pron_id
     Class(SqliteId),                            // class_id
     Definition((SqliteId, SqliteId, SqliteId)), // shared_id, word_id, definition_id
-    CrossReference(SqliteId),                   // shared_id,
+    CrossReference(SqliteId),                   // shared_id
 }
 
 #[derive(Debug)] // TODO Display
 pub struct TxtToDbErrorLine {
-    pub source_line_start: u32,
-    pub source_line_num: u32,
-    pub indentation: u32,
-    pub line: String,
+    pub err_line_idx: usize,
     pub error: TxtToDbError,
 }
 
 #[derive(Debug)]
 pub enum TxtToDbError {
-    ParseError { source: String },
+    ParseError,
     SqliteError { source: SqliteError },
     InvalidAsciiTag(char),
     NoUsableParentNode,
     UnknownReferenceType(char),
+    UnknownReferenceTarget(String),
 }
 
 pub type Result<T> = std::result::Result<T, TxtToDbError>;
@@ -255,21 +252,20 @@ pub type Result<T> = std::result::Result<T, TxtToDbError>;
 impl fmt::Display for TxtToDbError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::ParseError { source } => write!(f, "{}", source),
+            Self::ParseError => write!(f, "Parser Error"),
             Self::SqliteError { source } => write!(f, "{}", source),
             Self::InvalidAsciiTag(ascii_tag) => write!(f, "Invalid ASCII tag: {}", ascii_tag),
             Self::NoUsableParentNode => write!(
                 f,
                 "No usable parent node, check indentation and if the entry is compatible to previous line."
             ),
-            Self::UnknownReferenceType(ref_type) => write!(f, "Unknown reference type X?: {}", ref_type),
+            Self::UnknownReferenceType(ref_type) => {
+                write!(f, "Unknown reference type X?: {}", ref_type)
+            }
+            Self::UnknownReferenceTarget(word) => {
+                write!(f, "Unknown reference target X?: {}", word)
+            }
         }
-    }
-}
-
-impl From<String> for TxtToDbError {
-    fn from(err: String) -> Self {
-        Self::ParseError { source: err }
     }
 }
 
@@ -282,11 +278,12 @@ impl From<SqliteError> for TxtToDbError {
 impl std::error::Error for TxtToDbError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match *self {
-            TxtToDbError::ParseError { ref source } => None, // TODO
+            TxtToDbError::ParseError => None,
             TxtToDbError::SqliteError { ref source } => Some(source),
             TxtToDbError::InvalidAsciiTag(_) => None,
             TxtToDbError::NoUsableParentNode => None,
-            TxtToDbError::UnknownReferenceType(_) => None, // TODO?
+            TxtToDbError::UnknownReferenceType(_) => None,
+            TxtToDbError::UnknownReferenceTarget(_) => None,
         }
     }
 }
@@ -298,6 +295,7 @@ pub struct TxtToDb<'a> {
     line_stack: Vec<Vec<DictNode>>,
     cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
     note_references: Vec<NoteReferenceEntry>,
+    err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for errors
     pub errors: Vec<TxtToDbErrorLine>,
 }
 
@@ -311,6 +309,7 @@ impl<'a> TxtToDb<'a> {
             line_stack: vec![],
             cross_references: vec![],
             note_references: vec![],
+            err_lines: vec![],
             errors: vec![],
         }
     }
@@ -322,29 +321,34 @@ impl<'a> TxtToDb<'a> {
             )
             .unwrap();
         let parser = ParserIterator::new(lines.into_iter());
+        let mut cur_word = "header".to_owned();
+        let mut cur_word_error = false;
         for line in parser {
-            // TODO skip errors until indentation is zero again
             match line.parsed_line {
                 Ok(parsed) => {
-                    let r = self.add_line_to_db(line.indentation, parsed);
-                    if let Err(r) = r {
-                        self.errors.push(TxtToDbErrorLine {
-                            source_line_start: line.source_line_start,
-                            source_line_num: line.source_line_num,
-                            indentation: line.indentation,
-                            line: line.line,
-                            error: r,
-                        });
+                    if let DictLine::Word(word_line) = &parsed {
+                        cur_word = word_line
+                            .first()
+                            .and_then(|w| w.words.first().map(|v| v.trad.clone()))
+                            .unwrap_or("unknown".to_owned());
+                        cur_word_error = false;
+                    }
+                    if cur_word_error {
+                        continue;
+                    }
+                    let (is_ok, keep_line) = self.add_line_to_db(&line.line, parsed);
+                    cur_word_error = cur_word_error || !is_ok;
+                    if keep_line {
+                        self.err_lines.push((cur_word.clone(), line.line));
                     }
                 }
                 Err(e) => {
                     self.errors.push(TxtToDbErrorLine {
-                        source_line_start: line.source_line_start,
-                        source_line_num: line.source_line_num,
-                        indentation: line.indentation,
-                        line: line.line,
-                        error: TxtToDbError::ParseError { source: e },
+                        err_line_idx: self.err_lines.len(),
+                        error: TxtToDbError::ParseError,
                     });
+                    self.err_lines.push((cur_word.clone(), line.line));
+                    cur_word_error = true;
                 }
             }
         }
@@ -433,7 +437,7 @@ impl<'a> TxtToDb<'a> {
         Ok(pinyin_entry)
     }
 
-    fn create_class_entry(&self, class_name: &str) -> Result<DictNode> {
+    fn create_class_entry(&self, class_name: &str) -> Result<Vec<DictNode>> {
         let mut stmt = self
             .conn
             .prepare_cached("INSERT OR IGNORE INTO dict_class (name) VALUES (?1)")?;
@@ -442,7 +446,7 @@ impl<'a> TxtToDb<'a> {
             .conn
             .prepare_cached("SELECT id FROM dict_class WHERE name=?1")?;
         let class_id: SqliteId = stmt.query_row((class_name,), |row| row.get(0))?;
-        Ok(DictNode::Class(class_id))
+        Ok(vec![DictNode::Class(class_id)])
     }
 
     fn create_definition_entry(
@@ -499,6 +503,7 @@ impl<'a> TxtToDb<'a> {
             src_definition_id: definition_id_src,
             dst_word: word_dst,
             dst_ext_def_id: ext_def_id_dst,
+            err_line_idx: self.err_lines.len()
         });
 
         Ok(ref_entry)
@@ -545,7 +550,7 @@ impl<'a> TxtToDb<'a> {
                 'M' => "used-with-measure-word",
                 '&' => "collocation",
                 'G' => "word-group",
-                _ => return Err(TxtToDbError::UnknownReferenceType(reference.ref_type))
+                _ => return Err(TxtToDbError::UnknownReferenceType(reference.ref_type)),
             };
 
             self.conn.execute(
@@ -629,27 +634,40 @@ impl<'a> TxtToDb<'a> {
         Ok(1)
     }
 
-    fn add_line_to_db(&mut self, indentation: u32, line: DictLine) -> Result<()> {
-        self.line_stack.truncate(indentation as usize);
+    fn add_line_to_db(&mut self, line_info: &LineInfo, line: DictLine) -> (bool, bool) {
+        self.line_stack.truncate(line_info.indentation);
 
-        let line_items = match line {
-            DictLine::Word(word_tag_groups) => self.add_word_line_to_db(word_tag_groups)?,
-            DictLine::Pinyin(pinyin_tag_groups) => self.add_pinyin_line_to_db(pinyin_tag_groups)?,
+        let (line_items, keep_line) = match line {
+            DictLine::Word(word_tag_groups) => (self.add_word_line_to_db(word_tag_groups), false),
+            DictLine::Pinyin(pinyin_tag_groups) => (self.add_pinyin_line_to_db(pinyin_tag_groups), false),
             DictLine::Class(class_name) => {
-                let class_entry = self.create_class_entry(&class_name)?;
-                vec![class_entry]
+                (self.create_class_entry(&class_name), false)
             }
             DictLine::Definition(definition_tag) => {
-                self.add_definition_line_to_db(definition_tag)?
+                (self.add_definition_line_to_db(definition_tag), false)
             }
             DictLine::CrossReference(reference_tag_groups) => {
-                self.add_cross_reference_line_to_db(reference_tag_groups)?
+                (self.add_cross_reference_line_to_db(reference_tag_groups), true)
             }
-            DictLine::Note(note) => self.add_note_line_to_db(note)?,
-            DictLine::Comment(comment) => self.add_comment_line_to_db(comment)?,
+            DictLine::Note(note) => {
+                let is_link = note.is_link;
+                (self.add_note_line_to_db(note), is_link)
+            },
+            DictLine::Comment(comment) => (self.add_comment_line_to_db(comment), false)
         };
-        self.line_stack.push(line_items);
-        Ok(())
+        match line_items {
+            Ok(line_items) => {
+                self.line_stack.push(line_items);
+                (true, keep_line)
+            }
+            Err(r) => {
+                self.errors.push(TxtToDbErrorLine {
+                            err_line_idx: self.err_lines.len(),
+                            error: r,
+                        });
+                (false, true)
+            }
+        }
     }
 
     fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
@@ -722,6 +740,7 @@ impl<'a> TxtToDb<'a> {
                     self.note_references.push(NoteReferenceEntry {
                         target_shared_id: shared_id,
                         ext_note_id: note.id,
+                        err_line_idx: self.err_lines.len(),
                     });
                     num_targets += 1;
                 } else {

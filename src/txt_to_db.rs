@@ -1,15 +1,14 @@
 use rusqlite::{Connection, Error as SqliteError};
 
-use nom;
-
 use crate::pinyin;
 
 use crate::txt_parser::*;
 
 use std::{fmt, mem};
 
-type SqliteId = i64;
+type SqliteId = i64; // TODO common module?
 
+// TODO move to separate file
 const DB_SCHEMA: &str = r#"
 /* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
@@ -231,7 +230,7 @@ enum DictNode {
     CrossReference(SqliteId),                   // shared_id
 }
 
-#[derive(Debug)] // TODO Display
+#[derive(Debug)]
 pub struct TxtToDbErrorLine {
     pub err_line_idx: usize,
     pub error: TxtToDbError,
@@ -244,7 +243,8 @@ pub enum TxtToDbError {
     InvalidAsciiTag(char),
     NoUsableParentNode,
     UnknownReferenceType(char),
-    UnknownReferenceTarget(String),
+    ReferenceTargetNotFound(String),
+    NoteIdNotFound(u32),
 }
 
 pub type Result<T> = std::result::Result<T, TxtToDbError>;
@@ -257,13 +257,16 @@ impl fmt::Display for TxtToDbError {
             Self::InvalidAsciiTag(ascii_tag) => write!(f, "Invalid ASCII tag: {}", ascii_tag),
             Self::NoUsableParentNode => write!(
                 f,
-                "No usable parent node, check indentation and if the entry is compatible to previous line."
+                "No usable parent node, check indentation and whether the entry is compatible to previous line."
             ),
             Self::UnknownReferenceType(ref_type) => {
                 write!(f, "Unknown reference type X?: {}", ref_type)
             }
-            Self::UnknownReferenceTarget(word) => {
-                write!(f, "Unknown reference target X?: {}", word)
+            Self::ReferenceTargetNotFound(word) => {
+                write!(f, "Reference target not found: {}", word)
+            }
+            Self::NoteIdNotFound(id) => {
+                write!(f, "No note with found for id: {}", id)
             }
         }
     }
@@ -283,7 +286,8 @@ impl std::error::Error for TxtToDbError {
             TxtToDbError::InvalidAsciiTag(_) => None,
             TxtToDbError::NoUsableParentNode => None,
             TxtToDbError::UnknownReferenceType(_) => None,
-            TxtToDbError::UnknownReferenceTarget(_) => None,
+            TxtToDbError::ReferenceTargetNotFound(_) => None,
+            TxtToDbError::NoteIdNotFound(_) => None,
         }
     }
 }
@@ -301,7 +305,6 @@ pub struct TxtToDb<'a> {
 
 impl<'a> TxtToDb<'a> {
     pub fn new(conn: &'a Connection) -> Self {
-        // TODO proper error handling instead of unwrap, use default init for rest?
         conn.execute_batch(DB_SCHEMA).unwrap();
         TxtToDb {
             conn,
@@ -355,6 +358,27 @@ impl<'a> TxtToDb<'a> {
         self.complete_cross_reference_entries();
         self.complete_id_reference_entries();
         self.conn.execute("COMMIT", ()).unwrap();
+    }
+
+    pub fn print_errors(&self) {
+        for err in &self.errors {
+            let (err_word, line_info) = &self.err_lines[err.err_line_idx];
+            if line_info.source_line_num > 1 {
+                println!(
+                    "Error for {} in line {} to line {}:",
+                    err_word,
+                    line_info.source_line_start,
+                    line_info.source_line_start + line_info.source_line_num
+                );
+            } else {
+                println!(
+                    "Error for {} in line {}:",
+                    err_word, line_info.source_line_start
+                );
+            }
+            println!("  {}", line_info.line);
+            println!("  {}", err.error);
+        }
     }
 
     fn add_tag_for_entry(
@@ -503,14 +527,13 @@ impl<'a> TxtToDb<'a> {
             src_definition_id: definition_id_src,
             dst_word: word_dst,
             dst_ext_def_id: ext_def_id_dst,
-            err_line_idx: self.err_lines.len()
+            err_line_idx: self.err_lines.len(),
         });
 
         Ok(ref_entry)
     }
 
-    // TODO error if entries are not in dictionary
-    fn complete_cross_reference_entries(&mut self) -> Result<()> {
+    fn complete_cross_reference_entries(&mut self) {
         for reference in mem::take(&mut self.cross_references) {
             // identify target word and definition
             let trad = &reference.dst_word.trad;
@@ -519,18 +542,39 @@ impl<'a> TxtToDb<'a> {
                 .simp
                 .as_ref()
                 .unwrap_or(&reference.dst_word.trad);
-            let dst_word_id: SqliteId = self.conn.query_row(
-                "SELECT id FROM dict_word WHERE trad=?1 AND simp=?2",
-                (trad, simp),
-                |row| row.get(0),
-            )?;
+            let potential_dst_word_id: std::result::Result<SqliteId, rusqlite::Error> =
+                self.conn.query_row(
+                    "SELECT id FROM dict_word WHERE trad=?1 AND simp=?2",
+                    (trad, simp),
+                    |row| row.get(0),
+                );
+            let Ok(dst_word_id) = potential_dst_word_id else {
+                self.errors.push(TxtToDbErrorLine {
+                    err_line_idx: reference.err_line_idx,
+                    error: TxtToDbError::ReferenceTargetNotFound(format!(
+                        "{}",
+                        &reference.dst_word
+                    )),
+                });
+                continue;
+            };
             let dst_definition_id: Option<SqliteId> = {
                 if let Some(dst_ext_ref_id) = reference.dst_ext_def_id {
-                    let dst_definition_id: SqliteId = self.conn.query_row(
+                    let potential_dst_definition_id = self.conn.query_row(
                         "SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2",
                         (dst_word_id, dst_ext_ref_id),
                         |row| row.get(0),
-                    )?;
+                    );
+                    let Ok(dst_definition_id) = potential_dst_definition_id else {
+                        self.errors.push(TxtToDbErrorLine {
+                            err_line_idx: reference.err_line_idx,
+                            error: TxtToDbError::ReferenceTargetNotFound(format!(
+                                "{}D#{}",
+                                &reference.dst_word, dst_ext_ref_id
+                            )),
+                        });
+                        continue;
+                    };
                     Some(dst_definition_id)
                 } else {
                     None
@@ -550,22 +594,33 @@ impl<'a> TxtToDb<'a> {
                 'M' => "used-with-measure-word",
                 '&' => "collocation",
                 'G' => "word-group",
-                _ => return Err(TxtToDbError::UnknownReferenceType(reference.ref_type)),
+                _ => {
+                    self.errors.push(TxtToDbErrorLine {
+                        err_line_idx: reference.err_line_idx,
+                        error: TxtToDbError::UnknownReferenceType(reference.ref_type),
+                    });
+                    continue;
+                }
             };
 
-            self.conn.execute(
-                "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol) VALUES (?1,?2)",
-                (ref_type_full, reference.ref_type.to_string()),
-            )?;
-            let ref_type_id: SqliteId = self.conn.query_row(
-                "SELECT id FROM dict_ref_type WHERE type=?1 ",
-                (ref_type_full,),
-                |row| row.get(0),
-            )?;
+            self.conn
+                .execute(
+                    "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol) VALUES (?1,?2)",
+                    (ref_type_full, reference.ref_type.to_string()),
+                )
+                .unwrap();
+            let ref_type_id: SqliteId = self
+                .conn
+                .query_row(
+                    "SELECT id FROM dict_ref_type WHERE type=?1 ",
+                    (ref_type_full,),
+                    |row| row.get(0),
+                )
+                .unwrap();
             // create reference and link to shared_id
             let mut stmt = self
             .conn
-            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)")?;
+            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
             stmt.execute((
                 reference.shared_id,
                 ref_type_id,
@@ -573,9 +628,9 @@ impl<'a> TxtToDb<'a> {
                 reference.src_definition_id,
                 dst_word_id,
                 dst_definition_id,
-            ))?;
+            ))
+            .unwrap();
         }
-        Ok(())
     }
 
     fn complete_id_reference_entries(&mut self) -> Result<()> {
@@ -584,7 +639,15 @@ impl<'a> TxtToDb<'a> {
                 "SELECT id FROM dict_note WHERE ext_note_id=?1",
                 (reference.ext_note_id,),
                 |row| row.get(0),
-            )?;
+            );
+            let Ok(note_id) = note_id else {
+                self.errors.push(TxtToDbErrorLine {
+                    err_line_idx: reference.err_line_idx,
+                    error: TxtToDbError::NoteIdNotFound(reference.ext_note_id),
+                });
+                continue;
+            };
+            // TODO add error?
             self.add_note_to_entry(note_id, reference.target_shared_id)?;
         }
         Ok(())
@@ -639,21 +702,22 @@ impl<'a> TxtToDb<'a> {
 
         let (line_items, keep_line) = match line {
             DictLine::Word(word_tag_groups) => (self.add_word_line_to_db(word_tag_groups), false),
-            DictLine::Pinyin(pinyin_tag_groups) => (self.add_pinyin_line_to_db(pinyin_tag_groups), false),
-            DictLine::Class(class_name) => {
-                (self.create_class_entry(&class_name), false)
+            DictLine::Pinyin(pinyin_tag_groups) => {
+                (self.add_pinyin_line_to_db(pinyin_tag_groups), false)
             }
+            DictLine::Class(class_name) => (self.create_class_entry(&class_name), false),
             DictLine::Definition(definition_tag) => {
                 (self.add_definition_line_to_db(definition_tag), false)
             }
-            DictLine::CrossReference(reference_tag_groups) => {
-                (self.add_cross_reference_line_to_db(reference_tag_groups), true)
-            }
+            DictLine::CrossReference(reference_tag_groups) => (
+                self.add_cross_reference_line_to_db(reference_tag_groups),
+                true,
+            ),
             DictLine::Note(note) => {
                 let is_link = note.is_link;
                 (self.add_note_line_to_db(note), is_link)
-            },
-            DictLine::Comment(comment) => (self.add_comment_line_to_db(comment), false)
+            }
+            DictLine::Comment(comment) => (self.add_comment_line_to_db(comment), false),
         };
         match line_items {
             Ok(line_items) => {
@@ -662,9 +726,9 @@ impl<'a> TxtToDb<'a> {
             }
             Err(r) => {
                 self.errors.push(TxtToDbErrorLine {
-                            err_line_idx: self.err_lines.len(),
-                            error: r,
-                        });
+                    err_line_idx: self.err_lines.len(),
+                    error: r,
+                });
                 (false, true)
             }
         }

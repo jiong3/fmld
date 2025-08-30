@@ -66,13 +66,15 @@ use nom::{
     IResult, Parser,
     branch::alt,
     bytes::complete::{tag, take_while1},
-    character::complete::{alphanumeric1, anychar, char, multispace0, none_of, u32},
+    character::complete::{anychar, char, multispace0, none_of, u32},
     combinator::{all_consuming, map, opt, rest, value},
-    error::Error,
     multi::{many0, many1, separated_list1},
     sequence::{delimited, pair, preceded, terminated},
 };
+
 use std::fmt;
+
+const WORD_SEP: &str = "／";
 
 #[derive(Debug, PartialEq)]
 pub enum Tag {
@@ -92,6 +94,17 @@ pub struct Word {
     pub trad: String,
     pub simp: Option<String>,
 }
+
+impl fmt::Display for Word {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        if let Some(s) = &self.simp {
+            write!(f, "{}{}{}", self.trad, WORD_SEP, s)
+        } else {
+            write!(f, "{}", self.trad)
+        }
+    }
+}
+
 #[derive(Debug, PartialEq)]
 pub struct WordTagGroup {
     pub tags: Tags,

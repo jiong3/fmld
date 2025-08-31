@@ -10,7 +10,7 @@ use std::io::Write;
 type SqliteId = i64;
 
 const INDENT_STR: &str = " "; // only one byte characters allowed
-const WORD_SEP: &str = "／";
+const WORD_SEP: &str = "／"; // TODO shared module?
 const ITEMS_SEP: &str = "; ";
 
 // --- Error Handling ---

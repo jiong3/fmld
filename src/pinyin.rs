@@ -12,6 +12,11 @@ pub fn pinyin_mark_from_num(pinyin_num: &str) -> String {
     pinyin_mark_syllables.join("")
 }
 
+pub fn count_syllables(pinyin_num: &str) -> usize {
+    let pattern = ['1', '2', '3', '4', '5'];
+    pinyin_num.chars().filter(|c| pattern.contains(c)).count()
+}
+
 fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
     // "normalize" pinyin, could be extended for handling of MDBG u:
     let pinyin = pinyin_num.replace("v", "ü").replace("V", "Ü");

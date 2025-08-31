@@ -633,7 +633,7 @@ impl<'a> TxtToDb<'a> {
         }
     }
 
-    fn complete_id_reference_entries(&mut self) -> Result<()> {
+    fn complete_id_reference_entries(&mut self) {
         for reference in mem::take(&mut self.note_references) {
             let note_id = self.conn.query_row(
                 "SELECT id FROM dict_note WHERE ext_note_id=?1",
@@ -647,10 +647,9 @@ impl<'a> TxtToDb<'a> {
                 });
                 continue;
             };
-            // TODO add error?
-            self.add_note_to_entry(note_id, reference.target_shared_id)?;
+            // unwrap since note_id and shared_id must be ok here
+            self.add_note_to_entry(note_id, reference.target_shared_id).unwrap();
         }
-        Ok(())
     }
 
     fn create_note(&self, ext_note_id: u32, note_txt: &str) -> Result<SqliteId> {
@@ -931,9 +930,11 @@ fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'static s
         'a' => Some(("ai-human", "ai")),
         'w' => Some(("wiktionary", "source")),
         'm' => Some(("mdbg", "source")),
-        '+' => Some(("high", "relevance")),
-        '-' => Some(("low", "relevance")),
-        'x' => Some(("deleted", "relevance")),
+        '+' => Some(("high-relevance", "relevance")),
+        '-' => Some(("low-relevance", "relevance")),
+        'x' => Some(("irrelevant", "relevance")),
+        'X' => Some(("deleted", "relevance")),
+        // TODO i for irregular? e.g. to disable automatic checks for some pinyins
         _ => None,
     }
 }

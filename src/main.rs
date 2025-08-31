@@ -1,5 +1,6 @@
 use fmld::txt_to_db::*;
 use fmld::db_to_txt::*;
+use fmld::db_check::*;
 
 use std::fs::File;
 use std::fs::remove_file;
@@ -20,7 +21,14 @@ fn main() -> io::Result<()> {
     let lines_iterator = reader.lines().map_while(io::Result::ok); // TODO move this into TxtToDb??
     let mut txt2db = TxtToDb::new(&db_conn);
     txt2db.txt_to_db(lines_iterator);
-    println!("Errors: {:?}", txt2db.errors);
+    txt2db.print_errors();
+
+    let check_result = check_entries(&db_conn);
+    if let Ok(err_list) = check_result {
+        for err in err_list {
+            println!("{}", err);
+        }
+    }
 
     let path_out = Path::new("test.txt");
     let file_out = File::create(path_out)?;

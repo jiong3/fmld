@@ -2,6 +2,7 @@
 Format Description
 
 - encoded in utf-8
+ - character variant mapping: 裏->裡 TODO not 100% realized
 - single indentation creates a child element
 - double indentation relative to previous line continues previous line (intended for notes and comments)
 - the first letter indicates the content of the line:
@@ -32,6 +33,13 @@ Format Description
   * X: #, N
   * #: none
   * N: none
+- every entry must have at least one definition, leading to he following minimum structure: W->P->C->D
+- notes and definitions can contain references to words using brackets like [嗎／吗]
+  or [嗎／吗#D1] if the link is to a single definition
+
+
+TODO E for examples with translations, not full sentences? SQL representation?
+  e.g. E||trad/simp (translation); trad/simp; ...
 
 
 Grammar
@@ -39,7 +47,7 @@ Grammar
 {} is repeated zero or more times (like *)
 [] is repeated zero or one time (optional)
 
-entry_line = "W" tags_ascii word_entry {; word_entry} {tags_ascii word_entry {; word_entry}}
+entry_line = "W" tags_ascii word_entry
 pinyin_line = "P" tags_ascii pinyin {; pinyin} {tags_ascii pinyin {; pinyin}}
 class_line = "C" ascii_word
 definition_line = "D" id [tags_full] ...

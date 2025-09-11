@@ -8,7 +8,7 @@ use std::{fmt, mem};
 
 type SqliteId = i64; // TODO common module?
 
-// TODO move to separate file
+// TODO move to separate file + add user_version pragma
 const DB_SCHEMA: &str = r#"
 /* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
@@ -736,26 +736,13 @@ impl<'a> TxtToDb<'a> {
     fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
         for word_tag_group in word_tag_groups {
-            for word in word_tag_group.words {
+            for word in &word_tag_group.words {
                 let word_entry = self.create_word_entry(&word, &word_tag_group.tags)?;
                 if line_items.is_empty() {
                     line_items.push(word_entry);
                 } else {
-                    // add variant cross reference to first item
-                    if let DictNode::Word((_, word_id)) = word_entry {
-                        if let Some(DictNode::Word((_, main_word_id))) = line_items.last() {
-                            self.create_cross_reference_entry(
-                                'v',
-                                word_id,
-                                None,
-                                word.clone(),
-                                None,
-                                &word_tag_group.tags,
-                            )?;
-                        } else {
-                            debug_assert!(false);
-                        }
-                    }
+                    // Ignore more words, even though the parser can still parse a list of word groups. The original
+                    // intention was to have the option for several variants on one line.
                 }
             }
         }

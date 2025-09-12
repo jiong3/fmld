@@ -7,6 +7,8 @@ use std::collections::{HashMap, HashSet};
 use std::fmt;
 use std::io::Write;
 
+use crate::config;
+
 type SqliteId = i64;
 
 const INDENT_STR: &str = " "; // only one byte characters allowed
@@ -319,28 +321,41 @@ impl<'a> DbToTxt<'a> {
             "SELECT t.ascii_symbol, t.tag, t.type FROM dict_shared_tag st JOIN dict_tag t ON st.tag_id = t.id WHERE st.for_shared_id = ?1",
         )?;
         let mut rows = stmt.query([shared_id])?;
-        let mut ascii_tags = String::new();
-        let mut full_tags = String::new();
+        let mut ascii_tags = vec![];
+        let mut full_tags = vec![];
 
         while let Some(row) = rows.next()? {
             let ascii_symbol: Option<String> = row.get(0)?;
             let tag: String = row.get(1)?;
-            let tag_type: String = row.get(2)?;
 
             if let Some(symbol) = ascii_symbol {
-                ascii_tags.push_str(&symbol);
+                if !symbol.is_empty() {
+                    ascii_tags.push(symbol);
+                }
             } else {
-                // Assuming non-ascii tags are full tags
-                full_tags.push_str(&format!("#{}", tag));
+                full_tags.push(format!("#{}", tag));
             }
         }
-        // TODO sort tags
+        // sort ascii tags by defined order, unwrap() is safe due to previous is_empty() check
+        ascii_tags.sort_by_key(|x| {
+            config::tag_to_txt_ascii_common(&x.chars().nth(0).unwrap())
+                .unwrap_or(("", "", 0))
+                .2
+        });
+        // sort full tags with default order
+        full_tags.sort();
+
         let space = if full_tags.is_empty() { "" } else { " " };
         if ascii_tags.is_empty() && full_tags.is_empty() {
             // leaving out the || would require checks in case there is a tag group without tags coming after a group with tags on the same line
             Ok("|| ".to_owned())
         } else {
-            Ok(format!("|{}{}{}| ", ascii_tags, space, full_tags))
+            Ok(format!(
+                "|{}{}{}| ",
+                ascii_tags.iter().join(""),
+                space,
+                full_tags.iter().join(" ")
+            ))
         }
     }
 

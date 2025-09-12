@@ -11,10 +11,11 @@ Format Description
   * C: class / part-of-speech
   * D: definition
   * X: cross-reference, the X is followed by another character indicating the type of reference
-    * =: synonym-equal
-    * ~: synonym-similar
-    * !: antonym
-    * ?: could-be-confused-with
+       (symmetric) means that the reference should exist in both directions
+    * =: synonym-equal (symmetric)
+    * ~: synonym-similar (symmetric)
+    * !: antonym (symmetric)
+    * ?: could-be-confused-with (symmetric)
     * <: part-of
     * >: contains
     * V: word-variant-of

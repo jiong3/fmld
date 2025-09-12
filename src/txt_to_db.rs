@@ -1,207 +1,12 @@
 use rusqlite::{Connection, Error as SqliteError};
 
 use crate::pinyin;
-
+use crate::config;
 use crate::txt_parser::*;
 
 use std::{fmt, mem};
 
 type SqliteId = i64; // TODO common module?
-
-// TODO move to separate file + add user_version pragma
-const DB_SCHEMA: &str = r#"
-/* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
-CREATE TABLE IF NOT EXISTS "dict_definition" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"shared_id" INTEGER NOT NULL,
-	"word_id" INTEGER NOT NULL,
-	"definition" TEXT NOT NULL,
-	"ext_def_id" INTEGER NOT NULL,
-	"class_id" INTEGER NOT NULL,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("class_id") REFERENCES "dict_class"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_definition_index_0"
-ON "dict_definition" ("word_id", "ext_def_id");
-/* tags allow a flexible assignment of entries to classes, which includes parts-of-speech, spoken vs written language, usage in Taiwan vs China etc. */
-CREATE TABLE IF NOT EXISTS "dict_tag" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"tag" TEXT NOT NULL,
-	"type" TEXT NOT NULL,
-	"ascii_symbol" TEXT,
-	PRIMARY KEY("id")
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_tag_index_0"
-ON "dict_tag" ("tag", "type");
-CREATE TABLE IF NOT EXISTS "dict_word" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"shared_id" INTEGER NOT NULL,
-	"trad" TEXT NOT NULL,
-	"simp" TEXT NOT NULL,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-
-CREATE TABLE IF NOT EXISTS "dict_pron" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"pinyin_num" TEXT NOT NULL,
-	"pinyin_mark" TEXT NOT NULL,
-	PRIMARY KEY("id")
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_pron_index_0"
-ON "dict_pron" ("pinyin_num");
-CREATE TABLE IF NOT EXISTS "dict_pron_definition" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"shared_pron_id" INTEGER NOT NULL,
-	"definition_id" INTEGER NOT NULL,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("definition_id") REFERENCES "dict_definition"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("shared_pron_id") REFERENCES "dict_shared_pron"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-
-/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. */
-CREATE TABLE IF NOT EXISTS "dict_reference" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"shared_id" INTEGER NOT NULL,
-	"ref_type_id" INTEGER NOT NULL,
-	"word_id_src" INTEGER NOT NULL,
-	"definition_id_src" INTEGER,
-	"word_id_dst" INTEGER NOT NULL,
-	"definition_id_dst" INTEGER,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("word_id_dst") REFERENCES "dict_word"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("word_id_src") REFERENCES "dict_word"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("definition_id_src") REFERENCES "dict_definition"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("definition_id_dst") REFERENCES "dict_definition"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("ref_type_id") REFERENCES "dict_ref_type"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
-ON "dict_reference" ("word_id_src", "definition_id_src");
-/* dict_shared enables linking tags, notes or references to different entries in other tables
-rank indicates the order of the element, it is a continuous counter
-rank_relative can be used to add new elements with a certain order between two successive rank counters */
-CREATE TABLE IF NOT EXISTS "dict_shared" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"rank" INTEGER NOT NULL,
-	"rank_relative" INTEGER,
-	"note_id" INTEGER,
-	"comment_id" INTEGER,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("comment_id") REFERENCES "dict_comment"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("note_id") REFERENCES "dict_note"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-
-CREATE TABLE IF NOT EXISTS "dict_shared_tag" (
-	"for_shared_id" INTEGER NOT NULL,
-	"tag_id" INTEGER NOT NULL,
-	PRIMARY KEY("for_shared_id", "tag_id"),
-	FOREIGN KEY ("tag_id") REFERENCES "dict_tag"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("for_shared_id") REFERENCES "dict_shared"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_shared_tag_index_0"
-ON "dict_shared_tag" ("for_shared_id", "tag_id");
-/* ext_note_id is a globally unique id for each note (but same id for different translations), exported into txt format */
-CREATE TABLE IF NOT EXISTS "dict_note" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"note" TEXT NOT NULL,
-	"ext_note_id" INTEGER NOT NULL,
-	PRIMARY KEY("id")
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_note_index_0"
-ON "dict_note" ("ext_note_id");
-CREATE TABLE IF NOT EXISTS "dict_comment" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"comment" TEXT NOT NULL,
-	PRIMARY KEY("id")
-);
-
-/* part of speech */
-CREATE TABLE IF NOT EXISTS "dict_class" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"name" TEXT NOT NULL,
-	PRIMARY KEY("id")
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_class_index_0"
-ON "dict_class" ("name");
-CREATE TABLE IF NOT EXISTS "dict_ref_type" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"type" TEXT NOT NULL,
-	"ascii_symbol" TEXT NOT NULL,
-	PRIMARY KEY("id")
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_ref_type_index_0"
-ON "dict_ref_type" ("type");
-CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
-	"id" INTEGER NOT NULL UNIQUE,
-	"shared_id" INTEGER NOT NULL,
-	"pron_id" INTEGER NOT NULL,
-	PRIMARY KEY("id"),
-	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
-	ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_word_index_0"
-ON "dict_word" ("trad", "simp");
-
-CREATE INDEX IF NOT EXISTS "dict_shared_index_0"
-ON "dict_shared" ("rank", "rank_relative");
-
-CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
-ON "dict_pron_definition" ("definition_id");
-
-/* Views (for manual browsing) */
-CREATE VIEW trad_simp_class_pinyin_def AS
-SELECT
-    w.trad,
-    w.simp,
-    c.name AS class_name,
-    GROUP_CONCAT(p.pinyin_mark ORDER BY p_s.rank, p_s.rank_relative),
-    def.ext_def_id,
-    def.definition
-FROM dict_definition def
-JOIN dict_shared s ON def.shared_id = s.id
-JOIN dict_word w ON def.word_id = w.id
-JOIN dict_class c ON def.class_id = c.id
-LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
-LEFT JOIN dict_pron p ON sp.pron_id = p.id
-LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
-GROUP BY def.id
-ORDER BY s.rank, s.rank_relative;
-
-"#;
 
 #[derive(Debug, PartialEq)]
 struct CrossReferenceEntry {
@@ -305,7 +110,7 @@ pub struct TxtToDb<'a> {
 
 impl<'a> TxtToDb<'a> {
     pub fn new(conn: &'a Connection) -> Self {
-        conn.execute_batch(DB_SCHEMA).unwrap();
+        conn.execute_batch(config::DB_SCHEMA).unwrap();
         TxtToDb {
             conn,
             rank_counter: 0,
@@ -582,25 +387,12 @@ impl<'a> TxtToDb<'a> {
             };
 
             // create/get reference type
-            let ref_type_full = match reference.ref_type {
-                '=' => "synonym-equal",
-                '~' => "synonym-similar",
-                '!' => "antonym",
-                '?' => "could-be-confused-with",
-                '<' => "part-of",
-                '>' => "contains",
-                'V' => "word-variant-of",
-                'v' => "character-variant-of",
-                'M' => "used-with-measure-word",
-                '&' => "collocation",
-                'G' => "word-group",
-                _ => {
-                    self.errors.push(TxtToDbErrorLine {
+            let Some((ref_type_full, _)) = config::get_ref_type(&reference.ref_type) else {
+                self.errors.push(TxtToDbErrorLine {
                         err_line_idx: reference.err_line_idx,
                         error: TxtToDbError::UnknownReferenceType(reference.ref_type),
                     });
                     continue;
-                }
             };
 
             self.conn
@@ -907,24 +699,6 @@ fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
     Ok(*shared_id)
 }
 
-fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'static str)> {
-    match ascii_tag {
-        'T' => Some(("taiwan-only", "country")),
-        't' => Some(("taiwan-chiefly", "country")),
-        'C' => Some(("china-only", "country")),
-        'c' => Some(("china-chiefly", "country")),
-        'A' => Some(("ai-only", "ai")),
-        'a' => Some(("ai-human", "ai")),
-        'w' => Some(("wiktionary", "source")),
-        'm' => Some(("mdbg", "source")),
-        '+' => Some(("high-relevance", "relevance")),
-        '-' => Some(("low-relevance", "relevance")),
-        'x' => Some(("irrelevant", "relevance")),
-        'X' => Some(("deleted", "relevance")),
-        // TODO i for irregular? e.g. to disable automatic checks for some pinyins
-        _ => None,
-    }
-}
 
 fn tag_to_txt(entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String, String)> {
     match tag {
@@ -934,12 +708,12 @@ fn tag_to_txt(entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String,
         Tag::Ascii(ascii_tag) => {
             let tag_str = match entry_type {
                 DictNode::Word(_) => match ascii_tag {
-                    _ => tag_to_txt_ascii_common(ascii_tag),
+                    _ => config::tag_to_txt_ascii_common(ascii_tag),
                 },
                 DictNode::Definition(_) => match ascii_tag {
-                    _ => tag_to_txt_ascii_common(ascii_tag),
+                    _ => config::tag_to_txt_ascii_common(ascii_tag),
                 },
-                _ => tag_to_txt_ascii_common(ascii_tag),
+                _ => config::tag_to_txt_ascii_common(ascii_tag),
             };
             if let Some(t) = tag_str {
                 Ok((Some(*ascii_tag), t.0.to_owned(), t.1.to_owned()))

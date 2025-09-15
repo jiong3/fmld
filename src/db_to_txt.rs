@@ -21,22 +21,22 @@ pub enum DbToTxtError {
 impl fmt::Display for DbToTxtError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            DbToTxtError::SqliteError(e) => write!(f, "Database error: {}", e),
-            DbToTxtError::IoError(e) => write!(f, "I/O error: {}", e),
-            DbToTxtError::InvalidDbData(s) => write!(f, "Invalid data in DB: {}", s),
+            Self::SqliteError(e) => write!(f, "Database error: {e}"),
+            Self::IoError(e) => write!(f, "I/O error: {e}"),
+            Self::InvalidDbData(s) => write!(f, "Invalid data in DB: {s}"),
         }
     }
 }
 
 impl From<SqliteError> for DbToTxtError {
     fn from(err: SqliteError) -> Self {
-        DbToTxtError::SqliteError(err)
+        Self::SqliteError(err)
     }
 }
 
 impl From<std::io::Error> for DbToTxtError {
     fn from(err: std::io::Error) -> Self {
-        DbToTxtError::IoError(err)
+        Self::IoError(err)
     }
 }
 
@@ -196,7 +196,7 @@ impl<'a> DbToTxt<'a> {
         let tags = self.get_formatted_tags(entry.word_shared_id)?;
         let word_str = common::format_word_def(&entry.trad, &entry.simp, None);
         // TODO character variants (Xv reference, same word with different characters) should be listed in the same line, separated by ;
-        writeln!(self.writer, "W{}{}", tags, word_str)?;
+        writeln!(self.writer, "W{tags}{word_str}")?;
         self.write_shared_items(entry.word_shared_id, 1)?;
         self.write_cross_references(entry.word_id, None, 1)?;
         Ok(())

@@ -69,7 +69,7 @@
           "unique": false,
           "notNull": true,
           "increment": false,
-          "comment": "",
+          "comment": "constant id, used for referencing definitions in the text representation of from external sources",
           "size": "",
           "values": []
         },
@@ -88,7 +88,7 @@
           "values": []
         }
       ],
-      "comment": "ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id",
+      "comment": "Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.\n\nEach entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron) and a class (dict_class), which corresponds to the part of speech.\nWords and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc..\nAll words, definitions, pronunciations and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.\n\nThe order of the text file is preserved using the rank field (dict_shared). New items can be inserted using rank_relative. The fields ascii_symbol (dict_ref_type, dict_tag) refer to the symbol used in the text representation.\n\n\n\next_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id",
       "indices": [
         {
           "id": 0,
@@ -218,7 +218,7 @@
           "unique": false,
           "notNull": true,
           "increment": false,
-          "comment": "",
+          "comment": "word in traditional characters",
           "size": 65535
         },
         {
@@ -230,7 +230,7 @@
           "unique": false,
           "notNull": true,
           "increment": false,
-          "comment": "",
+          "comment": "word in simplified characters",
           "id": 1,
           "size": 65535
         }
@@ -565,7 +565,7 @@
           "values": []
         }
       ],
-      "comment": "dict_shared enables linking tags, notes or references to different entries in other tables\nrank indicates the order of the element, it is a continuous counter\nrank_relative can be used to add new elements with a certain order between two successive rank counters",
+      "comment": "dict_shared enables linking tags, notes or references to different entries in other tables\nrank indicates the order of the element, it is a continuous counter\nrank_relative can be used to add new elements with a certain order between two successive ranks",
       "indices": [
         {
           "id": 0,
@@ -773,8 +773,8 @@
     {
       "id": "tZk654aRbmP9wfO7RUZvN",
       "name": "dict_ref_type",
-      "x": -1083.733673630209,
-      "y": -892.934708679626,
+      "x": -1089.733673630209,
+      "y": -931.6013753462927,
       "locked": false,
       "fields": [
         {
@@ -814,6 +814,20 @@
           "increment": false,
           "comment": "",
           "size": 65535
+        },
+        {
+          "id": "MxRcetGB-Cpyo7bWd91OO",
+          "name": "is_symmetric",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
         }
       ],
       "comment": "",

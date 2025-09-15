@@ -1,14 +1,17 @@
+pub const INDENT_STR: &str = " "; // only one byte characters allowed
+pub const WORD_SEP: &str = "／";
+pub const ITEMS_SEP: &str = ";";
+
 pub const DB_SCHEMA: &str = r#"
 
 PRAGMA user_version = 1;
-
 /* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
 	"word_id" INTEGER NOT NULL,
-	"definition" TEXT NOT NULL,
-	"ext_def_id" INTEGER NOT NULL,
+	"definition" TEXT NOT NULL, -- definition of the word
+	"ext_def_id" INTEGER NOT NULL, -- constant id, used for referencing definitions in the text representation of from external sources
 	"class_id" INTEGER NOT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
@@ -42,7 +45,8 @@ CREATE TABLE IF NOT EXISTS "dict_word" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_word_index_0"
+ON "dict_word" ("trad", "simp");
 CREATE TABLE IF NOT EXISTS "dict_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"pinyin_num" TEXT NOT NULL,
@@ -63,7 +67,8 @@ CREATE TABLE IF NOT EXISTS "dict_pron_definition" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-
+CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
+ON "dict_pron_definition" ("definition_id");
 /* Relationship from a to b, e.g. measureword, antonym, synonym or variant. */
 CREATE TABLE IF NOT EXISTS "dict_reference" (
 	"id" INTEGER NOT NULL UNIQUE,
@@ -106,7 +111,8 @@ CREATE TABLE IF NOT EXISTS "dict_shared" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-
+CREATE INDEX IF NOT EXISTS "dict_shared_index_0"
+ON "dict_shared" ("rank", "rank_relative");
 CREATE TABLE IF NOT EXISTS "dict_shared_tag" (
 	"for_shared_id" INTEGER NOT NULL,
 	"tag_id" INTEGER NOT NULL,
@@ -148,6 +154,7 @@ CREATE TABLE IF NOT EXISTS "dict_ref_type" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"type" TEXT NOT NULL,
 	"ascii_symbol" TEXT NOT NULL,
+	"is_symmetric" INTEGER NOT NULL,
 	PRIMARY KEY("id")
 );
 
@@ -163,15 +170,6 @@ CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_word_index_0"
-ON "dict_word" ("trad", "simp");
-
-CREATE INDEX IF NOT EXISTS "dict_shared_index_0"
-ON "dict_shared" ("rank", "rank_relative");
-
-CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
-ON "dict_pron_definition" ("definition_id");
 
 /* Views (for manual browsing) */
 CREATE VIEW trad_simp_class_pinyin_def AS

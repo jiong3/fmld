@@ -271,7 +271,7 @@ fn parse_line(line: &str) -> Result<DictLine, ()> {
     ));
     match all_consuming(line_parser).parse(line) {
         Ok((_remainder, dict_line)) => Ok(dict_line),
-        Err(e) => Err(()),
+        Err(_e) => Err(()),
     }
 }
 

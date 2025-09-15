@@ -6,7 +6,7 @@ use crate::txt_parser::*;
 
 use std::{fmt, mem};
 
-type SqliteId = i64; // TODO common module?
+use crate::common::SqliteId;
 
 #[derive(Debug, PartialEq)]
 struct CrossReferenceEntry {
@@ -150,7 +150,7 @@ impl<'a> TxtToDb<'a> {
                         self.err_lines.push((cur_word.clone(), line.line));
                     }
                 }
-                Err(e) => {
+                Err(_e) => {
                     self.errors.push(TxtToDbErrorLine {
                         err_line_idx: self.err_lines.len(),
                         error: TxtToDbError::ParseError,
@@ -387,7 +387,7 @@ impl<'a> TxtToDb<'a> {
             };
 
             // create/get reference type
-            let Some((ref_type_full, _)) = config::get_ref_type(&reference.ref_type) else {
+            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(&reference.ref_type) else {
                 self.errors.push(TxtToDbErrorLine {
                         err_line_idx: reference.err_line_idx,
                         error: TxtToDbError::UnknownReferenceType(reference.ref_type),
@@ -397,8 +397,8 @@ impl<'a> TxtToDb<'a> {
 
             self.conn
                 .execute(
-                    "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol) VALUES (?1,?2)",
-                    (ref_type_full, reference.ref_type.to_string()),
+                    "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol, is_symmetric) VALUES (?1,?2,?3)",
+                    (ref_type_full, reference.ref_type.to_string(), is_symmetric),
                 )
                 .unwrap();
             let ref_type_id: SqliteId = self

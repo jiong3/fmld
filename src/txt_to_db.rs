@@ -101,11 +101,11 @@ impl std::error::Error for TxtToDbError {
     }
 }
 
-pub fn txt_to_db(reader: &mut dyn Read, conn: &Connection, limit_to_word: Option<String>) -> Vec<String> {
+pub fn txt_to_db(reader: &mut dyn Read, conn: &Connection, limit_to_word: Option<&str>) -> Vec<String> {
     let reader = BufReader::new(reader);
     let lines_iterator = reader.lines().map_while(io::Result::ok);
     let mut txt2db = TxtToDb::new(conn);
-    txt2db.txt_to_db(lines_iterator);
+    txt2db.txt_to_db(lines_iterator, limit_to_word);
     vec![] // TODO add parsing errors txt2db.print_errors();
 }
 
@@ -134,7 +134,7 @@ impl<'a> TxtToDb<'a> {
         }
     }
 
-    pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>) {
+    pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>, limit_to_word: Option<&str>) {
         self.conn
             .execute_batch(
                 "PRAGMA synchronous = OFF; PRAGMA journal_mode = MEMORY; BEGIN TRANSACTION",
@@ -169,6 +169,11 @@ impl<'a> TxtToDb<'a> {
                     });
                     self.err_lines.push((cur_word.clone(), line.line));
                     cur_word_error = true;
+                }
+            }
+            if let Some(stop_word) = limit_to_word {
+                if cur_word == stop_word {
+                    break;
                 }
             }
         }

@@ -79,9 +79,9 @@ fn format_multiline(s: &str, indent_level: usize, indent_char: &str) -> String {
     s.lines().join(&indented_newline)
 }
 
-pub fn db_to_txt(writer: &mut dyn Write, conn: &Connection, indent_with_tabs: bool) -> Result<()> {
+pub fn db_to_txt(writer: &mut dyn Write, conn: &Connection, indent_with_tabs: bool, limit_to_word: Option<&str>) -> Result<()> {
     let mut db2txt = DbToTxt::new(conn, writer, indent_with_tabs);
-    db2txt.generate_txt_file()?;
+    db2txt.generate_txt_file(limit_to_word)?;
     Ok(())
 }
 
@@ -106,7 +106,7 @@ impl<'a> DbToTxt<'a> {
         }
     }
 
-    pub fn generate_txt_file(&mut self) -> Result<()> {
+    pub fn generate_txt_file(&mut self, limit_to_word: Option<&str>) -> Result<()> {
         let mut stmt = self
             .conn
             .prepare(
@@ -145,8 +145,13 @@ impl<'a> DbToTxt<'a> {
         self.write_shared_items(1, 0)?; // header comment
 
         while let Some(row) = rows.next()? {
-            // TODO for loop?
             let definition_entry = self.row_to_definition_entry(row)?;
+
+            if let Some(stop_word) = limit_to_word {
+                if definition_entry.trad == stop_word {
+                    break;
+                }
+            }
 
             // 1. Word Entry
             if definition_entry.word_id != last_word_id {

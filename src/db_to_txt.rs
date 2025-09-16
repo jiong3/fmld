@@ -2,13 +2,13 @@
 
 use itertools::Itertools;
 use rusqlite::{Connection, Error as SqliteError, Row};
-use std::collections::{HashSet};
+use std::collections::HashSet;
 use std::fmt;
 use std::io::Write;
 
-use crate::config;
 use crate::common;
 use crate::common::SqliteId;
+use crate::config;
 
 // --- Error Handling ---
 #[derive(Debug)]
@@ -79,19 +79,29 @@ fn format_multiline(s: &str, indent_level: usize, indent_char: &str) -> String {
     s.lines().join(&indented_newline)
 }
 
-// --- Main Struct and Implementation ---
+pub fn db_to_txt(writer: &mut dyn Write, conn: &Connection, indent_with_tabs: bool) -> Result<()> {
+    let mut db2txt = DbToTxt::new(conn, writer, indent_with_tabs);
+    db2txt.generate_txt_file()?;
+    Ok(())
+}
 
 pub struct DbToTxt<'a> {
     conn: &'a Connection,
     writer: &'a mut dyn Write,
+    indent_str: String,
     written_notes: HashSet<SqliteId>,
 }
 
 impl<'a> DbToTxt<'a> {
-    pub fn new(conn: &'a Connection, writer: &'a mut dyn Write) -> Self {
+    pub fn new(conn: &'a Connection, writer: &'a mut dyn Write, indent_with_tabs: bool) -> Self {
         DbToTxt {
             conn,
             writer,
+            indent_str: if indent_with_tabs {
+                "\t".to_owned()
+            } else {
+                " ".to_owned()
+            },
             written_notes: HashSet::new(),
         }
     }
@@ -256,7 +266,9 @@ impl<'a> DbToTxt<'a> {
                 .chunk_by(|item| item.tags.clone())
                 .into_iter()
                 .map(|(tags, tag_group)| {
-                    let pinyins = tag_group.map(|item| item.pinyin_num).join(config::ITEMS_SEP);
+                    let pinyins = tag_group
+                        .map(|item| item.pinyin_num)
+                        .join(config::ITEMS_SEP);
                     format!("{}{}", tags, pinyins)
                 })
                 .join(" ");
@@ -264,7 +276,7 @@ impl<'a> DbToTxt<'a> {
             writeln!(
                 self.writer,
                 "{}P{}",
-                config::INDENT_STR.repeat(indent_level),
+                self.indent_str.repeat(indent_level),
                 tags_pinyins
             )?;
             self.write_shared_items_from_ids(comment_id, note_id, indent_level + 1)?;
@@ -275,7 +287,7 @@ impl<'a> DbToTxt<'a> {
     }
 
     fn write_class_entry(&mut self, class_name: &str) -> Result<()> {
-        writeln!(self.writer, "{}C {}", config::INDENT_STR.repeat(2), class_name)?;
+        writeln!(self.writer, "{}C {}", self.indent_str.repeat(2), class_name)?;
         Ok(())
     }
 
@@ -284,10 +296,10 @@ impl<'a> DbToTxt<'a> {
         writeln!(
             self.writer,
             "{}D{}{}{}",
-            config::INDENT_STR.repeat(3),
+            self.indent_str.repeat(3),
             entry.ext_def_id,
             tags,
-            format_multiline(&entry.definition, 3, config::INDENT_STR),
+            format_multiline(&entry.definition, 3, &self.indent_str),
         )?;
         self.write_shared_items(entry.def_shared_id, 4)?;
         self.write_cross_references(entry.word_id, Some(entry.def_id), 4)?;
@@ -352,14 +364,14 @@ impl<'a> DbToTxt<'a> {
         note_id: Option<SqliteId>,
         indent: usize,
     ) -> Result<()> {
-        let indentation = config::INDENT_STR.repeat(indent);
+        let indentation = self.indent_str.repeat(indent);
         let mut stmt = self
             .conn
             .prepare_cached("SELECT comment FROM dict_comment WHERE id = ?1")?;
         // Write Comment
         if let Some(id) = comment_id {
             let comment: String = stmt.query_row([id], |row| row.get(0))?;
-            let comment = format_multiline(&comment, indent, config::INDENT_STR);
+            let comment = format_multiline(&comment, indent, &self.indent_str);
             writeln!(self.writer, "{}# {}", indentation, comment)?;
         }
         // Write Note
@@ -373,7 +385,7 @@ impl<'a> DbToTxt<'a> {
                 // indent == 0 hack for initial header pointer to highest note id
                 writeln!(self.writer, "{}N->{}", indentation, ext_id)?;
             } else {
-                let note_txt = format_multiline(&note_txt, indent, config::INDENT_STR);
+                let note_txt = format_multiline(&note_txt, indent, &self.indent_str);
                 writeln!(self.writer, "{}N{} {}", indentation, ext_id, note_txt)?;
                 self.written_notes.insert(ext_id);
             }
@@ -442,7 +454,7 @@ impl<'a> DbToTxt<'a> {
             return Ok(());
         }
 
-        let indentation = config::INDENT_STR.repeat(indent);
+        let indentation = self.indent_str.repeat(indent);
 
         // 2. Primary Grouping: Group by ref_type, note_id, and comment_id.
         // Each chunk from this operation represents exactly one line of output.

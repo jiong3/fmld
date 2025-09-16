@@ -1,9 +1,13 @@
 use rusqlite::{Connection, Error as SqliteError};
 
-use crate::pinyin;
 use crate::config;
+use crate::pinyin;
 use crate::txt_parser::*;
 
+use std::io;
+use std::io::BufRead;
+use std::io::BufReader;
+use std::io::Read;
 use std::{fmt, mem};
 
 use crate::common::SqliteId;
@@ -95,6 +99,14 @@ impl std::error::Error for TxtToDbError {
             Self::NoteIdNotFound(_) => None,
         }
     }
+}
+
+pub fn txt_to_db(reader: &mut dyn Read, conn: &Connection, limit_to_word: Option<String>) -> Vec<String> {
+    let reader = BufReader::new(reader);
+    let lines_iterator = reader.lines().map_while(io::Result::ok);
+    let mut txt2db = TxtToDb::new(conn);
+    txt2db.txt_to_db(lines_iterator);
+    vec![] // TODO add parsing errors txt2db.print_errors();
 }
 
 #[derive(Debug)]
@@ -387,12 +399,13 @@ impl<'a> TxtToDb<'a> {
             };
 
             // create/get reference type
-            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(&reference.ref_type) else {
+            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(&reference.ref_type)
+            else {
                 self.errors.push(TxtToDbErrorLine {
-                        err_line_idx: reference.err_line_idx,
-                        error: TxtToDbError::UnknownReferenceType(reference.ref_type),
-                    });
-                    continue;
+                    err_line_idx: reference.err_line_idx,
+                    error: TxtToDbError::UnknownReferenceType(reference.ref_type),
+                });
+                continue;
             };
 
             self.conn
@@ -440,7 +453,8 @@ impl<'a> TxtToDb<'a> {
                 continue;
             };
             // unwrap since note_id and shared_id must be ok here
-            self.add_note_to_entry(note_id, reference.target_shared_id).unwrap();
+            self.add_note_to_entry(note_id, reference.target_shared_id)
+                .unwrap();
         }
     }
 
@@ -699,12 +713,9 @@ fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
     Ok(*shared_id)
 }
 
-
 fn tag_to_txt(entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String, String)> {
     match tag {
-        Tag::Full(full_tag) => {
-            Ok((None, full_tag.to_owned(), "definition".to_owned()))
-        }
+        Tag::Full(full_tag) => Ok((None, full_tag.to_owned(), "definition".to_owned())),
         Tag::Ascii(ascii_tag) => {
             let tag_str = config::tag_to_txt_ascii_common(ascii_tag);
             if let Some(t) = tag_str {

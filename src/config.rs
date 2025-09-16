@@ -1,8 +1,12 @@
-pub const INDENT_STR: &str = " "; // only one byte characters allowed
 pub const WORD_SEP: &str = "／";
 pub const ITEMS_SEP: &str = ";";
 
 pub const DB_SCHEMA: &str = r#"
+
+/*
+
+
+*/
 
 PRAGMA user_version = 1;
 /* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
@@ -97,7 +101,7 @@ CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
 ON "dict_reference" ("word_id_src", "definition_id_src");
 /* dict_shared enables linking tags, notes or references to different entries in other tables
 rank indicates the order of the element, it is a continuous counter
-rank_relative can be used to add new elements with a certain order between two successive rank counters */
+rank_relative can be used to add new elements with a certain order between two successive ranks */
 CREATE TABLE IF NOT EXISTS "dict_shared" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"rank" INTEGER NOT NULL,

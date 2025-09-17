@@ -1,11 +1,12 @@
-use fmld::db_check::*;
+use fmld::db_check;
+use fmld::db_edit;
+
 use fmld::db_to_txt::*;
 use fmld::txt_to_db::*;
 
 use clap::{Parser, Subcommand};
 use std::ffi::OsStr;
 use std::fs::File;
-use std::fs::remove_file;
 use std::io::BufWriter;
 use std::io::Write;
 use std::io::{self, BufRead, BufReader};
@@ -130,7 +131,7 @@ fn main() -> io::Result<()> {
         }
     }
 
-    let check_result = check_entries(&db_source.conn);
+    let check_result = db_check::check_entries(&db_source.conn);
     if let Ok(err_list) = check_result {
         for err in err_list {
             eprintln!("{}", err);
@@ -138,13 +139,13 @@ fn main() -> io::Result<()> {
     }
     let tx = db_source.conn.transaction().unwrap();
 
-    add_missing_symmetric_references(&tx).unwrap();
-    add_missing_notes_and_tags_for_symmetric_references(&tx).unwrap();
+    db_edit::add_missing_symmetric_references(&tx).unwrap();
+    db_edit::add_missing_notes_and_tags_for_symmetric_references(&tx).unwrap();
 
     tx.commit();
 
     if let Some(txt_b_out_path) = &cli.round_trip_check {
-        let txt_b = round_trip_check(&db_source.conn).unwrap();
+        let txt_b = db_check::round_trip_check(&db_source.conn).unwrap();
         if !txt_b.is_empty() && txt_b_out_path.extension().and_then(OsStr::to_str) == Some("txt") {
             let file_out = File::create(txt_b_out_path).unwrap();
             let mut writer_out = BufWriter::new(file_out);

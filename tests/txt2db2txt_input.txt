@@ -1,0 +1,42 @@
+# Free Mandarin Learner's Dictionary
+  A fork of the En-Ch Wiktionary.
+W|w|過秤／过秤
+ P||ɡuo4cheng4
+  C verb
+   D1||to weigh; to measure the weight of an object
+W||Trad2 / Simp2
+ Xv||Trad1 / Simp1
+ P|| piny1yin3
+  C variant
+   D1|| variant of [Trad1 / Simp1]
+W|wT #mysupertag #atag #yolotag| Trad1 / Simp1
+ P|| pin1yin1; pin1yin2
+  P|T| pin1yin3
+  P|C| pin1yin4; nv3
+   # test if a new line is added correction to attach this comment
+  C adj
+   D1|| my first definition
+    XV|| 你好/嗎#D3
+    # this definition is problematic
+    N->375
+   D2|T| my second definition, Taiwan only
+  C noun
+   D3|c| another definition, chiefly China noun
+W|wc| 您好
+ X~|A| Trad1 / Simp1
+  N405 Test note which should be added to the symmetric counterpart
+  # however this comment should not be added
+ P|| pin2yin2
+  C verb
+   D2 || not actually a verb
+ P|m| no1pin2yin3
+  C verb
+   D3 || different pronunciation with different definition
+    # my comment
+    N33 my note
+W|Cw| 你好/嗎
+ P|| pin3yin3
+  N375 this is actually wrong! 
+    Long note this one is!
+  C noun
+   D3 || definitely a noun

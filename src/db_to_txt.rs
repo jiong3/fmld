@@ -169,6 +169,7 @@ impl<'a> DbToTxt<'a> {
                     &definition_entry.pinyin_shared_ids,
                 )?;
                 last_pinyin_shared_ids = definition_entry.pinyin_shared_ids.clone();
+                last_class_id = -1;
             }
 
             // 3. Class Entry

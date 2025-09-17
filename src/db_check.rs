@@ -9,6 +9,9 @@ use crate::pinyin::*;
 use crate::common;
 use crate::common::SqliteId;
 
+use crate::txt_to_db;
+use crate::db_to_txt;
+
 // Represents either a single Unicode code point or a range of code points.
 enum HanChar {
     Single(u32),
@@ -455,4 +458,31 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
 
     }
     Ok(errors)
+}
+
+pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
+    eprintln!("Round trip check: db -> txt a");
+    let mut txt_a: Vec<u8> = Vec::with_capacity(20000000); // TODO
+    db_to_txt::db_to_txt(&mut txt_a, conn, false, None).unwrap();
+
+    eprintln!("Round trip check: txt a -> db");
+    let conn_b = Connection::open_in_memory().unwrap();
+    let errors = txt_to_db::txt_to_db(&mut txt_a.as_slice(), &conn_b, None);
+    if !errors.is_empty() {
+        for err in errors {
+            eprintln!("{}", err);
+        }
+    }
+
+    eprintln!("Round trip check: db -> txt b");
+    let mut txt_b: Vec<u8> = Vec::with_capacity(20000000); // TODO
+    db_to_txt::db_to_txt(&mut txt_b, &conn_b, false, None).unwrap();
+
+    eprintln!("Round trip check: compare txt a and txt b");
+    
+    if txt_a == txt_b {
+        Ok(vec![])
+    } else {
+        Ok(txt_b)
+    }
 }

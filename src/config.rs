@@ -225,7 +225,7 @@ pub fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'stat
         't' => ("taiwan-chiefly", "country", 10),
         'C' => ("china-only", "country", 10),
         'c' => ("china-chiefly", "country", 10),
-        '&' => ("bound-form", "bound-form", 8), // only used for definitions and pinyin
+        '&' => ("bound-form", "bound-form", 8), // not used for references, use b (chiefly bound) and B (only as bound form)?
         'A' => ("ai-only", "ai", 6),
         'a' => ("ai-human", "ai", 6),
         'w' => ("wiktionary", "source", 3),

@@ -7,6 +7,7 @@ use std::ffi::OsStr;
 use std::fs::File;
 use std::fs::remove_file;
 use std::io::BufWriter;
+use std::io::Write;
 use std::io::{self, BufRead, BufReader};
 use std::path::Path;
 use std::path::PathBuf;
@@ -40,17 +41,17 @@ struct Cli {
 
     /// Do round trip check, which checks if the two text representations before and after the conversion to the sqlite DB are identical
     #[arg(long)]
-    round_trip_check: bool,
+    round_trip_check: Option<PathBuf>,
     // TODO create note ids
 }
 
-enum DictSource {
+enum DbSource {
     TXT(Vec<String>),
     DB,
 }
 
 struct DictDb {
-    source: DictSource,
+    source: DbSource,
     conn: Connection,
 }
 
@@ -70,7 +71,7 @@ fn read_input(path: &PathBuf, limit_to_word: Option<&str>) -> DictDb {
                     .unwrap();
             }
             DictDb {
-                source: DictSource::DB,
+                source: DbSource::DB,
                 conn,
             }
         }
@@ -82,7 +83,7 @@ fn read_input(path: &PathBuf, limit_to_word: Option<&str>) -> DictDb {
             });
             let errors = txt_to_db(&mut file, &conn, limit_to_word);
             DictDb {
-                source: DictSource::TXT(errors), 
+                source: DbSource::TXT(errors), 
                 conn,
             }
         }
@@ -101,7 +102,7 @@ fn write_output(db_source: &DictDb, cli: &Cli) {
         }
         let file_out = File::create(path_out).unwrap();
         let mut writer_out = BufWriter::new(file_out);
-        db_to_txt(&mut writer_out, &db_source.conn, true, cli.limit_to_word.as_deref()).unwrap();
+        db_to_txt(&mut writer_out, &db_source.conn, cli.indent_with_tabs, cli.limit_to_word.as_deref()).unwrap();
     }
 
     if let Some(path_out) = &cli.db {
@@ -121,11 +122,18 @@ fn main() -> io::Result<()> {
     let cli = Cli::parse();
 
     let mut db_source = read_input(&cli.input_file, cli.limit_to_word.as_deref());
+    if let DbSource::TXT(errors) = &db_source.source {
+        if !errors.is_empty() {
+            for err in errors {
+                eprintln!("{}", err);
+            }
+        }
+    }
 
     let check_result = check_entries(&db_source.conn);
     if let Ok(err_list) = check_result {
         for err in err_list {
-            println!("{}", err);
+            eprintln!("{}", err);
         }
     }
     let tx = db_source.conn.transaction().unwrap();
@@ -135,6 +143,20 @@ fn main() -> io::Result<()> {
 
     tx.commit();
 
+    if let Some(txt_b_out_path) = &cli.round_trip_check {
+        let txt_b = round_trip_check(&db_source.conn).unwrap();
+        if !txt_b.is_empty() && txt_b_out_path.extension().and_then(OsStr::to_str) == Some("txt") {
+            let file_out = File::create(txt_b_out_path).unwrap();
+            let mut writer_out = BufWriter::new(file_out);
+            writer_out.write(&txt_b);
+        }
+        if txt_b.is_empty() {
+            eprintln!("Round trip check ok!");
+        } else {
+            eprintln!("Round trip check failed!");
+        }
+    }
+    
     write_output(&db_source, &cli);
 
     Ok(())

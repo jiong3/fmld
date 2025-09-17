@@ -106,7 +106,7 @@ pub fn txt_to_db(reader: &mut dyn Read, conn: &Connection, limit_to_word: Option
     let lines_iterator = reader.lines().map_while(io::Result::ok);
     let mut txt2db = TxtToDb::new(conn);
     txt2db.txt_to_db(lines_iterator, limit_to_word);
-    vec![] // TODO add parsing errors txt2db.print_errors();
+    txt2db.format_errors()
 }
 
 #[derive(Debug)]
@@ -116,7 +116,7 @@ pub struct TxtToDb<'a> {
     line_stack: Vec<Vec<DictNode>>,
     cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
     note_references: Vec<NoteReferenceEntry>,
-    err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for errors
+    pub err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for errors
     pub errors: Vec<TxtToDbErrorLine>,
 }
 
@@ -182,25 +182,27 @@ impl<'a> TxtToDb<'a> {
         self.conn.execute("COMMIT", ()).unwrap();
     }
 
-    pub fn print_errors(&self) {
+    pub fn format_errors(&self) -> Vec<String> {
+        let mut error_strings = vec![];
         for err in &self.errors {
             let (err_word, line_info) = &self.err_lines[err.err_line_idx];
             if line_info.source_line_num > 1 {
-                println!(
+                error_strings.push(format!(
                     "Error for {} in line {} to line {}:",
                     err_word,
                     line_info.source_line_start,
                     line_info.source_line_start + line_info.source_line_num
-                );
+                ));
             } else {
-                println!(
+                error_strings.push(format!(
                     "Error for {} in line {}:",
                     err_word, line_info.source_line_start
-                );
+                ));
             }
-            println!("  {}", line_info.line);
-            println!("  {}", err.error);
+            error_strings.push(format!("  {}", line_info.line));
+            error_strings.push(format!("  {}", err.error));
         }
+        error_strings
     }
 
     fn add_tag_for_entry(

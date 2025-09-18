@@ -1,12 +1,9 @@
 pub const WORD_SEP: &str = "／";
 pub const ITEMS_SEP: &str = ";";
 
+pub const APPROX_TXT_FILE_SIZE: usize = 16_000_000;
+
 pub const DB_SCHEMA: &str = r#"
-
-/*
-
-
-*/
 
 PRAGMA user_version = 1;
 /* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
@@ -199,7 +196,7 @@ ORDER BY s.rank, s.rank_relative;
 
 /// Get (full reference type name, is symmetric?) for the given reference type
 /// A symmetric reference should exist in both directions
-pub fn get_ref_type(ref_type_char: &char) -> Option<(&'static str, bool)> {
+pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
     Some(match ref_type_char {
         '=' => ("synonym-equal", true),
         '~' => ("synonym-similar", true),
@@ -219,7 +216,7 @@ pub fn get_ref_type(ref_type_char: &char) -> Option<(&'static str, bool)> {
 }
 
 /// Get (name, category, rank) of a tag, there shall not be several tags with the same rank applied to the same item
-pub fn tag_to_txt_ascii_common(ascii_tag: &char) -> Option<(&'static str, &'static str, u8)> {
+pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &'static str, u8)> {
     Some(match ascii_tag {
         'T' => ("taiwan-only", "country", 10),
         't' => ("taiwan-chiefly", "country", 10),

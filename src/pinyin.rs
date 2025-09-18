@@ -1,31 +1,38 @@
+
+#[must_use]
 pub fn pinyin_mark_from_num(pinyin_num: &str) -> String {
-    // TODO currently no unicode normalization for ê and 
+    // TODO currently no unicode normalization for ê and
     let split_pattern = |c: char| (c > '0') && (c < '6');
     let apostrophe_chars = &['a', 'e', 'ê', 'o'];
     let mut pinyin_mark_syllables = vec![];
     for pinyin_num_syllable in pinyin_num.split_inclusive(split_pattern) {
-        if !pinyin_mark_syllables.is_empty() && pinyin_num_syllable.to_lowercase().starts_with(apostrophe_chars) {
+        if !pinyin_mark_syllables.is_empty()
+            && pinyin_num_syllable
+                .to_lowercase()
+                .starts_with(apostrophe_chars)
+        {
             pinyin_mark_syllables.push("'".to_owned());
         }
-        pinyin_mark_syllables.push(pinyin_syllable_mark_from_num(pinyin_num_syllable))
+        pinyin_mark_syllables.push(pinyin_syllable_mark_from_num(pinyin_num_syllable));
     }
     pinyin_mark_syllables.join("")
 }
 
+#[must_use]
 pub fn count_syllables(pinyin_num: &str) -> usize {
     let pattern = ['1', '2', '3', '4', '5'];
     pinyin_num.chars().filter(|c| pattern.contains(c)).count()
 }
 
+#[must_use]
 fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
     // "normalize" pinyin, could be extended for handling of MDBG u:
     let pinyin = pinyin_num.replace("v", "ü").replace("V", "Ü");
-    
+
     // Split off the final char (expected to be the tone number)
     let mut chars = pinyin.chars();
-    let last = match chars.next_back() {
-        Some(c) => c,
-        None => return String::new(),
+    let Some(last) = chars.next_back() else {
+        return String::new();
     };
     let Some(tone) = last.to_digit(10) else {
         return pinyin;
@@ -33,7 +40,7 @@ fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
     let mut pinyin: String = chars.collect();
     let pinyin_lower = pinyin.to_lowercase();
 
-    if tone >= 1 && tone <= 4 {
+    if (1..=4).contains(&tone) {
         // Collect vowels from the lowercase sound, v as ü
         let mut pinyin_vowels = String::new();
         for c in pinyin_lower.chars() {
@@ -45,7 +52,13 @@ fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
         // Candidate target to mark ("a", "e", "ê", "ou", last vowel, or 'n'/'m' if no vowel)
         let mut target: Option<&str> = None;
 
-        if !pinyin_vowels.is_empty() {
+        if pinyin_vowels.is_empty() {
+            if pinyin_lower.contains('n') {
+                target = Some("n");
+            } else if pinyin_lower.contains('m') {
+                target = Some("m");
+            } 
+        } else {
             for cand in ["a", "e", "ê", "ou"] {
                 if pinyin_vowels.contains(cand) {
                     target = Some(cand);
@@ -57,12 +70,6 @@ fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
                 if let Some((i, _)) = pinyin_vowels.char_indices().next_back() {
                     target = Some(&pinyin_vowels[i..]);
                 }
-            }
-        } else {
-            if pinyin_lower.contains('n') {
-                target = Some("n");
-            } else if pinyin_lower.contains('m') {
-                target = Some("m");
             }
         }
 
@@ -82,7 +89,8 @@ fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
     pinyin
 }
 
-fn tone_mark_char(ch: char, tone: u32) -> Option<&'static str> {
+#[must_use]
+const fn tone_mark_char(ch: char, tone: u32) -> Option<&'static str> {
     let tone_idx = (tone - 1) as usize;
     Some(match ch {
         'a' => ["ā", "á", "ǎ", "à", "a"][tone_idx],

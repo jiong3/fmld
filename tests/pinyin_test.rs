@@ -14,7 +14,7 @@ fn test_pinyin_conversion_from_file() {
 
     for line in reader.lines() {
         let line = line.expect("Failed to read line");
-        
+
         // Split the line into pinyin_num and pinyin_mark
         let parts: Vec<&str> = line.split(';').collect();
         if parts.len() != 2 {

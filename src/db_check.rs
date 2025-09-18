@@ -2,15 +2,14 @@
 // - regex check if character is Chinese character (translated from python, which was based on stackoverflow answer)
 // - SQL to check for conflicts and add missing things
 
-use rusqlite::{Connection, Transaction, Error as SqliteError};
-use regex::Regex;
-use crate::pinyin::*;
-
 use crate::common;
-use crate::common::SqliteId;
+pub use crate::config::APPROX_TXT_FILE_SIZE;
+use crate::pinyin;
+use regex::Regex;
+use rusqlite::{Connection, Error as SqliteError, Transaction};
 
-use crate::txt_to_db;
 use crate::db_to_txt;
+use crate::txt_to_db;
 
 // Represents either a single Unicode code point or a range of code points.
 enum HanChar {
@@ -20,21 +19,21 @@ enum HanChar {
 
 // A static slice holding the Unicode ranges for Han characters.
 static LHAN: &[HanChar] = &[
-    HanChar::Range(0x2E80, 0x2E99),    // CJK RADICAL REPEAT, CJK RADICAL RAP
-    HanChar::Range(0x2E9B, 0x2EF3),    // CJK RADICAL CHOKE, CJK RADICAL C-SIMPLIFIED TURTLE
-    HanChar::Range(0x2F00, 0x2FD5),    // KANGXI RADICAL ONE, KANGXI RADICAL FLUTE
-    HanChar::Single(0x3005),           // IDEOGRAPHIC ITERATION MARK
-    HanChar::Single(0x3007),           // IDEOGRAPHIC NUMBER ZERO
-    HanChar::Range(0x3021, 0x3029),    // HANGZHOU NUMERAL ONE, HANGZHOU NUMERAL NINE
-    HanChar::Range(0x3038, 0x303A),    // HANGZHOU NUMERAL TEN, HANGZHOU NUMERAL THIRTY
-    HanChar::Single(0x303B),           // VERTICAL IDEOGRAPHIC ITERATION MARK
-    HanChar::Range(0x3400, 0x4DB5),    // CJK UNIFIED IDEOGRAPH-3400, CJK UNIFIED IDEOGRAPH-4DB5
-    HanChar::Range(0x4E00, 0x9FC3),    // CJK UNIFIED IDEOGRAPH-4E00, CJK UNIFIED IDEOGRAPH-9FC3
-    HanChar::Range(0xF900, 0xFA2D),    // CJK COMPATIBILITY IDEOGRAPH-F900, CJK COMPATIBILITY IDEOGRAPH-FA2D
-    HanChar::Range(0xFA30, 0xFA6A),    // CJK COMPATIBILITY IDEOGRAPH-FA30, CJK COMPATIBILITY IDEOGRAPH-FA6A
-    HanChar::Range(0xFA70, 0xFAD9),    // CJK COMPATIBILITY IDEOGRAPH-FA70, CJK COMPATIBILITY IDEOGRAPH-FAD9
-    HanChar::Range(0x20000, 0x2A6D6),  // CJK UNIFIED IDEOGRAPH-20000, CJK UNIFIED IDEOGRAPH-2A6D6
-    HanChar::Range(0x2F800, 0x2FA1D),  // CJK COMPATIBILITY IDEOGRAPH-2F800, CJK COMPATIBILITY IDEOGRAPH-2FA1D
+    HanChar::Range(0x2E80, 0x2E99), // CJK RADICAL REPEAT, CJK RADICAL RAP
+    HanChar::Range(0x2E9B, 0x2EF3), // CJK RADICAL CHOKE, CJK RADICAL C-SIMPLIFIED TURTLE
+    HanChar::Range(0x2F00, 0x2FD5), // KANGXI RADICAL ONE, KANGXI RADICAL FLUTE
+    HanChar::Single(0x3005),        // IDEOGRAPHIC ITERATION MARK
+    HanChar::Single(0x3007),        // IDEOGRAPHIC NUMBER ZERO
+    HanChar::Range(0x3021, 0x3029), // HANGZHOU NUMERAL ONE, HANGZHOU NUMERAL NINE
+    HanChar::Range(0x3038, 0x303A), // HANGZHOU NUMERAL TEN, HANGZHOU NUMERAL THIRTY
+    HanChar::Single(0x303B),        // VERTICAL IDEOGRAPHIC ITERATION MARK
+    HanChar::Range(0x3400, 0x4DB5), // CJK UNIFIED IDEOGRAPH-3400, CJK UNIFIED IDEOGRAPH-4DB5
+    HanChar::Range(0x4E00, 0x9FC3), // CJK UNIFIED IDEOGRAPH-4E00, CJK UNIFIED IDEOGRAPH-9FC3
+    HanChar::Range(0xF900, 0xFA2D), // CJK COMPATIBILITY IDEOGRAPH-F900, CJK COMPATIBILITY IDEOGRAPH-FA2D
+    HanChar::Range(0xFA30, 0xFA6A), // CJK COMPATIBILITY IDEOGRAPH-FA30, CJK COMPATIBILITY IDEOGRAPH-FA6A
+    HanChar::Range(0xFA70, 0xFAD9), // CJK COMPATIBILITY IDEOGRAPH-FA70, CJK COMPATIBILITY IDEOGRAPH-FAD9
+    HanChar::Range(0x20000, 0x2A6D6), // CJK UNIFIED IDEOGRAPH-20000, CJK UNIFIED IDEOGRAPH-2A6D6
+    HanChar::Range(0x2F800, 0x2FA1D), // CJK COMPATIBILITY IDEOGRAPH-2F800, CJK COMPATIBILITY IDEOGRAPH-2FA1D
 ];
 
 /// Compiles and returns a regex that matches only Hanzi characters.
@@ -42,26 +41,31 @@ fn get_hanzi_only_regex_pattern() -> Regex {
     let mut pattern_list = String::new();
 
     for han_char in LHAN {
-        match han_char {
-            &HanChar::Range(from, to) => {
-                pattern_list.push_str(&format!("{}-{}", char::from_u32(from).unwrap(), char::from_u32(to).unwrap()));
+        match *han_char {
+            HanChar::Range(from, to) => {
+                pattern_list.push_str(&format!(
+                    "{}-{}",
+                    char::from_u32(from).unwrap(),
+                    char::from_u32(to).unwrap()
+                ));
             }
-            &HanChar::Single(val) => {
+            HanChar::Single(val) => {
                 pattern_list.push(char::from_u32(val).unwrap());
             }
         }
     }
-    let pattern = format!("[{}]", pattern_list);
+    let pattern = format!("[{pattern_list}]");
 
     Regex::new(&pattern).unwrap()
 }
 
-
-
-pub fn check_conflicting_notes_on_symmetric_references(conn: &Transaction) -> Result<Vec<String>, SqliteError> {
+#[allow(clippy::similar_names, reason="a vs b")]
+pub fn check_conflicting_notes_on_symmetric_references(
+    conn: &Transaction,
+) -> Result<Vec<String>, SqliteError> {
     let mut errors = vec![];
     let mut stmt = conn.prepare(
-        r#"
+        r"
         SELECT
             -- Information about the first side of the relationship (Word A)
             word_A.trad AS word_A_trad,
@@ -111,7 +115,7 @@ pub fn check_conflicting_notes_on_symmetric_references(conn: &Transaction) -> Re
             AND shared1.note_id IS NOT NULL
             AND shared2.note_id IS NOT NULL
             AND shared1.note_id <> shared2.note_id;
-        "#
+        "
     )?;
     let mut rows = stmt.query([])?;
 
@@ -126,7 +130,7 @@ pub fn check_conflicting_notes_on_symmetric_references(conn: &Transaction) -> Re
         let word_b_ext_def_id: Option<u32> = row.get("word_B_ext_def_id")?;
         let word_b = common::format_word_def(&word_b_trad, &word_b_simp, word_b_ext_def_id);
 
-        errors.push(format!("Validation Error: Different notes on symmetric references between {} and {}", word_a, word_b));
+        errors.push(format!("Validation Error: Different notes on symmetric references between {word_a} and {word_b}"));
     }
     todo!(); // TODO test this
     Ok(errors)
@@ -135,9 +139,8 @@ pub fn check_conflicting_notes_on_symmetric_references(conn: &Transaction) -> Re
 // TODO take list of stuff to check, e.g. if the source is a parsed text file some things might be ensured by the parser, SQL ensures other stuff
 pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
     let mut errors = vec![];
-    let mut stmt = conn
-        .prepare(
-            r#"
+    let mut stmt = conn.prepare(
+        r"
         SELECT
         w.trad,
         w.simp,
@@ -153,8 +156,8 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
         LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
         GROUP BY def.id
         ORDER BY s.rank, s.rank_relative;
-        "#,
-        )?;
+        ",
+    )?;
 
     let hanzi_pattern = get_hanzi_only_regex_pattern();
     let mut rows = stmt.query([])?;
@@ -163,14 +166,15 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
         let trad: String = row.get("trad")?;
         let simp: String = row.get("simp")?;
         let _class_name: String = row.get("class_name")?;
-        let pinyin_nums: Vec<String> = row.get::<_, String>("pinyin_nums")?
+        let pinyin_nums: Vec<String> = row
+            .get::<_, String>("pinyin_nums")?
             .split(';')
-            .map(|s| s.to_owned())
+            .map(std::borrow::ToOwned::to_owned)
             .collect();
 
         // check if number of characters is the same in trad and simp
         if trad.chars().count() != simp.chars().count() {
-            errors.push(format!("Validation Error: Different numbers of characters, traditional: {} simplified: {}", trad, simp));
+            errors.push(format!("Validation Error: Different numbers of characters, traditional: {trad} simplified: {simp}"));
             continue;
         }
 
@@ -182,22 +186,21 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
         if trad_hanzi_only.len() == trad.len() {
             let possible_erhuas = trad.chars().filter(|c| *c == '兒').count();
             let num_trad_chars = trad.chars().count();
-            let expected_syllables = num_trad_chars - possible_erhuas..num_trad_chars + 1;
+            let expected_syllables = (num_trad_chars - possible_erhuas)..=num_trad_chars;
             for pinyin_num in pinyin_nums {
-                let num_pinyin_syllables = count_syllables(&pinyin_num);
+                let num_pinyin_syllables = pinyin::count_syllables(&pinyin_num);
                 if !expected_syllables.contains(&num_pinyin_syllables) {
-                    errors.push(format!("Validation Error: pinyin syllables don't match number of characters, traditional: {} pinyin: {}", trad, pinyin_num));
+                    errors.push(format!("Validation Error: pinyin syllables don't match number of characters, traditional: {trad} pinyin: {pinyin_num}"));
                 }
             }
         }
-
     }
     Ok(errors)
 }
 
 pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
     eprintln!("Round trip check: db -> txt a");
-    let mut txt_a: Vec<u8> = Vec::with_capacity(20000000); // TODO
+    let mut txt_a: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
     db_to_txt::db_to_txt(&mut txt_a, conn, false, None).unwrap();
 
     eprintln!("Round trip check: txt a -> db");
@@ -205,16 +208,16 @@ pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
     let errors = txt_to_db::txt_to_db(&mut txt_a.as_slice(), &conn_b, None);
     if !errors.is_empty() {
         for err in errors {
-            eprintln!("{}", err);
+            eprintln!("{err}");
         }
     }
 
     eprintln!("Round trip check: db -> txt b");
-    let mut txt_b: Vec<u8> = Vec::with_capacity(20000000); // TODO
+    let mut txt_b: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
     db_to_txt::db_to_txt(&mut txt_b, &conn_b, false, None).unwrap();
 
     eprintln!("Round trip check: compare txt a and txt b");
-    
+
     if txt_a == txt_b {
         Ok(vec![])
     } else {

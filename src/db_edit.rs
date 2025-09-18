@@ -1,13 +1,11 @@
+use rusqlite::{Error as SqliteError, Transaction};
 
-use rusqlite::{Connection, Transaction, Error as SqliteError};
-
-use crate::common;
 use crate::common::SqliteId;
 
 pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), SqliteError> {
     // find all references with missing symmetric counterpart
     let mut stmt_missing_references = conn.prepare(
-        r#"
+        r"
         SELECT
             original_ref.id,
             original_ref.ref_type_id,
@@ -28,10 +26,10 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         WHERE
             ref_type.is_symmetric = 1
             AND symmetric_ref.id IS NULL;
-        "#
+        "
     )?;
     let mut stmt_insert_at_shared_id = conn.prepare_cached(
-        r#"
+        r"
         SELECT
             CASE
                 /*
@@ -97,7 +95,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
             dict_reference AS original_ref
         WHERE
             original_ref.id = ?1;
-        "#
+        "
     )?;
 
     let mut rows = stmt_missing_references.query([])?;
@@ -110,30 +108,34 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         let definition_id_src: Option<SqliteId> = row.get("definition_id_src")?;
         let word_id_dst: SqliteId = row.get("word_id_dst")?;
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
-        let rank_to_insert_at: SqliteId = stmt_insert_at_shared_id.query_one((ref_id,), |row| row.get(0))?;
-        let mut stmt = conn
-            .prepare_cached("INSERT INTO dict_shared (rank, rank_relative) VALUES (?1,?2)")?;
+        let rank_to_insert_at: SqliteId =
+            stmt_insert_at_shared_id.query_one((ref_id,), |row| row.get(0))?;
+        let mut stmt =
+            conn.prepare_cached("INSERT INTO dict_shared (rank, rank_relative) VALUES (?1,?2)")?;
         stmt.execute((rank_to_insert_at, 1))?;
         let shared_id = conn.last_insert_rowid();
         let mut stmt = conn
             .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
-            stmt.execute((
-                shared_id,
-                ref_type_id, 
-                // switch source and destination ids
-                word_id_dst,
-                definition_id_dst,
-                word_id_src,
-                definition_id_src,
-            ))
-            .unwrap();
+        stmt.execute((
+            shared_id,
+            ref_type_id,
+            // switch source and destination ids
+            word_id_dst,
+            definition_id_dst,
+            word_id_src,
+            definition_id_src,
+        ))
+        .unwrap();
     }
     Ok(())
 }
 
-pub fn add_missing_notes_and_tags_for_symmetric_references(conn: &Transaction) -> Result<(), SqliteError> {
+#[allow(clippy::too_many_lines, reason = "SQL")]
+pub fn add_missing_notes_and_tags_for_symmetric_references(
+    conn: &Transaction,
+) -> Result<(), SqliteError> {
     conn.execute_batch(
-        r#"
+        r"
         -- ref1 to ref2
 
         -- Use INSERT OR IGNORE to prevent errors if the tag relationship already exists
@@ -183,10 +185,10 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(conn: &Transaction) -
                 FROM dict_shared_tag AS tags1
                 WHERE tags1.for_shared_id = ref1.shared_id AND tags1.tag_id = tags2.tag_id
             );
-        "#
+        "
     )?;
     conn.execute_batch(
-        r#"
+        r"
         -- copy note from ref2 to ref1
         UPDATE
             dict_shared
@@ -266,7 +268,7 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(conn: &Transaction) -
                     AND ref1.id < ref2.id
                     AND shared1.note_id IS NOT NULL
             );
-        "#
+        ",
     )?;
     Ok(())
 }

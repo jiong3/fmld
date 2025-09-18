@@ -85,7 +85,7 @@ use std::fmt;
 
 const WORD_SEP: &str = "／";
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub enum Tag {
     Ascii(char),
     Full(String),
@@ -93,12 +93,12 @@ pub enum Tag {
 
 pub type Tags = Vec<Tag>;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct PinyinTagGroup {
     pub tags: Tags,
     pub pinyins: Vec<String>,
 }
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Word {
     pub trad: String,
     pub simp: Option<String>,
@@ -114,35 +114,35 @@ impl fmt::Display for Word {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct WordTagGroup {
     pub tags: Tags,
     pub words: Vec<Word>,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Reference {
     pub target_word: Word,
     pub target_id: Option<(char, u32)>,
 }
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct ReferenceTagGroup {
     pub ref_type: char,
     pub tags: Tags,
     pub references: Vec<Reference>,
 }
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct DefinitionTag {
     pub tags: Tags,
     pub id: u32,
     pub definition: String,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Note {
     pub id: u32,
     pub is_link: bool,
-    pub note: String,
+    pub txt: String,
 }
 
 #[derive(Debug, PartialEq)]
@@ -156,7 +156,7 @@ pub enum DictLine {
     Comment(String),
 }
 
-#[derive(Debug, PartialEq, Default)]
+#[derive(Debug, PartialEq, Eq, Default)]
 pub struct LineInfo {
     pub source_line_start: u32,
     pub source_line_num: u32,
@@ -170,7 +170,7 @@ pub struct ParsedLine {
     pub parsed_line: Result<DictLine, ()>,
 }
 
-#[derive(Debug, PartialEq, Default)]
+#[derive(Debug, PartialEq, Eq, Default)]
 pub struct ParserIterator<I>
 where
     I: Iterator<Item = String>,
@@ -184,9 +184,9 @@ impl<I> ParserIterator<I>
 where
     I: Iterator<Item = String>,
 {
-    pub fn new(inner: I) -> Self {
-        ParserIterator {
-            inner: inner,
+    pub const fn new(inner: I) -> Self {
+        Self {
+            inner,
             inner_line_count: 0,
             cur_line: None,
         }
@@ -215,7 +215,7 @@ where
                 // check if current line belongs to previous line (indentation +2)
                 if let Some(ref mut cur_line) = self.cur_line {
                     if indentation > cur_line.indentation + 1 {
-                        cur_line.line.push_str("\n");
+                        cur_line.line.push('\n');
                         cur_line.line.push_str(&line[cur_line.indentation + 2..]);
                         cur_line.source_line_num += 1;
                         continue;
@@ -228,14 +228,14 @@ where
                     line: line_content.to_owned(),
                     source_line_start: self.inner_line_count,
                     source_line_num: 1,
-                    indentation: indentation
+                    indentation,
                 });
 
                 if let Some(return_line) = return_line {
                     let parsed_line = parse_line(&return_line.line);
                     return Some(ParsedLine {
                         line: return_line,
-                        parsed_line: parsed_line,
+                        parsed_line,
                     });
                 }
                 continue;
@@ -246,7 +246,7 @@ where
             let parsed_line = parse_line(&return_line.line);
             return Some(ParsedLine {
                 line: return_line,
-                parsed_line: parsed_line,
+                parsed_line,
             });
         }
         None
@@ -402,7 +402,7 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
         Note {
             id,
             is_link: is_link.is_some(),
-            note: note.to_owned(),
+            txt: note.to_owned(),
         },
     ))
 }

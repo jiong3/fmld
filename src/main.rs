@@ -1,20 +1,19 @@
 use fmld::db_check;
 use fmld::db_edit;
 
-use fmld::db_to_txt::*;
-use fmld::txt_to_db::*;
+use fmld::db_to_txt;
+use fmld::txt_to_db;
 
-use clap::{Parser, Subcommand};
+use clap::Parser;
 use std::ffi::OsStr;
 use std::fs::File;
+use std::io;
 use std::io::BufWriter;
 use std::io::Write;
-use std::io::{self, BufRead, BufReader};
-use std::path::Path;
 use std::path::PathBuf;
 use std::time::Duration;
 
-use rusqlite::{Connection, Error as SqliteError, backup};
+use rusqlite::{Connection, backup};
 
 #[derive(Parser)]
 #[command(name = "FMLD Tool")]
@@ -47,8 +46,8 @@ struct Cli {
 }
 
 enum DbSource {
-    TXT(Vec<String>),
-    DB,
+    Txt(Vec<String>),
+    Db,
 }
 
 struct DictDb {
@@ -72,7 +71,7 @@ fn read_input(path: &PathBuf, limit_to_word: Option<&str>) -> DictDb {
                     .unwrap();
             }
             DictDb {
-                source: DbSource::DB,
+                source: DbSource::Db,
                 conn,
             }
         }
@@ -82,9 +81,9 @@ fn read_input(path: &PathBuf, limit_to_word: Option<&str>) -> DictDb {
                 eprintln!("Error: Could not open txt file {}", path.display());
                 std::process::exit(1);
             });
-            let errors = txt_to_db(&mut file, &conn, limit_to_word);
+            let errors = txt_to_db::txt_to_db(&mut file, &conn, limit_to_word);
             DictDb {
-                source: DbSource::TXT(errors), 
+                source: DbSource::Txt(errors),
                 conn,
             }
         }
@@ -103,7 +102,13 @@ fn write_output(db_source: &DictDb, cli: &Cli) {
         }
         let file_out = File::create(path_out).unwrap();
         let mut writer_out = BufWriter::new(file_out);
-        db_to_txt(&mut writer_out, &db_source.conn, cli.indent_with_tabs, cli.limit_to_word.as_deref()).unwrap();
+        db_to_txt::db_to_txt(
+            &mut writer_out,
+            &db_source.conn,
+            cli.indent_with_tabs,
+            cli.limit_to_word.as_deref(),
+        )
+        .unwrap();
     }
 
     if let Some(path_out) = &cli.db {
@@ -113,9 +118,9 @@ fn write_output(db_source: &DictDb, cli: &Cli) {
         }
         let mut db_out = Connection::open(path_out).unwrap();
         let backup = backup::Backup::new(&db_source.conn, &mut db_out).unwrap();
-                backup
-                    .run_to_completion(-1, Duration::new(0, 0), None)
-                    .unwrap();
+        backup
+            .run_to_completion(-1, Duration::new(0, 0), None)
+            .unwrap();
     }
 }
 
@@ -123,10 +128,10 @@ fn main() -> io::Result<()> {
     let cli = Cli::parse();
 
     let mut db_source = read_input(&cli.input_file, cli.limit_to_word.as_deref());
-    if let DbSource::TXT(errors) = &db_source.source {
+    if let DbSource::Txt(errors) = &db_source.source {
         if !errors.is_empty() {
             for err in errors {
-                eprintln!("{}", err);
+                eprintln!("{err}");
             }
         }
     }
@@ -134,7 +139,7 @@ fn main() -> io::Result<()> {
     let check_result = db_check::check_entries(&db_source.conn);
     if let Ok(err_list) = check_result {
         for err in err_list {
-            eprintln!("{}", err);
+            eprintln!("{err}");
         }
     }
     let tx = db_source.conn.transaction().unwrap();
@@ -157,7 +162,7 @@ fn main() -> io::Result<()> {
             eprintln!("Round trip check failed!");
         }
     }
-    
+
     write_output(&db_source, &cli);
 
     Ok(())

@@ -228,7 +228,7 @@ fn test_parse_note_line_full() {
         Note {
             id: 1,
             is_link: false,
-            note: "This is a note.".to_string(),
+            txt: "This is a note.".to_string(),
         },
     ));
     assert_eq!(parse_note_line(line), expected);
@@ -242,7 +242,7 @@ fn test_parse_note_link_line_full() {
         Note {
             id: 2,
             is_link: true,
-            note: "".to_string(),
+            txt: "".to_string(),
         },
     ));
     assert_eq!(parse_note_line(line), expected);
@@ -325,7 +325,7 @@ fn test_parse_line_dispatcher() {
         Ok(DictLine::Note(Note {
             id: 1,
             is_link: false,
-            note: "a note".to_string()
+            txt: "a note".to_string()
         }))
     );
     assert_eq!(

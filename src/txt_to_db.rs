@@ -2,7 +2,10 @@ use rusqlite::{Connection, Error as SqliteError};
 
 use crate::config;
 use crate::pinyin;
-use crate::txt_parser::*;
+use crate::txt_parser::{
+    DefinitionTag, DictLine, LineInfo, Note, ParserIterator, PinyinTagGroup, ReferenceTagGroup,
+    Tag, Tags, Word, WordTagGroup,
+};
 
 use std::io;
 use std::io::BufRead;
@@ -62,20 +65,20 @@ impl fmt::Display for TxtToDbError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::ParseError => write!(f, "Parser Error"),
-            Self::SqliteError { source } => write!(f, "{}", source),
-            Self::InvalidAsciiTag(ascii_tag) => write!(f, "Invalid ASCII tag: {}", ascii_tag),
+            Self::SqliteError { source } => write!(f, "{source}"),
+            Self::InvalidAsciiTag(ascii_tag) => write!(f, "Invalid ASCII tag: {ascii_tag}"),
             Self::NoUsableParentNode => write!(
                 f,
                 "No usable parent node, check indentation and whether the entry is compatible to previous line."
             ),
             Self::UnknownReferenceType(ref_type) => {
-                write!(f, "Unknown reference type X?: {}", ref_type)
+                write!(f, "Unknown reference type X?: {ref_type}")
             }
             Self::ReferenceTargetNotFound(word) => {
-                write!(f, "Reference target not found: {}", word)
+                write!(f, "Reference target not found: {word}")
             }
             Self::NoteIdNotFound(id) => {
-                write!(f, "No note with found for id: {}", id)
+                write!(f, "No note with found for id: {id}")
             }
         }
     }
@@ -101,7 +104,11 @@ impl std::error::Error for TxtToDbError {
     }
 }
 
-pub fn txt_to_db(reader: &mut dyn Read, conn: &Connection, limit_to_word: Option<&str>) -> Vec<String> {
+pub fn txt_to_db(
+    reader: &mut dyn Read,
+    conn: &Connection,
+    limit_to_word: Option<&str>,
+) -> Vec<String> {
     let reader = BufReader::new(reader);
     let lines_iterator = reader.lines().map_while(io::Result::ok);
     let mut txt2db = TxtToDb::new(conn);
@@ -134,7 +141,11 @@ impl<'a> TxtToDb<'a> {
         }
     }
 
-    pub fn txt_to_db(&mut self, lines: impl IntoIterator<Item = String>, limit_to_word: Option<&str>) {
+    pub fn txt_to_db(
+        &mut self,
+        lines: impl IntoIterator<Item = String>,
+        limit_to_word: Option<&str>,
+    ) {
         self.conn
             .execute_batch(
                 "PRAGMA synchronous = OFF; PRAGMA journal_mode = MEMORY; BEGIN TRANSACTION",
@@ -206,7 +217,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_tag_for_entry(
-        &mut self,
+        &self,
         shared_id: SqliteId,
         tag_ascii: Option<char>,
         tag_txt: &str,
@@ -230,7 +241,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_tags_for_entry(
-        &mut self,
+        &self,
         shared_id: SqliteId,
         entry_type: &DictNode,
         tags: &Tags,
@@ -321,7 +332,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn create_pron_definition_entry(
-        &mut self,
+        &self,
         shared_pron_id: SqliteId,
         definition_id: SqliteId,
     ) -> Result<SqliteId> {
@@ -345,8 +356,8 @@ impl<'a> TxtToDb<'a> {
         let ref_entry = DictNode::CrossReference(shared_id);
         self.add_tags_for_entry(shared_id, &ref_entry, tags)?;
         self.cross_references.push(CrossReferenceEntry {
-            shared_id: shared_id,
-            ref_type: ref_type,
+            shared_id,
+            ref_type,
             src_word_id: word_id_src,
             src_definition_id: definition_id_src,
             dst_word: word_dst,
@@ -406,7 +417,7 @@ impl<'a> TxtToDb<'a> {
             };
 
             // create/get reference type
-            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(&reference.ref_type)
+            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(reference.ref_type)
             else {
                 self.errors.push(TxtToDbErrorLine {
                     err_line_idx: reference.err_line_idx,
@@ -485,7 +496,7 @@ impl<'a> TxtToDb<'a> {
         Ok(1)
     }
 
-    fn create_comment(&mut self, comment_txt: &str) -> Result<SqliteId> {
+    fn create_comment(&self, comment_txt: &str) -> Result<SqliteId> {
         self.conn.execute(
             "INSERT INTO dict_comment (comment) VALUES (?1)",
             (comment_txt,),
@@ -495,7 +506,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_comment_to_entry(
-        &mut self,
+        &self,
         comment_id: SqliteId,
         target_shared_id: SqliteId,
     ) -> Result<usize> {
@@ -563,7 +574,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_comment_line_to_db(&mut self, comment: &str) -> Result<Vec<DictNode>> {
-        let comment_id = self.create_comment(&comment)?;
+        let comment_id = self.create_comment(comment)?;
         if self.line_stack.is_empty() {
             // create new shared entry to attach comment for the initial header comment
             if self.rank_counter == 0 {
@@ -592,7 +603,7 @@ impl<'a> TxtToDb<'a> {
             if note.is_link {
                 None
             } else {
-                Some(self.create_note(note.id, &note.note)?)
+                Some(self.create_note(note.id, &note.txt)?)
             }
         };
         let mut num_targets = 0;
@@ -663,7 +674,7 @@ impl<'a> TxtToDb<'a> {
             if let Some(DictNode::Class(class_id)) = self.line_stack.get(2).and_then(|v| v.first())
             {
                 let definition_entry =
-                    self.create_definition_entry(*word_id, &definition_tag, *class_id)?;
+                    self.create_definition_entry(*word_id, definition_tag, *class_id)?;
                 if let DictNode::Definition((_, _, definition_id)) = definition_entry {
                     // add links between definition and pronunciation
                     let pinyin_entries = self.line_stack.get(1).unwrap().clone();
@@ -707,7 +718,7 @@ impl<'a> TxtToDb<'a> {
     }
 }
 
-fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
+const fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
     let shared_id = match dict_node {
         DictNode::Word((shared_id, _)) => shared_id,
         DictNode::Pinyin((shared_id, _)) => shared_id,
@@ -720,11 +731,11 @@ fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
     Ok(*shared_id)
 }
 
-fn tag_to_txt(entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String, String)> {
+fn tag_to_txt(_entry_type: &DictNode, tag: &Tag) -> Result<(Option<char>, String, String)> {
     match tag {
         Tag::Full(full_tag) => Ok((None, full_tag.to_owned(), "definition".to_owned())),
         Tag::Ascii(ascii_tag) => {
-            let tag_str = config::tag_to_txt_ascii_common(ascii_tag);
+            let tag_str = config::tag_to_txt_ascii_common(*ascii_tag);
             if let Some(t) = tag_str {
                 Ok((Some(*ascii_tag), t.0.to_owned(), t.1.to_owned()))
             } else {

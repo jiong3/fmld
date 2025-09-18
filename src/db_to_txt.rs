@@ -79,7 +79,12 @@ fn format_multiline(s: &str, indent_level: usize, indent_char: &str) -> String {
     s.lines().join(&indented_newline)
 }
 
-pub fn db_to_txt(writer: &mut dyn Write, conn: &Connection, indent_with_tabs: bool, limit_to_word: Option<&str>) -> Result<()> {
+pub fn db_to_txt(
+    writer: &mut dyn Write,
+    conn: &Connection,
+    indent_with_tabs: bool,
+    limit_to_word: Option<&str>,
+) -> Result<()> {
     let mut db2txt = DbToTxt::new(conn, writer, indent_with_tabs);
     db2txt.generate_txt_file(limit_to_word)?;
     Ok(())
@@ -110,7 +115,7 @@ impl<'a> DbToTxt<'a> {
         let mut stmt = self
             .conn
             .prepare(
-                r#"
+                r"
             SELECT
                 w.id AS word_id,
                 w.shared_id AS word_shared_id,
@@ -133,7 +138,7 @@ impl<'a> DbToTxt<'a> {
             LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
             GROUP BY def.id
             ORDER BY s.rank, s.rank_relative; -- NULLS FIRST default
-            "#,
+            ",
             )
             .unwrap();
 
@@ -145,7 +150,7 @@ impl<'a> DbToTxt<'a> {
         self.write_shared_items(1, 0)?; // header comment
 
         while let Some(row) = rows.next()? {
-            let definition_entry = self.row_to_definition_entry(row)?;
+            let definition_entry = Self::row_to_definition_entry(row)?;
 
             if let Some(stop_word) = limit_to_word {
                 if definition_entry.trad == stop_word {
@@ -185,7 +190,7 @@ impl<'a> DbToTxt<'a> {
         Ok(())
     }
 
-    fn row_to_definition_entry(&self, row: &Row) -> Result<DefinitionEntry> {
+    fn row_to_definition_entry(row: &Row) -> Result<DefinitionEntry> {
         let pinyin_shared_ids_str: Option<String> = row.get(10)?;
         let pinyin_shared_ids = pinyin_shared_ids_str
             .unwrap()
@@ -221,12 +226,12 @@ impl<'a> DbToTxt<'a> {
     fn write_pinyin_entries(
         &mut self,
         def_id: SqliteId,
-        pinyin_shared_ids: &Vec<SqliteId>,
+        pinyin_shared_ids: &[SqliteId],
     ) -> Result<()> {
         let mut stmt = self
             .conn
             .prepare_cached(
-                r#"
+                r"
             SELECT
                 p.pinyin_num,
                 p_s.note_id,
@@ -237,7 +242,7 @@ impl<'a> DbToTxt<'a> {
             LEFT JOIN dict_pron p ON sp.pron_id = p.id
             LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
             WHERE def.id = ?1 AND p_s.id = ?2
-            "#,
+            ",
             )
             .unwrap();
 
@@ -275,7 +280,7 @@ impl<'a> DbToTxt<'a> {
                     let pinyins = tag_group
                         .map(|item| item.pinyin_num)
                         .join(config::ITEMS_SEP);
-                    format!("{}{}", tags, pinyins)
+                    format!("{tags}{pinyins}")
                 })
                 .join(" ");
 
@@ -329,12 +334,12 @@ impl<'a> DbToTxt<'a> {
                     ascii_tags.push(symbol);
                 }
             } else {
-                full_tags.push(format!("#{}", tag));
+                full_tags.push(format!("#{tag}"));
             }
         }
         // sort ascii tags by defined order, unwrap() is safe due to previous is_empty() check
         ascii_tags.sort_by_key(|x| {
-            config::tag_to_txt_ascii_common(&x.chars().nth(0).unwrap())
+            config::tag_to_txt_ascii_common(x.chars().nth(0).unwrap())
                 .unwrap_or(("", "", 0))
                 .2
         });
@@ -378,7 +383,7 @@ impl<'a> DbToTxt<'a> {
         if let Some(id) = comment_id {
             let comment: String = stmt.query_row([id], |row| row.get(0))?;
             let comment = format_multiline(&comment, indent, &self.indent_str);
-            writeln!(self.writer, "{}# {}", indentation, comment)?;
+            writeln!(self.writer, "{indentation}# {comment}")?;
         }
         // Write Note
         if let Some(id) = note_id {
@@ -389,10 +394,10 @@ impl<'a> DbToTxt<'a> {
                 stmt.query_row([id], |row| Ok((row.get(0)?, row.get(1)?)))?;
             if self.written_notes.contains(&ext_id) || indent == 0 {
                 // indent == 0 hack for initial header pointer to highest note id
-                writeln!(self.writer, "{}N->{}", indentation, ext_id)?;
+                writeln!(self.writer, "{indentation}N->{ext_id}")?;
             } else {
                 let note_txt = format_multiline(&note_txt, indent, &self.indent_str);
-                writeln!(self.writer, "{}N{} {}", indentation, ext_id, note_txt)?;
+                writeln!(self.writer, "{indentation}N{ext_id} {note_txt}")?;
                 self.written_notes.insert(ext_id);
             }
         }
@@ -414,7 +419,7 @@ impl<'a> DbToTxt<'a> {
         indent: usize,
     ) -> Result<()> {
         let mut stmt = self.conn.prepare_cached(
-            r#"
+            r"
             SELECT
                 rt.ascii_symbol,
                 r.shared_id,
@@ -433,7 +438,7 @@ impl<'a> DbToTxt<'a> {
                 r.word_id_src = ?1 AND
                 ((?2 IS NULL AND r.definition_id_src IS NULL) OR def_src.id = ?2)
             ORDER BY s.rank, s.rank_relative -- NULLS FIRST default
-        "#,
+        ",
         )?;
 
         // 1. Fetch all data into a Vec of CrossReferenceData structs.
@@ -480,7 +485,7 @@ impl<'a> DbToTxt<'a> {
                     let references = sub_group
                         .map(|item| item.reference_str.clone())
                         .join(config::ITEMS_SEP);
-                    format!("{}{}", tags, references)
+                    format!("{tags}{references}")
                 })
                 .collect();
 

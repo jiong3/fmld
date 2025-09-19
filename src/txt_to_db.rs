@@ -622,6 +622,15 @@ impl<'a> TxtToDb<'a> {
                 }
             }
         }
+        // special handling for the highest note id referenced in the header
+        if note.is_link && self.rank_counter == 1 {
+            self.note_references.push(NoteReferenceEntry {
+                    target_shared_id: 1,
+                    ext_note_id: note.id,
+                    err_line_idx: self.err_lines.len(),
+                });
+                num_targets += 1;
+            }
         if num_targets == 0 {
             return Err(TxtToDbError::NoUsableParentNode);
         }

@@ -40,6 +40,17 @@ impl From<std::io::Error> for DbToTxtError {
     }
 }
 
+impl std::error::Error for DbToTxtError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match *self {
+            Self::IoError(ref source) => Some(source),
+            Self::SqliteError(ref source) => Some(source),
+            Self::InvalidDbData(_) => None,
+
+        }
+    }
+}
+
 pub type Result<T> = std::result::Result<T, DbToTxtError>;
 
 // --- Data Structures to hold query results ---

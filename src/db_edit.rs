@@ -1,6 +1,49 @@
+use std::cmp::max;
+
 use rusqlite::{Error as SqliteError, Transaction};
 
 use crate::common::SqliteId;
+
+pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32, SqliteError> {
+    let mut stmt_max_ext_note_id = conn.prepare(
+        r"
+        SELECT MAX(dict_note.ext_note_id)
+        FROM dict_note;
+        "
+    )?;
+    let max_ext_note_id_db: u32 = stmt_max_ext_note_id.query_one((), |row| row.get(0))?;
+    let mut base_ext_note_id = max(max_ext_note_id, max_ext_note_id_db);
+    let mut stmt_note_ids_to_update = conn.prepare(
+        r"
+        SELECT dict_note.id
+        FROM dict_note
+        WHERE  dict_note.ext_note_id < 100;
+        "
+    )?;
+    let mut stmt_update_note_id = conn.prepare_cached(
+        r"
+        UPDATE dict_note
+        SET ext_note_id=?2
+        WHERE id=?1;
+        "
+    )?;
+    let mut stmt_shared_max_note_id = conn.prepare_cached(
+        r"
+        UPDATE dict_shared
+        SET note_id=?1
+        WHERE id=1;
+        "
+    )?;
+    let mut rows = stmt_note_ids_to_update.query([])?;
+
+    while let Some(row) = rows.next()? {
+        base_ext_note_id += 1;
+        let note_id: SqliteId = row.get(0)?;
+        stmt_update_note_id.execute((note_id, base_ext_note_id))?;
+        stmt_shared_max_note_id.execute((note_id,))?;
+    }
+    Ok(base_ext_note_id)
+}
 
 pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), SqliteError> {
     // find all references with missing symmetric counterpart

@@ -186,7 +186,6 @@ fn main() -> anyhow::Result<()> {
 
     db_edit::add_missing_symmetric_references(&tx)?;
     db_edit::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
-    db_edit::finalize_note_ids(&tx, 0)?;
     tx.commit()?;
 
     if let Some(meta_path) = &cli.finalize_with_meta {

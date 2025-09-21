@@ -123,6 +123,7 @@ pub struct TxtToDb<'a> {
     line_stack: Vec<Vec<DictNode>>,
     cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
     note_references: Vec<NoteReferenceEntry>,
+    new_notes_num: u32,
     pub err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for errors
     pub errors: Vec<TxtToDbErrorLine>,
 }
@@ -136,6 +137,7 @@ impl<'a> TxtToDb<'a> {
             line_stack: vec![],
             cross_references: vec![],
             note_references: vec![],
+            new_notes_num: 0,
             err_lines: vec![],
             errors: vec![],
         }
@@ -486,6 +488,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_note_to_entry(&self, note_id: SqliteId, target_shared_id: SqliteId) -> Result<usize> {
+        // TODO error if it already exists, same for comments
         let rows_updated = self.conn.execute(
             "UPDATE dict_shared SET note_id=?1 WHERE id=?2 ",
             (note_id, target_shared_id),
@@ -599,11 +602,19 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_note_line_to_db(&mut self, note: &Note) -> Result<Vec<DictNode>> {
+        let ext_note_id = match note.id {
+            Some(i) => i,
+            _ => {
+                self.new_notes_num += 1;
+                self.new_notes_num
+                // TODO error if new_notes_num >= 100
+            }
+        };
         let note_id: Option<SqliteId> = {
             if note.is_link {
                 None
             } else {
-                Some(self.create_note(note.id, &note.txt)?)
+                Some(self.create_note(ext_note_id, &note.txt)?)
             }
         };
         let mut num_targets = 0;
@@ -613,7 +624,7 @@ impl<'a> TxtToDb<'a> {
                 if note.is_link {
                     self.note_references.push(NoteReferenceEntry {
                         target_shared_id: shared_id,
-                        ext_note_id: note.id,
+                        ext_note_id: ext_note_id,
                         err_line_idx: self.err_lines.len(),
                     });
                     num_targets += 1;
@@ -625,12 +636,12 @@ impl<'a> TxtToDb<'a> {
         // special handling for the highest note id referenced in the header
         if note.is_link && self.rank_counter == 1 {
             self.note_references.push(NoteReferenceEntry {
-                    target_shared_id: 1,
-                    ext_note_id: note.id,
-                    err_line_idx: self.err_lines.len(),
-                });
-                num_targets += 1;
-            }
+                target_shared_id: 1,
+                ext_note_id: ext_note_id,
+                err_line_idx: self.err_lines.len(),
+            });
+            num_targets += 1;
+        }
         if num_targets == 0 {
             return Err(TxtToDbError::NoUsableParentNode);
         }

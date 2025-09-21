@@ -54,10 +54,10 @@ class_line = "C" ascii_word
 definition_line = "D" id [tags_full] ...
 cross_reference_line = "X" ascii_symbol tags_ascii reference {; reference} {tags_ascii reference {; reference}}
 comment_line = "#" ...
-note_line = "N" id ...
+note_line = "N" ("?" | id) ...
 note_reference_line "N->" id ...
 
-id = 1-9 {0-9}
+id = ? 1-9 {0-9}
 ascii_symbol = any non-special, visible ASCII character excluding |
 tag_letter = A-Za-z0-9 and "-"
 tag_word = tag_letter {tag_letter}
@@ -76,7 +76,7 @@ use nom::{
     branch::alt,
     bytes::complete::{tag, take_while1},
     character::complete::{anychar, char, multispace0, none_of, u32},
-    combinator::{all_consuming, map, opt, rest, value},
+    combinator::{all_consuming, map, opt, rest, value, fail},
     multi::{many0, many1, separated_list1},
     sequence::{delimited, pair, preceded, terminated},
 };
@@ -140,7 +140,7 @@ pub struct DefinitionTag {
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct Note {
-    pub id: u32,
+    pub id: Option<u32>,
     pub is_link: bool,
     pub txt: String,
 }
@@ -391,16 +391,17 @@ fn parse_comment_line(comment_line: &str) -> IResult<&str, String> {
 }
 
 fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
-    let (remainder, (is_link, id, note)) = all_consuming((
-        opt(value(true, tag("->"))),
-        u32,
-        preceded(multispace0, rest),
-    ))
+    let (remainder, (is_link, id, note)) = all_consuming(
+        // reference with note id or note with id or ? as a placeholder for new ids
+        alt((
+            (opt(value(true, tag("->"))), u32, preceded(multispace0, rest)),
+            (opt(fail()), alt((u32, value(0, char('?')))), preceded(multispace0, rest)),
+        )))
     .parse(note_line)?;
     Ok((
         remainder,
         Note {
-            id,
+            id: if id > 0 { Some(id) } else { None },
             is_link: is_link.is_some(),
             txt: note.to_owned(),
         },

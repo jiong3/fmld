@@ -155,7 +155,17 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
     tx.commit()?;
 
     if let Some(mut m) = external_meta {
+        let mut stmt = db_source.conn.prepare("
+        SELECT
+            (SELECT COUNT(dict_definition.id) FROM dict_definition) AS num_defs ,
+            (SELECT COUNT(dict_word.id)  FROM dict_word) AS num_words,
+            (SELECT COUNT(dict_reference.id) FROM dict_reference) AS num_refs;
+        ")?;
+        let (num_words, num_defs, num_refs) = stmt.query_row([], |row| Ok((row.get("num_words")?, row.get("num_defs")?, row.get("num_refs")?)))?;
         m.num_notes = new_max_ext_note_id;
+        m.num_definitions = num_defs;
+        m.num_references = num_refs;
+        m.num_words = num_words;
         let s = serde_json::to_string_pretty(&m)?;
         fs::write(meta_path, s)?;
     }

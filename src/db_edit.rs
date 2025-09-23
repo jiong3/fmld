@@ -11,7 +11,7 @@ pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32
         FROM dict_note;
         "
     )?;
-    let max_ext_note_id_db: u32 = stmt_max_ext_note_id.query_one((), |row| row.get(0))?;
+    let max_ext_note_id_db: u32 = stmt_max_ext_note_id.query_one((), |row| row.get(0)).unwrap_or_default();
     let mut base_ext_note_id = max(max_ext_note_id, max_ext_note_id_db);
     let mut stmt_note_ids_to_update = conn.prepare(
         r"

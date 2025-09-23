@@ -158,7 +158,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         stmt.execute((rank_to_insert_at, 1))?;
         let shared_id = conn.last_insert_rowid();
         let mut stmt = conn
-            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
+            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)")?;
         stmt.execute((
             shared_id,
             ref_type_id,
@@ -167,8 +167,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
             definition_id_dst,
             word_id_src,
             definition_id_src,
-        ))
-        .unwrap();
+        ))?;
     }
     Ok(())
 }

@@ -142,18 +142,25 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
     let mut stmt = conn.prepare(
         r"
         SELECT
-        w.trad,
-        w.simp,
-        c.name AS class_name,
-        GROUP_CONCAT(p.pinyin_num, ';') AS pinyin_nums
+            w.trad,
+            w.simp,
+            c.name AS class_name,
+		GROUP_CONCAT(t_w.ascii_symbol, ';') AS word_tags,
+        GROUP_CONCAT(p.pinyin_num, ';') AS pinyin_nums,
+		GROUP_CONCAT(t_p.ascii_symbol, ';') AS pinyin_tags
         FROM dict_definition def
         JOIN dict_shared s ON def.shared_id = s.id
         JOIN dict_word w ON def.word_id = w.id
+		JOIN dict_shared sw ON w.shared_id = sw.id
+		LEFT JOIN dict_shared_tag st_w ON w.shared_id = st_w.for_shared_id
+		LEFT JOIN dict_tag t_w ON st_w.tag_id = t_w.id
         JOIN dict_class c ON def.class_id = c.id
         LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
         LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
         LEFT JOIN dict_pron p ON sp.pron_id = p.id
         LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
+		LEFT JOIN dict_shared_tag st_p ON p_s.id = st_p.for_shared_id
+		LEFT JOIN dict_tag t_p ON st_p.tag_id = t_p.id
         GROUP BY def.id
         ORDER BY s.rank, s.rank_relative;
         ",
@@ -165,6 +172,8 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
     while let Some(row) = rows.next()? {
         let trad: String = row.get("trad")?;
         let simp: String = row.get("simp")?;
+        let word_tags: Option<String> = row.get("word_tags")?;
+        let pinyin_tags: Option<String> = row.get("pinyin_tags")?;
         let _class_name: String = row.get("class_name")?;
         let pinyin_nums: Vec<String> = row
             .get::<_, String>("pinyin_nums")?
@@ -174,8 +183,12 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
 
         // check if number of characters is the same in trad and simp
         if trad.chars().count() != simp.chars().count() {
-            errors.push(format!("Validation Error: Different numbers of characters, traditional: {trad} simplified: {simp}"));
-            continue;
+            if let Some(w_t) = word_tags {
+                if !w_t.contains(['i', 'X']) {
+                    errors.push(format!("Validation Error: Different numbers of characters, traditional: {trad} simplified: {simp}"));
+                    continue;
+                }
+            } 
         }
 
         // check if the number of pinyin syllables matches the number of Chinese characters
@@ -188,6 +201,9 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
             let num_trad_chars = trad.chars().count();
             let expected_syllables = (num_trad_chars - possible_erhuas)..=num_trad_chars;
             for pinyin_num in pinyin_nums {
+                if let Some(p_t) = &pinyin_tags {
+                    if p_t.contains(['i', 'X']) { continue;}
+                }
                 let num_pinyin_syllables = pinyin::count_syllables(&pinyin_num);
                 if !expected_syllables.contains(&num_pinyin_syllables) {
                     errors.push(format!("Validation Error: pinyin syllables don't match number of characters, traditional: {trad} pinyin: {pinyin_num}"));

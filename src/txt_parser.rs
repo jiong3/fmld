@@ -1,76 +1,3 @@
-/*
-Format Description
-
-- encoded in utf-8
- - character variant mapping: 裏->裡 TODO not 100% realized
-- single indentation creates a child element
-- double indentation relative to previous line continues previous line (intended for notes and comments)
-- the first letter indicates the content of the line:
-  * W: word
-  * P: pronunciation in pinyin with tone marks, including 5 for neutral tone
-  * C: class / part-of-speech
-  * D: definition
-  * X: cross-reference, the X is followed by another character indicating the type of reference
-       (symmetric) means that the reference should exist in both directions
-    * =: synonym-equal (symmetric)
-    * ~: synonym-similar (symmetric)
-    * !: antonym (symmetric)
-    * ?: could-be-confused-with (symmetric)
-    * <: part-of
-    * >: contains
-    * V: word-variant-of
-    * v: character-variant-of
-    * M: used-with-measure-word
-    * &: collocation
-    * G: word-group
-  * #: comment (meta information etc. which is not relevant to readers of the dictionary)
-  * N: note, e.g. more detailed explanations
-    * N->: direct reference to a note entry to avoid duplications in the text representation
-- allowed child elements for each entry type:
-  * W: P, X, #, N
-  * P: P (one level, to attach notes to individual pinyins), C, #, N
-  * C: D
-  * D: X, #, N
-  * X: #, N
-  * #: none
-  * N: none
-- every entry must have at least one definition, leading to he following minimum structure: W->P->C->D
-- notes and definitions can contain references to words using brackets like [嗎／吗]
-  or [嗎／吗#D1] if the link is to a single definition
-
-
-TODO E for examples with translations, not full sentences? SQL representation?
-  e.g. E||trad/simp (translation); trad/simp; ...
-
-
-Grammar
-
-{} is repeated zero or more times (like *)
-[] is repeated zero or one time (optional)
-
-entry_line = "W" tags_ascii word_entry
-pinyin_line = "P" tags_ascii pinyin {; pinyin} {tags_ascii pinyin {; pinyin}}
-class_line = "C" ascii_word
-definition_line = "D" id [tags_full] ...
-cross_reference_line = "X" ascii_symbol tags_ascii reference {; reference} {tags_ascii reference {; reference}}
-comment_line = "#" ...
-note_line = "N" ("?" | id) ...
-note_reference_line "N->" id ...
-
-id = ? 1-9 {0-9}
-ascii_symbol = any non-special, visible ASCII character excluding |
-tag_letter = A-Za-z0-9 and "-"
-tag_word = tag_letter {tag_letter}
-hanzi = anything except "|#;/／"
-hanzi_word = hanzi {hanzi}
-pinyin_letter = A-Za-z0-9 and "ê. -,"
-pinyin = pinyin_letter {pinyin_letter}
-word_entry = hanzi_word [("／" | "/") hanzi_word]
-reference = word_entry [#D id]
-tags_ascii = "|" {ascii_symbol} "|"
-tags_full = "|" {ascii_symbol} {"#" tag_word} "|"
-*/
-
 use nom::{
     IResult, Parser,
     branch::alt,
@@ -207,7 +134,8 @@ where
 
                 // count and remove leading spaces or tabs, currently no check if they are mixed
                 let line_content = line.trim_start();
-                if line_content.len() < 2 {
+                // skip empty lines unless they belong to a current line
+                if self.cur_line.is_none() && line_content.len() < 2 {
                     break;
                 }
                 let indentation = line.len() - line_content.len();

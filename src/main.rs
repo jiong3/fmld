@@ -16,7 +16,6 @@ use std::time::Duration;
 
 use anyhow::{Context, anyhow, bail};
 use serde::{Deserialize, Serialize};
-use serde_json;
 
 use rusqlite::{Connection, backup};
 

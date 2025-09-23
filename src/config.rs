@@ -6,13 +6,25 @@ pub const APPROX_TXT_FILE_SIZE: usize = 16_000_000;
 pub const DB_SCHEMA: &str = r#"
 
 PRAGMA user_version = 1;
-/* ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
+
+/* Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.
+
+Each entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron) and a class (dict_class), which corresponds to the part of speech.
+Words and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc..
+All words, definitions, pronunciations and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.
+
+The order of the text file is preserved using the rank field (dict_shared). New items can be inserted using rank_relative. The fields ascii_symbol (dict_ref_type, dict_tag) refer to the symbol used in the text representation.
+
+
+
+ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
 	"word_id" INTEGER NOT NULL,
-	"definition" TEXT NOT NULL, -- definition of the word
-	"ext_def_id" INTEGER NOT NULL, -- constant id, used for referencing definitions in the text representation of from external sources
+	"definition" TEXT NOT NULL,
+	-- constant id, used for referencing definitions in the text representation of from external sources
+	"ext_def_id" INTEGER NOT NULL,
 	"class_id" INTEGER NOT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
@@ -39,7 +51,9 @@ ON "dict_tag" ("tag", "type");
 CREATE TABLE IF NOT EXISTS "dict_word" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
+	-- word in traditional characters
 	"trad" TEXT NOT NULL,
+	-- word in simplified characters
 	"simp" TEXT NOT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
@@ -194,7 +208,7 @@ ORDER BY s.rank, s.rank_relative;
 
 "#;
 
-/// Get (full reference type name, is symmetric?) for the given reference type
+/// Get (full reference type name, is symmetric,) for the given reference type
 /// A symmetric reference should exist in both directions
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
     Some(match ref_type_char {
@@ -222,14 +236,15 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         't' => ("taiwan-chiefly", "country", 10),
         'C' => ("china-only", "country", 10),
         'c' => ("china-chiefly", "country", 10),
-        '&' => ("bound-form", "bound-form", 8), // not used for references, use b (chiefly bound) and B (only as bound form)?
+        '&' => ("bound-form", "bound-form", 8),
+		'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6),
         'a' => ("ai-human", "ai", 6),
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
         '+' => ("high-relevance", "relevance", 1),
         '-' => ("low-relevance", "relevance", 1),
-        'x' => ("irrelevant", "relevance", 1),
+        'x' => ("lowest-relevance", "relevance", 1),
         'X' => ("deleted", "relevance", 1),
         _ => {
             return None;

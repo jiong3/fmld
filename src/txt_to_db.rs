@@ -624,7 +624,7 @@ impl<'a> TxtToDb<'a> {
                 if note.is_link {
                     self.note_references.push(NoteReferenceEntry {
                         target_shared_id: shared_id,
-                        ext_note_id: ext_note_id,
+                        ext_note_id,
                         err_line_idx: self.err_lines.len(),
                     });
                     num_targets += 1;
@@ -637,7 +637,7 @@ impl<'a> TxtToDb<'a> {
         if note.is_link && self.rank_counter == 1 {
             self.note_references.push(NoteReferenceEntry {
                 target_shared_id: 1,
-                ext_note_id: ext_note_id,
+                ext_note_id,
                 err_line_idx: self.err_lines.len(),
             });
             num_targets += 1;

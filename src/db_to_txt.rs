@@ -150,8 +150,7 @@ impl<'a> DbToTxt<'a> {
             GROUP BY def.id
             ORDER BY s.rank, s.rank_relative; -- NULLS FIRST default
             ",
-            )
-            .unwrap();
+            )?;
 
         let mut rows = stmt.query([])?;
         let mut last_word_id = -1;
@@ -360,10 +359,10 @@ impl<'a> DbToTxt<'a> {
         let space = if full_tags.is_empty() { "" } else { " " };
         if ascii_tags.is_empty() && full_tags.is_empty() {
             // leaving out the || would require checks in case there is a tag group without tags coming after a group with tags on the same line
-            Ok("|| ".to_owned())
+            Ok("||".to_owned())
         } else {
             Ok(format!(
-                "|{}{}{}| ",
+                "|{}{}{}|",
                 ascii_tags.iter().join(""),
                 space,
                 full_tags.iter().join(" ")

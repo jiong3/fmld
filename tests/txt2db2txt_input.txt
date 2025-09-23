@@ -1,5 +1,6 @@
 # Free Mandarin Learner's Dictionary
   A fork of the En-Ch Wiktionary.
+N->375
 W|w|過秤／过秤
  P||ɡuo4cheng4
   C verb
@@ -9,6 +10,7 @@ W||Trad2 / Simp2
  P|| piny1yin3
   C variant
    D1|| variant of [Trad1 / Simp1]
+    N? automatically add a note id for this note
 W|wT #mysupertag #atag #yolotag| Trad1 / Simp1
  P|| pin1yin1; pin1yin2
   P|T| pin1yin3

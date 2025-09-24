@@ -1,39 +1,42 @@
 # Free Mandarin Learner's Dictionary
   A fork of the En-Ch Wiktionary.
-W|| Trad2／Simp2
- Xv|| Trad1／Simp1
- P|| piny1yin3
+  TODO a lot more cases should be added here, e.g. the four different places where symmetric references are automatically added
+N->407
+W||Trad2／Simp2
+ Xv||Trad1／Simp1
+ P||piny1yin3
   C variant
-   D1|| variant of [Trad1 / Simp1]
-W|wT #atag #mysupertag #yolotag| Trad1／Simp1
- X~|A| 您好
+   D1||variant of [Trad1 / Simp1]
+    N406 automatically add a note id for this note
+W|wT #atag #mysupertag #yolotag|Trad1／Simp1
+ X~|A|您好
   N405 Test note which should be added to the symmetric counterpart
- P|| pin1yin1;pin1yin2 |T| pin1yin3
-  P|C| pin1yin4;nv3
+ P||pin1yin1;pin1yin2 |T|pin1yin3
+  P|C|pin1yin4;nv3
    # test if a new line is added correction to attach this comment
   C adj
-   D1|| my first definition
+   D1||my first definition
     # this definition is problematic
     N375 this is actually wrong! 
       Long note this one is!
-    XV|| 你好／嗎#D3
-   D2|T| my second definition, Taiwan only
+    XV||你好／嗎#D3
+   D2|T|my second definition, Taiwan only
   C noun
-   D3|c| another definition, chiefly China noun
-W|wc| 您好
- X~|A| Trad1／Simp1
+   D3|c|another definition, chiefly China noun
+W|wc|您好
+ X~|A|Trad1／Simp1
   # however this comment should not be added
   N->405
- P|| pin2yin2
+ P||pin2yin2
   C verb
-   D2|| not actually a verb
- P|m| no1pin2yin3
+   D2||not actually a verb
+ P|m|no1pin2yin3
   C verb
-   D3|| different pronunciation with different definition
+   D3||different pronunciation with different definition
     # my comment
-    N33 my note
-W|wC| 你好／嗎
- P|| pin3yin3
+    N407 my note
+W|wC|你好／嗎
+ P||pin3yin3
   N->375
   C noun
-   D3|| definitely a noun
+   D3||definitely a noun

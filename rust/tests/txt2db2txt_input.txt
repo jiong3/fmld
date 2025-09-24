@@ -1,5 +1,6 @@
 # Free Mandarin Learner's Dictionary
   A fork of the En-Ch Wiktionary.
+  TODO a lot more cases should be added here, e.g. the four different places where symmetric references are automatically added
 N->375
 W|w|過秤／过秤
  P||ɡuo4cheng4

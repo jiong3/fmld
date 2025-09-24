@@ -21,8 +21,8 @@ fn test_txt_to_db_to_txt() {
 
     db_edit::add_missing_symmetric_references(&tx).unwrap();
     db_edit::add_missing_notes_and_tags_for_symmetric_references(&tx).unwrap();
-
-    tx.commit();
+    let new_max_ext_note_id = db_edit::finalize_note_ids(&tx, 0).unwrap();
+    tx.commit().unwrap();
 
     let round_trip_out_txt = db_check::round_trip_check(&conn);
     assert_eq!(

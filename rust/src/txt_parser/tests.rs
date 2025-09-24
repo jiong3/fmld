@@ -226,7 +226,7 @@ fn test_parse_note_line_full() {
     let expected = Ok((
         "",
         Note {
-            id: 1,
+            id: Some(1),
             is_link: false,
             txt: "This is a note.".to_string(),
         },
@@ -240,7 +240,7 @@ fn test_parse_note_link_line_full() {
     let expected = Ok((
         "",
         Note {
-            id: 2,
+            id: Some(2),
             is_link: true,
             txt: "".to_string(),
         },
@@ -323,7 +323,7 @@ fn test_parse_line_dispatcher() {
     assert_eq!(
         parse_line("N1 a note"),
         Ok(DictLine::Note(Note {
-            id: 1,
+            id: Some(1),
             is_link: false,
             txt: "a note".to_string()
         }))

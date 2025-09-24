@@ -1,0 +1,49 @@
+name: Rust Build for FMLD
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'rust/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'rust/**'
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Rust
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: Build release version
+      run: cargo build --verbose --release
+      working-directory: ./rust
+
+    - name: Run tests
+      run: cargo test --verbose
+      working-directory: ./rust
+
+    - name: Upload binaries
+      uses: actions/upload-artifact@v4
+      with:
+        name: fmld-linux-binary
+        path: rust/target/release/fmld

@@ -3,7 +3,7 @@ use nom::{
     branch::alt,
     bytes::complete::{tag, take_while1},
     character::complete::{anychar, char, multispace0, none_of, u32},
-    combinator::{all_consuming, map, opt, rest, value, fail},
+    combinator::{all_consuming, fail, map, opt, rest, value},
     multi::{many0, many1, separated_list1},
     sequence::{delimited, pair, preceded, terminated},
 };
@@ -322,9 +322,18 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
     let (remainder, (is_link, id, note)) = all_consuming(
         // reference with note id or note with id or ? as a placeholder for new ids
         alt((
-            (opt(value(true, tag("->"))), u32, preceded(multispace0, rest)),
-            (opt(fail()), alt((u32, value(0, char('?')))), preceded(multispace0, rest)),
-        )))
+            (
+                opt(value(true, tag("->"))),
+                u32,
+                preceded(multispace0, rest),
+            ),
+            (
+                opt(fail()),
+                alt((u32, value(0, char('?')))),
+                preceded(multispace0, rest),
+            ),
+        )),
+    )
     .parse(note_line)?;
     Ok((
         remainder,

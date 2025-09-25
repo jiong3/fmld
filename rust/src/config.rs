@@ -237,7 +237,7 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'C' => ("china-only", "country", 10),
         'c' => ("china-chiefly", "country", 10),
         '&' => ("bound-form", "bound-form", 8),
-		'i' => ("irregular", "checks", 7), // skip automatic checks
+        'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6),
         'a' => ("ai-human", "ai", 6),
         'w' => ("wiktionary", "source", 3),

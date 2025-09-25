@@ -155,13 +155,21 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
     tx.commit()?;
 
     if let Some(mut m) = external_meta {
-        let mut stmt = db_source.conn.prepare("
+        let mut stmt = db_source.conn.prepare(
+            "
         SELECT
             (SELECT COUNT(dict_definition.id) FROM dict_definition) AS num_defs ,
             (SELECT COUNT(dict_word.id)  FROM dict_word) AS num_words,
             (SELECT COUNT(dict_reference.id) FROM dict_reference) AS num_refs;
-        ")?;
-        let (num_words, num_defs, num_refs) = stmt.query_row([], |row| Ok((row.get("num_words")?, row.get("num_defs")?, row.get("num_refs")?)))?;
+        ",
+        )?;
+        let (num_words, num_defs, num_refs) = stmt.query_row([], |row| {
+            Ok((
+                row.get("num_words")?,
+                row.get("num_defs")?,
+                row.get("num_refs")?,
+            ))
+        })?;
         m.num_notes = new_max_ext_note_id;
         m.num_definitions = num_defs;
         m.num_references = num_refs;
@@ -169,16 +177,18 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
         let s = serde_json::to_string_pretty(&m)?;
         fs::write(meta_path, s)?;
     }
-    
+
     Ok(())
 }
 
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
+    let mut status_ok = true;
 
     let mut db_source = read_input(&cli.input_file, cli.limit_to_word.as_deref())?;
     if let DbSource::Txt(errors) = &db_source.source {
         if !errors.is_empty() {
+            status_ok = false;
             for err in errors {
                 eprintln!("{err}");
             }
@@ -187,6 +197,9 @@ fn main() -> anyhow::Result<()> {
 
     let check_result = db_check::check_entries(&db_source.conn);
     if let Ok(err_list) = check_result {
+        if !err_list.is_empty() {
+            status_ok = false;
+        }
         for err in err_list {
             eprintln!("{err}");
         }
@@ -211,11 +224,16 @@ fn main() -> anyhow::Result<()> {
         if txt_b.is_empty() {
             eprintln!("Round trip check ok!");
         } else {
+            status_ok = false;
             eprintln!("Round trip check failed!");
         }
     }
 
     write_output(&db_source, &cli)?;
 
-    Ok(())
+    if status_ok {
+        Ok(())
+    } else {
+        Err(anyhow!("Failure!"))
+    }
 }

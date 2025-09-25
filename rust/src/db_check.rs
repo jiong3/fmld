@@ -59,7 +59,7 @@ fn get_hanzi_only_regex_pattern() -> Regex {
     Regex::new(&pattern).unwrap()
 }
 
-#[allow(clippy::similar_names, reason="a vs b")]
+#[allow(clippy::similar_names, reason = "a vs b")]
 pub fn check_conflicting_notes_on_symmetric_references(
     conn: &Transaction,
 ) -> Result<Vec<String>, SqliteError> {
@@ -188,7 +188,7 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
                     errors.push(format!("Validation Error: Different numbers of characters, traditional: {trad} simplified: {simp}"));
                     continue;
                 }
-            } 
+            }
         }
 
         // check if the number of pinyin syllables matches the number of Chinese characters
@@ -202,7 +202,9 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
             let expected_syllables = (num_trad_chars - possible_erhuas)..=num_trad_chars;
             for pinyin_num in pinyin_nums {
                 if let Some(p_t) = &pinyin_tags {
-                    if p_t.contains(['i', 'X']) { continue;}
+                    if p_t.contains(['i', 'X']) {
+                        continue;
+                    }
                 }
                 let num_pinyin_syllables = pinyin::count_syllables(&pinyin_num);
                 if !expected_syllables.contains(&num_pinyin_syllables) {

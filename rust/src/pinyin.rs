@@ -1,4 +1,3 @@
-
 #[must_use]
 pub fn pinyin_mark_from_num(pinyin_num: &str) -> String {
     // TODO currently no unicode normalization for ê and
@@ -57,7 +56,7 @@ fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
                 target = Some("n");
             } else if pinyin_lower.contains('m') {
                 target = Some("m");
-            } 
+            }
         } else {
             for cand in ["a", "e", "ê", "ou"] {
                 if pinyin_vowels.contains(cand) {

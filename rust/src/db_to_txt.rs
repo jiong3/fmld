@@ -46,7 +46,6 @@ impl std::error::Error for DbToTxtError {
             Self::IoError(ref source) => Some(source),
             Self::SqliteError(ref source) => Some(source),
             Self::InvalidDbData(_) => None,
-
         }
     }
 }
@@ -123,10 +122,8 @@ impl<'a> DbToTxt<'a> {
     }
 
     pub fn generate_txt_file(&mut self, limit_to_word: Option<&str>) -> Result<()> {
-        let mut stmt = self
-            .conn
-            .prepare(
-                r"
+        let mut stmt = self.conn.prepare(
+            r"
             SELECT
                 w.id AS word_id,
                 w.shared_id AS word_shared_id,
@@ -150,7 +147,7 @@ impl<'a> DbToTxt<'a> {
             GROUP BY def.id
             ORDER BY s.rank, s.rank_relative; -- NULLS FIRST default
             ",
-            )?;
+        )?;
 
         let mut rows = stmt.query([])?;
         let mut last_word_id = -1;

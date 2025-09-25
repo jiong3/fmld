@@ -17,11 +17,11 @@ jobs:
 
       - name: Download fmld binary from release
         id: download-release # Give this step an ID to check its result
-        uses: dsaltares/fetch-gh-release-asset@master
+        uses: robinraju/release-downloader@v1
         with:
-          version: 'tags/v0.0.1'
-          file: 'fmld'
-          target: 'fmld'
+          tag: 'v0.0.1'
+          fileName: 'fmld'
+          out-file-path: ''
           
       - name: Make binary executable
         run: chmod +x fmld

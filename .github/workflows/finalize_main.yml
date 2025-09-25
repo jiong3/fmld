@@ -1,0 +1,51 @@
+name: Finalize FMLD Dictionary File
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'dict/fmld.en.txt'
+
+jobs:
+  update-dictionary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download fmld binary
+        uses: actions/download-artifact@v4
+        with:
+          name: fmld-linux-binary
+          path: .
+          
+      - name: Make binary executable
+        run: chmod +x fmld-linux-binary && mv fmld-linux-binary fmld
+
+      - name: Run fmld tool
+        id: run_fmld # Assign an ID to this step to check its outcome later
+        run: ./fmld dict/fmld.en.txt --finalize-with-meta dict/fmld.meta.json --txt dict/fmld.en.new.txt
+
+      - name: Report Failure
+        # This step only runs if the previous step ('run_fmld') failed.
+        if: failure() && steps.run_fmld.outcome == 'failure'
+        run: |
+          echo "The fmld tool failed with a non-zero exit code."
+          echo "Please check the logs above for the specific error message from the tool."
+          exit 1 # Ensures the job correctly stays in a failed state
+
+      - name: Commit and push changes
+        # This step only runs if all previous steps were successful.
+        if: success()
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          mv dict/fmld.en.new.txt dict/fmld.en.txt
+          git add dict/fmld.en.txt dict/fmld.meta.json
+          # The commit will only happen if there are staged changes.
+          # git commit will exit with 1 if there are no changes, so we add '|| exit 0'
+          # to prevent this from being treated as a workflow error.
+          git commit -m "Automated dictionary update" || exit 0
+          git push

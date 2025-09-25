@@ -19,7 +19,7 @@ jobs:
         id: download-release # Give this step an ID to check its result
         uses: robinraju/release-downloader@v1
         with:
-          tag: 'v0.0.1'
+          tag: 'v.0.0.1'
           fileName: 'fmld'
           out-file-path: ''
           

@@ -46,7 +46,7 @@ jobs:
       - name: Handle check success
         if: success()
         run: |
-          mv fmld.en.new.txt dict/fmld.en.txt
+          mv dict/fmld.en.new.txt dict/fmld.en.txt
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add dict/fmld.en.txt

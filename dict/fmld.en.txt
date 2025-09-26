@@ -4,7 +4,9 @@
   Wiktionary data imported from https://kaikki.org (January 2025)
   All entries with a "w" tag contain data from Wiktionary and should be attributed accordingly.
   
-  Words up until "%" are sorted roughly by frequency.
+  Words up until "%" are sorted roughly by frequency. After "%" the entries are initially sorted by codepoint,
+  new entries can be inserted anywhere so it's not strictly ordered.
+  
   
   Format Description
   
@@ -46,6 +48,7 @@
   - notes and definitions can contain references to words using brackets like [嗎／吗]
     or [嗎／吗#D1] if the link is to a single definition
   
+  
   Grammar (EBNF)
   
   {} is repeated zero or more times (like *)
@@ -72,6 +75,12 @@
   reference = word_entry [#D id]
   tags_ascii = "|" {ascii_symbol} "|"
   tags_full = "|" {ascii_symbol} {"#" tag_word} "|"
+  
+  
+  Editing 
+  
+  New notes should be added with a note id ? or a number <100. They will be automatically replaced with a new id.
+  The current maximum note id is linked in the line below:
 N->100
 W|w|我
  P||wo3;e3
@@ -11339,7 +11348,7 @@ W|w|倍
 W|w|親戚／亲戚
  P||qin1qi1
   P|T|qin1qi4
-   N100 qin1qi1 is standard in Taiwan, qin1qi4 also still in use
+   N100 not standard but also heard in Taiwan
   C noun
    D1||relative; family relation
    D2||(Classical) immediate family (one's mother, father and siblings)

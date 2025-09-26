@@ -62,6 +62,8 @@ struct DictMeta {
     num_references: u32,
     #[serde(default)]
     num_notes: u32,
+    #[serde(default)]
+    max_note_id: u32,
 }
 
 enum DbSource {
@@ -146,7 +148,7 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
             None
         };
     let max_ext_note_id = if let Some(m) = &external_meta {
-        m.num_notes
+        m.max_note_id
     } else {
         0
     };
@@ -159,21 +161,24 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
             "
         SELECT
             (SELECT COUNT(dict_definition.id) FROM dict_definition) AS num_defs ,
-            (SELECT COUNT(dict_word.id)  FROM dict_word) AS num_words,
+            (SELECT COUNT(dict_word.id) FROM dict_word) AS num_words,
+            (SELECT COUNT(dict_note.id) FROM dict_note) AS num_notes,
             (SELECT COUNT(dict_reference.id) FROM dict_reference) AS num_refs;
         ",
         )?;
-        let (num_words, num_defs, num_refs) = stmt.query_row([], |row| {
+        let (num_words, num_defs, num_refs, num_notes) = stmt.query_row([], |row| {
             Ok((
                 row.get("num_words")?,
                 row.get("num_defs")?,
                 row.get("num_refs")?,
+                row.get("num_notes")?,
             ))
         })?;
-        m.num_notes = new_max_ext_note_id;
+        m.num_notes = num_notes;
         m.num_definitions = num_defs;
         m.num_references = num_refs;
         m.num_words = num_words;
+        m.max_note_id = new_max_ext_note_id;
         let s = serde_json::to_string_pretty(&m)?;
         fs::write(meta_path, s)?;
     }

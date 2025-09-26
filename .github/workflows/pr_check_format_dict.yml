@@ -1,0 +1,57 @@
+name: Check and Reformat Dictionary File for PR
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'dict/fmld.en.txt'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+
+      - name: Download fmld binary from release
+        id: download-release # Give this step an ID to check its result
+        uses: robinraju/release-downloader@v1
+        with:
+          tag: 'v.0.0.2'
+          fileName: 'fmld'
+          out-file-path: ''
+          
+      - name: Make binary executable
+        run: chmod +x fmld
+
+      - name: Run fmld tool
+        id: run_fmld
+        run: ./fmld dict/fmld.en.txt --txt dict/fmld.en.new.txt
+        
+      - name: Handle check failure
+        if: failure() && steps.run_fmld.outcome == 'failure'
+        run: |
+          echo "FMLD tool execution failed. Posting a comment to the PR."
+          gh pr comment ${{ github.event.pull_request.number }} --body "❌ The dictionary file check failed. Please review the errors."
+          exit 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Handle check success
+        if: success()
+        run: |
+          mv dict/fmld.en.new.txt dict/fmld.en.txt
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add dict/fmld.en.txt
+          git commit -m "Automated reformatting of fmld.en.txt" || exit 0
+          git push

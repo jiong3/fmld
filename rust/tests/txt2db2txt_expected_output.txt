@@ -1,5 +1,8 @@
 # Free Mandarin Learner's Dictionary
   A fork of the En-Ch Wiktionary.
+  The next line has no indentation, but should still belong to this comment
+  
+   one more indentation than necessary, should be preserved
   TODO a lot more cases should be added here, e.g. the four different places where symmetric references are automatically added
 N->407
 W||Trad2／Simp2

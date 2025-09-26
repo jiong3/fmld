@@ -148,6 +148,12 @@ where
                         cur_line.source_line_num += 1;
                         continue;
                     }
+                    // new line with no content and no indentation, still belongs to current line
+                    if line_content.is_empty() {
+                        cur_line.line.push('\n');
+                        cur_line.source_line_num += 1;
+                        continue;
+                    }
                 }
                 // new line, get current line so that it can be returned after storing the new line
                 let return_line = self.cur_line.take();

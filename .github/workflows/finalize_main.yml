@@ -8,6 +8,10 @@ on:
     paths:
       - 'dict/fmld.en.txt'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-dictionary:
     runs-on: ubuntu-latest
@@ -49,5 +53,5 @@ jobs:
           # The commit will only happen if there are staged changes.
           # git commit will exit with 1 if there are no changes, so we add '|| exit 0'
           # to prevent this from being treated as a workflow error.
-          git commit -m "Automated dictionary update" || exit 0
+          git commit -m "Automatic Finalization (e.g. update note ids)" || exit 0
           git push

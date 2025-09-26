@@ -1,0 +1,55 @@
+name: Check Dictionary File for PR
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'dict/fmld.en.txt'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head.ref }}
+
+      - uses: actions/checkout@v5
+      - name: Download release artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: fmld-linux-binary
+          path: ./fmld
+
+      - name: Make binary executable
+        run: chmod +x ./fmld
+
+      - name: Run checks
+        id: run_checks
+        continue-on-error: true
+        run: |
+          ./fmld dict/fmld.en.txt > fmld.en.txt.new
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+      - name: Handle check failure
+        if: steps.run_checks.outputs.exit_code != '0'
+        run: |
+          echo "Tool execution failed. Posting a comment to the PR."
+          gh pr comment ${{ github.event.pull_request.number }} --body "❌ The dictionary file check failed. Please review the errors."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Handle check success
+        if: steps.run_checks.outputs.exit_code == '0'
+        run: |
+          mv fmld.en.txt.new dict/fmld.en.txt
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add dict/fmld.en.txt
+          git commit -m "Automated formatting of fmld.en.txt"
+          git push

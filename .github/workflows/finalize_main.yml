@@ -16,8 +16,10 @@ jobs:
   update-dictionary:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Download fmld binary from release
         id: download-release # Give this step an ID to check its result

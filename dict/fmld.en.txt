@@ -1019,7 +1019,7 @@ W|w|會／会
    D9||to meet; to rendezvous
    D10||meeting; gathering
     XM||場／场;次
-   D11||meeting; gathering (Classifier: 場／场; 次) --- Especially, meetings of deputies of their sovereigns in ancient China to form alliances.
+   D11||meeting; gathering --- Especially, meetings of deputies of their sovereigns in ancient China to form alliances.
    D12||temple fair
    D13||to understand; to grasp
    D14||rhythm; cadence
@@ -3734,7 +3734,7 @@ W|w|菜
   C character
    D1||vegetable; greens
     XM||棵;根
-   D2||vegetable; greens (Classifier: 棵 m; 根 m; 條／条 c; 樖 c) --- (specifically, in compounds) rape; rapeseed (plant used for vegetable oil)
+   D2||vegetable; greens --- (specifically, in compounds) rape; rapeseed (plant used for vegetable oil)
    D3||dish; course
     XM||盤／盘;道;味
    D4||cuisine; (type of) food
@@ -6117,7 +6117,7 @@ W|w|光
   C character
    D1||light; beam; ray
     XM||束;道
-   D2||light; beam; ray (Classifier: 束 m; 道 m) --- (specifically, physics) ray
+   D2||light; beam; ray --- (specifically, physics) ray
     XM||條／条
    D3||to make bare; to be naked
    D4||only; alone
@@ -13972,7 +13972,8 @@ W|w|飯店／饭店
     XM||家;個／个
    D2||restaurant
     XM||家;個／个
-   D3||restaurant (Classifier: 家 m; 個／个 m) --- (Mainland China Hokkien) small restaurant
+   D3||restaurant --- (Mainland China Hokkien) small restaurant
+    XM||家;個／个
 W|w|爽
  P||shuang3
   C character
@@ -26253,7 +26254,7 @@ W|w|蟲／虫
   C character
    D1||bug, including insects, worms, etc.
     XM||隻／只;條／条
-   D2||bug, including insects, worms, etc. (Classifier: 隻／只 m c; 條／条 m c; 尾 h) --- (figuratively) powerless person
+   D2||bug, including insects, worms, etc. --- (figuratively) powerless person
    D3||(literary) animal, including human; creature
    D4||insect infestation
    D5||person of some characteristic
@@ -45290,7 +45291,7 @@ W|w|鞭炮
   C noun
    D1||a collective term for all firecrackers
     XM||串
-   D2||a collective term for all firecrackers (Classifier: 串 m) --- (specifically) firecrackers braided into strings
+   D2||a collective term for all firecrackers --- (specifically) firecrackers braided into strings
     XM||串
 W|w|蹬
  P||deng1;deng4
@@ -46646,7 +46647,7 @@ W|w|別墅／别墅
   C noun
    D1||villa (house that is often larger and more expensive than average)
     XM||幢;座;棟／栋
-   D2||villa (house that is often larger and more expensive than average) (Classifier: 幢 m; 座 m; 棟／栋) --- (specifically) house (as opposed to a flat or apartment); bungalow
+   D2||villa (house that is often larger and more expensive than average) --- (specifically) house (as opposed to a flat or apartment); bungalow
     XM||幢;座;棟／栋
 W|w|啃
  P||ken3
@@ -49776,8 +49777,10 @@ W|w|形態／形态
 W|w|版本
  P||ban3ben3
   C noun
-   D1||version (Classifier: 個／个) --- (figuratively) version (specific form or variation of something)
-   D2||version (Classifier: 個／个) --- (computing) version (particular revision of software, firmware, CPU, etc.)
+   D1||version --- (figuratively) version (specific form or variation of something)
+    XM||個／个
+   D2||version --- (computing) version (particular revision of software, firmware, CPU, etc.)
+    XM||個／个
    D3||(publishing) edition (work published by a certain editor or in a certain manner)
     XM||個／个
 W|w|奴隸／奴隶
@@ -57736,7 +57739,7 @@ W|w|寶物／宝物
   C noun
    D1||treasure; rarity; gem
     XM||個／个
-   D2||treasure; rarity; gem (Classifier: 個／个) --- (specifically, video games) object that can be picked up for later use
+   D2||treasure; rarity; gem --- (specifically, video games) object that can be picked up for later use
     XM||個／个
 W|w|睫毛
  P||jie2mao2
@@ -73812,8 +73815,10 @@ W|w|致力
 W|w|法令
  P||fa3ling4
   C noun
-   D1||law; decree; statute; act; ordinance; regulation; order (Classifier: 條／条 m) --- (Hong Kong, law) act of parliament of the United Kingdom
-   D2||law; decree; statute; act; ordinance; regulation; order (Classifier: 條／条 m) --- (Macau, law) decree-law (a law enacted by the Governor of Macau)
+   D1||law; decree; statute; act; ordinance; regulation; order --- (Hong Kong, law) act of parliament of the United Kingdom
+    XM||條／条
+   D2||law; decree; statute; act; ordinance; regulation; order --- (Macau, law) decree-law (a law enacted by the Governor of Macau)
+    XM||條／条
    D3||law; decree; statute; act; ordinance; regulation; order
     XM||條／条
 W|w|辭退／辞退
@@ -600835,7 +600840,8 @@ W|w|高帽子
   C noun
    D1||(literally) tall hat
     XM||頂／顶
-   D2||(literally) tall hat (Classifier: 頂／顶) --- tall paper hat worn as a public humiliation
+   D2||(literally) tall hat --- tall paper hat worn as a public humiliation
+    XM||頂／顶
    D3||(figuratively) flattery
    D4||(figuratively) empty title or honor
 W|w|高平

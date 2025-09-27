@@ -1,9 +1,11 @@
 # Free Mandarin Learner's Dictionary
 
-**proof of concept**
+**state: proof of concept**
 
 License: CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)
+
 Based on the English-Chinese Wiktionary: https://en.wiktionary.org/
+
 Wiktionary data imported from https://kaikki.org (January 2025)
 
 ## Features
@@ -28,6 +30,8 @@ Wiktionary data imported from https://kaikki.org (January 2025)
 - currently supported tags and reference types can be found in rust/config.rs
 
 ## TODO
+
+Some things that are on the radar:
 
 - come up with a better representation of the definition trees from wiktionary, currently elements are concatenated using ---
 - semi-automatically:

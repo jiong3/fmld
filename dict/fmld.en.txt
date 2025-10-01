@@ -5521,6 +5521,7 @@ W|w|狗
   C character
    D1||dog
     XM||隻／只;條／条
+    X~||犬#D1
    D2||(derogatory) something or someone unpleasant --- Used as an attributive.
    D3||(derogatory) something or someone unpleasant --- (self-deprecatory) a miserable person (used in compounds)
    D4||(derogatory) something or someone unpleasant --- (Hong Kong, neologism, derogatory) police; pig; po-po
@@ -42679,7 +42680,7 @@ W|w|剁
 W|w|犬
  P||quan3
   C noun
-   D1|& #formal| dog
+   D1|& #formal|dog
     X~||狗#D1
     X<||警犬;導盲犬／导盲犬
 W|w|叮囑／叮嘱

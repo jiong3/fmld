@@ -42678,8 +42678,10 @@ W|w|剁
    D1||to chop by pounding; to mince; to hash; to cut
 W|w|犬
  P||quan3
-  C character
-   D1||(formal or in compounds or Eastern Min, Waxiang, dialectal Wu) dog
+  C noun
+   D1|& #formal| dog
+    X~||狗#D1
+    X<||警犬;導盲犬／导盲犬
 W|w|叮囑／叮嘱
  P||ding1zhu3
   C verb

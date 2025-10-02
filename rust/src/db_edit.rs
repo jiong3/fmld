@@ -1,6 +1,6 @@
 use std::cmp::max;
 
-use rusqlite::{Error as SqliteError, Transaction};
+use rusqlite::{Error as SqliteError, Transaction, params};
 
 use crate::common::SqliteId;
 
@@ -155,6 +155,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
         let rank_to_insert_at: SqliteId =
             stmt_insert_at_shared_id.query_one((ref_id,), |row| row.get(0))?;
+        // TODO use insert_reference function, potentially modify the insert_at_shared_id query so that references of the same kind are grouped together
         let mut stmt =
             conn.prepare_cached("INSERT INTO dict_shared (rank, rank_relative) VALUES (?1,?2)")?;
         stmt.execute((rank_to_insert_at, 1))?;
@@ -315,4 +316,125 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
         ",
     )?;
     Ok(())
+}
+
+#[allow(clippy::too_many_arguments)]
+pub fn insert_reference(
+    conn: &Transaction,
+    ref_type_id: SqliteId,
+    src_word_id: SqliteId,
+    src_def_id: Option<SqliteId>,
+    dst_word_id: SqliteId,
+    dst_def_id: Option<SqliteId>,
+    rank_relative: usize,
+) -> Result<(), SqliteError> {
+    let rank_to_insert_at: i64 = if let Some(def_id) = src_def_id {
+        let mut stmt = conn.prepare_cached(
+            r"
+            SELECT COALESCE(
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src = ?2 AND r.ref_type_id = ?3),
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src = ?2),
+                (SELECT s.rank FROM dict_definition d JOIN dict_shared s ON d.shared_id = s.id WHERE d.id = ?2)
+            )
+            ",
+        )?;
+        stmt.query_row(params![src_word_id, def_id, ref_type_id], |row| row.get(0))?
+    } else {
+        let mut stmt = conn.prepare_cached(
+            r"
+            SELECT COALESCE(
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src IS NULL AND r.ref_type_id = ?2),
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src IS NULL),
+                (SELECT s.rank FROM dict_word w JOIN dict_shared s ON w.shared_id = s.id WHERE w.id = ?1)
+            )
+            ",
+        )?;
+        stmt.query_row(params![src_word_id, ref_type_id], |row| row.get(0))?
+    };
+
+    // Insert into dict_shared
+    let mut stmt_insert_shared = conn.prepare_cached(
+        r"
+        INSERT INTO dict_shared (rank, rank_relative)
+        VALUES (?1, ?2);
+        ",
+    )?;
+    stmt_insert_shared.execute(params![rank_to_insert_at, rank_relative])?;
+    let shared_id = conn.last_insert_rowid();
+
+    // Insert into dict_reference
+    let mut stmt_insert_ref = conn.prepare_cached(
+        r"
+        INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6);
+        ",
+    )?;
+    stmt_insert_ref.execute(params![
+        shared_id,
+        ref_type_id,
+        src_word_id,
+        src_def_id,
+        dst_word_id,
+        dst_def_id,
+    ])?;
+
+    Ok(())
+}
+
+/// Get reference type id for ascii_char, only if this type already exists in DB
+pub fn get_ref_type_id(
+    conn: &Transaction,
+    ref_type_symbol: char,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_ref_type
+        WHERE ascii_symbol = ?1;
+        ",
+    )?;
+    let symbol_str = ref_type_symbol.to_string();
+    match stmt.query_row(params![symbol_str], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+pub fn get_word_id(
+    conn: &Transaction,
+    trad: &str,
+    simp: &str,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_word
+        WHERE trad = ?1 AND simp = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![trad, simp], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+pub fn get_definition_id(
+    conn: &Transaction,
+    word_id: SqliteId,
+    definition: &str,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_definition
+        WHERE word_id = ?1 AND definition = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![word_id, definition], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
 }

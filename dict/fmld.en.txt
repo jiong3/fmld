@@ -17405,7 +17405,7 @@ W|w|步
    D9||(military) infantry
    D10||Classifier for steps.
    D11||a surname
-W|w|服務員／服务员
+W|Cw|服務員／服务员
  P||fu2wu4yuan2
   C noun
    D1||server; attendant; waiter; waitress; clerk; porter; valet
@@ -338187,6 +338187,7 @@ W|w|服務生／服务生
  P||fu2wu4sheng1
   C noun
    D1||server (chiefly male); waiter; bellboy
+    X~||服務員／服务员#D1
 W|w|服務社／服务社
  P||fu2wu4she4
   C noun

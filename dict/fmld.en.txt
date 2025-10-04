@@ -21696,7 +21696,7 @@ W|w|瞬間／瞬间
    D3||in a flash; in the twinkling of an eye
   C noun
    D4||moment; flash; instant
-W|w|自行車／自行车
+W|cw|自行車／自行车
  P||zi4xing2che1
   C noun
    D1||bicycle; bike
@@ -47764,7 +47764,9 @@ W|w|朗
    D2||loud and clear
     X<||朗讀／朗读
    D3||(literary) understanding; enlightened
-W|w|腳踏車／脚踏车
+W|Tw|腳踏車／脚踏车
+ X%||自行車／自行车
+  N? TW: [自行車／自行车] also used in formal language
  P||jiao3ta4che1
   C noun
    D1||(regional) bicycle
@@ -338184,10 +338186,10 @@ W|w|服務犬／服务犬
   C noun
    D1||service dog
 W|w|服務生／服务生
+ X%||服務員／服务员
  P||fu2wu4sheng1
   C noun
    D1||server (chiefly male); waiter; bellboy
-    X~||服務員／服务员#D1
 W|w|服務社／服务社
  P||fu2wu4she4
   C noun

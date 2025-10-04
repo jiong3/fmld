@@ -223,6 +223,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
         'M' => ("used-with-measure-word", false),
         '&' => ("collocation", false),
         'G' => ("word-group", false),
+		'%' => ("cross-strait", true),
         _ => {
             return None;
         }
@@ -242,9 +243,9 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'a' => ("ai-human", "ai", 6),
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
-        '+' => ("high-relevance", "relevance", 1),
-        '-' => ("low-relevance", "relevance", 1),
-        'x' => ("lowest-relevance", "relevance", 1),
+        '+' => ("active", "relevance", 1), // definition can be used in active vocabulary
+        '-' => ("extended", "relevance", 1), // extended (passive) vocabulary
+        'x' => ("rare", "relevance", 1), // rare meaning / word
         'X' => ("deleted", "relevance", 1),
         _ => {
             return None;

@@ -26,13 +26,14 @@
       * ~: synonym-similar (symmetric)
       * !: antonym (symmetric)
       * ?: could-be-confused-with (symmetric)
+      * %: cross-strait (symmetric) (mnemonic: the line in % is the Taiwan strait)
       * <: part-of
       * >: contains
       * V: word-variant-of
       * v: character-variant-of
       * M: used-with-measure-word
       * &: collocation
-      * G: word-group
+      * G: word-group (e.g. North, South, East, West)
     * #: comment (meta information etc. which is not relevant to readers of the dictionary)
     * N: note, e.g. more detailed explanations
       * N->: direct reference to a note entry to avoid duplications in the text representation
@@ -360,7 +361,7 @@ W|w|還／还
     X<||還嘴／还嘴;還手／还手;還禮／还礼;還擊／还击;還價／还价;以眼還眼，以牙還牙／以眼还眼，以牙还牙
    D4||(Malaysian Hokkien, Singapore Hokkien, obsolete in Philippine Hokkien) to pay
    D5||a surname
- P||hai2;huan2
+ P||hai2 |X|huan2
   C character
    D6||still; yet; indicates that the phenomenon or observation still exists or the action is still ongoing
    D7||also; as well
@@ -457,7 +458,7 @@ W|w|那
   C character
    D16||Used in place names in southern China
 W|w|現在／现在
- P||xian4zai4;xian4ai4
+ P||xian4zai4 |X|xian4ai4
   C noun
    D1||now; the present time; the present moment; the current time
    D2||(literary) this life; this world
@@ -498,7 +499,7 @@ W|w|可以
    D6||... can be used to ... (usually with ellipsed 之 (zhī, “this”)); literally: 可 (“can”) + 以 (“by; by means of; according to”)
    D7||(aviation, Mainland China) to clear; to give clearance
 W|w|在
- P||zai4;zai3;dai4;dai3
+ P||zai4 |X|zai3;dai4;dai3
   C character
    D1||to exist; to be alive
    D2||to be at; to be in; to be located
@@ -1589,6 +1590,7 @@ W|w|說／说
  P||shui4
   C character
    D9||to persuade; to canvass; to lobby
+    X<||說服／说服
    D10||(Quanzhou Hokkien) to swindle; to defraud; to cheat out of
  P||yue4
   C character
@@ -17406,6 +17408,7 @@ W|w|步
    D10||Classifier for steps.
    D11||a surname
 W|wC|服務員／服务员
+ X%||服務生／服务生
  P||fu2wu4yuan2
   C noun
    D1||server; attendant; waiter; waitress; clerk; porter; valet
@@ -17971,8 +17974,9 @@ W|w|補／补
 W|w|出租車／出租车
  P||chu1zu1che1
   C noun
-   D1||(chiefly Mainland China) taxi; taxicab
+   D1|c|taxi; taxicab
     XM||輛／辆;臺／台
+    X%||計程車／计程车#D1
 W|w|燒／烧
  P||shao1
   C character
@@ -21697,11 +21701,14 @@ W|w|瞬間／瞬间
    D3||in a flash; in the twinkling of an eye
   C noun
    D4||moment; flash; instant
-W|w|自行車／自行车
+W|wc|自行車／自行车
  P||zi4xing2che1
   C noun
    D1||bicycle; bike
     XM||輛／辆;臺／台
+    X%||腳踏車／脚踏车#D1
+     N1 TW: [自行車／自行车] also used in formal language
+    X~||單車／单车#D1
 W|w|用功
  P||yong4gong1
   C adj
@@ -23329,7 +23336,8 @@ W|w|程序
  P||cheng2xu4
   C noun
    D1||procedure; sequence; process
-   D2||(computing, chiefly Mainland China) computer program
+   D2|c #computing|computer program
+    X%||程式#D2
 W|w|透
  P||tou4
   C character
@@ -30119,8 +30127,9 @@ W|w|牽連／牵连
 W|w|軟件／软件
  P||ruan3jian4
   C noun
-   D1||(Mainland China, Hong Kong, computing) software
+   D1|C #computing|software
     XM||個／个;套
+    X%||軟體／软体#D2
    D2||(Mainland China, Hong Kong, figurative) thoughts, laws, systems, ideologies, etc. in a society
 W|w|分寸
  P||fen1cun4
@@ -47765,11 +47774,14 @@ W|w|朗
    D2||loud and clear
     X<||朗讀／朗读
    D3||(literary) understanding; enlightened
-W|w|腳踏車／脚踏车
+W|wT|腳踏車／脚踏车
  P||jiao3ta4che1
   C noun
    D1||(regional) bicycle
     XM||輛／辆;臺／台
+    X%||自行車／自行车#D1
+     N->1
+    X~||單車／单车#D1
 W|w|佩
  P||pei4
   C character
@@ -65188,8 +65200,9 @@ W|w|理會／理会
 W|w|計程車／计程车
  P||ji4cheng2che1
   C noun
-   D1||(chiefly Taiwan) taxi; cab
+   D1|t|taxi; cab
     XM||輛／辆;臺／台
+    X%||出租車／出租车#D1
 W|w|流產／流产
  P||liu2chan3
   C verb
@@ -73061,7 +73074,8 @@ W|w|程式
  P||cheng2shi4
   C noun
    D1||form; pattern; formula
-   D2||(computing, chiefly Taiwan, Hong Kong) computer program
+   D2|t #computing|computer program
+    X%||程序#D2
 W|w|勇士
  P||yong3shi4
   C noun
@@ -95941,8 +95955,9 @@ W|w|軟體／软体
    D1||soft-bodied
     X<||軟體動物／软体动物
   C noun
-   D2||(Taiwan, computing) software
+   D2|T #computing|software
     XM||個／个;套
+    X%||軟件／软件#D1
 W|w|緋紅／绯红
  P||fei1hong2
   C adj
@@ -211052,6 +211067,7 @@ W|w|單車／单车
   C noun
    D1||(regional) bicycle
     XM||輛／辆
+    X~||腳踏車／脚踏车#D1;自行車／自行车#D1
 W|w|單軌火車／单轨火车
  P||dan1gui3 huo3che1
   C noun
@@ -338185,6 +338201,7 @@ W|w|服務犬／服务犬
   C noun
    D1||service dog
 W|w|服務生／服务生
+ X%||服務員／服务员
  P||fu2wu4sheng1
   C noun
    D1||server (chiefly male); waiter; bellboy

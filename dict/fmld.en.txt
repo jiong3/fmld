@@ -17405,10 +17405,11 @@ W|w|步
    D9||(military) infantry
    D10||Classifier for steps.
    D11||a surname
-W|Cw|服務員／服务员
+W|wC|服務員／服务员
  P||fu2wu4yuan2
   C noun
    D1||server; attendant; waiter; waitress; clerk; porter; valet
+    X~||服務生／服务生#D1
 W|w|年代
  P||nian2dai4
   C noun

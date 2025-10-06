@@ -338205,6 +338205,7 @@ W|w|服務生／服务生
  P||fu2wu4sheng1
   C noun
    D1||server (chiefly male); waiter; bellboy
+    X~||服務員／服务员#D1
 W|w|服務社／服务社
  P||fu2wu4she4
   C noun

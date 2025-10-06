@@ -82,7 +82,7 @@
   
   New notes should be added with a note id ? or a number <100. They will be automatically replaced with a new id.
   The current maximum note id is linked in the line below:
-N->100
+N->101
 W|w|我
  P||wo3;e3
   C character
@@ -21707,7 +21707,7 @@ W|wc|自行車／自行车
    D1||bicycle; bike
     XM||輛／辆;臺／台
     X%||腳踏車／脚踏车#D1
-     N1 TW: [自行車／自行车] also used in formal language
+     N101 TW: [自行車／自行车] also used in formal language
     X~||單車／单车#D1
 W|w|用功
  P||yong4gong1
@@ -47780,7 +47780,7 @@ W|wT|腳踏車／脚踏车
    D1||(regional) bicycle
     XM||輛／辆;臺／台
     X%||自行車／自行车#D1
-     N->1
+     N->101
     X~||單車／单车#D1
 W|w|佩
  P||pei4

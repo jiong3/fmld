@@ -17407,7 +17407,8 @@ W|w|步
    D9||(military) infantry
    D10||Classifier for steps.
    D11||a surname
-W|Cw|服務員／服务员
+W|wC|服務員／服务员
+ X%||服務生／服务生
  P||fu2wu4yuan2
   C noun
    D1||server; attendant; waiter; waitress; clerk; porter; valet
@@ -21699,11 +21700,14 @@ W|w|瞬間／瞬间
    D3||in a flash; in the twinkling of an eye
   C noun
    D4||moment; flash; instant
-W|cw|自行車／自行车
+W|wc|自行車／自行车
  P||zi4xing2che1
   C noun
    D1||bicycle; bike
     XM||輛／辆;臺／台
+    X%||腳踏車／脚踏车#D1
+     N1 TW: [自行車／自行车] also used in formal language
+    X~||單車／单车#D1
 W|w|用功
  P||yong4gong1
   C adj
@@ -47769,13 +47773,14 @@ W|w|朗
    D2||loud and clear
     X<||朗讀／朗读
    D3||(literary) understanding; enlightened
-W|Tw|腳踏車／脚踏车
+W|wT|腳踏車／脚踏车
  P||jiao3ta4che1
   C noun
    D1||(regional) bicycle
     XM||輛／辆;臺／台
     X%||自行車／自行车#D1
-     N? TW: [自行車／自行车] also used in formal language
+     N->1
+    X~||單車／单车#D1
 W|w|佩
  P||pei4
   C character
@@ -65196,6 +65201,7 @@ W|w|計程車／计程车
   C noun
    D1|t|taxi; cab
     XM||輛／辆;臺／台
+    X%||出租車／出租车#D1
 W|w|流產／流产
  P||liu2chan3
   C verb
@@ -73068,6 +73074,7 @@ W|w|程式
   C noun
    D1||form; pattern; formula
    D2|t #computing|computer program
+    X%||程序#D2
 W|w|勇士
  P||yong3shi4
   C noun
@@ -95949,6 +95956,7 @@ W|w|軟體／软体
   C noun
    D2|T #computing|software
     XM||個／个;套
+    X%||軟件／软件#D1
 W|w|緋紅／绯红
  P||fei1hong2
   C adj

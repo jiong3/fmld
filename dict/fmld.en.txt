@@ -162,9 +162,10 @@ W|w|不
 W|w|他
  P||ta1;tuo1
   C character
-   D1||(chiefly Mandarin, Jin, Xiang, dialectal Wu, originally gender-neutral; nowadays usually referring to males) he; him; she; her
+   D1||(originally gender-neutral; nowadays usually referring to males) he; him; she; her
    D2||A dummy pronoun. Compare object pronoun 之 (zhī)
    D3||other; another
+    X<||他人;其他
    D4||a surname
 W|w|嗎／吗
  P||ma5
@@ -287,6 +288,7 @@ W|w|好
  P||hao4
   C character
    D24||to be fond of; to like
+    X<||好奇;愛好／爱好
    D25||to have a tendency to; to be prone to; good to; easy to
    D26||(dialectal Mandarin, Wu) can; to be able to
    D27||(Teochew) to be willing to
@@ -306,7 +308,7 @@ W|w|她
 W|w|我們／我们
  P||wo3men5;wan3me5
   C pron
-   D1||(chiefly Mandarin, Gan, Jin, Changsha Xiang) we; us
+   D1||we; us
    D2||(academic writing) we; us (referring to the author(s) of the paper, even if the paper has only one author)
 W|w|都
  P||du1
@@ -488305,7 +488307,7 @@ W|w|臺灣民眾黨／台湾民众党
  P||Tai2wan1 Min2zhong4 Dang3
   C name
    D1||Taiwan People's Party
-W|w|臺灣油芒／台灣油芒
+W|w|臺灣油芒／台湾油芒
  P||Tai2wan1 you2mang2
   C noun
    D1||Spodiopogon formosanus

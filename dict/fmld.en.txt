@@ -24129,7 +24129,7 @@ W|w|睏／困
   C character
    D1||sleepy; tired
    D2||(dialectal) to sleep
-W|w|現／现
+W|w&|現／现
  P||xian4
   C character
    D1||present; current
@@ -31930,7 +31930,7 @@ W|w|勝／胜
    D15||scenic spots and historical sites; scenic attraction
    D16||(historical) a kind of splendid jewellery worn by ancient women
    D17||(historical) axle on a loom which holds the warp
-W|w|怎
+W|w&|怎
  P||zen3
   C character
    D1||how; why
@@ -39163,7 +39163,7 @@ W|w|證人／证人
  P||zheng4ren2
   C noun
    D1||(law) witness
-W|w|什
+W|w&|什
  P||shen2;she2
   C character
    D1||Only used in 什麼／什么 (shénme).
@@ -57894,7 +57894,7 @@ W|w|上市
    D2||(of companies) to float; to be listed
    D3||to go to the market
    D4||(Southern Min) to reach a climax in sales
-W|w|朋
+W|w&|朋
  P||peng2
   C character
    D1||friend
@@ -58864,7 +58864,7 @@ W|w|暫／暂
    D2||temporarily; tentatively; for the time being
    D3||(literary) just; just now
    D4||(literary) suddenly
-W|w|鎊／镑
+W|w&|鎊／镑
  P||bang4
   C character
    D1||pound (unit of currency)
@@ -65134,7 +65134,7 @@ W|w|輻射／辐射
    D1||radiation (radioactive energy)
   C verb
    D2||to radiate
-W|w|孩
+W|w&|孩
  P||hai2
   C character
    D1||child; youngster; baby
@@ -78154,7 +78154,7 @@ W|w|牢房
   C noun
    D1||prison cell; jail cell
    D2||(by extension) prison; jail
-W|w|埠
+W|w&|埠
  P||bu4;fu4
   C character
    D1||pier; wharf; dock
@@ -80811,7 +80811,7 @@ W|w|刨
   C character
    D3||plane; planer; planing machine
    D4||to shave; to plane
-W|w|況／况
+W|w&|況／况
  P||kuang4
   C character
    D1||condition; situation
@@ -80939,7 +80939,7 @@ W|w|以訛傳訛／以讹传讹
   C phrase
    D1||to incorrectly relay an erroneous message (so that it becomes increasingly distorted)
    D2||(games) telephone; Chinese whispers
-W|w|麼／么
+W|w&|麼／么
  P||me5;mo5
   C character
    D1||A particle placed after the topic of a compound sentence, used to express tactfulness.
@@ -92177,7 +92177,7 @@ W|w|史官
  P||shi3guan1
   C noun
    D1||(historical) court historian; court historiographer
-W|w|睛
+W|w&|睛
  P||jing1
   C character
    D1||eyeball
@@ -93083,7 +93083,7 @@ W|w|包紮／包扎
  P||bao1za1;bao1zha2;bao1zha1
   C verb
    D1||to wrap up; to bind up; to dress (a wound)
-W|w|姻
+W|w&|姻
  P||yin1
   C character
    D1||marriage
@@ -93642,7 +93642,7 @@ W|w|方言
    D4||(religion) tongues
   C verb
    D5||(literary) Used other than figuratively or idiomatically: see 方, 言 (yán): to open one's mouth to speak after a period of silence
-W|w|陛
+W|w&|陛
  P||bi4
   C character
    D1||(archaic) flight of steps; (specifically) steps leading to the throne in a palace
@@ -94559,7 +94559,7 @@ W|w|歧
    D1||forked road
    D2||fork; divide
    D3||forked; divergent; different
-W|w|耽
+W|w&|耽
  P||dan1
   C character
    D1||to delay
@@ -98226,7 +98226,7 @@ W|w|啟航／启航
  P||qi3hang2
   C verb
    D1||(of a ship) to set sail; (of a plane) to take off
-W|w|愉
+W|w&|愉
  P||yu2
   C character
    D1||happy; pleased; delightful
@@ -98339,7 +98339,7 @@ W|w|含辛茹苦
  P||han2xin1ru2ku3
   C phrase
    D1||to suffer untold hardships (to bring up one's child); to endure sufferings
-W|w|牲
+W|w&|牲
  P||sheng1
   C character
    D1||(historical) sacrificial animal (especially a cow, sheep, or pig)
@@ -99515,7 +99515,7 @@ W|w|門牙／门牙
  P||men2ya2
   C noun
    D1||incisor
-W|w|括
+W|w&|括
  P||kuo4;gua1
   C character
    D1||to tie; to tie up; to tie together
@@ -100717,7 +100717,7 @@ W|w|擴音器／扩音器
    D1||loudspeaker
    D2||megaphone
    D3||microphone
-W|w|胳
+W|w&|胳
  P||ge2;ge1
   C character
    D1||Only used in 胳肢 (gézhi, “to tickle”).
@@ -101161,7 +101161,7 @@ W|w|侵略者
  P||qin1lve4zhe3
   C noun
    D1||invader; aggressor
-W|w|垃
+W|w&|垃
  P||la1;le4
   C character
    D1||Only used in 垃圾 (lājī).
@@ -101547,7 +101547,7 @@ W|w|飄忽／飘忽
    D1||mobile; (of clouds, etc.) uncertain
   C verb
    D2||to move swiftly; (of clouds, etc.) to fleet
-W|w|吩
+W|w&|吩
  P||fen1
   C character
    D1||Used in 吩咐 (fēnfù).
@@ -101984,7 +101984,7 @@ W|w|奉祀
  P||feng4si4
   C verb
    D1||to offer sacrifices (to gods, one's ancestors, etc.)
-W|w|狸
+W|w&|狸
  P||li2
   C character
    D1||leopard cat
@@ -103451,7 +103451,7 @@ W|w|農事／农事
  P||nong2shi4
   C noun
    D1||farm work; farming; agriculture; husbandry; agricultural affairs
-W|w|蝴
+W|w&|蝴
  P||hu2;hu4
   C character
    D1||Only used in 蝴蝶 (húdié, “butterfly”).
@@ -103586,7 +103586,7 @@ W|w|消長／消长
  P||xiao1zhang3
   C verb
    D1||to rise and fall; to grow and decline
-W|w|徘
+W|w&|徘
  P||pai2
   C character
    D1||Only used in 徘徊 (páihuái, “walk back and forth, hesitate”).
@@ -103993,7 +103993,7 @@ W|w|拉薩／拉萨
  P||La1sa4
   C name
    D1||(～市) Lhasa (the capital city of the Tibet Autonomous Region, China)
-W|w|徊
+W|w&|徊
  P||huai2
   C character
    D1||Only used in 徘徊 (páihuái).
@@ -104134,7 +104134,7 @@ W|w|指針／指针
    D1||(literally) needle; indicator; hand on a clock
    D2||(figuratively) guiding principle; guide
    D3||(programming, Mainland China) pointer
-W|w|訝／讶
+W|w&|訝／讶
  P||ya4
   C character
    D1||to be surprised; to be astonished
@@ -104262,7 +104262,7 @@ W|w|武寧／武宁
  P||Wu3ning2
   C name
    D1||(～縣) Wuning (a county of Jiujiang, Jiangxi, China)
-W|w|酋
+W|w&|酋
  P||qiu2
   C character
    D1||chief of a tribe, chieftain
@@ -104596,7 +104596,7 @@ W|w|攘
  P||rang4
   C character
    D7||Original form of 讓／让 (ràng, “to yield; to give in”).
-W|w|琵
+W|w&|琵
  P||pi2
   C character
    D1||Only used in 琵琶.
@@ -104609,7 +104609,7 @@ W|w|潮紅／潮红
  P||chao2hong2
   C verb
    D1||to have facial flushing
-W|w|寞
+W|w&|寞
  P||mo4
   C character
    D1||lonely; desolate
@@ -104716,7 +104716,7 @@ W|w|延年
   C verb
    D2||(literary) to prolong life
    D3||(literary) to pray for a good harvest
-W|w|祇
+W|w&|祇
  P||qi2
   C character
    D1||earth spirit
@@ -105194,7 +105194,7 @@ W|w|正義感／正义感
  P||zheng4yi4gan3
   C noun
    D1||sense of justice
-W|w|睨
+W|w&|睨
  P||ni4
   C character
    D1||(literary) to look askance at; to glance at from the side
@@ -105363,17 +105363,17 @@ W|w|美猴王
  P||Mei3hou2wang2
   C name
    D1||An epithet for Sun Wukong, the main character in the classic novel Journey to the West.
-W|w|肄
+W|w&|肄
  P||yi4
   C character
    D1||practice; study
-W|w|迄
+W|w&|迄
  P||qi4
   C character
    D1||(literary) to reach; to arrive
    D2||(literary) until; up to
    D3||(literary) as yet; finally; after all
-W|w|嫦
+W|w&|嫦
  P||chang2
   C character
    D1||Only used in 嫦娥 (Cháng'é).
@@ -144106,7 +144106,7 @@ W|w|仂語／仂语
  P||le4yu3
   C noun
    D1||(linguistics, dated) phrase
-W|w|仃
+W|w&|仃
  P||ding1
   C character
    D1||Only used in 伶仃 (língdīng) and 仃伶.
@@ -146570,7 +146570,7 @@ W|w|伈
  P||xin3
   C character
    D1||Only used in 伈伈.
-W|w|伉
+W|w&|伉
  P||kang4
   C character
    D1||(literary) to match; to be equal to
@@ -150114,7 +150114,7 @@ W|w|作鹽作光／作盐作光
  P||zuo4yan2zuo4guang1
   C verb
    D1||(Christianity) to be the salt of the earth and light of the world; to have positive influence on the world
-W|w|佝
+W|w&|佝
  P||gou1;kou4
   C character
    D1||Used in 佝僂／佝偻 (gōulóu).
@@ -150697,7 +150697,7 @@ W|w|佻達／佻达
    D1||(literary) frivolous; unrestrained
   C verb
    D2||(literary) to banter; to joke
-W|w|佼
+W|w&|佼
  P||jiao3
   C character
    D1||outstanding
@@ -151226,7 +151226,7 @@ W|w|來龍去脈／来龙去脉
  P||lai2long2qu4mai4;lai2long2qu4mo4
   C phrase
    D1||(figurative) origin and development; the entire process; sequence of events; ins and outs
-W|w|侈
+W|w&|侈
  P||chi3
   C character
    D1||extravagant; wasteful; excessive; luxurious
@@ -151249,7 +151249,7 @@ W|w|侈靡
  P||chi3mi2;chi3mi3
   C adj
    D1||(formal) wasteful; extravagant
-W|w|侉
+W|w&|侉
  P||kua3
   C character
    D1||(dialectal) speaking with an accent, especially a non-local one
@@ -155828,7 +155828,7 @@ W|w|倢
    D1||(literary) Alternative form of 捷
    D2||Only used in 倢伃.
    D3||Alternative form of 唼 (“qiè”)
-W|w|倥
+W|w&|倥
  P||kong1;kong3
   C character
    D1||Only used in 倥侗 (kōngtóng).
@@ -155870,7 +155870,7 @@ W|w|倦疲
  P||juan4pi2
   C adj
    D1||(literary) weary; tired
-W|w|倨
+W|w&|倨
  P||ju4
   C character
    D1||(literary) haughty; arrogant
@@ -158307,7 +158307,7 @@ W|w|偽麻黃鹼／伪麻黄碱
  P||wei3ma2huang2jian3;wei4ma2huang2jian3
   C noun
    D1||pseudoephedrine
-W|w|傀
+W|w&|傀
  P||kui3
   C character
    D1||Only used in 傀儡 (kuǐlěi, “puppet”).
@@ -160821,7 +160821,7 @@ W|w|儇
  P||xuan1
   C character
    D1||clever, nimble
-W|w|儈／侩
+W|w&|儈／侩
  P||kuai4
   C character
    D1||go-between, broker, proxy
@@ -160871,7 +160871,7 @@ W|w|儐相／傧相
  P||bin1xiang4;bin4xiang4
   C noun
    D1||attendant of the bride or bridegroom at a wedding
-W|w|儐／傧
+W|w&|儐／傧
  P||bin1;bin4
   C character
    D1||to entertain guests
@@ -160989,7 +160989,7 @@ W|w|儕輩／侪辈
   C noun
    D1||(literary) someone of the same generation
    D2||(literary) someone of a similar age; peer
-W|w|儕／侪
+W|w&|儕／侪
  P||chai2
   C character
    D1||fellows; associates; company; companion
@@ -161058,7 +161058,7 @@ W|w|儠
  P||le1
   C character
    D3||Only used in 儠得.
-W|w|儡
+W|w&|儡
  P||lei3
   C character
    D1||Only used in 傀儡 (kuǐlěi).
@@ -170197,7 +170197,7 @@ W|w|冕環／冕环
  P||mian3huan2
   C noun
    D1||(astronomy) coronal loop
-W|w|冗
+W|w&|冗
  P||rong3
   C character
    D1||superfluous; unnecessary; surplus; uncalled-for; spare; excessive; redundant
@@ -171802,7 +171802,7 @@ W|w|准駕／准驾
  P||zhun3jia4
   C verb
    D1||to be allowed to drive
-W|w|凇
+W|w&|凇
  P||song1
   C character
    D1||icicle
@@ -179379,7 +179379,7 @@ W|w|剹
  P||jiu1;lu4
   C character
    D2||Only used in 剹流.
-W|w|剽
+W|w&|剽
  P||piao1;piao4
   C character
    D1||intrepid
@@ -183461,7 +183461,7 @@ W|w|匌匝
  P||ge2za1
   C verb
    D1||Alternative form of 匼匝
-W|w|匍
+W|w&|匍
  P||pu2
   C character
    D1||Only used in 匍匐 (púfú).
@@ -183493,7 +183493,7 @@ W|w|匏繫／匏系
  P||pao2xi4
   C noun
    D1||a hanging and uneaten calabash; someone or something unused, or of no use
-W|w|匐
+W|w&|匐
  P||fu2
   C character
    D1||Only used in 匍匐 (púfú).
@@ -183501,7 +183501,7 @@ W|w|匐行
  P||fu2xing2
   C verb
    D1||(medicine, attributive, of a rash) to be of a creeping or crawling nature
-W|w|匕
+W|w&|匕
  P||bi3
   C character
    D1||(historical) a kind of spoon in ancient China
@@ -198206,7 +198206,7 @@ W|w|叴
  P||gao1
   C character
    D1||Alternative form of 皋 (gāo)
-W|w|叵
+W|w&|叵
  P||po3
   C character
    D1||Used in 叵羅／叵罗 (pǒluó).
@@ -204017,7 +204017,7 @@ W|w|呣
   C character
    D3||(onomatopoeia) The characteristic sound made by a cow or bull: moo
    D4||Alternative form of 謀／谋 (móu, “to think through”)
-W|w|呤
+W|w&|呤
  P||ling4;ling2
   C character
    D1||Used in transcription.
@@ -204442,7 +204442,7 @@ W|w|呺
  P||xiao1
   C character
    D1||(～然) large and hollow inside
-W|w|呻
+W|w&|呻
  P||shen1
   C character
    D1||to chant; to recite
@@ -204828,7 +204828,7 @@ W|w|呾
  P||ta3
   C character
    D1||Only used in 呾噠／呾哒.
-W|w|咀
+W|w&|咀
  P||ju3
   C character
    D1||to chew; to masticate
@@ -205374,7 +205374,7 @@ W|w|咍
    D1||sound of laughter
    D2||happy; joyful
    D3||(alt. form 嗨, 咳) sound of lament
-W|w|咐
+W|w&|咐
  P||fu4
   C character
    D1||to instruct; to order
@@ -205735,7 +205735,7 @@ W|w|咪達唑侖／咪达唑仑
  P||mi1da2zuo4lun2
   C noun
    D1||(organic chemistry, pharmacology) midazolam
-W|w|咫
+W|w&|咫
  P||zhi3
   C character
    D1||unit of measurement during the Zhou dynasty, equal to eight cun/tsun (寸)
@@ -206336,7 +206336,7 @@ W|w|品題／品题
   C verb
    D2||to evaluate (an individual); to appraise
    D3||to evaluate and inscribe on (e.g. a painting)
-W|w|哂
+W|w&|哂
  P||shen3
   C character
    D1||to smile
@@ -207660,7 +207660,7 @@ W|w|唌
   C character
    D3||slander, calumny
    D4||anxious appearance
-W|w|唏
+W|w&|唏
  P||xi1
   C character
    D1||to sigh
@@ -209210,7 +209210,7 @@ W|w|啟隆／启隆
  P||Qi3long2
   C name
    D1||(～鄉) Qilong Township, a pene-exclave of Jiangsu province on Chongming Island in China
-W|w|啡
+W|w&|啡
  P||fei1
   C character
    D1||Used in transcription.
@@ -209318,7 +209318,7 @@ W|w|啷
    D1||(Only used in 啷當／啷当.) (of age) more or less; or so; and so on
    D2||(onomatopoeia) used in words such as 哐啷 (clang)
    D3||(Gan, interrogative) how, why
-W|w|啻
+W|w&|啻
  P||chi4;ti4
   C character
    D1||only; just
@@ -209834,7 +209834,7 @@ W|w|喊話／喊话
   C verb
    D1||(military) to shout messages to the enemy
    D2||to communicate by tele-equipment
-W|w|喋
+W|w&|喋
  P||die2
   C character
    D1||talking endlessly; talkative
@@ -211316,7 +211316,7 @@ W|w|嗆／呛
   C character
    D2||to irritate the respiratory organs, especially the nose (of smoke or odor)
    D3||(Taiwan) to shout at somebody; to speak out against somebody
-W|w|嗇／啬
+W|w&|嗇／啬
  P||se4
   C character
    D1||Original form of 穡／穑 (sè). --- to reap
@@ -211730,7 +211730,7 @@ W|w|嗩吶／唢呐
   C noun
    D1||(music) suona (traditional Chinese woodwind instrument)
    D2||(music) zurna (traditional Anatolian woodwind instrument)
-W|w|嗩／唢
+W|w&|嗩／唢
  P||suo3
   C character
    D1||Only used in 嗩吶／唢呐 (suǒnà).
@@ -212055,7 +212055,7 @@ W|w|嘉黎
  P||Jia1li2
   C name
    D1||(～縣) Lhari (a county of Nagqu, Tibet Autonomous Region, China)
-W|w|嘌
+W|w&|嘌
  P||piao4;piao1
   C character
    D1||Only used in 嘌呤 (piàolìng).
@@ -212601,7 +212601,7 @@ W|w|嘸／呒
  P||wu2
   C character
    D6||(chiefly Hokkien) Alternative form of 無／无 (bô, “not have”)
-W|w|嘹
+W|w&|嘹
  P||liao2
   C character
    D1||(of sound) clear and melodious
@@ -213228,7 +213228,7 @@ W|w|噻嗪
  P||sai1qin2
   C noun
    D1||(organic chemistry) thiazine
-W|w|噼
+W|w&|噼
  P||pi1
   C character
    D1||Element used in onomatopoeia.
@@ -213244,7 +213244,7 @@ W|w|噼裡啪啦／噼里啪啦
  P||pi1li1pa1la1;pi1li5pa1la1
   C adj
    D1||Alternative form of 噼哩啪啦
-W|w|嚀／咛
+W|w&|嚀／咛
  P||ning2
   C character
    D1||to enjoin
@@ -213332,7 +213332,7 @@ W|w|嚊
  P||pi4
   C character
    D1||The sound of breathing.
-W|w|嚏
+W|w&|嚏
  P||ti4
   C character
    D1||to sneeze
@@ -213671,7 +213671,7 @@ W|w|囂張跋扈／嚣张跋扈
  P||xiao1zhang1ba2hu4
   C phrase
    D1||arrogant and despotic; domineering and aggressive
-W|w|囂／嚣
+W|w&|囂／嚣
  P||xiao1
   C character
    D1||to be loud; to be noisy; to clamor
@@ -213696,7 +213696,7 @@ W|w|囈語／呓语
    D2||(figurative) crazy talk; ravings
   C verb
    D3||(literary) to talk in one's sleep; to sleeptalk
-W|w|囈／呓
+W|w&|囈／呓
  P||yi4
   C character
    D1||to talk in one's sleep; to sleeptalk
@@ -215721,11 +215721,11 @@ W|w|囧途
  P||jiong3tu2
   C noun
    D1||(neologism) troubled journey; journey beset by problems
-W|w|囪／囱
+W|w&|囪／囱
  P||cong1
   C character
    D1||chimney, funnel
-W|w|囫
+W|w&|囫
  P||hu2
   C character
    D1||Only used in 囫圇／囫囵 (húlún).
@@ -215805,7 +215805,7 @@ W|w|囷囷
  P||qun1qun1;jun1jun1
   C adj
    D1||spiraling
-W|w|囹
+W|w&|囹
  P||ling2
   C character
    D1||Clipping of 囹圄 (língyǔ, “prison”).
@@ -216049,14 +216049,14 @@ W|w|圃
    D1||(literally and figuratively) garden
    D2||gardener
    D3||lush; luxuriant
-W|w|圄
+W|w&|圄
  P||yu3
   C character
    D1||Alternative form of 禦／御 (yù)
    D2||prison
    D3||to put in prison
    D4||one who keeps the horse; horse keeper
-W|w|圇／囵
+W|w&|圇／囵
  P||lun2
   C character
    D1||Only used in 囫圇／囫囵 (húlún).
@@ -220260,7 +220260,7 @@ W|w|圻
    D1||(literary) border; boundary
    D2||(archaic) area with a radius of 1,000 li
    D3||a surname
-W|w|圾
+W|w&|圾
  P||ji1;se4
   C character
    D1||Only used in 垃圾 (lājī, “garbage; rubbish”).
@@ -221424,7 +221424,7 @@ W|w|垍
  P||ji1
   C character
    D2||pottery
-W|w|垓
+W|w&|垓
  P||gai1
   C character
    D1||border; boundary
@@ -221450,7 +221450,7 @@ W|w|垛子
    D2||battlements
    D3||target
    D4||pile; stack
-W|w|垝
+W|w&|垝
  P||gui3
   C character
    D1||collapsed
@@ -221459,7 +221459,7 @@ W|w|垟
   C character
    D1||(chiefly Wu) field
    D2||(Chinese mythology) earth spirit
-W|w|垠
+W|w&|垠
  P||yin2
   C character
    D1||boundary; limit
@@ -237855,7 +237855,7 @@ W|w|奀
  P||di2
   C character
    D1||(Yangjiang Yue) small
-W|w|奄
+W|w&|奄
  P||yan3
   C character
    D1||to cover; to surround; to include
@@ -238851,7 +238851,7 @@ W|w|套頭衫／套头衫
   C noun
    D1||pullover; hoodie (or any such clothing that is pulled over the head)
     XM||件
-W|w|奘
+W|w&|奘
  P||zang4;zhuang3
   C character
    D1||fat, stout
@@ -241100,7 +241100,7 @@ W|w|妀
   C character
    D1||Used in female personal names.
    D2||a surname
-W|w|妁
+W|w&|妁
  P||shuo4
   C character
    D1||(literary) matchmaker of the bride's side
@@ -241929,7 +241929,7 @@ W|w|妮
   C character
    D1||(dialectal, endearing or derogatory) girl
    D2||a surname
-W|w|妯
+W|w&|妯
  P||zhou2;zhu2
   C character
    D1||Only used in 妯娌 (zhóuli).
@@ -242433,7 +242433,7 @@ W|w|姑表
  P||gu1biao3
   C noun
    D1||paternal cousin (father's sister's child)
-W|w|姒
+W|w&|姒
  P||si4
   C character
    D1||wife of elder brother
@@ -242543,7 +242543,7 @@ W|w|姖
  P||ju4
   C character
    D1||Only used in 吳姖／吴姖.
-W|w|姘
+W|w&|姘
  P||pin1
   C character
    D1||extramarital sex, illicit sexual relations
@@ -243241,7 +243241,7 @@ W|w|娃媽／娃妈
  P||wa2ma1
   C noun
    D1||(slang) mother of a young baby; new mum
-W|w|娉
+W|w&|娉
  P||ping1
   C character
    D1||beautiful; attractive; charming; graceful
@@ -243254,7 +243254,7 @@ W|w|娉婷
    D1||(literary, ideophonic) having a graceful demeanor
   C noun
    D2||(literary) beautiful woman
-W|w|娌
+W|w&|娌
  P||li3
   C character
    D1||Only used in 妯娌 (zhóuli).
@@ -243428,7 +243428,7 @@ W|w|娟秀
  P||juan1xiu4
   C adj
    D1||(of physical appearance, handwriting, etc.) beautiful; good-looking
-W|w|娠
+W|w&|娠
  P||shen1
   C character
    D1||to be pregnant
@@ -243551,7 +243551,7 @@ W|w|娿
   C character
    D1||Alternative form of 婀
    D2||Used in 媕娿 (ān'ē, “indecisive”).
-W|w|婀
+W|w&|婀
  P||e1;e3
   C character
    D1||beautiful; graceful
@@ -244077,7 +244077,7 @@ W|w|婨／𱙇
  P||lun2
   C character
    D1||Used in female personal names.
-W|w|婪
+W|w&|婪
  P||lan2
   C character
    D1||to covet; to be avaricious; to be greedy
@@ -244120,7 +244120,7 @@ W|w|婷婷
  P||ting2ting2
   C adj
    D1||(of a person, plant, etc.) delicate and graceful
-W|w|婺
+W|w&|婺
  P||wu4
   C character
    D1||to not obey
@@ -244303,7 +244303,7 @@ W|w|媧皇／娲皇
  P||Wa1huang2
   C name
    D1||(Chinese mythology, religion) Synonym of 女媧／女娲 (Nǚwā), the creator goddess Nüwa.
-W|w|媧／娲
+W|w&|媧／娲
  P||wa1
   C character
    D1||the goddess of creation; the mythological sister and successor to Fu Xi
@@ -244327,7 +244327,7 @@ W|w|媰／㛀
  P||zou4
   C character
    D2||fine, glorious, happy
-W|w|媲
+W|w&|媲
  P||pi4
   C character
    D1||to marry, to match
@@ -244452,7 +244452,7 @@ W|w|媽麻馬罵／妈麻马骂
  P||ma1 ma2 ma3 ma4
   C phrase
    D1||(Mandarin) A meaningless phrase used to memorise the four tones in Mandarin
-W|w|媾
+W|w&|媾
  P||gou4
   C character
    D1||(originally) to marry in a cousin marriage (to cement the relationship between families); (in general) to marry
@@ -244648,7 +244648,7 @@ W|w|嫖賭飲吹／嫖赌饮吹
  P||piao2du3yin3chui1
   C phrase
    D1||(usually of a man) to visit prostitutes, gamble, drink, and smoke opium; to have bad habits
-W|w|嫗／妪
+W|w&|嫗／妪
  P||yu4
   C character
    D1||mother
@@ -245411,7 +245411,7 @@ W|w|孌童／娈童
  P||luan2tong2;lvan3tong2;luan3tong2
   C noun
    D1||(dated) catamite (boy as homosexual partner)
-W|w|孌／娈
+W|w&|孌／娈
  P||luan2;lvan3;luan3
   C character
    D1||(literary) lovely; beautiful
@@ -245769,7 +245769,7 @@ W|w|子類／子类
  P||zi3lei4
   C noun
    D1||subclass (secondary class within a main class)
-W|w|孑
+W|w&|孑
  P||jie2
   C character
    D1||alone; lonely
@@ -245808,7 +245808,7 @@ W|w|孑遺／孑遗
   C noun
    D2||(literary) survivor; remnant population
    D3||(literary) remnant; leftover; remainder; rump; relict
-W|w|孓
+W|w&|孓
  P||jue2
   C character
    D1||missing one's left arm
@@ -247321,7 +247321,7 @@ W|w|孰是孰非
  P||shu2shi4shu2fei1
   C phrase
    D1||Synonym of 誰是誰非／谁是谁非 (shuíshìshuífēi, “who is right and who is wrong”)
-W|w|孱
+W|w&|孱
  P||chan2
   C character
    D1||(literary) weak; small; frail; feeble
@@ -247858,7 +247858,7 @@ W|w|孿生／孪生
  P||luan2sheng1;lvan2sheng1
   C adj
    D1||(attributive) twin
-W|w|孿／孪
+W|w&|孿／孪
  P||luan2;lvan2
   C character
    D1||twins
@@ -261150,7 +261150,7 @@ W|w|尷尬症／尴尬症
  P||gan1ga4zheng4
   C noun
    D1||(informal) vicarious embarrassment
-W|w|尷／尴
+W|w&|尷／尴
  P||gan1;jian1
   C character
    D1||Only used in 尷尬／尴尬 (gāngà, “embarrassed; embarrassing”).
@@ -264724,7 +264724,7 @@ W|w|峊
  P||fu4
   C character
    D1||Alternative form of 阜 (fù, “mound”)
-W|w|峋
+W|w&|峋
  P||xun2
   C character
    D1||Only used in 嶙峋 (línxún).
@@ -264822,7 +264822,7 @@ W|w|峬峭
  P||bu1qiao4
   C adj
    D1||(literary, of bearing or writing) graceful; fine
-W|w|峭
+W|w&|峭
  P||qiao4
   C character
    D1||steep; precipitous; rugged
@@ -265016,7 +265016,7 @@ W|w|崁頂／崁顶
   C name
    D1||(～鄉) Kanding (a rural township in Pingtung County, Taiwan)
    D2||(～里) An urban village in Tamsui district, New Taipei, Taiwan
-W|w|崆
+W|w&|崆
  P||kong1
   C character
    D1||Used in place names.
@@ -265295,7 +265295,7 @@ W|w|崚
  P||ling2;leng2
   C character
    D1||Used in compounds.
-W|w|崛
+W|w&|崛
  P||jue2
   C character
    D1||(literary) to rise abruptly
@@ -265685,7 +265685,7 @@ W|w|嶅
  P||ao2
   C character
    D1||(～山) Name of a mountain in Guangdong.
-W|w|嶇／岖
+W|w&|嶇／岖
  P||qu1
   C character
    D1||Only used in 崎嶇／崎岖 (qíqū, “rugged, rough”) and 嶇嶔／岖嵚 (“steep, sheer”).
@@ -265719,7 +265719,7 @@ W|w|嶔崟／嵚崟
  P||qin1yin2
   C noun
    D1||(literary) dangerously steep; precipitous
-W|w|嶙
+W|w&|嶙
  P||lin2
   C character
    D1||towering hills and lofty mountain ranges
@@ -268175,7 +268175,7 @@ W|w|巰／巯
  P||qiu2
   C character
    D1||(organic chemistry) sulfhydryl
-W|w|己
+W|w&|己
  P||ji3
   C character
    D1||self; oneself
@@ -271921,7 +271921,7 @@ W|w|幅巾
  P||fu2jin1
   C noun
    D1||a traditional hat made of black cloth
-W|w|幌
+W|w&|幌
  P||huang3
   C character
    D1||(literary) curtain
@@ -276641,7 +276641,7 @@ W|w|廩食／廪食
  P||lin3shi2
   C noun
    D1||(archaic) government-distributed food rations
-W|w|廩／廪
+W|w&|廩／廪
  P||lin3;lan3
   C character
    D1||granary, especially one for rice
@@ -279606,7 +279606,7 @@ W|w|彖
    D1||(obsolete) running pig
    D2||to judge; to determine
    D3||exposition on a divinatory trigram or hexagram from the I Ching
-W|w|彗
+W|w&|彗
  P||hui4;sui4
   C character
    D1||(literary) broom
@@ -281015,7 +281015,7 @@ W|w|很黃很暴力／很黄很暴力
  P||hen3 huang2 hen3 bao4li4
   C phrase
    D1||(chiefly Mainland China, neologism, slang) sexually explicit and violent
-W|w|徉
+W|w&|徉
  P||yang2
   C character
    D1||Used in 徜徉 (chángyáng) and 徉徜.
@@ -282409,7 +282409,7 @@ W|w|徛靈／徛灵
  P||an1ling2
   C verb
    D1||(Taiwanese Hokkien) to find a suitable place for the spirit tablet (after the deceased is buried)
-W|w|徜
+W|w&|徜
  P||chang2
   C character
    D1||Only used in 徜徉 (chángyáng).
@@ -285714,7 +285714,7 @@ W|w|忐忑不安
  P||tan3te4bu4an1
   C phrase
    D1||nervous; uneasy
-W|w|忑
+W|w&|忑
  P||te4;dao3
   C character
    D1||Only used in 忐忑 (tǎntè).
@@ -285751,7 +285751,7 @@ W|w|忕
  P||shi4
   C character
    D2||to be accustomed to; to be in the habit of
-W|w|忖
+W|w&|忖
  P||cun3
   C character
    D1||to ponder; to speculate
@@ -286176,7 +286176,7 @@ W|w|忠黨愛國／忠党爱国
  P||zhong1dang3ai4guo2
   C phrase
    D1||to be patriotic and also loyal to the party
-W|w|忡
+W|w&|忡
  P||chong1
   C character
    D1||(literary) worried; uneasy; sad; distressed; agitated
@@ -286217,7 +286217,7 @@ W|w|忧
   C character
    D1||heartbeat
    D2||to not move
-W|w|忪
+W|w&|忪
  P||zhong1
   C character
    D1||terrified; frightened
@@ -286718,7 +286718,7 @@ W|w|忽雷
   C noun
    D1||(music, historical) A plucked lute of non-Han origin.
    D2||(archaic) Alternative name for 鱷魚／鳄鱼 (èyú, “crocodile”).
-W|w|忿
+W|w&|忿
  P||fen4
   C character
    D1||to be angry; to be indignant; to hate
@@ -289262,7 +289262,7 @@ W|w|恲
    D1||to reveal unintentionally
    D2||vehement; fervent
    D3||unhappy; gloomy; worried
-W|w|恿
+W|w&|恿
  P||yong3
   C character
    D1||Used in 慫恿／怂恿 (sǒngyǒng, “to instigate; to incite”).
@@ -289545,7 +289545,7 @@ W|w|悚懼／悚惧
  P||song3ju4
   C verb
    D1||to be afraid; to be frightened
-W|w|悛
+W|w&|悛
  P||quan1
   C character
    D1||(fossil word) to regret; to repent
@@ -290331,7 +290331,7 @@ W|w|情頭／情头
  P||qing2tou2
   C noun
    D1||(social media) Short for 情侶頭像／情侣头像 (qínglǚ tóuxiàng).
-W|w|惆
+W|w&|惆
  P||chou2
   C character
    D1||disappointed; sad; grieved
@@ -290399,7 +290399,7 @@ W|w|惔
  P||tan2
   C character
    D1||to burn
-W|w|惕
+W|w&|惕
  P||ti4
   C character
    D1||alert; watchful; cautious; careful
@@ -291608,7 +291608,7 @@ W|w|愓／𰐿
  P||dang4;shang1
   C character
    D1||profligate, debauched, recklessly wasteful
-W|w|愕
+W|w&|愕
  P||e4
   C character
    D1||startled; scared; astonished
@@ -292542,7 +292542,7 @@ W|w|愻／𢙏
   C character
    D1||humble, modest; yield
    D2||Alternative form of 遜／逊 (xùn)
-W|w|愾／忾
+W|w&|愾／忾
  P||kai4
   C character
    D1||(literary) to hate; to resent; to be angry
@@ -293283,7 +293283,7 @@ W|w|慳／悭
   C character
    D1||stingy; miserly
    D2||stingy person; miser
-W|w|慵
+W|w&|慵
  P||yong1;yong2
   C character
    D1||indolent, lazy, lethargic [since Middle Chinese]
@@ -293571,7 +293571,7 @@ W|w|憉
   C character
    D1||Used in 憉悙.
    D2||Used in 憉𢣦.
-W|w|憊／惫
+W|w&|憊／惫
  P||bei4;bai4
   C character
    D1||tired; weary; fatigued
@@ -294448,7 +294448,7 @@ W|w|懨懨／恹恹
  P||yan1yan1
   C adj
    D1||(literary) weak and weary through illness
-W|w|懨／恹
+W|w&|懨／恹
  P||yan1
   C character
    D1||(literary) weak; feeble; sickly
@@ -296378,7 +296378,7 @@ W|w|戚風／戚风
  P||qi1feng1
   C noun
    D1||Short for 戚風蛋糕／戚风蛋糕 (qīfēng dàngāo, “chiffon cake”).
-W|w|戛
+W|w&|戛
  P||jia2
   C character
    D1||lance
@@ -297836,7 +297836,7 @@ W|w|扈從／扈从
  P||hu4cong2;hu4zong4
   C noun
    D1||(literary) retinue; retainer; servant of the emperor or officials
-W|w|扉
+W|w&|扉
  P||fei1
   C character
    D1||door panel; door leaf
@@ -301897,7 +301897,7 @@ W|w|抇
    D2||to split; to crack; to break open
    D3||to affect
    D4||(archaic) to disrupt; to throw into disorder
-W|w|抉
+W|w&|抉
  P||jue2
   C character
    D1||(literary) to gouge; to dig out; to pick out
@@ -303179,7 +303179,7 @@ W|w|抧
    D2||initiate, begin, start
    D3||strike, hit, beat
    D4||attack, fight
-W|w|抨
+W|w&|抨
  P||peng1
   C character
    D1||to shoot with a catapult
@@ -306576,7 +306576,7 @@ W|w|拮据
    D2||(literary) diligent
   C adv
    D3||(literary) diligently
-W|w|拯
+W|w&|拯
  P||zheng3
   C character
    D1||to rescue; to save; to aid
@@ -306734,7 +306734,7 @@ W|w|拵
    D1||to make, prepare, manufacture
    D2||workmanship
    D3||an arrangement
-W|w|拶
+W|w&|拶
  P||za1;za2;zan3
   C character
    D1||to force; to compel; to press
@@ -308899,7 +308899,7 @@ W|w|捨近求遠／舍近求远
  P||she3jin4qiu2yuan3
   C phrase
    D1||to abandon what is close at hand in favor of something far away; to go on a wild goose chase; to vainly pursue the impossible, while ignoring the possible
-W|w|捩
+W|w&|捩
  P||lie4;li4
   C character
    D1||(literary) to turn around
@@ -311518,7 +311518,7 @@ W|w|掫
    D2||to gather
    D3||hemp reed; hemp stalk
    D4||(historical) A place in present-day Lintong District, Xi'an, Shaanxi Province.
-W|w|掬
+W|w&|掬
  P||ju1;ju2
   C character
    D1||(literary) to grasp or hold with both hands
@@ -312692,7 +312692,7 @@ W|w|揟
    D1||to catch fish
    D2||to filter water
    D3||name of a county in today's Gansu province
-W|w|揠
+W|w&|揠
  P||ya4
   C character
    D1||to pull up
@@ -316733,7 +316733,7 @@ W|w|擗
    D3||(Taiwanese Hokkien) to fold the limbs (as if distraught)
    D4||(Hokkien) to break open; to split open; to tear open
    D5||(Taiwanese Hokkien) to chip; to scratch
-W|w|擘
+W|w&|擘
  P||bo4
   C character
    D1||(literary) thumb
@@ -318007,7 +318007,7 @@ W|w|攪珠／搅珠
  P||jiao3zhu1
   C verb
    D1||(Hong Kong) to draw lots (typically in the form of balls)
-W|w|攫
+W|w&|攫
  P||jue2
   C character
    D1||(of animals) to grab using claws
@@ -332655,7 +332655,7 @@ W|w|景頗／景颇
  P||jing3po1
   C noun
    D1||(～族) Jingpho (an ethnic group that inhabit the Kachin Hills of Kachin State, Myanmar and Yunnan, China)
-W|w|晰
+W|w&|晰
  P||xi1
   C character
    D1||clear; distinct
@@ -332811,7 +332811,7 @@ W|w|晶體／晶体
   C noun
    D1||crystal
    D2||(anatomy) lens (of the eye)
-W|w|晷
+W|w&|晷
  P||gui3
   C character
    D1||(literary) shadow cast by the sun's light
@@ -341143,7 +341143,7 @@ W|w|杋
  P||fan2
   C character
    D1||tree mentioned in ancient books, commonly known as the water ash tree
-W|w|杌
+W|w&|杌
  P||wu4
   C character
    D1||(obsolete) tree trunk without branches; stump
@@ -343208,7 +343208,7 @@ W|w|杶
   C character
    D1||a kind of tree — Chinese toon (Toona sinensis)
    D2||varnish
-W|w|杷
+W|w&|杷
  P||pa2
   C character
    D1||a surname
@@ -343234,7 +343234,7 @@ W|w|杻
   C character
    D1||Ligustrum sinense (Chinese privet) — a kind of shrub or small tree
    D2||handcuffs
-W|w|杼
+W|w&|杼
  P||zhu4;shu4
   C character
    D1||shuttle of a loom
@@ -343814,7 +343814,7 @@ W|w|枆
  P||mao2
   C character
    D1||winter peach
-W|w|枇
+W|w&|枇
  P||pi2
   C character
    D1||Only used in 枇杷 (pípá).
@@ -343898,7 +343898,7 @@ W|w|枎
   C character
    D1||(Only used in 扶疏.) tree mentioned in ancient books
    D2||a different tree also mentioned in ancient books
-W|w|析
+W|w&|析
  P||xi1
   C character
    D1||to split wood
@@ -345229,7 +345229,7 @@ W|w|柔魚／柔鱼
  P||rou2yu2
   C noun
    D1||squid
-W|w|柘
+W|w&|柘
  P||zhe4
   C character
    D1||silkworm thorn tree (Maclura tricuspidata)
@@ -346186,7 +346186,7 @@ W|w|柵欄／栅栏
   C noun
    D1||fence; railings; palings; bars
    D2||(military) boom
-W|w|柵／栅
+W|w&|柵／栅
  P||zha4;shan1;shan4;sha1;shi5
   C character
    D1||fence; railing; palisade
@@ -347915,7 +347915,7 @@ W|w|桄榔
  P||guang1lang2
   C noun
    D1||sugar palm (Arenga pinnata)
-W|w|桅
+W|w&|桅
  P||wei2
   C character
    D1||mast (of a ship)
@@ -348122,7 +348122,7 @@ W|w|桍
   C character
    D1||(archaic) tree mentioned in ancient books
    D2||hollow part of an appliance handle
-W|w|桎
+W|w&|桎
  P||zhi4
   C character
    D1||fetters, shackles, handcuffs
@@ -348927,7 +348927,7 @@ W|w|梎
  P||ao1
   C character
    D1||sickle handle, branch
-W|w|梏
+W|w&|梏
  P||gu4
   C character
    D1||(historical) wooden handcuffs; manacles; fetters
@@ -350806,7 +350806,7 @@ W|w|椎體／椎体
  P||zhui1ti3
   C noun
    D1||(anatomy) vertebral body
-W|w|椏／桠
+W|w&|椏／桠
  P||ya1
   C character
    D1||Alternative form of 丫 (yā, “the forking branch of a tree”)
@@ -352607,7 +352607,7 @@ W|w|榲／榅
    D3||box, casket
    D4||cabinet, wardrobe
    D5||closet
-W|w|榴
+W|w&|榴
  P||liu2
   C character
    D1||Short for 石榴 (shíliú, “pomegranate”).
@@ -353066,7 +353066,7 @@ W|w|槣
  P||ji1
   C character
    D1||use chopsticks to pick up things
-W|w|槤／梿
+W|w&|槤／梿
  P||lian2
   C character
    D1||(literary and historical) vessel for holding grain offerings in an ancestral hall. Alternative form of 璉／琏 (liǎn)
@@ -354728,7 +354728,7 @@ W|w|橁
  P||chun1
   C character
    D1||Bunge's ash (Fraxinus bungeana), endemic to China
-W|w|橄
+W|w&|橄
  P||gan3
   C character
    D1||Only used in 橄欖／橄榄.
@@ -356400,7 +356400,7 @@ W|w|檮杌／梼杌
    D1||Taowu (a compilation of historical annals of Chu, now lost)
   C noun
    D2||(Chinese mythology) taowu (a mythical creature)
-W|w|檮／梼
+W|w&|檮／梼
  P||tao2
   C character
    D1||Used in 檮杌／梼杌 (táowù, “taowu”).
@@ -356773,7 +356773,7 @@ W|w|櫪木／枥木
  P||Li4mu4
   C name
    D1||Alternative form of 栃木 (Lìmù, “Tochigi, Japan”)
-W|w|櫪／枥
+W|w&|櫪／枥
  P||li4
   C character
    D1||type of oak
@@ -361363,7 +361363,7 @@ W|w|歿／殁
    D1||(literary) to die
    D2||Alternative form of 沒／没 --- to sink
    D3||Alternative form of 沒／没 --- to have no
-W|w|殂
+W|w&|殂
  P||cu2
   C character
    D1||to die
@@ -361866,7 +361866,7 @@ W|w|殫精竭慮／殚精竭虑
  P||dan1jing1jie2lv4
   C phrase
    D1||to exhaust one's energy and rack one's brain
-W|w|殫／殚
+W|w&|殫／殚
  P||dan1
   C character
    D1||utmost, entirely, quite
@@ -364130,7 +364130,7 @@ W|w|毼
   C character
    D1||woollen blanket
    D2||Alternative form of 鶡／鹖 (hé)
-W|w|毽
+W|w&|毽
  P||jian4
   C character
    D1||shuttlecock used in jianzi sport
@@ -364885,7 +364885,7 @@ W|w|民食
  P||min2shi2
   C noun
    D1||(literary) food of the people
-W|w|氓
+W|w&|氓
  P||mang2
   C character
    D1||Only used in 流氓 (liúmáng).
@@ -365471,7 +365471,7 @@ W|w|氣頭上／气头上
  P||qi4tou2shang4
   C noun
    D1||(colloquial) in a fit of anger; in a temper
-W|w|氤
+W|w&|氤
  P||yin1
   C character
    D1||(literary) misty and heavy atmosphere
@@ -366210,7 +366210,7 @@ W|w|氱
  P||yang3
   C character
    D1||(old translated form) the chemical element oxygen
-W|w|氳／氲
+W|w&|氳／氲
  P||yun1
   C character
    D1||(literary) thick and heavy atmosphere
@@ -368440,7 +368440,7 @@ W|w|汔
    D1||to dry
    D2||nearly
    D3||(Hokkien) viscous; thick
-W|w|汕
+W|w&|汕
  P||shan4
   C character
    D1||(of fish) moving
@@ -369217,7 +369217,7 @@ W|w|汯
  P||hong2
   C character
    D1||Only used in 泓汯 (“(of currents) whirling; swirling”).
-W|w|汰
+W|w&|汰
  P||tai4
   C character
    D1||to rinse; to wash away
@@ -379809,7 +379809,7 @@ W|w|浹渫／浃渫
  P||xia2die2;jia2die2;jia2xie4
   C adj
    D1||(literary, of water) flowing; gushing
-W|w|浹／浃
+W|w&|浹／浃
  P||jia1;jia2
   C character
    D1||saturate, drench
@@ -380442,7 +380442,7 @@ W|w|涐
  P||e2
   C character
    D1||(archaic) old name of the Dadu River in Sichuan province
-W|w|涓
+W|w&|涓
  P||juan1
   C character
    D1||(literary) brook; stream
@@ -380893,7 +380893,7 @@ W|w|淅瀝／淅沥
  P||xi1li4
   C noun
    D1||(onomatopoeia) The sound of a drizzle, breeze, moving shuttle, falling leaves, etc.
-W|w|淆
+W|w&|淆
  P||xiao2;yao2
   C character
    D1||confused; in disarray; mixed up
@@ -381122,7 +381122,7 @@ W|w|淔
    D1||name of a river
    D2||name of an ancient state
    D3||a type of plant
-W|w|淖
+W|w&|淖
  P||nao4
   C character
    D1||mud, slush
@@ -384023,7 +384023,7 @@ W|w|渣翻
  P||zha1fan1
   C noun
    D1||(informal) shitty translation
-W|w|渤
+W|w&|渤
  P||bo2
   C character
    D1||(～海) Bohai Sea
@@ -384046,7 +384046,7 @@ W|w|渤海灣／渤海湾
  P||Bo2hai3wan1
   C name
    D1||Bohai Bay
-W|w|渥
+W|w&|渥
  P||wo4
   C character
    D1||(literary) to moisten; to soak
@@ -384239,7 +384239,7 @@ W|w|測量師／测量师
  P||ce4liang2shi1
   C noun
    D1||surveyor
-W|w|渭
+W|w&|渭
  P||wei4
   C character
    D1||(～河) the Wei River
@@ -384824,7 +384824,7 @@ W|w|湂
  P||e4
   C character
    D1||name of a river
-W|w|湃
+W|w&|湃
  P||pai4
   C character
    D1||Used in 澎湃 and 湃湃, etc.
@@ -384919,7 +384919,7 @@ W|w|湍流
   C noun
    D1||(literary) torrent; rapids; rushing waters
    D2||(fluid mechanics) turbulent flow; turbulence
-W|w|湎
+W|w&|湎
  P||mian3
   C character
    D1||(literary) to give in to drinking; to lose oneself in drink
@@ -385558,7 +385558,7 @@ W|w|湸
  P||liang4
   C character
    D1||large river
-W|w|溉
+W|w&|溉
  P||gai4
   C character
    D1||to water, irrigate, flood
@@ -386927,7 +386927,7 @@ W|w|滎陽／荥阳
  P||Xing2yang2
   C name
    D1||(～市) Xingyang (a county-level city in Zhengzhou, Henan, China)
-W|w|滎／荥
+W|w&|滎／荥
  P||xing2
   C character
    D1||rivulet; small pond
@@ -388386,7 +388386,7 @@ W|w|漇
   C character
    D1||to moisten
    D2||to flow
-W|w|漉
+W|w&|漉
  P||lu4
   C character
    D1||to seep through; to filter
@@ -388579,7 +388579,7 @@ W|w|漒
  P||qiang2
   C character
    D1||name of a river in Henan province
-W|w|漓
+W|w&|漓
  P||li2
   C character
    D1||(literary) unkind; shallow
@@ -389450,7 +389450,7 @@ W|w|漲跌／涨跌
  P||zhang3die1;zhang3die2
   C noun
    D1||(of price) fluctuation
-W|w|漳
+W|w&|漳
  P||zhang1
   C character
    D1||(～河) Zhang River (river flowing from Shanxi to Hebei)
@@ -390007,7 +390007,7 @@ W|w|潛鴨／潜鸭
  P||qian2ya1;qian3ya1
   C noun
    D1||(～屬) Aythya
-W|w|潞
+W|w&|潞
  P||lu4
   C character
    D1||midstream to downstream of Salween River， running through Yunnan
@@ -390527,7 +390527,7 @@ W|w|潸然
  P||shan1ran2
   C adj
    D1||(literary) tearful
-W|w|潺
+W|w&|潺
  P||chan2
   C character
    D1||The sound or appearance of flowing water. Used in compounds.
@@ -391720,7 +391720,7 @@ W|w|濗
  P||mi4
   C character
    D1||shallow water
-W|w|濘／泞
+W|w&|濘／泞
  P||ning4
   C character
    D1||mud
@@ -392382,7 +392382,7 @@ W|w|瀏陽／浏阳
  P||Liu2yang2
   C name
    D1||(～市) Liuyang (a county-level city in Changsha, Hunan, China)
-W|w|瀏／浏
+W|w&|瀏／浏
  P||liu1
   C character
    D1||Alternative form of 溜 (“to sneak off”)
@@ -392411,7 +392411,7 @@ W|w|瀕絕／濒绝
  P||bin1jue2
   C verb
    D1||to be on the verge of extinction
-W|w|瀕／濒
+W|w&|瀕／濒
  P||bin1
   C character
    D1||water's edge; waterside
@@ -392563,7 +392563,7 @@ W|w|瀢沱／𬉋沱
  P||dui4duo4
   C adj
    D1||(literary) flowing of sand in water
-W|w|瀣
+W|w&|瀣
  P||xie4
   C character
    D1||Used in 沆瀣 (hàngxiè); also used as its short form.
@@ -392583,7 +392583,7 @@ W|w|瀦留／潴留
  P||zhu1liu2
   C verb
    D1||(medicine, of urine, electrolytes, etc.) to be retained in the body
-W|w|瀦／潴
+W|w&|瀦／潴
  P||zhu1
   C character
    D1||place where water stays
@@ -392917,7 +392917,7 @@ W|w|灕江／漓江
  P||Li2jiang1
   C name
    D1||Li River (a river in Guangxi)
-W|w|灕／漓
+W|w&|灕／漓
  P||li2
   C character
    D1||to seep through
@@ -396109,7 +396109,7 @@ W|w|烪
  P||zhen4
   C character
    D1||The meaning of this term is uncertain.
-W|w|烯
+W|w&|烯
  P||xi1
   C character
    D1||(organic chemistry) alkene
@@ -399634,7 +399634,7 @@ W|w|熒熒／荧荧
  P||ying2ying2
   C adj
    D1||shimmering; twinkling (stars); flickering (will-o'-the-wisp)
-W|w|熒／荧
+W|w&|熒／荧
  P||ying2
   C character
    D1||luminous; fluorescent
@@ -405675,7 +405675,7 @@ W|w|犧牲品／牺牲品
  P||xi1sheng1pin3
   C noun
    D1||sacrifice (to something); victim (of); prey (to)
-W|w|犧／牺
+W|w&|犧／牺
  P||xi1
   C character
    D1||(historical) pure-colored sacrificial animal
@@ -406361,7 +406361,7 @@ W|w|狋
    D1||Used in 狋觺 and 狋氏.
    D2||the appearance of angry dogs
    D3||the appearance of dogs fighting
-W|w|狍
+W|w&|狍
  P||pao2
   C character
    D1||roe deer (especially Capreolus pygargus)
@@ -406369,7 +406369,7 @@ W|w|狍子
  P||pao2zi3
   C noun
    D1||roe deer, especially eastern roe deer
-W|w|狎
+W|w&|狎
  P||xia2
   C character
    D1||(literary) to be used to; to be familiar with
@@ -406472,7 +406472,7 @@ W|w|狑
   C character
    D1||a kind of good dog
    D2||(historical) an ancient ethnic minority in present-day Guangxi, China
-W|w|狒
+W|w&|狒
  P||fei4
   C character
    D1||Only used in 狒狒 (fèifèi, “baboon”).
@@ -407163,7 +407163,7 @@ W|w|狼音
  P||lang2yin1
   C noun
    D1||(music) wolf tone
-W|w|狽／狈
+W|w&|狽／狈
  P||bei4
   C character
    D1||(mythology) a legendary wolf-like animal with short forelegs and long hind legs
@@ -407285,7 +407285,7 @@ W|w|猙獰／狰狞
   C adj
    D1||ferocious; savage; hideous
    D2||(Hakka) annoying; troublesome
-W|w|猙／狰
+W|w&|猙／狰
  P||zheng1
   C character
    D1||fierce-looking; ferocious
@@ -407468,7 +407468,7 @@ W|w|猜謎／猜谜
    D1||(literal) to guess a riddle
    D2||(literal) to answer a quiz
    D3||(figurative) to guess; to work out
-W|w|猝
+W|w&|猝
  P||cu4
   C character
    D1||abruptly; suddenly
@@ -407881,7 +407881,7 @@ W|w|獀
    D1||Used in 獶獀 (yōusōu).
    D2||Alternative form of 蒐 (sōu, “(spring) hunting”)
    D3||Alternative form of 搜 (sōu, “to choose; to look for”)
-W|w|獁／犸
+W|w&|獁／犸
  P||ma3;ma4
   C character
    D1||Only used in 猛獁／猛犸 (měngmǎ).
@@ -408147,7 +408147,7 @@ W|w|獖／𰡞
    D1||to cut apart
    D2||a kind of goat
    D3||Alternative form of 豶／豮 (fén)
-W|w|獗
+W|w&|獗
  P||jue2
   C character
    D1||Only used in 猖獗 (chāngjué).
@@ -409111,7 +409111,7 @@ W|w|獼猴／猕猴
   C noun
    D1||rhesus macaque (common species of monkey throughout southern Asia)
     XM||隻／只
-W|w|獼／猕
+W|w&|獼／猕
  P||mi2
   C character
    D1||macaque (Macaca genus of monkeys)
@@ -410242,7 +410242,7 @@ W|w|玞
   C character
    D1||Only used in 珷玞.
    D2||Jade-like stone.
-W|w|玟
+W|w&|玟
  P||wen2
   C character
    D1||(literary) veins in jade
@@ -412216,7 +412216,7 @@ W|w|理髮館／理发馆
  P||li3fa4guan3;li3fa3guan3
   C noun
    D1||(chiefly Mainland China) hairdresser's; barbershop
-W|w|琉
+W|w&|琉
  P||liu2
   C character
    D1||Used in compounds.
@@ -412339,7 +412339,7 @@ W|w|琤瑽／琤𪻐
   C noun
    D1||(literary, onomatopoeia) sound of flowing water
    D2||(literary, onomatopoeia) sound of colliding jade
-W|w|琥
+W|w&|琥
  P||hu3
   C character
    D1||Only used in 琥珀 (hǔpò, “amber”).
@@ -412565,7 +412565,7 @@ W|w|琵鷺／琵鹭
  P||pi2lu4
   C noun
    D1||spoonbill
-W|w|琶
+W|w&|琶
  P||pa2
   C character
    D1||Only used in 琵琶.
@@ -412609,7 +412609,7 @@ W|w|琿／珲
    D3||Used in a place name
     X<||琿春／珲春
    D4||(literary) beautiful jade
-W|w|瑁
+W|w&|瑁
  P||mao4
   C character
    D1||jade used by Son of Heaven to be pieced together with feudal lords' ceremonical jade gui (圭)
@@ -412682,7 +412682,7 @@ W|w|瑗
  P||yuan4
   C character
    D1||jade annulus with a large hole
-W|w|瑙
+W|w&|瑙
  P||nao3
   C character
    D1||Used in 瑪瑙／玛瑙 (mǎnǎo).
@@ -412696,7 +412696,7 @@ W|w|瑙魯／瑙鲁
  P||Nao3lu3
   C name
    D1||(Mainland China) Nauru (a country and island in Oceania, in the Pacific Ocean)
-W|w|瑚
+W|w&|瑚
  P||hu2
   C character
    D1||Used in 珊瑚 (shānhú)
@@ -413237,7 +413237,7 @@ W|w|瑯琊／琅琊
    D4||(～鎮) Langya (a town in Huangdao district, Qingdao, Shandong, China)
    D5||(～鎮) Langya (a town in Wucheng district, Jinhua, Zhejiang, China)
    D6||(～鎮) Langya (a town in Qu, Dazhou, Sichuan, China)
-W|w|瑰
+W|w&|瑰
  P||gui1
   C character
    D1||semi-precious stone that is less precious than jade
@@ -413277,7 +413277,7 @@ W|w|瑼
  P||zhuan1
   C character
    D1||a type of jade
-W|w|璀
+W|w&|璀
  P||cui3
   C character
    D1||Used in compounds.
@@ -413334,7 +413334,7 @@ W|w|璘霦
  P||lin2bin1
   C noun
    D1||(literary, rare) color or luster of jade
-W|w|璜
+W|w&|璜
  P||huang2
   C character
    D1||(historical) semi-circular jade pendant used for ritual and ornamental purposes
@@ -413403,7 +413403,7 @@ W|w|璧還／璧还
  P||bi4huan2
   C verb
    D1||(literary, honorific) to return something borrowed in good shape and with thanks
-W|w|璨
+W|w&|璨
  P||can4
   C character
    D1||bright; beaming
@@ -414591,7 +414591,7 @@ W|w|瓻
  P||chi1
   C character
    D1||wine jar
-W|w|瓿
+W|w&|瓿
  P||bu4;pou3
   C character
    D1||a kind of vase
@@ -417098,7 +417098,7 @@ W|w|甫嶺／甫岭
  P||Fu3ling3
   C name
    D1||(～村) Fuling (a village in Likou, Qimen, Huangshan, Anhui, China)
-W|w|甬
+W|w&|甬
  P||yong3;dong4
   C character
    D1||handle of a bell
@@ -420430,7 +420430,7 @@ W|w|當飯吃／当饭吃
  P||dang1 fan4 chi1
   C phrase
    D1||(slang) to regard as livelihood; to pay the bills
-W|w|畸
+W|w&|畸
  P||ji1
   C character
    D1||abnormal; irregular
@@ -420892,7 +420892,7 @@ W|w|疕
   C character
    D1||head sores
    D2||a headache
-W|w|疙
+W|w&|疙
  P||ge1
   C character
    D1||Used in compounds.
@@ -421109,7 +421109,7 @@ W|w|疳積／疳积
  P||gan1ji1
   C noun
    D1||(traditional Chinese medicine) infantile malnutrition due to digestive disturbances or intestinal parasites
-W|w|疵
+W|w&|疵
  P||ci1
   C character
    D1||illness
@@ -421125,7 +421125,7 @@ W|w|疶
  P||xue1
   C character
    D1||(Southern Min) to be unable to control intermittent defecation or urination (due to illness, shock, etc.)
-W|w|疸
+W|w&|疸
  P||dan3
   C character
    D1||jaundice
@@ -421967,7 +421967,7 @@ W|w|痤瘡／痤疮
  P||cuo2chuang1
   C noun
    D1||(pathology, formal) acne
-W|w|痦
+W|w&|痦
  P||wu4
   C character
    D1||(medicine) naevus; mole
@@ -422007,7 +422007,7 @@ W|w|痰罐
  P||tan2guan4
   C noun
    D1||spittoon
-W|w|痱
+W|w&|痱
  P||fei4
   C character
    D1||prickly heat
@@ -422137,7 +422137,7 @@ W|w|痺／痹
  P||bi4
   C character
    D1||paralysis; numbness
-W|w|痼
+W|w&|痼
  P||gu4
   C character
    D1||chronic disease
@@ -422150,7 +422150,7 @@ W|w|痼疾
  P||gu4ji2
   C noun
    D1||chronic disease; obstinate illness
-W|w|痾／疴
+W|w&|痾／疴
  P||ke1;e1
   C character
    D1||illness; sickness; disease
@@ -422208,7 +422208,7 @@ W|w|瘈瘲／瘈疭
  P||chi4zong4;qi4zong4
   C noun
    D1||(traditional Chinese medicine) incessant spasms or convulsions, resembling epilepsy, that affect the hands and feet of infants and young children
-W|w|瘊
+W|w&|瘊
  P||hou2
   C character
    D1||warts, pimples
@@ -422299,7 +422299,7 @@ W|w|瘌痢頭／瘌痢头
   C noun
    D1||(dialectal) head with tinea capitis
    D2||(dialectal) someone with tinea capitis
-W|w|瘍／疡
+W|w&|瘍／疡
  P||yang2
   C character
    D1||sore; ulcer; carbuncle
@@ -422317,7 +422317,7 @@ W|w|瘐死
  P||yu3si3
   C verb
    D1||to die due to cold, hunger or illness in prison
-W|w|瘓／痪
+W|w&|瘓／痪
  P||huan4
   C character
    D1||Only used in 癱瘓／瘫痪 (tānhuàn).
@@ -422364,7 +422364,7 @@ W|w|瘟神
   C noun
    D1||(Chinese folk religion) god of plague (Wen Shen)
    D2||(figurative) person or thing shunned by people; plague; troublemaker
-W|w|瘠
+W|w&|瘠
  P||ji2
   C adj
    D1||thin; emaciated
@@ -422409,7 +422409,7 @@ W|w|瘡瘍／疮疡
  P||chuang1yang2
   C noun
    D1||(traditional Chinese medicine) A collective term for sores, ulcers, boils, abscesses, etc.
-W|w|瘢
+W|w&|瘢
  P||ban1
   C character
    D1||scar
@@ -422545,7 +422545,7 @@ W|w|瘧蚊／疟蚊
  P||nve4wen2
   C noun
    D1||anopheles, malarial mosquito (member of the Anopheles genus of mosquitos)
-W|w|瘧／疟
+W|w&|瘧／疟
  P||nve4;yao4
   C character
    D1||(medicine) ague; malaria; intermittent fever and shivering
@@ -427514,7 +427514,7 @@ W|w|皖景天
  P||wan3jing3tian1
   C noun
    D1||Sedum jinianum
-W|w|皙
+W|w&|皙
  P||xi1
   C character
    D1||(literary, of skin) pale; white
@@ -428012,7 +428012,7 @@ W|w|皰疹／疱疹
   C noun
    D1||(pathology) bleb
    D2||(pathology) herpes
-W|w|皰／疱
+W|w&|皰／疱
  P||pao4
   C character
    D1||blister; bleb
@@ -431018,7 +431018,7 @@ W|w|眇
    D3||(archaic) distant; faraway
    D4||(literary) tiny; minute; minuscule
    D5||(archaic) high; lofty; utmost
-W|w|眈
+W|w&|眈
  P||dan1
   C character
    D1||Used in 眈眈 (dāndān).
@@ -431948,7 +431948,7 @@ W|w|眵目糊
  P||chi1mu5hu1;chi1mu4hu2;chi1me5hu1
   C noun
    D1||(dialectal) rheum; sleep (substance in eyes after waking)
-W|w|眶
+W|w&|眶
  P||kuang4;kuang1
   C character
    D1||eye socket, cranial orbit
@@ -432014,7 +432014,7 @@ W|w|眹
   C character
    D1||(literary) pupil
    D2||Alternative form of 朕 (zhèn, “sign; omen”)
-W|w|眺
+W|w&|眺
  P||tiao4
   C character
    D1||to cast sidelong glances
@@ -432898,7 +432898,7 @@ W|w|督郵／督邮
  P||du1you2
   C noun
    D1||(archaic) postal inspector; county inspector
-W|w|睥
+W|w&|睥
  P||pi4;bi4
   C character
    D1||Used in 睥睨 (pìnì).
@@ -432960,7 +432960,7 @@ W|w|睪／𠬤
  P||ze2
   C character
    D6||Alternative form of 澤／泽 (zé, “Eupatorium”)
-W|w|睫
+W|w&|睫
  P||jie2
   C character
    D1||eyelash
@@ -433009,7 +433009,7 @@ W|w|睻
  P||xuan1
   C character
    D1||big eyes
-W|w|睽
+W|w&|睽
  P||kui2
   C character
    D1||opposed; contrary; separated
@@ -433028,7 +433028,7 @@ W|w|睽違／睽违
  P||kui2wei2
   C verb
    D1||(literary) to be separated (from a friend, one's homeland, etc.); to have parted
-W|w|睾
+W|w&|睾
  P||gao1
   C character
    D1||Alternative form of 皋 (gāo, “tall; high”)
@@ -433100,7 +433100,7 @@ W|w|瞋目
  P||chen1mu4
   C verb
    D1||(literary) to glare at angrily with wide eyes
-W|w|瞌
+W|w&|瞌
  P||ke1
   C character
    D1||(Hokkien, Teochew, Leizhou Min) to close (one's eyes)
@@ -433253,7 +433253,7 @@ W|w|瞟一眼
  P||piao3 yi1yan3
   C verb
    D1||to cast a sidelong glance at
-W|w|瞠
+W|w&|瞠
  P||cheng1;zheng4
   C character
    D1||to stare at; to gaze at; to glare at
@@ -433574,7 +433574,7 @@ W|w|矇騙／蒙骗
  P||meng1pian4
   C verb
    D1||to deceive; to cheat; to dupe; to fool
-W|w|矍
+W|w&|矍
  P||jue2
   C character
    D1||look about in fright or alarm
@@ -435730,7 +435730,7 @@ W|w|砐硪
  P||e4e2;e4e3
   C adj
    D1||(of appearance) towering
-W|w|砒
+W|w&|砒
  P||pi1
   C character
    D1||Used in 砒霜 (pīshuāng).
@@ -435837,7 +435837,7 @@ W|w|砘
   C character
    D1||(agriculture) stone roller
    D2||(agriculture) to roll field with a stone roller after sowing
-W|w|砝
+W|w&|砝
  P||fa3
   C character
    D1||Used in 砝碼／砝码 (fǎmǎ).
@@ -439143,7 +439143,7 @@ W|w|礎石／础石
   C noun
    D1||plinth; block of stone underneath a pillar
    D2||(by extension) foundation; basis
-W|w|礎／础
+W|w&|礎／础
  P||chu3
   C character
    D1||plinth
@@ -439204,7 +439204,7 @@ W|w|礛／𰧔
  P||jian1
   C character
    D1||Used in 礛䃴／𰧔𰧘 and 礛諸／𰧔诸.
-W|w|礜
+W|w&|礜
  P||yu4
   C character
    D1||(literary) arsenopyrite
@@ -439384,7 +439384,7 @@ W|w|礬石／矾石
  P||fan2shi2
   C noun
    D1||(mineralogy) aluminite
-W|w|礬／矾
+W|w&|礬／矾
  P||fan2
   C character
    D1||alum
@@ -440267,7 +440267,7 @@ W|w|祛魅
  P||qu1mei4
   C verb
    D1||to become disenchanted
-W|w|祜
+W|w&|祜
  P||hu4
   C character
    D1||favor from heaven; blessing
@@ -444526,7 +444526,7 @@ W|w|秬
  P||ju4
   C character
    D1||black millet (Cenchrus americanus, syn. Pennisetum glaucum; pearl millet)
-W|w|秭
+W|w&|秭
  P||zi3
   C character
    D1||a numeral that refers to various numbers, including 10⁹, 10¹² and 10²⁴
@@ -446098,7 +446098,7 @@ W|w|穋
  P||lu4
   C character
    D1||grain planted before the previous crop has been harvested
-W|w|穌／稣
+W|w&|穌／稣
  P||su1
   C character
    D1||Alternative form of 蘇／苏 (sū, “perilla; tassel”)
@@ -446333,7 +446333,7 @@ W|w|穝
  P||zuo1;zui5
   C character
    D1||Only used in Japanese proper nouns.
-W|w|穡／穑
+W|w&|穡／穑
  P||se4
   C character
    D1||to harvest; to reap
@@ -447564,7 +447564,7 @@ W|w|窆石
  P||bian3shi2
   C noun
    D1||(literary) stone pillar used to guide the coffin during burial
-W|w|窈
+W|w&|窈
  P||yao3
   C character
    D1||(literary) profound; far-reaching
@@ -447585,7 +447585,7 @@ W|w|窊
    D1||pit, vault
    D2||to store in a pit
    D3||lowland swamp
-W|w|窒
+W|w&|窒
  P||zhi4
   C character
    D1||to stop up; to obstruct; to block up
@@ -447751,7 +447751,7 @@ W|w|窟窿眼
  P||ku1long5yan3
   C noun
    D1||small hole; small cavity
-W|w|窠
+W|w&|窠
  P||ke1
   C character
    D1||bird's nest in cave; nest
@@ -449736,7 +449736,7 @@ W|w|竻
   C character
    D1||root of bamboo
    D2||thorn on bamboos
-W|w|竽
+W|w&|竽
  P||yu2
   C character
    D1||(historical) the yu, a wind instrument used in ancient China
@@ -449796,7 +449796,7 @@ W|w|笈多王朝
  P||Ji2duo1 Wang2chao2
   C name
    D1||Gupta Empire
-W|w|笊
+W|w&|笊
  P||zhao4
   C character
    D1||Used in 笊籬／笊篱 (zhàoli, “strainer (made of bamboo, wicker, or wire)”).
@@ -451683,7 +451683,7 @@ W|w|箐道
  P||qing4dao4
   C noun
    D1||(literary) mountain road through bamboo bushes
-W|w|箔
+W|w&|箔
  P||bo2
   C character
    D1||foil; tinsel
@@ -451876,7 +451876,7 @@ W|w|箙
  P||fu2
   C character
    D1||quiver
-W|w|箜
+W|w&|箜
  P||kong1
   C character
    D1||Only used in 箜篌 (kōnghóu, “an ancient string music instrument”).
@@ -452597,7 +452597,7 @@ W|w|篋／箧
   C character
    D1||box; chest; trunk
    D2||(Puxian Min) drawer
-W|w|篌
+W|w&|篌
  P||hou2
   C character
    D1||a kind of bamboo
@@ -452623,7 +452623,7 @@ W|w|篚
  P||fei3
   C character
    D1||(obsolete) round bamboo basket
-W|w|篝
+W|w&|篝
  P||gou1
   C character
    D1||bamboo basket; bamboo frame; bamboo cage
@@ -453286,7 +453286,7 @@ W|w|簷鼓／檐鼓
   C noun
    D1||(archaic) Alternative name for 牽牛星／牵牛星 (Qiānniúxīng).
    D2||(music) A type of ancient drum.
-W|w|簸
+W|w&|簸
  P||bo3;bo4
   C character
    D1||to winnow
@@ -454428,7 +454428,7 @@ W|w|粔籹
  P||ju4nv4
   C noun
    D1||ring-shaped cake
-W|w|粕
+W|w&|粕
  P||po4
   C character
    D1||(Hokkien, Teochew) dregs; residue; dross
@@ -456103,7 +456103,7 @@ W|w|糧餉／粮饷
  P||liang2xiang3
   C noun
    D1||(dated) soldier's pay and provisions; funds and provisions for the troops
-W|w|糨
+W|w&|糨
  P||jiang4
   C character
    D1||adhesive paste (usually made from flour)
@@ -456120,7 +456120,7 @@ W|w|糪
  P||bo4
   C character
    D1||half cooked rice
-W|w|糬
+W|w&|糬
  P||shu3
   C character
    D1||Only used in 麻糬／𫃎糬 (máshǔ).
@@ -456160,7 +456160,7 @@ W|w|糱
    D1||grain that can be sprouted
    D2||malt; yeast for wine
    D3||to lead to; to cause
-W|w|糲／粝
+W|w&|糲／粝
  P||li4
   C character
    D1||brown rice; unpolished rice
@@ -460365,7 +460365,7 @@ W|w|紾／𬘝
  P||zhen3;tian3
   C character
    D1||(archaic) to twist; to turn
-W|w|絀／绌
+W|w&|絀／绌
  P||zhuo2
   C character
    D1||insufficient
@@ -461521,7 +461521,7 @@ W|w|絛蟲／绦虫
  P||tao1chong2
   C noun
    D1||(～綱) tapeworm; cestode
-W|w|絛／绦
+W|w&|絛／绦
  P||tao1
   C character
    D1||silk braid; sash
@@ -461658,7 +461658,7 @@ W|w|絢麗／绚丽
  P||xuan4li4
   C adj
    D1||gorgeously vivid; florid
-W|w|絢／绚
+W|w&|絢／绚
  P||xuan4
   C character
    D1||brilliant; gorgeous; effulgent
@@ -464567,7 +464567,7 @@ W|w|緙絲／缂丝
    D2||kesi product
   C verb
    D3||(art) to weave with fine silks and gold thread
-W|w|緙／缂
+W|w&|緙／缂
  P||ke4
   C character
    D1||woof of a woven item
@@ -465558,7 +465558,7 @@ W|w|縐綢／绉绸
  P||zhou4chou2
   C noun
    D1||crepe (fabric)
-W|w|縐／绉
+W|w&|縐／绉
  P||zhou4
   C character
    D1||crepe; wrinkled fabric
@@ -465608,7 +465608,7 @@ W|w|縞素／缟素
  P||gao3su4
   C noun
    D1||white mourning dress
-W|w|縞／缟
+W|w&|縞／缟
  P||gao3
   C character
    D1||(historical) white raw silk
@@ -466380,7 +466380,7 @@ W|w|績點／绩点
  P||ji4dian3;ji1dian3
   C noun
    D1||grade point
-W|w|績／绩
+W|w&|績／绩
  P||ji4;ji1
   C character
    D1||to spin hemp into thread
@@ -467072,7 +467072,7 @@ W|w|纁／𫄸
   C character
    D1||(literary) light red; pink
    D2||(literary) Alternative form of 曛 (xūn, “glow of the setting sun”)
-W|w|纂
+W|w&|纂
  P||zuan3
   C character
    D1||to edit; to compile
@@ -470498,7 +470498,7 @@ W|w|羥醛／羟醛
  P||qiang3quan2
   C noun
    D1||aldol
-W|w|羥／羟
+W|w&|羥／羟
  P||qiang3
   C character
    D1||(～基) (organic chemistry) hydroxy group; hydroxyl radical
@@ -471002,7 +471002,7 @@ W|w|羷
  P||lian3
   C character
    D1||goat with three curls in its horns
-W|w|羸
+W|w&|羸
  P||lei2
   C character
    D1||(literary) in a weak or exhausted state
@@ -471575,7 +471575,7 @@ W|w|翰飛／翰飞
  P||han4fei1
   C verb
    D1||(Classical) to soar; to fly high
-W|w|翱
+W|w&|翱
  P||ao2
   C character
    D1||to spread wings and fly
@@ -473618,7 +473618,7 @@ W|w|考點／考点
  P||kao3dian3
   C noun
    D1||Short for 考試地點／考试地点 (kǎoshì dìdiǎn, “test centre”).
-W|w|耄
+W|w&|耄
  P||mao4
   C character
    D1||(literary) very old; senile
@@ -473660,7 +473660,7 @@ W|w|耆那教
  P||Qi2na4jiao4
   C name
    D1||Jainism
-W|w|耋
+W|w&|耋
  P||die2
   C character
    D1||(literary) age of seventy or eighty
@@ -474056,7 +474056,7 @@ W|w|耗電／耗电
    D1||power consumption
   C verb
    D2||to consume power
-W|w|耘
+W|w&|耘
  P||yun2
   C character
    D1||to weed
@@ -474722,7 +474722,7 @@ W|w|聅
  P||che4
   C character
    D1||(archaic) punishment of piercing the ear with an arrow in ancient martial law
-W|w|聆
+W|w&|聆
  P||ling2
   C character
    D1||(literary) to listen carefully
@@ -474798,7 +474798,7 @@ W|w|聎
  P||tiao1
   C character
    D1||tinnitus
-W|w|聒
+W|w&|聒
  P||guo1;gua1
   C character
    D1||noisy; clamorous; uproarious
@@ -476518,7 +476518,7 @@ W|w|聳肩／耸肩
  P||song3jian1
   C verb
    D1||to shrug one's shoulders
-W|w|聵／聩
+W|w&|聵／聩
  P||kui4
   C character
    D1||(literary) deaf
@@ -478689,7 +478689,7 @@ W|w|肩頭／肩头
    D1||(formal) on the shoulders
   C noun
    D2||(dialectal) shoulders
-W|w|肪
+W|w&|肪
  P||fang2;fang1
   C character
    D1||fat
@@ -479885,7 +479885,7 @@ W|w|胜遇
  P||qing4yu4
   C noun
    D1||(literary, Chinese mythology) Name of a kind of legendary bird.
-W|w|胝
+W|w&|胝
  P||zhi1
   C character
    D1||callus, callosities on the hands or feet
@@ -480600,7 +480600,7 @@ W|w|胳臂肘兒／胳臂肘儿
  P||ge1bei5zhour3
   C noun
    D1||(colloquial) elbow
-W|w|胴
+W|w&|胴
  P||chi1;dong4
   C character
    D1||torso; trunk
@@ -480852,7 +480852,7 @@ W|w|胻
   C character
    D1||calf (lower leg)
    D2||(archaic) belly
-W|w|胼
+W|w&|胼
  P||pian2
   C character
    D1||Only used in 胼胝 (piánzhī).
@@ -482011,7 +482011,7 @@ W|w|腊
    D1||dried meat
    D2||to make dry
    D3||dried or cracked skin
-W|w|腋
+W|w&|腋
  P||ye4;yi4
   C character
    D1||armpit; underarm; axilla
@@ -483963,7 +483963,7 @@ W|w|膉
   C character
    D1||(obsolete) meat in the neck
    D2||(obsolete) fat
-W|w|膊
+W|w&|膊
  P||bo2
   C character
    D1||arm; upper arm
@@ -484823,7 +484823,7 @@ W|w|臂膊
  P||bi4bo2
   C noun
    D1||(regional) arm
-W|w|臃
+W|w&|臃
  P||yong1;yong3
   C character
    D1||Used in 臃腫／臃肿 (yōngzhǒng, “obese; swollen; overstaffed”).
@@ -489991,7 +489991,7 @@ W|w|舡
  P||gang1
   C character
    D1||(archaic) boat; ship
-W|w|舢
+W|w&|舢
  P||shan1
   C character
    D1||Only used in 舢板 (shānbǎn).
@@ -490013,7 +490013,7 @@ W|w|舦
  P||tai4
   C character
    D1||(obsolete, of a boat) to travel
-W|w|舨
+W|w&|舨
  P||ban3
   C character
    D1||Only used in 舢舨 and 艟舨.
@@ -493714,7 +493714,7 @@ W|w|苛辣匝因
  P||Ke1la4za1yin1
   C name
    D1||(Catholicism) Chorazin
-W|w|苜
+W|w&|苜
  P||mu4
   C character
    D1||Only used in 苜蓿 (mùxu, “Medicago”).
@@ -493820,7 +493820,7 @@ W|w|苡
   C character
    D1||Job's tears
    D2||Used in 芣苡 (fúyǐ, “plantain”).
-W|w|苣
+W|w&|苣
  P||ju4
   C character
    D1||lettuce
@@ -497201,7 +497201,7 @@ W|w|荷馬／荷马
  P||He2ma3
   C name
    D1||Homer
-W|w|荸
+W|w&|荸
  P||bi2;bo2
   C character
    D1||Only used in 荸薺／荸荠 (bíqi, “Chinese water chestnut”).
@@ -497263,7 +497263,7 @@ W|w|荼蘼
    D1||Rosa × fortuneana
    D2||Rosa × odorata
    D3||Rubus rosifolius var. coronarius
-W|w|荽
+W|w&|荽
  P||sui1
   C character
    D1||Only used in 胡荽 (húsuī) and 芫荽 (yánsuī).
@@ -497619,7 +497619,7 @@ W|w|莞爾／莞尔
  P||wan3er3
   C adj
    D1||(literary) smiling
-W|w|莠
+W|w&|莠
  P||you3;you4
   C character
    D1||Setaria viridis (green foxtail, green bristlegrass, wild foxtail millet)
@@ -497636,7 +497636,7 @@ W|w|莢膜／荚膜
  P||jia2mo2;jia2mo4
   C noun
    D1||(bacteriology) capsule
-W|w|莢／荚
+W|w&|莢／荚
  P||jia2
   C character
    D1||pods of leguminous plants
@@ -497650,11 +497650,11 @@ W|w|莧菜／苋菜
  P||xian4cai4
   C noun
    D1||edible amaranth (Amaranthus tricolor)
-W|w|莧／苋
+W|w&|莧／苋
  P||xian4
   C character
    D1||edible amaranth (Amaranthus tricolor)
-W|w|莨
+W|w&|莨
  P||lang4
   C character
    D1||Only used in 莨菪 (làngdàng).
@@ -499490,7 +499490,7 @@ W|w|萊陽／莱阳
  P||Lai2yang2
   C name
    D1||(～市) Laiyang (a city in Shandong, China)
-W|w|萋
+W|w&|萋
  P||qi1
   C character
    D1||(of vegetation) luxuriant; lush; abundant
@@ -500361,7 +500361,7 @@ W|w|萵苣／莴苣
    D1||lettuce
    D2||celtuce
    D3||(Taiwan, phonetic) WG (World Gym, a popular gym chain)
-W|w|萵／莴
+W|w&|萵／莴
  P||wo1
   C character
    D1||lettuce
@@ -501196,7 +501196,7 @@ W|w|著魔／着魔
  P||zhao2mo2
   C adj
    D1||enchanted; bewitched; obsessed
-W|w|葚
+W|w&|葚
  P||shen4;ren4
   C character
    D1||mulberry fruit
@@ -501575,7 +501575,7 @@ W|w|葩經／葩经
  P||Pa1jing1
   C name
    D1||(literary) Synonym of 詩經／诗经 (Shījīng, “Classic of Poetry”)
-W|w|葫
+W|w&|葫
  P||hu2
   C character
    D1||Used in 葫蘆／葫芦 (húlu).
@@ -501760,7 +501760,7 @@ W|w|葷／荤
  P||xun1
   C character
    D4||Only used in 葷粥／荤粥 and 葷鬻／荤鬻.
-W|w|葺
+W|w&|葺
  P||qi4
   C character
    D1||to fix; to repair
@@ -501862,7 +501862,7 @@ W|w|蒓菜／莼菜
  P||chun2cai4
   C noun
    D1||water-shield (Brasenia schreberi)
-W|w|蒓／莼
+W|w&|蒓／莼
  P||chun2
   C character
    D1||Brasenia schreberi (watershield)
@@ -502234,7 +502234,7 @@ W|w|蒞／莅
   C character
    D1||to attend; to arrive (in an official function or ceremony)
    D2||to manage
-W|w|蒟
+W|w&|蒟
  P||ju3
   C character
    D1||betel (Piper betle)
@@ -502508,7 +502508,7 @@ W|w|蒺藜
   C noun
    D1||caltrop (plants in the family Zygophyllaceae)
    D2||(weaponry) caltrop
-W|w|蒻
+W|w&|蒻
  P||ruo4
   C character
    D1||bulrush; cattail
@@ -504601,7 +504601,7 @@ W|w|薔薇／蔷薇
  P||qiang2wei1;qiang2wei2
   C noun
    D1||(botany) rose, especially multiflora rose
-W|w|薔／蔷
+W|w&|薔／蔷
  P||qiang2
   C character
    D1||Only used in 薔薇／蔷薇 (qiángwēi).
@@ -505174,7 +505174,7 @@ W|w|薸
  P||piao2
   C character
    D1||duckweed
-W|w|薹
+W|w&|薹
  P||tai2
   C character
    D1||(～草) sedge (Carex)
@@ -506605,7 +506605,7 @@ W|w|藻類／藻类
  P||zao3lei4
   C noun
    D1||algae
-W|w|藿
+W|w&|藿
  P||huo4
   C character
    D1||(literary) leaves of pulse plants
@@ -507323,7 +507323,7 @@ W|w|蘋果餡餅／苹果馅饼
  P||ping2guo3 xian4bing3
   C noun
    D1||apple strudel
-W|w|蘑
+W|w&|蘑
  P||mo2
   C character
    D1||type of edible mushroom
@@ -507352,7 +507352,7 @@ W|w|蘚苔／藓苔
  P||xian3tai2
   C noun
    D1||Synonym of 苔蘚／苔藓 (táixiǎn)
-W|w|蘚／藓
+W|w&|蘚／藓
  P||xian3
   C character
    D1||lichen, moss
@@ -508930,7 +508930,7 @@ W|w|蚒
   C character
    D1||Alternative form of 彤 (tóng)
    D2||Alternative form of 赨 (tóng)
-W|w|蚓
+W|w&|蚓
  P||yin3
   C character
    D1||(biology or in fossilized compounds or dialectal) earthworm
@@ -509063,7 +509063,7 @@ W|w|蚮
  P||te4
   C character
    D1||(Putian Puxian Min) oyster
-W|w|蚯
+W|w&|蚯
  P||qiu1
   C character
    D1||Only used in 蚯蚓 (qiūyǐn, “earthworm”).
@@ -509072,7 +509072,7 @@ W|w|蚯蚓
   C noun
    D1||earthworm
     XM||條／条
-W|w|蚰
+W|w&|蚰
  P||you2
   C character
    D1||Only used in 蚰蜒 (yóuyán), etc.
@@ -509200,7 +509200,7 @@ W|w|蛃魚／蛃鱼
  P||bing3yu2
   C noun
    D1||silverfish
-W|w|蛄
+W|w&|蛄
  P||gu1
   C character
    D1||mole cricket
@@ -509606,7 +509606,7 @@ W|w|蛓
  P||ci4
   C character
    D1||a kind of caterpillar
-W|w|蛔
+W|w&|蛔
  P||hui2
   C character
    D1||Used in 蛔蟲／蛔虫 (huíchóng).
@@ -509694,7 +509694,7 @@ W|w|蛜
  P||yi1
   C character
    D1||Only used in 蛜蝛 and 蛜𧌴.
-W|w|蛞
+W|w&|蛞
  P||kuo4
   C character
    D1||Used in compounds.
@@ -509854,7 +509854,7 @@ W|w|蛺蝶／蛱蝶
    D1||(traditional sense) butterfly
    D2||(zoology) Nymphalidae (a family of butterflies)
    D3||(Teochew) hinge
-W|w|蛺／蛱
+W|w&|蛺／蛱
  P||jia2
   C character
    D1||Used in 蛺蝶／蛱蝶 (jiádié).
@@ -510219,7 +510219,7 @@ W|w|蜒蚰
  P||yan2you2
   C noun
    D1||slug
-W|w|蜓
+W|w&|蜓
  P||ting2;dian4
   C character
    D1||Used in compounds.
@@ -510493,7 +510493,7 @@ W|w|蜭
  P||han4
   C character
    D1||a venomous caterpillar which stings
-W|w|蜮
+W|w&|蜮
  P||yu4
   C character
    D1||(Chinese mythology) a small three-legged turtle-like creature that lives in water and spits sand at humans, often forcefully enough to kill them.
@@ -510676,7 +510676,7 @@ W|w|蝒
  P||mian2
   C character
    D1||Cryptotympana atrata (a species of cicada)
-W|w|蝓
+W|w&|蝓
  P||yu2
   C character
    D1||snail
@@ -511743,7 +511743,7 @@ W|w|螿／螀
  P||jiang1
   C character
    D1||Only used in 寒螿／寒螀.
-W|w|蟀
+W|w&|蟀
  P||shuai4
   C character
    D1||cricket
@@ -511774,7 +511774,7 @@ W|w|蟅／䗪
   C character
    D1||Used in 蟅蟒.
    D2||Alternative name for 地鱉／地鳖 (dìbiē, “Chinese ground beetle”).
-W|w|蟆
+W|w&|蟆
  P||ma2
   C character
    D1||frog; toad
@@ -511790,14 +511790,14 @@ W|w|蟈蟈／蝈蝈
  P||guo1guo5
   C noun
    D1||katydid
-W|w|蟈／蝈
+W|w&|蟈／蝈
  P||yu4
   C character
    D1||Alternative form of 蜮 (yù, “legendary creature that has three legs and harms humans”)
  P||guo1
   C character
    D2||frog or toad
-W|w|蟊
+W|w&|蟊
  P||mao2;mou2
   C character
    D1||insect that eats the roots of seedlings
@@ -511806,7 +511806,7 @@ W|w|蟊賊／蟊贼
   C noun
    D1||(Classical, literally) grain-eating insect
    D2||(figuratively) person harmful to the country and the people
-W|w|蟋
+W|w&|蟋
  P||xi1
   C character
    D1||Only used in 蟋蟀 (xīshuài).
@@ -511958,7 +511958,7 @@ W|w|蟤
  P||zhuan1;quan2
   C character
    D1||Only used in 蜿蟤.
-W|w|蟥
+W|w&|蟥
  P||huang2
   C character
    D1||Used in compounds.
@@ -512501,7 +512501,7 @@ W|w|蠔豉／蚝豉
  P||hao2chi3
   C noun
    D1||dried oyster
-W|w|蠕
+W|w&|蠕
  P||ru2
   C character
    D1||squirm; wriggle
@@ -512717,7 +512717,7 @@ W|w|蠣鷸／蛎鹬
  P||li4yu4
   C noun
    D1||Eurasian oystercatcher
-W|w|蠣／蛎
+W|w&|蠣／蛎
  P||li4
   C character
    D1||oyster
@@ -512802,7 +512802,7 @@ W|w|蠱／蛊
  P||ye3;gu3
   C character
    D8||Alternative form of 冶 (yě, “bewitchingly pretty; seductive”)
-W|w|蠲
+W|w&|蠲
  P||juan1
   C character
    D1||(literary) to remit; to eliminate
@@ -515794,7 +515794,7 @@ W|w|袁頭／袁头
  P||yuan2tou2
   C noun
    D1||silver dollar with the head of Yuan Shikai (as used in the early years of the Republic of China)
-W|w|袈
+W|w&|袈
  P||jia1
   C character
    D1||Only used in 袈裟 (jiāshā).
@@ -515974,7 +515974,7 @@ W|w|袢
  P||pan4
   C character
    D4||Only used in 袷袢 (qiāpàn).
-W|w|袤
+W|w&|袤
  P||mao4
   C character
    D1||(literary) longitude; length
@@ -517054,7 +517054,7 @@ W|w|裝點／装点
  P||zhuang1dian3
   C verb
    D1||to decorate; to dress; to deck
-W|w|裟
+W|w&|裟
  P||sha1
   C character
    D1||Only used in 袈裟 (jiāshā).
@@ -518129,7 +518129,7 @@ W|w|褳／裢
  P||lian2
   C character
    D1||Used in expressions below.
-W|w|褵
+W|w&|褵
  P||li2
   C character
    D1||Alternative form of 縭／缡 (lí)
@@ -518155,7 +518155,7 @@ W|w|褶鮡屬／褶𬶐属
  P||zhe3zhao4shu3
   C noun
    D1||Pseudecheneis (a genus of catfish)
-W|w|褸／褛
+W|w&|褸／褛
  P||lv3
   C character
    D1||Used in 襤褸／褴褛 (lánlǚ).
@@ -518198,7 +518198,7 @@ W|w|襀／𫌀
  P||ji1;ji4
   C character
    D1||Only used in 襞襀／襞𫌀.
-W|w|襁
+W|w&|襁
  P||qiang3
   C character
    D1||wide cloth band used to carry a baby on the back
@@ -518351,7 +518351,7 @@ W|w|襢
  P||zhan4
   C character
    D1||unadorned but elegant
-W|w|襤／褴
+W|w&|襤／褴
  P||lan2
   C character
    D1||garments without hems
@@ -521309,7 +521309,7 @@ W|w|覷視／觑视
  P||qu4shi4
   C verb
    D1||(literary) to look; to gaze
-W|w|覷／觑
+W|w&|覷／觑
  P||qu4
   C character
    D1||(literary or Xiamen and Zhangzhou Hokkien) to peep; to spy on
@@ -522211,7 +522211,7 @@ W|w|解𧋈
  P||xie4zhi4
   C noun
    D1||Alternative form of 獬豸 (xièzhì, “xiezhi”)
-W|w|觥
+W|w&|觥
  P||gong1
   C character
    D1||(historical) drinking vessel made from animal horn
@@ -523331,7 +523331,7 @@ W|w|訖句／讫句
  P||Qi4ju4
   C name
    D1||(Church of the East, historical) Golgotha.
-W|w|訖／讫
+W|w&|訖／讫
  P||qi4
   C character
    D1||to bring to an end; to complete; to finish; to conclude
@@ -523689,7 +523689,7 @@ W|w|訥會／讷会
  P||ne4hui4
   C noun
    D1||(ancient) Alternative name for 蘆薈／芦荟 (lúhuì).
-W|w|訥／讷
+W|w&|訥／讷
  P||ne4;na4
   C character
    D1||slow of speech; speaking in a clumsy manner
@@ -523979,7 +523979,7 @@ W|w|訴追／诉追
  P||su4zhui1
   C noun
    D1||(law) to prosecute
-W|w|訴／诉
+W|w&|訴／诉
  P||su4
   C character
    D1||to tell; to relate; to inform
@@ -523994,7 +523994,7 @@ W|w|訶陵／诃陵
  P||He1ling2
   C name
    D1||Kalingga Kingdom
-W|w|訶／诃
+W|w&|訶／诃
  P||he1
   C character
    D1||to scold; to shout at
@@ -524137,7 +524137,7 @@ W|w|詆毀／诋毁
  P||di3hui3
   C verb
    D1||to slander; to defame; to vilify
-W|w|詆／诋
+W|w&|詆／诋
  P||di3
   C character
    D1||to condemn; to attack
@@ -524639,7 +524639,7 @@ W|w|詢喚／询唤
    D1||(philosophy) interpellation
   C verb
    D2||(philosophy) to interpellate
-W|w|詣／诣
+W|w&|詣／诣
  P||yi4
   C character
    D1||to go to or visit or call upon a superior
@@ -525030,7 +525030,7 @@ W|w|詫然／诧然
  P||cha4ran2
   C adj
    D1||(literary) taken aback; startled; surprised
-W|w|詫／诧
+W|w&|詫／诧
  P||cha4
   C character
    D1||to be surprised; to be astonished
@@ -525359,7 +525359,7 @@ W|w|詼謔／诙谑
  P||hui1xue4
   C verb
    D1||to banter; to prank; to joke
-W|w|詼／诙
+W|w&|詼／诙
  P||hui1
   C character
    D1||humorous, teasing, ridiculous, funny
@@ -527205,7 +527205,7 @@ W|w|諄諄告誡／谆谆告诫
  P||zhun1zhun1gao4jie4
   C phrase
    D1||to tirelessly counsel; to admonish repeatedly
-W|w|諄／谆
+W|w&|諄／谆
  P||zhun1
   C character
    D1||earnest
@@ -527414,7 +527414,7 @@ W|w|諍諫／诤谏
  P||zheng4jian4;zheng1jian4
   C verb
    D1||(formal) to criticize frankly; to admonish
-W|w|諍／诤
+W|w&|諍／诤
  P||zheng4;zheng1
   C character
    D1||(Southern Min) to quarrel; to fight
@@ -528328,7 +528328,7 @@ W|w|謔謔／谑谑
  P||xue4xue4;nve4nve4
   C adj
    D1||(literary) joyful; happy; cheerful
-W|w|謔／谑
+W|w&|謔／谑
  P||xue4;nve4
   C character
    D1||(literary or Hokkien) to crack a joke; to banter; to tease; to mock
@@ -531839,7 +531839,7 @@ W|w|象鼻蟲／象鼻虫
  P||xiang4bi2chong2
   C noun
    D1||weevil
-W|w|豢
+W|w&|豢
  P||huan4
   C character
    D1||to feed livestock
@@ -532496,7 +532496,7 @@ W|w|貄
   C character
    D1||a kind of animal
    D2||Used in 貄貓／貄猫.
-W|w|貅
+W|w&|貅
  P||xiu1
   C character
    D1||(Chinese mythology) female panther-like feline; female counterpart of 貔 (pí)
@@ -532511,7 +532511,7 @@ W|w|貈
   C character
    D1||Alternative form of 貊 (mò)
    D2||Alternative form of 貉
-W|w|貉
+W|w&|貉
  P||he2;hao2
   C character
    D1||tanuki (raccoon dog)
@@ -532749,7 +532749,7 @@ W|w|貓鼻／猫鼻
  P||Mao1bi2
   C name
    D1||(obsolete) Former name of 貓鼻頭／猫鼻头 (Māobítóu).
-W|w|貔
+W|w&|貔
  P||pi2
   C character
    D1||panther-like feline
@@ -534972,7 +534972,7 @@ W|w|賁／贲
    D12||Alternative form of 忿 (fèn)
    D13||Alternative form of 僨／偾 (fèn)
    D14||Alternative form of 奮／奋 (fèn)
-W|w|賂／赂
+W|w&|賂／赂
  P||lu4
   C character
    D1||bribe; bribery
@@ -535001,7 +535001,7 @@ W|w|賄／贿
    D2||(literary) to give a gift
    D3||to bribe
    D4||bribe
-W|w|賅／赅
+W|w&|賅／赅
  P||gai1
   C character
    D1||complete; comprehensive
@@ -536917,7 +536917,7 @@ W|w|贗品／赝品
  P||yan4pin3
   C noun
    D1||counterfeit goods; forgery
-W|w|贗／赝
+W|w&|贗／赝
  P||yan4
   C character
    D1||counterfeit; fake; forged; false
@@ -538052,7 +538052,7 @@ W|w|走高
  P||zou3gao1
   C verb
    D1||(of prices, indices, etc.) to go up
-W|w|赳
+W|w&|赳
  P||jiu1
   C character
    D1||Used in 赳赳 (jiūjiū, “strong and valiant”); also used as its short form.
@@ -540237,7 +540237,7 @@ W|w|跂訾
  P||qi3zi3;qi4zi3;qi2zi1
   C adj
    D1||(literary) opinionated
-W|w|跆
+W|w&|跆
  P||tai2
   C character
    D1||trample
@@ -540609,7 +540609,7 @@ W|w|跙
  P||ju4
   C character
    D1||(Southern Min) to slip; to slide
-W|w|跚
+W|w&|跚
  P||shan1
   C character
    D1||Used in 蹣跚／蹒跚 (pánshān).
@@ -541791,7 +541791,7 @@ W|w|踞
    D3||to lean on
    D4||Alternative form of 倨 (jù, “haughty; arrogant”)
    D5||Alternative form of 鋸／锯 (jù, “saw”)
-W|w|踟
+W|w&|踟
  P||chi2
   C character
    D1||to walk back and forth
@@ -541963,18 +541963,18 @@ W|w|踰年
  P||yu2nian2
   C noun
    D1||(literary) the following year; the ensuing year
-W|w|踱
+W|w&|踱
  P||duo2;duo4
   C character
    D1||to stroll; to pace; to walk slowly
    D2||(literary) to walk barefoot
    D3||(dialectal) stupid; dull
-W|w|踴／踊
+W|w&|踴／踊
  P||yong3
   C character
    D1||to jump upwards; to leap
    D2||(of prices) to go up; to rise
-W|w|踵
+W|w&|踵
  P||zhong3
   C character
    D1||heel
@@ -542152,7 +542152,7 @@ W|w|蹉跎歲月／蹉跎岁月
  P||cuo1tuo2 sui4yue4
   C phrase
    D1||to idle away one's time; to waste one's time; to allow time to slip away
-W|w|蹊
+W|w&|蹊
  P||xi1
   C character
    D1||(literary) footpath
@@ -542269,7 +542269,7 @@ W|w|蹣跼／蹒跼
  P||pan2ju2
   C adj
    D1||walking unsteadily; staggering; limping; hobbling
-W|w|蹣／蹒
+W|w&|蹣／蹒
  P||pan2;man2
   C character
    D1||(used in compounds) limping; staggering
@@ -542532,7 +542532,7 @@ W|w|躅
  P||zhu2
   C character
    D1||Used in 躑躅／踯躅 (zhízhú).
-W|w|躇
+W|w&|躇
  P||chu2
   C character
    D1||to walk back and forth
@@ -542581,7 +542581,7 @@ W|w|躊躇滿志／踌躇满志
  P||chou2chu2man3zhi4
   C phrase
    D1||contented; self-satisfied
-W|w|躊／踌
+W|w&|躊／踌
  P||chou2
   C character
    D1||Used in 躊躇／踌躇 (chóuchú), etc.
@@ -542589,7 +542589,7 @@ W|w|躋身／跻身
  P||ji1shen1
   C verb
    D1||to join the ranks of; to rise (in ranking)
-W|w|躋／跻
+W|w&|躋／跻
  P||ji1
   C character
    D1||(literary) to ascend; to go up; to rise
@@ -542674,7 +542674,7 @@ W|w|躕躇／蹰躇
  P||chu2chu2
   C verb
    D1||back and forth movements
-W|w|躕／蹰
+W|w&|躕／蹰
  P||chu2
   C character
    D1||Used in 踟躕／踟蹰 (chíchú) and 躕躇／蹰躇 (chúchú).
@@ -542686,7 +542686,7 @@ W|w|躚躚／跹跹
  P||xian1xian1
   C adj
    D1||turning round and round; twirling; dancing
-W|w|躚／跹
+W|w&|躚／跹
  P||xian1
   C character
    D1||dancing; swirling
@@ -542722,7 +542722,7 @@ W|w|躡蹀／蹑蹀
  P||nie4die2
   C verb
    D1||Synonym of 躞蹀 (xièdié, “to walk in a mincing gait; to walk with small steps”)
-W|w|躡／蹑
+W|w&|躡／蹑
  P||nie4
   C character
    D1||to walk on tiptoe; to lighten one's steps
@@ -544734,7 +544734,7 @@ W|w|軼越／轶越
  P||yi4yue4
   C verb
    D1||(literary) to exceed; to surpass
-W|w|軼／轶
+W|w&|軼／轶
  P||yi4
   C character
    D1||to surpass; to excel
@@ -544742,7 +544742,7 @@ W|w|軼／轶
    D3||(alt. form 佚, 逸) scattered; lost
    D4||Alternative form of 逸 (yì, “leisurely”)
    D5||Alternative form of 溢 (yì, “to overflow”)
-W|w|軾／轼
+W|w&|軾／轼
  P||shi4
   C character
    D1||horizontal wooden bar in front of a sedan chair
@@ -545739,7 +545739,7 @@ W|w|輻輳／辐辏
  P||fu2cou4
   C verb
    D1||(literary) to cluster together like the spokes of a wheel
-W|w|輻／辐
+W|w&|輻／辐
  P||fu2
   C character
    D1||spokes of a wheel
@@ -546499,7 +546499,7 @@ W|w|轡頭／辔头
  P||pei4tou2
   C noun
    D1||bridle
-W|w|轡／辔
+W|w&|轡／辔
  P||pei4
   C character
    D1||bridle of horse
@@ -548133,7 +548133,7 @@ W|w|迢遞／迢递
   C adj
    D1||(literary) far; distant; remote
    D2||(obsolete) high; tall; towering
-W|w|迤
+W|w&|迤
  P||yi3
   C character
    D1||(literary) to extend in a slanted direction; to stretch in an oblique path
@@ -551386,7 +551386,7 @@ W|w|造飯／造饭
  P||zao4fan4
   C verb
    D1||to cook food
-W|w|逡
+W|w&|逡
  P||qun1;xun4;suo1
   C character
    D1||retreat, withdraw, fall back
@@ -555029,7 +555029,7 @@ W|w|遣送
  P||qian3song4
   C verb
    D1||to send back; to repatriate; to deport
-W|w|遨
+W|w&|遨
  P||ao2
   C character
    D1||to roam; to ramble; to travel for pleasure
@@ -555369,7 +555369,7 @@ W|w|遲誤／迟误
  P||chi2wu4
   C verb
    D1||(formal) to delay; to stall for time
-W|w|遴
+W|w&|遴
  P||lin2
   C character
    D1||(literary) to select; to choose carefully
@@ -556276,7 +556276,7 @@ W|w|邂
  P||xie4
   C character
    D1||Only used in 邂逅 (xièhòu).
-W|w|邃
+W|w&|邃
  P||sui4
   C character
    D1||deep; remote
@@ -556824,7 +556824,7 @@ W|w|邗溝／邗沟
  P||Han2gou1
   C name
    D1||(historical) Han or Hangou Canal, an early canal linking Yangzhou and Huai'an, now part of the Grand Canal.
-W|w|邙
+W|w&|邙
  P||mang2
   C character
    D1||(～山) Mount Mang, a mountain in modern Luoyang, Henan, China
@@ -557325,7 +557325,7 @@ W|w|邪魔歪道
  P||xie2 mo2 wai1 dao4
   C noun
    D1||a crooked path; not straight in terms of virtue
-W|w|邯
+W|w&|邯
  P||han2
   C character
    D1||Used in 邯鄲／邯郸 (Hándān).
@@ -557760,7 +557760,7 @@ W|w|郪
    D2||(～江) Qi River (a river in Sichuan, China)
    D3||(～縣) (historical) Qi (a county in modern-day Sichuan, China)
    D4||a surname
-W|w|郫
+W|w&|郫
  P||pi2
   C character
    D1||(～縣) Pi (a former county of Chengdu, Sichuan, China)
@@ -558790,7 +558790,7 @@ W|w|鄲城／郸城
  P||Dan1cheng2
   C name
    D1||(～縣) Dancheng (a county of Zhoukou, Henan, China)
-W|w|鄲／郸
+W|w&|鄲／郸
  P||dan1
   C character
    D1||Only used in 邯鄲／邯郸.
@@ -558878,7 +558878,7 @@ W|w|酉陽／酉阳
  P||You3yang2
   C name
    D1||(～土家族苗族自治縣) Youyang (a Tujia and Miao autonomous county of Chongqing, China)
-W|w|酊
+W|w&|酊
  P||ding3
   C character
    D1||Only used in 酩酊 (mǐngdǐng, “heavily intoxicated”).
@@ -559639,7 +559639,7 @@ W|w|酖
  P||dan1
   C character
    D1||to be addicted to drink
-W|w|酗
+W|w&|酗
  P||xu4
   C character
    D1||to be given to heavy drinking
@@ -559676,7 +559676,7 @@ W|w|酡
   C character
    D1||flushed from drinking alcohol
    D2||(in general) flushed; rubicund
-W|w|酢
+W|w&|酢
  P||zuo4
   C character
    D1||guest toast back to host
@@ -560532,7 +560532,7 @@ W|w|醒麵／醒面
  P||xing3mian4
   C verb
    D1||to proof the dough
-W|w|醚
+W|w&|醚
  P||mi2
   C character
    D1||(organic chemistry) ether
@@ -565985,7 +565985,7 @@ W|w|鋃鐺／锒铛
    D1||(onomatopoeia) clanking; clanging
   C noun
    D2||(figurative) iron chains; shackles
-W|w|鋃／锒
+W|w&|鋃／锒
  P||lang2
   C character
    D1||(onomatopoeia) clanking
@@ -566120,7 +566120,7 @@ W|w|鋥亮／锃亮
  P||zeng4liang4;zheng4liang4
   C adj
    D1||shiny; glossy (due to polishing)
-W|w|鋥／锃
+W|w&|鋥／锃
  P||zeng4
   C character
    D1||Utensils shine brightly after being wiped or polished
@@ -566639,7 +566639,7 @@ W|w|錙銖／锱铢
    D1||(literary, literally) zi (¹⁄₄ of a tael) and zhu (¹⁄₂₄ of a tael), both are small weight measures in ancient China
    D2||(literary, figurative) a tiny amount; a very small amount
    D3||(literary, figurative) a small profit; a very small amount of money
-W|w|錙／锱
+W|w&|錙／锱
  P||zi1
   C character
    D1||(Classical) A unit of weight, with variant written accounts; it is six 銖／铢 according to Shuo Wen
@@ -567084,7 +567084,7 @@ W|w|錫鑞／锡镴
   C noun
    D1||(dialectal) pewter (alloy of tin and lead)
    D2||(dialectal) tin
-W|w|錮／锢
+W|w&|錮／锢
  P||gu4
   C character
    D1||to run metal into cracks
@@ -567429,7 +567429,7 @@ W|w|鍑／𰾟
  P||fu4;fu2
   C character
    D1||(historical) pot with a large mouth and sometimes a lid
-W|w|鍔／锷
+W|w&|鍔／锷
  P||e4
   C character
    D1||(literary) blade; edge (of a sword or knife)
@@ -567482,7 +567482,7 @@ W|w|鍤／锸
  P||cha1
   C character
    D1||(literary) spade; shovel
-W|w|鍥／锲
+W|w&|鍥／锲
  P||qie4
   C character
    D1||to carve, to engrave
@@ -567899,7 +567899,7 @@ W|w|鎩羽／铩羽
  P||sha1yu3
   C verb
    D1||to be despondent as one is unable to achieve one's ambitions
-W|w|鎩／铩
+W|w&|鎩／铩
  P||sha1;shai4
   C character
    D1||long spear; lance
@@ -568243,7 +568243,7 @@ W|w|鏕／𰾲
   C character
    D1||name of an ancient county in Hebei province
    D2||Used in 鉅鏕／巨𰾲.
-W|w|鏖
+W|w&|鏖
  P||ao2
   C character
    D1||(literary) to fight to the end; to engage in a fierce battle
@@ -569498,7 +569498,7 @@ W|w|鑔子／镲子
  P||cha3zi5
   C noun
    D1||cymbals used in Chinese music
-W|w|鑔／镲
+W|w&|鑔／镲
  P||cha3
   C character
    D1||small cymbals
@@ -569515,7 +569515,7 @@ W|w|鑞鎗頭／镴枪头
  P||la4qiang1tou2
   C noun
    D1||(figurative) useless thing
-W|w|鑞／镴
+W|w&|鑞／镴
  P||la4
   C character
    D1||lead-tin alloy
@@ -569523,7 +569523,7 @@ W|w|鑟
  P||du2
   C character
    D1||seal box
-W|w|鑠／铄
+W|w&|鑠／铄
  P||shuo4
   C character
    D1||to melt by heat; to fuse (metal)
@@ -569539,7 +569539,7 @@ W|w|鑢／𮣶
    D3||(Hokkien) to rub
    D4||(Hokkien) brush; to brush, to scrub
    D5||a surname
-W|w|鑣／镳
+W|w&|鑣／镳
  P||biao1
   C character
    D1||horse bit
@@ -573264,7 +573264,7 @@ W|w|閟／𮤲
   C character
    D1||(literary) to shut up; to close; to hide
    D2||(literary) careful; cautious
-W|w|閡／阂
+W|w&|閡／阂
  P||he2;ai4
   C character
    D1||to separate; to cut off
@@ -573444,7 +573444,7 @@ W|w|閬閬／阆阆
  P||lang2lang2
   C adj
    D1||(literary) lofty and spacious
-W|w|閬／阆
+W|w&|閬／阆
  P||lang2;lang4
   C character
    D1||lofty
@@ -573678,7 +573678,7 @@ W|w|閾電位／阈电位
  P||yu4dian4wei4
   C noun
    D1||(physiology) threshold potential
-W|w|閾／阈
+W|w&|閾／阈
  P||yu4
   C character
    D1||(literary) threshold; doorsill; doorstep; doorway
@@ -574464,7 +574464,7 @@ W|w|阰
  P||pi2
   C character
    D1||name of a mountain in the kingdom of Chu
-W|w|阱
+W|w&|阱
  P||jing3
   C character
    D1||pitfall, trap
@@ -579904,7 +579904,7 @@ W|w|隤／𬯎
   C character
    D1||(literary) Alternative form of 頹／颓 (tuí)
    D2||Only used in 虺隤／虺𬯎.
-W|w|隧
+W|w&|隧
  P||sui4
   C character
    D1||tunnel; underground passage
@@ -585584,7 +585584,7 @@ W|w|雷鳥／雷鸟
    D1||ptarmigan (several species in Lagopus)
    D2||(in native American mythology) thunderbird
    D3||(figurative) bravely advancing aircraft (undeterred by thunderstorms)
-W|w|雹
+W|w&|雹
  P||bao2;bo2
   C character
    D1||hail
@@ -587463,7 +587463,7 @@ W|w|霩
  P||kuo4
   C character
    D1||(literary) Alternative form of 廓 (kuò, “broad; wide”)
-W|w|霪
+W|w&|霪
  P||yin2
   C character
    D1||(literary) long and persistent rain
@@ -587818,7 +587818,7 @@ W|w|靅／𰷦
  P||fei4
   C character
    D1||Used in 靉靅／叆𰷦.
-W|w|靆／叇
+W|w&|靆／叇
  P||dai4
   C character
    D1||Only used in 靉靆／叆叇 (àidài).
@@ -588121,7 +588121,7 @@ W|w|靉靆／叆叇
    D2||(literary, ideophonic, of the sky) gloomy; dark; cloudy
   C noun
    D3||(literary, obsolete) eyeglasses; spectacles
-W|w|靉／叆
+W|w&|靉／叆
  P||ai4
   C character
    D1||Short for 靉靆／叆叇 (àidài).
@@ -588948,7 +588948,7 @@ W|w|靚／靓
    D5||beautiful; gorgeous; magnificent
    D6||Alternative term for 靜／静 (jìng, “calm; quiet”).
    D7||Alternative term for 靖 (jìng, “to reflect on”).
-W|w|靛
+W|w&|靛
  P||dian4
   C character
    D1||indigo (dye)
@@ -590261,7 +590261,7 @@ W|w|鞄
   C character
    D1||to work hides
    D2||leather bag
-W|w|鞅
+W|w&|鞅
  P||yang1;yang3
   C character
    D1||martingale (leather strap around a horse's neck)
@@ -592874,7 +592874,7 @@ W|w|頜骨／颌骨
  P||he2gu3
   C noun
    D1||(anatomy) jawbone (a bone of the jaw)
-W|w|頜／颌
+W|w&|頜／颌
  P||he2;ge2;han4
   C character
    D1||(anatomy) jaw
@@ -595467,7 +595467,7 @@ W|w|颲／𱃘
  P||lie4
   C character
    D1||strong winds
-W|w|颶／飓
+W|w&|颶／飓
  P||ju4
   C character
    D1||typhoon; hurricane
@@ -595483,7 +595483,7 @@ W|w|颺／飏
    D2||(Xiamen and Quanzhou Hokkien) to fan
    D3||(Xiamen, Quanzhou and Taiwanese Hokkien) to wave away; to flick; to whisk
    D4||(Zhangzhou Hokkien) to brandish something out to someone then immediately put it away
-W|w|颻／飖
+W|w&|颻／飖
  P||yao2
   C character
    D1||floating in the air; drifting with the wind
@@ -596611,7 +596611,7 @@ W|w|飩／饨
  P||tun2;dun4
   C character
    D1||Only used in 餛飩／馄饨.
-W|w|飪／饪
+W|w&|飪／饪
  P||ren4
   C character
    D1||to cook thoroughly
@@ -597507,7 +597507,7 @@ W|w|餑餑／饽饽
   C noun
    D1||(colloquial) steamed bun
    D2||(colloquial) pastry; cake
-W|w|餑／饽
+W|w&|餑／饽
  P||bo1
   C character
    D1||Used in 餑餑／饽饽 (bōbo, “steamed bun; pastry; cake”).
@@ -597939,7 +597939,7 @@ W|w|餭／𫗮
  P||huang2
   C character
    D1||Only used in 餦餭／𫗠𫗮 (zhānghuáng).
-W|w|餮
+W|w&|餮
  P||tie4
   C character
    D1||(literary) gluttonous; greedy
@@ -602026,7 +602026,7 @@ W|w|驀地／蓦地
  P||mo4di4;mo4de5
   C adv
    D1||suddenly; unexpectedly
-W|w|驀／蓦
+W|w&|驀／蓦
  P||mo4
   C character
    D1||suddenly; quickly; abruptly
@@ -603149,7 +603149,7 @@ W|w|骯髒炸彈／肮脏炸弹
  P||ang1zang4 zha4dan4
   C noun
    D1||dirty bomb
-W|w|骯／肮
+W|w&|骯／肮
  P||ang1
   C character
    D1||Only used in 骯髒／肮脏 (āngzāng).
@@ -603242,7 +603242,7 @@ W|w|骺板
  P||hou2ban3
   C noun
    D1||(anatomy) epiphyseal plate
-W|w|骼
+W|w&|骼
  P||ge2
   C character
    D1||bones
@@ -603726,7 +603726,7 @@ W|w|髖骨／髋骨
  P||kuan1gu3
   C noun
    D1||hip bone
-W|w|髖／髋
+W|w&|髖／髋
  P||kuan1
   C character
    D1||(anatomy) hip
@@ -605366,7 +605366,7 @@ W|w|髢髢
  P||di2di2;ti4ti4
   C noun
    D1||(dialectal) wig
-W|w|髦
+W|w&|髦
  P||mao2
   C character
    D1||(literary) horse's mane
@@ -605593,7 +605593,7 @@ W|w|髺
  P||yue4
   C character
    D3||twisted figure, broken implement or object
-W|w|髻
+W|w&|髻
  P||ji4
   C character
    D1||hair worn in a bun or coil; topknot
@@ -607569,7 +607569,7 @@ W|w|鮁鮁／鲅鲅
  P||ba2ba2
   C noun
    D2||(rare, obsolete) a kind of fish resembling carps and red in color
-W|w|鮁／鲅
+W|w&|鮁／鲅
  P||ba4;bo1;ba2
   C character
    D1||Spanish mackerel
@@ -607707,7 +607707,7 @@ W|w|鮒愚／鲋愚
  P||Fu4yu2
   C name
    D1||Synonym of 嶓冢山 (Bōzhǒng shān), Mount Bozhong, a mountain in Shaanxi province.
-W|w|鮒／鲋
+W|w&|鮒／鲋
  P||fu4
   C character
    D1||carp, Carassius auratus
@@ -608108,7 +608108,7 @@ W|w|鯖魚／鲭鱼
  P||qing1yu2
   C noun
    D1||mackerel
-W|w|鯖／鲭
+W|w&|鯖／鲭
  P||qing1
   C character
    D1||mackerel
@@ -608470,7 +608470,7 @@ W|w|鰥居／鳏居
  P||guan1ju1
   C verb
    D1||to live alone as a widower
-W|w|鰥／鳏
+W|w&|鰥／鳏
  P||guan1
   C character
    D1||widower
@@ -608594,7 +608594,7 @@ W|w|鰾膠／鳔胶
  P||biao4jiao1
   C noun
    D1||isinglass; fish glue
-W|w|鰾／鳔
+W|w&|鰾／鳔
  P||biao4
   C character
    D1||swim bladder; air bladder (of fish)
@@ -608688,7 +608688,7 @@ W|w|鱒魚／鳟鱼
  P||zun1yu2;zun4yu2
   C noun
    D1||trout (fish)
-W|w|鱒／鳟
+W|w&|鱒／鳟
  P||zun1;zun4
   C character
    D1||trout (fish)
@@ -608720,7 +608720,7 @@ W|w|鱖鯞／鳜𫚡
  P||jue2zhou3
   C noun
    D1||bitterling
-W|w|鱖／鳜
+W|w&|鱖／鳜
  P||gui4;jue2
   C character
    D1||mandarin fish; Chinese perch
@@ -609727,7 +609727,7 @@ W|w|鴕鳥／鸵鸟
     X<||鴕鳥政策／鸵鸟政策
   C verb
    D3||(figuratively) to ignore problems as if they don't exist; to have one's head in the sand; to act like an ostrich
-W|w|鴕／鸵
+W|w&|鴕／鸵
  P||tuo2
   C character
    D1||ostrich
@@ -609827,7 +609827,7 @@ W|w|鴢／𱉢
  P||you4
   C character
    D1||a kind of heron
-W|w|鴣／鸪
+W|w&|鴣／鸪
  P||gu1
   C character
    D1||Used in names of birds.
@@ -609839,7 +609839,7 @@ W|w|鴥／𫛣
  P||yu4
   C character
    D1||(of a bird) to fly swiftly; to swoop
-W|w|鴦／鸯
+W|w&|鴦／鸯
  P||yang1
   C character
    D1||female mandarin duck
@@ -610402,7 +610402,7 @@ W|w|鵠／鹄
  P||gu3
   C character
    D4||bullseye (centre of a target)
-W|w|鵡／鹉
+W|w&|鵡／鹉
  P||wu3
   C character
    D1||Only used in 鸚鵡／鹦鹉 (yīngwǔ).
@@ -610605,7 +610605,7 @@ W|w|鶈
  P||qi1
   C character
    D1||a mythical bird
-W|w|鶉／鹑
+W|w&|鶉／鹑
  P||chun2
   C character
    D1||quail (originally refers to those with spots on feathers)
@@ -611008,7 +611008,7 @@ W|w|鷒／𱉏
  P||tuan2
   C character
    D1||Only used in 鸛鷒／鹳𱉏 (guàntuán).
-W|w|鷓／鹧
+W|w&|鷓／鹧
  P||zhe4
   C character
    D1||Only used in 鷓鴣／鹧鸪 (zhègū).
@@ -611020,7 +611020,7 @@ W|w|鷖／鹥
  P||yi1
   C character
    D1||seagull
-W|w|鷗／鸥
+W|w&|鷗／鸥
  P||ou1
   C character
    D1||seagull
@@ -611154,7 +611154,7 @@ W|w|鷯哥／鹩哥
   C noun
    D1||hill myna (Gracula)
    D2||(dialectal) myna (Acridotheres)
-W|w|鷯／鹩
+W|w&|鷯／鹩
  P||liao2
   C character
    D1||Used in 鳭鷯／𱉈鹩 (diāoliáo) and 鷦鷯／鹪鹩 (jiāoliáo).
@@ -611168,7 +611168,7 @@ W|w|鷲鳥／鹫鸟
   C noun
    D1||vulture
     XM||隻／只
-W|w|鷲／鹫
+W|w&|鷲／鹫
  P||jiu4
   C character
    D1||eagle
@@ -616355,7 +616355,7 @@ W|w|黜退
  P||chu4tui4
   C verb
    D1||(literary) to dismiss; to send away; to remove from office
-W|w|黝
+W|w&|黝
  P||you3
   C character
    D1||bluish-black, greenish-black
@@ -616673,7 +616673,7 @@ W|w|黠鼠
   C noun
    D1||a cunning rat
    D2||a cunning person
-W|w|黢
+W|w&|黢
  P||qu1;qu4
   C character
    D1||black
@@ -617069,7 +617069,7 @@ W|w|黷武／黩武
  P||du2wu3
   C verb
    D1||(literary) to use military might rashly; to be militaristic; to be bellicose
-W|w|黷／黩
+W|w&|黷／黩
  P||du2
   C character
    D1||to tarnish; to defile; to blacken
@@ -617665,7 +617665,7 @@ W|w|鼴鼠／鼹鼠
  P||yan3shu3
   C noun
    D1||talpid; mole
-W|w|鼴／鼹
+W|w&|鼴／鼹
  P||yan3
   C character
    D1||animal from the family Talpidae
@@ -618498,7 +618498,7 @@ W|w|齙牙／龅牙
  P||bao1ya2
   C noun
    D1||bucktooth
-W|w|齙／龅
+W|w&|齙／龅
  P||bao1
   C character
    D1||teeth exposed on lip
@@ -618525,7 +618525,7 @@ W|w|齟齬／龃龉
    D1||(obsolete) irregular teeth; unaligned teeth
   C verb
    D2||(literary, figurative) to have discord; to disagree
-W|w|齟／龃
+W|w&|齟／龃
  P||ju3
   C character
    D1||irregular teeth
@@ -618567,7 +618567,7 @@ W|w|齦齶音／龈腭音
  P||yin2e4yin1
   C noun
    D1||(phonetics) alveopalatal
-W|w|齦／龈
+W|w&|齦／龈
  P||yin2
   C character
    D1||gum (flesh around teeth)
@@ -618606,7 +618606,7 @@ W|w|齪／龊
   C character
    D1||(obsolete) cautious; careful; meticulous
    D2||Used in 齷齪／龌龊 (wòchuò).
-W|w|齬／龉
+W|w&|齬／龉
  P||yu3
   C character
    D1||irregular teeth
@@ -618659,7 +618659,7 @@ W|w|齲齒／龋齿
   C noun
    D1||dental caries; tooth decay
    D2||decayed tooth; rotten tooth
-W|w|齲／龋
+W|w&|齲／龋
  P||qu3
   C character
    D1||(dentistry) decay; cavity

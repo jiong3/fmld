@@ -12171,6 +12171,10 @@ W|w|享受
     XM||種／种
   C verb
    D3||to enjoy; to relish; to delight in
+    XL|}|生活#D1;教育#D1;權利／权利;陽光／阳光#D4
+    X?||欣賞／欣赏#D1
+     N22 [享受] enjoy (can imply indulgence) experiences, comfort, also rights and benefits
+       [欣賞／欣赏] enjoy (more formal or cultural) art, performances, music, scenery with your senses/mind
 W|w|出口
  P||chu1kou3
   C noun
@@ -14051,6 +14055,9 @@ W|w|欣賞／欣赏
  P||xin1shang3
   C verb
    D1||to appreciate (art, scenery, etc.); to admire
+    XL|}|風景／风景#D1;作品;音樂／音乐#D1
+    X?||享受#D3
+     N->22
    D2||to like; to be fond of; to be keen on
 W|w|人才
  P||ren2cai2

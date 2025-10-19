@@ -1,8 +1,29 @@
 use std::cmp::max;
 
-use rusqlite::{Error as SqliteError, Transaction, params};
-
 use crate::common::SqliteId;
+use rusqlite::{Error as SqliteError, Row, Transaction, params};
+
+use crate::config;
+
+/// An enum to identify the target entity for an operation.
+/// It holds the primary key of the entity in its respective table.
+#[derive(Debug)]
+pub enum EntryId {
+    Word(SqliteId),
+    Definition(SqliteId),
+    /// id of the dict_shared_pron entry
+    Pinyin(SqliteId),
+    Reference(SqliteId),
+}
+
+/// An enum to represent a tag.
+#[derive(Debug)]
+pub enum Tag<'a> {
+    /// An ASCII tag which is a shorthand for a full tag,
+    Ascii(char),
+    /// A full tag with a name and a category.
+    Full { name: &'a str, category: &'a str },
+}
 
 pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32, SqliteError> {
     let mut stmt_max_ext_note_id = conn.prepare(
@@ -437,4 +458,88 @@ pub fn get_definition_id(
         Err(SqliteError::QueryReturnedNoRows) => Ok(None),
         Err(e) => Err(e),
     }
+}
+
+/// Retrieves the shared_id for a given target entity.
+pub fn get_shared_id(conn: &Transaction, id: EntryId) -> Result<SqliteId, SqliteError> {
+    match id {
+        EntryId::Word(word_id) => {
+            let mut stmt = conn.prepare_cached("SELECT shared_id FROM dict_word WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![word_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Definition(def_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_definition WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![def_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Pinyin(pinyin_shared_pron_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_shared_pron WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![pinyin_shared_pron_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Reference(ref_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_reference WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![ref_id], |row| row.get(0))?;
+            Ok(id)
+        }
+    }
+}
+
+/// Retrieves the ID of a tag from the dict_tag table.
+/// If the tag does not exist, it is inserted into the table, and the new ID is returned.
+fn get_or_insert_tag_id(conn: &Transaction, tag: &Tag) -> Result<SqliteId, SqliteError> {
+    match tag {
+        Tag::Ascii(ascii_char) => {
+            if let Some((name, category, _rank)) = config::tag_to_txt_ascii_common(*ascii_char) {
+                let mut stmt =
+                    conn.prepare_cached("SELECT id FROM dict_tag WHERE tag = ?1 AND type = ?2")?;
+                match stmt.query_row(params![name, category], |row| row.get(0)) {
+                    Ok(id) => Ok(id),
+                    Err(SqliteError::QueryReturnedNoRows) => {
+                        let mut insert_stmt = conn.prepare_cached(
+                            "INSERT INTO dict_tag (tag, type, ascii_symbol) VALUES (?1, ?2, ?3)",
+                        )?;
+                        insert_stmt.execute(params![name, category, &ascii_char.to_string()])?;
+                        Ok(conn.last_insert_rowid())
+                    }
+                    Err(e) => Err(e),
+                }
+            } else {
+                panic!("Invalid ASCII tag: {ascii_char}");
+            }
+        }
+        Tag::Full { name, category } => {
+            let mut stmt =
+                conn.prepare_cached("SELECT id FROM dict_tag WHERE tag = ?1 AND type = ?2")?;
+            match stmt.query_row(params![name, category], |row| row.get(0)) {
+                Ok(id) => Ok(id),
+                Err(SqliteError::QueryReturnedNoRows) => {
+                    let mut insert_stmt =
+                        conn.prepare_cached("INSERT INTO dict_tag (tag, type) VALUES (?1, ?2)")?;
+                    insert_stmt.execute(params![name, category])?;
+                    Ok(conn.last_insert_rowid())
+                }
+                Err(e) => Err(e),
+            }
+        }
+    }
+}
+
+/// Adds a tag to a word, definition, pinyin, or reference.
+///
+/// If the target ID does not exist, the function does nothing and succeeds.
+/// If the provided tag does not exist in the dict_tag table, it will be created automatically.
+pub fn add_tag(conn: &Transaction, target: EntryId, tag: Tag) -> Result<(), SqliteError> {
+    let shared_id = get_shared_id(conn, target)?;
+    let tag_id = get_or_insert_tag_id(conn, &tag)?;
+    let mut stmt = conn.prepare_cached(
+        "INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)",
+    )?;
+    stmt.execute(params![shared_id, tag_id])?;
+
+    Ok(())
 }

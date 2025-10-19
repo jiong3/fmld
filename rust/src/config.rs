@@ -3,6 +3,8 @@ pub const ITEMS_SEP: &str = ";";
 
 pub const APPROX_TXT_FILE_SIZE: usize = 16_000_000;
 
+// TODO ? PRAGMA OPTIMIZE; ANALYZE; ?
+
 pub const DB_SCHEMA: &str = r#"
 
 PRAGMA user_version = 1;
@@ -221,7 +223,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
         'V' => ("word-variant-of", false),
         'v' => ("character-variant-of", false),
         'M' => ("used-with-measure-word", false),
-        '&' => ("collocation", false),
+        'L' => ("collocation", false),
         'G' => ("word-group", false),
 		'%' => ("cross-strait", true),
         _ => {
@@ -240,7 +242,9 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         '&' => ("in-compounds", "in-compounds", 8),
         'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6),
-        'a' => ("ai-human", "ai", 6),
+        'a' => ("ai-partly", "ai", 6),
+		'{' => ("before", "order", 4), // for collocation references, destination words usually appear before source word
+		'}' => ("after", "order", 4), // for collocation references, destination words usually appear after source word 
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
         '+' => ("active", "relevance", 1), // definition can be used in active vocabulary

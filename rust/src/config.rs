@@ -253,7 +253,7 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
 		'}' => ("after", "order", 4), // for collocation references, destination words usually appear after source word 
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
-        '+' => ("active", "relevance", 1), // definition can be used in active vocabulary
+        '+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary
         '-' => ("extended", "relevance", 1), // extended (passive) vocabulary
         'x' => ("excluded", "relevance", 1), // excluded from the dictionary
         'X' => ("deleted", "relevance", 1),

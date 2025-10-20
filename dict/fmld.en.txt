@@ -15,7 +15,7 @@
   - single indentation (space or tab) creates a child element
   - double indentation relative to previous line continues previous line (intended for notes and comments)
   - the first letter indicates the content of the line:
-    * W: word
+    * W: word and optional variants
     * P: pronunciation in pinyin with tone marks, 5 for neutral tone
          allowed characters: A-Z; a-z; 1-5; v for ü; additionally: ê. -,
     * C: class / part-of-speech
@@ -55,7 +55,7 @@
   {} is repeated zero or more times (like *)
   [] is repeated zero or one time (optional)
   
-  entry_line = "W" tags_ascii word_entry
+  entry_line = "W" tags_ascii word_entry {; word_entry}
   pinyin_line = "P" tags_ascii pinyin {; pinyin} {tags_ascii pinyin {; pinyin}}
   class_line = "C" ascii_word
   definition_line = "D" id [tags_full] ...
@@ -60558,7 +60558,7 @@ W|w|單元／单元
   C noun
    D1||unit
    D2||module
-W|w|臺灣／台湾
+W|w|臺灣／台湾;台灣／台湾
  P||Tai2wan1
   C name
    D1||(～島) Taiwan (island)

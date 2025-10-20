@@ -7,7 +7,7 @@ pub const APPROX_TXT_FILE_SIZE: usize = 16_000_000;
 
 pub const DB_SCHEMA: &str = r#"
 
-PRAGMA user_version = 1;
+PRAGMA user_version = 2;
 
 /* Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.
 
@@ -28,12 +28,15 @@ CREATE TABLE IF NOT EXISTS "dict_definition" (
 	-- constant id, used for referencing definitions in the text representation of from external sources
 	"ext_def_id" INTEGER NOT NULL,
 	"class_id" INTEGER NOT NULL,
+	"parent_id" INTEGER,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("class_id") REFERENCES "dict_class"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("parent_id") REFERENCES "dict_definition"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -57,8 +60,11 @@ CREATE TABLE IF NOT EXISTS "dict_word" (
 	"trad" TEXT NOT NULL,
 	-- word in simplified characters
 	"simp" TEXT NOT NULL,
+	"variant_of" INTEGER,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("variant_of") REFERENCES "dict_word"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -249,7 +255,7 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'm' => ("mdbg", "source", 2),
         '+' => ("active", "relevance", 1), // definition can be used in active vocabulary
         '-' => ("extended", "relevance", 1), // extended (passive) vocabulary
-        'x' => ("rare", "relevance", 1), // rare meaning / word
+        'x' => ("excluded", "relevance", 1), // excluded from the dictionary
         'X' => ("deleted", "relevance", 1),
         _ => {
             return None;

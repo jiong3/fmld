@@ -12,7 +12,7 @@ use std::fmt;
 
 const WORD_SEP: &str = "／";
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub enum Tag {
     Ascii(char),
     Full(String),

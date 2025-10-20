@@ -64,6 +64,7 @@ struct DefinitionEntry {
     class_id: SqliteId,
     class_name: String,
     def_id: SqliteId,
+    parent_id: Option<SqliteId>,
     def_shared_id: SqliteId,
     ext_def_id: u32,
     definition: String,
@@ -135,7 +136,8 @@ impl<'a> DbToTxt<'a> {
                 def.shared_id AS def_shared_id,
                 def.ext_def_id,
                 def.definition,
-                GROUP_CONCAT(p_s.id ORDER BY p_s.rank, p_s.rank_relative) -- NULLS FIRST default
+                def.parent_id,
+                GROUP_CONCAT(p_s.id ORDER BY p_s.rank, p_s.rank_relative) AS pron_shared_ids -- NULLS FIRST default
             FROM dict_definition def
             JOIN dict_shared s ON def.shared_id = s.id
             JOIN dict_word w ON def.word_id = w.id
@@ -153,6 +155,7 @@ impl<'a> DbToTxt<'a> {
         let mut last_word_id = -1;
         let mut last_pinyin_shared_ids = vec![];
         let mut last_class_id = -1;
+        let mut definition_stack: Vec<SqliteId> = vec![];
 
         self.write_shared_items(1, 0)?; // header comment
 
@@ -172,6 +175,7 @@ impl<'a> DbToTxt<'a> {
                 // Reset child states when word changes
                 last_pinyin_shared_ids.clear();
                 last_class_id = -1;
+                definition_stack.clear();
             }
 
             // 2. Pinyin Entry
@@ -182,23 +186,25 @@ impl<'a> DbToTxt<'a> {
                 )?;
                 last_pinyin_shared_ids = definition_entry.pinyin_shared_ids.clone();
                 last_class_id = -1;
+                definition_stack.clear();
             }
 
             // 3. Class Entry
             if definition_entry.class_id != last_class_id {
                 self.write_class_entry(&definition_entry.class_name)?;
                 last_class_id = definition_entry.class_id;
+                definition_stack.clear();
             }
 
             // 4. Definition Entry
-            self.write_definition_entry(&definition_entry)?;
+            self.write_definition_entry(&definition_entry, &mut definition_stack)?;
         }
 
         Ok(())
     }
 
     fn row_to_definition_entry(row: &Row) -> Result<DefinitionEntry> {
-        let pinyin_shared_ids_str: Option<String> = row.get(10)?;
+        let pinyin_shared_ids_str: Option<String> = row.get("pron_shared_ids")?;
         let pinyin_shared_ids = pinyin_shared_ids_str
             .unwrap()
             .split(',')
@@ -217,6 +223,7 @@ impl<'a> DbToTxt<'a> {
             def_shared_id: row.get("def_shared_id")?,
             ext_def_id: row.get("ext_def_id")?,
             definition: row.get("definition")?,
+            parent_id: row.get("parent_id")?,
         })
     }
 
@@ -309,18 +316,28 @@ impl<'a> DbToTxt<'a> {
         Ok(())
     }
 
-    fn write_definition_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
+    fn write_definition_entry(&mut self, entry: &DefinitionEntry, def_stack: &mut Vec<SqliteId>) -> Result<()> {
         let tags = self.get_formatted_tags(entry.def_shared_id)?;
+        let mut def_id_indent = 3;
+        if let Some(parent_id) = entry.parent_id {
+            // add additional indentation for nested definitions with a parent id
+            let parent_level = 1 + def_stack.iter().position(|i| *i == parent_id).expect("missing parent definition");
+            def_id_indent += parent_level;
+            def_stack.truncate(parent_level);
+        } else {
+            def_stack.clear();
+        }
+        def_stack.push(entry.def_id);
         writeln!(
             self.writer,
             "{}D{}{}{}",
-            self.indent_str.repeat(3),
+            self.indent_str.repeat(def_id_indent),
             entry.ext_def_id,
             tags,
-            format_multiline(&entry.definition, 3, &self.indent_str),
+            format_multiline(&entry.definition, def_id_indent, &self.indent_str),
         )?;
-        self.write_shared_items(entry.def_shared_id, 4)?;
-        self.write_cross_references(entry.word_id, Some(entry.def_id), 4)?;
+        self.write_shared_items(entry.def_shared_id, def_id_indent+1)?;
+        self.write_cross_references(entry.word_id, Some(entry.def_id), def_id_indent+1)?;
         Ok(())
     }
 

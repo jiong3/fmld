@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS "dict_word" (
 	"trad" TEXT NOT NULL,
 	-- word in simplified characters
 	"simp" TEXT NOT NULL,
+	-- link to the main variant if not NULL, the entry will have the same shared_id as the main variant and no definitions should link to this entry, only to the main variant
 	"variant_of" INTEGER,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
@@ -70,6 +71,9 @@ CREATE TABLE IF NOT EXISTS "dict_word" (
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_word_index_0"
 ON "dict_word" ("trad", "simp");
+
+CREATE INDEX IF NOT EXISTS "dict_word_index_1"
+ON "dict_word" ("variant_of");
 CREATE TABLE IF NOT EXISTS "dict_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"pinyin_num" TEXT NOT NULL,
@@ -193,6 +197,7 @@ CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 	FOREIGN KEY ("pron_id") REFERENCES "dict_pron"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
+
 
 /* Views (for manual browsing) */
 CREATE VIEW trad_simp_class_pinyin_def AS

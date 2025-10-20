@@ -122,7 +122,6 @@ pub struct TxtToDb<'a> {
     rank_counter: u64,
     line_stack: Vec<Vec<DictNode>>,
     definition_stack: Vec<SqliteId>,
-    //definition_stack_strings: Vec<String>, // TODO REMOVE
     cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
     note_references: Vec<NoteReferenceEntry>,
     new_notes_num: u32,
@@ -325,15 +324,11 @@ impl<'a> TxtToDb<'a> {
         let mut stmt = self
             .conn
             .prepare_cached("INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id, parent_id) VALUES (?1,?2,?3,?4,?5,?6)")?;
-        ////////////////// TODO REMOVE
-        //let sub_defs = definition_tag.definition.split(" --- ").collect::<Vec<&str>>();
-        //let def = sub_defs.last().unwrap().to_string();
-        //////////////////
         
         stmt.execute((
             shared_id,
             word_id,
-            &definition_tag.definition,// TODO REMOVE &def,
+            &definition_tag.definition,
             definition_tag.id,
             class,
             parent_id,
@@ -545,9 +540,7 @@ impl<'a> TxtToDb<'a> {
             DictLine::Class(class_name) => (self.create_class_entry(&class_name), false),
             DictLine::Definition(definition_tag) => {
                 debug_assert!(line_info.indentation >= 3);
-                //let def_indentation: usize = line_info.indentation + &definition_tag.definition.split(" --- ").collect::<Vec<&str>>().len() - 1 - 3; // TOOD temporary workaround
                 self.definition_stack.truncate(line_info.indentation - 3);
-                //self.definition_stack_strings.truncate(def_indentation);
                 (self.add_definition_line_to_db(&definition_tag), false)
             }
             DictLine::CrossReference(reference_tag_groups) => (
@@ -708,49 +701,12 @@ impl<'a> TxtToDb<'a> {
         {
             if let Some(DictNode::Class(class_id)) = self.line_stack.get(2).and_then(|v| v.first().cloned())
             {
-                /////////////////// TODO REMOVE
-
-                // let sub_defs = definition_tag.definition.split(" --- ").collect::<Vec<&str>>();
-                // let mut sub_def_idx = 0;
-                // for sub_def in &sub_defs[..sub_defs.len()-1] {
-                //     let sub_def_tag = DefinitionTag {
-                //         tags: definition_tag.tags.clone(),
-                //         id: self.rank_counter as u32 + 100,
-                //         definition: sub_def.to_string(),
-                //     };
-                //     if sub_def_idx < self.definition_stack_strings.len() {
-                //         if self.definition_stack_strings[sub_def_idx] == sub_def.to_string() {
-                //             continue; // already added
-                //         } else {
-                //             self.definition_stack_strings.truncate(sub_def_idx);
-                //             self.definition_stack.truncate(sub_def_idx);
-                //         }
-                //     }
-                //     let definition_entry =
-                //         self.create_definition_entry(word_id, &sub_def_tag, class_id, self.definition_stack.last().cloned())?;
-                //     if let DictNode::Definition((_, _, definition_id)) = definition_entry {
-                //         self.definition_stack.push(definition_id);
-                //         self.definition_stack_strings.push(sub_def.to_string());
-                //         // add links between definition and pronunciation
-                //         let pinyin_entries = self.line_stack.get(1).unwrap().clone();
-                //         for pinyin_entry in pinyin_entries {
-                //             if let DictNode::Pinyin((_, shared_pron_id)) = pinyin_entry {
-                //                 self.create_pron_definition_entry(shared_pron_id, definition_id)?;
-                //             } else {
-                //                 return Err(TxtToDbError::NoUsableParentNode);
-                //             }
-                //         }
-                //     } else {
-                //         debug_assert!(false);
-                //     }
-                // }
-
-                ///////////////////
                 let definition_entry =
                     self.create_definition_entry(word_id, definition_tag, class_id, self.definition_stack.last().cloned())?;
                 if let DictNode::Definition((_, _, definition_id)) = definition_entry {
+                    // remember definition id in case it is a parent for a nested definition
                     self.definition_stack.push(definition_id);
-                    //self.definition_stack_strings.push(definition_tag.definition.to_string());
+                    
                     // add links between definition and pronunciation
                     let pinyin_entries = self.line_stack.get(1).unwrap().clone();
                     for pinyin_entry in pinyin_entries {

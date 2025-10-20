@@ -3,8 +3,8 @@
     {
       "id": 0,
       "name": "dict_definition",
-      "x": -714.687802278274,
-      "y": -499.296423539806,
+      "x": -699.3544689449408,
+      "y": -488.6297568731394,
       "fields": [
         {
           "name": "id",
@@ -82,6 +82,20 @@
           "primary": false,
           "unique": false,
           "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "V_3H1h6ApJjtvpqoF9dbi",
+          "name": "parent_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
           "increment": false,
           "comment": "",
           "size": "",
@@ -233,6 +247,20 @@
           "comment": "word in simplified characters",
           "id": 1,
           "size": 65535
+        },
+        {
+          "id": "FXB7JPkhpkFMrGyQlkGc5",
+          "name": "variant_of",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
         }
       ],
       "comment": "",
@@ -630,8 +658,8 @@
     {
       "id": "x02rwQUunH5FFy5Rw8Qkc",
       "name": "dict_note",
-      "x": -683.5582617558912,
-      "y": -971.6930451817963,
+      "x": -691.5582617558912,
+      "y": -963.0263785151296,
       "locked": false,
       "fields": [
         {
@@ -1094,6 +1122,28 @@
       "deleteConstraint": "No action",
       "name": "fk_dict_pron_definition_shared_pron_id_dict_shared_pron",
       "id": 17
+    },
+    {
+      "startTableId": 3,
+      "startFieldId": "FXB7JPkhpkFMrGyQlkGc5",
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_word_variant_of_dict_word",
+      "id": 18
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": "V_3H1h6ApJjtvpqoF9dbi",
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_definition_parent_id_dict_definition",
+      "id": 19
     }
   ],
   "notes": [],

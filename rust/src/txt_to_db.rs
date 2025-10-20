@@ -280,6 +280,21 @@ impl<'a> TxtToDb<'a> {
         Ok(word_entry)
     }
 
+    fn create_word_variant_entry(
+        &mut self,
+        word: &Word,
+        shared_id: SqliteId,
+        variant_of_id: SqliteId,
+    ) -> Result<()> {
+        let trad = &word.trad;
+        let simp = word.simp.as_ref().unwrap_or(&word.trad);
+        let mut stmt = self.conn.prepare_cached(
+            "INSERT INTO dict_word (shared_id, trad, simp, variant_of) VALUES (?1,?2,?3,?4)",
+        )?;
+        stmt.execute((shared_id, trad, simp, variant_of_id))?;
+        Ok(())
+    }
+
     fn create_pinyin_entry(&mut self, pinyin_num: &str, tags: &Tags) -> Result<DictNode> {
         let shared_id = self.create_shared_entry()?;
         let mut stmt = self.conn.prepare_cached(
@@ -324,7 +339,7 @@ impl<'a> TxtToDb<'a> {
         let mut stmt = self
             .conn
             .prepare_cached("INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id, parent_id) VALUES (?1,?2,?3,?4,?5,?6)")?;
-        
+
         stmt.execute((
             shared_id,
             word_id,
@@ -570,16 +585,21 @@ impl<'a> TxtToDb<'a> {
 
     fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
+        let mut main_variant: Option<DictNode> = None;
         for word_tag_group in word_tag_groups {
             for word in &word_tag_group.words {
-                let word_entry = self.create_word_entry(word, &word_tag_group.tags)?;
-                if line_items.is_empty() {
+                if main_variant.is_none() {
+                    let word_entry = self.create_word_entry(word, &word_tag_group.tags)?;
+                    main_variant = Some(word_entry);
                     line_items.push(word_entry);
                 } else {
-                    // Ignore more words, even though the parser can still parse a list of word groups. The original
-                    // intention was to have the option for several variants on one line.
+                    let DictNode::Word((shared_id, word_id)) = main_variant.unwrap() else {
+                        panic!("not a word")
+                    };
+                    self.create_word_variant_entry(word, shared_id, word_id)?;
                 }
             }
+            break; // only one tag group allowed for words, even though the parser supports several
         }
         Ok(line_items)
     }
@@ -697,16 +717,22 @@ impl<'a> TxtToDb<'a> {
         definition_tag: &DefinitionTag,
     ) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
-        if let Some(DictNode::Word((_, word_id))) = self.line_stack.first().and_then(|v| v.first().cloned())
+        if let Some(DictNode::Word((_, word_id))) =
+            self.line_stack.first().and_then(|v| v.first().cloned())
         {
-            if let Some(DictNode::Class(class_id)) = self.line_stack.get(2).and_then(|v| v.first().cloned())
+            if let Some(DictNode::Class(class_id)) =
+                self.line_stack.get(2).and_then(|v| v.first().cloned())
             {
-                let definition_entry =
-                    self.create_definition_entry(word_id, definition_tag, class_id, self.definition_stack.last().cloned())?;
+                let definition_entry = self.create_definition_entry(
+                    word_id,
+                    definition_tag,
+                    class_id,
+                    self.definition_stack.last().cloned(),
+                )?;
                 if let DictNode::Definition((_, _, definition_id)) = definition_entry {
                     // remember definition id in case it is a parent for a nested definition
                     self.definition_stack.push(definition_id);
-                    
+
                     // add links between definition and pronunciation
                     let pinyin_entries = self.line_stack.get(1).unwrap().clone();
                     for pinyin_entry in pinyin_entries {

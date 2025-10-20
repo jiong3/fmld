@@ -146,6 +146,7 @@ impl<'a> DbToTxt<'a> {
             LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
             LEFT JOIN dict_pron p ON sp.pron_id = p.id
             LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
+            WHERE w.variant_of IS NULL
             GROUP BY def.id
             ORDER BY s.rank, s.rank_relative; -- NULLS FIRST default
             ",
@@ -229,8 +230,29 @@ impl<'a> DbToTxt<'a> {
 
     fn write_word_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
         let tags = self.get_formatted_tags(entry.word_shared_id)?;
-        let word_str = common::format_word_def(&entry.trad, &entry.simp, None);
-        // TODO character variants (Xv reference, same word with different characters) should be listed in the same line, separated by ;
+
+        let mut word_str = common::format_word_def(&entry.trad, &entry.simp, None);
+
+        // collect optional variants of the word
+        let mut variants = vec![];
+
+        let mut stmt = self
+            .conn
+            .prepare_cached("SELECT trad, simp FROM dict_word WHERE variant_of = ?1")?;
+        let mut rows = stmt.query([entry.word_id])?;
+
+        while let Some(row) = rows.next()? {
+            let trad: String = row.get(0)?;
+            let simp: String = row.get(1)?;
+            variants.push(common::format_word_def(&trad, &simp, None));
+        }
+
+        if !variants.is_empty() {
+            variants.sort(); // keep order deterministic
+            word_str.push_str(config::ITEMS_SEP);
+            word_str.push_str(&variants.join(config::ITEMS_SEP));
+        }
+
         writeln!(self.writer, "W{tags}{word_str}")?;
         self.write_shared_items(entry.word_shared_id, 1)?;
         self.write_cross_references(entry.word_id, None, 1)?;
@@ -316,12 +338,19 @@ impl<'a> DbToTxt<'a> {
         Ok(())
     }
 
-    fn write_definition_entry(&mut self, entry: &DefinitionEntry, def_stack: &mut Vec<SqliteId>) -> Result<()> {
+    fn write_definition_entry(
+        &mut self,
+        entry: &DefinitionEntry,
+        def_stack: &mut Vec<SqliteId>,
+    ) -> Result<()> {
         let tags = self.get_formatted_tags(entry.def_shared_id)?;
         let mut def_id_indent = 3;
         if let Some(parent_id) = entry.parent_id {
             // add additional indentation for nested definitions with a parent id
-            let parent_level = 1 + def_stack.iter().position(|i| *i == parent_id).expect("missing parent definition");
+            let parent_level = 1 + def_stack
+                .iter()
+                .position(|i| *i == parent_id)
+                .expect("missing parent definition");
             def_id_indent += parent_level;
             def_stack.truncate(parent_level);
         } else {
@@ -336,8 +365,8 @@ impl<'a> DbToTxt<'a> {
             tags,
             format_multiline(&entry.definition, def_id_indent, &self.indent_str),
         )?;
-        self.write_shared_items(entry.def_shared_id, def_id_indent+1)?;
-        self.write_cross_references(entry.word_id, Some(entry.def_id), def_id_indent+1)?;
+        self.write_shared_items(entry.def_shared_id, def_id_indent + 1)?;
+        self.write_cross_references(entry.word_id, Some(entry.def_id), def_id_indent + 1)?;
         Ok(())
     }
 

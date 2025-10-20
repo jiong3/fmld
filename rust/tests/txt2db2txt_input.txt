@@ -15,7 +15,7 @@ W||Trad2 / Simp2
   C variant
    D1|| variant of [Trad1 / Simp1]
     N? automatically add a note id for this note
-W|wT #mysupertag #atag #yolotag| Trad1 / Simp1
+W|wT #mysupertag #atag #yolotag| Trad1 / Simp1;VarATrad1/VarASimp1;VarBTrad1/VarBSimp1
  P|| pin1yin1; pin1yin2
   P|T| pin1yin3
   P|C| pin1yin4; nv3

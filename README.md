@@ -33,7 +33,6 @@ Wiktionary data imported from https://kaikki.org (January 2025)
 
 Some things that are on the radar:
 
-- come up with a better representation of the definition trees from wiktionary, currently elements are concatenated using ---
 - semi-automatically:
     - add tags to distinguish Chinese and Taiwanese pronunciations
     - move some information in parentheses to tags: (chiefly Taiwan) --> t, (obsolete) --> x

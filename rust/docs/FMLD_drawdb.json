@@ -258,7 +258,7 @@
           "unique": false,
           "notNull": false,
           "increment": false,
-          "comment": "",
+          "comment": "link to the main variant if not NULL, the entry will have the same shared_id as the main variant and no definitions should link to this entry, only to the main variant",
           "size": "",
           "values": []
         }
@@ -272,6 +272,14 @@
           "fields": [
             "trad",
             "simp"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "dict_word_index_1",
+          "unique": false,
+          "fields": [
+            "variant_of"
           ]
         }
       ],

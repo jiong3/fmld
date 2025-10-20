@@ -46,3 +46,5 @@ W|Cw| 你好/嗎
     Long note this one is!
   C noun
    D3 || definitely a noun
+    D4||subdefinition for D3
+     # my own comment

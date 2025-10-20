@@ -43,3 +43,5 @@ W|wC|你好／嗎
   N->375
   C noun
    D3||definitely a noun
+    D4||subdefinition for D3
+     # my own comment

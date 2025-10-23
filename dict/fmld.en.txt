@@ -25407,7 +25407,7 @@ W|w|撲／扑
    D2||to pat; to slap
    D3||to dab; to smear; to apply
    D4||to rest one's upper body on a surface; to bend over a surface
-   D5||(American (1980–) ) to pull over
+   D5|x #American-post-1980s|to pull over
    D6||a surname: Pu
 W|w|圓滿／圆满
  P||yuan2man3
@@ -84423,8 +84423,8 @@ W|w|乞
  P||qi4
   C character
    D4||(obsolete or Eastern Min, Teochew) to give
-   D5||(Eastern Min; Xiamen, Quanzhou and Zhangzhou Hokkien, Teochew) by
-   D6||(Eastern Min; Xiamen, Quanzhou and Zhangzhou Hokkien, Teochew) Used before a verb to indicate passive voice.
+   D5||(Eastern Min, Xiamen, Quanzhou and Zhangzhou Hokkien, Teochew) by
+   D6||(Eastern Min, Xiamen, Quanzhou and Zhangzhou Hokkien, Teochew) Used before a verb to indicate passive voice.
    D7||(Teochew) to let; to allow
 W|w|截然不同
  P||jie2ran2bu4tong2
@@ -110719,15 +110719,15 @@ W|w|484
 W|w|485
  P||Si4ba1wu3
   C name
-   D1||(American (1980–) , slang) Form I-485 (Application to Register Permanent Residence)
+   D1|x #American-post-1980s #slang|Form I-485 (Application to Register Permanent Residence)
 W|w|485女
  P||si4ba1wu3nv3
   C noun
-   D1||(American (1980–) , slang) woman who has already submitted the Form I-485 (Application to Register Permanent Residence), usually used in matrimonial advertisements/recommendations
+   D1|x #American-post-1980s #slang|woman who has already submitted the Form I-485 (Application to Register Permanent Residence), usually used in matrimonial advertisements/recommendations
 W|w|485男
  P||si4ba1wu3nan2
   C noun
-   D1||(American (1980–) , slang) man who has already submitted the Form I-485 (Application to Register Permanent Residence), usually used in matrimonial advertisements/recommendations
+   D1|x #American-post-1980s #slang|man who has already submitted the Form I-485 (Application to Register Permanent Residence), usually used in matrimonial advertisements/recommendations
 W|w|49年入國軍／49年入国军
  P||si4jiu3-nian2 ru4 guo2jun1
   C verb
@@ -141401,7 +141401,7 @@ W|w|亞麻／亚麻
   C noun
    D1||flax (plant)
    D2||fibres of flax; linen
-   D3||(American (1980–) , slang) Amazon (company), in the sense of workplace.
+   D3|x #American-post-1980s #slang|Amazon (company), in the sense of workplace.
 W|w|亞齊／亚齐
  P||Ya4qi2
   C name
@@ -260586,7 +260586,7 @@ W|w|小黑屋
   C noun
    D1||(often humorous) a “small black room” where one is confined (in order to reflect on their wrongdoing, etc.)
    D2||(slang) a room for secondary inspection and questioning at a port of entry
-   D3||(American (1980–) , slang) a real-estate property that is overpriced, aging and in bad condition
+   D3|x #American-post-1980s #slang|a real-estate property that is overpriced, aging and in bad condition
 W|w|小黑麥／小黑麦
  P||xiao3hei1mai4
   C noun
@@ -343407,7 +343407,7 @@ W|w|東隧／东隧
 W|w|東雅圖／东雅图
  P||Dong1ya3tu2
   C name
-   D1||(American (1980–) , colloquial) Eastside (an area in King County, Washington, United States). Including the cities of Bellevue, Kirkland, Redmond, Sammamish, Issaquah, Newcastle, and Mercer Island.
+   D1|x #American-post-1980s #colloquial|Eastside (an area in King County, Washington, United States). Including the cities of Bellevue, Kirkland, Redmond, Sammamish, Issaquah, Newcastle, and Mercer Island.
 W|w|東非洲／东非洲
  P||Dong1 Fei1zhou1
   C name
@@ -424540,7 +424540,7 @@ W|w|白區／白区
 W|w|白卡
  P||bai2ka3
   C noun
-   D1||(American (1980–) , figurative) Medicaid
+   D1|x #American-post-1980s #figurative|Medicaid
    D2||(Hong Kong, colloquial) Registration Card for People with Disabilities
    D3||(Hong Kong, colloquial, derogatory) one who is mentally ill
    D4||(Singapore, colloquial) embarkation card
@@ -472436,7 +472436,7 @@ W|w|老中
  P||lao3zhong1
   C noun
    D1||(historical) "elder", political role in the Tokugawa shogunate (江戶幕府／江户幕府)
-   D2||(American (1980–) , slang) a Chinese person, Chinese immigrants
+   D2|x #American-post-1980s #slang|a Chinese person, Chinese immigrants
 W|w|老中青
  P||lao3zhong1qing1
   C noun
@@ -472911,7 +472911,7 @@ W|w|老屋基
 W|w|老川
  P||lao3chuan1
   C name
-   D1||(American (1980–) , neologism, endearing) Donald Trump
+   D1|x #American-post-1980s #neologism #endearing|Donald Trump
 W|w|老巢
  P||lao3chao2
   C noun
@@ -515092,7 +515092,7 @@ W|w|街談巷議／街谈巷议
 W|w|街趴
  P||jie1pa1
   C noun
-   D1||(American (1980–) ) on-street parking
+   D1|x #American-post-1980s|on-street parking
 W|w|街路
  P||jie1lu4
   C noun
@@ -540824,7 +540824,7 @@ W|w|跑動／跑动
 W|w|跑卡
  P||pao3ka3
   C verb
-   D1||(American (1980–) , slang) of a US Permanent Resident living outside the US: to travel frequently to the US to meet the "Continuous Residence" requirement for US Permanent Resident Card (Green Card) holders.
+   D1|x #American-post-1980s #slang|of a US Permanent Resident living outside the US: to travel frequently to the US to meet the "Continuous Residence" requirement for US Permanent Resident Card (Green Card) holders.
 W|w|跑咖
  P||pao3ka1
   C verb-object

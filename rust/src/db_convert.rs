@@ -7,6 +7,10 @@ use rusqlite::{Connection, Error as SqliteError, Row, Transaction, params};
 
 
 const TARGET_SCHEMA: &str = r#"
+/* Schema of a dictionary for Mandarin Chinese. 
+
+Each entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron).
+Words and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc.. */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"parent_id" INTEGER,
@@ -47,7 +51,6 @@ ON "dict_word" ("trad", "simp");
 
 CREATE INDEX IF NOT EXISTS "dict_word_index_1"
 ON "dict_word" ("variant_of");
-
 CREATE TABLE IF NOT EXISTS "dict_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"pinyin_num" TEXT NOT NULL,
@@ -57,7 +60,7 @@ CREATE TABLE IF NOT EXISTS "dict_pron" (
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_pron_index_0"
 ON "dict_pron" ("pinyin_num");
-
+/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. */
 CREATE TABLE IF NOT EXISTS "dict_reference" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"ref_type" INTEGER NOT NULL,
@@ -82,7 +85,7 @@ CREATE TABLE IF NOT EXISTS "dict_reference" (
 
 CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
 ON "dict_reference" ("word_id_src", "definition_id_src");
-
+/* ext_note_id is a globally unique id for each note (but same id for different translations), exported into txt format */
 CREATE TABLE IF NOT EXISTS "dict_note" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"note" TEXT NOT NULL,
@@ -103,6 +106,12 @@ CREATE TABLE IF NOT EXISTS "dict_def_pron" (
 	FOREIGN KEY ("note_id") REFERENCES "dict_note"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
+
+CREATE INDEX IF NOT EXISTS "dict_def_pron_index_0"
+ON "dict_def_pron" ("definition_id");
+
+CREATE INDEX IF NOT EXISTS "dict_def_pron_index_1"
+ON "dict_def_pron" ("pron_id");
 "#;
 
 /// Maps an ASCII tag character to its corresponding bit (2^n) for the bitfield.

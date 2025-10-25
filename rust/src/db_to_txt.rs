@@ -9,6 +9,8 @@ use std::io::Write;
 use crate::common;
 use crate::common::SqliteId;
 use crate::config;
+use crate::db_read;
+use crate::db_read::DefinitionEntry;
 
 // --- Error Handling ---
 #[derive(Debug)]
@@ -53,22 +55,6 @@ impl std::error::Error for DbToTxtError {
 pub type Result<T> = std::result::Result<T, DbToTxtError>;
 
 // --- Data Structures to hold query results ---
-
-#[derive(Debug)]
-struct DefinitionEntry {
-    word_id: SqliteId,
-    word_shared_id: SqliteId,
-    trad: String,
-    simp: String,
-    pinyin_shared_ids: Vec<SqliteId>,
-    class_id: SqliteId,
-    class_name: String,
-    def_id: SqliteId,
-    parent_id: Option<SqliteId>,
-    def_shared_id: SqliteId,
-    ext_def_id: u32,
-    definition: String,
-}
 
 struct PinyinData {
     pinyin_num: String,
@@ -123,109 +109,33 @@ impl<'a> DbToTxt<'a> {
     }
 
     pub fn generate_txt_file(&mut self, limit_to_word: Option<&str>) -> Result<()> {
-        let mut stmt = self.conn.prepare(
-            r"
-            SELECT
-                w.id AS word_id,
-                w.shared_id AS word_shared_id,
-                w.trad,
-                w.simp,
-                c.id AS class_id,
-                c.name AS class_name,
-                def.id AS def_id,
-                def.shared_id AS def_shared_id,
-                def.ext_def_id,
-                def.definition,
-                def.parent_id,
-                GROUP_CONCAT(p_s.id ORDER BY p_s.rank, p_s.rank_relative) AS pron_shared_ids -- NULLS FIRST default
-            FROM dict_definition def
-            JOIN dict_shared s ON def.shared_id = s.id
-            JOIN dict_word w ON def.word_id = w.id
-            JOIN dict_class c ON def.class_id = c.id
-            LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-            LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
-            LEFT JOIN dict_pron p ON sp.pron_id = p.id
-            LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
-            WHERE w.variant_of IS NULL
-            GROUP BY def.id
-            ORDER BY s.rank, s.rank_relative; -- NULLS FIRST default
-            ",
-        )?;
-
-        let mut rows = stmt.query([])?;
-        let mut last_word_id = -1;
-        let mut last_pinyin_shared_ids = vec![];
-        let mut last_class_id = -1;
-        let mut definition_stack: Vec<SqliteId> = vec![];
+        let definitions = db_read::read_definitions(self.conn)?;
 
         self.write_shared_items(1, 0)?; // header comment
 
-        while let Some(row) = rows.next()? {
-            let definition_entry = Self::row_to_definition_entry(row)?;
-
+        for definition_entry in definitions {
             if let Some(stop_word) = limit_to_word {
                 if definition_entry.trad == stop_word {
                     break;
                 }
             }
 
-            // 1. Word Entry
-            if definition_entry.word_id != last_word_id {
+            if definition_entry.new_word {
                 self.write_word_entry(&definition_entry)?;
-                last_word_id = definition_entry.word_id;
-                // Reset child states when word changes
-                last_pinyin_shared_ids.clear();
-                last_class_id = -1;
-                definition_stack.clear();
             }
-
-            // 2. Pinyin Entry
-            if definition_entry.pinyin_shared_ids != last_pinyin_shared_ids {
+            if definition_entry.new_pinyin {
                 self.write_pinyin_entries(
                     definition_entry.def_id,
                     &definition_entry.pinyin_shared_ids,
                 )?;
-                last_pinyin_shared_ids = definition_entry.pinyin_shared_ids.clone();
-                last_class_id = -1;
-                definition_stack.clear();
             }
-
-            // 3. Class Entry
-            if definition_entry.class_id != last_class_id {
+            if definition_entry.new_class {
                 self.write_class_entry(&definition_entry.class_name)?;
-                last_class_id = definition_entry.class_id;
-                definition_stack.clear();
             }
-
-            // 4. Definition Entry
-            self.write_definition_entry(&definition_entry, &mut definition_stack)?;
+            self.write_definition_entry(&definition_entry)?;
         }
 
         Ok(())
-    }
-
-    fn row_to_definition_entry(row: &Row) -> Result<DefinitionEntry> {
-        let pinyin_shared_ids_str: Option<String> = row.get("pron_shared_ids")?;
-        let pinyin_shared_ids = pinyin_shared_ids_str
-            .unwrap()
-            .split(',')
-            .map(|s| s.parse::<SqliteId>().unwrap())
-            .collect();
-
-        Ok(DefinitionEntry {
-            word_id: row.get("word_id")?,
-            word_shared_id: row.get("word_shared_id")?,
-            trad: row.get("trad")?,
-            simp: row.get("simp")?,
-            pinyin_shared_ids,
-            class_id: row.get("class_id")?,
-            class_name: row.get("class_name")?,
-            def_id: row.get("def_id")?,
-            def_shared_id: row.get("def_shared_id")?,
-            ext_def_id: row.get("ext_def_id")?,
-            definition: row.get("definition")?,
-            parent_id: row.get("parent_id")?,
-        })
     }
 
     fn write_word_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
@@ -338,25 +248,9 @@ impl<'a> DbToTxt<'a> {
         Ok(())
     }
 
-    fn write_definition_entry(
-        &mut self,
-        entry: &DefinitionEntry,
-        def_stack: &mut Vec<SqliteId>,
-    ) -> Result<()> {
+    fn write_definition_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
         let tags = self.get_formatted_tags(entry.def_shared_id)?;
-        let mut def_id_indent = 3;
-        if let Some(parent_id) = entry.parent_id {
-            // add additional indentation for nested definitions with a parent id
-            let parent_level = 1 + def_stack
-                .iter()
-                .position(|i| *i == parent_id)
-                .expect("missing parent definition");
-            def_id_indent += parent_level;
-            def_stack.truncate(parent_level);
-        } else {
-            def_stack.clear();
-        }
-        def_stack.push(entry.def_id);
+        let mut def_id_indent = 3 + entry.nested_level;
         writeln!(
             self.writer,
             "{}D{}{}{}",

@@ -10958,6 +10958,7 @@ W|w|目的
   C noun
    D1||objective; goal; target; aim; purpose; intention
     XM||個／个
+    X<||目的地
 W|w|聲／声
  P||sheng1
   C character

@@ -59,7 +59,7 @@ BDSM;BDSM;;0
 Beijing;Beijing;Cx;0
 Beijing and Jilu Mandarin;Beijing-and-Jilu-Mandarin;Cx;0
 Beijing and Tianjin Mandarin;Beijing-and-Tianjin-Mandarin;Cx;0
-Beijing Mandarin;Beijing;Cx;1
+Beijing Mandarin;Beijing;Cx;0
 biblical;biblical;;0
 bibliography;bibliography;;0
 billiards;billiards;;0
@@ -88,7 +88,7 @@ cardiology;cardiology;;0
 cartography;cartography;;0
 Cascading Style Sheets;Cascading-Style-Sheets;;0
 category theory;category-theory;;0
-Catholicism;Catholicism; ;0
+Catholicism;Catholicism;;0
 cell biology;cell-biology;;0
 Central Min;Central-Min;x;0
 Central Plains;Central-Plains;Cx;0
@@ -576,8 +576,8 @@ literary;literary;-;0
 literary and archaic;literary archaic;-;0
 literary and historical;literary historical;-;0
 literary or archaic;literary archaic;-;0
-literary or dialectal;literary dialectal;;0
-literary or dialectal Mandarin;literary dialectal;;0
+literary or dialectal;literary dialectal;-;0
+literary or dialectal Mandarin;literary dialectal;-;0
 literary or Eastern Min;literary Eastern-Min;-;0
 literary or formal;literary formal;;0
 literary or Gan;literary Gan;-;0
@@ -678,7 +678,7 @@ modern;modern;;0
 modern usage;modern-usage;;0
 modest;modest;;0
 molecular biology;molecular-biology;;0
-Móng Cái Cantonese;Móng-Cái-Cantonese;x;0
+Móng Cái Cantonese;Mong-Cai-Cantonese;x;0
 more often attributive;more-often-attributive;;0
 Mormonism;Mormonism;;0
 mostly in compounds;;&;0
@@ -1018,7 +1018,7 @@ Taiwanese Hokkien and Hakka;Taiwanese-Hokkien-and-Hakka;x;0
 Taiwanese Mandarin;;T;1
 Taiyuan Jin;Taiyuan-Jin;x;0
 Tang dynasty;Tang-dynasty;x;0
-Taoism;Taoism; ;0
+Taoism;Taoism;;0
 tarot;tarot;;0
 taxation;taxation;;0
 taxonomy;taxonomy;;0
@@ -1026,6 +1026,7 @@ technical;technical;;0
 technology;technology;;0
 telecommunications;telecommunications;;0
 telephony;telephony;;0
+telegraphy;telegraphy;;0
 television;television;;0
 tennis;tennis;;0
 Teochew;Teochew;x;0
@@ -1067,7 +1068,7 @@ unofficial;unofficial;;0
 uranography;uranography;;0
 urban studies;urban-studies;;0
 urology;urology;;0
-Ürümqi Mandarin;Ürümqi-Mandarin;Cx;0
+Ürümqi Mandarin;Urumqi-Mandarin;Cx;0
 US politics;US-politics;;0
 used in compounds;;&;0
 used in the negative;in-the-negative;;0

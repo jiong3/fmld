@@ -293,7 +293,7 @@ impl<'a> DbToTxt<'a> {
         // sort full tags with default order
         full_tags.sort();
 
-        let space = if full_tags.is_empty() { "" } else { " " };
+        let space = if full_tags.is_empty() || ascii_tags.is_empty() { "" } else { " " };
         if ascii_tags.is_empty() && full_tags.is_empty() {
             // leaving out the || would require checks in case there is a tag group without tags coming after a group with tags on the same line
             Ok("||".to_owned())

@@ -1,9 +1,11 @@
-use std::cmp::max;
-
 use crate::common::SqliteId;
-use rusqlite::{Error as SqliteError, Row, Transaction, params};
-
 use crate::config;
+use crate::db_read;
+use rusqlite::{Error as SqliteError, Transaction, params};
+use std::cmp::max;
+use std::collections::HashMap;
+use std::fs::File;
+use std::io::{self, BufRead};
 
 /// An enum to identify the target entity for an operation.
 /// It holds the primary key of the entity in its respective table.
@@ -542,4 +544,179 @@ pub fn add_tag(conn: &Transaction, target: EntryId, tag: Tag) -> Result<(), Sqli
     stmt.execute(params![shared_id, tag_id])?;
 
     Ok(())
+}
+
+/// Updates the definition text for a given definition ID.
+fn update_definition_text(
+    conn: &Transaction,
+    definition_id: SqliteId,
+    text: &str,
+) -> Result<(), SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        UPDATE dict_definition
+        SET definition = ?2
+        WHERE id = ?1;
+        ",
+    )?;
+    stmt.execute(params![definition_id, text])?;
+    Ok(())
+}
+
+/// not for regular use, uses unwrap
+pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
+    // Read the CSV file into a HashMap
+    let mut tag_to_data = HashMap::new();
+    let file = File::open(csv_path).unwrap();
+    let reader = io::BufReader::new(file);
+
+    for line in reader.lines() {
+        let line = line.unwrap();
+        let columns: Vec<&str> = line.split(';').collect();
+        if columns.len() == 4 {
+            let key = columns[0].to_string();
+            let value = (
+                columns[1].to_string(),
+                columns[2].to_string(),
+                columns[3].to_string(),
+            );
+            tag_to_data.insert(key, value);
+        }
+    }
+
+    // Iterate over all definitions from the database
+    let definitions = db_read::read_definitions(conn).unwrap();
+
+    'defloop: for definition in definitions {
+        if !definition.definition.starts_with('(') {
+            continue;
+        }
+        let mut new_definition_text = definition.definition.clone();
+        let mut tag_start_idx = 1; // skip first (
+        if definition.definition.starts_with("(～") {
+            if let Some((index, _)) = definition.definition[tag_start_idx..]
+                .char_indices()
+                .find(|(i, c)| *c == '(')
+            {
+                if let Some((prev_closing_index, _)) = definition.definition[tag_start_idx..]
+                    .char_indices()
+                    .find(|(i, c)| *c == ')')
+                {
+                    if index - prev_closing_index > 2 {
+                        continue; // not at the beginning of the definition -> not a tag group
+                    }
+                }
+                tag_start_idx += index + 1;
+            }
+        }
+        let mut tag_end_idx = tag_start_idx
+            + definition.definition[tag_start_idx..]
+                .char_indices()
+                .find(|(i, c)| *c == ')')
+                .map(|t| t.0)
+                .unwrap_or(0);
+        let tags: Vec<String> = definition.definition[tag_start_idx..tag_end_idx]
+            .split(',')
+            .map(|s| s.trim().to_string())
+            .collect();
+        let mut as_tags = vec![];
+        let mut in_parens = vec![];
+        let mut ascii_tags = "".to_owned();
+        let mut keep_following_in_parens = false;
+        let mut override_exclusion = false;
+        for tag in &tags {
+            // TODO split on space !!!
+            if keep_following_in_parens {
+                in_parens.push(tag.to_owned());
+            }
+            if tag.starts_with("of ")
+                || tag.starts_with("chiefly of ")
+                || (tag.starts_with("in ") && tag_to_data.get(tag).is_none())
+                || tag.starts_with("chiefly in ")
+            {
+                keep_following_in_parens = true;
+                in_parens.push(tag.to_owned());
+            }
+            if tag.ends_with("etc.") && !keep_following_in_parens {
+                // skip this definition completely
+                continue 'defloop;
+            }
+            if let Some((full_tags, tag_ascii_tags, overwrite_x)) = tag_to_data.get(tag) {
+                if !full_tags.is_empty() {
+                    // in the csv file some tags are separated into multiple tags by a space
+                    for full_tag in full_tags.split(' ') {
+                        as_tags.push(full_tag);
+                    }
+                }
+                ascii_tags.push_str(&tag_ascii_tags);
+                override_exclusion = override_exclusion || (overwrite_x == "1");
+            } else {
+                in_parens.push(tag.to_owned());
+            }
+        }
+        for full_tag in as_tags {
+            add_tag(
+                conn,
+                EntryId::Definition(definition.def_id),
+                Tag::Full {
+                    name: full_tag,
+                    category: "",
+                },
+            )
+            .unwrap();
+        }
+        if override_exclusion {
+            ascii_tags = ascii_tags.replace('x', "");
+        }
+        if ascii_tags.to_lowercase().contains('t') && ascii_tags.to_lowercase().contains('c') {
+            // if it's applicable to Taiwan and China, no indication is needed
+            ascii_tags = ascii_tags.replace('T', "");
+            ascii_tags = ascii_tags.replace('t', "");
+            ascii_tags = ascii_tags.replace('C', "");
+            ascii_tags = ascii_tags.replace('c', "");
+        }
+        if ascii_tags.to_lowercase().contains('x') && ascii_tags.to_lowercase().contains('-') {
+            // exclude definition, even if one tag is only mapped to -
+            ascii_tags = ascii_tags.replace('-', "");
+        }
+        for ascii_char in ascii_tags.chars() {
+            if let Some(_) = config::tag_to_txt_ascii_common(ascii_char) {
+                add_tag(
+                    conn,
+                    EntryId::Definition(definition.def_id),
+                    Tag::Ascii(ascii_char),
+                )
+                .unwrap();
+            } else {
+                println!("not a tag:{ascii_char}");
+            }
+        }
+        let new_parens = if !in_parens.is_empty() {
+            format!("({})", in_parens.join(", "))
+        } else {
+            // check if there is whitespace to remove before or after tag boundaries
+            if new_definition_text.is_char_boundary(tag_start_idx - 1)
+                && new_definition_text[..tag_start_idx - 1].ends_with(' ')
+            {
+                tag_start_idx -= 1;
+            }
+            if new_definition_text.is_char_boundary(tag_end_idx + 1)
+                && new_definition_text[tag_end_idx + 1..].starts_with(' ')
+            {
+                tag_end_idx += 1;
+            }
+            " ".to_owned()
+        };
+        if !(new_definition_text.is_char_boundary(tag_start_idx - 1)
+            && new_definition_text.is_char_boundary(tag_end_idx + 1))
+        {
+            println!("buggy: {new_definition_text}");
+            continue;
+        }
+        new_definition_text.replace_range(tag_start_idx - 1..tag_end_idx + 1, &new_parens);
+
+        if new_definition_text != definition.definition {
+            update_definition_text(conn, definition.def_id, &new_definition_text.trim()).unwrap();
+        }
+    }
 }

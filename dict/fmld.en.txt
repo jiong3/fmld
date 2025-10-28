@@ -12195,7 +12195,11 @@ W|w|秒
    D6|x #obsolete|unit of length equal to 0.0001 cun
    D7|#by-extension #neologism|in seconds; immediately; instantly; at once
     X<||秒回
+<<<<<<< HEAD
    D8|#by-extension #neologism|(of player, enemy, problem, etc.) kill, finish, solve, etc., instantly
+=======
+   D8|#by-extension #neologism|(of player, enemy, problem, etc.) kill, finish, solve, etc, instantly
+>>>>>>> 674f20f (Automatic Finalization (e.g. update note ids))
 W|w|樣／样
  P||yang4
   C character

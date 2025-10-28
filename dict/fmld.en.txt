@@ -12195,7 +12195,7 @@ W|w|秒
    D6||(obsolete) unit of length equal to 0.0001 cun
    D7||(neologism, by extension) in seconds; immediately; instantly; at once
     X<||秒回
-   D8|#neologism #by-extension|(of player, enemy, problem, etc.) kill, finish, solve, etc, instantly
+   D8|#neologism #by-extension|(of player, enemy, problem, etc.) kill, finish, solve, etc., instantly
 W|w|樣／样
  P||yang4
   C character
@@ -327957,7 +327957,7 @@ W|w|日媒
 W|w|日媽／日妈
  P||ri4ma1
   C particle
-   D1||(Sichuanese, vulgar) particle inserted into the sentence to express one's anger, displeasure, suprise etc, similar to one usage of fucking
+   D1||(Sichuanese, vulgar) particle inserted into the sentence to express one's anger, displeasure, suprise etc., similar to one usage of fucking
 W|w|日字旁
  P||ri4zi4pang2
   C noun
@@ -345453,7 +345453,7 @@ W|w|染紅／染红
  P||ran3hong2
   C verb
    D1||(literally) to be dyed red
-   D2||(Hong Kong, etc., politics, derogatory) to receive CCP influence
+   D2||(Hong Kong, politics, derogatory) to receive CCP influence
    D3||(Hong Kong, business) to have a mainland Chinese investor
    D4||(Mainland China, soccer) to receive a red card
 W|w|染色

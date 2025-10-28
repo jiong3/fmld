@@ -625,9 +625,9 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         let mut keep_following_in_parens = false;
         let mut override_exclusion = false;
         for tag in &tags {
-            // TODO split on space !!!
             if keep_following_in_parens {
                 in_parens.push(tag.to_owned());
+                continue;
             }
             if tag.starts_with("of ")
                 || tag.starts_with("chiefly of ")
@@ -636,9 +636,11 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
             {
                 keep_following_in_parens = true;
                 in_parens.push(tag.to_owned());
+                continue;
             }
-            if tag.ends_with("etc.") && !keep_following_in_parens {
+            if tag.ends_with("etc.") {
                 // skip this definition completely
+                debug_assert!(!keep_following_in_parens);
                 continue 'defloop;
             }
             if let Some((full_tags, tag_ascii_tags, overwrite_x)) = tag_to_data.get(tag) {

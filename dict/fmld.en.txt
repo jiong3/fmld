@@ -7359,7 +7359,7 @@ W|w|睡
  P||shui4
   C character
    D1||(intransitive) to sleep
-   D2|#transitive|(of bed, room) to sleep; to have the capacity for
+   D2| #transitive|(of bed, room) to sleep; to have the capacity for
    D3||(colloquial, transitive) to sleep with (have sexual intercourse with somebody)
    D4||(dialectal) to lie; to recline
    D5||(literary, intransitive) to nod off
@@ -8090,7 +8090,7 @@ W|w|雨
  P||yu4
   C character
    D4||(literary) to rain
-   D5|#literary|(of rain, snow, tears, etc.) to fall (like rain)
+   D5| #literary|(of rain, snow, tears, etc.) to fall (like rain)
    D6||(literary) to moisten
 W|w|喝酒
  P||he1jiu3
@@ -11173,7 +11173,7 @@ W|w|趁
 W|w|飛／飞
  P||fei1
   C character
-   D1|#intransitive|(of insects, birds, etc.) to fly
+   D1| #intransitive|(of insects, birds, etc.) to fly
    D2||(intransitive) to fly (on an aircraft)
    D3||(transitive) to fly (on an aircraft) to
    D4||to float in the sky; to hover
@@ -11531,7 +11531,7 @@ W|w|痛苦
  P||tong4ku3
   C adj
    D1||painful (in the body or mind); sore; aching; excruciating
-   D2|#figurative|(of a lesson, etc.) profound; bitter
+   D2| #figurative|(of a lesson, etc.) profound; bitter
   C noun
    D3||pain; suffering; agony
 W|w|鼻子
@@ -12195,7 +12195,7 @@ W|w|秒
    D6||(obsolete) unit of length equal to 0.0001 cun
    D7||(neologism, by extension) in seconds; immediately; instantly; at once
     X<||秒回
-   D8|#neologism #by-extension|(of player, enemy, problem, etc.) kill, finish, solve, etc, instantly
+   D8| #by-extension #neologism|(of player, enemy, problem, etc.) kill, finish, solve, etc, instantly
 W|w|樣／样
  P||yang4
   C character
@@ -25376,7 +25376,7 @@ W|w|光明
  P||guang1ming2
   C adj
    D1||bright; shining
-   D2|#figurative|(of future etc.) promising; bright
+   D2| #figurative|(of future etc.) promising; bright
    D3||(figurative) open-hearted; frank; straightforward
   C name
    D4||(～區) Guangming (a district of Shenzhen, Guangdong, China)
@@ -29098,7 +29098,7 @@ W|w|負／负
    D2||to rely on; to load; to burden
    D3||to betray; to abandon; to repudiate; to go against
    D4||to lose; to be defeated
-   D5|#mathematics #physics|negative
+   D5| #mathematics #physics|negative
 W|w|重量
  P||zhong4liang4
   C noun
@@ -30033,7 +30033,7 @@ W|w|主
 W|w|否定
  P||fou3ding4
   C adj
-   D1|#attributive|(of a judgement, response, etc.) negative
+   D1| #attributive|(of a judgement, response, etc.) negative
   C verb
    D2||to negate; to deny
 W|w|橘子
@@ -31601,7 +31601,7 @@ W|w|疲勞／疲劳
  P||pi2lao2
   C noun
    D1||tired; weary; fatigued; exhausted; strained
-   D2|#physics|(of material, etc.) fatigued
+   D2| #physics|(of material, etc.) fatigued
 W|w|助理
  P||zhu4li3
   C noun
@@ -32171,7 +32171,7 @@ W|w|值
  P||zhi2
   C character
    D1||price
-   D2|#mathematics #computing|value
+   D2| #computing #mathematics|value
     X<||絕對值／绝对值
    D3||to be worth
    D4||worthwhile
@@ -33989,7 +33989,7 @@ W|w|翹／翘
    D3||animal's tail
    D4||to lift; to raise
    D5||to expose; to reveal; to uncover; to arouse
-   D6|#colloquial|(of wooden plank, paper, etc.) to become twisted; to be warped from water damage
+   D6| #colloquial|(of wooden plank, paper, etc.) to become twisted; to be warped from water damage
    D7||outstanding; extraordinary
    D8||high; dangerous
    D9||lush; luxuriant
@@ -34260,7 +34260,7 @@ W|w|友好
 W|w|哪些
  P||na3xie1;nei3xie1
   C pron
-   D1|#interrogative|(in the plural) which ones?; what (preceding a noun implied to be plural)
+   D1| #interrogative|(in the plural) which ones?; what (preceding a noun implied to be plural)
 W|w|不可
  P||bu4ke3
   C verb
@@ -49874,7 +49874,7 @@ W|w|本能
 W|w|蔓延
  P||man4yan2
   C verb
-   D1|#figuratively|(of diseases, vegetation, etc. or figuratively) to spread; to extend
+   D1| #figuratively|(of diseases, vegetation, etc. or figuratively) to spread; to extend
 W|w|回心轉意／回心转意
  P||hui2xin1zhuan3yi4
   C phrase
@@ -65264,7 +65264,7 @@ W|w|發霉／发霉
 W|w|侵入
  P||qin1ru4
   C verb
-   D1|#figuratively|(of an army, germs, etc. or law or figuratively) to invade; to trespass; to intrude
+   D1| #figuratively|(of an army, germs, etc. or law or figuratively) to invade; to trespass; to intrude
 W|w|慈祥
  P||ci2xiang2
   C adj
@@ -72762,7 +72762,7 @@ W|w|提案
 W|w|入侵
  P||ru4qin1
   C verb
-   D1|#figuratively|(of an army, germs, etc. or figuratively) to invade; to intrude
+   D1| #figuratively|(of an army, germs, etc. or figuratively) to invade; to intrude
 W|w|小我
  P||xiao3wo3
   C noun
@@ -82495,7 +82495,7 @@ W|w|張牙舞爪／张牙舞爪
  P||zhang1ya2wu3zhao3
   C phrase
    D1||(of a beast) to be ferocious
-   D2|#figurative|(of a person) to act savagely and threateningly
+   D2| #figurative|(of a person) to act savagely and threateningly
 W|w|威逼
  P||wei1bi1
   C verb
@@ -107564,8 +107564,8 @@ W|w|犁
 W|w|噴射／喷射
  P||pen1she4
   C verb
-   D1|#intransitive|(of liquids, gases, powdered solids, ammunition, etc.) to spurt; to spray; to jet
-   D3|#figuratively|(of words, emotions, etc.) to spurt
+   D1| #intransitive|(of liquids, gases, powdered solids, ammunition, etc.) to spurt; to spray; to jet
+   D3| #figuratively|(of words, emotions, etc.) to spurt
    D2||(Internet slang) to have diarrhoea
 W|w|無形中／无形中
  P||wu2xing2zhong1
@@ -173468,7 +173468,7 @@ W|w|出籠／出笼
   C verb
    D1||to take out of a steamer basket; to come out of the steamer (of cooked food)
    D2||to come out of a cage
-   D3|#derogatory|(of products, news, policies, etc.) to appear; to be revealed; to be made public
+   D3| #derogatory|(of products, news, policies, etc.) to appear; to be revealed; to be made public
    D4||(figurative) to dump; to inundate the market
 W|w|出糗
  P||chu1qiu3
@@ -173699,7 +173699,7 @@ W|w|出門兒／出门儿
 W|w|出門子／出门子
  P||chu1men2zi5
   C noun
-   D1|#colloquial|(of a female) to get married; to marry
+   D1| #colloquial|(of a female) to get married; to marry
 W|w|出閣／出阁
  P||chu1ge2
   C verb
@@ -257854,7 +257854,7 @@ W|w|導水管／导水管
 W|w|導源／导源
  P||dao3yuan2
   C verb
-   D1|#figuratively|(of a river, or figuratively) to originate; to come from
+   D1| #figuratively|(of a river, or figuratively) to originate; to come from
 W|w|導演剪輯版／导演剪辑版
  P||dao3yan3 jian3ji2 ban3
   C noun
@@ -298270,7 +298270,7 @@ W|w|手動變速器／手动变速器
 W|w|手動／手动
  P||shou3dong4
   C adj
-   D1|#attributive|(of machines, cars) manual
+   D1| #attributive|(of machines, cars) manual
   C noun
    D2||hand movement
 W|w|手包
@@ -333436,7 +333436,7 @@ W|w|智障
   C noun
    D2||intellectual disability
    D3||one who is intellectually disabled;
-   D4|#derogatory|(in general) stupid person; idiot
+   D4| #derogatory|(in general) stupid person; idiot
 W|w|智駕／智驾
  P||zhi4jia4
   C noun
@@ -387433,7 +387433,7 @@ W|w|滑潤／滑润
 W|w|滑牙
  P||hua2ya2
   C verb
-   D1|#intransitive|(of a screw) to be stripped
+   D1| #intransitive|(of a screw) to be stripped
 W|w|滑石
  P||hua2shi2
   C noun
@@ -424008,7 +424008,7 @@ W|w|發源地／发源地
 W|w|發源／发源
  P||fa1yuan2
   C verb
-   D1|#figuratively|(of a river, or figuratively) to rise; to originate
+   D1| #figuratively|(of a river, or figuratively) to rise; to originate
 W|w|發漫／发漫
  P||fa1man4
   C noun
@@ -447311,8 +447311,8 @@ W|w|空穴
 W|w|空穴來風／空穴来风
  P||kong1xue2lai2feng1;kong1xue4lai2feng1
   C phrase
-   D1|- #literary #dated|(of a rumour) to be not completely unsound; to have a basis for its existence
-   D2|#in-modern-uses|(of a rumour) to be completely unsound; to be utterly baseless
+   D1|- #dated #literary|(of a rumour) to be not completely unsound; to have a basis for its existence
+   D2| #in-modern-uses|(of a rumour) to be completely unsound; to be utterly baseless
 W|w|空空如也
  P||kong1kong1ru2ye3
   C phrase
@@ -455453,7 +455453,7 @@ W|w|精氣神／精气神
  P||jing1qi4shen2
   C noun
    D1||(traditional Chinese medicine) essence, qi (energy) and spirit, the three energies of Chinese medicine
-   D2|#colloquial|(in general) vital energy; vigour; good shape; good health
+   D2| #colloquial|(in general) vital energy; vigour; good shape; good health
 W|w|精氨酸
  P||jing1an1suan1
   C noun
@@ -472913,7 +472913,7 @@ W|w|老屋基
 W|w|老川
  P||lao3chuan1
   C name
-   D1|x #American-post-1980s #neologism #endearing|Donald Trump
+   D1|x #American-post-1980s #endearing #neologism|Donald Trump
 W|w|老巢
  P||lao3chao2
   C noun
@@ -514427,7 +514427,7 @@ W|w|行政總廚／行政总厨
 W|w|行政總裁／行政总裁
  P||xing2zheng4 zong3cai2
   C noun
-   D1|Cx #chiefly-HongKong|(of a company) executive president; chief executive; CEO
+   D1|xC #chiefly-HongKong|(of a company) executive president; chief executive; CEO
 W|w|行政裁量權／行政裁量权
  P||xing2zheng4 cai2liang2 quan2
   C noun
@@ -536240,7 +536240,7 @@ W|w|賣臺／卖台
 W|w|賣萌／卖萌
  P||mai4meng2
   C verb-object
-   D1|#neologism|(typically of a young girl, cute animal, etc.) to act cute; to play innocent
+   D1| #neologism|(typically of a young girl, cute animal, etc.) to act cute; to play innocent
 W|w|賣藝／卖艺
  P||mai4yi4
   C verb
@@ -549606,7 +549606,7 @@ W|w|退色
 W|w|退行
  P||tui4xing2
   C verb
-   D1|#medicine #psychology|to regress; to retrogress; to retrograde; to degenerate
+   D1| #medicine #psychology|to regress; to retrogress; to retrograde; to degenerate
 W|w|退行性
  P||tui4xing2xing4
   C noun
@@ -605110,7 +605110,7 @@ W|w|高登
 W|w|高發／高发
  P||gao1fa1
   C verb
-   D1|#attributive|(of diseases, accidents, etc., often attributive) to occur frequently
+   D1| #attributive|(of diseases, accidents, etc., often attributive) to occur frequently
 W|w|高白岩
  P||Gao1bai2yan2
   C name

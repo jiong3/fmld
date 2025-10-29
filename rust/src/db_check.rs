@@ -196,9 +196,9 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
             .find_iter(&trad)
             .map(|mat| mat.as_str())
             .collect();
-        if trad_hanzi_only.len() == trad.len() {
-            let possible_erhuas = trad.chars().filter(|c| *c == '兒').count();
-            let num_trad_chars = trad.chars().count();
+        if trad_hanzi_only.len() == trad.len() || trad_hanzi_only.len() == trad.replace('，', "").len() {
+            let possible_erhuas = trad_hanzi_only.chars().filter(|c| *c == '兒').count();
+            let num_trad_chars = trad_hanzi_only.chars().count();
             let expected_syllables = (num_trad_chars - possible_erhuas)..=num_trad_chars;
             for pinyin_num in pinyin_nums {
                 if let Some(p_t) = &pinyin_tags {
@@ -206,6 +206,7 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
                         continue;
                     }
                 }
+
                 let num_pinyin_syllables = pinyin::count_syllables(&pinyin_num);
                 if !expected_syllables.contains(&num_pinyin_syllables) {
                     errors.push(format!("Validation Error: pinyin syllables don't match number of characters, traditional: {trad} pinyin: {pinyin_num}"));

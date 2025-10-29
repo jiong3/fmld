@@ -119264,7 +119264,7 @@ W|w|一不小心
   C verb
    D2||to be careless; to have a moment of inattention
 W|w|一不怕苦，二不怕死
- P||yi1 bu4pa4 ku3;er4 bu4pa4 si3
+ P||yi1 bu4pa4 ku3, er4 bu4pa4 si3
   C phrase
    D1|#officialese|to fear neither hardship nor death
 W|w|一世
@@ -119318,7 +119318,7 @@ W|w|一二·九運動／一二·九运动
   C name
    D1||December 9th Movement
 W|w|一二三四五，上山打老虎
- P||yi1 er4 san1 si4 wu3;shang4shan1 da3 lao3hu3
+ P||yi1 er4 san1 si4 wu3, shang4shan1 da3 lao3hu3
   C phrase
    D1||(children's counting-out game) eeny, meeny, miny, moe
 W|w|一二三自由日
@@ -119342,7 +119342,7 @@ W|w|一人
    D3||a person; one person; someone
    D4|x #historical|emperor
 W|w|一人之下，萬人之上／一人之下，万人之上
- P||yi1ren2 zhi1 xia4;wan4ren2 zhi1 shang4
+ P||yi1ren2 zhi1 xia4, wan4ren2 zhi1 shang4
   C phrase
    D1||to occupy a lofty position, second only to the emperor
 W|w|一人做事一人當／一人做事一人当
@@ -119350,7 +119350,7 @@ W|w|一人做事一人當／一人做事一人当
   C phrase
    D1||one should bear sole responsibility for one's own actions
 W|w|一人得道，雞犬升天／一人得道，鸡犬升天
- P||yi1ren2 de2dao4;ji1quan3 sheng1tian1
+ P||yi1ren2 de2dao4, ji1quan3 sheng1tian1
   C proverb
    D1||once a person gains power and influence (as an official), everyone associated with them also benefits
 W|w|一人樂隊／一人乐队
@@ -119408,11 +119408,11 @@ W|w|一何
   C adv
    D1|- #Classical|how; what; so; such
 W|w|一佛出世，二佛涅槃
- P||yi1fo2chu1shi4;er4fo2nie4pan2
+ P||yi1fo2chu1shi4, er4fo2nie4pan2
   C phrase
    D1|#figurative #humorous|to be (beaten to) within an inch of one's life; to feel extremely painful
 W|w|一佛出世，二佛生天
- P||yi1 fo2 chu1shi4 er4 fo2 sheng1 tian1 tian1
+ P||yi1 fo2 chu1shi4, er4 fo2 sheng1 tian1
   C phrase
    D1||Synonym of 一佛出世，二佛涅槃 (yīfóchūshì, èrfónièpán)
 W|w|一來……二來……／一来……二来……
@@ -119523,7 +119523,7 @@ W|w|一元化
   C verb
    D1||to unify; to centralize
 W|w|一元復始，萬象更新／一元复始，万象更新
- P||yi1yuan2fu4shi3;wan4xiang4geng1xin1
+ P||yi1yuan2fu4shi3, wan4xiang4geng1xin1
   C proverb
    D1||at the beginning of the New Year, everything takes on a new look
 W|w|一元復始／一元复始
@@ -119563,7 +119563,7 @@ W|w|一分熟
   C adj
    D1||(of cooking) rare
 W|w|一分耕耘，一分收穫／一分耕耘，一分收获
- P||yi1 fen1 geng1yun2;yi1 fen1 shou1huo4
+ P||yi1 fen1 geng1yun2, yi1 fen1 shou1huo4
   C proverb
    D1||One gets out what one puts in; The reward one reaps is proportional to the effort one puts in
 W|w|一分錢一分貨／一分钱一分货
@@ -119705,7 +119705,7 @@ W|w|一命
   C noun
    D1||life
 W|w|一命二運三風水，四積陰德五讀書／一命二运三风水，四积阴德五读书
- P||yi1 ming4 er4 yun4 san1 feng1shui3;si4 ji1 yin1de2 wu3 du2shu1
+ P||yi1 ming4 er4 yun4 san1 feng1shui3, si4 ji1 yin1de2 wu3 du2shu1
   C proverb
    D1||the main factors determining one's life are, in decreasing order of importance, destiny, luck, feng shui, doing good deeds and education
 W|w|一命二運三風水／一命二运三风水
@@ -119775,7 +119775,7 @@ W|w|一回事
    D2|#emphatic|(when used sequentially) ... (is) one thing, (but) ... (is) another
    D3||something important; an important matter
 W|w|一回生，二回熟
- P||yi1 hui2 sheng1;er4 hui2 shu2;er4 hui2 shou2
+ P||yi1 hui2 sheng1, er4 hui2 shu2;yi1 hui2 sheng1, er4 hui2 shou2
   C phrase
    D1||first time strangers, second time friends; to soon get to know each other
    D2||first time awkward, second time skillful; difficult at first, easy later on
@@ -119932,7 +119932,7 @@ W|w|一失足成千古恨
   C phrase
    D1||a single slip may cause lasting sorrow; the error of a moment becomes the regret of a lifetime
 W|w|一失足成千古恨，再回頭已百年身／一失足成千古恨，再回头已百年身
- P||yi1 shi1zu2 cheng2 qian1gu3 hen4;zai4 hui2tou2 yi3 bai3nian2 shen1
+ P||yi1 shi1zu2 cheng2 qian1gu3 hen4, zai4 hui2tou2 yi3 bai3nian2 shen1
   C phrase
    D1||Synonym of 一失足成千古恨 (yī shīzú chéng qiāngǔ hèn)
 W|w|一失足成千古風流人物／一失足成千古风流人物
@@ -119944,11 +119944,11 @@ W|w|一妻多夫
   C noun
    D1||polyandry (plurality of husbands at the same time)
 W|w|一子失著，滿盤皆輸／一子失着，满盘皆输
- P||yi1 zi3 shi1zhao1;man3pan2 jie1 shu1
+ P||yi1 zi3 shi1zhao1, man3pan2 jie1 shu1
   C proverb
    D1||Synonym of 一著不慎，滿盤皆輸／一着不慎，满盘皆输 (“one careless move and the whole game is lost”)
 W|w|一子錯，滿盤皆落索／一子错，满盘皆落索
- P||yi1zi3cuo4;man3pan2jie1luo4suo3
+ P||yi1zi3cuo4, man3pan2jie1luo4suo3
   C proverb
    D1||Synonym of 一著不慎，滿盤皆輸／一着不慎，满盘皆输 (“one careless move and the whole game is lost”)
 W|w|一孔之見／一孔之见
@@ -120090,7 +120090,7 @@ W|w|一審／一审
    D1|#law|Short for 第一審／第一审 (“first trial; first instance”).
    D2||preliminary appraisal (e.g. of a manuscript)
 W|w|一寸光陰一寸金，寸金難買寸光陰／一寸光阴一寸金，寸金难买寸光阴
- P||yi1 cun4 guang1yin1 yi1 cun4 jin1;cun4 jin1 nan2 mai3 cun4 guang1yin1
+ P||yi1 cun4 guang1yin1 yi1 cun4 jin1, cun4 jin1 nan2 mai3 cun4 guang1yin1
   C proverb
    D1||time is priceless; money cannot buy you time
 W|w|一將功成萬骨枯／一将功成万骨枯
@@ -120198,7 +120198,7 @@ W|w|一年一度
   C phrase
    D1||once a year; annually
 W|w|一年之計在於春，一日之計在於晨／一年之计在于春，一日之计在于晨
- P||yi1 nian2 zhi1 ji4 zai4yu2 chun1;yi1 ri4 zhi1 ji4 zai4yu2 chen2
+ P||yi1 nian2 zhi1 ji4 zai4yu2 chun1, yi1 ri4 zhi1 ji4 zai4yu2 chen2
   C proverb
    D1|#literally|The whole year's planning lies in the spring, and the whole day's planning lies in the morning
    D2||early planning is the key to success
@@ -120355,7 +120355,7 @@ W|w|一手一腳／一手一脚
   C phrase
    D1||alone; single-handedly
 W|w|一手交錢，一手交貨／一手交钱，一手交货
- P||yi1shou3 jiao1 qian2;yi1shou3 jiao1 huo4
+ P||yi1shou3 jiao1 qian2, yi1shou3 jiao1 huo4
   C phrase
    D1||do things in a simple and direct manner
 W|w|一手兒／一手儿
@@ -120423,7 +120423,7 @@ W|w|一拍即合
   C phrase
    D1||(of two parties) to hit it off immediately; things fit together at one go
 W|w|一指蔽目，不見泰山／一指蔽目，不见泰山
- P||yi1 zhi3 bi4 mu4;bu4 jian4 Tai4shan1
+ P||yi1 zhi3 bi4 mu4, bu4 jian4 Tai4shan1
   C phrase
    D1||Synonym of 一葉障目，不見泰山／一叶障目，不见泰山 (yī yè zhàng mù, bù jiàn Tàishān)
 W|w|一掃而光／一扫而光
@@ -120455,7 +120455,7 @@ W|w|一揮而就／一挥而就
   C phrase
    D1||a flourish of the pen and it's done; to finish a piece of writing or a painting at one go
 W|w|一損俱損，一榮俱榮／一损俱损，一荣俱荣
- P||yi1sun3ju4sun3;yi1rong2ju4rong2
+ P||yi1sun3ju4sun3, yi1rong2ju4rong2
   C phrase
    D1||to be closely connected such that when one suffers damage, everyone suffers damage, and when one prospers, everyone prospers
 W|w|一擁而入／一拥而入
@@ -120498,7 +120498,7 @@ W|w|一方
    D2||one side; one aspect; one party
    D3||one area; one region
 W|w|一方有難，八方支援／一方有难，八方支援
- P||yi1fang1 you3 nan4;ba1fang1 zhi1yuan2
+ P||yi1fang1 you3 nan4, ba1fang1 zhi1yuan2
   C phrase
    D1||When one place is struck by disaster, assistance comes from all places.
 W|w|一方水土養一方人／一方水土养一方人
@@ -120521,7 +120521,7 @@ W|w|一日
    D3|- #literary|yesterday
    D4|x #Teochew|daytime; day
 W|w|一日一蘋果，醫生遠離我／一日一苹果，医生远离我
- P||yi1ri4 yi1 ping2guo3;yi1sheng1 yuan3li2 wo3
+ P||yi1ri4 yi1 ping2guo3, yi1sheng1 yuan3li2 wo3
   C proverb
    D1||an apple a day keeps the doctor away
 W|w|一日三秋
@@ -120529,7 +120529,7 @@ W|w|一日三秋
   C phrase
    D1||A single day apart seems like three years.
 W|w|一日不見，如隔三秋／一日不见，如隔三秋
- P||yi1ri4bu4jian4;ru2ge2san1qiu1
+ P||yi1ri4bu4jian4, ru2ge2san1qiu1
   C phrase
    D1||a single day apart seems like three years
 W|w|一日之計在於晨／一日之计在于晨
@@ -120541,7 +120541,7 @@ W|w|一日千里
   C phrase
    D1||to make tremendous progress
 W|w|一日為師，終身為父／一日为师，终身为父
- P||yi1ri4 wei2 shi1;zhong1shen1 wei2 fu4
+ P||yi1ri4 wei2 shi1, zhong1shen1 wei2 fu4
   C proverb
    D1||Even if someone is your teacher for only a day, you should regard him like your father for the rest of your life.
 W|w|一早
@@ -120661,7 +120661,7 @@ W|w|一朝被蛇咬，十年怕井繩／一朝被蛇咬，十年怕井绳
   C proverb
    D1||Synonym of 一朝被蛇咬，十年怕草繩／一朝被蛇咬，十年怕草绳 (yīzhāo bèi shé yǎo, shínián pà cǎoshéng)
 W|w|一朝被蛇咬，十年怕草繩／一朝被蛇咬，十年怕草绳
- P||yi1zhao1 bei4 she2 yao3;shi2nian2 pa4 cao3sheng2
+ P||yi1zhao1 bei4 she2 yao3, shi2nian2 pa4 cao3sheng2
   C proverb
    D1||once bitten, twice shy.
 W|w|一期
@@ -120738,7 +120738,7 @@ W|w|一條龍／一条龙
    D2|#figurative|a long and continuous line; a long queue
    D3|#figurative|a coordinated process
 W|w|一榮俱榮，一損俱損／一荣俱荣，一损俱损
- P||yi1rong2ju4rong2;yi1sun3ju4sun3
+ P||yi1rong2ju4rong2, yi1sun3ju4sun3
   C phrase
    D1||Synonym of 一損俱損，一榮俱榮／一损俱损，一荣俱荣 (yīsǔnjùsǔn, yīróngjùróng)
 W|w|一槍斃敵／一枪毙敌
@@ -121023,7 +121023,7 @@ W|w|一物降一物
   C phrase
    D1||there is always one thing to conquer another; everything has its vanquisher
 W|w|一理通，百理明
- P||yi1li3tong1;bai3li3ming2
+ P||yi1li3tong1, bai3li3ming2
   C phrase
    D1||grasp this one thing and you'll grasp everything
 W|w|一環扣一環／一环扣一环
@@ -121239,7 +121239,7 @@ W|w|一等
   C adj
    D1|#attributive|first-class; first-rate; top; the best
 W|w|一等洋人二等官，三等少民四等漢／一等洋人二等官，三等少民四等汉
- P||yi1deng3 yang2ren2 er4deng3 guan1;san1deng3 shao3min2 si4deng3 Han4
+ P||yi1deng3 yang2ren2 er4deng3 guan1, san1deng3 shao3min2 si4deng3 Han4
   C phrase
    D1||In Communist China, foreigners enjoy the highest status and the best treatment, followed by government officials, then by ethnic minorities and lastly by Han Chinese (which enjoy the lowest status and worst treatment).
 W|w|一等獎／一等奖
@@ -121264,7 +121264,7 @@ W|w|一簇
   C noun
    D1||a bunch of; a batch of
 W|w|一粒老鼠屎，壞了一鍋粥／一粒老鼠屎，坏了一锅粥
- P||yi1 li4 lao3shu3shi3;huai4 le5 yi1 guo1 zhou1
+ P||yi1 li4 lao3shu3shi3, huai4 le5 yi1 guo1 zhou1
   C phrase
    D1||One bad apple spoils the whole bunch. / One ill weed mars a whole pot of porridge.
 W|w|一紙空文／一纸空文
@@ -121501,11 +121501,11 @@ W|w|一葉知秋／一叶知秋
   C phrase
    D1||a small sign can indicate a great trend
 W|w|一葉蔽目，不見泰山／一叶蔽目，不见泰山
- P||yi1 ye4 bi4 mu4;bu4 jian4 Tai4shan1
+ P||yi1 ye4 bi4 mu4, bu4 jian4 Tai4shan1
   C phrase
    D1||Synonym of 一葉障目，不見泰山／一叶障目，不见泰山 (yī yè zhàng mù, bù jiàn Tàishān)
 W|w|一葉障目，不見泰山／一叶障目，不见泰山
- P||yi1 ye4 zhang4 mu4;bu4 jian4 Tai4shan1
+ P||yi1 ye4 zhang4 mu4, bu4 jian4 Tai4shan1
   C phrase
    D1||to have one's view of the important overshadowed by the trivial
 W|w|一葉障目／一叶障目
@@ -121518,15 +121518,15 @@ W|w|一葉／一叶
    D1||a (single) leaf
    D2|#figurative|a small boat
 W|w|一著不慎，全盤皆輸／一着不慎，全盘皆输
- P||yi1zhao1 bu4shen4;quan2pan2 jie1 shu1;yi1zhuo2 bu4shen4
+ P||yi1zhao1 bu4shen4, quan2pan2 jie1 shu1;yi1zhuo2 bu4shen4, quan2pan2 jie1 shu1
   C proverb
    D1||Synonym of 一著不慎，滿盤皆輸／一着不慎，满盘皆输 (“one careless move and the whole game is lost”)
 W|w|一著不慎，滿盤皆輸／一着不慎，满盘皆输
- P||yi1zhao1 bu4shen4;man3pan2 jie1 shu1;yi1zhuo2 bu4shen4
+ P||yi1zhao1 bu4shen4, man3pan2 jie1 shu1;yi1zhuo2 bu4shen4, man3pan2 jie1 shu1
   C proverb
    D1||one careless move and the whole game is lost
 W|w|一著錯，滿盤俱是空／一着错，满盘俱是空
- P||yi1zhao1 cuo4;man3pan2 ju4 shi4 kong1;yi1zhuo2 cuo4
+ P||yi1zhao1 cuo4, man3pan2 ju4 shi4 kong1;yi1zhuo2 cuo4, man3pan2 ju4 shi4 kong1
   C proverb
    D1||Synonym of 一著不慎，滿盤皆輸／一着不慎，满盘皆输 (“one careless move and the whole game is lost”)
 W|w|一著／一着
@@ -121669,7 +121669,7 @@ W|w|一言堂
    D1||authoritarian decision making (in which one person decides the matter arbitrarily)
    D2|x #archaic|no bargaining; fixed price
 W|w|一言既出，駟馬難追／一言既出，驷马难追
- P||yi1yan2ji4chu1;si4ma3nan2zhui1
+ P||yi1yan2ji4chu1, si4ma3nan2zhui1
   C phrase
    D1||A word once spoken cannot be taken back; A promise must be kept
 W|w|一言立信
@@ -122013,7 +122013,7 @@ W|w|一風吹／一风吹
   C verb
    D1||to dismiss (charges, etc.) altogether; to cancel the whole thing
 W|w|一飲一啄，莫非前定／一饮一啄，莫非前定
- P||yi1yin3yi1zhuo2;mo4fei1qian2ding4
+ P||yi1yin3yi1zhuo2, mo4fei1qian2ding4
   C proverb
    D1||From every single drink to every single bite, there is nothing that is not preordained.
 W|w|一飲而盡／一饮而尽
@@ -122511,7 +122511,7 @@ W|w|七十子
   C noun
    D1||Synonym of 七十二子 (qīshí'èr zǐ)
 W|w|七十瓦上霜，八十不稀奇
- P||qi1shi2 wa3 shang4 shuang1;ba1shi2 bu4 xi1qi2
+ P||qi1shi2 wa3 shang4 shuang1, ba1shi2 bu4 xi1qi2
   C phrase
    D1||despite signs of aging, there's still life left to live
 W|w|七厘散
@@ -123081,7 +123081,7 @@ W|w|三人行
    D1|#literally|three people walking together
    D2|#figurative #slang|threesome
 W|w|三人行，必有我師／三人行，必有我师
- P||san1ren2xing2;bi4 you3 wo3 shi1
+ P||san1ren2xing2, bi4 you3 wo3 shi1
   C proverb
    D1||there is always someone that one can learn from among a group of people
 W|w|三代
@@ -123130,11 +123130,11 @@ W|w|三個女人一臺戲／三个女人一台戏
   C proverb
    D1||when women get together they are bound to start chatting and cause a scene
 W|w|三個臭皮匠，勝過一個諸葛亮／三个臭皮匠，胜过一个诸葛亮
- P||san1 ge5 chou4pi2jiang4;sheng4guo4 yi1ge5 Zhu1ge3 Liang4;sheng4guo4 yi1ge5 Zhu1ge2 Liang4
+ P||san1 ge5 chou4pi2jiang4, sheng4guo4 yi1ge5 Zhu1ge3 Liang4;san1 ge5 chou4pi2jiang4, sheng4guo4 yi1ge5 Zhu1ge2 Liang4
   C proverb
    D1||Synonym of 三個臭皮匠，勝過諸葛亮／三个臭皮匠，胜过诸葛亮 (sān ge chòupíjiàng, shèngguò Zhūgě Liàng)
 W|w|三個臭皮匠，勝過諸葛亮／三个臭皮匠，胜过诸葛亮
- P||san1 ge5 chou4pi2jiang4;sheng4guo4 Zhu1ge3 Liang4;sheng4guo4 Zhu1ge2 Liang4
+ P||san1 ge5 chou4pi2jiang4, sheng4guo4 Zhu1ge3 Liang4;san1 ge5 chou4pi2jiang4, sheng4guo4 Zhu1ge2 Liang4
   C proverb
    D1||two heads are better than one
 W|w|三停
@@ -123335,7 +123335,7 @@ W|w|三十六天罡
    D1|#Taoism|the 36 heavenly spirits
    D2||the 36 Heavenly Spirits from The Water Margin
 W|w|三十六計，走為上計／三十六计，走为上计
- P||san1shi2liu4ji4;zou3wei2shang4ji4
+ P||san1shi2liu4ji4, zou3wei2shang4ji4
   C proverb
    D1||If all else fails, retreat; Fleeing is the best stratagem (of the Thirty-Six Stratagems).
 W|w|三十六計／三十六计
@@ -123351,7 +123351,7 @@ W|w|三十年戰爭／三十年战争
   C name
    D1||Thirty Years' War
 W|w|三十年河東，三十年河西／三十年河东，三十年河西
- P||san1shi2 nian2 he2 dong1;san1shi2 nian2 he2 xi1
+ P||san1shi2 nian2 he2 dong1, san1shi2 nian2 he2 xi1
   C proverb
    D1||prosperity and decline never last; everything in life is cyclical; life has its ups and downs
 W|w|三十而立
@@ -123572,7 +123572,7 @@ W|w|三大球
   C noun
    D1|C #sports|soccer, basketball and volleyball (three ball sports that use big balls)
 W|w|三天不打，上房揭瓦
- P||san1tian1bu4da3;shang4fang2jie1wa3
+ P||san1tian1bu4da3, shang4fang2jie1wa3
   C proverb
    D1||spare the rod and spoil the child
 W|w|三天打魚，兩天曬網／三天打鱼，两天晒网
@@ -123895,7 +123895,7 @@ W|w|三族
   C noun
    D1|- #literary|three generations (parents, siblings, and children)
 W|w|三日不讀書，面目可憎／三日不读书，面目可憎
- P||san1 ri4 bu4 du2shu1;mian4mu4ke3zeng1
+ P||san1 ri4 bu4 du2shu1, mian4mu4ke3zeng1
   C proverb
    D1||If you are not diligent in your studies, you will remain ignorant, and nobody will be attracted to you.
 W|w|三日打魚，兩日曬網／三日打鱼，两日晒网
@@ -124379,7 +124379,7 @@ W|w|三百
    D1||Used other than figuratively or idiomatically: see 三, 百.
    D2||Short for 三百篇 (Sānbǎipiān).
 W|w|三百六十行，行行出狀元／三百六十行，行行出状元
- P||san1bai3 liu4shi2 hang2;hang2hang2 chu1 zhuang4yuan2
+ P||san1bai3 liu4shi2 hang2, hang2hang2 chu1 zhuang4yuan2
   C proverb
    D1||One can become successful with accomplishment in any industry or profession
 W|w|三百篇
@@ -124905,15 +124905,15 @@ W|w|三身
   C noun
    D1|#Buddhism|Trikaya
 W|w|三軍可奪帥，匹夫不可奪志／三军可夺帅，匹夫不可夺志
- P||san1jun1 ke3 duo2 shuai4;pi3fu1 bu4ke3 duo2zhi4
+ P||san1jun1 ke3 duo2 shuai4, pi3fu1 bu4ke3 duo2zhi4
   C phrase
    D1||One's will and aspirations will remain persistent and not waver
 W|w|三軍未動，糧草先行／三军未动，粮草先行
- P||san1jun1wei4dong4;liang2cao3xian1xing2
+ P||san1jun1wei4dong4, liang2cao3xian1xing2
   C proverb
    D1||Synonym of 三軍未發，糧草先行／三军未发，粮草先行 (sānjūnwèifā, liángcǎoxiānxíng)
 W|w|三軍未發，糧草先行／三军未发，粮草先行
- P||san1jun1wei4fa1;liang2cao3xian1xing2
+ P||san1jun1wei4fa1, liang2cao3xian1xing2
   C proverb
    D1|#figuratively|one has to make preparations being doing something
 W|w|三軍／三军
@@ -124993,7 +124993,7 @@ W|w|三里
    D1||(～鎮) Sanli (a town in Lantian, Xi'an, Shaanxi, China)
    D2||(～鄉) Sanli (a township in Jianshi, Enshi prefecture, Hubei, China)
 W|w|三里不同調，十里不同音／三里不同调，十里不同音
- P||san1 li3 bu4tong2 diao4;shi2 li3 bu4tong2 yin1
+ P||san1 li3 bu4tong2 diao4, shi2 li3 bu4tong2 yin1
   C proverb
    D1||Describes the linguistic diversity of Fujian province.
 W|w|三里屯
@@ -125234,7 +125234,7 @@ W|w|上不去
   C verb
    D1||to not be able to ascend; to not be able to go up
 W|w|上不著天，下不著地／上不着天，下不着地
- P||shang4bu4zhao2tian1;xia4bu4zhao2di4
+ P||shang4bu4zhao2tian1, xia4bu4zhao2di4
   C phrase
    D1||to be suspended in midair
 W|w|上世
@@ -125665,7 +125665,7 @@ W|w|上天堂
    D1||to go to Heaven
    D2|#euphemistic|to die
 W|w|上天無路，入地無門／上天无路，入地无门
- P||shang4tian1wu2lu4;ru4di4wu2men2
+ P||shang4tian1wu2lu4, ru4di4wu2men2
   C phrase
    D1||no way of escape; in desperate straits; in a desperate situation; at the end of the line
 W|w|上天草
@@ -126041,11 +126041,11 @@ W|w|上月
    D1||last month
    D2|x #archaic|moon in the sky above
 W|w|上有天堂，下有蘇杭／上有天堂，下有苏杭
- P||shang4 you3 tian1tang2;xia4 you3 Su1hang2
+ P||shang4 you3 tian1tang2, xia4 you3 Su1hang2
   C proverb
    D1||There is heaven above, and there are Suzhou and Hangzhou below. This phrase praises the virtues of these two cities in Jiangsu and Zhejiang province, respectively.
 W|w|上有政策，下有對策／上有政策，下有对策
- P||shang4 you3 zheng4ce4;xia4 you3 dui4ce4
+ P||shang4 you3 zheng4ce4, xia4 you3 dui4ce4
   C phrase
    D1||Those above have policies while those below have their own ways of getting around them.
 W|w|上有老下有小
@@ -126381,7 +126381,7 @@ W|w|上知
   C noun
    D1||man of extraordinary intellect; sage with high degree of wisdom
 W|w|上知天文，下知地理
- P||shang4 zhi1 tian1wen2;xia4 zhi1 di4li3
+ P||shang4 zhi1 tian1wen2, xia4 zhi1 di4li3
   C phrase
    D1||describes someone who is very learned; a polymath
 W|w|上磺
@@ -128308,7 +128308,7 @@ W|w|不以成敗論英雄／不以成败论英雄
   C proverb
    D1||A person should not be deemed a hero merely on the basis of the success or failure of their endeavors.
 W|w|不以為恥，反以為榮／不以为耻，反以为荣
- P||bu4yi3wei2chi3;fan3yi3wei2rong2
+ P||bu4yi3wei2chi3, fan3yi3wei2rong2
   C phrase
    D1|#derogatory|to be proud of something shameful instead of being ashamed
 W|w|不以為恥／不以为耻
@@ -128316,7 +128316,7 @@ W|w|不以為恥／不以为耻
   C phrase
    D1||to not feel ashamed
 W|w|不以物喜，不以己悲
- P||bu4yi3wu4xi3;bu4yi3ji3bei1
+ P||bu4yi3wu4xi3, bu4yi3ji3bei1
   C phrase
    D1||to not be emotionally affected by external objects and one's experiences
 W|w|不任
@@ -128483,7 +128483,7 @@ W|w|不克
    D1|- #literary|cannot; to not be able
    D2|- #literary|to be unable to prevail
 W|w|不入虎穴，焉得虎子
- P||bu4 ru4 hu3xue2;yan1 de2 hu3zi3;bu4 ru4 hu3xue4
+ P||bu4 ru4 hu3xue2, yan1 de2 hu3zi3;bu4 ru4 hu3xue4, yan1 de2 hu3zi3
   C proverb
    D1|#rhetorical-question|No pain, no gain; no risk, no reward; nothing ventured, nothing gained.
 W|w|不全
@@ -128794,7 +128794,7 @@ W|w|不可望其項背／不可望其项背
   C phrase
    D1||not in the same class; cannot or not be fit to hold a candle to somebody; incomparable
 W|w|不可無一，不可有二／不可无一，不可有二
- P||bu4ke3 wu2 yi1;bu4ke3 you3 er4
+ P||bu4ke3 wu2 yi1, bu4ke3 you3 er4
   C phrase
    D1||(this person) is irreplaceable, no one can replace him
 W|w|不可當／不可当
@@ -129050,7 +129050,7 @@ W|w|不堪回首
   C phrase
    D1||cannot bear to look back on; to find it unbearable to recall
 W|w|不塞不流，不止不行
- P||bu4se4bu4liu2;bu4zhi3bu4xing2
+ P||bu4se4bu4liu2, bu4zhi3bu4xing2
   C proverb
    D1||There is no flowing without damming and no motion without rest.
 W|w|不外
@@ -129127,7 +129127,7 @@ W|w|不好不壞／不好不坏
   C adv
    D1||so-so; neither good nor bad
 W|w|不如意事，十常八九
- P||bu4 ru2yi4 shi4;shi2 chang2 ba1 jiu3
+ P||bu4 ru2yi4 shi4, shi2 chang2 ba1 jiu3
   C phrase
    D1||things are constantly going wrong
 W|w|不妙
@@ -129147,7 +129147,7 @@ W|w|不孕症
   C noun
    D1||infertility
 W|w|不孝有三，無後為大／不孝有三，无后为大
- P||bu4xiao4 you3 san1;wu2 hou4 wei2 da4
+ P||bu4xiao4 you3 san1, wu2 hou4 wei2 da4
   C proverb
    D1||There are three ways to be unfilial; the worst is to not produce offspring.
 W|w|不學無術／不学无术
@@ -129475,19 +129475,19 @@ W|w|不怕
   C verb
    D2||to not fear; to be fearless; to be not afraid
 W|w|不怕一萬，就怕萬一／不怕一万，就怕万一
- P||bu4pa4 yi1wan4;jiu4 pa4 wan4yi1
+ P||bu4pa4 yi1wan4, jiu4 pa4 wan4yi1
   C proverb
    D1||one should be prepared for unexpected situations
 W|w|不怕不識貨，只怕貨比貨／不怕不识货，只怕货比货
- P||bu4pa4bu4shi2huo4;zhi3pa4huo4bi3huo4;bu4pa4bu4shi4huo4
+ P||bu4pa4bu4shi2huo4, zhi3pa4huo4bi3huo4;bu4pa4bu4shi4huo4, zhi3pa4huo4bi3huo4
   C noun
    D1||Don't worry about not recognizing quality. Comparison will determine which is better. The true value of a person or good can only be determined through comparison.
 W|w|不怕不識貨，就怕貨比貨／不怕不识货，就怕货比货
- P||bu4pa4bu4shi2huo4;jiu4pa4huo4bi3huo4;bu4pa4bu4shi4huo4
+ P||bu4pa4bu4shi2huo4, jiu4pa4huo4bi3huo4;bu4pa4bu4shi4huo4, jiu4pa4huo4bi3huo4
   C noun
    D1||Don't worry about not recognizing quality. Comparison will determine which is better. The true value of a person or good can only be determined through comparison.
 W|w|不怕官，只怕管
- P||bu4pa4 guan1;zhi3 pa4 guan3
+ P||bu4pa4 guan1, zhi3 pa4 guan3
   C noun
    D1||The person in direct control, however low in position, is the one to be reckoned with.
 W|w|不怕慢，只怕站
@@ -129884,7 +129884,7 @@ W|w|不是……而是……
   C conj
    D1||not ... but ...
 W|w|不是一家人，不進一家門／不是一家人，不进一家门
- P||bu4shi4 yi1 jia1 ren2;bu4 jin4 yi1 jia1 men2
+ P||bu4shi4 yi1 jia1 ren2, bu4 jin4 yi1 jia1 men2
   C proverb
    D1||If a bride were not meant to marry into a family, fate would not bring her in the door.
 W|w|不是冤家不聚頭／不是冤家不聚头
@@ -130029,7 +130029,7 @@ W|w|不死鳥／不死鸟
   C noun
    D1|#figurative #literal|phoenix
 W|w|不比不知道，一比嚇一跳／不比不知道，一比吓一跳
- P||bu4bi3bu4zhi1dao4;yi1bi3xia4yi1tiao4
+ P||bu4bi3bu4zhi1dao4, yi1bi3xia4yi1tiao4
   C phrase
    D1||Without comparisons one is ignorant, but once one does, one gets a shock.
 W|w|不毛
@@ -130047,7 +130047,7 @@ W|w|不求人
    D3|#mahjong|
     D2|#TCM|dancing crane cobra lily (Arisaema heterophyllum)
 W|w|不求有功，但求無過／不求有功，但求无过
- P||bu4qiu2 you3gong1;dan4qiu2 wu2guo4
+ P||bu4qiu2 you3gong1, dan4qiu2 wu2guo4
   C phrase
    D1||(somebody who) does not try to accomplish anything, but rather avoids doing things that would end up in his making a mistake and getting yelled at by others; color inside the lines; a complacent attitude
 W|w|不求甚解
@@ -130362,7 +130362,7 @@ W|w|不知所終／不知所终
   C phrase
    D1||to not know what has become of someone; to not know someone's whereabouts; to not know what happened to someone
 W|w|不知有漢，何論魏晉／不知有汉，何论魏晋
- P||bu4zhi1 you3 Han4;he2 lun4 Wei4 Jin4
+ P||bu4zhi1 you3 Han4, he2 lun4 Wei4 Jin4
   C phrase
    D1||to be blissfully unaware of the surrounding world
 W|w|不知死活
@@ -130594,11 +130594,11 @@ W|w|不聲不響／不声不响
   C phrase
    D1||quiet; silent; without speaking; taciturn
 W|w|不聽不聽，王八念經／不听不听，王八念经
- P||bu4 ting1 bu4 ting1;wang2ba5 nian4jing1;wang2ba1 nian4jing1
+ P||bu4 ting1 bu4 ting1, wang2ba5 nian4jing1;bu4 ting1 bu4 ting1, wang2ba1 nian4jing1
   C intj
    D1|#slang|An interjection used when making oneself ignore someone else's words.
 W|w|不聽老人言，吃虧在眼前／不听老人言，吃亏在眼前
- P||bu4ting1 lao3ren2 yan2;chi1kui1 zai4 yan3qian2
+ P||bu4ting1 lao3ren2 yan2, chi1kui1 zai4 yan3qian2
   C proverb
    D1||ignore your elders at your peril
 W|w|不肖子
@@ -131338,7 +131338,7 @@ W|w|不高興／不高兴
    D1||unhappy
    D2||dissatisfied
 W|w|不鳴則已，一鳴驚人／不鸣则已，一鸣惊人
- P||bu4 ming2 ze2 yi3;yi1ming2jing1ren2
+ P||bu4 ming2 ze2 yi3, yi1ming2jing1ren2
   C phrase
    D1||to amaze the world with a single brilliant feat; to become famous overnight; to set the world on fire; a bolt from the blue
 W|w|不點／不点
@@ -137967,11 +137967,11 @@ W|w|事不過三／事不过三
   C phrase
    D1||There will not be a fourth time. / One should not make the same action or mistake more than three times.
 W|w|事不關己，己不勞心／事不关己，己不劳心
- P||shi4bu4guan1ji3;ji3bu4lao2xin1
+ P||shi4bu4guan1ji3, ji3bu4lao2xin1
   C phrase
    D1||if the matter does not concern oneself, one should not worry about it; never mind others' business
 W|w|事不關己，高高掛起／事不关己，高高挂起
- P||shi4bu4guan1ji3;gao1gao1 gua4qi3
+ P||shi4bu4guan1ji3, gao1gao1 gua4qi3
   C phrase
    D1||to let things drift if they do not affect one personally
 W|w|事不關己／事不关己
@@ -142652,7 +142652,7 @@ W|w|人亡政息
   C phrase
    D1||a person in power dies or leaves office and his or her policies are abandoned
 W|w|人人為我，我為人人／人人为我，我为人人
- P||ren2ren2 wei4 wo3;wo3 wei4 ren2ren2
+ P||ren2ren2 wei4 wo3, wo3 wei4 ren2ren2
   C phrase
    D1||one for all, all for one
 W|w|人人自危
@@ -142863,7 +142863,7 @@ W|w|人在做，天在看
   C proverb
    D1||the heavens are looking when humans act; be careful of how you act
 W|w|人在屋檐下，不得不低頭／人在屋檐下，不得不低头
- P||ren2 zai4 wu1yan2 xia4;bu4de2bu4 di1tou2
+ P||ren2 zai4 wu1yan2 xia4, bu4de2bu4 di1tou2
   C proverb
    D1||One often has to concede when he or she is in a disadvantaged position
 W|w|人地
@@ -143145,7 +143145,7 @@ W|w|人心隔肚皮
   C proverb
    D1||someone else's heart is difficult to know
 W|w|人心齊，泰山移／人心齐，泰山移
- P||ren2xin1 qi2;Tai4shan1 yi2
+ P||ren2xin1 qi2, Tai4shan1 yi2
   C proverb
    D1||When people are united in their determination, they can work miracles
 W|w|人必自侮然後人侮之／人必自侮然后人侮之
@@ -143472,7 +143472,7 @@ W|w|人潮
   C noun
    D1||tide of people; stream of people; flood of people; huge crowd
 W|w|人為刀俎，我為魚肉／人为刀俎，我为鱼肉
- P||ren2 wei2 dao1zu3;wo3 wei2 yu2rou4
+ P||ren2 wei2 dao1zu3, wo3 wei2 yu2rou4
   C phrase
    D1|#figuratively|to be at somebody's mercy
 W|w|人為財死，鳥為食亡／人为财死，鸟为食亡
@@ -143488,11 +143488,11 @@ W|w|人無完人／人无完人
   C phrase
    D1||nobody's perfect
 W|w|人無廉恥，不如早死／人无廉耻，不如早死
- P||ren2 wu2 lian2chi3;bu4ru2 zao3si3
+ P||ren2 wu2 lian2chi3, bu4ru2 zao3si3
   C proverb
    D1||somebody who does not understand shame deserves to die young
 W|w|人無遠慮，必有近憂／人无远虑，必有近忧
- P||ren2 wu2 yuan3lv4;bi4 you3 jin4you1
+ P||ren2 wu2 yuan3lv4, bi4 you3 jin4you1
   C proverb
    D1||He who gives no thought to problems of the future is sure to be beset by worries much closer at hand
 W|w|人煙浩穰／人烟浩穰
@@ -143992,15 +143992,15 @@ W|w|人離鄉賤／人离乡贱
   C phrase
    D1||people receive little respect from others when they are away from their native places
 W|w|人非聖賢，孰能無過／人非圣贤，孰能无过
- P||ren2 fei1 sheng4xian2;shu2 neng2 wu2guo4
+ P||ren2 fei1 sheng4xian2, shu2 neng2 wu2guo4
   C proverb
    D1||nobody is perfect; everyone makes mistakes
 W|w|人非聖賢，誰能無過／人非圣贤，谁能无过
- P||ren2 fei1 sheng4xian2;shei2 neng2 wu2guo4
+ P||ren2 fei1 sheng4xian2, shei2 neng2 wu2guo4
   C proverb
    D1||Alternative form of 人非聖賢，孰能無過／人非圣贤，孰能无过 (rén fēi shèngxián, shú néng wúguò)
 W|w|人靠衣裝，佛靠金裝／人靠衣装，佛靠金装
- P||ren2 kao4 yi1zhuang1;fo2 kao4 jin1zhuang1
+ P||ren2 kao4 yi1zhuang1, fo2 kao4 jin1zhuang1
   C proverb
    D1||clothes maketh the man; fine feathers make fine birds
 W|w|人面
@@ -144351,7 +144351,7 @@ W|w|仁者
   C noun
    D1|#formal|virtuous person; benevolent person
 W|w|仁者見仁，智者見智／仁者见仁，智者见智
- P||ren2zhe3 jian4 ren2;zhi4zhe3 jian4 zhi4
+ P||ren2zhe3 jian4 ren2, zhi4zhe3 jian4 zhi4
   C phrase
    D1||different people have different views; opinions differ; there's no accounting for taste
 W|w|仁至義盡／仁至义尽
@@ -144438,7 +144438,7 @@ W|w|仆地
   C adv
    D1|x #archaic|suddenly
 W|w|仇人相見，分外眼紅／仇人相见，分外眼红
- P||chou2ren2 xiang1jian4;fen4wai4 yan3hong2
+ P||chou2ren2 xiang1jian4, fen4wai4 yan3hong2
   C proverb
    D1||When two enemies meet, their eyes are especially red; when enemies come face to face, their eyes blaze with hate.
 W|w|仇外
@@ -144581,7 +144581,7 @@ W|w|今文
    D1|#palaeography #writing|Alternative name for 隸書／隶书 (lìshū, “clerical script”).
    D2||Han dynasty Confucian classics written in clerical script
 W|w|今日事，今日畢／今日事，今日毕
- P||jin1ri4 shi4;jin1ri4 bi4
+ P||jin1ri4 shi4, jin1ri4 bi4
   C proverb
    D1||don't put off until tomorrow what can be done today
 W|w|今日份
@@ -144891,7 +144891,7 @@ W|w|他家
   C pron
    D2|xC #Wuhan-Mandarin #dialectal|he, she, they
 W|w|他山之石，可以攻玉
- P||ta1shan1zhi1shi2;ke3yi3gong1yu4
+ P||ta1shan1zhi1shi2, ke3yi3gong1yu4
   C proverb
    D1|#figurative|advice from others may help remedy one's own shortcomings
 W|w|他律
@@ -145934,7 +145934,7 @@ W|w|以其人之道，還治其人之身／以其人之道，还治其人之身
   C phrase
    D1||to pay back with the opponent's own method; to give the enemy a taste of their own medicine; an eye for an eye
 W|w|以其昏昏，使人昭昭
- P||yi3qi2hun1hun1;shi3ren2zhao1zhao1
+ P||yi3qi2hun1hun1, shi3ren2zhao1zhao1
   C phrase
    D1|#derogatory|to light the way for others despite being in darkness themselves
 W|w|以利
@@ -146006,7 +146006,7 @@ W|w|以實瑪利／以实玛利
   C name
    D1|#Protestantism|Ishmael
 W|w|以小人之心，度君子之腹
- P||yi3 xiao3ren2 zhi1 xin1;duo2 jun1zi3 zhi1 fu4
+ P||yi3 xiao3ren2 zhi1 xin1, duo2 jun1zi3 zhi1 fu4
   C phrase
    D1||to be cynical; to be skeptical of the integrity, sincerity, or motives of others
 W|w|以小見大／以小见大
@@ -146170,7 +146170,7 @@ W|w|以直報怨／以直报怨
   C phrase
    D1||to recompense injury with justice
 W|w|以眼還眼，以牙還牙／以眼还眼，以牙还牙
- P||yi3yan3huan2yan3;yi3ya2huan2ya2
+ P||yi3yan3huan2yan3, yi3ya2huan2ya2
   C phrase
    D1||eye for an eye, a tooth for a tooth
 W|w|以眼還眼／以眼还眼
@@ -148557,11 +148557,11 @@ W|w|但聞／但闻
   C verb
    D1|x #archaic|all one could hear was
 W|w|但行好事，莫問前程／但行好事，莫问前程
- P||dan4 xing2 hao3shi4;mo4 wen4 qian2cheng2
+ P||dan4 xing2 hao3shi4, mo4 wen4 qian2cheng2
   C proverb
    D1||Just do good deeds and do not worry about the future.
 W|w|但願人長久，千里共嬋娟／但愿人长久，千里共婵娟
- P||dan4yuan4 ren2 chang2jiu3;qian1 li3 gong4 chan2 juan1
+ P||dan4yuan4 ren2 chang2jiu3, qian1 li3 gong4 chan2 juan1
   C proverb
    D1||to keep your loved ones close to your heart and wish them the best no matter how physically far apart one is
 W|w|但願／但愿
@@ -150544,7 +150544,7 @@ W|w|你我他
   C noun
    D1||you, me and him; (in general) every person; individuals
 W|w|你拍一，我拍一，一隻小貓坐飛機／你拍一，我拍一，一只小猫坐飞机
- P||ni3 pai1 yi1;wo3 pai1 yi1;yi1 zhi1 xiao3mao1 zuo4 fei1ji1
+ P||ni3 pai1 yi1, wo3 pai1 yi1, yi1 zhi1 xiao3mao1 zuo4 fei1ji1
   C phrase
    D1||(children's counting-out game) eeny, meeny, miny, moe
 W|w|你是誰／你是谁
@@ -150557,11 +150557,11 @@ W|w|你每
    D1||(singular) you
    D2||(in the plural) you
 W|w|你的樣子如何，你的命運也必如何／你的样子如何，你的命运也必如何
- P||ni3 de5 yang4zi3 ru2he2;ni3 de5ming4 yun4 ye3 bi4ru2 he2
+ P||ni3 de5 yang4zi3 ru2he2, ni3 de5ming4 yun4 ye3 bi4ru2 he2
   C proverb
    D1|xC #HongKong #neologism|Synonym of 你的樣子如何，你的日子也必如何／你的样子如何，你的日子也必如何 (nǐ de yàngzǐ rúhé, nǐ de rìzǐ yě bì rúhé, “your face, your fate”)
 W|w|你的樣子如何，你的日子也必如何／你的样子如何，你的日子也必如何
- P||ni3 de5 yang4zi3 ru2he2;ni3 de5 ri4zi3 ye3 bi4 ru2he2
+ P||ni3 de5 yang4zi3 ru2he2, ni3 de5 ri4zi3 ye3 bi4 ru2he2
   C proverb
    D1|xC #HongKong #neologism|Your face, your fate. One's fate and how one is treated in life depends on one's looks; A good-looking person will always be treated well, while an unattractive person will be treated badly.
 W|w|你等
@@ -150577,7 +150577,7 @@ W|w|你老人家
   C pron
    D1|x #Jin #dialectal|(Shexian Huizhou) you (polite)
 W|w|你行你上，不行別屄屄／你行你上，不行别屄屄
- P||ni3 xing2 ni3 shang4;bu4xing2 bie2 bi1bi5
+ P||ni3 xing2 ni3 shang4, bu4xing2 bie2 bi1bi5
   C phrase
    D1|#neologism #slang|Go ahead and do it if you think you can, otherwise stop the criticism. / Put up or shut up.
 W|w|你開心就好／你开心就好
@@ -151469,7 +151469,7 @@ W|w|來襲／来袭
   C verb
    D1||(of the enemy, storm, etc.) to invade; to strike; to hit
 W|w|來說是非者，便是是非人／来说是非者，便是是非人
- P||lai2 shuo1 shi4fei1 zhe3;bian4 shi4 shi4fei1 ren2
+ P||lai2 shuo1 shi4fei1 zhe3, bian4 shi4 shi4fei1 ren2
   C proverb
    D1||People who like to talk about rumours are those who create rumours.
 W|w|來貨／来货
@@ -155044,7 +155044,7 @@ W|w|倉山／仓山
   C name
    D1||(～區) Cangshan (a district of Fuzhou, Fujian, China)
 W|w|倉廩實而知禮節，衣食足而知榮辱／仓廪实而知礼节，衣食足而知荣辱
- P||cang1lin3 shi2 er2 zhi1 li3jie2;yi1shi2 zu2 er2 zhi1 rong2ru3;yi1shi2 zu2 er2 zhi1 rong2ru4
+ P||cang1lin3 shi2 er2 zhi1 li3jie2, yi1shi2 zu2 er2 zhi1 rong2ru3;cang1lin3 shi2 er2 zhi1 li3jie2, yi1shi2 zu2 er2 zhi1 rong2ru4
   C proverb
    D1||people observe etiquette and know honor and shame only after they are well-fed and clothed
 W|w|倉廩／仓廪
@@ -155666,7 +155666,7 @@ W|w|倒閣／倒阁
   C verb
    D1|#politics|to bring down a government
 W|w|倒霉的時候，喝涼水都塞牙／倒霉的时候，喝凉水都塞牙
- P||dao3mei2 de5 shi2hou5;he1 liang2shui3 dou1 sai1ya2;dao3mei2 de5 shi2hou4;he1 liang2shui3 dou1 sei1ya2
+ P||dao3mei2 de5 shi2hou5, he1 liang2shui3 dou1 sai1ya2;dao3mei2 de5 shi2hou4, he1 liang2shui3 dou1 sei1ya2
   C phrase
    D1||When one is unlucky, everything could be against him.
 W|w|倒霉蛋
@@ -159932,7 +159932,7 @@ W|w|傷懷／伤怀
   C adj
    D1|- #literary|sad; grieved
 W|w|傷敵一千，自損八百／伤敌一千，自损八百
- P||shang1 di2 yi1qian1;zi4 sun3 ba1bai3
+ P||shang1 di2 yi1qian1, zi4 sun3 ba1bai3
   C phrase
    D1||to inflict damage on the enemy while one's own side suffers a smaller but comparable level of damage
 W|w|傷殘／伤残
@@ -161990,7 +161990,7 @@ W|w|元芳
   C noun
    D1|#humorous #neologism #slang|person whom one consults for opinions and advice, especially when in suspicion of something
 W|w|元芳，你怎麼看／元芳，你怎么看
- P||Yuan2fang1;ni3 zen3me5 kan4
+ P||Yuan2fang1, ni3 zen3me5 kan4
   C phrase
    D1|#humorous #neologism #slang|A phrase for soliciting another person's opinion, especially on a matter that one finds suspicious or questionable.
 W|w|元號／元号
@@ -162047,7 +162047,7 @@ W|w|兄嫂
    D1||one's elder brother and his wife
    D2||(indirect address) sister-in-law (elder brother's wife)
 W|w|兄弟如手足，妻子如衣服
- P||xiong1di4 ru2 shou3zu2;qi1zi3 ru2 yi1fu5
+ P||xiong1di4 ru2 shou3zu2, qi1zi3 ru2 yi1fu5
   C proverb
    D1||Brothers are like one's arms and legs, but wives and children (or women) are only like one's apparel (i.e. readily replaceable).
 W|w|兄弟姊妹
@@ -162367,7 +162367,7 @@ W|w|先君
    D2|- #literary|previous ruler
    D3|- #literary|ancestors; forebears; forefathers; progenitor
 W|w|先天下之憂而憂，後天下之樂而樂／先天下之忧而忧，后天下之乐而乐
- P||xian1 tian1xia4 zhi1 you1 er2 you1;hou4 tian1xia4 zhi1 le4 er2 le4
+ P||xian1 tian1xia4 zhi1 you1 er2 you1, hou4 tian1xia4 zhi1 le4 er2 le4
   C phrase
    D1||be the first to show concern, and the last to enjoy comforts
 W|w|先天不足
@@ -162405,7 +162405,7 @@ W|w|先導／先导
   C verb
    D2||to lead the way; to take the lead
 W|w|先小人，後君子／先小人，后君子
- P||xian1 xiao3ren2;hou4 jun1zi3
+ P||xian1 xiao3ren2, hou4 jun1zi3
   C phrase
    D1||Rules and terms should be stated clearly at first, etiquettes are of lower priority.
 W|w|先工作後玩樂／先工作后玩乐
@@ -162501,7 +162501,7 @@ W|w|先甘後苦／先甘后苦
   C phrase
    D1||to indulge in short-term gratification, but end up suffering in the long run
 W|w|先發制人，後發制於人／先发制人，后发制于人
- P||xian1fa1zhi4ren2;hou4fa1zhi4yu2ren2
+ P||xian1fa1zhi4ren2, hou4fa1zhi4yu2ren2
   C proverb
    D1||Act first and subdue your enemy, or else you will be subdued by your enemy.
 W|w|先發制人／先发制人
@@ -163099,7 +163099,7 @@ W|w|光錐／光锥
   C noun
    D1|#physics|light cone
 W|w|光陰似箭，日月如梭／光阴似箭，日月如梭
- P||guang1yin1 si4 jian4;ri4yue4 ru2 suo1
+ P||guang1yin1 si4 jian4, ri4yue4 ru2 suo1
   C proverb
    D1||time flies very quickly
 W|w|光陰似箭／光阴似箭
@@ -164029,7 +164029,7 @@ W|w|兔死狐悲
   C phrase
    D1|#figurative|to have sympathy with a like-minded person in distress
 W|w|兔死狐悲，物傷其類／兔死狐悲，物伤其类
- P||tu4si3hu2bei1;wu4shang1qi2lei4
+ P||tu4si3hu2bei1, wu4shang1qi2lei4
   C phrase
    D1||to grieve the misfortune of one's fellow beings
 W|w|兔死狗烹
@@ -165637,7 +165637,7 @@ W|w|全世界
   C noun
    D2||the whole world
 W|w|全世界無產者，聯合起來／全世界无产者，联合起来
- P||quan2shi4jie4 wu2chan3zhe3;lian2he2 qi3lai2
+ P||quan2shi4jie4 wu2chan3zhe3, lian2he2 qi3lai2
   C phrase
    D1||workers of the world, unite!
 W|w|全人
@@ -166740,7 +166740,7 @@ W|w|八仙花
   C noun
    D1||Hydrangea macrophylla
 W|w|八仙過海，各顯神通／八仙过海，各显神通
- P||ba1xian1guo4hai3;ge4xian3shen2tong1
+ P||ba1xian1guo4hai3, ge4xian3shen2tong1
   C phrase
    D1||everybody using their talents or skills to achieve a common goal
 W|w|八仙過海／八仙过海
@@ -168438,7 +168438,7 @@ W|w|公認發音／公认发音
   C name
    D1||Received Pronunciation
 W|w|公說公有理，婆說婆有理／公说公有理，婆说婆有理
- P||gong1 shuo1 gong1 you3li3;po2 shuo1 po2 you3li3
+ P||gong1 shuo1 gong1 you3li3, po2 shuo1 po2 you3li3
   C phrase
    D1||(in an argument) the situation where both parties claim to be right and cannot reach a consensus
 W|w|公論／公论
@@ -169482,7 +169482,7 @@ W|w|兵人
    D1|- #literary|soldier
     XM||個／个;名;位
 W|w|兵來將擋，水來土掩／兵来将挡，水来土掩
- P||bing1lai2jiang4dang3;shui3lai2tu3yan3
+ P||bing1lai2jiang4dang3, shui3lai2tu3yan3
   C proverb
    D1||to take such measures as the situation calls for
 W|w|兵兒／兵儿
@@ -169968,11 +169968,11 @@ W|w|兼而有之
   C phrase
    D1||to have both simultaneously
 W|w|兼聽則明，偏信則暗／兼听则明，偏信则暗
- P||jian1ting1 ze2 ming2;pian1xin4 ze2 an4
+ P||jian1ting1 ze2 ming2, pian1xin4 ze2 an4
   C proverb
    D1||Listen to both sides and you will be enlightened, heed only one side and you will be benighted.
 W|w|兼聽則明，偏聽則蔽／兼听则明，偏听则蔽
- P||jian1ting1 ze2 ming2;pian1ting1 ze2 bi4
+ P||jian1ting1 ze2 ming2, pian1ting1 ze2 bi4
   C proverb
    D1||Listen to both sides and you will be enlightened, heed only one side and you will be benighted.
 W|w|兼聽則明／兼听则明
@@ -170712,7 +170712,7 @@ W|w|冤仇
   C noun
    D1||rancor; enmity
 W|w|冤冤相報何時了，得饒人處且饒人／冤冤相报何时了，得饶人处且饶人
- P||yuan1yuan1xiang4bao4 he2shi2 liao3;de2rao2ren2chu4qie3rao2ren2
+ P||yuan1yuan1xiang4bao4 he2shi2 liao3, de2rao2ren2chu4qie3rao2ren2
   C proverb
    D1||vengeance begets vengenace, so it is often better to forgive
 W|w|冤冤相報／冤冤相报
@@ -170982,7 +170982,7 @@ W|w|冬粉
    D1|T #Singapore #chiefly-Southern-Min|cellophane noodles; Chinese vermicelli; mung bean noodles
     XM||把
 W|w|冬練三九，夏練三伏／冬练三九，夏练三伏
- P||dong1lian4san1jiu3;xia4lian4san1fu2
+ P||dong1lian4san1jiu3, xia4lian4san1fu2
   C phrase
    D1||to carry out training in the coldest and the hottest parts of the year
 W|w|冬至使
@@ -171075,7 +171075,7 @@ W|w|冰冷
    D1||ice-cold; cold as ice
    D2|#figurative|cold; unfriendly
 W|w|冰凍三尺，非一日之寒／冰冻三尺，非一日之寒
- P||bing1dong4 san1 chi3;fei1 yi1ri4 zhi1 han2
+ P||bing1dong4 san1 chi3, fei1 yi1ri4 zhi1 han2
   C proverb
    D1||Rome wasn't built in a day.
 W|w|冰凍／冰冻
@@ -172445,7 +172445,7 @@ W|w|凡世
   C noun
    D1|- #literary|the human world; the world of mortals
 W|w|凡事預則立，不預則廢／凡事预则立，不预则废
- P||fan2shi4 yu4 ze2 li4 , bu4 yu4 ze2 fei4
+ P||fan2shi4 yu4 ze2 li4, bu4 yu4 ze2 fei4
   C proverb
    D1||preparedness ensures success and unpreparedness spells failure
 W|w|凡例
@@ -174072,7 +174072,7 @@ W|w|分中
   C noun
    D1|- #literary|Synonym of 分內／分内 (fènnèi, “within one's remit”)
 W|w|分久必合，合久必分
- P||fen1jiu3bi4he2;he2jiu3bi4fen1
+ P||fen1jiu3bi4he2, he2jiu3bi4fen1
   C proverb
    D1|#literal|That which is long divided must unify; that which is long unified must divide.
    D2|#figurative|worldly affairs are constantly changing
@@ -175273,7 +175273,7 @@ W|w|刎頸／刎颈
   C noun
    D2||Short for 刎頸之交／刎颈之交 (wěnjǐngzhījiāo).
 W|w|刑不上大夫，禮不下庶人／刑不上大夫，礼不下庶人
- P||xing2 bu4 shang4 da4fu1;li3 bu4 xia4 shu4ren2
+ P||xing2 bu4 shang4 da4fu1, li3 bu4 xia4 shu4ren2
   C proverb
    D1||People are not equal before the law.
 W|w|刑事局
@@ -177715,7 +177715,7 @@ W|w|前事
   C noun
    D1|- #literary|what had happened; the previous matter
 W|w|前事不忘，後事之師／前事不忘，后事之师
- P||qian2shi4 bu4 wang4;hou4shi4 zhi1 shi1
+ P||qian2shi4 bu4 wang4, hou4shi4 zhi1 shi1
   C proverb
    D1||don't forget past events as they can guide you in the future; benefit from past experience
 W|w|前井
@@ -177723,11 +177723,11 @@ W|w|前井
   C name
    D1||(～村) Qianjing (a village in Xinshi, Zaoyang, Xiangyang, Hubei, China)
 W|w|前人栽樹，後人乘涼／前人栽树，后人乘凉
- P||qian2ren2 zai1 shu4;hou4ren2 cheng2liang2
+ P||qian2ren2 zai1 shu4, hou4ren2 cheng2liang2
   C proverb
    D1||A generation sweats for the benefit of future generations; One generation sows (i.e. labours) and the next generation reaps (the fruits of labour)
 W|w|前人種樹，後人乘涼／前人种树，后人乘凉
- P||qian2ren2zhong4shu4;hou4ren2cheng2liang2
+ P||qian2ren2zhong4shu4, hou4ren2cheng2liang2
   C proverb
    D1||Synonym of 前人栽樹，後人乘涼／前人栽树，后人乘凉 (qiánrén zāi shù, hòurén chéngliáng)
 W|w|前仆後繼／前仆后继
@@ -178165,7 +178165,7 @@ W|w|前灣／前湾
   C name
    D1||(～村) Qianwan (a village in Xinshi, Zaoyang, Xiangyang, Hubei, China)
 W|w|前無古人，後無來者／前无古人，后无来者
- P||qian2wu2gu3ren2;hou4wu2lai2zhe3
+ P||qian2wu2gu3ren2, hou4wu2lai2zhe3
   C phrase
    D1||unprecedented and never to be duplicated; the first and the last; unmatched; unique
 W|w|前無古人／前无古人
@@ -178386,7 +178386,7 @@ W|w|前車可鑒／前车可鉴
   C phrase
    D1||previous experience of failure can serve as a lesson for oneself or others
 W|w|前車覆，後車戒／前车覆，后车戒
- P||qian2 che1 fu4;hou4 che1 jie4;qian2 ju1 fu4;hou4 ju1 jie4
+ P||qian2 che1 fu4, hou4 che1 jie4;qian2 ju1 fu4, hou4 ju1 jie4
   C proverb
    D1||previous experience of failure can serve as a lesson for oneself or others
 W|w|前車／前车
@@ -182631,7 +182631,7 @@ W|w|勞德代爾堡／劳德代尔堡
   C name
    D1||Fort Lauderdale (a city, the county seat of Broward County, Florida, United States)
 W|w|勞心者治人，勞力者治於人／劳心者治人，劳力者治于人
- P||lao2xin1zhe3zhi4ren2;lao2li4zhe3zhi4yu2ren2
+ P||lao2xin1zhe3zhi4ren2, lao2li4zhe3zhi4yu2ren2
   C proverb
    D1||Those who labour with their minds govern others; those who labour with their strength are governed by others.
 W|w|勞心／劳心
@@ -182891,7 +182891,7 @@ W|w|勤於／勤于
   C verb
    D1||to be diligent in
 W|w|勤有功，戲無益／勤有功，戏无益
- P||qin2you3gong1;xi4wu2yi4
+ P||qin2you3gong1, xi4wu2yi4
   C proverb
    D1||diligence has its reward while play has no benefit
 W|w|勤王
@@ -186170,7 +186170,7 @@ W|w|十年動亂／十年动乱
   C name
    D1||the Cultural Revolution
 W|w|十年樹木，百年樹人／十年树木，百年树人
- P||shi2nian2 shu4mu4;bai3nian2 shu4ren2
+ P||shi2nian2 shu4mu4, bai3nian2 shu4ren2
   C proverb
    D1|#figurative|it takes a long time for good education to bear fruit (i.e. to produce a competent person)
 W|w|十年河東，十年河西／十年河东，十年河西
@@ -186392,7 +186392,7 @@ W|w|十點／十点
   C noun
    D1||ten o'clock
 W|w|千不該，萬不該／千不该，万不该
- P||qian1 bu4gai1;wan4 bu4gai1
+ P||qian1 bu4gai1, wan4 bu4gai1
   C phrase
    D1|#emphatic|really should not (do something or have done something)
 W|w|千乘
@@ -186471,7 +186471,7 @@ W|w|千古罪人
   C phrase
    D1||someone who is condemned by history
 W|w|千叮嚀，萬囑咐／千叮咛，万嘱咐
- P||qian1 ding1ning2;wan4 zhu3fu4
+ P||qian1 ding1ning2, wan4 zhu3fu4
   C phrase
    D1|#emphatic|to exhort again and again; to give advice repeatedly
 W|w|千呼萬喚／千呼万唤
@@ -186767,11 +186767,11 @@ W|w|千里
    D1|#figuratively|any great distance
    D2||Short for 千里馬 (qiānlǐmǎ, “fine horse; fine steed; fast horse”).
 W|w|千里之堤，潰於蟻穴／千里之堤，溃于蚁穴
- P||qian1li3zhi1di1;kui4yu2yi3xue2;qian1li3zhi1ti2;kui4yu2yi3xue4
+ P||qian1li3zhi1di1, kui4yu2yi3xue2;qian1li3zhi1ti2, kui4yu2yi3xue4
   C proverb
    D1||a small mistake can lead to a massive disaster
 W|w|千里之行，始於足下／千里之行，始于足下
- P||qian1li3 zhi1 xing2;shi3yu2 zu2 xia4
+ P||qian1li3 zhi1 xing2, shi3yu2 zu2 xia4
   C proverb
    D1||a journey of a thousand miles begins with a single step
 W|w|千里光
@@ -187282,7 +187282,7 @@ W|w|半大不小
   C phrase
    D1||between childhood and adulthood
 W|w|半大小子，吃死老子
- P||ban4da4 xiao3zi5;chi1 si3 lao3zi5
+ P||ban4da4 xiao3zi5, chi1 si3 lao3zi5
   C proverb
    D1||A male in puberty eats a lot.
 W|w|半天空
@@ -193417,7 +193417,7 @@ W|w|又紅又專／又红又专
   C phrase
    D1||to have a procommunist mindset along with professional skill
 W|w|又要馬兒好，又要馬兒不吃草／又要马儿好，又要马儿不吃草
- P||you4 yao4 mar3 hao3;you4 yao4 mar3 bu4 chi1cao3
+ P||you4 yao4 mar3 hao3, you4 yao4 mar3 bu4 chi1cao3
   C phrase
    D1|#figuratively|to have one's cake and eat it too; to ask someone else to do something excessively while not willing to give him/her anything
 W|w|又驚又喜／又惊又喜
@@ -196045,7 +196045,7 @@ W|w|古今中外
   C phrase
    D1||ancient and modern, Chinese and abroad; all times and all places
 W|w|古今多少事，都付笑談中／古今多少事，都付笑谈中
- P||gu3jin1 duo1shao3 shi4;dou1 fu4 xiao4tan2 zhong1
+ P||gu3jin1 duo1shao3 shi4, dou1 fu4 xiao4tan2 zhong1
   C proverb
    D1||It is better to keep an open mind with respect to right and wrong or success and failure when evaluating historical developments.
 W|w|古今東西／古今东西
@@ -197110,7 +197110,7 @@ W|w|只今
   C noun
    D1|- #literary|now
 W|w|只可意會，不可言傳／只可意会，不可言传
- P||zhi3 ke3 yi4hui4;bu4 ke3 yan2chuan2
+ P||zhi3 ke3 yi4hui4, bu4 ke3 yan2chuan2
   C phrase
    D1||to be able to be perceived, but not expressed in words
 W|w|只在
@@ -197134,7 +197134,7 @@ W|w|只教
   C conj
    D1|x #archaic|as long as; provided; so long as
 W|w|只此一家，別無分店／只此一家，别无分店
- P||zhi3 ci3 yi1 jia1;bie2 wu2 fen1dian4
+ P||zhi3 ci3 yi1 jia1, bie2 wu2 fen1dian4
   C phrase
    D1||the one and only store, no branch offices (you can buy something only here)
    D2|#figuratively|to have a monopoly
@@ -197152,15 +197152,15 @@ W|w|只羨鴛鴦不羨仙／只羡鸳鸯不羡仙
   C phrase
    D1||to want to be together till death
 W|w|只要功夫深，鐵杵磨成針／只要功夫深，铁杵磨成针
- P||zhi3yao4 gong1fu5 shen1;tie3chu3 mo2 cheng2 zhen1
+ P||zhi3yao4 gong1fu5 shen1, tie3chu3 mo2 cheng2 zhen1
   C proverb
    D1||Diligence is the mother of success. / Practice makes perfect.
 W|w|只要目的正當，可以不擇手段／只要目的正当，可以不择手段
- P||zhi3yao4 mu4di4 zheng4dang4;ke3yi3 bu4ze2shou3duan4
+ P||zhi3yao4 mu4di4 zheng4dang4, ke3yi3 bu4ze2shou3duan4
   C proverb
    D1||The end justifies the means; all's fair in love and war.
 W|w|只見樹木，不見森林／只见树木，不见森林
- P||zhi3jian4shu4mu4;bu4jian4sen1lin2
+ P||zhi3jian4shu4mu4, bu4jian4sen1lin2
   C phrase
    D1||cannot see the forest for the trees; to only pay attention to minor details but ignore the bigger picture
 W|w|只見／只见
@@ -197168,7 +197168,7 @@ W|w|只見／只见
   C verb
    D1|- #literary|all one can see is
 W|w|只許州官放火，不許百姓點燈／只许州官放火，不许百姓点灯
- P||zhi3 xu3 zhou1guan1 fang4huo3;bu4xu3 bai3xing4 dian3deng1
+ P||zhi3 xu3 zhou1guan1 fang4huo3, bu4xu3 bai3xing4 dian3deng1
   C phrase
    D1|#figurative|The authorities can do what they like, but the common people are not allowed the slightest bit of freedom (Used in criticism of double standards of those with power)
 W|w|只說不做／只说不做
@@ -198927,7 +198927,7 @@ W|w|吃人不吐骨頭／吃人不吐骨头
   C phrase
    D1|#derogatory #figurative|to be extremely ruthless and greedy
 W|w|吃人家的嘴軟，拿人家的手軟／吃人家的嘴软，拿人家的手软
- P||chi1 ren2jia5 de5 zui3 ruan3;na4 ren2jia5 de5 shou3 ruan3
+ P||chi1 ren2jia5 de5 zui3 ruan3, na4 ren2jia5 de5 shou3 ruan3
   C proverb
    D1||One may be bound to others because of the things they give you.
 W|w|吃住行
@@ -202558,11 +202558,11 @@ W|w|君士坦丁堡
   C name
    D1||Constantinople
 W|w|君子一言，快馬一鞭／君子一言，快马一鞭
- P||jun1zi3 yi1 yan2;kuai4 ma3 yi1 bian1
+ P||jun1zi3 yi1 yan2, kuai4 ma3 yi1 bian1
   C proverb
    D1||A gentleman's word is as good as gold.
 W|w|君子一言，駟馬難追／君子一言，驷马难追
- P||jun1zi3 yi1yan2;si4ma3 nan2zhui1
+ P||jun1zi3 yi1yan2, si4ma3 nan2zhui1
   C proverb
    D1||a gentleman must keep his promises
 W|w|君子不器
@@ -202578,7 +202578,7 @@ W|w|君子之交淡如水
   C proverb
    D1||True friendship between two men of accomplishment need not be overly demonstrative.
 W|w|君子交絕，不出惡聲／君子交绝，不出恶声
- P||jun1zi3jiao1jue2;bu4chu1e4sheng1
+ P||jun1zi3jiao1jue2, bu4chu1e4sheng1
   C proverb
    D1||when men of virtue end their friendship, they do not make malicious remarks on one another
 W|w|君子動口不動手／君子动口不动手
@@ -202590,15 +202590,15 @@ W|w|君子協定／君子协定
   C noun
    D1||gentlemen's agreement
 W|w|君子喻於義，小人喻於利／君子喻于义，小人喻于利
- P||jun1zi3 yu4 yu2 yi4;xiao3ren2 yu4 yu2 li4
+ P||jun1zi3 yu4 yu2 yi4, xiao3ren2 yu4 yu2 li4
   C proverb
    D1||High-minded people value doing the right thing, but low-minded people value doing the profitable thing
 W|w|君子報仇，十年不晚／君子报仇，十年不晚
- P||jun1zi3 bao4chou2;shi2 nian2 bu4 wan3
+ P||jun1zi3 bao4chou2, shi2 nian2 bu4 wan3
   C proverb
    D1||One should bide one's time and wait for the right opportunity to seek vengeance; revenge is a dish best served cold
 W|w|君子愛財，取之有道／君子爱财，取之有道
- P||jun1zi3ai4cai2;qu3zhi1you3dao4
+ P||jun1zi3ai4cai2, qu3zhi1you3dao4
   C proverb
    D1||A virtuous man makes his fortune in a proper way; Acquire wealth in an upright and just way
 W|w|君度
@@ -204466,8 +204466,8 @@ W|w|周王
  P||zhou1wang2
   C noun
    D1|x #historical|king of Zhou
-W|w|周瑜打黃蓋——一個願打，一個願挨／周瑜打黄盖——一个愿打，一个愿挨
- P||Zhou1 Yu2 da3 Huang2 Gai4;yi1 ge5 yuan4 da3;yi1 ge5 yuan4 ai2
+W|w|周瑜打黃蓋 一個願打，一個願挨／周瑜打黄盖 一个愿打，一个愿挨
+ P||Zhou1 Yu2 da3 Huang2 Gai4, yi1 ge5 yuan4 da3, yi1 ge5 yuan4 ai2
   C phrase
    D1|#literally|one is willing to give a beating, and one is willing to take a beating
    D2|#figurative|both parties agree of free will, mutual consent; to willingly submit to something
@@ -204549,7 +204549,7 @@ W|w|周邊設備／周边设备
   C noun
    D1||(computer) peripherals
 W|w|周郎妙計安天下，賠了夫人又折兵／周郎妙计安天下，赔了夫人又折兵
- P||zhou1lang2 miao4ji4 an1 tian1xia4;pei2 le5fu1 ren2 you4zhe2 bing1
+ P||zhou1lang2 miao4ji4 an1 tian1xia4, pei2 le5fu1 ren2 you4zhe2 bing1
   C phrase
    D1||to suffer a loss upon another loss.
 W|w|周鄰／周邻
@@ -205112,11 +205112,11 @@ W|w|命苦
   C verb
    D1||to have an unlucky fate; to be born under an ill star; to suffer from a hard lot
 W|w|命苦不能怨政府，點背不能怨社會／命苦不能怨政府，点背不能怨社会
- P||ming4ku3 bu4neng2 yuan4 zheng4fu3;dian3bei4 bu4neng2 yuan4 she4hui4
+ P||ming4ku3 bu4neng2 yuan4 zheng4fu3, dian3bei4 bu4neng2 yuan4 she4hui4
   C phrase
    D1||One cannot blame for their misfortune with the government and the society.
 W|w|命裡有時終須有，命裡無時莫強求／命里有时终须有，命里无时莫强求
- P||ming4 li3 you3 shi2 zhong1xu1 you3;ming4 li3 wu2 shi2 mo4 qiang3qiu2
+ P||ming4 li3 you3 shi2 zhong1xu1 you3, ming4 li3 wu2 shi2 mo4 qiang3qiu2
   C proverb
    D1||In one's life, when one's wish comes true, it finally comes true, but one is disappointed, one doesn't insist.
 W|w|命裡註定／命里注定
@@ -205327,7 +205327,7 @@ W|w|和宜合
   C name
    D1||Wo Yi Hop (an area in Tsuen Wan district, New Territories, Hong Kong)
 W|w|和尚動得，我動不得／和尚动得，我动不得
- P||he2shang4 dong4 de2;wo3 dong4 bu4de2
+ P||he2shang4 dong4 de2, wo3 dong4 bu4de2
   C proverb
    D1||My wrongdoing is justified by someone else doing the same thing. Two wrongs make a right.
 W|w|和尚尼
@@ -205339,7 +205339,7 @@ W|w|和尚打傘——無法無天／和尚打伞——无法无天
   C phrase
    D1|#xiehouyu|no respect for law and order; unruly
 W|w|和尚摸得，我摸不得
- P||he2shang4 mo1 de2;wo3 mo1 bu4de2
+ P||he2shang4 mo1 de2, wo3 mo1 bu4de2
   C proverb
    D1||Synonym of 和尚動得，我動不得／和尚动得，我动不得 (héshàng dòng dé, wǒ dòng bùdé)
 W|w|和尚訓道士——管得寬／和尚训道士——管得宽
@@ -209899,7 +209899,7 @@ W|w|善政
    D3||good political performance
    D4||good management
 W|w|善有善報，惡有惡報／善有善报，恶有恶报
- P||shan4 you3 shan4bao4;e4 you3 e4bao4
+ P||shan4 you3 shan4bao4, e4 you3 e4bao4
   C proverb
    D1||what goes around comes around
 W|w|善有善報／善有善报
@@ -212851,7 +212851,7 @@ W|w|嘴邊／嘴边
   C noun
    D1||side of the mouth; corner of the mouth
 W|w|嘴饞屄浪，早晚上當／嘴馋屄浪，早晚上当
- P||zui3 chan2 bi1 lang4;zao3wan3 shang4dang4
+ P||zui3 chan2 bi1 lang4, zao3wan3 shang4dang4
   C proverb
    D1|#vulgar|one who cannot control their desire gets taken in sooner or later.
 W|w|嘵嘵不休／哓哓不休
@@ -214842,7 +214842,7 @@ W|w|四股絃／四股弦
   C noun
    D1||A variety of Chinese opera native to Hebei province which uses the sihu as the leading instrument.
 W|w|四肢發達，頭腦簡單／四肢发达，头脑简单
- P||si4zhi1 fa1da2;tou2nao3 jian3dan1
+ P||si4zhi1 fa1da2, tou2nao3 jian3dan1
   C phrase
    D1||muscular yet with little intelligence; athletic or physically strong but wanting in intelligence
 W|w|四胞胎
@@ -215060,7 +215060,7 @@ W|w|四驅車／四驱车
   C noun
    D1||four-wheel drive
 W|w|四體不勤，五穀不分／四体不勤，五谷不分
- P||si4ti3 bu4 qin2;wu3gu3 bu4fen1
+ P||si4ti3 bu4 qin2, wu3gu3 bu4fen1
   C phrase
    D1||(of scholars) to be detached from practical life (e.g. by not engaging in manual labor) and lack practical knowledge and skills
 W|w|四體船／四体船
@@ -216961,7 +216961,7 @@ W|w|國有化／国有化
   C verb
    D2||to nationalize
 W|w|國有國法，家有家規／国有国法，家有家规
- P||guo2 you3 guo2fa3;jia1 you3 jia1gui1
+ P||guo2 you3 guo2fa3, jia1 you3 jia1gui1
   C proverb
    D1||A country has its laws and a family its rules; One must do things according to rules and established practice
 W|w|國有社會主義／国有社会主义
@@ -219375,11 +219375,11 @@ W|w|在學／在学
   C verb
    D1||to be at school; to be studying
 W|w|在家千日好，出門一時難／在家千日好，出门一时难
- P||zai4jia1 qian1ri4 hao3;chu1men2 yi1shi2 nan2
+ P||zai4jia1 qian1ri4 hao3, chu1men2 yi1shi2 nan2
   C proverb
    D1||It is good to stay at home, but there are many difficulties outside.
 W|w|在家靠父母，出外靠朋友
- P||zai4jia1 kao4 fu4mu3;chu1wai4 kao4 peng2you5;chu1wai4 kao4 peng2you3
+ P||zai4jia1 kao4 fu4mu3, chu1wai4 kao4 peng2you5;zai4jia1 kao4 fu4mu3, chu1wai4 kao4 peng2you3
   C proverb
    D1||at home, rely on your parents; away from home, rely on your friends
 W|w|在岸
@@ -221683,7 +221683,7 @@ W|w|垃圾車／垃圾车
   C noun
    D1||garbage truck (or other vehicle used for waste collection)
 W|w|垃圾進，垃圾出／垃圾进，垃圾出
- P||la1ji1 jin4;la1ji1 chu1;le4se4 jin4;le4se4 chu1
+ P||la1ji1 jin4, la1ji1 chu1;le4se4 jin4, le4se4 chu1
   C proverb
    D1|#computing #information-technology #translation-studies|garbage in, garbage out
 W|w|垃圾郵件／垃圾邮件
@@ -222389,7 +222389,7 @@ W|w|城鐵／城铁
   C noun
    D1||Short for 城市鐵路／城市铁路 (chéngshì tiělù, “city rail”).
 W|w|城門失火，殃及池魚／城门失火，殃及池鱼
- P||cheng2men2 shi1huo3;yang1ji2 chi2yu2
+ P||cheng2men2 shi1huo3, yang1ji2 chi2yu2
   C phrase
    D1|#figurative|to suffer as a bystander; to get caught in the crossfire
 W|w|城門河／城门河
@@ -225097,7 +225097,7 @@ W|w|塞繆爾／塞缪尔
   C name
    D1||A transliteration of the English male given name Samuel
 W|w|塞翁失馬，焉知非福／塞翁失马，焉知非福
- P||sai4weng1 shi1 ma3;yan1zhi1 fei1 fu2
+ P||sai4weng1 shi1 ma3, yan1zhi1 fei1 fu2
   C proverb
    D1||Every cloud has a silver lining. / A setback may turn out to be a blessing in disguise.
 W|w|塞耳偷鈴／塞耳偷铃
@@ -225329,7 +225329,7 @@ W|w|塵暴／尘暴
   C noun
    D1||sandstorm; duststorm
 W|w|塵歸塵，土歸土／尘归尘，土归土
- P||chen2gui1chen2;tu3gui1tu3
+ P||chen2gui1chen2, tu3gui1tu3
   C proverb
    D1||ashes to ashes, dust to dust
 W|w|塵毒／尘毒
@@ -228509,7 +228509,7 @@ W|w|外間／外间
    D1||outer room
    D2|- #literary|external world; outside circles
 W|w|外防輸入，內防反彈／外防输入，内防反弹
- P||wai4 fang2 shu1ru4;nei4 fang2 fan3tan2
+ P||wai4 fang2 shu1ru4, nei4 fang2 fan3tan2
   C phrase
    D1|#neologism|to prevent both the importation and domestic growth of (COVID-19) cases
 W|w|外院
@@ -228686,7 +228686,7 @@ W|w|多倫／多伦
   C name
    D1||(～縣) Duolun (a county of Xilin Gol, Inner Mongolia, China)
 W|w|多做多錯，少做少錯，不做不錯／多做多错，少做少错，不做不错
- P||duo1zuo4duo1cuo4;shao3zuo4shao3cuo4;bu4zuo4bu4cuo4
+ P||duo1zuo4duo1cuo4, shao3zuo4shao3cuo4, bu4zuo4bu4cuo4
   C phrase
    D1||if you do more you make more mistakes; if you do less you make less mistakes; if you do nothing you make no mistakes
 W|w|多元主義／多元主义
@@ -230109,11 +230109,11 @@ W|w|大事
   C noun
    D2||important matter; big deal; major event; great thing
 W|w|大事化小，小事化了
- P||da4shi4 hua4 xiao3;xiao3shi4 hua4 liao3
+ P||da4shi4 hua4 xiao3, xiao3shi4 hua4 liao3
   C proverb
    D1||Turn big problems into small ones, and small ones into no problems at all.
 W|w|大事化小，小事化無／大事化小，小事化无
- P||da4shi4 hua4 xiao3;xiao3shi4 hua4 wu2
+ P||da4shi4 hua4 xiao3, xiao3shi4 hua4 wu2
   C proverb
    D1||Turn big problems into small ones, and small ones into no problems at all.
 W|w|大事記／大事记
@@ -233695,7 +233695,7 @@ W|w|大處落墨／大处落墨
   C phrase
    D1|#figuratively|to concentrate on the key points
 W|w|大處著眼，小處著手／大处着眼，小处着手
- P||da4 chu4 zhuo2yan3;xiao3 chu4 zhuo2shou3
+ P||da4 chu4 zhuo2yan3, xiao3 chu4 zhuo2shou3
   C phrase
    D1||keep the general goal in sight, while taking hold of the daily tasks
    D2||keep one's eye on the ball, while not losing sight of the forest for the trees
@@ -234229,7 +234229,7 @@ W|w|大鑼鼓／大锣鼓
   C noun
    D1|#music|da luogu (subgenre of traditional Teochew music)
 W|w|大門不出，二門不邁／大门不出，二门不迈
- P||da4men2 bu4 chu1;er4 men2 bu4 mai4
+ P||da4men2 bu4 chu1, er4 men2 bu4 mai4
   C phrase
    D1||to never leave home, and have little contact with the outside world; to live a sheltered life
 W|w|大閆各莊／大闫各庄
@@ -234401,7 +234401,7 @@ W|w|大雜院／大杂院
   C noun
    D1||housing compound occupied by many families living together
 W|w|大難不死，必有後福／大难不死，必有后福
- P||da4nan4 bu4 si3;bi4 you3 hou4fu2
+ P||da4nan4 bu4 si3, bi4 you3 hou4fu2
   C proverb
    D1||Those who survive a catastrophe are bound to have good fortune later on.
 W|w|大難不死／大难不死
@@ -234659,7 +234659,7 @@ W|w|大鬼
   C noun
    D1|#card-games|big joker
 W|w|大魚吃小魚，小魚吃蝦米／大鱼吃小鱼，小鱼吃虾米
- P||da4yu2 chi1 xiao3yu2;xiao3yu2 chi1 xia1mi5
+ P||da4yu2 chi1 xiao3yu2, xiao3yu2 chi1 xia1mi5
   C proverb
    D1||The weak are the prey of the strong; might makes right
 W|w|大魚吃小魚／大鱼吃小鱼
@@ -234828,11 +234828,11 @@ W|w|天上聖母／天上圣母
   C name
    D1|#Chinese-mythology #religion|Mazu
 W|w|天上雷公，地上海陸豐／天上雷公，地上海陆丰
- P||tian1shang4 lei2gong1;di4shang4 Hai3lu4feng1
+ P||tian1shang4 lei2gong1, di4shang4 Hai3lu4feng1
   C phrase
    D1||people from Hailufeng are valiant and fierce
 W|w|天上雷公，地下海陸豐／天上雷公，地下海陆丰
- P||tian1shang4 lei2gong1;di4xia4 Hai3lu4feng1
+ P||tian1shang4 lei2gong1, di4xia4 Hai3lu4feng1
   C phrase
    D1||Synonym of 天上雷公，地上海陸豐／天上雷公，地上海陆丰 (tiānshàng léigōng, dìshàng Hǎilùfēng, “people from Hailufeng are valiant and fierce”)
 W|w|天下一統／天下一统
@@ -234854,7 +234854,7 @@ W|w|天下太平
   C phrase
    D2||peace reigns under heaven; the world or the country is at peace
 W|w|天下本無事，庸人自擾之／天下本无事，庸人自扰之
- P||tian1xia4 ben3 wu2shi4;yong1ren2 zi4 rao3 zhi1
+ P||tian1xia4 ben3 wu2shi4, yong1ren2 zi4 rao3 zhi1
   C phrase
    D1||to bring angst or trouble on oneself; to try to fix something that was not broken in the first place
 W|w|天下歸心／天下归心
@@ -234898,7 +234898,7 @@ W|w|天下無雙／天下无双
   C phrase
    D1||unique; unparalleled; singular
 W|w|天下無難事，只怕有心人／天下无难事，只怕有心人
- P||tian1xia4 wu2 nan2shi4;zhi3pa4 you3xin1ren2
+ P||tian1xia4 wu2 nan2shi4, zhi3pa4 you3xin1ren2
   C phrase
    D1||nothing is difficult if one is dedicated
 W|w|天下父母心
@@ -234910,7 +234910,7 @@ W|w|天下第一
   C phrase
    D1||number one in the world; peerless; unequaled
 W|w|天下興亡，匹夫有責／天下兴亡，匹夫有责
- P||tian1xia4 xing1wang2;pi3fu1 you3ze2
+ P||tian1xia4 xing1wang2, pi3fu1 you3ze2
   C proverb
    D1||whether a nation stands or falls depends on ordinary citizens
 W|w|天不假年
@@ -234922,7 +234922,7 @@ W|w|天不從人願／天不从人愿
   C proverb
    D1||Heaven does not abide by the wishes of people.
 W|w|天不怕，地不怕，只怕廣東人說官話／天不怕，地不怕，只怕广东人说官话
- P||tian1 bu4pa4;di4 bu4pa4;zhi3 pa4 Guang3dong1ren2 shuo1 guan1hua4
+ P||tian1 bu4pa4, di4 bu4pa4, zhi3 pa4 Guang3dong1ren2 shuo1 guan1hua4
   C proverb
    D1||There is nothing to be afraid of except Cantonese people speaking Mandarin (because there is a stereotype that Cantonese people cannot speak Mandarin well).
 W|w|天中節／天中节
@@ -235651,7 +235651,7 @@ W|w|天書／天书
    D2|x #archaic|book that has come from the heavens or immortal spirits
    D3|#figuratively|incomprehensible or undecipherable text; nonsense; gobbledygook
 W|w|天有不測風雲，人有旦夕禍福／天有不测风云，人有旦夕祸福
- P||tian1 you3 bu4ce4 feng1yun2;ren2 you3 dan4xi1 huo4fu2;ren2 you3 dan4xi4 huo4fu2
+ P||tian1 you3 bu4ce4 feng1yun2, ren2 you3 dan4xi1 huo4fu2;tian1 you3 bu4ce4 feng1yun2, ren2 you3 dan4xi4 huo4fu2
   C proverb
    D1||disasters and misfortunes are unpredictable; one's fortune is as unpredictable as the weather
 W|w|天有不測風雲／天有不测风云
@@ -236074,7 +236074,7 @@ W|w|天統／天统
   C name
    D1||the Tiantong era (a Chinese era name; the second era of Ming Yuzhen as emperor of Ming Xia, from 1363 to 1366)
 W|w|天網恢恢，疏而不漏／天网恢恢，疏而不漏
- P||tian1wang3hui1hui1;shu1er2bu4lou4
+ P||tian1wang3hui1hui1, shu1er2bu4lou4
   C proverb
    D1||lawbreakers will always be arrested and punished
 W|w|天網恢恢／天网恢恢
@@ -236228,7 +236228,7 @@ W|w|天蠍／天蝎
   C name
    D1||Scorpio; Scorpius
 W|w|天行健，君子以自強不息／天行健，君子以自强不息
- P||tian1 xing2 jian4;jun1zi3 yi3 zi4qiang2bu4xi1;jun1zi3 yi3 zi4qiang2bu4xi2
+ P||tian1 xing2 jian4, jun1zi3 yi3 zi4qiang2bu4xi1;tian1 xing2 jian4, jun1zi3 yi3 zi4qiang2bu4xi2
   C proverb
    D1||Just as the celestial bodies never run out of energy to orbit round and round, so should we always strive to better ourselves.
 W|w|天衣無縫／天衣无缝
@@ -236236,7 +236236,7 @@ W|w|天衣無縫／天衣无缝
   C phrase
    D1||flawless; seamless
 W|w|天要下雨，娘要嫁人
- P||tian1 yao4 xia4yu3;niang2 yao4 jia4ren2
+ P||tian1 yao4 xia4yu3, niang2 yao4 jia4ren2
   C phrase
    D1|#often-humorous|Used to describe a situation that is now beyond redemption.
 W|w|天譴／天谴
@@ -237035,7 +237035,7 @@ W|w|太陽傘／太阳伞
   C noun
    D1||parasol (small light umbrella used as protection from the sun)
 W|w|太陽光大，父母恩大，君子量大，小人氣大／太阳光大，父母恩大，君子量大，小人气大
- P||tai4yang2 guang1 da4;fu4mu3 en1 da4;jun1zi3 liang4 da4;xiao3ren2 qi4 da4
+ P||tai4yang2 guang1 da4, fu4mu3 en1 da4, jun1zi3 liang4 da4, xiao3ren2 qi4 da4
   C proverb
    D1||the sun shines brightly, one's parents have a lot of kindness, a gentleman is magnanimousm while a small-minded person has a bad temper
 W|w|太陽光／太阳光
@@ -237204,7 +237204,7 @@ W|w|太鼓
   C noun
    D1|#music|taiko drums
 W|w|夫三年之喪，天下之通喪也／夫三年之丧，天下之通丧也
- P||fu2 san1 nian2 zhi1 sang1;tian1xia4 zhi1 tong1sang4 ye3
+ P||fu2 san1 nian2 zhi1 sang1, tian1xia4 zhi1 tong1sang4 ye3
   C proverb
    D1||One should mourn one's parents for three years when they die
 W|w|夫君
@@ -237235,7 +237235,7 @@ W|w|夫妻店兒／夫妻店儿
   C noun
    D1||Erhua form of 夫妻店 (fūqīdiàn).
 W|w|夫妻本是同林鳥，大難臨頭各自飛／夫妻本是同林鸟，大难临头各自飞
- P||fu1qi1ben3shi4tong2lin2niao3;da4nan2lin2 tou2ge4 zi4 fei1
+ P||fu1qi1ben3shi4tong2lin2niao3, da4nan2lin2 tou2ge4 zi4 fei1
   C proverb
    D1||Synonym of 夫妻本是同林鳥／夫妻本是同林鸟 (fūqī běn shì tóng lín niǎo)
 W|w|夫妻本是同林鳥／夫妻本是同林鸟
@@ -237433,7 +237433,7 @@ W|w|失之交臂
   C phrase
    D1||to narrowly miss a golden opportunity (to meet someone, etc.)
 W|w|失之東隅，收之桑榆／失之东隅，收之桑榆
- P||shi1 zhi1 dong1yu2;shou1 zhi1 sang1yu2
+ P||shi1 zhi1 dong1yu2, shou1 zhi1 sang1yu2
   C proverb
    D1||to lose one thing but gain another
 W|w|失代償／失代偿
@@ -240000,7 +240000,7 @@ W|w|女人國／女人国
   C name
    D1|x #historical|an unidentified country to the south of China, said to have a matriarchal society.
 W|w|女人心，海底針／女人心，海底针
- P||nv3ren2 xin1;hai3di3 zhen1
+ P||nv3ren2 xin1, hai3di3 zhen1
   C proverb
    D1||a woman's thoughts are impossible to fathom
 W|w|女伴
@@ -240868,7 +240868,7 @@ W|w|好事
    D5||Buddhist ceremony
    D6|#colloquial #sarcastic|bad thing
 W|w|好事不出門，壞事傳千里／好事不出门，坏事传千里
- P||hao3shi4 bu4 chu1men2;huai4shi4 chuan2 qian1li3
+ P||hao3shi4 bu4 chu1men2, huai4shi4 chuan2 qian1li3
   C proverb
    D1||good news goes on crutches, but bad news travels fast
 W|w|好事多磨
@@ -241014,7 +241014,7 @@ W|w|好好先生
   C noun
    D1|#colloquial|yes man
 W|w|好好學習，天天向上／好好学习，天天向上
- P||hao3hao3 xue2xi2;tian1tian1 xiang4shang4;hao3hao1 xue2xi2
+ P||hao3hao3 xue2xi2, tian1tian1 xiang4shang4;hao3hao1 xue2xi2, tian1tian1 xiang4shang4
   C phrase
    D1||study hard and you will improve day by day
 W|w|好學不倦／好学不倦
@@ -241085,7 +241085,7 @@ W|w|好意思
   C verb
    D1||to feel no shame; to have the nerve
 W|w|好戰必亡，忘戰必危／好战必亡，忘战必危
- P||hao4zhan4 bi4 wang2;wang4zhan4 bi4 wei1;wang4zhan4 bi4 wei2
+ P||hao4zhan4 bi4 wang2, wang4zhan4 bi4 wei1;hao4zhan4 bi4 wang2, wang4zhan4 bi4 wei2
   C proverb
    D1||a country that loves to go to war will perish, but a country that forgets how to go to war will be endangered
 W|w|好戰／好战
@@ -241449,7 +241449,7 @@ W|w|如之奈何
   C phrase
    D1|x #archaic|what can be done; there's no choice
 W|w|如人飲水，冷暖自知／如人饮水，冷暖自知
- P||ru2 ren2 yin3shui3;leng3nuan3 zi4zhi1
+ P||ru2 ren2 yin3shui3, leng3nuan3 zi4zhi1
   C proverb
    D1||One must personally experience something in order to know what it's like.
 W|w|如來佛／如来佛
@@ -241682,12 +241682,12 @@ W|w|如雨駢集／如雨骈集
   C phrase
    D1|x #archaic|to gather together side by side in large numbers
 W|w|如雷灌耳
- P||ru2lei2gua4ner3
+ P||ru2lei2guan4er3
   C phrase
    D1||to reverberate like thunder
    D2|#figurative|to be very famous
 W|w|如雷貫耳／如雷贯耳
- P||ru2lei2gua4ner3
+ P||ru2lei2guan4er3
   C phrase
    D1||to reverberate like thunder
    D2|#figurative|to be very famous
@@ -244810,7 +244810,7 @@ W|w|嫁人
   C verb
    D1||(of a female) to get married; to marry
 W|w|嫁出去的女兒，潑出去的水／嫁出去的女儿，泼出去的水
- P||jia4 chu1qu4 de5 nv3er2;po1 chu1qu4 de5 shui3
+ P||jia4 chu1qu4 de5 nv3er2, po1 chu1qu4 de5 shui3
   C proverb
    D1||a daughter married off is like water that has been splashed out
 W|w|嫁女
@@ -247803,7 +247803,7 @@ W|w|學好／学好
   C verb
    D2||(usually of a bad person) to learn from good examples
 W|w|學如逆水行舟，不進則退／学如逆水行舟，不进则退
- P||xue2 ru2 ni4shui3xing2zhou1;bu4jin4ze2tui4
+ P||xue2 ru2 ni4shui3xing2zhou1, bu4jin4ze2tui4
   C proverb
    D1||Learning is like making the boat go against the current; if you stop moving forward, you will go back.
 W|w|學妹／学妹
@@ -247887,7 +247887,7 @@ W|w|學海無涯勤是岸／学海无涯勤是岸
   C phrase
    D1||knowledge is infinite like a boundless ocean; only through diligence in studies can one make accomplishments
 W|w|學海無涯，唯勤是岸／学海无涯，唯勤是岸
- P||xue2hai3wu2ya2;wei2qin2shi4an4
+ P||xue2hai3wu2ya2, wei2qin2shi4an4
   C phrase
    D1||Synonym of 學海無涯勤是岸／学海无涯勤是岸 (xuéhǎiwúyáqínshì'àn, “knowledge is infinite like a boundless ocean; only through diligence in studies can one make accomplishments”)
 W|w|學海無涯／学海无涯
@@ -252041,7 +252041,7 @@ W|w|害人不淺／害人不浅
   C phrase
    D1||do great harm to others
 W|w|害人之心不可有，防人之心不可無／害人之心不可有，防人之心不可无
- P||hai4ren2 zhi1 xin1 bu4ke3 you3;fang2ren2 zhi1 xin1 bu4ke3 wu2
+ P||hai4ren2 zhi1 xin1 bu4ke3 you3, fang2ren2 zhi1 xin1 bu4ke3 wu2
   C proverb
    D1||one should not try to harm others, but you should also be prudent and guard against those who harm you
 W|w|害人害己
@@ -254926,11 +254926,11 @@ W|w|寧古塔／宁古塔
   C name
    D1|x #historical|(～城) Ningguta, an ancient city in the Qing dynasty
 W|w|寧可信其有，不可信其無／宁可信其有，不可信其无
- P||ning2ke3 xin4 qi2you3;bu4bu4ke3 xin4 qi2 wu2
+ P||ning2ke3 xin4 qi2you3, bu4ke3 xin4 qi2 wu2
   C proverb
    D1||It is better to believe something is real or true than to believe it is nonexistent or false.
 W|w|寧可玉碎，不能瓦全／宁可玉碎，不能瓦全
- P||ning4ke3 yu4sui4;bu4neng2 wa3quan2;ning2ke3 yu4sui4
+ P||ning4ke3 yu4sui4, bu4neng2 wa3quan2;ning2ke3 yu4sui4, bu4neng2 wa3quan2
   C proverb
    D1||Dying an honourable death is better than living a dishonourable life
 W|w|寧國／宁国
@@ -254938,7 +254938,7 @@ W|w|寧國／宁国
   C name
    D1||(～市, formerly ～縣) Ningguo (a county-level city and former county of Xuancheng, Anhui, China)
 W|w|寧在人前全不會，莫在人前會不全／宁在人前全不会，莫在人前会不全
- P||ning2zai4ren2qian2quan2bu4hui4;mo4zai4ren2qian2hui4bu4quan2
+ P||ning2zai4ren2qian2quan2bu4hui4, mo4zai4ren2qian2hui4bu4quan2
   C proverb
    D1||it is better not to be in public at all than to be imperfect in public
 W|w|寧夏回族自治區／宁夏回族自治区
@@ -254959,7 +254959,7 @@ W|w|寧德／宁德
   C name
    D1||(～市) Ningde (a prefecture-level city in Fujian, China)
 W|w|寧教我負天下人，休教天下人負我／宁教我负天下人，休教天下人负我
- P||ning4jiao4 wo3 fu4 tian1xia4 ren2;xiu1 jiao4 tian1xia4 ren2 fu4 wo3;ning2jiao4 wo3 fu4 tian1xia4 ren2
+ P||ning4jiao4 wo3 fu4 tian1xia4 ren2, xiu1 jiao4 tian1xia4 ren2 fu4 wo3;ning2jiao4 wo3 fu4 tian1xia4 ren2, xiu1 jiao4 tian1xia4 ren2 fu4 wo3
   C proverb
    D1||I would rather that everyone were betrayed by me, instead of me being betrayed by everyone.
 W|w|寧日／宁日
@@ -254979,7 +254979,7 @@ W|w|寧枉勿縱／宁枉勿纵
   C phrase
    D1||it is better to wrong the innocent than to let go of the guilty
 W|w|寧欺白鬚公，莫欺少年窮／宁欺白须公，莫欺少年穷
- P||ning4 qi1 bai2xu1 gong1;mo4 qi1 shao4nian2 qiong2;ning2 qi1 bai2xu1 gong1
+ P||ning4 qi1 bai2xu1 gong1, mo4 qi1 shao4nian2 qiong2;ning2 qi1 bai2xu1 gong1, mo4 qi1 shao4nian2 qiong2
   C proverb
    D1||Do not look down on a young person for being poor
 W|w|寧武關／宁武关
@@ -255021,15 +255021,15 @@ W|w|寧海／宁海
    D1||(～縣) Ninghai County, administered as part of Ningbo, Zhejiang, China.
    D2|x #historical|Ninghai, a former name of Qiaodou (橋兜村) in Putian, Fujian, China.
 W|w|寧為太平犬，不做亂世人／宁为太平犬，不做乱世人
- P||ning4 wei2 tai4ping2 quan3;bu4 zuo4 luan4shi4 ren2;ning2 wei2 tai4ping2 quan3
+ P||ning4 wei2 tai4ping2 quan3, bu4 zuo4 luan4shi4 ren2;ning2 wei2 tai4ping2 quan3, bu4 zuo4 luan4shi4 ren2
   C proverb
    D1||It’s better to be a dog in a peaceful time than be a man in a chaotic period.
 W|w|寧為雞口，無為牛後／宁为鸡口，无为牛后
- P||ning2 wei2 ji1kou3;wu2 wei2 niu2hou4
+ P||ning2 wei2 ji1kou3, wu2 wei2 niu2hou4
   C proverb
    D1|#figurative|It is better to be a big fish in a small pond than a small fish in a big pond.
 W|w|寧為雞頭，不做鳳尾／宁为鸡头，不做凤尾
- P||ning4 wei2 ji1tou2;bu4 zuo4 feng4wei3
+ P||ning4 wei2 ji1tou2, bu4 zuo4 feng4wei3
   C phrase
    D1||to prefer to stand out from a mediocre crowd than to be a nobody among an exceptional crowd
 W|w|寧瑪派／宁玛派
@@ -255065,11 +255065,11 @@ W|w|寧謐／宁谧
   C adj
    D1|- #literary|tranquil; serene; quiet
 W|w|寧賣祖宗田，不忘祖宗言／宁卖祖宗田，不忘祖宗言
- P||ning4 mai4 zu3zong1 tian2;bu4wang4 zu3zong1 yan2
+ P||ning4 mai4 zu3zong1 tian2, bu4wang4 zu3zong1 yan2
   C proverb
    D1||do not forget the Hakka language and one's roots
 W|w|寧賣祖宗田，不賣祖宗言／宁卖祖宗田，不卖祖宗言
- P||ning4 mai4 zu3zong1 tian2;bu4 mai4 zu3zong1 yan2
+ P||ning4 mai4 zu3zong1 tian2, bu4 mai4 zu3zong1 yan2
   C proverb
    D1||do not forget the Hakka language and one's roots
 W|w|寧遠堡／宁远堡
@@ -255122,7 +255122,7 @@ W|w|寧馨／宁馨
   C pron
    D4|- #literary|(during the Jin–Song period) that kind; that; such
 W|w|寧鳴而死，不默而生／宁鸣而死，不默而生
- P||ning2ming2er2si3;bu4mo4er2sheng1
+ P||ning2ming2er2si3, bu4mo4er2sheng1
   C proverb
    D1||to rather speak up for justice and die than live in silence
 W|w|寨卡病毒
@@ -260128,7 +260128,7 @@ W|w|小貓／小猫
   C noun
    D1||kitten
 W|w|小財不出，大財不入／小财不出，大财不入
- P||xiao3cai2bu4chu1;da4cai2bu4ru4
+ P||xiao3cai2bu4chu1, da4cai2bu4ru4
   C proverb
    D1||One must sacrifice a small amount of money to earn big money.
 W|w|小販中心／小贩中心
@@ -260670,7 +260670,7 @@ W|w|少吃多餐
   C phrase
    D1||to eat small but frequent meals
 W|w|少壯不努力，老大徒傷悲／少壮不努力，老大徒伤悲
- P||shao4zhuang4 bu4 nu3li4;lao3da4 tu2 shang1bei1
+ P||shao4zhuang4 bu4 nu3li4, lao3da4 tu2 shang1bei1
   C proverb
    D1||laziness in youth spells regret in old age; reckless youth makes rueful age; an idle youth, a needy age.
 W|w|少壯／少壮
@@ -261568,7 +261568,7 @@ W|w|尺度
    D2||yardstick; standard; criterion
    D3||boundary (outside which it becomes illegal, immoral or otherwise unacceptable); bound; limit; bottom line
 W|w|尺有所短，寸有所長／尺有所短，寸有所长
- P||chi3you3suo3duan3;cun4you3suo3chang2
+ P||chi3you3suo3duan3, cun4you3suo3chang2
   C proverb
    D1|#figurative|everyone has their weak points as well as their strong ones; Everybody has their own merits and demerits
 W|w|尺牘／尺牍
@@ -263587,7 +263587,7 @@ W|w|山不轉路轉／山不转路转
   C proverb
    D1||There's more than one way to skin a cat; There is always a workaround.
 W|w|山中無老虎，猴子稱大王／山中无老虎，猴子称大王
- P||shan1 zhong1 wu2 lao3hu3;hou2zi5 cheng1 da4wang2;hou2zi5 cheng1 dai4wang2
+ P||shan1 zhong1 wu2 lao3hu3, hou2zi5 cheng1 da4wang2;shan1 zhong1 wu2 lao3hu3, hou2zi5 cheng1 dai4wang2
   C proverb
    D1||in the land of the blind, the one-eyed man is king; when the cat's away the mice will play
 W|w|山丹
@@ -267872,7 +267872,7 @@ W|w|巧言令色
   C phrase
    D1||with flourishing words and friendly countenance; with insincere courtesy
 W|w|巧言令色，鮮矣仁／巧言令色，鲜矣仁
- P||qiao3yan2ling4se4;xian3yi3ren2
+ P||qiao3yan2ling4se4, xian3yi3ren2
   C proverb
    D1||He who utters sweet talk and pretentious words does not have much benevolence.
 W|w|巧言如流
@@ -268326,7 +268326,7 @@ W|w|差不離／差不离
   C adv
    D3||almost; nearly
 W|w|差之毫釐，謬以千里／差之毫厘，谬以千里
- P||cha1zhi1hao2li2;miu4yi3qian1li3
+ P||cha1zhi1hao2li2, miu4yi3qian1li3
   C proverb
    D1||small discrepancies lead to great errors
 W|w|差人
@@ -268339,7 +268339,7 @@ W|w|差人
   C noun
    D3||strange person; eccentric
 W|w|差以毫釐，失之千里／差以毫厘，失之千里
- P||cha1yi3hao2li2;shi1zhi1qian1li3
+ P||cha1yi3hao2li2, shi1zhi1qian1li3
   C proverb
    D1||small discrepancies lead to great errors
 W|w|差使
@@ -268455,7 +268455,7 @@ W|w|差舛
   C noun
    D1|- #literary|mistake
 W|w|差若毫釐，謬以千里／差若毫厘，谬以千里
- P||cha1ruo4hao2li2;miu4yi3qian1li3
+ P||cha1ruo4hao2li2, miu4yi3qian1li3
   C proverb
    D1||small discrepancies lead to great errors
 W|w|差評／差评
@@ -268547,7 +268547,7 @@ W|w|己巳
   C noun
    D1||The sixth term of the Chinese sexagenary cycle, sometimes glossed as "Earth Snake" from its associated terms in the Chinese elements and zodiac.
 W|w|己所不欲，勿施於人／己所不欲，勿施于人
- P||ji3suo3bu4yu4;wu4shi1yu2ren2
+ P||ji3suo3bu4yu4, wu4shi1yu2ren2
   C phrase
    D1||Do not do unto others what you would not like others to do unto yourself.
 W|w|己方
@@ -271507,7 +271507,7 @@ W|w|師法／师法
   C verb
    D2|- #literary|to imitate; to follow the example of
 W|w|師父領進門，修行靠個人／师父领进门，修行靠个人
- P||shi1fu4 ling3 jin4 men2;xiu1xing2 kao4 ge4ren2
+ P||shi1fu4 ling3 jin4 men2, xiu1xing2 kao4 ge4ren2
   C phrase
    D1||A master can only lead a person to the temple gate; the individual must practice himself to become a monk
 W|w|師爺／师爷
@@ -272995,7 +272995,7 @@ W|w|平星
   C name
    D1||(～村) Pingxing (a village in Zhonglu, Lichuan, Enshi prefecture, Hubei, China)
 W|w|平時不燒香，臨時抱佛腳／平时不烧香，临时抱佛脚
- P||ping2shi2 bu4 shao1xiang1;lin2shi2 bao4 fo2jiao3
+ P||ping2shi2 bu4 shao1xiang1, lin2shi2 bao4 fo2jiao3
   C proverb
    D1||to not make adequate preparations beforehand and do something hurriedly only at the last minute
 W|w|平時成績／平时成绩
@@ -273190,7 +273190,7 @@ W|w|平瓦
   C noun
    D1||plain tile
 W|w|平生不做虧心事，半夜敲門也不驚／平生不做亏心事，半夜敲门也不惊
- P||ping2sheng1 bu4 zuo4 kui1xin1 shi4;ban4 ye4qiao1 men2 ye3 bu4 jing1
+ P||ping2sheng1 bu4 zuo4 kui1xin1 shi4, ban4 ye4qiao1 men2 ye3 bu4 jing1
   C proverb
    D1||if one were not guilty, they have nothing to hide
 W|w|平白
@@ -276349,7 +276349,7 @@ W|w|廟堂／庙堂
    D1|x #archaic|ancestral temple
    D2|x #archaic|the imperial court
 W|w|廟小妖風大，池淺王八多／庙小妖风大，池浅王八多
- P||miao4 xiao3 yao1feng1 da4;chi2 qian3 wang2ba1 duo1
+ P||miao4 xiao3 yao1feng1 da4, chi2 qian3 wang2ba1 duo1
   C proverb
    D1||There are comparatively more bad people in a small community
 W|w|廟島／庙岛
@@ -278764,7 +278764,7 @@ W|w|弱水
   C name
    D1||Ruo Shui (a river in Gansu and Inner Mongolia, China)
 W|w|弱水三千，只取一瓢飲／弱水三千，只取一瓢饮
- P||ruo4shui3san1qian1;zhi3 qu3 yi1piao2 yin3
+ P||ruo4shui3san1qian1, zhi3 qu3 yi1piao2 yin3
   C phrase
    D1||there are so many potential lovers to choose from, but you only pick one from among those potential lovers
 W|w|弱爆
@@ -280919,7 +280919,7 @@ W|w|彺
   C character
    D1||in a hurry (as in walking)
 W|w|彼一時，此一時／彼一时，此一时
- P||bi3 yi1shi2;ci3 yi1shi2
+ P||bi3 yi1shi2, ci3 yi1shi2
   C phrase
    D1||that was then, this is now
 W|w|彼地
@@ -281090,7 +281090,7 @@ W|w|往者
    D1|- #literary|past actions; past events
    D2|- #literary|the past; past times; former times
 W|w|往者不可及，來者猶可待／往者不可及，来者犹可待
- P||wang3zhe3 bu4ke3ji2 lai2zhe3 you2 ke3dai4 dai4
+ P||wang3zhe3 bu4ke3ji2, lai2zhe3 you2 ke3dai4
   C phrase
    D1||One cannot change the past, only the future.
 W|w|往自己的臉上貼金／往自己的脸上贴金
@@ -282677,7 +282677,7 @@ W|w|得道多助
   C phrase
    D1||A just cause attracts much support.
 W|w|得道多助，失道寡助
- P||de2dao4duo1zhu4;shi1dao4gua3zhu4
+ P||de2dao4duo1zhu4, shi1dao4gua3zhu4
   C proverb
    D1||a just cause attracts abundant support while an unjust cause finds little support
 W|w|得隴望蜀／得陇望蜀
@@ -284211,7 +284211,7 @@ W|w|德三／徳三
   C name
    D1|#slang|Short for 德意志第三帝國／德意志第三帝国 (Déyìzhì Dì-sān Dìguó, “Nazi Germany; Third Reich”).
 W|w|德不孤，必有鄰／德不孤，必有邻
- P||de2bu4gu1;bi4you3lin2
+ P||de2bu4gu1, bi4you3lin2
   C proverb
    D1||a virtuous person is never solitary but always has companions
 W|w|德不配位
@@ -292034,7 +292034,7 @@ W|w|愚者
   C pron
    D3|- #formal #literary #polite|I; me
 W|w|愚者千慮，必有一得／愚者千虑，必有一得
- P||yu2zhe3qian1lv4;bi4you3yi1de2
+ P||yu2zhe3qian1lv4, bi4you3yi1de2
   C proverb
    D1||even the foolish ones can sometimes have good ideas after making deep and careful consideration; even a blind squirrel can find a nut once in a while
 W|w|愚者自將／愚者自将
@@ -294847,7 +294847,7 @@ W|w|懲一警百／惩一警百
   C phrase
    D1||to make an example of somebody
 W|w|懲前毖後，治病救人／惩前毖后，治病救人
- P||cheng2qian2bi4hou4;zhi4bing4jiu4ren2;cheng3qian2bi4hou4
+ P||cheng2qian2bi4hou4, zhi4bing4jiu4ren2;cheng3qian2bi4hou4, zhi4bing4jiu4ren2
   C noun
    D1|#Maoism|"learn from past mistakes to avoid future ones and cure the sickness to save the patient"
 W|w|懲前毖後／惩前毖后
@@ -295724,7 +295724,7 @@ W|w|成事
   C noun
    D2|- #literary|matter from the past; that which has passed
 W|w|成事不足，敗事有餘／成事不足，败事有余
- P||cheng2shi4 bu4zu2;bai4shi4 you3yu2
+ P||cheng2shi4 bu4zu2, bai4shi4 you3yu2
   C phrase
    D1||always failing, never succeeding; plenty of failures, but not much success
 W|w|成交量
@@ -296322,7 +296322,7 @@ W|w|成龍／成龙
    D3|#figurative|to succeed in life; to become somebody
    D4|#figurative|to form a whole
 W|w|我不入地獄，誰入地獄／我不入地狱，谁入地狱
- P||wo3 bu4 ru4 di4yu4;shei2 ru4 di4yu4
+ P||wo3 bu4 ru4 di4yu4, shei2 ru4 di4yu4
   C phrase
    D1||if I don't do it, who will?; if I don't help, who will?; sacrifice oneself in order to save others
 W|w|我不會說普通話／我不会说普通话
@@ -299355,7 +299355,7 @@ W|w|打不過／打不过
   C verb
    D1||to be unable to defeat, or beat in a fight; to be no match for someone
 W|w|打不還手，罵不還口／打不还手，骂不还口
- P||da3 bu4 huan2shou3;ma4 bu4 huan2kou3
+ P||da3 bu4 huan2shou3, ma4 bu4 huan2kou3
   C phrase
    D1||to be a complete pacifist and not retaliate at all
 W|w|打主意
@@ -304537,7 +304537,7 @@ W|w|拆息
   C noun
    D1|#finance|daily interest rate
 W|w|拆東牆，補西牆／拆东墙，补西墙
- P||chai1 dong1qiang2;bu3 xi1qiang2
+ P||chai1 dong1qiang2, bu3 xi1qiang2
   C phrase
    D1||to rob Peter to pay Paul
 W|w|拆棚
@@ -305284,7 +305284,7 @@ W|w|拉達／拉达
   C noun
    D2||rada (Slavic parliamentary body)
 W|w|拉鉤上吊，一百年不許變／拉钩上吊，一百年不许变
- P||la1gou1 shang4diao4;yi1bai3 nian2 bu4xu3 bian4
+ P||la1gou1 shang4diao4, yi1bai3 nian2 bu4xu3 bian4
   C phrase
    D1||A phrase uttered when making a pinky promise.
 W|w|拉鉤／拉钩
@@ -305398,7 +305398,7 @@ W|w|拋光／抛光
   C verb
    D1||to polish; to burnish
 W|w|拋出磚去，引回玉來／抛出砖去，引回玉来
- P||pao1chu1zhuan1qu4;yin3hui2yu4lai2
+ P||pao1chu1zhuan1qu4, yin3hui2yu4lai2
   C phrase
    D1||Alternative form of 拋磚引玉／抛砖引玉 (pāozhuānyǐnyù)
 W|w|拋售／抛售
@@ -307002,7 +307002,7 @@ W|w|拲
    D1|x #historical|wooden manacles; wooden handcuffs
    D2|x #historical|to place in manacles as punishment
 W|w|拳不離手，曲不離口／拳不离手，曲不离口
- P||quan2bu4li2shou3;qu1bu4li2kou3
+ P||quan2bu4li2shou3, qu1bu4li2kou3
   C proverb
    D1||Only through diligent practice can one become proficient in the skill or art.
 W|w|拳亂／拳乱
@@ -312796,7 +312796,7 @@ W|w|揚棄／扬弃
    D1|#philosophy|to sublate
    D2||to develop what is useful or healthy and discard what is not
 W|w|揚湯止沸，不如去薪／扬汤止沸，不如去薪
- P||yang2tang1zhi3fei4;bu4ru2 qu4 xin1
+ P||yang2tang1zhi3fei4, bu4ru2 qu4 xin1
   C proverb
    D1||It is better to solve the root problem, rather than treating the symptoms.
 W|w|揚湯止沸／扬汤止沸
@@ -316469,7 +316469,7 @@ W|w|撾／挝
    D2||name of weapon in ancient China
    D3||Only used in 老撾／老挝 (Lǎowō).
 W|w|撿了芝麻，丟了西瓜／捡了芝麻，丢了西瓜
- P||jian3le5 zhi1ma5;diu1le5 xi1gua1
+ P||jian3le5 zhi1ma5, diu1le5 xi1gua1
   C phrase
    D1||to try to gain a little only to lose a lot
 W|w|撿便宜／捡便宜
@@ -317614,7 +317614,7 @@ W|w|擺一道／摆一道
   C verb-object
    D1||to set someone up
 W|w|擺事實，講道理／摆事实，讲道理
- P||bai3 shi4shi2;jiang3 dao4li3
+ P||bai3 shi4shi2, jiang3 dao4li3
   C phrase
    D1||to present the facts and reason things out
 W|w|擺事實／摆事实
@@ -319531,7 +319531,7 @@ W|w|放下屠刀
   C phrase
    D1||to repent and mend one's ways; to turn over a new leaf
 W|w|放下屠刀，立地成佛
- P||fang4xia4tu2dao1;li4di4cheng2fo2
+ P||fang4xia4tu2dao1, li4di4cheng2fo2
   C proverb
    D1||One can quickly become a good person if one repents and mends one's ways
 W|w|放之四海皆准
@@ -320599,7 +320599,7 @@ W|w|救人
   C verb-object
    D1|#intransitive|to rescue someone; to save one's life
 W|w|救人一命，勝造七級浮屠／救人一命，胜造七级浮屠
- P||jiu4ren2 yi1ming4 sheng4 zao4 qi1 ji2 fu2tu2
+ P||jiu4ren2 yi1ming4, sheng4 zao4 qi1 ji2 fu2tu2
   C proverb
    D1||saving a life is of boundless beneficence
 W|w|救人如救火
@@ -321230,7 +321230,7 @@ W|w|教會學校／教会学校
    D1|#countable|church school
     XM||所;家
 W|w|教會徒弟，餓死師傅／教会徒弟，饿死师傅
- P||jiao4hui4 tu2di4;e4si3 shi1fu4
+ P||jiao4hui4 tu2di4, e4si3 shi1fu4
   C proverb
    D1||If a master teaches his apprentice everything without reservation, the apprentice may surpass the master, causing the master to lose his livelihood
 W|w|教會拉丁語／教会拉丁语
@@ -324366,7 +324366,7 @@ W|w|斬殺／斩杀
    D1||to behead
    D2||to kill with a bladed weapon by hacking or slashing
 W|w|斬草不除根，春風吹又生／斩草不除根，春风吹又生
- P||zhan3 cao3 bu4 chu2gen1;chun1feng1 chui1 you4 sheng1
+ P||zhan3 cao3 bu4 chu2gen1, chun1feng1 chui1 you4 sheng1
   C proverb
    D1||One should tackle the root of a problem and solve the problem completely. Otherwise, the problem will resurge.
 W|w|斬頭／斩头
@@ -327743,7 +327743,7 @@ W|w|既是
   C conj
    D1|- #literary|since; as; being that
 W|w|既有今日，何必當初／既有今日，何必当初
- P||ji4you3 jin1ri4 he2bi4 dang1chu1
+ P||ji4you3 jin1ri4, he2bi4 dang1chu1
   C phrase
    D1||to regret one's past behaviour
 W|w|既望
@@ -327885,7 +327885,7 @@ W|w|日冕物質拋射／日冕物质抛射
   C noun
    D1|C #astronomy|coronal mass ejection
 W|w|日出而作，日入而息
- P||ri4chu1 er2 zuo4;ri4ru4 er2 xi1;ri4ru4 er2 xi2
+ P||ri4chu1 er2 zuo4, ri4ru4 er2 xi1;ri4chu1 er2 zuo4, ri4ru4 er2 xi2
   C phrase
    D1||up when the sun is out, resting when its dark (as in the days of old)
 W|w|日刊
@@ -328862,11 +328862,11 @@ W|w|早知
   C verb
    D1||to know earlier
 W|w|早知今日，何必當初／早知今日，何必当初
- P||zao3zhi1 jin1ri4;he2bi4 dang1chu1
+ P||zao3zhi1 jin1ri4, he2bi4 dang1chu1
   C phrase
    D1||to regret one's past behaviour
 W|w|早知今日，悔不當初／早知今日，悔不当初
- P||zao3zhi1 jin1ri4;hui3 bu4 dang1chu1
+ P||zao3zhi1 jin1ri4, hui3 bu4 dang1chu1
   C phrase
    D1||to regret one's past behaviour
 W|w|早稻
@@ -328878,7 +328878,7 @@ W|w|早第三紀／早第三纪
   C name
    D1||Alternative name for 古近紀／古近纪 (Gǔjìn Jì).
 W|w|早聞道，夕死可矣／早闻道，夕死可矣
- P||zao3 wen2 dao4;xi1 si3 ke3 yi3;xi4 si3 ke3 yi3
+ P||zao3 wen2 dao4, xi1 si3 ke3 yi3;zao3 wen2 dao4, xi4 si3 ke3 yi3
   C phrase
    D1||Alternative form of 朝聞道，夕死可矣／朝闻道，夕死可矣 (zhāo wén dào, xī sǐ kě yǐ)
 W|w|早自習／早自习
@@ -329475,7 +329475,7 @@ W|w|明令
   C noun
    D1||explicit order; formal decree; public proclamation
 W|w|明修棧道，暗渡陳倉／明修栈道，暗渡陈仓
- P||ming2xiu1zhan4dao4;an4du4chen2cang1
+ P||ming2xiu1zhan4dao4, an4du4chen2cang1
   C phrase
    D1||to feign one thing while doing something else; to divert someone's attention towards something while secretly doing something else to achieve one's goal
 W|w|明個／明个
@@ -329737,7 +329737,7 @@ W|w|明格列爾／明格列尔
   C name
    D1||Mingrelia; Samegrelo
 W|w|明槍易躲，暗箭難防／明枪易躲，暗箭难防
- P||ming2qiang1 yi4 duo3;an4jian4 nan2 fang2
+ P||ming2qiang1 yi4 duo3, an4jian4 nan2 fang2
   C proverb
    D1||It is easy to dodge an open attack, but difficult to defend against a concealed one.
 W|w|明槓／明杠
@@ -329853,7 +329853,7 @@ W|w|明知就裡／明知就里
   C phrase
    D1||to clearly understand the inside scoop or principle
 W|w|明知山有虎，偏向虎山行
- P||ming2zhi1 shan1 you3 hu3;pian1 xiang4 hu3 shan1 xing2
+ P||ming2zhi1 shan1 you3 hu3, pian1 xiang4 hu3 shan1 xing2
   C phrase
    D1||to take a risk despite knowing the dangers involved
 W|w|明知故問／明知故问
@@ -330468,7 +330468,7 @@ W|w|星斗
    D3|#literary #poetic|Big Dipper
    D4|#figurative|outstanding talent
 W|w|星星之火，可以燎原
- P||xing1xing1 zhi1 huo3;ke3yi3 liao2yuan2
+ P||xing1xing1 zhi1 huo3, ke3yi3 liao2yuan2
   C proverb
    D1||an insignificant cause can have a massive effect
 W|w|星星峽／星星峡
@@ -332512,7 +332512,7 @@ W|w|普天之下
   C phrase
    D1||all over the world
 W|w|普天之下，莫非王土
- P||pu3tian1zhi1xia4;mo4fei1wang2tu3
+ P||pu3tian1zhi1xia4, mo4fei1wang2tu3
   C proverb
    D1||All land under heaven is the territory of the sovereign
 W|w|普天同慶／普天同庆
@@ -333342,7 +333342,7 @@ W|w|智者千慮必有一失／智者千虑必有一失
   C phrase
    D1|x #Hokkien|nobody is infallible
 W|w|智者千慮，必有一失／智者千虑，必有一失
- P||zhi4zhe3qian1lv4;bi4you3yi1shi1
+ P||zhi4zhe3qian1lv4, bi4you3yi1shi1
   C proverb
    D1||even the wise aren't always free from errors (even after making deep and careful consideration); even Homer nods
 W|w|智聯／智联
@@ -336107,7 +336107,7 @@ W|w|曾經滄海／曾经沧海
   C phrase
    D1||been there, done that
 W|w|曾著賣糖君子哄，如今不信口甜人／曾着卖糖君子哄，如今不信口甜人
- P||ceng2 zhao1 mai4 tang2 jun1zi3 hong3;ru2jin1 bu4xin4 kou3tian2 ren2
+ P||ceng2 zhao1 mai4 tang2 jun1zi3 hong3, ru2jin1 bu4xin4 kou3tian2 ren2
   C proverb
    D1||Once people have suffered losses due to dupery, they will not easily trust other people's slick talk.
 W|w|曾都
@@ -337337,7 +337337,7 @@ W|w|有一說一／有一说一
   C phrase
    D1||"[if] there is one, say one"; to speak the truth
 W|w|有一頓，沒一頓／有一顿，没一顿
- P||you3 yi1dun4;mei2 yi1dun4
+ P||you3 yi1dun4, mei2 yi1dun4
   C phrase
    D1||describes when someone cannot eat on a regular basis
 W|w|有一點／有一点
@@ -337368,7 +337368,7 @@ W|w|有事
    D3||(of a problem or emergency) to arise; to happen
    D4||to have a job; to be employed
 W|w|有事鍾無豔，無事夏迎春／有事锺无艳，无事夏迎春
- P||you3shi4 Zhong1 Wu2yan4;wu2shi4 Xia4 Ying2chun1
+ P||you3shi4 Zhong1 Wu2yan4, wu2shi4 Xia4 Ying2chun1
   C phrase
    D1||Someone only reaches his/her friend when the friend is advantageous.
 W|w|有人
@@ -337659,7 +337659,7 @@ W|w|有彩色
   C noun
    D1||chromatic color
 W|w|有心栽花花不開，無心插柳柳成蔭／有心栽花花不开，无心插柳柳成荫
- P||you3xin1 zai1 hua1 hua1 bu4 kai1;wu2xin1 cha1 liu3 liu3 cheng2 yin4
+ P||you3xin1 zai1 hua1 hua1 bu4 kai1, wu2xin1 cha1 liu3 liu3 cheng2 yin4
   C phrase
    D1||Sometimes when one tried to do things wholeheartedly, the results may not be good; but on the contrary, sometimes when one has no intention to do something, the results may be positive.
 W|w|有心無力／有心无力
@@ -337965,7 +337965,7 @@ W|w|有理走遍天下
   C proverb
    D1||With justice on your side, you can go anywhere.
 W|w|有理走遍天下，無理寸步難行／有理走遍天下，无理寸步难行
- P||you3li3 zou3 bian4 tian1xia4;wu2li3 cun4bu4nan2xing2
+ P||you3li3 zou3 bian4 tian1xia4, wu2li3 cun4bu4nan2xing2
   C proverb
    D1||With justice on your side, you can go anywhere; without it, you can't take a step.
 W|w|有甚／有什
@@ -339178,7 +339178,7 @@ W|w|朝聖／朝圣
   C verb
    D3||to make a pilgrimage
 W|w|朝聞道，夕死可矣／朝闻道，夕死可矣
- P||zhao1 wen2 dao4;xi1 si3 ke3 yi3;xi4 si3 ke3 yi3
+ P||zhao1 wen2 dao4, xi1 si3 ke3 yi3;zhao1 wen2 dao4, xi4 si3 ke3 yi3
   C proverb
    D1||if in the morning I were to gain knowledge of the correct path in life, I would be able to die at sunset without regrets
 W|w|朝臣
@@ -339951,7 +339951,7 @@ W|w|木里
   C name
    D1||(～藏族自治縣, ～縣) Muli (an autonomous county of Liangshan prefecture, Sichuan, China)
 W|w|木門對木門，竹門對竹門／木门对木门，竹门对竹门
- P||mu4men2 dui4 mu4men2;zhu2men2 dui4 zhu2men2
+ P||mu4men2 dui4 mu4men2, zhu2men2 dui4 zhu2men2
   C phrase
    D1||Synonym of 竹門對竹門，木門對木門／竹门对竹门，木门对木门 (zhúmén duì zhúmén, mùmén duì mùmén)
 W|w|木防己
@@ -341291,7 +341291,7 @@ W|w|朱迪絲／朱迪丝
   C name
    D1||A transliteration of the English female given name Judith
 W|w|朱門酒肉臭，路有凍死骨／朱门酒肉臭，路有冻死骨
- P||zhu1men2jiu3rou4chou4;lu4you3dong4si3gu3
+ P||zhu1men2jiu3rou4chou4, lu4you3dong4si3gu3
   C phrase
    D1||describes the extreme wealth inequality in society
 W|w|朱門酒肉臭／朱门酒肉臭
@@ -342395,7 +342395,7 @@ W|w|東一榔頭西一棒子／东一榔头西一棒子
   C phrase
    D1|#figurative|doing things without clear organisation or objective
 W|w|東一榔頭，西一棒子／东一榔头，西一棒子
- P||dong1 yi1 lang2tou5;xi1 yi1 bang4zi3
+ P||dong1 yi1 lang2tou5, xi1 yi1 bang4zi3
   C phrase
    D1||Alternative form of 東一榔頭西一棒子／东一榔头西一棒子 (dōng yī lángtou xī yī bàngzǐ)
 W|w|東不拉／东不拉
@@ -344452,7 +344452,7 @@ W|w|林子
    D1|#informal|woods; forest; grove
     XM||片
 W|w|林子大了，什麼鳥都有／林子大了，什么鸟都有
- P||lin2zi5 da4 le5;shen2me5 niao3 dou1 you3
+ P||lin2zi5 da4 le5, shen2me5 niao3 dou1 you3
   C proverb
    D1||there are all kinds of people in a large community
 W|w|林學／林学
@@ -350263,7 +350263,7 @@ W|w|棋逢敵手／棋逢敌手
   C phrase
    D1||(of opponents) to be equally strong
 W|w|棋錯一著，滿盤皆輸／棋错一着，满盘皆输
- P||qi2 cuo4 yi1zhao1;man3pan2 jie1 shu1;qi2 cuo4 yi1zhuo2
+ P||qi2 cuo4 yi1zhao1, man3pan2 jie1 shu1;qi2 cuo4 yi1zhuo2, man3pan2 jie1 shu1
   C proverb
    D1||A big failure is caused by a small mistake.
 W|w|棋鐘／棋钟
@@ -354779,7 +354779,7 @@ W|w|樹下／树下
   C name
    D1||An orthographic borrowing of the Japanese surname 樹下, Kinoshita
 W|w|樹不要皮必死無疑，人不要臉天下無敵／树不要皮必死无疑，人不要脸天下无敌
- P||shu4 bu4yao4 pi2 bi4 si3 wu2yi2;ren2 bu4yao4 lian3 tian1xia4wu2di2
+ P||shu4 bu4yao4 pi2 bi4 si3 wu2yi2, ren2 bu4yao4 lian3 tian1xia4wu2di2
   C proverb
    D1|#sarcastic|A shameless person is undefeatable and difficult to deal with.
 W|w|樹丫／树丫
@@ -355415,7 +355415,7 @@ W|w|機上盒／机上盒
   C noun
    D1|T|set-top box
 W|w|機不可失，時不再來／机不可失，时不再来
- P||ji1bu4ke3shi1;shi2bu4zai4lai2
+ P||ji1bu4ke3shi1, shi2bu4zai4lai2
   C proverb
    D1||Opportunity seldom knocks twice.
 W|w|機不可失／机不可失
@@ -359803,7 +359803,7 @@ W|w|正齒音
   C noun
    D1|#Chinese-phonetics|any of the group of consonants represented by the Middle Chinese pronunciation the following 字母 (zìmǔ): 照 (/tʃ/), 穿 (/tʃʰ/), 床 (/dʒ/), 審／审 (/ʃ/) and 禪／禅 (/ʒ/)
 W|w|此一時，彼一時／此一时，彼一时
- P||ci3 yi1shi2;bi3 yi1shi2
+ P||ci3 yi1shi2, bi3 yi1shi2
   C phrase
    D1||that was then, this is now
 W|w|此中
@@ -361405,7 +361405,7 @@ W|w|死會／死会
   C noun
    D2|T|A term from Rotating savings and credit association in Taiwan.
 W|w|死有重於泰山，輕於鴻毛／死有重于泰山，轻于鸿毛
- P||si3 you3 zhong4 yu2 Tai4shan1;qing1 yu2 hong2mao2
+ P||si3 you3 zhong4 yu2 Tai4shan1, qing1 yu2 hong2mao2
   C proverb
    D1||Some deaths are more weighty than Mount Tai, while others are lighter (and less significant) than a wild goose feather.
 W|w|死有餘辜／死有余辜
@@ -361504,7 +361504,7 @@ W|w|死生
   C noun
    D1|- #literary|life and death
 W|w|死生有命，富貴在天／死生有命，富贵在天
- P||si3sheng1 you3 ming4;fu4gui4 zai4 tian1
+ P||si3sheng1 you3 ming4, fu4gui4 zai4 tian1
   C phrase
    D1||Alternative form of 生死有命，富貴在天／生死有命，富贵在天 (shēngsǐ yǒu mìng, fùguì zài tiān)
 W|w|死產／死产
@@ -362419,7 +362419,7 @@ W|w|殺人不見血／杀人不见血
   C phrase
    D1||to kill by subtle means; to kill by smooth strategy
 W|w|殺人償命，欠債還錢／杀人偿命，欠债还钱
- P||sha1ren2 chang2ming4;qian4zhai4 huan2qian2
+ P||sha1ren2 chang2ming4, qian4zhai4 huan2qian2
   C proverb
    D1||a murderer must pay with his life as a debtor pays with money
 W|w|殺人如麻／杀人如麻
@@ -362523,7 +362523,7 @@ W|w|殺掠／杀掠
   C verb
    D1||to kill and plunder
 W|w|殺敵一千，自損八百／杀敌一千，自损八百
- P||sha1di2 yi1qian1;zi4 sun3 ba1bai3
+ P||sha1di2 yi1qian1, zi4 sun3 ba1bai3
   C phrase
    D1||Synonym of 傷敵一千，自損八百／伤敌一千，自损八百 (shāng dí yīqiān, zì sǔn bābǎi, “to inflict damage on the enemy while one's own side suffers a smaller but comparable level of damage”)
 W|w|殺敵／杀敌
@@ -363176,7 +363176,7 @@ W|w|每日
   C adv
    D1||every day; daily
 W|w|每日一蘋果，醫生遠離我／每日一苹果，医生远离我
- P||mei3ri4 yi1 ping2guo3;yi1sheng1 yuan3li2 wo3
+ P||mei3ri4 yi1 ping2guo3, yi1sheng1 yuan3li2 wo3
   C proverb
    D1||an apple a day keeps the doctor away
 W|w|每晚
@@ -363412,7 +363412,7 @@ W|w|毓婷
   C noun
    D1||levonorgestrel (birth control pill)
 W|w|比上不足，比下有餘／比上不足，比下有余
- P||bi3 shang4 bu4zu2;bi3 xia4 you3yu2
+ P||bi3 shang4 bu4zu2, bi3 xia4 you3yu2
   C phrase
    D1||not as good as the best ones, but better than the worst ones
 W|w|比不上
@@ -368587,7 +368587,7 @@ W|w|求和
    D1||to sue for peace; to negotiate peace; to hold peace talks; to extend an olive branch
    D2||to try to equalize (a contest)
 W|w|求大同，存小異／求大同，存小异
- P||qiu2 da4tong2;cun2 xiao3yi4
+ P||qiu2 da4tong2, cun2 xiao3yi4
   C phrase
    D1||to seek common ground on major issues while reserving differences on minor ones
 W|w|求官
@@ -368635,7 +368635,7 @@ W|w|求生
   C verb
    D1||to seek survival
 W|w|求生不得，求死不能
- P||qiu2sheng1 bu4de2;qiu2si3 bu4neng2
+ P||qiu2sheng1 bu4de2, qiu2si3 bu4neng2
   C phrase
    D1||between a rock and a hard place; in a bind; in a pickle
    D2||to have a fate worse than death (often as a curse)
@@ -369084,7 +369084,7 @@ W|w|江孜
    D1||(～縣) Gyantse (a county of Shigatse, Tibet Autonomous Region, China)
    D2||(～鎮) Gyantse (a town in Gyantse County, Shigatse, Tibet Autonomous Region, China)
 W|w|江山易改，本性難移／江山易改，本性难移
- P||jiang1shan1 yi4 gai3;ben3xing4 nan2 yi2
+ P||jiang1shan1 yi4 gai3, ben3xing4 nan2 yi2
   C proverb
    D1||a leopard can't change its spots
 W|w|江山永固
@@ -370498,7 +370498,7 @@ W|w|沒有辦法／没有办法
   C phrase
    D1||there is nothing to be done; there is no way
 W|w|沒有金剛鑽，別攬瓷器活／没有金刚钻，别揽瓷器活
- P||mei2you3 jin1gang1zuan4;bie2 lan3 ci2qi4huo2
+ P||mei2you3 jin1gang1zuan4, bie2 lan3 ci2qi4huo2
   C proverb
    D1||if you can't stand the heat, get out of the kitchen
 W|w|沒有關係／没有关系
@@ -373776,7 +373776,7 @@ W|w|法紀／法纪
   C noun
    D1||law and discipline
 W|w|法網恢恢，疏而不漏／法网恢恢，疏而不漏
- P||fa3wang3 hui1hui1;shu1 er2 bu4 lou4
+ P||fa3wang3 hui1hui1, shu1 er2 bu4 lou4
   C proverb
    D1||The net of justice is vast, it may not close in tight right away, but nothing will evade it forever.
 W|w|法網／法网
@@ -377714,7 +377714,7 @@ W|w|流水不腐
    D2|#figuratively|A rolling stone gathers no moss
    D3|#figuratively|Things in frequent use are not easily eroded, and can remain energetic.
 W|w|流水不腐，戶樞不蠹／流水不腐，户枢不蠹
- P||liu2shui3bu4fu3;hu4shu1bu4du4
+ P||liu2shui3bu4fu3, hu4shu1bu4du4
   C phrase
    D1||Flowing water is never stale and a moving door hinge never gets rusty
    D2|#figuratively|A rolling stone gathers no moss
@@ -378848,7 +378848,7 @@ W|w|海內外／海内外
   C noun
    D1||home and abroad; domestic and international
 W|w|海內存知己，天涯若比鄰／海内存知己，天涯若比邻
- P||hai3nei4 cun2 zhi1ji3;tian1ya2 ruo4 bi3lin2
+ P||hai3nei4 cun2 zhi1ji3, tian1ya2 ruo4 bi3lin2
   C phrase
    D1||to feel a closeness to a friend or loved one despite being separated by a great distance (this phrase is often used when talking about the internet, long-distance phones, etc.)
 W|w|海內／海内
@@ -385387,7 +385387,7 @@ W|w|湖工
   C name
    D1||(～社區) Hugong (a residential community of Shizishan, Hongshan district, Wuhan, Hubei, China)
 W|w|湖廣熟，天下足／湖广熟，天下足
- P||Hu2guang3 shu2;tian1xia4 zu2
+ P||Hu2guang3 shu2, tian1xia4 zu2
   C proverb
    D1||Used to refer to the fertility of land in Hunan and Hubei.
 W|w|湖廣／湖广
@@ -386664,7 +386664,7 @@ W|w|溫裡藥／温里药
   C noun
    D1||Interior-warming materia medica in traditional Chinese medicine. This term refers to herbs and other medicinal substances that are used to warm the interior organs (such as the lungs and stomach) of the body.
 W|w|溫言在口，大棒在手／温言在口，大棒在手
- P||wen1yan2 zai4 kou3;da4bang4 zai4 shou3
+ P||wen1yan2 zai4 kou3, da4bang4 zai4 shou3
   C proverb
    D1||speak softly and carry a big stick
 W|w|溫課／温课
@@ -388232,7 +388232,7 @@ W|w|滿拚自盡／满拚自尽
   C phrase
    D1||wholeheartedly determined to commit suicide
 W|w|滿招損，謙受益／满招损，谦受益
- P||man3 zhao1sun3;qian1 shou4yi4
+ P||man3 zhao1sun3, qian1 shou4yi4
   C proverb
    D1||A conceited person receives failure, whereas a modest person receives benefits; pride comes before a fall
 W|w|滿文／满文
@@ -390625,7 +390625,7 @@ W|w|潮州粉粿
   C noun
    D1||fun guo (a type of dumpling from the Chaoshan region in Guangdong)
 W|w|潮州粿條福建麵，海南咖啡廣府炒／潮州粿条福建面，海南咖啡广府炒
- P||Chao2zhou1 guo3tiao2 Fu2jian4 mian4;Hai3nan2 ka1fei1 Guang3fu3 chao3
+ P||Chao2zhou1 guo3tiao2 Fu2jian4 mian4, Hai3nan2 ka1fei1 Guang3fu3 chao3
   C phrase
    D1|x #Malaysia #Singapore|Literally, “Chaozhou [has] rice noodles, Fujian [has] noodles; Hainan [has] coffee, Guangdong [has] stir-fry”
 W|w|潮州話／潮州话
@@ -395399,7 +395399,7 @@ W|w|為求／为求
   C prep
    D1||for the sake of
 W|w|為淵驅魚，為叢驅雀／为渊驱鱼，为丛驱雀
- P||wei4yuan1qu1yu2;wei4cong2qu1que4
+ P||wei4yuan1qu1yu2, wei4cong2qu1que4
   C phrase
    D1|#figuratively|to produce the exact opposite effect of what one wished
    D2|#by-extension #figuratively|to drive one's allies or people to the side of the enemy
@@ -396896,7 +396896,7 @@ W|w|無事可做／无事可做
   C verb
    D1|#idiomatic|to have nothing to do
 W|w|無事獻殷勤，非奸即盜／无事献殷勤，非奸即盗
- P||wu2shi4xian4yin1qin2;fei1jian1ji2dao4
+ P||wu2shi4xian4yin1qin2, fei1jian1ji2dao4
   C proverb
    D1||one who offers unsolicited hospitality must be harboring evil intentions
 W|w|無事生非／无事生非
@@ -397710,7 +397710,7 @@ W|w|無核區／无核区
   C noun
    D1||nuclear-free zone
 W|w|無根之木，無源之水／无根之木，无源之水
- P||wu2gen1 zhi1 mu4;wu2yuan2 zhi1 shui3
+ P||wu2gen1 zhi1 mu4, wu2yuan2 zhi1 shui3
   C phrase
    D1|#figuratively|Synonym of 無源之水，無本之木／无源之水，无本之木 (wúyuán zhī shuǐ, wúběn zhī mù, “baseless”)
 W|w|無根藤／无根藤
@@ -397828,7 +397828,7 @@ W|w|無淚／无泪
   C adv
    D1||without tears, tearlessly
 W|w|無源之水，無本之木／无源之水，无本之木
- P||wu2yuan2 zhi1 shui3;wu2ben3 zhi1 mu4
+ P||wu2yuan2 zhi1 shui3, wu2ben3 zhi1 mu4
   C phrase
    D1|#figuratively|baseless
 W|w|無源之水／无源之水
@@ -404515,7 +404515,7 @@ W|w|牡丹皮
   C noun
    D1||Root-bark of peony (An herb used in traditional Chinese medicine to reduce blood stasis, blood clots, and "fire of yin deficiency".)
 W|w|牡丹花下死，做鬼也風流／牡丹花下死，做鬼也风流
- P||mu3dan1hua1 xia4 si3;zuo4gui3 ye3 feng1liu2
+ P||mu3dan1hua1 xia4 si3, zuo4gui3 ye3 feng1liu2
   C proverb
    D1||If I die under a skirt, I can still flirt as a ghost. / If my body should perish, girls I'll still cherish.
 W|w|牡丹餅／牡丹饼
@@ -404735,7 +404735,7 @@ W|w|物什
   C noun
    D1|- #literary|thing; stuff; odds and ends
 W|w|物以類聚，人以群分／物以类聚，人以群分
- P||wu4yi3lei4ju4;ren2 yi3 qun2 fen1
+ P||wu4yi3lei4ju4, ren2 yi3 qun2 fen1
   C proverb
    D1||Birds of a feather flock together.
 W|w|物以類聚／物以类聚
@@ -408789,7 +408789,7 @@ W|w|獨樹一幟／独树一帜
   C phrase
    D1||to develop one’s own unique style
 W|w|獨此一家，別無分店／独此一家，别无分店
- P||du2 ci3 yi1 jia1;bie2 wu2 fen1dian4
+ P||du2 ci3 yi1 jia1, bie2 wu2 fen1dian4
   C phrase
    D1||Synonym of 只此一家，別無分店／只此一家，别无分店 (zhǐ cǐ yī jiā, bié wú fēndiàn)
 W|w|獨步天下／独步天下
@@ -414466,7 +414466,7 @@ W|w|瓜田
   C noun
    D2||melon patch
 W|w|瓜田不納履，李下不整冠／瓜田不纳履，李下不整冠
- P||gua1tian2 bu4 na4 lv3;li3xia4 bu4 zheng3 guan1
+ P||gua1tian2 bu4 na4 lv3, li3xia4 bu4 zheng3 guan1
   C proverb
    D1||to avoid suspicion, don't put yourself in suspicious situations
 W|w|瓜田李下
@@ -416035,11 +416035,11 @@ W|w|生放送
   C noun
    D1|#neologism|live broadcast; livestream
 W|w|生於憂患，死於安樂／生于忧患，死于安乐
- P||sheng1 yu2 you1huan4;si3 yu2 an1le4
+ P||sheng1 yu2 you1huan4, si3 yu2 an1le4
   C proverb
    D1||Life springs from sorrow and calamity; death comes from ease and pleasure.
 W|w|生於斯，長於斯／生于斯，长于斯
- P||sheng1yu2si1;zhang3yu2si1
+ P||sheng1yu2si1, zhang3yu2si1
   C phrase
    D1||to have been born and raised here; born and bred here
 W|w|生日宴會／生日宴会
@@ -416124,7 +416124,7 @@ W|w|生死攸關／生死攸关
   C phrase
    D1||to be a matter of life and death
 W|w|生死有命，富貴在天／生死有命，富贵在天
- P||sheng1si3 you3 ming4;fu4gui4 zai4 tian1
+ P||sheng1si3 you3 ming4, fu4gui4 zai4 tian1
   C phrase
    D1||Life and death are fated, riches and honour depend on the appointment of heaven. / Life and death, poor or rich, it's all destined.
 W|w|生死未卜
@@ -419156,11 +419156,11 @@ W|w|留影
   C verb
    D2||to have a photo taken as a memento
 W|w|留得青山在，不怕沒柴燒／留得青山在，不怕没柴烧
- P||liu2 de2 qing1shan1 zai4;bu4pa4 mei2 chai2 shao1
+ P||liu2 de2 qing1shan1 zai4, bu4pa4 mei2 chai2 shao1
   C proverb
    D1||while there's life, there's hope
 W|w|留得青山在，不愁沒柴燒／留得青山在，不愁没柴烧
- P||liu2 de2 qing1shan1 zai4;bu4 chou2 mei2 chai2 shao1
+ P||liu2 de2 qing1shan1 zai4, bu4 chou2 mei2 chai2 shao1
   C proverb
    D1||Alternative form of 留得青山在，不怕沒柴燒／留得青山在，不怕没柴烧 (liú dé qīngshān zài, bùpà méi chái shāo, “While there's life, there's hope.”)
 W|w|留情
@@ -420643,7 +420643,7 @@ W|w|當局者迷，傍觀者清／当局者迷，傍观者清
   C proverb
    D1||Synonym of 當局者迷，旁觀者清／当局者迷，旁观者清 (dāngjúzhě mí, pángguānzhě qīng)
 W|w|當局者迷，旁觀者清／当局者迷，旁观者清
- P||dang1ju2zhe3 mi2;pang2guan1zhe3 qing1
+ P||dang1ju2zhe3 mi2, pang2guan1zhe3 qing1
   C proverb
    D1||Lookers-on see most of the game.
 W|w|當差／当差
@@ -424488,11 +424488,11 @@ W|w|白冷
   C name
    D1|#Catholicism|Bethlehem
 W|w|白刀子進去，紅刀子出來／白刀子进去，红刀子出来
- P||bai2 dao1zi5 jin4qu4;hong2 dao1zi5 chu1lai2
+ P||bai2 dao1zi5 jin4qu4, hong2 dao1zi5 chu1lai2
   C phrase
    D1|#colloquial|to kill; to murder
 W|w|白刀子進，紅刀子出／白刀子进，红刀子出
- P||bai2 dao1zi5 jin4;hong2 dao1zi5 chu1
+ P||bai2 dao1zi5 jin4, hong2 dao1zi5 chu1
   C phrase
    D1|#colloquial|to kill; to murder
 W|w|白刃
@@ -426786,7 +426786,7 @@ W|w|百合花
   C noun
    D1||lily flower
 W|w|百問不厭，百拿不煩／百问不厌，百拿不烦
- P||bai3wen4 bu4yan4;bai3na2 bu4fan2
+ P||bai3wen4 bu4yan4, bai3na2 bu4fan2
   C phrase
    D1||to patiently answer the customer's questions and show them the goods they want; to serve the customers patiently and tirelessly (of a shop assistant)
 W|w|百問不厭／百问不厌
@@ -426852,7 +426852,7 @@ W|w|百寶／百宝
   C noun
    D1|- #literary|various precious items
 W|w|百尺竿頭，更進一步／百尺竿头，更进一步
- P||bai3 chi3 gan1tou2;geng4 jin4 yi1bu4
+ P||bai3 chi3 gan1tou2, geng4 jin4 yi1bu4
   C proverb
    D1||Even though one has reached great heights of success, one should still strive to improve oneself.
 W|w|百川
@@ -427231,11 +427231,11 @@ W|w|百花錦蛇／百花锦蛇
   C noun
    D1||flower snake (Elaphe moellendorffi)
 W|w|百花齊放，推陳出新／百花齐放，推陈出新
- P||bai3hua1qi2fang4;tui1chen2chu1xin1
+ P||bai3hua1qi2fang4, tui1chen2chu1xin1
   C noun
    D1||a policy set forth by Mao Zedong for transforming and developing theatrical art
 W|w|百花齊放，百家爭鳴／百花齐放，百家争鸣
- P||bai3hua1-qi2fang4;bai3jia1-zheng1ming2
+ P||bai3hua1-qi2fang4, bai3jia1-zheng1ming2
   C phrase
    D1||classical philosophic schools of the Warring States period in 475 BC to 221 BC, but adopted as a policy by Mao Zedong to promote progress in the arts and sciences, and the development of a dynamic socialist culture
 W|w|百草
@@ -427321,19 +427321,19 @@ W|w|百足
   C noun
    D1|- #literary|millipede; diplopod
 W|w|百足之蟲，斷而不蹶／百足之虫，断而不蹶
- P||bai3zu2zhi1chong2;duan4er2bu4jue2
+ P||bai3zu2zhi1chong2, duan4er2bu4jue2
   C phrase
    D1||Synonym of 百足之蟲，死而不僵／百足之虫，死而不僵 (bǎizúzhīchóng, sǐ'érbùjiāng, “old institutions die hard”)
 W|w|百足之蟲，死而不僵／百足之虫，死而不僵
- P||bai3zu2zhi1chong2;si3er2bu4jiang1
+ P||bai3zu2zhi1chong2, si3er2bu4jiang1
   C phrase
    D1||old institutions die hard
 W|w|百足之蟲，至斷不蹶／百足之虫，至断不蹶
- P||bai3zu2zhi1chong2;zhi4duan4bu4jue2
+ P||bai3zu2zhi1chong2, zhi4duan4bu4jue2
   C phrase
    D1||Synonym of 百足之蟲，死而不僵／百足之虫，死而不僵 (bǎizúzhīchóng, sǐ'érbùjiāng, “old institutions die hard”)
 W|w|百足之蟲，至死不僵／百足之虫，至死不僵
- P||bai3zu2zhi1chong2;zhi4si3bu4jiang1
+ P||bai3zu2zhi1chong2, zhi4si3bu4jiang1
   C phrase
    D1||Synonym of 百足之蟲，死而不僵／百足之虫，死而不僵 (bǎizúzhīchóng, sǐ'érbùjiāng, “old institutions die hard”)
 W|w|百足之蟲／百足之虫
@@ -427615,7 +427615,7 @@ W|w|皇州
   C noun
    D1|- #literary|imperial capital
 W|w|皇帝不急，急死太監／皇帝不急，急死太监
- P||huang2di4 bu4ji2;ji2si3 tai4jian4
+ P||huang2di4 bu4ji2, ji2si3 tai4jian4
   C phrase
    D1|#figurative|The person involved is calm and collected, but observers are very worried.
 W|w|皇帝的女兒——不愁嫁／皇帝的女儿——不愁嫁
@@ -429054,7 +429054,7 @@ W|w|盡享／尽享
   C verb
    D1||to enjoy to the fullest
 W|w|盡人事，聽天命／尽人事，听天命
- P||jin4 ren2shi4;ting1 tian1ming4;ting4 tian1ming4
+ P||jin4 ren2shi4, ting1 tian1ming4;jin4 ren2shi4, ting4 tian1ming4
   C phrase
    D1||to do one's level best and leave the rest to God's will; man proposes, God disposes
 W|w|盡人事／尽人事
@@ -429062,7 +429062,7 @@ W|w|盡人事／尽人事
   C verb
    D1||to do what one can (to save a dying person, etc.); to do all that is humanly possible (though with little hope of success)
 W|w|盡人力，聽天命／尽人力，听天命
- P||jin4 ren2li4;ting1 tian1ming4;ting4 tian1ming4
+ P||jin4 ren2li4, ting1 tian1ming4;jin4 ren2li4, ting4 tian1ming4
   C phrase
    D1||Synonym of 盡人事，聽天命／尽人事，听天命 (jìn rénshì, tīng tiānmìng, “to do one's level best and leave the rest to God's will”)
 W|w|盡信書不如無書／尽信书不如无书
@@ -431037,7 +431037,7 @@ W|w|相見不如懷念／相见不如怀念
   C phrase
    D1||Better to miss than to meet.
 W|w|相見好，同住難／相见好，同住难
- P||xiang4jian4 hao3;tong2 zhu4 nan2
+ P||xiang4jian4 hao3, tong2 zhu4 nan2
   C proverb
    D1||it is easy for people to meet each other but hard for them to live together peacefully
 W|w|相見恨晚／相见恨晚
@@ -431463,11 +431463,11 @@ W|w|眉開眼笑／眉开眼笑
   C phrase
    D1||to look cheerful
 W|w|眉頭一皺，計上心來／眉头一皱，计上心来
- P||mei2tou2 yi1 zhou4;ji4 shang4 xin1 lai2
+ P||mei2tou2 yi1 zhou4, ji4 shang4 xin1 lai2
   C phrase
    D1||knit the brows and a stratagem comes to mind
 W|w|眉頭一縱，計上心來／眉头一纵，计上心来
- P||mei2tou2 yi1 zong4;ji4 shang4 xin1 lai2
+ P||mei2tou2 yi1 zong4, ji4 shang4 xin1 lai2
   C phrase
    D1||Synonym of 眉頭一皺，計上心來／眉头一皱，计上心来 (méitóu yī zhòu, jì shàng xīn lái, “knit the brows and a stratagem comes to mind”)
 W|w|眉飛色舞／眉飞色舞
@@ -432409,7 +432409,7 @@ W|w|眼中
   C noun
    D1||in someone's eyes
 W|w|眼中釘，肉中刺／眼中钉，肉中刺
- P||yan3zhong1ding1;rou4zhong1ci4
+ P||yan3zhong1ding1, rou4zhong1ci4
   C phrase
    D1||Alternative form of 肉中刺，眼中釘／肉中刺，眼中钉 (ròuzhōngcì, yǎnzhōngdīng)
 W|w|眼中釘／眼中钉
@@ -432762,7 +432762,7 @@ W|w|眼見／眼见
   C verb
    D2||to see with one's own eyes; to witness
 W|w|眼觀六路，耳聽八方／眼观六路，耳听八方
- P||yan3 guan1 liu4lu4;er3 ting1 ba1fang1
+ P||yan3 guan1 liu4lu4, er3 ting1 ba1fang1
   C phrase
    D1||to have sharp eyes and keen ears; to be observant and alert
 W|w|眼觀六路／眼观六路
@@ -432770,11 +432770,11 @@ W|w|眼觀六路／眼观六路
   C phrase
    D1||keeping a close eye on various things; considering the many aspects of a situation
 W|w|眼觀四處，耳聽八方／眼观四处，耳听八方
- P||yan3 guan1 si4chu4;er3 ting1 ba1fang1
+ P||yan3 guan1 si4chu4, er3 ting1 ba1fang1
   C phrase
    D1||Synonym of 眼觀六路，耳聽八方／眼观六路，耳听八方 (yǎn guān liùlù, ěr tīng bāfāng, “to have sharp eyes and keen ears; to be observant and alert”)
 W|w|眼觀四面，耳聽八方／眼观四面，耳听八方
- P||yan3 guan1 si4mian4;er3 ting1 ba1fang1
+ P||yan3 guan1 si4mian4, er3 ting1 ba1fang1
   C phrase
    D1||Synonym of 眼觀六路，耳聽八方／眼观六路，耳听八方 (yǎn guān liùlù, ěr tīng bāfāng, “to have sharp eyes and keen ears; to be observant and alert”)
 W|w|眼角
@@ -434237,11 +434237,11 @@ W|w|知己知彼
   C phrase
    D1||to know yourself and know the enemy
 W|w|知己知彼，百戰不殆／知己知彼，百战不殆
- P||zhi1ji3zhi1bi3;bai3zhan4bu4dai4
+ P||zhi1ji3zhi1bi3, bai3zhan4bu4dai4
   C proverb
    D1||Know yourself and know the enemy, and you can fight a hundred battles with no danger of defeat.
 W|w|知己知彼，百戰百勝／知己知彼，百战百胜
- P||zhi1ji3zhi1bi3;bai3zhan4bai3sheng4
+ P||zhi1ji3zhi1bi3, bai3zhan4bai3sheng4
   C proverb
    D1||Know yourself and know the enemy, and you can win every battle you fight.
 W|w|知幾／知几
@@ -434261,7 +434261,7 @@ W|w|知彼知己
   C phrase
    D1||to know the enemy and know yourself
 W|w|知彼知己，百戰不殆／知彼知己，百战不殆
- P||zhi1bi3zhi1ji3;bai3zhan4bu4dai4
+ P||zhi1bi3zhi1ji3, bai3zhan4bu4dai4
   C phrase
    D1||Know the enemy and know yourself, and you can fight a hundred battles with no danger of defeat.
 W|w|知心
@@ -434895,7 +434895,7 @@ W|w|矮子看戲／矮子看戏
   C phrase
    D1||Synonym of 矮人觀場／矮人观场 (ǎirénguānchǎng)
 W|w|矮子矮，一肚子拐
- P||ai3zi5 ai3;yi1du4zi5 guai3
+ P||ai3zi5 ai3, yi1du4zi5 guai3
   C proverb
    D1||a short person has many tricks, ideas, etc.
 W|w|矮子裡拔將軍／矮子里拔将军
@@ -440749,7 +440749,7 @@ W|w|神仙打架
   C phrase
    D1|#neologism|very strong players (e.g. in gaming, sports, etc.) playing against one another
 W|w|神仙打架，小鬼遭殃
- P||shen2xian1 da3jia4;xiao3gui3 zao1yang1
+ P||shen2xian1 da3jia4, xiao3gui3 zao1yang1
   C proverb
    D1||disagreement of leaders causes disorder in subordinates
    D2||confrontation of politicians causes suffering to ordinary people
@@ -442360,7 +442360,7 @@ W|w|福大命大造化大
   C phrase
    D1|#colloquial|to be extremely fortunate and blessed
 W|w|福如東海，壽比南山／福如东海，寿比南山
- P||fu2ru2dong1hai3;shou4bi3nan2shan1
+ P||fu2ru2dong1hai3, shou4bi3nan2shan1
   C phrase
    D1||May your happiness and good fortune be boundless like the East Sea, and may you live as long as the South Mountain!
 W|w|福如東海／福如东海
@@ -443310,11 +443310,11 @@ W|w|秀恩愛／秀恩爱
   C verb
    D1|#neologism|to show off one's affection as a couple; to publicly display affection; to be lovey-dovey
 W|w|秀才不出門，全知天下事／秀才不出门，全知天下事
- P||xiu4cai2 bu4 chu1men2;quan2 zhi1 tian1xia4 shi4
+ P||xiu4cai2 bu4 chu1men2, quan2 zhi1 tian1xia4 shi4
   C proverb
    D1||Synonym of 秀才不出門，能知天下事／秀才不出门，能知天下事 (xiùcái bù chūmén, néng zhī tiānxià shì)
 W|w|秀才不出門，能知天下事／秀才不出门，能知天下事
- P||xiu4cai2 bu4 chu1men2;neng2 zhi1 tian1xia4 shi4
+ P||xiu4cai2 bu4 chu1men2, neng2 zhi1 tian1xia4 shi4
   C proverb
    D1||Even if a (true) scholar never leaves his house, he can know about everything under the heavens (if he reads and studies enough).
 W|w|秀才遇到兵——有理說不清／秀才遇到兵——有理说不清
@@ -445864,7 +445864,7 @@ W|w|種牛／种牛
   C noun
    D1||cow kept for breeding
 W|w|種瓜得瓜，種豆得豆／种瓜得瓜，种豆得豆
- P||zhong4gua1de2gua1;zhong4dou4de2dou4
+ P||zhong4gua1de2gua1, zhong4dou4de2dou4
   C proverb
    D1||as you sow, so shall you reap; you reap what you sow
 W|w|種瓜得瓜／种瓜得瓜
@@ -446499,7 +446499,7 @@ W|w|積勞成疾／积劳成疾
   C phrase
    D1||to fall ill because one is overworked and exhausted for a long period of time; to fall ill from prolonged overwork
 W|w|積善之家，必有餘慶／积善之家，必有余庆
- P||ji1shan4 zhi1 jia1;bi4 you3 yu2qing4
+ P||ji1shan4 zhi1 jia1, bi4 you3 yu2qing4
   C proverb
    D1||people who do good deeds will have good fortune in the future
 W|w|積善／积善
@@ -450066,7 +450066,7 @@ W|w|竹里真
   C name
    D1||Alternative name for 女真 (Nǚzhēn).
 W|w|竹門對竹門，木門對木門／竹门对竹门，木门对木门
- P||zhu2men2 dui4 zhu2men2;mu4men2 dui4 mu4men2
+ P||zhu2men2 dui4 zhu2men2, mu4men2 dui4 mu4men2
   C phrase
    D1||(of the families of the male and female in a marriage) to be well-matched in terms of socio-economic status (for purposes of marriage); to have similar family backgrounds
 W|w|竹雞／竹鸡
@@ -450701,7 +450701,7 @@ W|w|第一線／第一线
   C noun
    D1|#figuratively #military|front line; forefront; forward position; leading position
 W|w|第一賣冰，第二做醫生／第一卖冰，第二做医生
- P||di4yi1 mai4 bing1;di4er4 zuo4 yi1sheng1
+ P||di4yi1 mai4 bing1, di4er4 zuo4 yi1sheng1
   C proverb
    D1|T|a proverb on making money, reflecting the popularity of shaved ice, especially during the summer, and the relatively low skills needed to make it
 W|w|第一類永動機／第一类永动机
@@ -452538,7 +452538,7 @@ W|w|箭匠
   C noun
    D1||arrowmaker
 W|w|箭在弦上，不得不發／箭在弦上，不得不发
- P||jian4 zai4 xian2 shang4;bu4de2bu4 fa1
+ P||jian4 zai4 xian2 shang4, bu4de2bu4 fa1
   C phrase
    D1||there's no turning back now!
 W|w|箭桿／箭杆
@@ -455816,7 +455816,7 @@ W|w|精要
   C noun
    D2||key part; summary; overview
 W|w|精誠所至，金石為開／精诚所至，金石为开
- P||jing1cheng2suo3zhi4;jin1shi2wei2kai1
+ P||jing1cheng2suo3zhi4, jin1shi2wei2kai1
   C proverb
    D1||With earnestness and sincerity everything is achievable.
 W|w|精誠／精诚
@@ -472238,7 +472238,7 @@ W|w|翻跟頭／翻跟头
    D2|#figuratively|to suffer a failure or setback
    D3|#figuratively|to engage in speculation
 W|w|翻身不忘共產黨，幸福不忘毛主席／翻身不忘共产党，幸福不忘毛主席
- P||fan1shen1 bu4wang4 gong4chan3dang3;xing4fu2 bu4wang4 Mao2 zhu3xi2
+ P||fan1shen1 bu4wang4 gong4chan3dang3, xing4fu2 bu4wang4 Mao2 zhu3xi2
   C phrase
    D1||forget not the Communist Party of China for the liberation; forget not Chairman Mao for one's well-being
 W|w|翻車魚／翻车鱼
@@ -476576,11 +476576,11 @@ W|w|聰敏／聪敏
   C adj
    D1||clever; intelligent; brilliant; bright
 W|w|聰明一世，懵懂一時／聪明一世，懵懂一时
- P||cong1ming2 yi1shi4;meng3dong3 yi1shi2;meng2dong3 yi1shi2;meng1dong3 yi1shi2
+ P||cong1ming2 yi1shi4, meng3dong3 yi1shi2;cong1ming2 yi1shi4, meng2dong3 yi1shi2;cong1ming2 yi1shi4, meng1dong3 yi1shi2
   C proverb
    D1||Synonym of 聰明一世，糊塗一時／聪明一世，糊涂一时 (cōngmíng yīshì, hútú yīshí, “even smart people can have a momentary lapse in judgement; even Homer nods”)
 W|w|聰明一世，糊塗一時／聪明一世，糊涂一时
- P||cong1ming2 yi1shi4;hu2tu2 yi1shi2
+ P||cong1ming2 yi1shi4, hu2tu2 yi1shi2
   C proverb
    D1||even smart people can have a momentary lapse in judgement; even Homer nods
 W|w|聰明人／聪明人
@@ -477078,7 +477078,7 @@ W|w|聽友／听友
    D1|#countable|listener; audience
     XM||名;位
 W|w|聽君一席話，勝讀十年書／听君一席话，胜读十年书
- P||ting1 jun1 yi1xi2hua4;sheng4 du2 shi2nian2 shu1
+ P||ting1 jun1 yi1xi2hua4, sheng4 du2 shi2nian2 shu1
   C proverb
    D1||Listening to the words of a wise person is superior to ten years of studying.
 W|w|聽命／听命
@@ -477393,7 +477393,7 @@ W|w|肉丁
   C noun
    D1||diced meat; cubed meat
 W|w|肉中刺，眼中釘／肉中刺，眼中钉
- P||rou4zhong1ci4;yan3zhong1ding1
+ P||rou4zhong1ci4, yan3zhong1ding1
   C phrase
    D1||thorn in one's side; eyesore; offence to the eye
 W|w|肉丸
@@ -478996,11 +478996,11 @@ W|w|肧
   C character
    D1||Alternative form of 胚 (pēi, “embryo”)
 W|w|肩不能挑擔，手不能提籃／肩不能挑担，手不能提篮
- P||jian1 bu4neng2 tiao1dan4;shou3 bu4neng2 ti2lan2
+ P||jian1 bu4neng2 tiao1dan4, shou3 bu4neng2 ti2lan2
   C phrase
    D1|#figuratively|to lack physical strength and be incapable of manual labor
 W|w|肩不能挑，手不能提
- P||jian1 bu4neng2 tiao1;shou3 bu4neng2 ti2
+ P||jian1 bu4neng2 tiao1, shou3 bu4neng2 ti2
   C phrase
    D1|#figuratively|Synonym of 肩不能挑擔，手不能提籃／肩不能挑担，手不能提篮 (jiān bùnéng tiāodàn, shǒu bùnéng tílán, “unable to do manual labor”)
 W|w|肩周炎
@@ -486162,7 +486162,7 @@ W|w|自作孽
   C verb
    D1||to bear the disastrous consequences of one's own misdeeds
 W|w|自作孽，不可活
- P||zi4zuo4nie4;bu4ke3huo2
+ P||zi4zuo4nie4, bu4ke3huo2
   C phrase
    D1||to bear the disastrous consequences of one's own misdeeds
 W|w|自作聰明／自作聪明
@@ -486484,11 +486484,11 @@ W|w|自古以來／自古以来
   C adv
    D1||from time immemorial; since ancient times
 W|w|自古皆有死，人無信不立／自古皆有死，人无信不立
- P||zi4gu3 jie1 you3 si3;ren2 wu2xin4bu4li4
+ P||zi4gu3 jie1 you3 si3, ren2 wu2xin4bu4li4
   C proverb
    D1||From of old, death has been the lot of all men; but if people have no faith in a person, there is no standing for that person.
 W|w|自古皆有死，民無信不立／自古皆有死，民无信不立
- P||zi4gu3 jie1 you3 si3;min2 wu2xin4bu4li4
+ P||zi4gu3 jie1 you3 si3, min2 wu2xin4bu4li4
   C proverb
    D1||Since ancient times, all men experience death; but if the people have no faith in their rulers, there is no standing for the state.
 W|w|自古紅顏多薄命／自古红颜多薄命
@@ -488505,7 +488505,7 @@ W|w|臸
   C character
    D4||to head for; to leave for; to proceed towards; to go towards; to travel to
 W|w|臺上一分鐘，臺下十年功／台上一分钟，台下十年功
- P||tai2 shang4 yi1 fen1zhong1;tai2xia4 shi2nian2 gong1
+ P||tai2 shang4 yi1 fen1zhong1, tai2xia4 shi2nian2 gong1
   C proverb
    D1||a minute performing on stage represents a decade of work off-stage
 W|w|臺下／台下
@@ -488731,7 +488731,7 @@ W|w|臺灣話／台湾话
    D1||any language commonly spoken in Taiwan (including Mandarin, Hokkien, Hakka and Formosan languages)
    D2||Taiwanese; Taiwanese Hokkien (variety of Min Nan spoken in Taiwan)
 W|w|臺灣錢，淹跤目／台湾钱，淹跤目
- P||Tai2wan1 qian2;yan1 jiao1mu4
+ P||Tai2wan1 qian2, yan1 jiao1mu4
   C phrase
    D1|T #historical|money is to be made everywhere in Taiwan
 W|w|臺灣閩南語／台湾闽南语
@@ -488945,7 +488945,7 @@ W|w|與世隔絕／与世隔绝
   C phrase
    D1||to be isolated from the rest of the world
 W|w|與人方便，自己方便／与人方便，自己方便
- P||yu3 ren2 fang1bian4;zi4ji3 fang1bian4
+ P||yu3 ren2 fang1bian4, zi4ji3 fang1bian4
   C proverb
    D1||If you make things easy for others, others will make things easy for you.
 W|w|與人為善／与人为善
@@ -492862,7 +492862,7 @@ W|w|花月
    D3|- #literary|beautiful scenery; enchanting view
    D4|- #literary|great time
 W|w|花有重開日，人無再少年／花有重开日，人无再少年
- P||hua1 you3 chong2 kai1 ri4;ren2 wu2 zai4 shao4nian2
+ P||hua1 you3 chong2 kai1 ri4, ren2 wu2 zai4 shao4nian2
   C phrase
    D1||A flower may blossom again, but a person cannot get young again.
 W|w|花期
@@ -494350,7 +494350,7 @@ W|w|若要
   C conj
    D1||if it's necessary (that); if somebody wants
 W|w|若要人不知，除非己莫為／若要人不知，除非己莫为
- P||ruo4 yao4 ren2 bu4zhi1 chu2fei1 ji3 mo4 wei2
+ P||ruo4 yao4 ren2 bu4zhi1, chu2fei1 ji3 mo4 wei2
   C proverb
    D1||murder will out; one should not do it if they do not want others to know
 W|w|若許／若许
@@ -500081,7 +500081,7 @@ W|w|萬乘／万乘
    D2|x #archaic|10,000 war chariots (each pulled by a team of four horses)
    D3||a great country
 W|w|萬事俱備，只欠東風／万事俱备，只欠东风
- P||wan4shi4 ju4bei4;zhi3 qian4 dong1feng1
+ P||wan4shi4 ju4bei4, zhi3 qian4 dong1feng1
   C phrase
    D1||Everything is ready except for one last crucial item.
 W|w|萬事得／万事得
@@ -500572,7 +500572,7 @@ W|w|萬能／万能
    D1||all-powerful; omnipotent
    D2|#attributive|all-purpose; universal
 W|w|萬般皆下品，惟有讀書高／万般皆下品，惟有读书高
- P||wan4ban1 jie1 xia4pin3;wei2you3 du2shu1 gao1
+ P||wan4ban1 jie1 xia4pin3, wei2you3 du2shu1 gao1
   C proverb
    D1||All trades and occupations are inferior and only studying is superior
 W|w|萬般／万般
@@ -501059,7 +501059,7 @@ W|w|落花
   C noun
    D1|- #literary|fallen flower petals; falling blossoms
 W|w|落花有意，流水無情／落花有意，流水无情
- P||luo4hua1 you3yi4;liu2shui3 wu2qing2
+ P||luo4hua1 you3yi4, liu2shui3 wu2qing2
   C phrase
    D1||An idiom describing unrequited love.
 W|w|落花流水
@@ -508048,7 +508048,7 @@ W|w|蘿蔔招聘／萝卜招聘
   C noun
    D1|#figurative #neologism #slang|recruitment designed to catch a particular candidate
 W|w|蘿蔔白菜，各有所愛／萝卜白菜，各有所爱
- P||luo2bo5 bai2cai4;ge4 you3 suo3 ai4
+ P||luo2bo5 bai2cai4, ge4 you3 suo3 ai4
   C proverb
    D1||one man's trash is another man's treasure, to each his own
 W|w|蘿蔔糕／萝卜糕
@@ -508677,7 +508677,7 @@ W|w|虛張／虚张
    D2|- #literary|to exaggerate; to overstate; to hyperbolise
    D3|- #literary|to set up something without utilizing it
 W|w|虛心使人進步，驕傲使人落後／虚心使人进步，骄傲使人落后
- P||xu1xin1 shi3ren2 jin4bu4;jiao1ao4 shi3ren2 luo4hou4
+ P||xu1xin1 shi3ren2 jin4bu4, jiao1ao4 shi3ren2 luo4hou4
   C phrase
    D1||Modesty leads to progress, conceit makes one lag behind (quote by Mao Zedong)
 W|w|虛懷若谷／虚怀若谷
@@ -510310,7 +510310,7 @@ W|w|蛿
   C character
    D1||Alternative form of 蜭 (hàn)
 W|w|蜀中無大將，廖化作先鋒／蜀中无大将，廖化作先锋
- P||Shu3 zhong1 wu2 da4jiang4;Liao4 Hua4 zuo4 xian1feng1
+ P||Shu3 zhong1 wu2 da4jiang4, Liao4 Hua4 zuo4 xian1feng1
   C proverb
    D1||in the land of the blind, the one-eyed man is king; when the cat's away the mice will play
 W|w|蜀山
@@ -511936,7 +511936,7 @@ W|w|螳螂
    D1||praying mantis
     XM||隻／只
 W|w|螳螂捕蟬，黃雀在後／螳螂捕蝉，黄雀在后
- P||tang2lang2 bu3 chan2;huang2que4 zai4 hou4
+ P||tang2lang2 bu3 chan2, huang2que4 zai4 hou4
   C phrase
    D1||to pursue a narrow gain while neglecting a greater danger
 W|w|螴／𰳄
@@ -515492,7 +515492,7 @@ W|w|衣不解帶／衣不解带
   C phrase
    D1||to diligently work on behalf of someone
 W|w|衣來伸手，飯來張口／衣来伸手，饭来张口
- P||yi1lai2shen1shou3;fan4lai2zhang1kou3
+ P||yi1lai2shen1shou3, fan4lai2zhang1kou3
   C phrase
    D1||to be very lazy
 W|w|衣兜
@@ -517545,7 +517545,7 @@ W|w|裡面兒／里面儿
   C noun
    D1||Erhua form of 裡面／里面 (lǐmiàn, “inside”).
 W|w|裡面的人想出去，外面的人想進來／里面的人想出去，外面的人想进来
- P||li3mian4 de5 ren2 xiang3 chu1qu4;wai4mian4 de5 ren2 xiang3 jin4lai2
+ P||li3mian4 de5 ren2 xiang3 chu1qu4, wai4mian4 de5 ren2 xiang3 jin4lai2
   C proverb
    D1||People inside want to get out, and people outside want to get in. (often said of marriage)
 W|w|裨
@@ -518644,7 +518644,7 @@ W|w|襄樊
   C name
    D1||(～市) Old name for 襄陽／襄阳 (Xiāngyáng, “Xiangyang”).
 W|w|襄王有意，神女無心／襄王有意，神女无心
- P||xiang1wang2 you3yi4;shen2nv3 wu2xin1
+ P||xiang1wang2 you3yi4, shen2nv3 wu2xin1
   C phrase
    D1||one-sided lovesickness; unrequited love
 W|w|襄辦／襄办
@@ -520514,15 +520514,15 @@ W|w|覆巢之下無完卵／覆巢之下无完卵
   C proverb
    D1||No individual can escape from the calamity its group is suffering.
 W|w|覆巢之下，安有完卵
- P||fu4chao2zhi1xia4;an1you3wan2luan3
+ P||fu4chao2zhi1xia4, an1you3wan2luan3
   C proverb
    D1||Synonym of 覆巢之下無完卵／覆巢之下无完卵 (fùcháozhīxiàwúwánluǎn, “No individual can escape from the calamity its group is suffering.”)
 W|w|覆巢之下，焉有完卵
- P||fu4chao2zhi1xia4;yan1you3wan2luan3
+ P||fu4chao2zhi1xia4, yan1you3wan2luan3
   C proverb
    D1||Synonym of 覆巢之下無完卵／覆巢之下无完卵 (fùcháozhīxiàwúwánluǎn, “No individual can escape from the calamity its group is suffering.”)
 W|w|覆巢之下，豈有完卵／覆巢之下，岂有完卵
- P||fu4chao2zhi1xia4;qi3you3wan2luan3
+ P||fu4chao2zhi1xia4, qi3you3wan2luan3
   C proverb
    D1||Synonym of 覆巢之下無完卵／覆巢之下无完卵 (fùcháozhīxiàwúwánluǎn, “No individual can escape from the calamity its group is suffering.”)
 W|w|覆庇
@@ -520596,11 +520596,11 @@ W|w|見五姑娘／见五姑娘
   C verb
    D1|#idiomatic #slang|to jack off
 W|w|見人說人話，見鬼說鬼話／见人说人话，见鬼说鬼话
- P||jian4 ren2 shuo1 ren2hua4;jian4 gui3 shuo1 gui3hua4
+ P||jian4 ren2 shuo1 ren2hua4, jian4 gui3 shuo1 gui3hua4
   C proverb
    D1|#figurative|to be flexible and know what to say in different situations and to different people; (derogatory) to be crafty and two-faced
 W|w|見人講人話，見鬼講鬼話／见人讲人话，见鬼讲鬼话
- P||jian4 ren2 jiang3 ren2hua4;jian4 gui3 jiang3 gui3hua4
+ P||jian4 ren2 jiang3 ren2hua4, jian4 gui3 jiang3 gui3hua4
   C proverb
    D1|#figurative|to be flexible and know what to say in different situations and to different people; (derogatory) to be crafty and two-faced
 W|w|見伍姑娘／见伍姑娘
@@ -520803,7 +520803,7 @@ W|w|見習／见习
   C verb
    D1||to learn on the job; to be on probation; to undertake a traineeship or internship
 W|w|見者易，學者難／见者易，学者难
- P||jian4zhe3 yi4;xue2zhe3 nan2
+ P||jian4zhe3 yi4, xue2zhe3 nan2
   C proverb
    D1||easier said than done
 W|w|見背／见背
@@ -521352,7 +521352,7 @@ W|w|親信／亲信
   C verb
    D2||to be close to and trust (someone)
 W|w|親兄弟，明算賬／亲兄弟，明算账
- P||qin1 xiong1di4;ming2 suan4zhang4
+ P||qin1 xiong1di4, ming2 suan4zhang4
   C proverb
    D1||Even with your own brothers, keep clear accounts.
 W|w|親兄弟／亲兄弟
@@ -521849,7 +521849,7 @@ W|w|觀書／观书
   C verb
    D1|x #archaic|to read a book
 W|w|觀棋不語真君子，起手無回大丈夫／观棋不语真君子，起手无回大丈夫
- P||guan1 qi2 bu4 yu3 zhen1 jun1zi3;qi3shou3 wu2 hui2 da4zhang4fu5;qi3shou3 wu2 hui2 da4zhang4fu1
+ P||guan1 qi2 bu4 yu3 zhen1 jun1zi3, qi3shou3 wu2 hui2 da4zhang4fu5;guan1 qi2 bu4 yu3 zhen1 jun1zi3, qi3shou3 wu2 hui2 da4zhang4fu1
   C proverb
    D1||Do not make any comments on a chess game when watching it, and do not regret your move when playing a chess game.
 W|w|觀止／观止
@@ -523015,11 +523015,11 @@ W|w|言簡意賅／言简意赅
   C phrase
    D1||concise and comprehensive; compendious
 W|w|言者無心，聽者有意／言者无心，听者有意
- P||yan2zhe3 wu2xin1;ting1zhe3 you3yi4
+ P||yan2zhe3 wu2xin1, ting1zhe3 you3yi4
   C phrase
    D1||A casual remark sounds deliberate to a suspicious listener. / A careless word may be important information to an attentive listener.
 W|w|言者無罪，聞者足戒／言者无罪，闻者足戒
- P||yan2zhe3 wu2 zui4;wen2zhe3 zu2 jie4
+ P||yan2zhe3 wu2 zui4, wen2zhe3 zu2 jie4
   C phrase
    D1||blame not the speaker but be warned by their words
 W|w|言者無罪／言者无罪
@@ -526738,7 +526738,7 @@ W|w|說一套做一套／说一套做一套
   C phrase
    D1||to say one thing and do another
 W|w|說一套，做一套／说一套，做一套
- P||shuo1yi1tao4;zuo4yi1tao4
+ P||shuo1yi1tao4, zuo4yi1tao4
   C verb
    D1||one's actions do not match up to one's words
 W|w|說三道四／说三道四
@@ -526761,7 +526761,7 @@ W|w|說不出／说不出
    D1||speechless
    D2||indescribable, unspeakable, inexpressible, ineffable
 W|w|說不清，道不明／说不清，道不明
- P||shuo1bu4qing1;dao4bu4ming2
+ P||shuo1bu4qing1, dao4bu4ming2
   C phrase
    D1||to be unable to explained clearly
 W|w|說不清／说不清
@@ -528509,7 +528509,7 @@ W|w|諾魯／诺鲁
   C name
    D1|T|Nauru (a country and island in Oceania, in the Pacific Ocean)
 W|w|謀事在人，成事在天／谋事在人，成事在天
- P||mou2shi4 zai4 ren2;cheng2shi4 zai4 tian1
+ P||mou2shi4 zai4 ren2, cheng2shi4 zai4 tian1
   C proverb
    D1||man proposes, God disposes
 W|w|謀事／谋事
@@ -540698,7 +540698,7 @@ W|w|跌份
   C verb
    D1|#colloquial|to lose face
 W|w|跌個跤子，買個明白／跌个跤子，买个明白
- P||die1 ge5 jiao1zi5;mai3 ge5 ming2bai5;die2 ge5 jiao1zi5
+ P||die1 ge5 jiao1zi5, mai3 ge5 ming2bai5;die2 ge5 jiao1zi5, mai3 ge5 ming2bai5
   C proverb
    D1||Synonym of 吃一塹，長一智／吃一堑，长一智 (chī yī qiàn, zhǎng yī zhì, “a fall into the pit, a gain in your wit”)
 W|w|跌停
@@ -541699,11 +541699,11 @@ W|w|路遇
   C verb
    D1|x #archaic|to happen across one another; to meet on the street; to run into while on one's way
 W|w|路遙知馬力，事久見人心／路遥知马力，事久见人心
- P||lu4yao2zhi1ma3li4;shi4jiu3jian4ren2xin1
+ P||lu4yao2zhi1ma3li4, shi4jiu3jian4ren2xin1
   C proverb
    D1||a long road tests a horse's strength, and a long task proves a person's heart
 W|w|路遙知馬力，日久見人心／路遥知马力，日久见人心
- P||lu4yao2zhi1ma3li4;ri4jiu3jian4ren2xin1
+ P||lu4yao2zhi1ma3li4, ri4jiu3jian4ren2xin1
   C proverb
    D1||a long road tests a horse's strength and time proves a person's heart
 W|w|路遙知馬力／路遥知马力
@@ -542115,7 +542115,7 @@ W|w|踏步
   C verb
    D1||to march in place; to mark time
 W|w|踏破鐵鞋無覓處，得來全不費工夫／踏破铁鞋无觅处，得来全不费工夫
- P||ta4po4 tie3xie2 wu2 mi4chu4;de2lai2 quan2 bu4 fei4 gong1fu5
+ P||ta4po4 tie3xie2 wu2 mi4chu4, de2lai2 quan2 bu4 fei4 gong1fu5
   C phrase
    D1|#xiehouyu|One will search high and low only to find it when one least expects to.
 W|w|踏破鐵鞋無覓處／踏破铁鞋无觅处
@@ -543438,7 +543438,7 @@ W|w|躲迷藏
    D2||to play hide-and-seek
    D3|#figurative|to beat around the bush; to give an elusive answer
 W|w|躲過初一，躲不過十五／躲过初一，躲不过十五
- P||duo3 guo4 chu1yi1;duo3 bu4 guo4 shi2wu3
+ P||duo3 guo4 chu1yi1, duo3 bu4 guo4 shi2wu3
   C phrase
    D1||One can avoid something for a short while but not forever
 W|w|躲避球
@@ -543588,7 +543588,7 @@ W|w|車匪／车匪
   C noun
    D1||bandit that loots bus or train passengers
 W|w|車同軌，書同文／车同轨，书同文
- P||che1tong2gui3;shu1tong2wen2
+ P||che1tong2gui3, shu1tong2wen2
   C phrase
    D1||universal standards
 W|w|車圈／车圈
@@ -553423,7 +553423,7 @@ W|w|運營／运营
    D1||(of a vehicle, vessel, transportation system, etc.) to be open for service; to be in operation
    D2||(of a business, institution, factory, etc.) to operate; to run
 W|w|運用之妙，存乎一心／运用之妙，存乎一心
- P||yun4yong4 zhi1 miao4;cun2 hu1 yi1 xin1
+ P||yun4yong4 zhi1 miao4, cun2 hu1 yi1 xin1
   C proverb
    D1||ingenuity in varying tactics depends on mother wit
 W|w|運筆／运笔
@@ -554218,7 +554218,7 @@ W|w|遒勁／遒劲
   C adj
    D1|- #literary|powerful; vigorous
 W|w|道不同，不相為謀／道不同，不相为谋
- P||dao4 bu4tong2;bu4 xiang1 wei2 mou2
+ P||dao4 bu4tong2, bu4 xiang1 wei2 mou2
   C proverb
    D1||people of different aspirations or principles cannot get along together
 W|w|道不拾遺／道不拾遗
@@ -559936,7 +559936,7 @@ W|w|酒肉朋友
   C noun
    D1||fair-weather friend (one who is friendly only to his own advantage)
 W|w|酒肉穿腸過，佛祖心中留／酒肉穿肠过，佛祖心中留
- P||jiu3rou4 chuan1 chang2 guo4;fo2zu3 xin1zhong1 liu2
+ P||jiu3rou4 chuan1 chang2 guo4, fo2zu3 xin1zhong1 liu2
   C proverb
    D1||It is fine for a Buddhist to consume meat and alcohol as long as they have Buddha in their heart
 W|w|酒興／酒兴
@@ -559979,7 +559979,7 @@ W|w|酒話／酒话
   C noun
    D1||words said while drunk; drunken rambling
 W|w|酒逢知己千杯少，話不投機半句多／酒逢知己千杯少，话不投机半句多
- P||jiu3 feng2 zhi1ji3 qian1 bei1 shao4;hua4 bu4 tou2ji1 ban4 ju4 duo1
+ P||jiu3 feng2 zhi1ji3 qian1 bei1 shao4, hua4 bu4 tou2ji1 ban4 ju4 duo1
   C proverb
    D1||If you drink with a bosom friend, a thousand cups are too few; if you talk to someone who is not on the same page, even half a sentence is too much.
 W|w|酒過數巡／酒过数巡
@@ -561994,7 +561994,7 @@ W|w|重新進攻／重新进攻
   C noun
    D1|#fencing|reprise; a reattempt after a failed attack and a return to en garde position
 W|w|重於泰山，輕於鴻毛／重于泰山，轻于鸿毛
- P||zhong4 yu2 Tai4shan1;qing1 yu2 hong2mao2
+ P||zhong4 yu2 Tai4shan1, qing1 yu2 hong2mao2
   C phrase
    D1||(Some deaths are) more weighty than Mount Tai, (while others are) lighter (and less significant) than a wild goose feather.
 W|w|重於泰山／重于泰山
@@ -563638,7 +563638,7 @@ W|w|金玉
    D1|#literally|gold and jade
    D2|#figuratively|treasured thing; ornate object
 W|w|金玉其外，敗絮其中／金玉其外，败絮其中
- P||jin1yu4 qi2wai4;bai4xu4 qi2zhong1
+ P||jin1yu4 qi2wai4, bai4xu4 qi2zhong1
   C phrase
    D1|#figurative|gilded exterior, shabby and ruined on the inside; fly in the ointment; a sugarcoated bitter pill; fair without, foul within
 W|w|金玉滿堂／金玉满堂
@@ -563741,7 +563741,7 @@ W|w|金目鱸／金目鲈
   C noun
    D1|x #Taiwanese-and-Singapore-Hokkien|a barramundi fish
 W|w|金眼科，銀外科／金眼科，银外科
- P||jin1 yan3ke1;yin2 wai4ke1
+ P||jin1 yan3ke1, yin2 wai4ke1
   C phrase
    D1|#medicine|Describes the relatively relaxed lifestyle of ophthalmology and surgical doctors while having a good source of income.
 W|w|金石
@@ -563813,7 +563813,7 @@ W|w|金秋
   C noun
    D1||(Wuxing) golden autumn
 W|w|金窩銀窩，不如自己的狗窩／金窝银窝，不如自己的狗窝
- P||jin1 wo1 yin2 wo1;bu4ru2 zi4ji3 de5 gou3wo1
+ P||jin1 wo1 yin2 wo1, bu4ru2 zi4ji3 de5 gou3wo1
   C proverb
    D1||there's no place like home
 W|w|金童玉女
@@ -567112,7 +567112,7 @@ W|w|錡／锜
    D1||A kind of war axe with three blades or teeth
    D2||A kind of chisel
 W|w|錢不是萬能，但沒錢萬萬不能／钱不是万能，但没钱万万不能
- P||qian2 bu4shi4 wan4neng2;dan4 mei2 qian2 wan4wan4 bu4neng2
+ P||qian2 bu4shi4 wan4neng2, dan4 mei2 qian2 wan4wan4 bu4neng2
   C proverb
    D1||money is not everything, but without money, you are nothing
 W|w|錢兒／钱儿
@@ -570235,7 +570235,7 @@ W|w|長人／长人
   C noun
    D1|x #dated-in-Wu #literary|tall person
 W|w|長他人志氣，滅自己威風／长他人志气，灭自己威风
- P||zhang3 ta1ren2 zhi4qi4;mie4 zi4ji3 wei1feng1
+ P||zhang3 ta1ren2 zhi4qi4, mie4 zi4ji3 wei1feng1
   C phrase
    D1||to help the opposition's aspirations, while undermining one's own power and prestige; aiding the enemy
 W|w|長休／长休
@@ -570575,7 +570575,7 @@ W|w|長期主義／长期主义
   C noun
    D1||long-termism
 W|w|長期共存，互相監督／长期共存，互相监督
- P||chang2qi1 gong4cun2;hu4xiang1 jian1du1;chang2qi2 gong4cun2
+ P||chang2qi1 gong4cun2, hu4xiang1 jian1du1;chang2qi2 gong4cun2, hu4xiang1 jian1du1
   C phrase
    D1|#Maoism #socialism|long-term coexistence and mutual supervision (of the Communist party and the democratic parties)
 W|w|長期共存／长期共存
@@ -574010,7 +574010,7 @@ W|w|閻浮／阎浮
   C noun
    D2||Java plum (Syzygium cumini)
 W|w|閻王叫你三更死，誰敢留人到五更／阎王叫你三更死，谁敢留人到五更
- P||Yan2wang2 jiao4 ni3 san1geng1 si3;shei2 gan3 liu2 ren2 dao4 wu3geng1
+ P||Yan2wang2 jiao4 ni3 san1geng1 si3, shei2 gan3 liu2 ren2 dao4 wu3geng1
   C proverb
    D1||When death comes, there will be no postponement.
 W|w|閻王星／阎王星
@@ -575070,7 +575070,7 @@ W|w|防毒面具
   C noun
    D1||gas mask
 W|w|防民之口，甚於防川／防民之口，甚于防川
- P||fang2min2zhi1kou3;shen4yu2fang2chuan1
+ P||fang2min2zhi1kou3, shen4yu2fang2chuan1
   C phrase
    D1||It is more sinister and ominous to stop civilians from speaking than to block the river flows.
 W|w|防水布
@@ -581164,7 +581164,7 @@ W|w|雄踞
   C verb
    D1||to be prominently located; to be magnificently situated
 W|w|雄辯是銀，沉默是金／雄辩是银，沉默是金
- P||xiong2bian4 shi4 yin2;chen2mo4 shi4 jin1
+ P||xiong2bian4 shi4 yin2, chen2mo4 shi4 jin1
   C proverb
    D1||speech is silver, silence is golden
 W|w|雄辯滔滔／雄辩滔滔
@@ -585925,7 +585925,7 @@ W|w|雷聲大雨點小／雷声大雨点小
   C phrase
    D1||Alternative form of 雷聲大，雨點小／雷声大，雨点小 (léishēng dà, yǔdiǎn xiǎo, “much said but little done”)
 W|w|雷聲大，雨點小／雷声大，雨点小
- P||lei2sheng1 da4;yu3dian3 xiao3
+ P||lei2sheng1 da4, yu3dian3 xiao3
   C phrase
    D1||much said but little done, all bark and no bite
 W|w|雷聲／雷声
@@ -589704,7 +589704,7 @@ W|w|非想非非想處／非想非非想处
   C noun
    D1|#Buddhism|(～天) the “sphere of neither perception nor nonperception”, the fourth and highest of the four levels of the immaterial realm
 W|w|非我族類，其心必異／非我族类，其心必异
- P||fei1wo3zu2lei4;qi2xin1bi4yi4
+ P||fei1wo3zu2lei4, qi2xin1bi4yi4
   C proverb
    D1||People of a different race or ethnicity can not be trusted.
 W|w|非政府
@@ -590906,7 +590906,7 @@ W|w|鞟
   C character
    D1|- #literary|animal hide or skin with hair removed
 W|w|鞠躬盡瘁，死而後已／鞠躬尽瘁，死而后已
- P||ju1 gong1 jin4 cui4;si3 er2 hou4 yi3;ju2 gong1 jin4 cui4
+ P||ju1 gong1 jin4 cui4, si3 er2 hou4 yi3;ju2 gong1 jin4 cui4, si3 er2 hou4 yi3
   C phrase
    D1||to bend one's back to the task until one's dying day; to give one's all till one's heart stops beating
 W|w|鞠養／鞠养
@@ -592315,7 +592315,7 @@ W|w|項背／项背
    D1|- #literary|person's back
    D2|- #literary|view of someone's back; figure seen from behind
 W|w|項莊舞劍，意在沛公／项庄舞剑，意在沛公
- P||Xiang4 Zhuang1 wu3 jian4;yi4 zai4 Pei4gong1
+ P||Xiang4 Zhuang1 wu3 jian4, yi4 zai4 Pei4gong1
   C phrase
    D1||to have other disguised intentions
 W|w|項鋪／项铺
@@ -592452,7 +592452,7 @@ W|w|順我者昌，逆我者亡／顺我者昌，逆我者亡
   C phrase
    D1||those who submit will prosper; those who resist will perish
 W|w|順我者昌，逆我者嫖娼／顺我者昌，逆我者嫖娼
- P||shun4 wo3 zhe3 chang1;ni4 wo3 zhe3 piao2chang1
+ P||shun4 wo3 zhe3 chang1, ni4 wo3 zhe3 piao2chang1
   C phrase
    D1|#neologism #sarcastic|Powerful people or organizations (especially an Orwellian government) tend to frame and defame anyone opposing them.
 W|w|順我者生，逆我者死／顺我者生，逆我者死
@@ -593663,7 +593663,7 @@ W|w|頭痛腦熱／头痛脑热
   C phrase
    D1||Synonym of 頭疼腦熱／头疼脑热 (tóuténgnǎorè, “headache and slight fever; slight illness”)
 W|w|頭痛醫頭，腳痛醫腳／头痛医头，脚痛医脚
- P||tou2tong4 yi1 tou2;jiao3tong4 yi1 jiao3
+ P||tou2tong4 yi1 tou2, jiao3tong4 yi1 jiao3
   C phrase
    D1||to treat symptoms but not the disease; to take stopgap measures rather than getting to the root cause of the problem
 W|w|頭痛額熱／头痛额热
@@ -595708,7 +595708,7 @@ W|w|風雨同舟／风雨同舟
   C phrase
    D1||to work together towards a common goal in a difficult situation; to go through thick and thin together
 W|w|風雨如晦，雞鳴不已／风雨如晦，鸡鸣不已
- P||feng1yu3 ru2 hui4;ji1ming2 bu4 yi3
+ P||feng1yu3 ru2 hui4, ji1ming2 bu4 yi3
   C proverb
    D1||a gentleman acts in a principled manner even in the darkest of times
 W|w|風雨如晦／风雨如晦
@@ -596580,7 +596580,7 @@ W|w|食不言，寢不語／食不言，寝不语
   C proverb
    D1||to not speak while eating or sleeping
 W|w|食之無味，棄之可惜／食之无味，弃之可惜
- P||shi2 zhi1 wu2wei4;qi4 zhi1 ke3xi1;qi4 zhi1 ke3xi2
+ P||shi2 zhi1 wu2wei4, qi4 zhi1 ke3xi1;shi2 zhi1 wu2wei4, qi4 zhi1 ke3xi2
   C phrase
    D1||too arduous to relish, too wasteful to discard.(some things have no apparent value, but one still can't bear to throw them away)
 W|w|食人
@@ -597089,7 +597089,7 @@ W|w|飯山／饭山
   C name
    D1||(～市) Iiyama (a city in Nagano Prefecture, Japan)
 W|w|飯後百步走，活到九十九／饭后百步走，活到九十九
- P||fan4hou4bai3bu4zou3;huo2dao4jiu3shi2jiu3
+ P||fan4hou4bai3bu4zou3, huo2dao4jiu3shi2jiu3
   C proverb
    D1||Walk a hundred steps after each meal and you will live a long life.
 W|w|飯後／饭后
@@ -597465,7 +597465,7 @@ W|w|飽雨／饱雨
   C noun
    D1|#regional|soaking rain
 W|w|飽食終日，無所用心／饱食终日，无所用心
- P||bao3shi2zhong1ri4;wu2suo3yong4xin1
+ P||bao3shi2zhong1ri4, wu2suo3yong4xin1
   C phrase
    D1||to eat all day without thinking; to eat three square meals a day and do no work; to be sated with food and lead an idle life
 W|w|飽食終日／饱食终日
@@ -597606,7 +597606,7 @@ W|w|餈／糍
   C character
    D1||Alternative form of 糍 (cí, “glutinous rice cake”)
 W|w|養不教，父之過／养不教，父之过
- P||yang3bu4jiao4;fu4zhi1guo4
+ P||yang3bu4jiao4, fu4zhi1guo4
   C proverb
    D1||it is wrong for a father to only feed but not teach his child
 W|w|養傷／养伤
@@ -597614,19 +597614,19 @@ W|w|養傷／养伤
   C verb
    D1||to nurse one's wound (by staying at home); to recuperate from an injury
 W|w|養兒一百歲，長憂九十九／养儿一百岁，长忧九十九
- P||yan3ger2 yi1bai3 sui4;chang2 you1 jiu3shi2jiu3
+ P||yan3ger2 yi1bai3 sui4, chang2 you1 jiu3shi2jiu3
   C proverb
    D1||A parent always cares about their children no matter how old they are.
 W|w|養兵千日，用兵一時／养兵千日，用兵一时
- P||yang3bing1 qian1ri4;yong4bing1 yi1shi2
+ P||yang3bing1 qian1ri4, yong4bing1 yi1shi2
   C phrase
    D1||to train or maintain an army or a group of talents for a long period of time so that they can be used on the day they are needed
 W|w|養兵千日，用在一時／养兵千日，用在一时
- P||yang3bing1 qian1ri4;yong4 zai4 yi1shi2
+ P||yang3bing1 qian1ri4, yong4 zai4 yi1shi2
   C phrase
    D1||Synonym of 養兵千日，用兵一時／养兵千日，用兵一时 (yǎngbīng qiānrì, yòngbīng yīshí)
 W|w|養兵千日，用在一朝／养兵千日，用在一朝
- P||yang3bing1 qian1ri4;yong4 zai4 yi1zhao1
+ P||yang3bing1 qian1ri4, yong4 zai4 yi1zhao1
   C phrase
    D1||Synonym of 養兵千日，用兵一時／养兵千日，用兵一时 (yǎngbīng qiānrì, yòngbīng yīshí)
 W|w|養地／养地
@@ -597938,7 +597938,7 @@ W|w|餒／馁
     X<||氣餒／气馁
    D3|- #literary|(of fish) rotten; putrid
 W|w|餓死事小，失節事大／饿死事小，失节事大
- P||e4si3 shi4 xiao3;shi1jie2 shi4 da4
+ P||e4si3 shi4 xiao3, shi1jie2 shi4 da4
   C proverb
    D1||death by starvation is a small matter, but losing one's chastity is a great matter
    D2|#figurative|integrity needs to be upheld even to the point of death
@@ -600495,7 +600495,7 @@ W|w|馬灣／马湾
    D1||Ma Wan (an island in Hong Kong, China)
    D2||(～鎮) Mawan (a town in Tianmen, Hubei, China)
 W|w|馬照跑，舞照跳／马照跑，舞照跳
- P||ma3zhao4pao3;wu3zhao4tiao4
+ P||ma3zhao4pao3, wu3zhao4tiao4
   C phrase
    D1||the maintenance of one country, two systems; more broadly, the continuation of the status quo
 W|w|馬熊／马熊
@@ -602133,7 +602133,7 @@ W|w|騙徒／骗徒
   C noun
    D1||cheat; swindler; fraudster
 W|w|騙得了一時，騙不了一世／骗得了一时，骗不了一世
- P||pian4 de5 liao3 yi1shi2;pian4 bu4 liao3 yi1shi4
+ P||pian4 de5 liao3 yi1shi2, pian4 bu4 liao3 yi1shi4
   C proverb
    D1||you can fool people once but you cannot fool them forever
 W|w|騙案／骗案
@@ -602863,7 +602863,7 @@ W|w|驚天動地／惊天动地
   C phrase
    D1||(of sound or influence) world-shaking; earth-shattering
 W|w|驚天地，泣鬼神／惊天地，泣鬼神
- P||jing1 tian1di4;qi4 gui3shen2
+ P||jing1 tian1di4, qi4 gui3shen2
   C phrase
    D1||astonishing, awe-inspiring, or emotionally stirring
 W|w|驚弓之鳥／惊弓之鸟
@@ -611624,11 +611624,11 @@ W|w|鷸科／鹬科
   C noun
    D1||Scolopacidae
 W|w|鷸蚌相爭，漁人得利／鹬蚌相争，渔人得利
- P||yu4bang4 xiang1zheng1;yu2ren2 de2li4
+ P||yu4bang4 xiang1zheng1, yu2ren2 de2li4
   C proverb
    D1||When two parties fight, it is always the third one who wins
 W|w|鷸蚌相爭，漁翁得利／鹬蚌相争，渔翁得利
- P||yu4bang4xiang4zheng1;yu2weng1de2li4
+ P||yu4bang4xiang4zheng1, yu2weng1de2li4
   C phrase
    D1||Alternative form of 鷸蚌相爭，漁人得利／鹬蚌相争，渔人得利 (yùbàng xiāngzhēng, yúrén délì)
 W|w|鷸鴕／鹬鸵
@@ -614034,7 +614034,7 @@ W|w|麻雀牌
   C noun
    D1||Synonym of 麻將／麻将 (májiàng, “mahjong”)
 W|w|麻雀雖小，五臟俱全／麻雀虽小，五脏俱全
- P||ma2que4 sui1 xiao3;wu3zang4 ju4quan2
+ P||ma2que4 sui1 xiao3, wu3zang4 ju4quan2
   C proverb
    D1||It is small but fully equipped.
 W|w|麻雀館／麻雀馆
@@ -619498,7 +619498,7 @@ W|w|龍珠／龙珠
   C noun
    D1|#mythology|dragon pearl
 W|w|龍生龍，鳳生鳳，老鼠的兒子會打洞／龙生龙，凤生凤，老鼠的儿子会打洞
- P||long2 sheng1 long2;feng4 sheng1 feng4;lao3shu3 de5 er2zi5 hui4 da3 dong4
+ P||long2 sheng1 long2, feng4 sheng1 feng4, lao3shu3 de5 er2zi5 hui4 da3 dong4
   C proverb
    D1||(of behavior, etc.) like father, like son
 W|w|龍田／龙田

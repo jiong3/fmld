@@ -10,7 +10,7 @@ use crate::common;
 use crate::common::SqliteId;
 use crate::config;
 use crate::db_read;
-use crate::db_read::DefinitionEntry;
+use crate::db_read::{DefinitionEntry, PronEntry, WordEntry};
 
 // --- Error Handling ---
 #[derive(Debug)]
@@ -55,13 +55,6 @@ impl std::error::Error for DbToTxtError {
 pub type Result<T> = std::result::Result<T, DbToTxtError>;
 
 // --- Data Structures to hold query results ---
-
-struct PinyinData {
-    pinyin_num: String,
-    note_id: Option<SqliteId>,
-    comment_id: Option<SqliteId>,
-    tags: String,
-}
 
 struct CrossReferenceData {
     ref_type_symbol: String,
@@ -113,35 +106,27 @@ impl<'a> DbToTxt<'a> {
 
         self.write_shared_items(1, 0)?; // header comment
 
-        for definition_entry in definitions {
-            if let Some(stop_word) = limit_to_word {
-                if definition_entry.trad == stop_word {
-                    break;
-                }
+        for (definition, grouping) in definitions {
+            if grouping.new_word {
+                self.write_word_entry(definition.word_id)?;
             }
-
-            if definition_entry.new_word {
-                self.write_word_entry(&definition_entry)?;
+            if grouping.new_pron {
+                self.write_pinyin_entries(definition.id, &definition.pron_shared_ids)?;
             }
-            if definition_entry.new_pinyin {
-                self.write_pinyin_entries(
-                    definition_entry.def_id,
-                    &definition_entry.pinyin_shared_ids,
-                )?;
+            if grouping.new_class {
+                self.write_class_entry(&definition.class_name)?;
             }
-            if definition_entry.new_class {
-                self.write_class_entry(&definition_entry.class_name)?;
-            }
-            self.write_definition_entry(&definition_entry)?;
+            self.write_definition_entry(&definition)?;
         }
 
         Ok(())
     }
 
-    fn write_word_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
-        let tags = self.get_formatted_tags(entry.word_shared_id)?;
+    fn write_word_entry(&mut self, word_id: SqliteId) -> Result<()> {
+        let word = db_read::read_word(self.conn, word_id)?;
+        let tags = self.get_formatted_tags(word.shared_id)?;
 
-        let mut word_str = common::format_word_def(&entry.trad, &entry.simp, None);
+        let mut word_str = common::format_word_def(&word.trad, &word.simp, None);
 
         // collect optional variants of the word
         let mut variants = vec![];
@@ -149,7 +134,7 @@ impl<'a> DbToTxt<'a> {
         let mut stmt = self
             .conn
             .prepare_cached("SELECT trad, simp FROM dict_word WHERE variant_of = ?1")?;
-        let mut rows = stmt.query([entry.word_id])?;
+        let mut rows = stmt.query([word_id])?;
 
         while let Some(row) = rows.next()? {
             let trad: String = row.get(0)?;
@@ -164,68 +149,40 @@ impl<'a> DbToTxt<'a> {
         }
 
         writeln!(self.writer, "W{tags}{word_str}")?;
-        self.write_shared_items(entry.word_shared_id, 1)?;
-        self.write_cross_references(entry.word_id, None, 1)?;
+        self.write_shared_items(word.shared_id, 1)?;
+        self.write_cross_references(word.id, None, 1)?;
         Ok(())
     }
 
     fn write_pinyin_entries(
         &mut self,
         def_id: SqliteId,
-        pinyin_shared_ids: &[SqliteId],
+        pron_shared_ids: &[SqliteId],
     ) -> Result<()> {
-        let mut stmt = self
-            .conn
-            .prepare_cached(
-                r"
-            SELECT
-                p.pinyin_num,
-                p_s.note_id,
-                p_s.comment_id
-            FROM dict_definition def
-            LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-            LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
-            LEFT JOIN dict_pron p ON sp.pron_id = p.id
-            LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
-            WHERE def.id = ?1 AND p_s.id = ?2
-            ",
-            )
-            .unwrap();
-
-        // 1. Fetch all data into a Vec of PinyinData structs
-        let pinyin_data: Result<Vec<PinyinData>> = pinyin_shared_ids
-            .iter()
-            .map(|pron_shared_id| {
-                let (pinyin_num, note_id, comment_id) = stmt
-                    .query_row([def_id, *pron_shared_id], |r| {
-                        Ok((r.get(0)?, r.get(1)?, r.get(2)?))
-                    })?;
-                let tags = self.get_formatted_tags(*pron_shared_id)?;
-                Ok(PinyinData {
-                    pinyin_num,
-                    note_id,
-                    comment_id,
-                    tags,
-                })
-            })
-            .collect();
-
-        let pinyin_data = pinyin_data?;
+        // 1. Fetch all data into a Vec of PronEntry structs
+        let pron_entries =
+            db_read::read_pinyin_entries_for_definition(self.conn, def_id, pron_shared_ids)?;
 
         // group the data and format it into lines
         let mut indent_level = 1;
-        for ((note_id, comment_id), tag_group) in &pinyin_data
+        for ((note_id, comment_id), tag_group) in &pron_entries
             .into_iter()
-            .chunk_by(|item| (item.note_id, item.comment_id))
+            .chunk_by(|item| (item.shared_ids.note_id, item.shared_ids.comment_id))
         {
             let tags_pinyins = tag_group
                 .into_iter()
-                .chunk_by(|item| item.tags.clone())
+                .chunk_by(|item| item.shared_ids.tag_ids.clone())
                 .into_iter()
                 .map(|(tags, tag_group)| {
-                    let pinyins = tag_group
-                        .map(|item| item.pinyin_num)
+                    let pinyins_shared_ids: Vec<(SqliteId, String)> = tag_group
+                        .map(|item| (item.shared_id, item.pinyin_num))
+                        .collect();
+                    let one_shared_id = pinyins_shared_ids.first().unwrap().0;
+                    let pinyins = pinyins_shared_ids
+                        .into_iter()
+                        .map(|item| item.1)
                         .join(config::ITEMS_SEP);
+                    let tags = self.get_formatted_tags(one_shared_id).unwrap();
                     format!("{tags}{pinyins}")
                 })
                 .join(" ");
@@ -236,6 +193,7 @@ impl<'a> DbToTxt<'a> {
                 self.indent_str.repeat(indent_level),
                 tags_pinyins
             )?;
+            
             self.write_shared_items_from_ids(comment_id, note_id, indent_level + 1)?;
             indent_level = 2;
         }
@@ -249,8 +207,8 @@ impl<'a> DbToTxt<'a> {
     }
 
     fn write_definition_entry(&mut self, entry: &DefinitionEntry) -> Result<()> {
-        let tags = self.get_formatted_tags(entry.def_shared_id)?;
-        let mut def_id_indent = 3 + entry.nested_level;
+        let tags = self.get_formatted_tags(entry.shared_id)?;
+        let def_id_indent = 3 + entry.nested_level;
         writeln!(
             self.writer,
             "{}D{}{}{}",
@@ -259,8 +217,8 @@ impl<'a> DbToTxt<'a> {
             tags,
             format_multiline(&entry.definition, def_id_indent, &self.indent_str),
         )?;
-        self.write_shared_items(entry.def_shared_id, def_id_indent + 1)?;
-        self.write_cross_references(entry.word_id, Some(entry.def_id), def_id_indent + 1)?;
+        self.write_shared_items(entry.shared_id, def_id_indent + 1)?;
+        self.write_cross_references(entry.word_id, Some(entry.id), def_id_indent + 1)?;
         Ok(())
     }
 
@@ -293,7 +251,11 @@ impl<'a> DbToTxt<'a> {
         // sort full tags with default order
         full_tags.sort();
 
-        let space = if full_tags.is_empty() || ascii_tags.is_empty() { "" } else { " " };
+        let space = if full_tags.is_empty() || ascii_tags.is_empty() {
+            ""
+        } else {
+            " "
+        };
         if ascii_tags.is_empty() && full_tags.is_empty() {
             // leaving out the || would require checks in case there is a tag group without tags coming after a group with tags on the same line
             Ok("||".to_owned())

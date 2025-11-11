@@ -587,7 +587,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
     // Iterate over all definitions from the database
     let definitions = db_read::read_definitions(conn).unwrap();
 
-    'defloop: for definition in definitions {
+    'defloop: for (definition, grouping) in definitions {
         if !definition.definition.starts_with('(') {
             continue;
         }
@@ -659,7 +659,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         for full_tag in as_tags {
             add_tag(
                 conn,
-                EntryId::Definition(definition.def_id),
+                EntryId::Definition(definition.id),
                 Tag::Full {
                     name: full_tag,
                     category: "",
@@ -685,7 +685,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
             if let Some(_) = config::tag_to_txt_ascii_common(ascii_char) {
                 add_tag(
                     conn,
-                    EntryId::Definition(definition.def_id),
+                    EntryId::Definition(definition.id),
                     Tag::Ascii(ascii_char),
                 )
                 .unwrap();
@@ -718,7 +718,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         new_definition_text.replace_range(tag_start_idx - 1..tag_end_idx + 1, &new_parens);
 
         if new_definition_text != definition.definition {
-            update_definition_text(conn, definition.def_id, &new_definition_text.trim()).unwrap();
+            update_definition_text(conn, definition.id, &new_definition_text.trim()).unwrap();
         }
     }
 }

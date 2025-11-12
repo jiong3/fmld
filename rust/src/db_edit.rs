@@ -1,6 +1,7 @@
 use crate::common::SqliteId;
 use crate::config;
 use crate::db_read;
+use crate::pinyin;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
 use std::collections::HashMap;
@@ -721,4 +722,75 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
             update_definition_text(conn, definition.id, &new_definition_text.trim()).unwrap();
         }
     }
+}
+
+/// Converts pinyin for Erhua entries.
+///
+/// This function identifies entries where the traditional form of a word ends in '兒' (indicating Erhua),
+/// and the pinyin ends with 'r' followed by a tone number (e.g., "yi1dianr3"). It converts such pinyins
+/// to a format where the tone is applied to the preceding syllable and the 'r' is marked with a neutral
+/// tone '5' (e.g., "yi1dian3r5"). This ensures the number of pinyin syllables matches the number of characters.
+///
+/// Entries where the pinyin already ends in 'er2' are not modified, as these are not considered Erhua.
+/// 
+/// not for regular use, uses unwrap
+pub fn convert_erhua_pinyin(conn: &Transaction) -> Result<(), SqliteError> {
+    let mut stmt = conn.prepare(
+        r#"
+        SELECT
+            p.id,
+            p.pinyin_num
+        FROM dict_pron p
+        JOIN dict_shared_pron sp ON p.id = sp.pron_id
+        JOIN dict_pron_definition pd ON sp.id = pd.shared_pron_id
+        JOIN dict_definition d ON pd.definition_id = d.id
+        JOIN dict_word w ON d.word_id = w.id
+        WHERE w.trad LIKE '%兒' AND p.pinyin_num LIKE '%r_'
+        "#,
+    )?;
+
+    let mut rows = stmt.query([])?;
+    let mut updates = Vec::new();
+
+    while let Some(row) = rows.next()? {
+        let pron_id: SqliteId = row.get(0)?;
+        let pinyin_num: String = row.get(1)?;
+
+        if let Some(last_char) = pinyin_num.chars().last() {
+            if last_char.is_ascii_digit()
+                && pinyin_num != "er2"
+                && !(pinyin_num.ends_with("er2")
+                    && pinyin_num
+                        .chars()
+                        .nth(pinyin_num.len() - 4)
+                        .unwrap_or('0')
+                        .is_ascii_digit())
+            {
+                let tone = last_char.to_digit(10).unwrap();
+                let r_index = pinyin_num.len() - 2;
+                if pinyin_num.chars().nth(r_index) == Some('r') {
+                    let mut new_pinyin_num = pinyin_num[..r_index].to_string();
+                    new_pinyin_num.push_str(&tone.to_string());
+                    new_pinyin_num.push_str("r5");
+
+                    updates.push((pron_id, new_pinyin_num));
+                }
+            }
+        }
+    }
+
+    let mut update_stmt = conn.prepare(
+        r#"
+        UPDATE dict_pron
+        SET pinyin_num = ?2, pinyin_mark = ?3
+        WHERE id = ?1
+        "#,
+    )?;
+
+    for (pron_id, new_pinyin_num) in updates {
+        let new_pinyin_mark = pinyin::pinyin_mark_from_num(&new_pinyin_num);
+        update_stmt.execute(params![pron_id, new_pinyin_num, new_pinyin_mark])?;
+    }
+
+    Ok(())
 }

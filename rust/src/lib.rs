@@ -3,6 +3,8 @@ mod config;
 pub mod db_check;
 pub mod db_read;
 pub mod db_edit;
+pub mod db_edit_once;
+pub mod db_autofix;
 pub mod db_convert;
 pub mod db_to_txt;
 pub mod pinyin;

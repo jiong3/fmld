@@ -1,5 +1,6 @@
+use fmld::db_autofix;
 use fmld::db_check;
-use fmld::db_edit;
+use fmld::db_edit_once;
 
 use fmld::db_to_txt;
 use fmld::txt_to_db;
@@ -153,7 +154,7 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
         0
     };
     let tx = db_source.conn.transaction()?;
-    let new_max_ext_note_id = db_edit::finalize_note_ids(&tx, max_ext_note_id)?;
+    let new_max_ext_note_id = db_autofix::finalize_note_ids(&tx, max_ext_note_id)?;
     tx.commit()?;
 
     if let Some(mut m) = external_meta {
@@ -211,8 +212,8 @@ fn main() -> anyhow::Result<()> {
     }
     let tx = db_source.conn.transaction()?;
 
-    db_edit::add_missing_symmetric_references(&tx)?;
-    db_edit::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
+    db_autofix::add_missing_symmetric_references(&tx)?;
+    db_autofix::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
     tx.commit()?;
 
     if let Some(meta_path) = &cli.finalize_with_meta {

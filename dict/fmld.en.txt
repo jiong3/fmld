@@ -2816,8 +2816,8 @@ W|w|先生
    D4|- #literary|father and elder brother
    D5|- #literary|ancestor
    D6|- #literary|Taoist priest
-   D7|x #Gan #Hakka #Min|(dated in Mandarin and Jin) doctor
-   D8||(obsolete or Wu) female prostitute
+   D7|x #Gan #Hakka #Min #dated #Jin|doctor
+   D8|x #obsolete #Wu|female prostitute
    D9|x #Singapore-Hokkien|traditional Chinese physician
 W|w|當然／当然
  P||dang1ran2
@@ -12899,13 +12899,13 @@ W|w|過來／过来
     X<||醒過來／醒过来
    D5||A verbal complement indicating sufficiency of time, ability, etc.
 W|w|嗯
- P||n2g;en2;eng2
+ P||ng2;en2;eng2
   C character
    D1||Used as an interjection to express doubt or curiosity.
- P||n3g;en3;eng3;en5
+ P||ng3;en3;eng3;en5
   C character
    D2||Used as an interjection to express surprise.
- P||n4g;en4;eng4;en5
+ P||ng4;en4;eng4;en5
   C character
    D3||Used as an interjection to express agreement or pledge.
    D4||Alternative form of 硬 (yìng)
@@ -208246,7 +208246,7 @@ W|w|唓嗻／𪠳嗻
   C adj
    D1|x #dated|fierce; intense
 W|w|唔
- P||n2g;wu2
+ P||ng2;wu2
   C character
    D1||Used to express agreement or permission: mhm; uh-huh
    D2||Used to express surprise.
@@ -232178,7 +232178,7 @@ W|w|大柴旦
   C name
    D1||(～行政委員會) Da Qaidam (a region of Haixi prefecture, Qinghai, China)
 W|w|大柵欄／大栅栏
- P||Da4zha4lan2;Da4shi5lanr4
+ P|i|Da4zha4lan2;Da4shi5lan4r5
   C name
    D1||Dashilanr (a street in Beijing, China)
 W|w|大校
@@ -258644,7 +258644,7 @@ W|w|小婚
   C noun
    D1|#Fujian|minor marriage; tongyangxi marriage
 W|w|小媳婦／小媳妇
- P||xiao3xi2fu4;xiao3xi2fer5
+ P||xiao3xi2fu4
   C noun
    D1|#colloquial|tongyangxi; girl adopted into a family as future daughter-in-law; child bride
    D2|#colloquial|young married woman
@@ -346537,7 +346537,7 @@ W|w|柵格／栅格
    D1|#computer-graphics|raster
    D2||(design) grid
 W|w|柵欄／栅栏
- P||zha4lan2;sha1lanr4
+ P|i|zha4lan2;sha1lan4r5
   C noun
    D1||fence; railings; palings; bars
    D2|#military|boom

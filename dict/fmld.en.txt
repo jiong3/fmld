@@ -84,7 +84,7 @@
   The current maximum note id is linked in the line below:
 N->102
 W|w|我
- P||wo3 |T|e3
+ P||wo3 |x|e3
   C character
    D1||I; me; my
    D2|- #dialectal #formal #literary|we; us; our
@@ -157,11 +157,11 @@ W|w|不
  P|T|Fou1;Fou3 |x|Biao1
   C character
    D8||a surname
- P|T|fu1
+ P|x|fu1
   C character
    D9||Original form of 柎 (fū, “calyx”).
 W|w|他
- P||ta1 |T|tuo1
+ P||ta1 |x|tuo1
   C character
    D1||(originally gender-neutral; nowadays usually referring to males) he; him; she; her
    D2||A dummy pronoun. Compare object pronoun 之 (zhī)
@@ -206,7 +206,7 @@ W|w|有
     X<||有子
    D9||A meaningless prefix.
    D10|x #Hokkien #Teochew|Particle used after a verb to indicate accomplishment or accomplishability of a goal.
- P|T|you4
+ P|x|you4
   C character
    D11||Alternative form of 又 (yòu, “again”)
    D12||Alternative form of 又 (yòu, “and; with a remainder of (when dividing an integer by ten)”)
@@ -367,7 +367,7 @@ W|w|還／还
     X<||還嘴／还嘴;還手／还手;還禮／还礼;還擊／还击;還價／还价;以眼還眼，以牙還牙／以眼还眼，以牙还牙
    D4|x #Malaysian-Hokkien #Singapore-Hokkien|(obsolete in Philippine Hokkien) to pay
    D5||a surname
- P||hai2 |X|huan2
+ P||hai2 |x|huan2
   C character
    D6||still; yet; indicates that the phenomenon or observation still exists or the action is still ongoing
    D7||also; as well
@@ -491,7 +491,7 @@ W|w|一
    D13|#gay-slang|top
    D14|x #Xiamen-Hokkien|extremely; very; highly
    D15|#music|Kunqu gongche notation for the note low ti (7̣).
- P|-T|yi2
+ P|x|yi2
   C character
    D16|xC #Beijing|one
 W|w|可以
@@ -506,7 +506,7 @@ W|w|可以
    D6||... can be used to ... (usually with ellipsed 之 (zhī, “this”)); literally: 可 (“can”) + 以 (“by; by means of; according to”)
    D7|C #aviation|to clear; to give clearance
 W|w|在
- P||zai4 |xX|zai3;dai4;dai3
+ P||zai4 |x|zai3;dai4;dai3
   C character
    D1||to exist; to be alive
    D2||to be at; to be in; to be located
@@ -696,8 +696,6 @@ W|w|太
    D5||senior; noble
    D6||Short for 太湖 (Tàihú, “Lake Tai, a lake in Southern Jiangsu, China”).
    D7||Short for 太平洋 (Tàipíngyáng, “Pacific Ocean”).
- P||tai4 |x|tai5
-  C character
    D8||Short for 太太 (tàitai, “wife; Miss; Mrs”).
 W|w|想
  P||xiang3
@@ -834,12 +832,12 @@ W|w|啊
    D9||Used in enumerations, for confirmation (often untranslated).
    D10||on and on, continuously
 W|w|了
- P||le5;liao3 |x|lou5
+ P||le5 |x|lou5;liao3
   C character
    D1||Used after a verb to indicate perfective aspect (action completion).
    D2||Used at the end of a sentence to indicate a change of state.
    D3||Used at the end of a sentence to inform the beginning of an action.
-   D4||(contemporary Shanghainese) Used to indicate the present tense.
+   D4|x #Shanghainese|Used to indicate the present tense.
  P||liao3
   C character
    D5||to be finished; to be completed
@@ -1107,7 +1105,7 @@ W|w|家
    D11||Suffix used after a noun to specify a type of person.
     X<||親家／亲家;仇家
    D12||a surname
- P|T|gu1
+ P|x|gu1
   C character
    D13||Only used in 大家 (dàgū).
 W|w|會／会
@@ -1685,9 +1683,9 @@ W|w|錢／钱
     X<||榆錢／榆钱
    D5||mace (unit of weight equivalent to one tenth of a 兩／两 (liǎng, “tael”) and equal to ten 分 (fēn, “candareen”))
    D6||a surname. Qian, listed second in the Baijiaxing & the dynasty of the kings of Wuyue
- P|T|jian3
+ P|-|jian3
   C character
-   D7||a kind of farm tool
+   D7|-|a kind of farm tool
 W|w|因為／因为
  P||yin1wei4 |x|yin1wei2
   C conj
@@ -1848,7 +1846,7 @@ W|w|五
    D4|#music|Kunqu gongche notation for the note la (6).
    D5|#music|Cantonese opera gongche notation for the note la (6).
 W|w|大家
- P||da4jia1 |T|da4gu1 |x|da4a1
+ P||da4jia1 |x|da4a1
   C noun
    D1||residence of members of the nobility
    D2||master (as used by a servant)
@@ -1856,10 +1854,12 @@ W|w|大家
    D4||rich and powerful family; old and well-known family
     X<||大家閨秀／大家闺秀
    D5||master; great expert
-   D6|- #literary|Alternative form of 大姑 (dàgū, “respectful address for a woman”)
-   D7|x #Eastern-Min #Southern-Min #literary|mother-in-law (husband's mother)
   C pron
    D8||everyone; everybody; all of us
+ P|x|da4gu1
+  C noun
+   D6|x #literary|Alternative form of 大姑 (dàgū, “respectful address for a woman”)
+   D7|x #Eastern-Min #Southern-Min #literary|mother-in-law (husband's mother)
 W|w|每
  P||mei3
   C character
@@ -1940,66 +1940,44 @@ W|w|下
      X<||下層／下层
     D2||lower part of; under
      X<||樹下／树下;樓下／楼下
-   D28||lower part of; under
-    D3||under the influence of; with
-   D29||(lower; inferior; located below)
+     D3||under the influence of; with
     D4||later; next
     D5||inferior, poor
      X<||下人;下品
     D6|x #Eastern-Min #Southern-Min #Xiang|low (quantity or absolute position)
-   D30|#intransitive|(to go to a lower place)
+   D28|#intransitive|(to go to a lower place)
     D7||to go down; to descend (as complement) downwards; down
      X<||下海;下樓／下楼;下山;落下
-   D31||to go down; to descend (as complement) downwards; down
-    D8||(as complement) completely, thoroughly
-     X<||拿下
-   D32|#intransitive|(to go to a lower place)
+     D8||(as complement) completely, thoroughly
+      X<||拿下
     D9||to get out of; to leave; to alight; to get off
      X<||下船
-   D33||to get out of; to leave; to alight; to get off
-    D10||to finish, to complete
-     X<||下班;下課／下课
-   D34|#intransitive|(to go to a lower place)
+     D10||to finish, to complete
+      X<||下班;下課／下课
     D11||to go to somewhere considered poor or inferior
      X<||下鄉／下乡;下館子／下馆子;下野
     D12|#colloquial|Short for 下線 (“to log out”).
-   D35|#transitive|(to move something to a lower place)
-   D36||(with limited objects, often figuratively) to put something down
-    D13||to put food into boiling water
-     X<||下餃子／下饺子
-   D37|#transitive|(to move something to a lower place)
-   D38||(with limited objects, often figuratively) to put something down
-    D14||to rain or snow
-     X<||下雪;下雨
-   D39|#transitive|(to move something to a lower place)
-   D40||(with limited objects, often figuratively) to put something down
-    D15||to give birth (as an animal)
-     X<||下蛋
-   D41|#transitive|(to move something to a lower place)
-   D42||(with limited objects, often figuratively) to put something down
-    D16|x #Taishanese|to put in; to add (a condiment, etc.)
-   D43|#transitive|(to move something to a lower place)
-   D44||(with limited objects, often figuratively) to put something down
-    D17|#colloquial|Short for 下載 (“to download”).
-   D45|#transitive|(to move something to a lower place)
+   D29|#transitive|(to move something to a lower place)
     D18||(with limited objects, often figuratively) to put something down
      X<||下筆／下笔;下腳／下脚;下藥／下药;下榻
+     D13||to put food into boiling water
+      X<||下餃子／下饺子
+     D14||to rain or snow
+      X<||下雪;下雨
+     D15||to give birth (as an animal)
+      X<||下蛋
+     D16|x #Taishanese|to put in; to add (a condiment, etc.)
+     D17|#colloquial|Short for 下載 (“to download”).   
     D19||to give or issue something to an inferior person
      X<||下令
-   D46||to give or issue something to an inferior person
-    D20||to send an invitation
-   D47|#transitive|(to move something to a lower place)
+     D20||to send an invitation
     D21||to conquer
-   D48||(a short time)
+   D30||(a short time)
     D22|x #historical #obsolete|Synonym of 點／点 (diǎn): an ancient unit of time, equal to 24 minutes
-   D49|#colloquial|(as complement) Short for 一下.
-    D23||for a short time; for one moment
-   D50||(a short time)
-   D51|#colloquial|(as complement) Short for 一下.
-    D24||give something a go
-   D52||(a short time)
     D25|#colloquial|(as complement) Short for 一下.
-    D26||Classifier for the number of occurrences: time
+     D23||for a short time; for one moment
+     D24||give something a go
+   D26||Classifier for the number of occurrences: time
 W|w|應該／应该
  P||ying1gai1
   C verb
@@ -2418,10 +2396,10 @@ W|w|錯／错
    D2||(in fixed expressions) bad; poor; inferior; substandard
    D3||to make a mistake; to blunder; to err
    D4||error; mistake; fault
-   D5||(in lake names of Tibet) lake
+   D5|-|(in lake names of Tibet) lake
    D6||to inlay with gold, silver, etc.
    D7||to grind; to polish
-   D8||(alt. form 厝) coarse whetstone; grindstone
+   D8|x|(alt. form 厝) coarse whetstone; grindstone
    D9||to mix; to blend
    D10||to be in disorder; disorderly
    D11||to criss-cross; interlocking
@@ -4346,7 +4324,7 @@ W|w|第
     X<||第二;第十;安全第一
    D5||a surname
 W|w|睡覺／睡觉
- P||shui4jiao4;shui4jue2
+ P||shui4jiao4 |-T|shui4jue2
   C verb-object
    D1||to sleep; to go to bed
    D2|#euphemistic|to sleep with each other; to have sexual intercourse
@@ -4654,7 +4632,7 @@ W|w|萬／万
   C character
    D1|x #obsolete|Original form of 蠆／虿 (chài, “scorpion”).
    D2|x #historical|A ritual dance in ancient China.
-   D3||myriad, ten thousand, 10000
+   D3||ten thousand, 10000
     X<||萬歲／万岁
    D4|#figurative|a great number; myriad; numerous
     X<||萬眾一心／万众一心;排除萬難／排除万难
@@ -5250,6 +5228,7 @@ W|w|姐姐
  P||jie3jie5 |x|jie3jie2
   C noun
    D1||elder sister; big sister
+    Xv||姊姊#D1
     XM||個／个;位
    D2||Term of address for a female not much older than oneself.
    D3|x #archaic|female servant
@@ -6135,7 +6114,7 @@ W|w|雙／双
    D3|#attributive|double; two-fold; twice
    D4|x #dialectal|twins
    D5||Classifier for a pair of objects. ⇒ all nouns using this classifier
-   D6||a rare surname: Shuang
+   D6||a surname: Shuang
 W|w|戴
  P||dai4
   C character
@@ -6498,8 +6477,7 @@ W|w|倒
    D12|#dated-Internet-slang|to be astonished (hyperbolically to the extent that one fells down); to be left speechless
  P||dao4
   C character
-   D25|xC #Southwestern-Mandarin|
-    D13||to put upside down; to invert; to be inverted
+   D13|xC #Southwestern-Mandarin|to put upside down; to invert; to be inverted
    D14||to reverse; to move backwards; to turn back
    D15||upside down; inverted; flipped; reversed
    D16||to pour out; to dump; to empty
@@ -8348,7 +8326,7 @@ W|w|記／记
    D4||notation; mark; note; seal; sign; ideogram
    D5||birthmark (a mark on the skin formed before birth)
     XM||塊／块
-   D6|#Guangdong #HongKong|Suffix for restaurants, stores, etc.
+   D6|xC #Guangdong #HongKong|Suffix for restaurants, stores, etc.
    D7||Classifier for blows. ⇒ all nouns using this classifier
    D8||a surname: Ji
 W|w|南
@@ -33222,15 +33200,11 @@ W|w|黨／党
     X<||結黨／结党;黑手黨／黑手党
    D3|#politics|party
     X<||政黨／政党;自由黨／自由党
-   D12||(for one-party states, in press releases or official media) the ruling party
-    D4|c #specifically|the Communist Party of China
-     X<||黨鐵／党铁
-   D13|#politics|party
-   D14||(for one-party states, in press releases or official media) the ruling party
-    D5|x #Vietnam #specifically|Communist Party of Vietnam
-   D15|#politics|party
-   D16||(for one-party states, in press releases or official media) the ruling party
-    D6|#specifically|(Wa State) United Wa State Party
+    D12||(for one-party states, in press releases or official media) the ruling party
+     D4|c #specifically|the Communist Party of China
+      X<||黨鐵／党铁
+     D5|x #Vietnam #specifically|Communist Party of Vietnam
+     D6|#specifically|(Wa State) United Wa State Party
    D7|xC #HongKong|(used as suffix) a group or class of people with negative attribute, or a member of it
    D8||(used as suffix in Internet slang) a group or class of people, or a member of it
     X<||標題黨／标题党
@@ -61706,187 +61680,13 @@ W|w|太平
   C adj
    D1||peaceful and tranquil
   C name
-   D73||various place names, including:
-    D2|x #historical|(～府) Taiping (a prefecture of Anhui, during the Ming and Qing dynasties)
-    D3|x #historical|(～府) Taiping (a prefecture of Guangxi, during the Ming and Qing dynasties)
-    D4||(～省) Thái Bình (a province of Vietnam)
-    D5||(～市) Thái Bình (a city in Vietnam)
-    D6||(～市) Taiping (a city in Larut, Matang and Selama district, Perak, Malaysia)
-    D7||(～縣) Thới Bình district (a rural district of Cà Mau, Vietnam)
-    D8||(～區, formerly ～市, ～鄉) Taiping (a district of Taichung, Taiwan)
-    D9||(～區) Taiping (a district of Fuxin, Liaoning, China)
-    D10||(～區) Taiping (a former district of Heilongjiang, Heilongjiang, China)
-   D74||various towns:
-    D11||(～鎮) Taiping (a town in Tianjin, China)
-   D75||various place names, including:
-   D76||various towns:
-    D12||(～鎮) Taiping (a town in Tongliang, Chongqing, China)
-   D77||various place names, including:
-   D78||various towns:
-    D13||(～鎮) Taiping (a town in Dianjiang, Chongqing, China)
-   D79||various place names, including:
-   D80||various towns:
-    D14||(～鎮) Taiping (a town in Jixian, Shuangyashan, Heilongjiang, China)
-   D81||various place names, including:
-   D82||various towns:
-    D15||(～鎮) Taiping (a town in Shuangyang district, Changchun, Jilin, China)
-   D83||various place names, including:
-   D84||various towns:
-    D16||(～鎮) Taiping (a town in Panshan, Panjin, Liaoning, China)
-   D85||various place names, including:
-   D86||various towns:
-    D17||(～鎮) Taiping (a town in Shuangliu, Chengdu, Sichuan, China)
-   D87||various place names, including:
-   D88||various towns:
-    D18||(～鎮) Taiping (a town in Wanyuan, Dazhou, Sichuan, China)
-   D89||various place names, including:
-   D90||various towns:
-    D19||(～鎮) Taiping (a town in Lushan, Ya'an, Sichuan, China)
-   D91||various place names, including:
-   D92||various towns:
-    D20||(～鎮) Taiping (a town in Gulin, Luzhou, Sichuan, China)
-   D93||various place names, including:
-   D94||various towns:
-    D21||(～鎮) Taiping (a town in Xingwen, Yibin, Sichuan, China)
-   D95||various place names, including:
-   D96||various towns:
-    D22||(～鎮) Taiping (a town in Xichong, Nanchong, Sichuan, China)
-   D97||various place names, including:
-   D98||various towns:
-    D23||(～鎮) Taiping (a town in Jiangyou, Mianyang, Sichuan, China)
-   D99||various place names, including:
-   D100||various towns:
-    D24||(～鎮, formerly ～鄉) Taiping (a former town in Youxian district, Mianyang, Sichuan, China, formerly a township)
-   D101||various place names, including:
-   D102||various towns:
-    D25||(～鎮) Taiping (a town in Zizhong, Neijiang, Sichuan, China)
-   D103||various place names, including:
-   D104||various towns:
-    D26||(～鎮) Taiping (a town in Huili, Liangshan prefecture, Sichuan, China)
-   D105||various place names, including:
-   D106||various towns:
-    D27||(～鎮) Taiping (a town in Shawan district, Leshan, Yunnan, China)
-   D107||various place names, including:
-   D108||various towns:
-    D28||(～鎮) Taiping (a town in Yao'an, Chuxiong prefecture, Yunnan, China)
-   D109||various place names, including:
-   D110||various towns:
-    D29||(～鎮) Taiping (a town in Yingjiang, Dehong prefecture, Yunnan, China)
-   D111||various place names, including:
-   D112||various towns:
-    D30||(～鎮) Taiping (a former town in Anning, Kunming, Yunnan, China)
-   D113||various place names, including:
-   D114||various towns:
-    D31||(～鎮) Taiping (a town in Sidian, Baoshan, Yunnan, China)
-   D115||various place names, including:
-   D116||various towns:
-    D32||(～鎮) Taiping (a town in Sihong, Suqian, Jiangsu, China)
-   D117||various place names, including:
-   D118||various towns:
-    D33||(～鎮) Taiping (a town in Zhao'an, Zhangzhou, Fujian, China)
-   D119||various place names, including:
-   D120||various towns:
-    D34||(～鎮) Taiping (a town in Yanping district, Nanping, Fujian, China)
-   D121||various place names, including:
-   D122||various towns:
-    D35||(～鎮) Taiping (a town in Yuanyang, Xinxiang, Henan, China)
-   D123||various place names, including:
-   D124||various towns:
-    D36||(～鎮) Taiping (a town in Xixia, Nanyang, Henan, China)
-   D125||various place names, including:
-   D126||various towns:
-    D37||(～鎮) Taiping (a town in Zaoyang, Xiangyang, Hubei, China)
-   D127||various place names, including:
-   D128||various towns:
-    D38||(～鎮, formerly ～鄉) Taiping (a town in Guangshui, Suizhou, Hubei, China, formerly a township)
-   D129||various place names, including:
-   D130||various towns:
-    D39||(～鎮, formerly ～鄉) Taiping (a town in Hefeng, Enshi prefecture, Hubei, China, formerly a township)
-   D131||various place names, including:
-   D132||various towns:
-    D40||(～鎮) Taiping (a town in Ningyuan, Yongzhou, Hunan, China)
-   D133||various place names, including:
-   D134||various towns:
-    D41||(～鎮) Taiping (a town in Shimen, Changde, Hunan, China)
-   D135||various place names, including:
-   D136||various towns:
-    D42||(～鎮) Taiping (a town in Conghua district, Guangzhou, Guangdong, China)
-   D137||various place names, including:
-   D138||various towns:
-    D43||(～鎮) Taiping (a town in Cixing, Shaoguan, Guangdong, China)
-   D139||various place names, including:
-   D140||various towns:
-    D44||(～鎮) Taiping (a town in Majiang, Zhanjiang, Guangdong, China)
-   D141||various place names, including:
-   D142||various towns:
-    D45||(～鎮) Taiping (a town in Yangshan, Qingyuan, Guangdong, China)
-   D143||various place names, including:
-   D144||various towns:
-    D46||(～鎮) Taiping (a town in Qingxin district, Qingyuan, Guangdong, China)
-   D145||various place names, including:
-   D146||various towns:
-    D47||(～鎮) Taiping (a town in Luoding, Yunfou, Guangdong, China)
-   D147||various place names, including:
-   D148||various towns:
-    D48||(～鎮) Taiping (a town in Xinxing, Yunfou, Guangdong, China)
-   D149||various place names, including:
-   D150||various towns:
-    D49||(～鎮) Taiping (a town in Teng, Wuzhou, Guangxi, China)
-   D151||various place names, including:
-   D152||various towns:
-    D50||(～鎮) Taiping (a town in Wuming district, Nanning, Guangxi, China)
-   D153||various place names, including:
-   D154||various towns:
-    D51||(～鎮) Taiping (a town in Jiangzhou district, Chongzuo, Guangxi, China)
-   D155||various place names, including:
-   D156||various towns:
-    D52||(～鎮) Taiping (a town in Liucheng, Liuzhou, Guangxi, China)
-   D157||various place names, including:
-   D158||various towns:
-    D53||(～鎮) Taiping (a town in Lingshan, Qinzhou, Guangxi, China)
-   D159||various place names, including:
-   D160||various towns:
-    D54||(～鎮) Taiping (a town in Pingguo, Baise, Guangxi, China)
-   D161||various place names, including:
-   D162||various towns:
-    D55||(～鎮) Taiping (a town in Juye, Heze, Shandong, China)
-   D163||various place names, including:
-   D164||various towns:
-    D56||(～鎮) Taiping (a town in Zoucheng, Jining, Shandong, China)
-   D165||various place names, including:
-   D166||various towns:
-    D57||(～鎮) Taiping (a town in Jiyang, Jinan, Shandong, China)
-   D167||various place names, including:
-   D168||various towns:
-    D58||(～鎮) Taiping (a town in Wanli district, Nanchang, Jiangxi, China)
-   D169||various place names, including:
-   D170||various towns:
-    D59||(～鎮) Taiping (a town in Jingyang, Xianyang, Shaanxi, China)
-   D171||various place names, including:
-   D172||various towns:
-    D60||(～鎮) Taiping (a town in Zhenyuan, Qingyang, Gansu, China)
-   D173||various place names, including:
-    D61||various townships:
-   D174||various townships:
-    D62||(～鄉) Taiping (a town in Tuquan, Xing'an, Inner Mongolia, China)
-   D175||various place names, including:
-   D176||various villages:
-    D63||(～里, formerly ～村) An urban village in Linkou district, New Taipei, Taiwan, formerly a rural village
-   D177||various place names, including:
-   D178||various villages:
-    D64||(～村) Taiping (a village in Zhonglu, Lichuan, Enshi prefecture, Hubei, China)
-   D179||various place names, including:
-    D65||various subdistricts:
-   D180||various subdistricts:
-    D66||(～街道, formerly ～鎮) Taiping (a subdistrict of Daoli district, Harbin, Heilongjiang, China, formerly a town)
-   D181||various place names, including:
-    D67||(～島) Taiping Island, Itu Aba (an island in the South China Sea)
-   D68|x #historical|The Taiping Heavenly Kingdom, a 19th-century rebel group in southern, central, and eastern China.
-   D69|x #historical|various Taiping regnal eras of different rulers throughout Chinese history.
+   D2||various place names, including cities, towns, districts in China and Taiwan
+   D3|#historical|The Taiping Heavenly Kingdom, a 19th-century rebel group in southern, central, and eastern China.
+   D4|x #historical|various Taiping regnal eras of different rulers throughout Chinese history.
   C noun
-   D70||peace and tranquility
-   D71|x #Eastern-Min|duck egg
-   D72|x #Eastern-Min|peeled boiled egg
+   D5||peace and tranquility
+   D6|x #Eastern-Min|duck egg
+   D7|x #Eastern-Min|peeled boiled egg
 W|w|特定
  P||te4ding4
   C adj
@@ -74418,6 +74218,7 @@ W|w|姊姊
  P||zi3zi3 |T|jie3jie5
   C noun
    D1||older sister; elder sister; big sister
+    Xv||姐姐#D1
    D2||stepsister
 W|w|慘重／惨重
  P||can3zhong4
@@ -585813,7 +585614,7 @@ W|w|雷家祠
 W|w|雷射
  P||lei2she4
   C noun
-   D1|#Guangdong #HongKong #Macau #Malaysia #Singapore|laser
+   D1|xC #Guangdong #HongKong #Macau #Malaysia #Singapore|laser
 W|w|雷尼替丁
  P||lei2ni2ti4ding1
   C noun

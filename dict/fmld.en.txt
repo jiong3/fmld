@@ -214,11 +214,10 @@ W|w|也
  P||ye3
   C character
    D1||also; too; as well; (in negative sentences) neither; either
-   D13||Used for emphasis.
+   D5||Used for emphasis.
     D2||With object fronting.
     D3||Used in the 連……也……／连……也…… constructions for stronger emphasis. Interchangeable with 都. even
     D4||Used in the 再……也…… concessive constructions. still, anyway, nevertheless
-   D5||Used for emphasis.
    D6|- #Classical|Particle used at the end of copular constructions involving a nominal predicate; to be (although not grammatically a verb)
     D7||Often used more loosely than the English copula to indicate a cause or relation.
    D8|- #Classical|Topic-marking particle used at the end of noun phrases.
@@ -2139,11 +2138,12 @@ W|w|位
    D6||standard; rule
    D7|#honorific|people
    D8|#mathematics|digit; place
-   D9||(often polite) Classifier for persons.
    D10||to be situated at; to be located at
    D11||to arrange; to set out
    D12|#information-theory|bit (the smallest unit of storage in a digital computer)
    D13||a surname: Wei
+  C classifier
+   D9||(often polite) Classifier for persons.
 W|w|已經／已经
  P||yi3jing1
   C adv
@@ -3556,10 +3556,8 @@ W|w|死
   C character
    D9||Die; death
     D1|#intransitive|to die
-   D10|#intransitive|to die
-    D2||^† (transitive) to die for the sake of; to sacrifice oneself for; to die together with someone
-     X<||死節／死节
-   D11||Die; death
+     D2|x #obsolete|(transitive) to die for the sake of; to sacrifice oneself for; to die together with someone
+      X<||死節／死节
     D3|&|deadly; fatal; killing; to the death
      X<||死刑;死戰／死战
     D4||inactive
@@ -3612,15 +3610,14 @@ W|w|那麼／那么
 W|w|打
  P||da3
   C character
-   D44||to hit; to strike; to slap; to beat
+   D3||to hit; to strike; to slap; to beat
     D1||to break by hitting or striking
     D2|#music|to play (a percussion instrument)
      X<||打鼓
-   D3||to hit; to strike; to slap; to beat
    D4||to fight; to attack
     X<||打架
    D5||the act of beating up
-   D45||Used as a dummy verb to make a verbal phrase from a noun, including but not limited to:
+   D44||Used as a dummy verb to make a verbal phrase from a noun, including but not limited to:
     D6||to get; to fetch
      X<||打水
     D7|#metonymically|to buy unpackaged or simply packaged goods (meat, soy sauce, oil, etc. at a grocery store)
@@ -4908,7 +4905,8 @@ W|w|發／发
   C character
    D1||to shoot; to launch
     X<||發射／发射
-   D31||to issue
+   D10||to issue
+    X<||發號施令／发号施令
     D2||to distribute
      X<||發行／发行;發工資／发工资
     D3||to ship; to send for delivery
@@ -4924,23 +4922,19 @@ W|w|發／发
     D8||(chiefly of plants or plant parts) to grow out; (of flowers) to blossom
      X<||發芽／发芽
     D9|x #Hokkien|to grow out (teeth, etc.)
-   D10||to issue
-    X<||發號施令／发号施令
    D11||to depart; to leave
     X<||始發站／始发站
    D12||to dispatch
     X<||發兵／发兵;徵發／征发
-   D32||to expand; to extend; to spread
+   D17||to expand; to extend; to spread
+    X<||發揚／发扬;發展／发展;發條／发条
     D13||to rise; to emerge
      X<||發跡／发迹
     D14|#colloquial|to gain wealth; to become rich; to make a fortune
      X<||暴發戶／暴发户
     D15||(of food) to rise, expand, or become porous, especially as a result of leavening
      X<||發糕／发糕
-   D33||(of food) to rise, expand, or become porous, especially as a result of leavening
-    D16|x #Mainland-China-Hokkien|to become fluffy and large or bloom like a flower due to leavening
-   D17||to expand; to extend; to spread
-    X<||發揚／发扬;發展／发展;發條／发条
+     D16|x #Mainland-China-Hokkien|to become fluffy and large or bloom like a flower due to leavening
    D18||to initiate; to give start to
     X<||發動／发动;自發／自发;後發制人／后发制人;激發／激发
    D19||to generate; to produce
@@ -5710,8 +5704,9 @@ W|w|份
    D4||Classifier for things that are part of a whole.; part; portion
    D5||Classifier for servings.
    D6||Classifier for copies, documents, newspapers, periodicals.; copy
-   D7|#colloquial|(used with erhua) Classifier for appearances or states.
    D8||Suffix used after 省, 縣／县, 年, 月, etc.
+  C classifier
+   D7|#colloquial|(used with erhua) Classifier for appearances or states.
 W|w|手
  P||shou3
   C character
@@ -6095,13 +6090,12 @@ W|w|狗
     XM||隻／只;條／条
     X~||犬#D1
     X<||餵狗／喂狗
-   D9|#derogatory|something or someone unpleasant
+   D5|#derogatory|something or someone unpleasant
     D2||Used as an attributive.
      X<||狗官
     D3|#self-deprecatory|a miserable person (used in compounds)
      X<||單身狗／单身狗
     D4|xC #HongKong #derogatory #neologism|police; pig; po-po
-   D5|#derogatory|something or someone unpleasant
    D6|xC #chiefly-Beijing-Mandarin|to flatter
    D7|x #obsolete|cub; young bear or tiger
    D8||a surname
@@ -6684,11 +6678,10 @@ W|w|片
   C character
    D1||thin piece; flake; slice
     X<||片子
-   D17||film; TV play; photograph; record
-    D2|#specifically|film (form of mass media); movie
-     XM||部
    D3||film; TV play; photograph; record
     X<||影片;片子
+    D2|#specifically|film (form of mass media); movie
+     XM||部
    D4|#medicine|tablet
    D5|x #dialectal|diaper; nappy
    D6||part of a place; area
@@ -6700,9 +6693,10 @@ W|w|片
    D11||Classifier for small nonspherical medicinal objects such as pills, tablets.
    D12||Classifier for tracts of land and areas of water.
    D13||Classifier for CDs, movies and DVDs.
-   D14||(used with numeral 一) Classifier for scenarios, scenes, feelings, atmospheres, sounds, clouds.
    D15|x #Teochew|Classifier for doors and windows.
    D16|x #Hakka #Teochew|side
+  C classifier
+   D14||(used with numeral 一) Classifier for scenarios, scenes, feelings, atmospheres, sounds, clouds.
 W|w|國／国
  P||guo2
   C character
@@ -6777,12 +6771,11 @@ W|w|念
    D6||to show tender affection for
    D7||to commemorate; to memorialise; to pay tribute to
    D8||idea; thought
-   D9||to nag
+   D9|T|to nag
    D10|#Buddhism|memory
    D11||a surname
    D12||to read aloud; to chant; to recite
    D13||to study (at a school); to learn
-   D14|T|to nag
 W|w|可
  P||ke3
   C character
@@ -7445,13 +7438,12 @@ W|w|美
    D6|#colloquial|to be pleased with oneself
    D7||beautiful things; beauty
     X<||曲線美／曲线美
-   D12||Used in transcription.
+   D10||Used in transcription.
+    X<||美利堅合眾國／美利坚合众国;達荷美／达荷美;美因茨;美索不達米亞／美索不达米亚
     D8||Short for 美洲 (Měizhōu, “America (continent)”).
      X<||南美
     D9||Short for 美國／美国 (Měiguó, “United States of America”).
      X<||美屬薩摩亞／美属萨摩亚
-   D10||Used in transcription.
-    X<||美利堅合眾國／美利坚合众国;達荷美／达荷美;美因茨;美索不達米亞／美索不达米亚
    D11||a surname. Mei
 W|w|要求
  P||yao1qiu2
@@ -7486,13 +7478,12 @@ W|w|馬／马
    D8|x #Sichuanese|to keep a straight face
    D9||Prefix for names of insects, also written as 螞.
    D10||Short for 馬祖／马祖 (Mǎzǔ, “Matsu”).
-   D16||Used in transcription.
+   D14||Used in transcription.
+    X<||馬爾代夫／马尔代夫;馬達加斯加／马达加斯加;阿拉巴馬／阿拉巴马;馬賽／马赛;馬尼拉／马尼拉;馬利亞／马利亚
     D11||Short for 馬來西亞／马来西亚 (Mǎláixīyà, “Malaysia”).
      X<||大馬／大马
     D12|C|Short for 馬克思／马克思 (Mǎkèsī, “Marx”).
     D13||Short for 馬列主義／马列主义 (Mǎlièzhǔyì, “Marxism-Leninism”).
-   D14||Used in transcription.
-    X<||馬爾代夫／马尔代夫;馬達加斯加／马达加斯加;阿拉巴馬／阿拉巴马;馬賽／马赛;馬尼拉／马尼拉;馬利亞／马利亚
    D15||a surname
 W|w|女人
  P||nv3ren2 |C|nv3ren5
@@ -8207,15 +8198,15 @@ W|w|度
     X<||廣度／广度
    D13|#religion|to try to persuade someone to become a monk, nun or Taoist priest
    D14||to write; to compose
-   D24||Classifier for degrees.
+   D20||a surname
+  C classifier
+   D18||Classifier for degrees.
+    X<||絕對零度／绝对零度
     D15|#physics|Classifier for kilowatt-hour.
     D16|#ophthalmology|Classifier for 0.01 dioptres.
     D17||Classifier for alcohol concentration: percent
-   D18||Classifier for degrees.
-    X<||絕對零度／绝对零度
    D19|- #literary|Classifier for events or occurrences: time
-    X<||再度
-   D20||a surname
+    X<||再度 
  P|C|duo2 |T|duo4
   C character
    D21||to speculate
@@ -11089,11 +11080,10 @@ W|w|活
    D5||lively; vivid
    D6||flexible; movable; moving; nimble; agile
    D7||flexible; adaptable; fluid
-   D18||job; work
+   D11||job; work
     D8||act of performance
     D9|#informal|act of sexual intercourse
     D10||product; produce
-   D11||job; work
    D12||simply; exactly
    D13||alive; living; in a living state
     X<||活捉;活埋
@@ -12037,11 +12027,10 @@ W|w|公平
 W|w|河
  P||he2
   C character
-   D8||Yellow River, Huang He
-    D1|x #Chinese-mythology #obsolete|Hebo; the god of the Yellow River
-    D2|x #Chinese-mythology #obsolete|Yellow River's Map; the plan of the Yellow River (mystic diagram said to have been supernaturally revealed)
    D3||Yellow River, Huang He
     X<||河南
+    D1|x #Chinese-mythology #obsolete|Hebo; the god of the Yellow River
+    D2|x #Chinese-mythology #obsolete|Yellow River's Map; the plan of the Yellow River (mystic diagram said to have been supernaturally revealed)
    D4|#by-extension|river, especially a smaller river, creek, or stream, as distinguished from 江 and 川
     XM||條／条;道
     X<||河流;小河
@@ -12538,10 +12527,9 @@ W|w|穩定／稳定
 W|w|中文
  P||Zhong1wen2
   C noun
-   D6||Chinese (language)
+   D3||Chinese (language)
     D1||written Chinese
     D2||spoken Chinese, including all dialects and varieties
-   D3||Chinese (language)
    D4|#proscribed|Mandarin
    D5|xC #HongKong #Macau|Cantonese
 W|w|消失
@@ -15139,12 +15127,11 @@ W|w|克
    D4||to digest
    D5||to set (a time limit)
    D6|x #dialectal|Pronunciation spelling of 去.
-   D11||Used in transcription.
+   D10||Used in transcription.
+    X<||克羅地亞／克罗地亚;法蘭克福／法兰克福;烏孜別克族／乌孜别克族;傑克／杰克;馬克思／马克思;錫克／锡克;羅曼蒂克／罗曼蒂克;夾克／夹克;馬賽克／马赛克;巧克力
     D7||gram (g)
     D8||a Tibetan unit of volume or dry measure
     D9||a Tibetan unit of land area
-   D10||Used in transcription.
-    X<||克羅地亞／克罗地亚;法蘭克福／法兰克福;烏孜別克族／乌孜别克族;傑克／杰克;馬克思／马克思;錫克／锡克;羅曼蒂克／罗曼蒂克;夾克／夹克;馬賽克／马赛克;巧克力
 W|w|弱
  P||ruo4
   C character
@@ -21279,12 +21266,11 @@ W|w|阿
    D2|x #Hokkien #honorific|Prefix to rank seniority for kinship terms.
     X<||阿兄
    D3||Alternative form of 啊 (ā, á, ǎ, à, a, particle)
-   D19||Used in transcription.
+   D7||Used in transcription.
+    X<||阿根廷;阿曼;阿姆斯特丹;阿克拉;阿米巴;阿伯丁
     D4||Short for 阿富汗 (Āfùhàn, “Afghanistan”).
     D5||Short for 阿爾巴尼亞／阿尔巴尼亚 (Ā'ěrbāníyà, “Albania”).
     D6||Short for 阿拉伯 (Ālābó, “Arabic”).
-   D7||Used in transcription.
-    X<||阿根廷;阿曼;阿姆斯特丹;阿克拉;阿米巴;阿伯丁
    D8||atto- (SI unit prefix)
  P||e1
   C character
@@ -22885,11 +22871,10 @@ W|w|妨礙／妨碍
   C noun
    D1||hindrance; obstruction; interference
   C verb
-   D5|#transitive|to hinder; to obstruct; to interfere
-    D2|#law #specifically #transitive|to prejudice
-    D3|#law #specifically #transitive|to pervert
    D4|#transitive|to hinder; to obstruct; to interfere
     X<||妨礙司法公正／妨碍司法公正
+    D2|#law #specifically #transitive|to prejudice
+    D3|#law #specifically #transitive|to pervert
 W|w|同志
  P||tong2zhi4
   C noun
@@ -23255,13 +23240,14 @@ W|w|匹
    D9|x #Sichuanese|Classifier for pieces or lumps (bricks, etc.).
    D10|x #Sichuanese|Classifier for mountains.
    D11||a surname
- P||pi3 |T|pi1
+ P|C|pi3 |T|pi1
   C character
-   D12||Classifier for horses, donkeys, mules, etc.
-   D13|x #dialectal|(including Sichuanese) Classifier for animals.
    D14||horsepower
    D15||BTU (energy unit)
    D16||Used in transcription.
+  C classifier
+   D12||Classifier for horses, donkeys, mules, etc.
+   D13|x #dialectal|(including Sichuanese) Classifier for animals.
 W|w|威
  P||wei1
   C character
@@ -25032,9 +25018,8 @@ W|w|蘇／苏
    D4||to take; to get
    D5||tassel
    D6||Short for 江蘇／江苏 (Jiāngsū, “Jiangsu Province”).
-   D13||Short for 蘇州／苏州 (Sūzhōu, “Suzhou City, Jiangsu Province”).
-    D7||Short for 蘇維埃／苏维埃 (sūwéi'āi, “soviet”).
-    D8||Short for 蘇聯／苏联 (Sūlián, “Soviet Union”).
+   D7||Short for 蘇維埃／苏维埃 (sūwéi'āi, “soviet”).
+   D8||Short for 蘇聯／苏联 (Sūlián, “Soviet Union”).
    D9||Short for 蘇州／苏州 (Sūzhōu, “Suzhou City, Jiangsu Province”).
     X<||蘇丹／苏丹;蘇里南／苏里南;蘇格蘭／苏格兰;蘇黎世／苏黎世;蘇菲派／苏菲派;蘇打／苏打
    D10||Short for 蘇格蘭／苏格兰 (Sūgélán, “Scotland”).
@@ -25299,9 +25284,10 @@ W|w|粒
   C character
    D1||grain
    D2||small particle
+   D5|x #Hokkien|with hard grains and not mushy (of rice)
+  C classifier
    D3||Classifier for small, round objects: granule, grain, particle, piece ⇒ all nouns using this classifier
    D4|x #Eastern-Min #Hokkien #Taiwanese|(Singapore and Malaysian Mandarin) Classifier for any round, solid objects.
-   D5|x #Hokkien|with hard grains and not mushy (of rice)
 W|w|安
  P||an1
   C character
@@ -26124,13 +26110,13 @@ W|w|絲／丝
      X<||肉絲／肉丝;筍絲／笋丝;切絲／切丝
    D4|#music|string instrument
     X<||絲竹／丝竹
-   D5||trace; tiny bit; classifier for extremely small quantities or abstract things, often in negatives. ⇒ all nouns using this classifier
-    X<||絲毫／丝毫
-   D9|x #dated|the number 10⁻⁴; 1/10000th of certain units of measure
-    D6|C|traditional unit of length equal to 1/10000th of 寸 (cùn, “Chinese inch, ¹/₃ decimeter”) ≈ 3.3 micron
-    D7|C|traditional unit of weight equal to 1/10000th of 錢／钱 (qián, “mace”) = 1/1000000th of 斤 (jīn, “catty, 0.5 kilogram”) = 0.5 milligram
    D8|x #dated|the number 10⁻⁴; 1/10000th of certain units of measure
     X<||絲米／丝米
+    D6|C|traditional unit of length equal to 1/10000th of 寸 (cùn, “Chinese inch, ¹/₃ decimeter”) ≈ 3.3 micron
+    D7|C|traditional unit of weight equal to 1/10000th of 錢／钱 (qián, “mace”) = 1/1000000th of 斤 (jīn, “catty, 0.5 kilogram”) = 0.5 milligram
+  C classifier
+   D5||Classifier for extremely small quantities or abstract things, often in negatives: trace; tiny bit ⇒ all nouns using this classifier
+    X<||絲毫／丝毫
 W|w|看書／看书
  P||kan4shu1
   C verb-object
@@ -26154,13 +26140,12 @@ W|w|臺／台
     X<||講臺／讲台;舞臺／舞台
    D3||support; stand; base
     X<||燈臺／灯台;窗臺／窗台
-   D17||station
+   D6||station
+    X<||天文臺／天文台;氣象臺／气象台;電視臺／电视台
     D4|#specifically|broadcasting station or channel; television station or channel
      X<||臺標／台标;換臺／换台;芒果臺／芒果台
     D5|#Internet #specifically|live stream
      X<||開臺／开台
-   D6||station
-    X<||天文臺／天文台;氣象臺／气象台;電視臺／电视台
    D7||terrace (raised ground)
    D8||Suffix for terms of address conveying respect for the addressee.
     X<||兄臺／兄台
@@ -27469,13 +27454,12 @@ W|w|維／维
    D10||Alternative form of 惟 (wéi, “to think; to contemplate”)
    D11||Alternative form of 唯 (“only”)
    D12||(alt. form 惟, 唯) meaningless particle of interjection
-   D18||Used in transcription.
+   D15||Used in transcription.
+    X<||維德角／维德角;維珍尼亞／维珍尼亚;維也納／维也纳;維多利亞港／维多利亚港
     D13||Short for 維生素／维生素 (wéishēngsù, “vitamin”).
      X<||維A／维A
     D14||Short for 維吾爾／维吾尔 (Wéiwú'ěr, “Uyghur”).
      X<||維語／维语
-   D15||Used in transcription.
-    X<||維德角／维德角;維珍尼亞／维珍尼亚;維也納／维也纳;維多利亞港／维多利亚港
    D16||a surname
  P|x|yong1
   C character
@@ -31013,11 +30997,10 @@ W|w|檔案／档案
 W|w|尼
  P||ni2
   C character
-   D9||Used in transcription.
-    D1||Buddhist nun
-    D2||Short for 尼泊爾／尼泊尔 (Níbó'ěr, “Nepal”).
    D3||Used in transcription.
     X<||尼日;尼加拉瓜;悉尼;尼古丁;尼龍／尼龙;比基尼
+    D1||Buddhist nun
+    D2||Short for 尼泊爾／尼泊尔 (Níbó'ěr, “Nepal”).
  P||ni2 |x|ni4
   C character
    D4||near; close; intimate
@@ -33875,13 +33858,12 @@ W|w|停車／停车
 W|w|視／视
  P||shi4
   C character
-   D12||to watch; to look; to view; to look at; compare 見／见 (“to see”).
+   D6||to watch; to look; to view; to look at; compare 見／见 (“to see”).
     D1||to inspect; to examine
     D2||to regard as; to consider as; to take as
     D3||to visit
     D4||to follow the example of; to take as one's model; to pattern after; to imitate
     D5||to deal with; to manage; to care for
-   D6||to watch; to look; to view; to look at; compare 見／见 (“to see”).
    D7||to compare with
     D8||to be comparable
    D9||eyesight; sight
@@ -34389,10 +34371,9 @@ W|w|人格
 W|w|粉
  P||fen3
   C character
-   D8||powder
+   D3||powder
     D1||face powder
     D2||flour
-   D3||powder
    D4||(～色) pink
    D5|x #dialectal|to whitewash
    D6||food made from starch or flour (noodles, vermicelli, etc., usually not made from wheat flour)
@@ -34934,12 +34915,11 @@ W|w|證／证
   C character
    D1||to prove; to testify; to verify
     X<||論證／论证;證實／证实;證人／证人;證訖／证讫
-   D7||proof; evidence
+   D4||proof; evidence
+    X<||物證／物证;鐵證／铁证
     D2||identification; identity document; credential; papers; ID card
      X<||領證／领证;學生證／学生证;駕駛證／驾驶证;無證駕駛／无证驾驶
     D3|#transgender-slang|diagnosis of transsexualism, gender identity disorder, or gender dysphoria
-   D4||proof; evidence
-    X<||物證／物证;鐵證／铁证
    D5||Original form of 症 (zhèng).
    D6||a surname: Zheng
 W|w|商
@@ -35558,14 +35538,15 @@ W|w|枚
    D1|x #archaic|stalk of shrub; trunk of tree
    D2|x #historical|wooden peg (a gag for marching soldiers to prevent talking)
    D3|x #obsolete|small wooden rod; counting rod
-   D4|x #dated|Classifier for generic countable objects.
-    D5||one by one; each
-     X<||枚舉／枚举
    D6||Classifier for certain small, flat objects, such as coins, stamps, badges, pearls, sporting medals. ⇒ all nouns using this classifier
    D7||Classifier for rockets, satellites and certain weapons (especially bombs).
    D8|#neologism|Classifier for people.
    D9|#neologism|Classifier for flat thin objects (especially followed by 入 mimicking Japanese usage to give an exotic flair or exaggerated quality perception of a product)
    D10||a surname: Mei
+  C classifier
+   D4|x #dated|Classifier for generic countable objects.
+    D5||one by one; each
+     X<||枚舉／枚举
 W|w|裁判
  P||cai2pan4
   C noun
@@ -36603,10 +36584,9 @@ W|w|知足
 W|w|媒體／媒体
  P||mei2ti3
   C noun
-   D4||medium; media
+   D3||medium; media
     D1|#specifically|news media
     D2|#specifically|mass media
-   D3||medium; media
 W|w|不堪
  P||bu4kan1
   C adv
@@ -39151,12 +39131,11 @@ W|w|虧待／亏待
 W|w|棋
  P||qi2
   C character
-   D5||board game, usually excluding those played with cards (牌 (pái))
+   D3||board game, usually excluding those played with cards (牌 (pái))
     D1||an instance of playing such games
      XM||局;盤／盘
     D2||piece; counter used in such games
      XM||枚
-   D3||board game, usually excluding those played with cards (牌 (pái))
    D4|#figurative|strategy; plan
 W|w|視線／视线
  P||shi4xian4
@@ -43356,12 +43335,11 @@ W|w|然
  P||ran2
   C character
    D1||Original form of 燃 (rán, “to burn”).
-   D9||a demonstrative that refers to a previous verbal clause
+   D4||a demonstrative that refers to a previous verbal clause
     D2||so; thus; in this manner; like this
      X<||然後／然后;不然
     D3||Suffix forming adverbs, sometimes also adjectives, with an abstract meaning of “in the manner of, like”.
      X<||顯然／显然;果然;龐然大物／庞然大物
-   D4||a demonstrative that refers to a previous verbal clause
    D10||metaphors extracted from fossilizations of sense 2
     D5||but
      X<||然而
@@ -44470,7 +44448,8 @@ W|w|巴
    D17|xC #Jiaoliao-Mandarin #Sichuanese|along
    D18|x #historical|Ba (an ancient state in modern-day Sichuan)
    D19||eastern Sichuan and Chongqing
-   D30||Used in transcription.
+   D27||Used in transcription.
+    X<||巴西;黎巴嫩;巴黎;蒙巴頓／蒙巴顿;奧巴馬／奥巴马;星巴克
     D20||Short for 巴士 (bāshì, “bus”).
     D21|#physics|bar (unit of pressure)
     D22||Short for 巴勒斯坦 (Bālèsītǎn, “Palestine”).
@@ -44478,8 +44457,6 @@ W|w|巴
     D24||Short for 巴拿馬／巴拿马 (Bānámǎ, “Panama”).
     D25||Short for 巴哈馬／巴哈马 (Bāhāmǎ, “The Bahamas”).
     D26||Short for 巴拉圭 (Bālāguī, “Paraguay”).
-   D27||Used in transcription.
-    X<||巴西;黎巴嫩;巴黎;蒙巴頓／蒙巴顿;奧巴馬／奥巴马;星巴克
    D28||a surname
  P|x|ba5
   C character
@@ -48273,12 +48250,11 @@ W|w|嚴密／严密
 W|w|適／适
  P||shi4
   C character
-   D24||to go; to proceed (to a place)
+   D5||to go; to proceed (to a place)
     D1||to incline towards; (of the popular feeling) to tend towards; to turn towards
     D2||(of a girl) to get married; to marry
     D3||to follow; to submit to; to comply with
     D4||to fit; to suit; to accord with
-   D5||to go; to proceed (to a place)
    D6||towards; to
    D25||to get; to obtain
     D7||to control; to restrict; to moderate
@@ -48288,11 +48264,10 @@ W|w|適／适
     D10||good; fine; adequate
     D11||happy; joyful; contented
     D12||at ease; comfortable; cosy
-   D27||by chance; as it happens; as luck would have it
+   D16||by chance; as it happens; as luck would have it
     D13||occasionally; from time to time
     D14||if; assuming
     D15||just (now); only
-   D16||by chance; as it happens; as luck would have it
    D17|x #historical|collar of the mourning gown
    D18||a surname
  P|T|di2
@@ -49894,11 +49869,10 @@ W|w|紅豆／红豆
  P||hong2dou4
   C noun
    D1||azuki bean; red bean (Vigna angularis)
-   D7||Any of the tropical or subtropical Chinese woody leguminous plants that bear hard scarlet seeds, including:
+   D5||Any of the tropical or subtropical Chinese woody leguminous plants that bear hard scarlet seeds, including:
     D2||Adenanthera microsperma
     D3||Abrus precatorius
     D4||Ormosia hosiei
-   D5||Any of the tropical or subtropical Chinese woody leguminous plants that bear hard scarlet seeds, including:
    D6||(Heilongjiang) lingonberry (Vaccinium vitis-idaea)
 W|w|唷
  P||yo1
@@ -54263,11 +54237,10 @@ W|w|忽
   C character
    D1||suddenly; abruptly
    D2||to neglect; to ignore
-   D7|x #dated|the number 10⁻⁵; 1/100000th of certain units of measure
-    D3|C|traditional unit of length equal to 1/100000th of 寸 (cùn, “Chinese inch, ¹/₃ decimeter”) ≈ 0.33 micron
-    D4|C|traditional unit of weight equal to 1/100000th of 錢／钱 (qián, “mace”) = 50 microgram
    D5|x #dated|the number 10⁻⁵; 1/100000th of certain units of measure
     X<||忽米
+    D3|C|traditional unit of length equal to 1/100000th of 寸 (cùn, “Chinese inch, ¹/₃ decimeter”) ≈ 0.33 micron
+    D4|C|traditional unit of weight equal to 1/100000th of 錢／钱 (qián, “mace”) = 50 microgram
    D6||a surname
 W|w|戰友／战友
  P||zhan4you3
@@ -54801,11 +54774,10 @@ W|w|普
    D4|xC #Tibet #obsolete|adult man
    D5||Short for 普通話／普通话 (pǔtōnghuà, “Putonghua”).
     X<||推普;普教中
-   D10||Used in transcription.
-    D6||Short for 普魯士／普鲁士 (Pǔlǔshì, “Prussia”).
-    D7||Short for 普洱茶 (pǔ'ěrchá, “pu'er tea”).
    D8||Used in transcription.
     X<||普吉;聖多美和普林西比／圣多美和普林西比
+    D6||Short for 普魯士／普鲁士 (Pǔlǔshì, “Prussia”).
+    D7||Short for 普洱茶 (pǔ'ěrchá, “pu'er tea”).
    D9||a surname
 W|w|大地
  P||da4di4
@@ -71601,11 +71573,10 @@ W|w|黎
    D3||until; at the time of
     X<||黎明
    D4|x #historical|(～國) state of Li (a state in modern-day Shanxi, China, during the Shang dynasty)
-   D9||Used in transcription.
-    D5||(～族) Li people (the largest ethnic minority in Hainan, China)
-    D6||Short for 黎巴嫩 (Líbānèn, “Lebanon”).
    D7||Used in transcription.
     X<||黎曼猜想
+    D5||(～族) Li people (the largest ethnic minority in Hainan, China)
+    D6||Short for 黎巴嫩 (Líbānèn, “Lebanon”).
    D8||a surname
 W|w|熙
  P||xi1
@@ -74227,11 +74198,10 @@ W|w|慘重／惨重
 W|w|津
  P||jin1
   C character
-   D9||ferry crossing; ford
+   D4||ferry crossing; ford
     D1|#figurative|key post
     D2||Short for 天津 (Tiānjīn, “Tianjin”).
     D3||(～市) Tsu, Japan
-   D4||ferry crossing; ford
    D10||bodily fluid
     D5||saliva
     D6||sweat
@@ -76691,13 +76661,12 @@ W|w|致力
 W|w|法令
  P||fa3ling4
   C noun
-   D4||law; decree; statute; act; ordinance; regulation; order
+   D3||law; decree; statute; act; ordinance; regulation; order
+    XM||條／条
     D1|xC #HongKong #law|act of parliament of the United Kingdom
      XM||條／条
     D2|xC #Macau #law|decree-law (a law enacted by the Governor of Macau)
      XM||條／条
-   D3||law; decree; statute; act; ordinance; regulation; order
-    XM||條／条
 W|w|辭退／辞退
  P||ci2tui4
   C verb
@@ -151231,11 +151200,10 @@ W|w|來者／来者
   C noun
    D1|- #literary|future generations
    D2|- #literary|the future; future events
-   D6||Used other than figuratively or idiomatically: see 來／来 (lái), 者 (zhě).
-    D3|x #archaic|one coming to pay homage; submitter
-    D4|x #archaic|the following; the next in sequence; follow-up
    D5||Used other than figuratively or idiomatically: see 來／来 (lái), 者 (zhě).
     X<||來者不拒／来者不拒
+    D3|x #archaic|one coming to pay homage; submitter
+    D4|x #archaic|the following; the next in sequence; follow-up
 W|w|來至／来至
  P||lai2zhi4
   C verb
@@ -157764,10 +157732,9 @@ W|w|偲
    D1||Used in 偲偲 (sīsī) and derived terms.
  P|C|cai1 |T|sai1
   C character
-   D5||The meaning of this term is uncertain. Possibilities include:
+   D4||The meaning of this term is uncertain. Possibilities include:
     D2||able; talented
     D3||Alternative form of 䰄 (“bearded”)
-   D4||The meaning of this term is uncertain. Possibilities include:
 W|w|偲偲
  P||si1si1
   C verb
@@ -265047,12 +265014,11 @@ W|w|島國／岛国
 W|w|島夷／岛夷
  P||dao3yi2
   C noun
-   D6||island barbarian, in particular:
+   D5|x|island barbarian, in particular:
     D1|x #historical|in ancient times, people living along what is now the Chinese coastline
     D2|x #derogatory #historical|during the Northern and Southern dynasties, a derogatory name for the inhabitants of South China
     D3|x #derogatory #historical|the Japanese
     D4|x #historical|people of the seas south of China, i.e Southeast Asia
-   D5||island barbarian, in particular:
 W|w|島嶼國家／岛屿国家
  P||dao3yu3 guo2jia1
   C noun
@@ -311751,11 +311717,10 @@ W|w|揄揚／揄扬
 W|w|揆
  P||kui2
   C character
-   D4|x #dated #formal|leader of the government
-    D1|#HongKong #formal|prime minister
-    D2|T #formal|president of the Executive Yuan; premier of the Republic of China
    D3|x #dated #formal|leader of the government
     X<||閣揆／阁揆
+    D1|#HongKong #formal|prime minister
+    D2|T #formal|president of the Executive Yuan; premier of the Republic of China
 W|w|揇
  P||nan3
   C character
@@ -355312,12 +355277,11 @@ W|w|機型／机型
 W|w|機子／机子
  P||ji1zi5
   C noun
-   D7|#colloquial|machine; device
+   D5|#colloquial|machine; device
     D1|#specifically|telephone set
     D2|#specifically|loom
     D3|#specifically|computer
     D4|xC #Jilu-Mandarin #Jin #Xiang #specifically|sewing machine
-   D5|#colloquial|machine; device
    D6|#colloquial|gun trigger
 W|w|機宜／机宜
  P||ji1yi2
@@ -387538,13 +387502,12 @@ W|w|滯／滞
   C character
    D1||stagnant; sluggish
    D2||to hold back; to stay (to hinder); to encumber; to impede
-   D6||to lag; to be held back; to stagnate
+   D5||to lag; to be held back; to stagnate
+    X<||滯留／滞留;磁滯／磁滞
     D3||to accumulate; to be unable to circulate; to cease flowing
      X<||滯銷／滞销
     D4||to be late in payments; to be in arrears; to be overdue
      X<||滯納金／滞纳金
-   D5||to lag; to be held back; to stagnate
-    X<||滯留／滞留;磁滯／磁滞
 W|w|滰
  P||jiang4
   C character
@@ -412771,15 +412734,14 @@ W|w|琿春／珲春
   C name
    D1||(～市) Hunchun (a county-level city in Yanbian prefecture, Jilin, China)
 W|w|琿／珲
- P||hun2 |x|hui1
+ P|x|hui1
   C character
    D1||Used in 璦琿／瑷珲 (Àihuī).
-   D2|- #literary|beautiful jade
  P||hun2
   C character
-   D3||Used in a place name
+   D2||Used in a place name
     X<||琿春／珲春
-   D4|- #literary|beautiful jade
+   D3|- #literary|beautiful jade
 W|w&|瑁
  P||mao4
   C character
@@ -431540,11 +431502,10 @@ W|w|看重
 W|w|看錯／看错
  P||kan4cuo4
   C verb
-   D5||to misinterpret what one sees or reads
+   D4||to misinterpret what one sees or reads
     D1||to misjudge (a person)
     D2||to mistake (a person for someone else)
     D3||to misread (a document)
-   D4||to misinterpret what one sees or reads
 W|w|看門人／看门人
  P||kan1men2ren2
   C noun
@@ -562903,10 +562864,9 @@ W|w|金口
   C name
    D1||(～鎮) Jinkou (a town in Jimo district, Qingdao, Shandong, China)
   C noun
-   D5|#honorific|voice; speech
+   D4|#honorific|voice; speech
     D2|x #historical|the emperor's speech
     D3|#Buddhism|the Buddha's speech
-   D4|#honorific|voice; speech
 W|w|金句
  P||jin1ju4
   C noun
@@ -618935,10 +618895,9 @@ W|w|齹／𬺎
  P||cuo2
   C character
    D1||root of a tooth
-   D2||(of teeth) uneven; crooked
- P||ci1;chi1
+ P||cuo2;ci1;chi1
   C character
-   D3||(of teeth) uneven; crooked
+   D2||(of teeth) uneven; crooked
 W|w|齻／𱌺
  P||dian1
   C character

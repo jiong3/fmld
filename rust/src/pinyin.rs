@@ -24,6 +24,24 @@ pub fn count_syllables(pinyin_num: &str) -> usize {
 }
 
 #[must_use]
+/// lowercase pinyin syllables without additional characters (. -,)
+pub fn pinyin_num_normalized_syllables(pinyin_num: &str) -> Vec<String> {
+    let strip_chars = &['.', ' ', '-', ','];
+    let split_pattern = |c: char| (c > '0') && (c < '6');
+    let mut pinyin_num_syllables = vec![];
+    for pinyin_num_syllable in pinyin_num.split_inclusive(split_pattern) {
+        pinyin_num_syllables.push(pinyin_num_syllable.to_lowercase().trim_matches(strip_chars).to_owned());
+    }
+    pinyin_num_syllables
+}
+
+#[must_use]
+/// lowercase pinyin without additional characters (. -,)
+pub fn pinyin_num_normalized(pinyin_num: &str) -> String {
+    pinyin_num_normalized_syllables(pinyin_num).join("")
+}
+
+#[must_use]
 fn pinyin_syllable_mark_from_num(pinyin_num: &str) -> String {
     // "normalize" pinyin, could be extended for handling of MDBG u:
     let pinyin = pinyin_num.replace("v", "ü").replace("V", "Ü");

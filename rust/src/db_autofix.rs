@@ -1,6 +1,7 @@
 use crate::common::SqliteId;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
+use std::collections::HashSet;
 
 pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32, SqliteError> {
     let mut stmt_max_ext_note_id = conn.prepare(
@@ -313,5 +314,125 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
             );
         ",
     )?;
+    Ok(())
+}
+
+/// Sorts pronunciations within the same definition group based on tag-derived ranks.
+///
+/// For each group of pronunciations belonging to a single definition, this function
+/// calculates a 'relative rank' for each pronunciation based on its tags.
+/// It then updates the database to normalize the `rank` for all pronunciations
+/// in the group to the minimum rank found within that group, and sets the
+/// `rank_relative` to the calculated score. This allows for sorted retrieval
+/// of pronunciations based on their tags.
+///
+/// The tag-to-score mapping is as follows:
+/// - 'C' (china-only): 1
+/// - 'T' (taiwan-only): 2
+/// - '-' (extended): 5
+/// - 'x' (excluded): 10
+/// - 'X' (deleted): 20
+/// - Any other tag or no tag: 0
+/// The final score is the sum of the scores of all tags.
+pub fn sort_pronunciations_by_tag_rank(conn: &Transaction) -> Result<(), SqliteError> {
+    // Select all definition_ids that are associated with more than one pronunciation,
+    // as these are the only groups that require sorting.
+    let mut stmt_groups = conn.prepare(
+        r"
+        SELECT definition_id
+        FROM dict_pron_definition
+        GROUP BY definition_id
+        HAVING COUNT(shared_pron_id) > 1;
+    ",
+    )?;
+    let definition_ids: Vec<SqliteId> = stmt_groups
+        .query_map([], |row| row.get(0))?
+        .collect::<Result<Vec<_>, _>>()?;
+
+    // Prepare statements for efficient reuse within the loop.
+    let mut stmt_pron_info = conn.prepare_cached(
+        r"
+        SELECT
+            dsp.shared_id,
+            ds.rank
+        FROM dict_pron_definition AS dpd
+        JOIN dict_shared_pron AS dsp ON dpd.shared_pron_id = dsp.id
+        JOIN dict_shared AS ds ON dsp.shared_id = ds.id
+        WHERE dpd.definition_id = ?1;
+    ",
+    )?;
+
+    let mut stmt_tags = conn.prepare_cached(
+        r"
+        SELECT
+            dt.ascii_symbol
+        FROM dict_shared_tag AS dst
+        JOIN dict_tag AS dt ON dst.tag_id = dt.id
+        WHERE dst.for_shared_id = ?1 AND dt.ascii_symbol IS NOT NULL;
+    ",
+    )?;
+
+    let mut stmt_update = conn.prepare_cached(
+        r"
+        UPDATE dict_shared
+        SET rank = ?1, rank_relative = ?2
+        WHERE id = ?3;
+    ",
+    )?;
+
+    let mut processed_pron_groups = HashSet::new();
+
+    // Iterate over each definition group that needs processing.
+    for def_id in definition_ids {
+        // Fetch the shared_id and rank for all pronunciations in the current group.
+        let pron_infos: Vec<(SqliteId, i64)> = stmt_pron_info // (shared_id, rank)
+            .query_map(params![def_id], |row| Ok((row.get(0)?, row.get(1)?)))?
+            .collect::<Result<Vec<_>, _>>()?;
+
+        if pron_infos.is_empty() {
+            continue;
+        }
+
+        // Determine the minimum rank within the group. This will become the new
+        // standard rank for all pronunciations in this group to ensure they are
+        // grouped together during ordered retrieval.
+        let min_rank = pron_infos.iter().map(|&(_, rank)| rank).min().unwrap();
+        if processed_pron_groups.contains(&min_rank) {
+            // skip groups which have been sorted already
+            continue;
+        }
+        processed_pron_groups.insert(min_rank);
+
+        // Calculate the score for each pronunciation based on its tags.
+        let mut pron_scores = Vec::new();
+        for (shared_id, _original_rank) in pron_infos {
+            let tags: Vec<String> = stmt_tags
+                .query_map(params![shared_id], |row| row.get(0))?
+                .collect::<Result<Vec<_>, _>>()?;
+
+            let score: i32 = tags
+                .iter()
+                .map(|tag| {
+                    match tag.chars().next().unwrap_or(' ') {
+                        'C' => 1,
+                        'T' => 5,
+                        '-' => 2,
+                        'x' => 10,
+                        'X' => 20,
+                        _ => 0,
+                    }
+                })
+                .sum();
+
+            pron_scores.push((shared_id, score));
+        }
+
+        // Update each pronunciation's shared entry with the new common rank
+        // and its calculated relative rank (score).
+        for (shared_id, score) in pron_scores {
+            stmt_update.execute(params![min_rank, score, shared_id])?;
+        }
+    }
+
     Ok(())
 }

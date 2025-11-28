@@ -7515,7 +7515,7 @@ W|w|當時／当时
  P||dang1shi2
   C pron
    D2||at that time; at the time
-W|w|了解
+W|w|了解;瞭解／了解
  P||liao3jie3
   C verb
    D1||to understand; to comprehend; to learn; to know
@@ -15524,7 +15524,7 @@ W|w|提出
   C verb
    D1||to put forward; to put forth; to raise; to bring up; to ask (a question); to make (an application, suggestion, criticism, etc.); to come up with; to formulate
    D2||to draw; to withdraw (e.g. from a bank); to take out
-W|w|倒霉
+W|w|倒霉;倒楣
  P||dao3mei2
   C adj
    D1||out of luck; in an unlucky situation
@@ -48478,7 +48478,7 @@ W|w|揀／拣
   C character
    D1||to choose; to pick
    D2||Alternative form of 撿／捡 (“to pick up”)
-W|w|閒話／闲话
+W|w|閒話／闲话;閑話/闲话
  P||xian2hua4
   C noun
    D1||words of little importance; casual words; digression
@@ -62183,7 +62183,7 @@ W|w|液體／液体
  P||ye4ti3 |-T|yi4ti3
   C noun
    D1||liquid; fluid
-W|w|詞典／词典
+W|w|詞典／词典;辭典/辞典
  P||ci2dian3
   C noun
    D1||dictionary
@@ -433703,7 +433703,7 @@ W|w|矇矓／蒙眬
   C adj
    D1||(of eyes) heavy with sleep
    D2||(of vision) fuzzy; indistinct; blurred
-W|w|矇蔽／蒙蔽
+W|w|矇蔽／蒙蔽;蒙蔽
  P||meng2bi4
   C verb
    D1||to hoodwink; to deceive; to hide the truth from; to pull the wool over someone's eyes
@@ -438951,7 +438951,7 @@ W|w|磨洋工
  P||mo2yang2gong1
   C verb
    D1||to dawdle over one's work; to loaf on the job; to lie down on the job
-W|w|磨煉／磨炼
+W|w|磨煉／磨炼;磨練/磨练
  P||mo2lian4
   C noun
    D1||self-discipline; endurance

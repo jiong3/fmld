@@ -1,7 +1,7 @@
 use crate::common::SqliteId;
-use crate::db_read;
-use crate::db_edit;
 use crate::config;
+use crate::db_edit;
+use crate::db_read;
 use crate::pinyin;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::collections::HashMap;
@@ -164,7 +164,8 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         new_definition_text.replace_range(tag_start_idx - 1..tag_end_idx + 1, &new_parens);
 
         if new_definition_text != definition.definition {
-            db_edit::update_definition_text(conn, definition.id, &new_definition_text.trim()).unwrap();
+            db_edit::update_definition_text(conn, definition.id, &new_definition_text.trim())
+                .unwrap();
         }
     }
 }
@@ -177,7 +178,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
 /// tone '5' (e.g., "yi1dian3r5"). This ensures the number of pinyin syllables matches the number of characters.
 ///
 /// Entries where the pinyin already ends in 'er2' are not modified, as these are not considered Erhua.
-/// 
+///
 /// not for regular use, uses unwrap
 pub fn convert_erhua_pinyin(conn: &Transaction) -> Result<(), SqliteError> {
     let mut stmt = conn.prepare(
@@ -240,7 +241,6 @@ pub fn convert_erhua_pinyin(conn: &Transaction) -> Result<(), SqliteError> {
     Ok(())
 }
 
-
 pub fn apply_pinyin_tags_from_json(
     conn: &Transaction,
     json_path: &str,
@@ -248,7 +248,8 @@ pub fn apply_pinyin_tags_from_json(
     // 1. Read and parse the JSON file into a HashMap.
     let file = File::open(json_path)?;
     let reader = BufReader::new(file);
-    let pinyin_tags_map: HashMap<String, HashMap<String, String>> = serde_json::from_reader(reader)?;
+    let pinyin_tags_map: HashMap<String, HashMap<String, String>> =
+        serde_json::from_reader(reader)?;
 
     // 2. Prepare a statement to retrieve all unique word-pronunciation pairs.
     let mut stmt = conn.prepare(
@@ -265,17 +266,21 @@ pub fn apply_pinyin_tags_from_json(
         ",
     )?;
 
+    // TODO normalize pinyin, same standard as in json file
+    // TODO check why 菌 is not in chars_pinyin.json for T
+
     // 3. Iterate over all pronunciations found in the database.
     let mut rows = stmt.query([])?;
     while let Some(row) = rows.next()? {
         let trad: String = row.get("trad")?;
         let pinyin_num: String = row.get("pinyin_num")?;
         let shared_pron_id: SqliteId = row.get("shared_pron_id")?;
+        let pinyin_num_norm = pinyin::pinyin_num_normalized(&pinyin_num);
 
         // 4. Look for a matching word in the parsed JSON data.
         if let Some(pinyin_map) = pinyin_tags_map.get(&trad) {
             // 5. If the word matches, look for a matching pinyin.
-            if let Some(tags) = pinyin_map.get(&pinyin_num) {
+            if let Some(tags) = pinyin_map.get(&pinyin_num_norm) {
                 // 6. If both match, apply each character in the tag string.
                 for tag_char in tags.chars() {
                     if config::tag_to_txt_ascii_common(tag_char).is_some() {
@@ -285,10 +290,167 @@ pub fn apply_pinyin_tags_from_json(
                             db_edit::Tag::Ascii(tag_char),
                         )?;
                     } else {
-                        eprintln!("Warning: Unknown tag character '{}' for word '{}', pinyin '{}'", tag_char, trad, pinyin_num);
+                        eprintln!(
+                            "Warning: Unknown tag character '{}' for word '{}', pinyin '{}'",
+                            tag_char, trad, pinyin_num_norm
+                        );
                     }
                 }
+            } else {
+                eprintln!("No match for {trad}: {pinyin_num_norm}");
             }
+        }
+    }
+
+    Ok(())
+}
+
+/// Sets the class of all definitions starting with "Classifier for" to the entry in dict_class
+/// with the name "classifier".
+///
+/// Any definition entry that was changed is then set as the last definition for that word
+/// among those with the same pronunciation(s), using rank_relative.
+/// Assumes initial rank_relative are NULL.
+pub fn add_classifier_class(conn: &Transaction) -> Result<(), SqliteError> {
+    // 1. Get the target class ID for "classifier"
+    let classifier_class_id: SqliteId = conn.query_row(
+        "SELECT id FROM dict_class WHERE name = 'classifier'",
+        [],
+        |row| row.get(0),
+    )?;
+
+    // 2. Find all definitions that match the criteria but have the wrong class
+    let mut stmt_candidates = conn.prepare(
+        r#"
+        SELECT id, word_id, shared_id
+        FROM dict_definition
+        WHERE definition LIKE 'Classifier for%'
+          AND class_id <> ?1
+        "#,
+    )?;
+
+    // Collect updates to avoid borrowing issues
+    let candidates = stmt_candidates
+        .query_map(params![classifier_class_id], |row| {
+            Ok((
+                row.get::<_, SqliteId>(0)?, // definition id
+                row.get::<_, SqliteId>(1)?, // word id
+                row.get::<_, SqliteId>(2)?, // shared id
+            ))
+        })?
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let mut update_class_stmt =
+        conn.prepare("UPDATE dict_definition SET class_id = ?1 WHERE id = ?2")?;
+
+    let mut update_rank_stmt =
+        conn.prepare("UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3")?;
+
+    // Helper statement to get all definitions and their pronunciation signatures for a word.
+    // We join to get the rank of the pronunciation to ensure the signature vector is ordered correctly.
+    let mut stmt_word_defs = conn.prepare(
+        r#"
+        SELECT 
+            d.id, 
+            s.rank, 
+            s.rank_relative, 
+            pd.shared_pron_id
+        FROM dict_definition d
+        JOIN dict_shared s ON d.shared_id = s.id
+        LEFT JOIN dict_pron_definition pd ON d.id = pd.definition_id
+        LEFT JOIN dict_shared_pron sp ON pd.shared_pron_id = sp.id
+        LEFT JOIN dict_shared sp_s ON sp.shared_id = sp_s.id
+        WHERE d.word_id = ?1
+        ORDER BY d.id, sp_s.rank, sp_s.rank_relative
+        "#,
+    )?;
+
+    for (def_id, word_id, shared_id) in candidates {
+        // 1. Update the class
+        update_class_stmt.execute(params![classifier_class_id, def_id])?;
+
+        // 2. Find the correct rank to move to
+        // Fetch all definitions for this word to group them by pronunciation
+        let rows = stmt_word_defs.query_map(params![word_id], |row| {
+            Ok((
+                row.get::<_, SqliteId>(0)?,    // def_id
+                row.get::<_, i64>(1)?,         // rank
+                row.get::<_, Option<i64>>(2)?, // rank_relative
+                row.get::<_, Option<i64>>(3)?, // shared_pron_id
+            ))
+        })?;
+
+        struct DefGroup {
+            rank: i64,
+            rank_relative: Option<i64>,
+            prons: Vec<i64>,
+        }
+
+        let mut groups: HashMap<SqliteId, DefGroup> = HashMap::new();
+
+        for row in rows {
+            let (did, rank, rank_rel, pid) = row?;
+            groups
+                .entry(did)
+                .and_modify(|g| {
+                    if let Some(p) = pid {
+                        g.prons.push(p);
+                    }
+                })
+                .or_insert_with(|| {
+                    let mut prons = Vec::new();
+                    if let Some(p) = pid {
+                        prons.push(p);
+                    }
+                    DefGroup {
+                        rank,
+                        rank_relative: rank_rel,
+                        prons,
+                    }
+                });
+        }
+
+        // Identify the pronunciation signature of the target definition
+        let target_prons = if let Some(g) = groups.get(&def_id) {
+            g.prons.clone()
+        } else {
+            continue;
+        };
+
+        // Find the highest rank/rank_relative among definitions with the same pronunciation signature
+        let mut max_rank = i64::MIN;
+        let mut max_rel: Option<i64> = None;
+        let mut found_group = false;
+
+        for g in groups.values() {
+            if g.prons == target_prons {
+                // Update max if this group is 'larger'
+                let is_larger = if !found_group {
+                    true
+                } else if g.rank > max_rank {
+                    true
+                } else if g.rank == max_rank {
+                    match (g.rank_relative, max_rel) {
+                        (Some(r), Some(m)) => r > m,
+                        (Some(_), None) => true,
+                        (None, _) => false,
+                    }
+                } else {
+                    false
+                };
+
+                if is_larger {
+                    max_rank = g.rank;
+                    max_rel = g.rank_relative;
+                    found_group = true;
+                }
+            }
+        }
+
+        if found_group {
+            // Calculate new rank_relative (append to the end)
+            let new_rel = max_rel.unwrap_or(0) + 1;
+            update_rank_stmt.execute(params![max_rank, new_rel, shared_id])?;
         }
     }
 

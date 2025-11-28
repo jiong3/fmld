@@ -317,6 +317,7 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn create_class_entry(&self, class_name: &str) -> Result<Vec<DictNode>> {
+        let class_name = class_name.trim();
         let mut stmt = self
             .conn
             .prepare_cached("INSERT OR IGNORE INTO dict_class (name) VALUES (?1)")?;

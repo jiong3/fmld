@@ -245,7 +245,6 @@ W|w|個／个
    D3|x #dialectal-Hakka #dialectal-Wu|(dialectal Min) one
    D4||The generic classifier for people or for things lacking specific classifiers.
     X<||一個人／一个人
-   D5||Classifier for hours and months.
    D6||Alternative classifier, for nouns having specific classifiers. Often colloquial and regional. Usage varies greatly between different topolects.
    D7|#colloquial|Particle, placed between a verb and numbers, showing that the following numbers are approximate, not accurate.
    D8|#colloquial|Particle used after 些 (xiē).
@@ -256,6 +255,8 @@ W|w|個／个
    D12||(often dialectal) Emphatic particle between a pronoun and a noun, usually to highlight some negative quality of the person.
    D13|x #Teochew|to be
    D14|x #Shanghainese #dated|Used to indicate the past tense.
+  C classifier
+   D5||Classifier for hours and months.
 W|w|好
  P||hao3
   C character
@@ -617,11 +618,12 @@ W|w|對／对
    D14||to mix; to add
    D15||to divide in half
    D16||couplet
-   D17||Classifier for pairs of objects: pair
    D18||pair
     X<||密鑰對／密钥对;鹼基對／碱基对
    D19|x #Southern-Min #Taiwanese-Hakka|from
    D20||a surname
+  C classifier
+   D17||Classifier for pairs of objects: pair
 W|w|今天
  P||jin1tian1 |x|jin1yan1
   C noun
@@ -920,6 +922,7 @@ W|w|和
    D14||to mix (usually substances in powder or grain form)
     X<||攪和／搅和
    D15||to add water to make something less thick
+  C classifier
    D16||Classifier for the number of rinses when washing clothes.
    D17||Classifier for the number of times a dose of traditional Chinese medicine is boiled.
  P||hu2
@@ -1091,7 +1094,6 @@ W|w|家
     X<||家父
    D4||domesticated; domestic
     X<||家兔;家貓／家猫
-   D5||Classifier for families, businesses and companies.
    D6||school of thought; philosophical school
     X<||儒家;道家;一家之言
    D7|x #historical #obsolete|fief of ministers or senior officials
@@ -1104,6 +1106,8 @@ W|w|家
    D11||Suffix used after a noun to specify a type of person.
     X<||親家／亲家;仇家
    D12||a surname
+  C classifier
+   D5||Classifier for families, businesses and companies.
  P|x|gu1
   C character
    D13||Only used in 大家 (dàgū).
@@ -1206,7 +1210,7 @@ W|w|只
   C character
    D7||a surname
  P||zhi1
-  C character
+  C classifier
    D8||Classifier for hands and objects worn on/around hand.
    D9||Classifier for one of a pair.
    D10||Classifier for boats and certain vessels.
@@ -1448,6 +1452,7 @@ W|w|聽／听
    D6|x #Wenzhounese|to smell
    D7||can; tin
     X<||聽裝／听装
+  C classifier
    D8||Classifier for canned drinks.
  P||ting1 |T|ting4
   C character
@@ -1475,8 +1480,9 @@ W|w|年
     X<||過年／过年
    D8||things for the Chinese New Year
     X<||年糕;年貨／年货
-   D9||Classifier for years.
    D10||a surname
+  C classifier
+   D9||Classifier for years.
 W|w|覺得／觉得
  P||jue2de5 |x|jue2de2
   C verb
@@ -1734,8 +1740,9 @@ W|w|月
     XM||個／个
    D5||monthly
     X<||月薪
-   D6||Classifier for months.
    D7||a surname
+  C classifier
+   D6||Classifier for months.
 W|w|你們／你们
  P||ni3men5
   C pron
@@ -1829,8 +1836,9 @@ W|w|件
     X<||部件;零件;備件／备件;軟件／软件
    D3||document; letter
     X<||文件;郵件／邮件;信件;證件／证件
-   D4||Classifier for things which can be numerically counted, such as pieces of luggage, clothes, events: piece
    D5||a surname
+  C classifier
+   D4||Classifier for things which can be numerically counted, such as pieces of luggage, clothes, events: piece
 W|w|告訴／告诉
  P||gao4su5;gao4su4
   C verb
@@ -1976,6 +1984,7 @@ W|w|下
     D25|#colloquial|(as complement) Short for 一下.
      D23||for a short time; for one moment
      D24||give something a go
+  C classifier
    D26||Classifier for the number of occurrences: time
 W|w|應該／应该
  P||ying1gai1
@@ -2016,10 +2025,11 @@ W|w|回
     X<||回信;已讀不回／已读不回
    D6||to decline; to refuse
    D7||to avoid
-   D8||Classifier for chapters.
-   D9||Classifier for number of occurrences of events: times
    D10||(～族) Hui ethnic group
    D11|x #dated|Muslim; anything related to Islam
+  C classifier
+   D8||Classifier for chapters.
+   D9||Classifier for number of occurrences of events: times
 W|w|張／张
  P||zhang1
   C character
@@ -2034,14 +2044,15 @@ W|w|張／张
     X<||東張西望／东张西望
    D6||(of a new business) to start; to open for business
     X<||新張／新张
-   D7||Classifier for objects that can be expanded.
-   D8||Classifier for objects with a flat surface: sheet
-   D9||Classifier for votes.
    D10|#Chinese-astronomy|Extended Net (one of Twenty-Eight Mansions)
    D11||a surname. Zhang, listed #24 of the Baijiaxing
    D12|x #Hokkien|to make arrangements for; to set up
    D13|x #Hokkien|to get angry; to lose one's temper
    D14|x #Zhangzhou-Hokkien|to pretend; to make believe; to feign
+  C classifier
+   D7||Classifier for objects that can be expanded.
+   D8||Classifier for objects with a flat surface: sheet
+   D9||Classifier for votes.
  P|T|zhang4
   C character
    D15||to boast; to exaggerate (now merged into Pronunciation 1)
@@ -2082,7 +2093,11 @@ W|w|把
    D10||handle; knob; grip (a part of an object which is held in the hand)
     X<||車把／车把;刀把
    D11||stem (of a flower, leaf, fruit, etc.)
-   D12||Classifier for objects that can be held using handles or knobs, such as guns, chairs, brooms, or umbrellas. ⇒ all nouns using this classifier
+   D20||Placed after numerals or classifiers to express uncertainty; approximately
+   D21|x #Gan #Xiang|(archaic or dialectal Mandarin) to give
+   D22|x #Xiang|to; with (following verbs to indicate the handing over or passing of something)
+  C classifier
+   D12||Classifier for objects that can be held using handles or knobs, such as guns, chairs, brooms, or umbrellas.
    D13||Classifier for handfuls of something, such as grains, soil.
    D14||Classifier for bundles or bunches.
    D15||Classifier for fire.
@@ -2091,9 +2106,6 @@ W|w|把
    D17||Classifier for something done with the hand.
    D18||Classifier for times of recreations.
    D19|x #Xiamen-and-Quanzhou-Hokkien|Classifier for wheeled vehicles.
-   D20||Placed after numerals or classifiers to express uncertainty; approximately
-   D21|x #Gan #Xiang|(archaic or dialectal Mandarin) to give
-   D22|x #Xiang|to; with (following verbs to indicate the handing over or passing of something)
  P||ba3;ba4 |T|bai3 |x|pa2
   C character
    D23||a surname
@@ -2221,6 +2233,7 @@ W|w|歲／岁
    D4|- #literary|age
    D5|- #literary|time; period
    D6|- #literary|crop harvests of the year
+  C classifier
    D7||Classifier for time: year
    D8||Classifier for age (of a person or animal): year old
 W|w|又
@@ -2308,9 +2321,10 @@ W|w|本
    D7||this; here; this very
     X<||本人
    D8||capital (money used in investment)
-   D9||Classifier for books, periodicals, files. ⇒ all nouns using this classifier
    D10||volume
    D11|x #Korean-Classical-Chinese|ancestral seat of a descent group
+  C classifier
+   D9||Classifier for books, periodicals, files.
 W|w|但是
  P||dan4shi4
   C adv
@@ -2345,12 +2359,13 @@ W|w|次
    D4|- #literary|to come next in order
    D5|- #literary|to arrange into ordered form; to put into sequence; to impose order; to compile
    D6||inferior; substandard
-   D7||Classifier for times, as in frequency. ⇒ all nouns using this classifier
-    X<||上次
    D8|x #archaic #military|to station the troops at some place; to hold position at some place
    D9|- #literary|resting place
    D10|- #literary|middle
    D11||Only used in 榆次 (Yúcì).
+  C classifier
+   D7||Classifier for times, as in frequency.
+    X<||上次
  P|T|zi1
   C character
    D12||Only used in 次且.
@@ -2369,8 +2384,9 @@ W|w|進／进
     X<||進球／进球
    D7||to eat; to drink
     X<||進食／进食;進餐／进餐
-   D8||Classifier for rows of houses within an old-style residential compound.
    D9||20th tetragram of the Taixuanjing; "advance" (𝌙)
+  C classifier
+   D8||Classifier for rows of houses within an old-style residential compound.
 W|w|一直
  P||yi1zhi2
   C adv
@@ -2524,7 +2540,8 @@ W|w|隻／只
    D3|#mathematics|odd
    D4||alone
    D5||unique
-   D6||Classifier for one of a pair. ⇒ all nouns using this classifier
+  C classifier
+   D6||Classifier for one of a pair.
    D7||Classifier for birds and certain animals (especially limbed or small, grabbable by hand).
    D8||Classifier for symmetrical body parts, limbs, hands, feet.
    D9||Classifier for certain vessels, containers, utensils and objects worn on or grabbable by hand.
@@ -2620,6 +2637,7 @@ W|w|條／条
    D5||informal note
    D6||order
    D7|x #Teochew|settled; stable
+  C classifier
    D8||Classifier for long and thin objects or animals.
    D9||Classifier for something that can be listed item by item, such as reasons, (pieces of) news, messages, advices, etc.
    D10||Classifier for lives or minds.
@@ -2665,9 +2683,10 @@ W|w|水
    D10|#colloquial|lacking substance or power; worthless
    D11||Short for 划水 (huáshuǐ, “to shirk; to slack off”).
    D12||one of the five elements of Wu Xing (五行)
-   D13|#colloquial|Classifier for the number of times clothing was washed.
    D14||Sui people
    D15||a surname
+  C classifier
+   D13|#colloquial|Classifier for the number of times clothing was washed.
 W|w|希望
  P||xi1wang4
   C noun
@@ -3041,13 +3060,14 @@ W|w|塊／块
  P||kuai4
   C character
    D1||piece; chunk; lump; part
-   D2|#colloquial|Classifier for money: yuan; dollar; buck
-   D3||Classifier for piece of something (food, cloth, stone): piece; chunk; slab
-   D4||Classifier for areas of land: plot; tract; area
    D5|x #Teochew|place
    D6|x #Sichuanese #obsolete|tomb; grave
    D7|x #archaic|calm and indifferent
    D8|x #archaic|solitary; alone
+  C classifier
+   D2|#colloquial|Classifier for money: yuan; dollar; buck
+   D3||Classifier for piece of something (food, cloth, stone): piece; chunk; slab
+   D4||Classifier for areas of land: plot; tract; area
 W|w|路
  P||lu4
   C character
@@ -3062,10 +3082,11 @@ W|w|路
    D5||route
    D6||kind; type
    D7||region
-   D8||Classifier for lines or rows.
    D9||-year-old, in multiples of ten; decade(s) of one's life; Used for describing the style of people in such age range.
    D10|x #historical|circuit (an administrative unit during the Song and Yuan dynasties)
    D11||a surname
+  C classifier
+   D8||Classifier for lines or rows.
 W|w|衣服
  P||yi1fu5;yi1fu2
   C noun
@@ -3846,16 +3867,17 @@ W|w|幫／帮
    D2||to help; to assist; to aid
    D3||gang; faction; group
     X<||福建幫／福建帮
-   D4|#derogatory #informal|Classifier for groups of people.
    D5|x #dialectal|for
    D6|x #Shanghainese|and; with
    D7|#Chinese-linguistics|(～母) the Middle Chinese initial of 幫 (MC pang)
-   D8|x #Hokkien|Classifier for scheduled forms of transportation, such as flights and trains.
-   D9|x #Hokkien|Classifier for batches of letters, bulk deliveries, etc.
    D10|x #Mainland-China-Hokkien|to supplement (on the side)
    D11|x #Xiamen-Hokkien|to participate in or to depend partially or entirely on betting, contests, etc. for profit
    D12|x #Taiwanese-Hokkien|to sublet; to sublease
    D13|x #Taiwanese-Hokkien|to expand; to enlarge; to extend
+  C classifier
+   D4|#derogatory #informal|Classifier for groups of people.
+   D8|x #Hokkien|Classifier for scheduled forms of transportation, such as flights and trains.
+   D9|x #Hokkien|Classifier for batches of letters, bulk deliveries, etc.
 W|w|九
  P||jiu3
   C character
@@ -3989,14 +4011,15 @@ W|w|門／门
    D6||class; category
    D7|#taxonomy|phylum; division
    D8|#electronics #logic|logic gate
-   D9||Classifier for lessons, subjects, branches of technology, and languages. ⇒ all nouns using this classifier
+   D14||-gate (a suffix combined with keywords to form the names of scandals)
+   D15|#anatomy|hilum of an organ
+   D16||a surname
+  C classifier
+   D9||Classifier for lessons, subjects, branches of technology, and languages.
    D10||Classifier for livelihoods, trades, skills, businesses, etc.
    D11||Classifier for thoughts, ideas, or emotions, particularly those forming a system or complex.
    D12||Classifier for marriage, romantic, or family relations.
    D13||Classifier for large guns.
-   D14||-gate (a suffix combined with keywords to form the names of scandals)
-   D15|#anatomy|hilum of an organ
-   D16||a surname
 W|w|介紹／介绍
  P||jie4shao4
   C verb
@@ -4191,13 +4214,14 @@ W|w|日
    D6||some day; some other time
    D7||former times; previous times; the past
    D8||time; period; age
-   D9||Classifier for days.
    D10||Short for 日本 (Rìběn, “Japan; Japanese; Nippo-”):
    D11||Alternative form of 二 (èr, “two”)
    D12|x #obsolete|Short for 日斯巴尼亞／日斯巴尼亚 (Rìsībāníyà, “Spain”).
    D13|#Chinese-linguistics|(～母) the Middle Chinese initial of 日 (MC nyit)
    D14|x #dialectal #dialectal-Jin #dialectal-Wu #dialectal-Xiang #vulgar|(often in abuses) to fuck; to have sexual intercourse with
     X<||狗日
+  C classifier
+   D9||Classifier for days.
  P|T|mi4
   C character
    D15||Only used in 日磾／日䃅, a Han dynasty-era personal name borne by Jin Midi (金日磾) and Ma Midi (馬日磾).
@@ -4418,8 +4442,9 @@ W|w|車／车
    D7|x #dialectal|to turn (one's body, etc.)
    D8|x #Sichuanese|to rotate; to turn
    D9|#Internet-slang|pornography; lewd content
-   D10||Classifier for loads of things carried by a vehicle.
    D11||a surname
+  C classifier
+   D10||Classifier for loads of things carried by a vehicle.
  P||ju1
   C character
    D12|#xiangqi|chariot; rook: 🩫
@@ -4454,6 +4479,7 @@ W|w|挺
    D4||to support
    D5||outstanding; prominent
    D6|#Jin #colloquial|quite; rather; pretty; very
+  C classifier
    D7||Classifier for machine guns.
 W|w|聽說／听说
  P||ting1shuo1
@@ -4499,12 +4525,13 @@ W|w|口
    D7||perimeter
     X<||人口
    D8||government organ; department
-   D9||Classifier for family members, populations, livestock. ⇒ all nouns using this classifier
+   D13|#neologism #slang|to fellate
+   D14||a surname
+  C classifier
+   D9||Classifier for family members, populations, livestock.
    D10||Classifier for bites or mouthfuls.
    D11||Classifier for things with an opening: wells, pots, jars, guns, etc.
    D12||Classifier for utensils with a blade: knives, swords, etc.
-   D13|#neologism #slang|to fellate
-   D14||a surname
 W|w|久
  P||jiu3
   C character
@@ -4558,8 +4585,9 @@ W|w|講／讲
    D5||to emphasise; to pay attention to; to take into account
    D6||regarding; concerning
    D7|x #Hokkien|Used after a verb to introduce a clause that is the object of the verb: that
-   D8||Classifier for lectures.
    D9||a surname
+  C classifier
+   D8||Classifier for lectures.
 W|w|些
  P||xie1 |x|xie3
   C character
@@ -4580,10 +4608,11 @@ W|w|種／种
     X<||人種／人种;種族／种族
    D3|#taxonomy|species; breed
    D4||kind; sort; type
-   D5||Classifier for varieties: kind; sort; type ⇒ all nouns using this classifier
-    X<||各種／各种
    D6|#colloquial|guts; grit
    D7||a surname: Zhong
+  C classifier
+   D5||Classifier for varieties: kind; sort; type
+    X<||各種／各种
  P||zhong4
   C character
    D8||to sow; to strew
@@ -4758,14 +4787,16 @@ W|w|場／场
     X<||開場／开场;上半場／上半场
    D5|#physics|field (region affected by a particular force)
     X<||磁場／磁场
-   D6||Classifier for scenes (of a play).
-   D7||Classifier for sporting or recreational activities. ⇒ all nouns using this classifier
-   D8||Classifier for exams.
    D9||a surname: Chang
+  C classifier
+   D6||Classifier for scenes (of a play).
+   D7||Classifier for sporting or recreational activities.
+   D8||Classifier for exams.
  P||chang2;chang3
   C character
    D10||level open space (often as a threshing floor)
    D11|x #colloquial #dialectal|market
+  C classifier
    D12||Classifier for events and happenings: spell; bout
 W|w|最好
  P||zui4hao3
@@ -4815,6 +4846,7 @@ W|w|晚
    D4||succeeding
    D5||old age; later years
     X<||晚節／晚节
+  C classifier
    D6||Classifier for the number of nights.
 W|w|差不多
  P||cha4bu5duo1
@@ -4945,12 +4977,13 @@ W|w|發／发
     X<||發誓／发誓;發怒／发怒;揭發／揭发;發愁／发愁
    D22|#figurative|(of the mind) to make clear; to enlighten; to open up; to stimulate
     X<||發明／发明;啟發／启发
-   D23||Classifier for ammunition.
-   D24|#slang|Classifier for ejaculation.
    D25|x #Hokkien|to show effect; to break out
    D26|x #Mainland-China-Hokkien|to go bad; to deteriorate; to become rotten
    D27|x #Xiamen-and-Zhangzhou-Hokkien|to have quicklime react by mixing with water
    D28|x #Zhangzhou-Hokkien|stirred with water and squeezed repeatedly becoming dense and flexible (of flour, earth, etc.)
+  C classifier
+   D23||Classifier for ammunition.
+   D24|#slang|Classifier for ejaculation.
  P|x|bo1
   C character
    D29||bent; crooked
@@ -5260,7 +5293,8 @@ W|w|頭／头
    D9|x #Hakka #Southern-Min #dated|station
    D10||side; aspect
    D11|x #Teochew|at the same time; simultaneously
-   D12||Classifier for livestock. ⇒ all nouns using this classifier
+  C classifier
+   D12||Classifier for livestock.
    D13|x #dialectal|Classifier for other animals.
    D14|x #Northern-Min|Classifier for flowers.
  P||tou5
@@ -5335,6 +5369,7 @@ W|w|杯
     X<||杯子
    D2||cup; trophy
    D3||alcoholic drink
+  C classifier
    D4||Classifier for cups/glasses of drinks/food.
 W|w|繼續／继续
  P||ji4xu4
@@ -5376,8 +5411,9 @@ W|w|包
    D16||yurt
    D17|#food|baozi
    D18|#food|bun; bread (any small baked good)
-   D19||Classifier for packs or bags.
    D20||a surname
+  C classifier
+   D19||Classifier for packs or bags.
  P|x|pao2
   C character
    D21||Original form of 庖 (páo, “kitchen”).
@@ -5526,6 +5562,7 @@ W|w|起
    D12||particle placed after verbs to indicate the beginning of a continued action
    D13||(used with 不 or 得 after verbs) up to a certain standard; to be able to stand or afford
    D14||particle placed after verbs to indicate the involvement of a person or thing in the action
+  C classifier
    D15||Classifier for incidents and legal cases.
    D16||Classifier for batches or groups.
 W|w|算
@@ -5566,12 +5603,13 @@ W|w|班
    D8|- #literary|rank; grade
    D9|- #literary|equal; in the same rank
    D10||(alt. form 頒／颁) (literary) to promulgate; to issue
-   D11||Classifier for a group of people.
-   D12||Classifier for scheduled forms of transportation, such as flights and trains.
    D13|&|(of transport) regular; scheduled
    D14|- #literary|to withdraw
    D15||Alternative form of 斑 (bān, “spotted; striped”)
    D16||a surname
+  C classifier
+   D11||Classifier for a group of people.
+   D12||Classifier for scheduled forms of transportation, such as flights and trains.
 W|w|結束／结束
  P||jie2shu4
   C verb
@@ -5701,12 +5739,12 @@ W|w|份
     X<||股份
    D2||duty
    D3||degree; extent; level; standard
-   D4||Classifier for things that are part of a whole.; part; portion
-   D5||Classifier for servings.
-   D6||Classifier for copies, documents, newspapers, periodicals.; copy
    D8||Suffix used after 省, 縣／县, 年, 月, etc.
   C classifier
    D7|#colloquial|(used with erhua) Classifier for appearances or states.
+   D4||Classifier for things that are part of a whole.; part; portion
+   D5||Classifier for servings.
+   D6||Classifier for copies, documents, newspapers, periodicals.; copy
 W|w|手
  P||shou3
   C character
@@ -5718,10 +5756,11 @@ W|w|手
     X<||歌手
    D4||convenient; handy; portable
    D5||handwritten
-   D6||Classifier for skills.
-   D7||Classifier for transactions.
    D8|x #Southern-Min|luck in gambling
    D9|x #Taiwanese-Hokkien|hidden part (general)
+  C classifier
+   D6||Classifier for skills.
+   D7||Classifier for transactions.
    D10|#finance|Classifier for stocks: lot
 W|w|乾淨／干净
  P||gan1jing4
@@ -5995,10 +6034,11 @@ W|w|段
    D2||administrative unit; department (especially in railways)
     X<||機務段／机务段
    D3|#sports|grade; level (in chess, martial arts, etc.)
+   D7||a surname
+  C classifier
    D4||Classifier for a segment or section of something that is long: piece; segment
    D5||Classifier for a distance or a period of time.
    D6||Classifier for writing, speech, etc.
-   D7||a surname
 W|w|感覺／感觉
  P||gan3jue2
   C noun
@@ -6069,7 +6109,7 @@ W|w|這兒／这儿
   C pron
    D1||Erhua form of 這／这 (zhè, “here”).
 W|w|消息
- P|C|xiao1xi5 |T|xiao1xi2 |-C|xiao1xi1
+ P|C|xiao1xi5 |-C|xiao1xi1 |T|xiao1xi2
   C noun
    D1|#countable #uncountable|message; news; information
     XM||條／条;個／个
@@ -6107,8 +6147,9 @@ W|w|雙／双
    D2|#attributive|(of an integer) even (divisible by two)
    D3|#attributive|double; two-fold; twice
    D4|x #dialectal|twins
-   D5||Classifier for a pair of objects. ⇒ all nouns using this classifier
    D6||a surname: Shuang
+  C classifier
+   D5||Classifier for a pair of objects.
 W|w|戴
  P||dai4
   C character
@@ -6187,6 +6228,7 @@ W|w|重
    D11||to stack up; to pile up; to overlay
    D12||again; once more
     X<||重逢;重做
+  C classifier
    D13||Classifier for layers of an object.
 W|w|筆／笔
  P||bi3
@@ -6195,8 +6237,9 @@ W|w|筆／笔
    D2|#countable|pen; pencil
     XM||支;枝
    D3||to write; to compose
+  C classifier
    D4||Classifier for writing or drawing: stroke (of Chinese characters, in a painting, etc.)
-   D5||Classifier for sums of money and deals. ⇒ all nouns using this classifier
+   D5||Classifier for sums of money and deals.
 W|w|怕
  P||pa4
   C character
@@ -6278,7 +6321,6 @@ W|w|元
    D3||basic; fundamental
    D4||origin; source
    D5||meta-
-   D6||Classifier for yuan or dollars.
    D7|#mathematics|variable; unknown; element
    D8|#mathematics|element (an infinitesimal interval of a quantity, a differential)
    D9||(～朝) Yuan Dynasty
@@ -6288,6 +6330,8 @@ W|w|元
    D12|#Taoism|kalpa, a cosmic or supreme cycle of 129,000 years
    D13|xC #HongKong|Short for 元朗 (Yuánlǎng, “Yuen Long”).
    D14||Alternative form of 玄 (xuán) (contained in the name of 玄燁)
+  C classifier
+   D6||Classifier for yuan or dollars.
 W|w|生日
  P||sheng1ri4
   C noun
@@ -6409,6 +6453,7 @@ W|w|碗
     XM||個／个;隻／只
     X<||洗碗
    D2||bowl-like object
+  C classifier
    D3||Classifier for the quantity of a bowl: bowlful
 W|w|哪兒／哪儿
  P||na3r5
@@ -6689,14 +6734,14 @@ W|w|片
    D8||to slice; to carve thin
    D9||partial; incomplete; one-sided
     X<||片面
+   D16|x #Hakka #Teochew|side
+  C classifier
+   D14||(used with numeral 一) Classifier for scenarios, scenes, feelings, atmospheres, sounds, clouds.
    D10||Classifier for flat objects such as leaves, pieces of paper, slices, etc.
    D11||Classifier for small nonspherical medicinal objects such as pills, tablets.
    D12||Classifier for tracts of land and areas of water.
    D13||Classifier for CDs, movies and DVDs.
    D15|x #Teochew|Classifier for doors and windows.
-   D16|x #Hakka #Teochew|side
-  C classifier
-   D14||(used with numeral 一) Classifier for scenarios, scenes, feelings, atmospheres, sounds, clouds.
 W|w|國／国
  P||guo2
   C character
@@ -6713,8 +6758,9 @@ W|w|國／国
     X<||國共內戰／国共内战
    D8||domestic; of our country (in many contexts meaning Chinese)
     X<||國畫／国画;國貨／国货;國男／国男
-   D9||Classifier for countries (quasi-measure word).
    D10||a surname
+  C classifier
+   D9||Classifier for countries (quasi-measure word).
 W|w|安排
  P||an1pai2
   C verb
@@ -6814,6 +6860,7 @@ W|w|掛／挂
    D10|#colloquial|to fail an exam; to have a non-passing grade in a course
    D11|#colloquial #humorous|to die
    D12|#video-games|cheating plug-in or software
+  C classifier
    D13||Classifier for sets or strings of objects.
 W|w|抱
  P||bao4
@@ -6821,8 +6868,9 @@ W|w|抱
    D1||to heft in the arms; to carry
    D2||to hug; to embrace
    D3||to incubate
-   D4||Classifier for things held or encircled with both arms (books, hay, firewood, trees, etc.).
    D5||a surname
+  C classifier
+   D4||Classifier for things held or encircled with both arms (books, hay, firewood, trees, etc.).
 W|w|永遠／永远
  P||yong3yuan3
   C adv
@@ -6918,12 +6966,13 @@ W|w|支
    D4||to send away; to put off somebody
    D5||branch; limb; offshoot; subdivision
    D6||a surname
-   D7||Classifier for long, thin objects. ⇒ all nouns using this classifier
-   D8||Classifier for songs or musical pieces.
-   D9|x #Southern-Min|Classifier for certain body parts.
    D10||(now usually derogatory and offensive) Short for 支那 (Zhīnà, “China”).
     X<||印支
    D11|#telegraphy|(～日) the fourth day of a month
+  C classifier
+   D7||Classifier for long, thin objects.
+   D8||Classifier for songs or musical pieces.
+   D9|x #Southern-Min|Classifier for certain body parts.
 W|w|年紀／年纪
  P||nian2ji4
   C noun
@@ -6955,6 +7004,7 @@ W|w|滿／满
    D10||(～族) Manchu people
     X<||滿文／满文
    D11||a surname: Man
+  C classifier
    D12|x #Hakka|Classifier for occurrences of events.
 W|w|剛剛／刚刚
  P||gang1gang1
@@ -7086,8 +7136,9 @@ W|w|停
    D2||to stay; to remain
    D3||to place (an object somewhere); to park (a vehicle); to anchor (a ship)
    D4|-& #literary|reliable; safe; secure; proper
-   D5|#colloquial|Classifier for portions (parts of a total).
    D6||a surname: Ting
+  C classifier
+   D5|#colloquial|Classifier for portions (parts of a total).
 W|w|而
  P||er2
   C character
@@ -7150,6 +7201,7 @@ W|w|拍
    D16|x #Hokkien|to breed; to mate; to copulate
    D17|x #Hokkien #music|bamboo clapper for beating time in nanyin (made of two bamboo blocks)
    D18|xC #Wuhan-Mandarin|to brownnose; to suck up; to kiss someone's ass
+  C classifier
    D19|#music|Classifier for beats.
 W|w|負責／负责
  P||fu4ze2
@@ -7380,8 +7432,9 @@ W|w|間／间
    D4||room; chamber
     X<||房間／房间;衛生間／卫生间;衣帽間／衣帽间;雙人間／双人间
    D5||section of a room; lateral space between two pairs of pillars
-   D6||Classifier for smallest units of housing, such as rooms and shopfronts.
    D7||a surname
+  C classifier
+   D6||Classifier for smallest units of housing, such as rooms and shopfronts.
  P||jian4
   C character
    D8||opening; gap; break
@@ -7463,6 +7516,7 @@ W|w|床
    D4|x #obsolete|rails of the well
    D5||bottom; bed
     X<||河床
+  C classifier
    D6||Classifier for beddings.
 W|w|馬／马
  P||ma3
@@ -7557,8 +7611,9 @@ W|w|騎／骑
   C character
    D4||horse or vehicle that one rides on
    D5||mounted soldier
-   D6|- #literary|Classifier for soldiers or warhorses.
    D7||a surname
+  C classifier
+   D6|- #literary|Classifier for soldiers or warhorses.
 W|w|一會兒／一会儿
  P||yi1hui4r5;yi1hui3r5
   C adv
@@ -7740,6 +7795,7 @@ W|w|內／内
    D9|x #Teochew|family
    D10|x #Teochew|home
    D11|#Internet-slang|Alternative form of 那
+  C classifier
    D12|x #Philippine-Hokkien|Classifier for servings / helpings of food.
  P|T|na4
   C character
@@ -7799,14 +7855,15 @@ W|w|頓／顿
     D9|x #Hakka|to hit; to bump into with elbow
     D10|x #Southern-Min|to strike; to beat; to hit
     D11|x #Quanzhou-and-Xiamen-Hokkien|to have a trial of strength or skill; to have a contest; to compete with
-   D12||Classifier for meals.
    D13|x #Southern-Min|meal
-   D14||Classifier for beatings, scoldings, etc.
    D15||suddenly; abruptly; all of the sudden
    D16||tired; weary; fatigued; exhausted; strained
    D17||Used in transcription.
     X<||頓巴斯／顿巴斯
    D18||a surname: Dun
+  C classifier
+   D12||Classifier for meals.
+   D14||Classifier for beatings, scoldings, etc.
  P|T|du2
   C character
    D19||Used in 冒頓／冒顿 (Mòdú).
@@ -7836,7 +7893,8 @@ W|w|套
    D8||harness
    D9||trick; trap
    D10|xC #HongKong|Short for 套房 (“en suite bedroom”).
-   D11||Classifier for a set of objects (books, furniture, rooms, etc). ⇒ all nouns using this classifier
+  C classifier
+   D11||Classifier for a set of objects (books, furniture, rooms, etc).
  P|x|tao3
   C character
    D12||long
@@ -7892,8 +7950,9 @@ W|w|遍
    D1||to be everywhere; to be spread out; to lay out
     X<||遍歷／遍历
    D2|-& #literary|common; widespread; universal; pervasive; general; ubiquitous
-   D3||Classifier for occurrences of events.
    D4|#computing|pass, a run through a document as part of a translation, compilation or reformatting process.
+  C classifier
+   D3||Classifier for occurrences of events.
 W|w|心情
  P||xin1qing2
   C noun
@@ -7928,10 +7987,11 @@ W|w|所
     X<||住所;哨所
    D2||establishment for a particular function; institution
     X<||派出所
-   D3||Classifier for buildings, schools, hospitals, etc. ⇒ all nouns using this classifier
    D4||Prefix attached to verbs to form noun phrases, indicating the patient of the verb, similar to a passive participle.
     X<||所以;所得;不知所云
    D5||Used with 為／为 (wéi) or 被 (bèi) to form the passive voice.
+  C classifier
+   D3||Classifier for buildings, schools, hospitals, etc.
 W|w|報／报
  P||bao4
   C character
@@ -7986,11 +8046,12 @@ W|w|刀
    D1||knife; blade
     XM||把
    D2||single-edged sword; cutlass
-   D3||Classifier for sets of one hundred sheets of paper.
-   D4||Classifier for incisions with a knife, blade, single-edged sword, etc.
    D5|#Internet #neologism|to bargain; to negotiate on price
    D6||a surname (only common among Tai people)
    D7|#colloquial #neologism|dollar
+  C classifier
+   D3||Classifier for sets of one hundred sheets of paper.
+   D4||Classifier for incisions with a knife, blade, single-edged sword, etc.
 W|w|進來／进来
  P||jin4lai2
   C verb
@@ -8107,10 +8168,11 @@ W|w|千萬／千万
 W|w|趟
  P||tang4
   C character
+   D4||something that is going on
+  C classifier
    D1||Classifier for journeys or occasions.
    D2||Classifier for sets of martial arts sequences.
    D3|x #dialectal|Classifier for streets or things arranged in a row.
-   D4||something that is going on
  P||tang1
   C character
    D5||Alternative form of 蹚 (tāng, “to wade; to ford”)
@@ -8155,6 +8217,7 @@ W|w|句
  P||ju4
   C character
    D1||sentence; phrase
+  C classifier
    D2||Classifier for sentences.
  P||gou1
   C character
@@ -8206,7 +8269,7 @@ W|w|度
     D16|#ophthalmology|Classifier for 0.01 dioptres.
     D17||Classifier for alcohol concentration: percent
    D19|- #literary|Classifier for events or occurrences: time
-    X<||再度 
+    X<||再度
  P|C|duo2 |T|duo4
   C character
    D21||to speculate
@@ -8229,11 +8292,12 @@ W|w|封
     X<||信封
    D6||cover of a book
     X<||封面
-   D7||Classifier for envelopes, letters and mail. ⇒ all nouns using this classifier
    D8||to confer (a title) upon; to enfeoff
    D9|- #literary|(of emperors) to build an altar to worship heaven
    D10||Short for 封建主義／封建主义 (fēngjiàn zhǔyì, “feudalism”).
    D11||a surname
+  C classifier
+   D7||Classifier for envelopes, letters and mail.
 W|w|直接
  P||zhi2jie1
   C adj
@@ -8289,11 +8353,12 @@ W|w|派
    D5||to hand out; to distribute
    D6||to apportion; to impose
    D7||to censure; to blame
-   D8||Classifier for a scene, an atmosphere, a speech or a sound.
-   D9||Classifier for factions, schools of thought, groups, etc.
    D10|#mathematics|pi (π); the ratio of the circumference of a circle to its diameter
    D11||pie
     X<||蘋果派／苹果派
+  C classifier
+   D8||Classifier for a scene, an atmosphere, a speech or a sound.
+   D9||Classifier for factions, schools of thought, groups, etc.
  P||pai4 |C|pa1
   C character
    D12||Only used in 派司 (pāsi).
@@ -8301,13 +8366,15 @@ W|w|夜
  P||ye4
   C character
    D1||night
+  C classifier
    D2||Classifier for the number of nights.
 W|w|瓶
  P||ping2
   C character
    D1||bottle; vase; jar; flask
     X<||瓶子;花瓶;熱水瓶／热水瓶
-   D2||Classifier for bottled objects: bottle ⇒ all nouns using this classifier
+  C classifier
+   D2||Classifier for bottled objects: bottle
 W|w|記／记
  P||ji4
   C character
@@ -8318,8 +8385,9 @@ W|w|記／记
    D5||birthmark (a mark on the skin formed before birth)
     XM||塊／块
    D6|xC #Guangdong #HongKong|Suffix for restaurants, stores, etc.
-   D7||Classifier for blows. ⇒ all nouns using this classifier
    D8||a surname: Ji
+  C classifier
+   D7||Classifier for blows.
 W|w|南
  P||nan2
   C character
@@ -8550,10 +8618,11 @@ W|w|樹／树
    D3||tree
     XM||棵;株
     X<||楊樹／杨树;柳樹／柳树
-   D4|- #literary|Classifier for trees.
    D5|#graph-theory|tree
     X<||紅黑樹／红黑树;決策樹／决策树
    D6||a surname
+  C classifier
+   D4|- #literary|Classifier for trees.
 W|w|無／无
  P||wu2
   C character
@@ -8625,6 +8694,7 @@ W|w|指
    D5||to rely on; to depend on
    D6||to criticize; to rebuke
    D7||to make one’s hair stand on end
+  C classifier
    D8||Classifier for fingerwidths.
 W|w|反正
  P||fan3zheng4 |x|fan3zheng5
@@ -8649,7 +8719,6 @@ W|w|管
    D3|#by-extension|slender tubular hollow object; pipe; tube; duct; canal; valve; fistula
     X<||吸管
    D4|- #literary|calligraphy brush; inkbrush
-   D5||Classifier for tube-shaped objects.
    D6||to administer; to manage; to control; to be in charge
     X<||管理
    D7||to subject someone to discipline; to discipline
@@ -8662,6 +8731,8 @@ W|w|管
    D14|x #Sichuanese|to be worth
    D15|x #Zhangzhou-Hokkien|measuring tool of half a sheng (升 (shēng))
    D16||a surname
+  C classifier
+   D5||Classifier for tube-shaped objects.
 W|w|辦公室／办公室
  P||ban4gong1shi4 |x|ban4gong1shi3
   C noun
@@ -8690,10 +8761,11 @@ W|w|票
    D3||bank note; bill
    D4||person held for ransom; hostage
    D5|#Chinese-opera|amateur performance of Chinese opera
-   D6||Classifier for shipments and business.
    D7||swift
    D8||to mark
    D9||a surname: Piao
+  C classifier
+   D6||Classifier for shipments and business.
  P|T|piao1
   C character
    D10||roaring flame
@@ -8856,8 +8928,9 @@ W|w|線／缐
    D9||plotline
    D10|x #Singapore #computing|network connection
    D11|xC #HongKong|lane (of a road or swimming pool)
-   D12||Classifier for for abstract nouns or numerals indicating few or little.
    D13||a surname
+  C classifier
+   D12||Classifier for for abstract nouns or numerals indicating few or little.
 W|w|輕／轻
  P||qing1
   C character
@@ -9155,6 +9228,7 @@ W|w|座
    D2||stand; base
     XM||個／个
    D3||Short for 星座 (xīngzuò, “constellation”).
+  C classifier
    D4||Classifier for buildings, mountains and similar immovable objects.
 W|w|數／数
  P||shu3
@@ -9961,6 +10035,7 @@ W|w|響／响
    D5||sound
    D6||echo
    D7||news; messages
+  C classifier
    D8||Classifier for sounds.
 W|w|目前
  P||mu4qian2
@@ -10040,7 +10115,6 @@ W|w|方
    D17|#mathematics|power
    D18|#mathematics|Short for 平方米 (píngfāngmǐ, “Classifier for square metre.”).
    D19|#mathematics|Short for 立方米 (lìfāngmǐ, “Classifier for cubic metre.”).
-   D20||Classifier for square objects.
    D21|- #literary|(preceding a measurement of length to indicate area) area surrounding (something); surroundings; vicinity
    D22||upright; honest; irreproachable
     X<||方正
@@ -10053,6 +10127,8 @@ W|w|方
    D27|#lexicography|Short for 方言 (fāngyán, “dialect”).
    D28||a surname
    D29||Pronunciation spelling of 慌 (huāng).
+  C classifier
+   D20||Classifier for square objects.
  P|x|fang2
   C character
    D30||Only used in 方輿／方舆 (Fángyù, “an ancient county in modern Shandong”).
@@ -10094,11 +10170,12 @@ W|w|節／节
    D12|x #historical|Short for 符節／符节 (fújié, “tally used as proof of authorization”).
    D13|#music|beat; rhythm
    D14||(unit of speed) knot
-   D15||Classifier for segments, such as batteries, lessons, train carriages, paragraphs, etc. ⇒ all nouns using this classifier
    D16||60th hexagram (䷻) of the I Ching.
    D17||to constrain; to limit; to control
    D18||to save; to use sparingly
    D19||a surname
+  C classifier
+   D15||Classifier for segments, such as batteries, lessons, train carriages, paragraphs, etc.
 W|w|遊戲／游戏
  P||you2xi4
   C noun
@@ -10195,7 +10272,8 @@ W|w|根
    D10|#chemistry|radical
    D11|#computing|root
    D12||completely; from the source
-   D13||Classifier for long, slender objects, such as cigarettes, fingers, candles, ropes, and guitar strings. ⇒ all nouns using this classifier
+  C classifier
+   D13||Classifier for long, slender objects, such as cigarettes, fingers, candles, ropes, and guitar strings.
 W|w|酸
  P||suan1
   C character
@@ -10217,6 +10295,7 @@ W|w|層／层
    D1||to pile up; to overlap
    D2||thing made of layers
    D3||layer; storey; floor; stratum
+  C classifier
    D4||Classifier for things arranged in layers, storeys or levels.
    D5|x #Southern-Min|Classifier for events.
 W|w|平時／平时
@@ -10374,6 +10453,7 @@ W|w|名
    D9||to be called
    D10||to describe; to give details of
     X<||莫名其妙
+  C classifier
    D11||Classifier for place in a competition or position in a name list.
    D12||Classifier for people with a certain status or identity.
 W|w|小孩子
@@ -10438,10 +10518,11 @@ W|w|頂／顶
    D7||to butt; to strike (with the head)
    D8||to withstand; to confront
    D9||most; exceedingly; best
-   D10||Classifier for objects with a top, such as hats and palanquins. ⇒ all nouns using this classifier
-   D11|x #Southern-Min|Classifier for vehicles. ⇒ all nouns using this classifier
    D12|x #Southern-Min|in front; ahead; above; before; previously
    D13|c #Internet-slang|to "bump" a forum thread to raise its profile; like; upvote
+  C classifier
+   D10||Classifier for objects with a top, such as hats and palanquins.
+   D11|x #Southern-Min|Classifier for vehicles.
 W|w|傻
  P||sha3
   C character
@@ -10486,7 +10567,6 @@ W|w|副
    D2||duplicate
     X<||副本
    D3|#grammar|Short for 副詞／副词 (fùcí, “adverb”).
-   D4||Classifier for pairs, sets of things, medical prescriptions, facial expressions, etc..
    D5||assistant; deputy
     X<||副手
     D6|#nautical|mate (an officer of the ship)
@@ -10496,6 +10576,8 @@ W|w|副
    D8|- #literary|to match; to agree; to be concordant; to be congruent
     X<||名不副實／名不副实
    D9|x #obsolete|name of an ornamental headdress
+  C classifier
+   D4||Classifier for pairs, sets of things, medical prescriptions, facial expressions, etc..
 W|w|說不定／说不定
  P||shuo1bu4ding4
   C adv
@@ -10522,10 +10604,11 @@ W|w|紙／纸
   C character
    D1|#countable|paper
     XM||張／张
-   D2||Classifier for document and letters.
    D3||Short for 紙錢／纸钱 (zhǐqián, “paper made to resemble money and burnt as an offering to the dead”).
    D4|#neologism #slang|Pronunciation spelling of 子 (zǐ).
    D5||a surname
+  C classifier
+   D2||Classifier for document and letters.
 W|w|主意
  P||zhu3yi4 |x|zhu2yi4
   C noun
@@ -10629,9 +10712,10 @@ W|w|群
    D3|#group-theory|group
    D4|#social-media|group (of a group chat)
    D5||numerous; many
-   D6||Classifier for groups of people or animals: group of; flock of; herd of; pack of
    D7|#Chinese-linguistics|(～母) the Middle Chinese initial of 群 (MC gjun)
    D8||a surname
+  C classifier
+   D6||Classifier for groups of people or animals: group of; flock of; herd of; pack of
 W|w|存
  P||cun2
   C character
@@ -10756,6 +10840,7 @@ W|w|隊／队
    D2|#military|army unit
    D3||line; queue
    D4||Short for 少年先鋒隊／少年先锋队 (shàonián xiānfēngduì, “Young Pioneers of China”).
+  C classifier
    D5||Classifier for people or objects in groups or rows: group of; line of; row of
  P|x|zhui4
   C character
@@ -10779,12 +10864,13 @@ W|w|面
    D9||suffix used to form a noun of locality
     X<||前面;上面
    D10||Short for 面試／面试 (miànshì, “interview”).
+  C classifier
    D11||Classifier for objects with a flat surface.
    D12||Classifier for numbers of times people meet each other.
 W|w|顆／颗
  P||ke1
-  C character
-   D1||Classifier for small round objects. ⇒ all nouns using this classifier
+  C classifier
+   D1||Classifier for small round objects.
 W|w|道
  P||dao4
   C character
@@ -10807,11 +10893,12 @@ W|w|道
     X<||講道／讲道
    D13|- #literary|to say; to utter
     X<||能說會道／能说会道
+   D18||a surname
+  C classifier
    D14||Classifier for long things.
    D15||Classifier for barriers.
    D16||Classifier for courses in a meal: dish
    D17||Classifier for questions (in an exam), orders or proclamations.
-   D18||a surname
  P|x|dao3
   C character
    D19||Alternative form of 導／导 (dǎo, “to direct; to guide; to lead; to conduct”)
@@ -10853,8 +10940,8 @@ W|w|切
    D15|#colloquial|(chiefly women's speech) An interjection conveying a slight sense of disdain or dissatisfaction.
 W|w|輛／辆
  P||liang4
-  C character
-   D1||Classifier for wheeled vehicles. ⇒ all nouns using this classifier
+  C classifier
+   D1||Classifier for wheeled vehicles.
 W|w|整個／整个
  P||zheng3ge4
   C adj
@@ -10941,8 +11028,9 @@ W|w|聲／声
    D7||tone
     X<||四聲／四声
    D8||to declare; to state
-   D9||Classifier for sounds.
    D10|#Chinese-phonetics|initial
+  C classifier
+   D9||Classifier for sounds.
 W|w|圈
  P||juan4
   C character
@@ -10960,6 +11048,7 @@ W|w|圈
    D10||area; circle
    D11||social circle; connections; group
    D12||trap; trick; trickery
+  C classifier
    D13||Classifier for laps of a race, loops, orbits, etc.
  P||juan1
   C character
@@ -11152,9 +11241,10 @@ W|w|飛／飞
    D7||very; extremely
    D8||groundless; unfounded
    D9||unexpected; accidental
-   D10|#mahjong|Classifier for number of possible winning tiles.
    D11|x #Xiamen-and-Zhangzhou-Hokkien|to fizzle out; to fail; to fall through
    D12||femto- (SI unit prefix)
+  C classifier
+   D10|#mahjong|Classifier for number of possible winning tiles.
 W|w|承認／承认
  P||cheng2ren4
   C verb
@@ -11441,12 +11531,13 @@ W|w|球
     X<||發球／发球
    D5||ball game
     X<||球迷
-   D6|x #Teochew #Xiang|Classifier for spherical objects, such as balls of string
    D7|#botany|Short for 仙人球 (xiānrénqiú, “ball-shaped cactus”).
    D8||Short for 球根 (qiúgēn, “bulb, corm, tuber”).
    D9|#slang|testicle
    D10|x #Jin #dialectal #vulgar|Expletive. Often used in the form of ……個球(…… my ass). Underlying meaning may be "testes".
    D11|#attributive #medicine|bulbar
+  C classifier
+   D6|x #Teochew #Xiang|Classifier for spherical objects, such as balls of string
 W|w|國家／国家
  P||guo2jia1
   C noun
@@ -11973,6 +12064,7 @@ W|w|篇
    D1|x #historical|bound set of bamboo slips used for recordkeeping
    D2||piece of writing
    D3||sheet of paper
+  C classifier
    D4||Classifier for written items, book leaves, etc.: piece
 W|w|司機／司机
  P||si1ji1
@@ -12157,16 +12249,13 @@ W|w|秒
    D1|x #obsolete|awn; arista
    D2|x #obsolete|tiny; minute; insignificant
    D3|x #obsolete|tip; end; extremity
-   D4||Classifier for time: second
-   D5||Classifier for measuring an angle or latitude/longitude: second; arcsecond
    D6|x #obsolete|unit of length equal to 0.0001 cun
    D7|#by-extension #neologism|in seconds; immediately; instantly; at once
     X<||秒回
-<<<<<<< HEAD
    D8|#by-extension #neologism|(of player, enemy, problem, etc.) kill, finish, solve, etc., instantly
-=======
-   D8|#by-extension #neologism|(of player, enemy, problem, etc.) kill, finish, solve, etc, instantly
->>>>>>> 674f20f (Automatic Finalization (e.g. update note ids))
+  C classifier
+   D4||Classifier for time: second
+   D5||Classifier for measuring an angle or latitude/longitude: second; arcsecond
 W|w|樣／样
  P||yang4
   C character
@@ -12180,9 +12269,10 @@ W|w|樣／样
    D5|#printing|proof
    D6||manner; style; way; fashion
     X<||這樣／这样;怎樣／怎样
-   D7||Classifier for kinds or types of things.
    D8|x #rare|An honorific.
    D9|#ACG #Internet #slang|-sama
+  C classifier
+   D7||Classifier for kinds or types of things.
 W|w|秘密
  P||mi4mi4
   C adj
@@ -12237,8 +12327,9 @@ W|w|單／单
    D9||only; merely; simply
    D10||and; plus
    D11||bill
-   D12||Classifier for cases, deals and businesses.
    D13||a surname
+  C classifier
+   D12||Classifier for cases, deals and businesses.
  P||chan2
   C character
    D14||to surround
@@ -12321,10 +12412,11 @@ W|w|倍
  P||bei4
   C character
    D1||to double
-   D2||Classifier for the number of times a value is multiplied: times; -fold
    D3||exceptionally; especially
    D4|#colloquial|very; extremely
    D5||Alternative form of 背 (“to give up; to betray; to violate; to have one's back towards”)
+  C classifier
+   D2||Classifier for the number of times a value is multiplied: times; -fold
  P|x|pei2
   C character
    D6||Original form of 陪 (péi).
@@ -12423,11 +12515,12 @@ W|w|通
     X<||通病
    D12||whole; entire
     X<||通夜
-   D13|- #literary|Classifier for phone calls, letters, telegrams, etc..
    D14|x #Xiamen-and-Zhangzhou-Hokkien|very; most; clearly
    D15|x #Southern-Min|can; may
+  C classifier
+   D13|- #literary|Classifier for phone calls, letters, telegrams, etc..
  P||tong1 |C|tong4
-  C character
+  C classifier
    D16||Classifier for rolls of the drum.
    D17||Classifier for actions.
 W|w|十分
@@ -12655,14 +12748,15 @@ W|w|盤／盘
    D11|xC #HongKong|property on sale
     XM||個／个
    D12|c #computing|disk; hard drive; storage device
-   D13||Classifier for dishes, millstones, etc.
-   D14||Classifier for things that coil: reel
-   D15||Classifier for sessions of board or ball game.
    D16|#board-games|match; game
    D17|x #Mainland-China-Hokkien|having more benefits than harms; worthwhile; profitable; being value for money; affordable
    D18|T #slang|(of goods) overpriced
    D19|x #Shanghainese|to flirt with; to pick up
    D20||a surname
+  C classifier
+   D13||Classifier for dishes, millstones, etc.
+   D14||Classifier for things that coil: reel
+   D15||Classifier for sessions of board or ball game.
 W|w|样
  P||yang2
   C character
@@ -12849,6 +12943,7 @@ W|w|身
    D7||life; one's (entire) life
    D8||social status
    D9||moral character
+  C classifier
    D10||Classifier for suits of clothes.
    D11|x #Puxian-Min #Southern-Min #literary|Classifier for statues, dolls, puppets.
    D12|x #Southern-Min|Classifier for silkworms.
@@ -12956,11 +13051,12 @@ W|w|題／题
    D3||question; quiz; problem
     XM||道
     X<||命題／命题;解題／解题;刷題／刷题;送命題／送命题
-   D4||Classifier for questions. ⇒ all nouns using this classifier
    D5||to sign; to write; to inscribe
     X<||題名／题名;題字／题字
    D6||Alternative form of 提 (“to mention”)
    D7||a surname
+  C classifier
+   D4||Classifier for questions.
  P|x|di4
   C character
    D8||Alternative form of 睇 (“to look at; to scrutinize”)
@@ -13001,6 +13097,7 @@ W|w|抬
    D1||to lift; to heave
    D2||(of many people) to carry
    D3|#colloquial #figurative|to argue for the sake of arguing or for no reason; to bicker
+  C classifier
    D4||Classifier for things carried by several people.
 W|w|話說／话说
  P||hua4shuo1
@@ -13203,12 +13300,13 @@ W|w|項／项
    D1||nape of neck
    D2||neck
    D3||item
-   D4||Classifier for items, tasks, principles, clauses, etc.
    D5||sum of money
    D6|#mathematics|term
    D7|#law|count (charge)
    D8|x #Hakka|on; above
    D9||a surname: Xiang
+  C classifier
+   D4||Classifier for items, tasks, principles, clauses, etc.
 W|w|驕傲／骄傲
  P||jiao1ao4
   C adj
@@ -13510,11 +13608,12 @@ W|w|組／组
    D2||a thin, wide silk band
    D3||to organize; to unite; to form
    D4||group; team
+   D8||a surname
+   D9|#botany #taxonomy|section
+  C classifier
    D5||Classifier for sets and series.
    D6||Classifier for groups of people.
    D7||Classifier for batteries.
-   D8||a surname
-   D9|#botany #taxonomy|section
 W|w|點心／点心
  P||dian3xin1
   C noun
@@ -13562,7 +13661,7 @@ W|w|優秀／优秀
   C adj
    D1||excellent; outstanding
 W|w|知識／知识
- P|C|zhi1shi5 |T|zhi1shi4 |-C|zhi1shi2
+ P|C|zhi1shi5 |-C|zhi1shi2 |T|zhi1shi4
   C noun
    D1||knowledge
    D2||intellect; intelligence
@@ -13814,10 +13913,11 @@ W|w|輪／轮
    D3||edge; rim
    D4||to take turns
     X<||輪班／轮班
-   D5||Classifier for the sun or the moon.
-   D6||Classifier for rounds.
    D7||(comparing people's ages) a cycle of Chinese zodiac, twelve years
    D8|#slang|Short for 輪姦／轮奸 (lúnjiān, “to gang-rape”).
+  C classifier
+   D5||Classifier for the sun or the moon.
+   D6||Classifier for rounds.
 W|w|華／华
  P||hua2
   C character
@@ -13880,6 +13980,7 @@ W|w|奇
    D4||surplus
    D5|#mathematics|odd
     X<||奇數／奇数
+  C classifier
    D6|x #Eastern-Min #Southern-Min|Classifier for a single one of a pair or a large collection.
 W|w|共同
  P||gong4tong2
@@ -14058,9 +14159,10 @@ W|w|頁／页
    D1||sheet (of paper)
    D2||page
    D3|#computing|page
-   D4||Classifier for pages.
    D5|x #Mainland-China-Hokkien|to flip through (a book, document, etc.)
    D6||a surname: Ye
+  C classifier
+   D4||Classifier for pages.
  P||xie2
   C character
    D7||head
@@ -14526,7 +14628,8 @@ W|w|部
    D2||department; ministry
     X<||教育部
    D3|x #historical|An administrative division governed by a ministry.
-   D4||Classifier for works of literature, films, machines (cars, telephones...), etc. ⇒ all nouns using this classifier
+  C classifier
+   D4||Classifier for works of literature, films, machines (cars, telephones...), etc.
 W|w|求
  P||qiu2
   C character
@@ -14817,6 +14920,7 @@ W|w|盒
  P||he2
   C character
    D1||box; case (generally small, with a lid)
+  C classifier
    D2||Classifier for boxes or cases.
 W|w|自
  P||zi4 |x|zi2
@@ -15005,9 +15109,10 @@ W|w|堆
     X<||垃圾堆
    D2|#computing|heap
    D3||to pile up; to stack up
-   D4||Classifier for objects organised in piles: pile; lump; heap; clump; mound
    D5||mound (usually in placenames)
    D6||Alternative form of 䭔／𫗰 (duī)
+  C classifier
+   D4||Classifier for objects organised in piles: pile; lump; heap; clump; mound
 W|w|等待
  P||deng3dai4
   C verb
@@ -15082,10 +15187,11 @@ W|w|聽見／听见
 W|w|齣／出
  P||chu1 |x|chi3
   C character
-   D1||Classifier for plays and operas: act; stanza; time, occasion ⇒ all nouns using this classifier
-   D2|#by-extension #regional|Classifier for films or episodes of TV shows.
    D3|x #Southern-Min|drama; play; show (theatrical performance)
    D4|x #Southern-Min|trouble; hassle
+  C classifier
+   D1||Classifier for plays and operas: act; stanza; time, occasion
+   D2|#by-extension #regional|Classifier for films or episodes of TV shows.
 W|w|委屈
  P||wei3qu5;wei3qu1
   C adj
@@ -15194,8 +15300,8 @@ W|w|壞事／坏事
    D2||to ruin things; to make things worse
 W|w|棵
  P||ke1
-  C character
-   D1||Classifier for plants. ⇒ all nouns using this classifier
+  C classifier
+   D1||Classifier for plants.
  P|x|ke3
   C character
    D2||a kind of chopping board
@@ -15619,11 +15725,12 @@ W|w|期
    D5||period of time; stage
     X<||學期／学期;青春期
    D6|#geology|age (geochronologic unit)
-   D7||Classifier for issues of periodical publications. ⇒ all nouns using this classifier
-   D8||Classifier for periods of time or stages of a project.
    D9|x #obsolete|undoubtedly; certainly
    D10|x #obsolete|limit
    D11|x #obsolete|good fortune; chance
+  C classifier
+   D7||Classifier for issues of periodical publications.
+   D8||Classifier for periods of time or stages of a project.
  P||qi1 |T|ji1
   C character
    D12|x #obsolete|whole year; entire month; one-year anniversary
@@ -15762,7 +15869,8 @@ W|w|首
    D4||first; best; highest
    D5||prime; prior; primary
    D6||side; direction
-   D7||Classifier for songs and poems. ⇒ all nouns using this classifier
+  C classifier
+   D7||Classifier for songs and poems.
 W|w|耽誤／耽误
  P||dan1wu4 |C|dan1wu5
   C verb
@@ -15835,13 +15943,14 @@ W|w|則／则
    D1||rule; law; regulation
    D2||standard; example
    D3||to follow an example
-   D4||Classifier for news, writings, stories, or narratives: item
    D5||conjunction used to indicate sequence of events; and
    D6||conjunction used to indicate cause and effect; so; thus
    D7||conjunction used to indicate contrast; but; on the other hand
    D8||conjunction used between two identical or near-identical words to indicate concession; it is ... but it ...
    D9||particle used as the copula
    D10||particle used after numerals to list reasons
+  C classifier
+   D4||Classifier for news, writings, stories, or narratives: item
 W|w|碎
  P||sui4
   C character
@@ -15867,9 +15976,10 @@ W|w|批
    D10|x #Eastern-Min #Hokkien #Puxian-Min|letter (written or printed communication)
    D11|x #Teochew|letter from a foreign country
    D12||to sell at wholesale
-   D13||Classifier for batches, groups, lots, etc (of merchandises).
    D14|#colloquial|fibres of cotton, flax, etc. ready to be drawn and twisted
    D15|xC #Internet-slang #Southwestern-Mandarin #vulgar|Pronunciation spelling of 屄 (bī).
+  C classifier
+   D13||Classifier for batches, groups, lots, etc (of merchandises).
 W|w|交代
  P||jiao1dai4
   C verb
@@ -16017,8 +16127,6 @@ W|w|團／团
    D2||to roll (into a ball)
    D3||mass; lump
     X<||麵團／面团
-   D4||Classifier for round, lumpy, or amorphous objects.
-    X<||一團和氣／一团和气
    D5||group; collective; panel; team; organization
     X<||選舉人團／选举人团;財團／财团;團體／团体;樂團／乐团
     D6||tour group arranged by travel agency
@@ -16029,6 +16137,9 @@ W|w|團／团
     X<||軍團／军团;團練／团练
    D10|C|Short for 共青團／共青团 (gòngqīngtuán, “Communist Youth League”).
    D11|#graph-theory|clique
+  C classifier
+   D4||Classifier for round, lumpy, or amorphous objects.
+    X<||一團和氣／一团和气
 W|w|腦袋／脑袋
  P||nao3dai5;nao3dai4 |x|nao3dei5
   C noun
@@ -16355,11 +16466,12 @@ W|w|文
    D14||gentle; refined
     X<||斯文;文雅
    D15||47th tetragram of the Taixuanjing; "pattern, repetition" (𝌴)
-   D16|x #archaic|Classifier for coins.
    D17|#numismatics|mill (a tenth of a cent)
    D18|#telegraphy|(～日) the twelfth day of a month
     X<||文夕大火
    D19||a surname
+  C classifier
+   D16|x #archaic|Classifier for coins.
  P||wen2 |T|wen4
   C character
    D20||to cover
@@ -16499,13 +16611,14 @@ W|w|折
    D9||to censure; to blame
    D10||difficulty; obstacle
    D11|x #Hokkien|having more benefits than harms; worthwhile; profitable; reasonably priced
-   D12||Classifier for discount.
-   D13||Classifier for folds.
-   D14||Classifier for theatrical scenes.
    D15|#Chinese-calligraphy|a change in direction of a stroke (such as in ㇕, ㇉, or ㇜)
    D16|#Chinese-opera|an act.
    D17|x #Ming-and-Qing-dynasties #historical|short for 奏折 (zòuzhé), memorial to the emperor (folded in accordion form); imperial memorial.
    D18||a surname: She
+  C classifier
+   D12||Classifier for discount.
+   D13||Classifier for folds.
+   D14||Classifier for theatrical scenes.
  P||zhe1
   C character
    D19||to turn over; to flip
@@ -16573,10 +16686,11 @@ W|w|朵
   C character
    D1||(of branches, leaves, flowers, fruits) hanging from a tree
    D2||flower or calyx of a plant
-   D3||Classifier for flowers, clouds, etc.
    D4||ear
    D5||to move
    D6||a surname: Duo
+  C classifier
+   D3||Classifier for flowers, clouds, etc.
 W|w|周
  P||zhou1
   C character
@@ -16592,13 +16706,14 @@ W|w|周
    D7|x #obsolete|to suit
    D8||to help (e.g. financially); to relieve
     X<||周濟／周济
-   D9||Classifier for circuits.; circuit; revolution
    D15|x #historical|name of various dynasties
     D10||(～朝) Zhou Dynasty (1046—256 BCE)
     D11||Northern Zhou (557—581), one of the Northern dynasties in China
     D12||Wu Zhou (690–705), established by Wu Zetian
     D13||Later Zhou (951–960), one of the Five Dynasties in China
    D14||a surname
+  C classifier
+   D9||Classifier for circuits.; circuit; revolution
 W|w|年級／年级
  P||nian2ji2
   C noun
@@ -16808,9 +16923,10 @@ W|w|類／类
  P||lei4
   C character
    D1||class; group; kind; category
-   D2||Classifier for types of things: type, kind, sort
    D3|#set-theory|class
    D4|#object-oriented-programming|class
+  C classifier
+   D2||Classifier for types of things: type, kind, sort
 W|w|有用
  P||you3yong4
   C verb
@@ -16978,6 +17094,7 @@ W|w|子
    D16||a surname
    D17|x #Southern-Min|grain-like object; particle; granule
    D18|x #Southern-Min #music|rhythm
+  C classifier
    D19|x #Southern-Min|Classifier for small, round objects: granule, grain, particle, piece
  P||zi5
   C character
@@ -17269,12 +17386,13 @@ W|w|滴
    D1||to drip; to dribble
    D2||to drip something into
    D3||drop of liquid
-   D4||Classifier for drops of liquid. ⇒ all nouns using this classifier
    D5|x #Hakka #Southern-Min|a little
    D6|x #Mainland-China-Hokkien|trace left by a drop of liquid
    D7|#cute-sounding|Alternative form of 的².
    D8|#cute-sounding|Alternative form of 地².
    D9|#cute-sounding|Alternative form of 得 (“Used after a verb or an adjective and before a complement”).
+  C classifier
+   D4||Classifier for drops of liquid.
 W|w|迎接
  P||ying2jie1
   C verb
@@ -17356,8 +17474,9 @@ W|w|區／区
  P||ou1
   C character
    D9|x #historical|an ancient measuring vessel
-   D10|x #historical|Classifier for the amount measured by one ou.
    D11||a surname
+  C classifier
+   D10|x #historical|Classifier for the amount measured by one ou.
 W|w|登記／登记
  P||deng1ji4
   C verb-object
@@ -17461,8 +17580,9 @@ W|w|步
    D7|#figurative|step; procedure
    D8||stance; position; situation
    D9|#military|infantry
-   D10||Classifier for steps.
    D11||a surname
+  C classifier
+   D10||Classifier for steps.
 W|wC|服務員／服务员
  X%||服務生／服务生
  P||fu2wu4yuan2
@@ -17496,10 +17616,11 @@ W|w|槍／枪
    D2||gun; firearm; shooter
     XM||桿／杆;支;把
    D3||gun-like object
-   D4||Classifier for gunshots.
    D5||to sit for an examination in place of someone else
    D6|x #obsolete|to collide
    D7||a surname
+  C classifier
+   D4||Classifier for gunshots.
  P|T|cheng1
   C character
    D8||Only used in 欃槍／欃枪 (chánchēng, “comet”).
@@ -17619,6 +17740,7 @@ W|w|級／级
    D3||step
     X<||拾級而上／拾级而上
    D4|- #literary|beheaded head
+  C classifier
    D5||Classifier for steps.
    D6||Classifier for level, ranks, grades, etc..
 W|w|階段／阶段
@@ -18105,6 +18227,7 @@ W|w|針／𰾗
    D3||injection
    D4||acupuncture
    D5||to poke; to sting
+  C classifier
    D6||Classifier for the number of injections.
    D7||Classifier for the number of stitches.
 W|w|什麼的／什么的
@@ -18477,8 +18600,9 @@ W|w|枝
  P||zhi1
   C character
    D1||branch; twig
-   D2||Classifier for long cylindrical objects (stick, pen, rod, flower with stem, etc).
    D3||a surname
+  C classifier
+   D2||Classifier for long cylindrical objects (stick, pen, rod, flower with stem, etc).
  P|T|qi2
   C character
    D4||Alternative form of 跂 (“extra toe”)
@@ -18551,8 +18675,9 @@ W|w|咳嗽
 W|w|屆／届
  P||jie4
   C character
-   D1||Classifier for times, terms, graduation classes, periodically convened events, etc.
    D2|#ACG #slang|(of emotions or thoughts) to reach (someone); to get through
+  C classifier
+   D1||Classifier for times, terms, graduation classes, periodically convened events, etc.
 W|w|共
  P||gong4
   C character
@@ -18980,16 +19105,17 @@ W|w|番
  P||fan1
   C character
    D1||to do in turns; to take turns; to repeat
-   D2||Classifier for actions, deeds: a show of ...
-   D3||Classifier for the number of times an action has been performed: turn; time
-    X<||三番五次
-   D4||Classifier for different kinds of things: kind; type
    D5||A generic term for the non-Han people in China's west in historical times; (by extension) non-Han people; foreign land; foreign; non-native; barbarian
     X<||番茄
    D6|x #Malaysian-Hokkien|Muslim
    D7|#ACG|anime series
     XM||部
    D8|#mahjong|points
+  C classifier
+   D2||Classifier for actions, deeds: a show of ...
+   D3||Classifier for the number of times an action has been performed: turn; time
+    X<||三番五次
+   D4||Classifier for different kinds of things: kind; type
  P||Pan1 |T|po2
   C character
    D9||a surname
@@ -19239,7 +19365,8 @@ W|w|幅
    D1||width of textiles
    D2|#by-extension|width
     X<||幅度;振幅
-   D3||Classifier for textiles and pictures. ⇒ all nouns using this classifier
+  C classifier
+   D3||Classifier for textiles and pictures.
 W|w|餅乾／饼干
  P||bing3gan1
   C noun
@@ -19269,8 +19396,9 @@ W|w|陣／阵
   C character
    D1||short moment of time
    D2||formation
-   D3||Classifier for short periods of an event: spell; burst; gust ⇒ all nouns using this classifier
    D4|#military|column, row or file of troops
+  C classifier
+   D3||Classifier for short periods of an event: spell; burst; gust
 W|w|舉行／举行
  P||ju3xing2
   C verb
@@ -19559,12 +19687,13 @@ W|w|合
    D12|#astronomy|conjunction
    D13|x #Hokkien|to get along well
    D14|#Chinese-phonetics|Short for 合口 (hékǒu, “closed-mouthed”).
-   D15|x #Xiamen-Hokkien|Classifier for matching sets of instruments such as teaware.
-   D16||Classifier for number of fights.
    D17||to compound; to make up (medicine, etc.)
    D18||a surname
    D19|#music|Kunqu gongche notation for the note low sol (5̣).
    D20|#music|Cantonese opera gongche notation for the note low sol (5̣).
+  C classifier
+   D15|x #Xiamen-Hokkien|Classifier for matching sets of instruments such as teaware.
+   D16||Classifier for number of fights.
  P||ge3
   C character
    D21||unit of volume, equal to one tenth of a 升 (shēng)
@@ -19752,7 +19881,6 @@ W|w|眼
    D2||to see; to view; to see ... in person
    D3||to keep sight of; to monitor; to watch
    D4||sight; vision
-   D5||Classifier for actions of the eye: glance; glimpse
    D6||to testify; to witness
    D7||eyelet; aperture; hole; opening
    D8||tempo in the opera
@@ -19763,8 +19891,10 @@ W|w|眼
    D12||mesh
    D13||key point; critical moment
    D14|#go|trap
-   D15||Classifier for springs, wells and ponds.
    D16|x #Northern-Wu|some; a bit
+  C classifier
+   D5||Classifier for actions of the eye: glance; glimpse
+   D15||Classifier for springs, wells and ponds.
  P|x|wen3;en3
   C character
    D17||protruding; bulging (like bulging eyes)
@@ -19792,8 +19922,9 @@ W|w|壺／壶
   C character
    D1||pot; jar; kettle (vessel used to boil liquid); jug; vase; can; thermos; bottle; flask; canteen (water bottle)
    D2|x #historical|a kind of ancient vessel
-   D3||Classifier for bottled liquid.
    D4||a surname
+  C classifier
+   D3||Classifier for bottled liquid.
 W|w|政府
  P||zheng4fu3
   C adj
@@ -20173,10 +20304,11 @@ W|w|棟／栋
   C character
    D1||main beam supporting a house; ridgepole
    D2|- #literary|house; building
-   D3||Classifier for buildings. ⇒ all nouns using this classifier
    D4|#figurative|important person; pillars of the state
    D5|x #Sichuanese|mountain ridge; mountain peak
    D6||a surname: Dong
+  C classifier
+   D3||Classifier for buildings.
 W|w|當面／当面
  P||dang1mian4
   C adv
@@ -20223,8 +20355,9 @@ W|w|堵
    D4|x #Teochew|to encounter
    D5||stifled; suffocated
    D6|x #obsolete|An ancient unit of measure, denoting sixteen bells or chimes hanging on a bell pendant stand.
-   D7||Classifier for walls. ⇒ all nouns using this classifier
    D8||a surname
+  C classifier
+   D7||Classifier for walls.
  P|x|zhe3
   C character
    D9||(～河) Zhe or Du River (river in Hubei Province, China)
@@ -20370,9 +20503,10 @@ W|w|彎／弯
    D13||(灣／湾 (wān) )
     D8||a bend in a river
     D9||a bend in the coastline; bay, gulf
-   D10||Classifier for bent objects, such as a quarter moon.
    D11|x #Xiamen-and-Quanzhou-Hokkien|to act shamelessly and unreasonably; to be a rascal
    D12|x #Zhangzhou-Hokkien|to be wronged
+  C classifier
+   D10||Classifier for bent objects, such as a quarter moon.
 W|w|事件
  P||shi4jian4
   C noun
@@ -20816,6 +20950,7 @@ W|w|袋
   C character
    D1||bag; sack; pouch; pocket
     X<||口袋
+  C classifier
    D2||Classifier for bags of things.
 W|w|伯
  P||bo2;bai3 |x|bai1
@@ -21028,6 +21163,7 @@ W|w|處／处
     X<||此處／此处
    D11||part; aspect; respect
    D12||department; office
+  C classifier
    D13||Classifier for locations or items of damage.
 W|w|違反／违反
  P||wei2fan3
@@ -22140,8 +22276,9 @@ W|w|吊
    D2||to hang
    D3||to lift up with a rope
    D4||to revoke
-   D5||Classifier for strings of 1000 copper coins.
    D6||Alternative form of 屌 (diǎo, “(vulgar) penis”)
+  C classifier
+   D5||Classifier for strings of 1000 copper coins.
 W|w|然而
  P||ran2er2
   C conj
@@ -22185,6 +22322,7 @@ W|w|捧
   C character
    D1||to hold up in two hands
    D2||to compliment; to exalt; to flatter
+  C classifier
    D3||Classifier for double handfuls of something.
 W|w|棄／弃
  P||qi4
@@ -22277,13 +22415,14 @@ W|w|局
    D15||trap; trick
    D16||feast; banquet; gathering
    D17||chessboard
-   D18||Classifier for instances of boardgames and ballgames: game ⇒ all nouns using this classifier
    D19|x #Mainland-China-Hokkien|without fail; certainly; surely; definitely; inevitably
    D20|x #Quanzhou-and-Xiamen-Hokkien|interest; fun (said with 有 (ū) and 無 (bô))
    D21|x #Zhangzhou-Hokkien|worth; profit; relative benefit (said with 有 (ū) and 無 (bô))
    D22|x #Zhangzhou-Hokkien|narrow; cramped
    D23|x #Zhangzhou-Hokkien|to be limited; to be confined
    D24|x #Zhangzhou-Hokkien|to force; to compel
+  C classifier
+   D18||Classifier for instances of boardgames and ballgames: game
 W|w|方案
  P||fang1an4
   C noun
@@ -22305,6 +22444,7 @@ W|w|機／机
    D10||plan; idea
    D11||flexible; quick-witted
    D12||organic
+  C classifier
    D13||Classifier for loads in a washing machine, dishwasher, etc.
 W|w|家屬／家属
  P||jia1shu3
@@ -22361,9 +22501,10 @@ W|w|罐
  P||guan4
   C character
    D1||can; jar; tin; cylindrical container for holding objects or liquids or cooking
-   D2||Classifier for canned items.
    D3||coal tub
    D4|x #dialectal|bottle
+  C classifier
+   D2||Classifier for canned items.
    D5|x #dialectal|Classifier for bottled items.
 W|w|指導／指导
  P||zhi3dao3
@@ -22438,9 +22579,10 @@ W|w|武
    D4||soldier; warrior
     X<||玄武
    D5||footstep; footprint
-   D6||Classifier for half steps.
    D7|x #obsolete|to inherit
    D8||a surname
+  C classifier
+   D6||Classifier for half steps.
 W|w|擔任／担任
  P||dan1ren4
   C verb
@@ -22474,10 +22616,11 @@ W|w|捲／卷
    D1||to roll; to roll up; to curl
    D2||roll; cylinder; tube; scroll
    D3||rolled up; curly
-   D4||Classifier for rolled objects: rolls, reels ⇒ all nouns using this classifier
    D5||to sweep up; to carry along; to sweep away
    D6||to embroil; to involve
    D7|#neologism #slang|Short for 內捲／内卷 (“intense competition among peers; to study harder or work longer as a result”).
+  C classifier
+   D4||Classifier for rolled objects: rolls, reels
 W|w|真的
  P||zhen1de5 |x|zhen1di2
   C adj
@@ -22615,8 +22758,9 @@ W|w|束
    D4||bunch; bundle; bale
     X<||光束
    D5|#geometry|pencil (family of geometric objects with a common property)
-   D6||Classifier for objects in bunches or bundles, such as bouquets of flowers. ⇒ all nouns using this classifier
    D7||a surname
+  C classifier
+   D6||Classifier for objects in bunches or bundles, such as bouquets of flowers.
 W|w|客
  P||ke4 |x|qie3
   C character
@@ -22635,9 +22779,10 @@ W|w|客
     X<||客觀／客观
    D11||Hakka
     X<||客話／客话;純客縣／纯客县
-   D12||Classifier for units of food sold.
    D13|x #literary #obsolete|last; previous
    D14||a surname
+  C classifier
+   D12||Classifier for units of food sold.
 W|w|院
  P||yuan4
   C character
@@ -22719,8 +22864,9 @@ W|w|盆
    D2||basin-shaped thing
     X<||骨盆
    D3||unit of volume equal to 12 斗 (dǒu) and 8 升 (shēng) (128 liters)
-   D4||Classifier for basins of things.
    D5||a surname: Pen
+  C classifier
+   D4||Classifier for basins of things.
 W|w|超級／超级
  P||chao1ji2
   C adj
@@ -22893,8 +23039,9 @@ W|w|架
    D2||to prop up; to support
    D3||to put up; to construct; to frame
    D4||quarrel; fight
-   D5||Classifier for planes, large vehicles, radios, etc. ⇒ all nouns using this classifier
-   D6|x #dialectal|Classifier for vehicles. ⇒ all nouns using this classifier
+  C classifier
+   D5||Classifier for planes, large vehicles, radios, etc.
+   D6|x #dialectal|Classifier for vehicles.
 W|w|公
  P||gong1
   C character
@@ -23070,7 +23217,8 @@ W|w|款
    D2||model, type
    D3||signature
    D4|#law|subsection; subparagraph; subclause (in bills)
-   D5|x #Hokkien|Classifier for varieties: kind; sort; type ⇒ all nouns using this classifier
+  C classifier
+   D5|x #Hokkien|Classifier for varieties: kind; sort; type
 W|w|場面／场面
  P||chang3mian4 |T|chang2mian4
   C noun
@@ -23234,12 +23382,13 @@ W|w|匹
    D3||mate; spouse
    D4||single; one
    D5||four zhang of cloth
+   D11||a surname
+  C classifier
    D6||Classifier for bolts of cloth.
    D7|x #Sichuanese|Classifier for flat surfaces or objects (hillside, leaves, tiles, etc.).
    D8|x #Sichuanese|Classifier for long, thin objects (bones, feathers, grass, bamboo strips, etc.).
    D9|x #Sichuanese|Classifier for pieces or lumps (bricks, etc.).
    D10|x #Sichuanese|Classifier for mountains.
-   D11||a surname
  P|C|pi3 |T|pi1
   C character
    D14||horsepower
@@ -23482,8 +23631,9 @@ W|w|煎
     X<||煎藥／煎药
    D3|- #literary|to smelt
    D4|- #literary|to torment; to torture
-   D5||Classifier for decoctions.
    D6|x #Hokkien|to boil (a liquid)
+  C classifier
+   D5||Classifier for decoctions.
 W|w|幻想
  P||huan4xiang3
   C noun
@@ -23760,9 +23910,10 @@ W|w|扣
    D6||knot
    D7||to subtract; to deduct (money, points, etc.)
    D8||to accord with; to tally with; to conform to
-   D9||Classifier for discount.
    D10||Alternative form of 叩 (kòu, “to knock; to strike”)
    D11||a surname: Kou
+  C classifier
+   D9||Classifier for discount.
 W|w|植物
  P||zhi2wu4
   C adj
@@ -23911,8 +24062,9 @@ W|w|覺／觉
  P||jiao4
   C character
    D6||sleep; nap
-   D7||Classifier for periods of sleep.
    D8|x #obsolete|Alternative form of 較／较 (“to compare”)
+  C classifier
+   D7||Classifier for periods of sleep.
 W|w|糾纏／纠缠
  P||jiu1chan2
   C verb
@@ -23998,8 +24150,9 @@ W|w|領／领
     X<||領獎／领奖
    D5||to understand; to grasp; to comprehend
     X<||領會／领会
-   D6||Classifier for items such as clothes, mats and screens.
    D7||a surname
+  C classifier
+   D6||Classifier for items such as clothes, mats and screens.
 W|w|下場／下场
  P||xia4chang5 |C|xia4chang3 |T|xia4chang2
   C noun
@@ -24016,6 +24169,7 @@ W|w|扎
    D3||to stab; to prick; to puncture
    D4||to tie; to fasten; to bundle
    D5||to be stationed; to be quartered (of troops)
+  C classifier
    D6|#loanword|Classifier for jars.
 W|w|挨
  P||ai1
@@ -24161,6 +24315,7 @@ W|w|潑／泼
    D6||bad; poor
    D7|x #Hokkien #intransitive|to splatter; to splash
    D8|x #Xiamen-Hokkien|to fan
+  C classifier
    D9|x #Quanzhou-and-Xiamen-Hokkien|Classifier for short periods of an event.
  P|x|bo1
   C character
@@ -24253,8 +24408,9 @@ W|w|服
    D8||to be accustomed to
    D9|#gaming|Short for 伺服器 (sìfúqì); server
    D10|x #historical|inner pair of horses among the four that pull an imperial carriage
-   D11||Classifier for doses for TCM regimens.
    D12||a surname: Fu
+  C classifier
+   D11||Classifier for doses for TCM regimens.
 W|w|瘋狂／疯狂
  P||feng1kuang2
   C adj
@@ -24381,13 +24537,14 @@ W|w|串
    D2||string; chain; series of objects
    D3||skewer
     X<||羊肉串
-   D4||Classifier for strung, bunched or clustered objects.
    D5||to cross; to criss-cross; to traverse to; to mix (undesirably)
    D6|-& #literary|to gang up on; to conspire; to collaborate
    D7||to pay a visit to; to visit; to move about
    D8|-& #literary|to play a role; to act; to perform
     X<||客串
    D9|t #Internet|thread
+  C classifier
+   D4||Classifier for strung, bunched or clustered objects.
  P|x|guan4
   C character
    D10||to get close to; to fawn on; to be obsequious to; to curry favor with
@@ -24645,6 +24802,7 @@ W|w|撥／拨
    D16|#transitive|to govern; to rule; to pacify
     X<||撥亂反正／拨乱反正
    D17||plectrum
+  C classifier
    D18||Classifier for people or things: group; batch
 W|w|滿滿／满满
  P||man3man3
@@ -24713,9 +24871,10 @@ W|w|溜
    D16||to shoot a glance at; to cast a sidelong glance at
    D17||Alternative form of 遛 (“to stroll; to saunter”)
    D18||to summon; to call for; to send for
-   D19||Classifier for objects arranged in lines, rows or strings.
    D20||surroundings; neighborhood
    D21|x #dialectal|to daub; to plaster
+  C classifier
+   D19||Classifier for objects arranged in lines, rows or strings.
 W|w|不愧
  P||bu4kui4
   C adv
@@ -24915,8 +25074,9 @@ W|w|牌
    D13||pitch (style) of ancient Chinese poetry (ci) or music (qu)
    D14||manner; air; shape
    D15|x #Southern-Min|plaque; memorial tablet
-   D16|xC #Jilu-Mandarin|Classifier for card games: round
    D17||a surname: Pai
+  C classifier
+   D16|xC #Jilu-Mandarin|Classifier for card games: round
 W|w|剪刀
  P||jian3dao1
   C noun
@@ -25286,7 +25446,7 @@ W|w|粒
    D2||small particle
    D5|x #Hokkien|with hard grains and not mushy (of rice)
   C classifier
-   D3||Classifier for small, round objects: granule, grain, particle, piece ⇒ all nouns using this classifier
+   D3||Classifier for small, round objects: granule, grain, particle, piece
    D4|x #Eastern-Min #Hokkien #Taiwanese|(Singapore and Malaysian Mandarin) Classifier for any round, solid objects.
 W|w|安
  P||an1
@@ -25701,10 +25861,11 @@ W|w|乘
  P||sheng4;cheng2
   C character
    D8|- #literary|war chariot drawn by four horses; (imperial) carriage
-   D9|- #literary|Classifier for carriages drawn by four horses.
    D10|- #literary|history book
    D11|#Buddhism|vehicle; creed; yana
     X<||大乘
+  C classifier
+   D9|- #literary|Classifier for carriages drawn by four horses.
 W|w|雅
  P||ya3
   C character
@@ -25857,8 +26018,9 @@ W|w|集
    D1||to collect; to gather
    D2||collection; set
    D3||market; fair
-   D4||Classifier for episodes.
    D5|#mathematics|set
+  C classifier
+   D4||Classifier for episodes.
 W|w|地下
  P||di4xia4
   C adj
@@ -26115,7 +26277,7 @@ W|w|絲／丝
     D6|C|traditional unit of length equal to 1/10000th of 寸 (cùn, “Chinese inch, ¹/₃ decimeter”) ≈ 3.3 micron
     D7|C|traditional unit of weight equal to 1/10000th of 錢／钱 (qián, “mace”) = 1/1000000th of 斤 (jīn, “catty, 0.5 kilogram”) = 0.5 milligram
   C classifier
-   D5||Classifier for extremely small quantities or abstract things, often in negatives: trace; tiny bit ⇒ all nouns using this classifier
+   D5||Classifier for extremely small quantities or abstract things, often in negatives: trace; tiny bit
     X<||絲毫／丝毫
 W|w|看書／看书
  P||kan4shu1
@@ -26151,12 +26313,13 @@ W|w|臺／台
     X<||兄臺／兄台
    D9||Short for 臺灣／台灣／台湾 (Táiwān, “Taiwan”).
    D10||Short for 臺語／台語／台语 (táiyǔ, “Taiwanese Hokkien”).
-   D11||Classifier for machines, vehicles or electronic devices. ⇒ all nouns using this classifier
-   D12||Classifier for stage performance. ⇒ all nouns using this classifier
    D13||Alternative form of 檯／台 (tái, “table; desk”)
    D14||Alternative form of 薹 (tái)
    D15||a surname
    D16|#mahjong|points
+  C classifier
+   D11||Classifier for machines, vehicles or electronic devices.
+   D12||Classifier for stage performance.
 W|w|利
  P||li4
   C character
@@ -26388,9 +26551,10 @@ W|w|仙
    D4|x #agent-affix #chiefly-Southern-Min #ironic|person with some specific hobby or addiction
    D5||a euphemism for the deceased
     X<||仙逝
-   D6|x #Southern-Min|Classifier for deity, idol, statue, doll. Alternative form of 身 (sian)
    D7|x #Southern-Min|(with negative) whatsoever, any way
    D8||a surname
+  C classifier
+   D6|x #Southern-Min|Classifier for deity, idol, statue, doll. Alternative form of 身 (sian)
 W|w|辦事／办事
  P||ban4shi4
   C verb-object
@@ -26602,10 +26766,11 @@ W|w|拳
   C character
    D1||fist
    D2||Chinese boxing
-   D3||Classifier for strikes made with a fist.
    D4||Alternative form of 踡 (quán, “to curl; to bend up”)
    D5||a surname
    D6||Martial
+  C classifier
+   D3||Classifier for strikes made with a fist.
 W|w|新郎
  P||xin1lang2
   C noun
@@ -26790,8 +26955,9 @@ W|w|冊／册
    D3||imperial edict
    D4||to grant in an imperial edict
     X<||冊立／册立
-   D5||Classifier for books.
    D6|x #Quanzhou-and-Xiamen-Hokkien|to organize and stack neatly
+  C classifier
+   D5||Classifier for books.
 W|w|病房
  P||bing4fang2
   C noun
@@ -27083,9 +27249,7 @@ W|w|落
     X<||段落
    D14||to get; to receive; to have
     X<||落不是
-   D15|x #Eastern-Min|Classifier for residences.
    D16|xC #Hainanese #Leizhou-Min #Singapore-and-Taiwanese-Hokkien #Teochew #Xiamen #Zhangzhou|to fade (of color)
-   D17|x #Hokkien|Classifier for a row of houses.
    D18|x #Hokkien|to omit; to leave out
    D19|x #Hokkien|to disassemble; to dismantle
    D20|x #Hokkien|to have diarrhea
@@ -27095,7 +27259,6 @@ W|w|落
    D24|x #Hokkien|to lose; to misplace
    D25|x #Mainland-China-Hokkien|to get along well
    D26|xC #Xiamen #Zhangzhou-and-Taiwanese-Hokkien|loose; about to fall off (often reduplicated)
-   D27|x #Xiamen-and-Zhangzhou-Hokkien|Classifier for events, deals, etc..
    D28|x #Xiamen-Hokkien|to divide into; to split up into
    D29|x #Zhangzhou-and-Taiwanese-Hokkien|to unload (cargo, etc.)
    D30|x #Taiwanese-Hokkien|to show off one's skills in speaking (a certain language)
@@ -27103,6 +27266,10 @@ W|w|落
    D32|x #Zhangzhou-Hokkien|to shake a container to let something fall out
    D33|x #Zhangzhou-Hokkien|(of wind) to blow
    D34|x #Zhangzhou-Hokkien|to space out; to leave distances in between
+  C classifier
+   D15|x #Eastern-Min|Classifier for residences.
+   D17|x #Hokkien|Classifier for a row of houses.
+   D27|x #Xiamen-and-Zhangzhou-Hokkien|Classifier for events, deals, etc..
  P||la4
   C character
    D35|#colloquial|to leave out; to be missing; to omit
@@ -27343,12 +27510,13 @@ W|w|碼／码
     X<||源碼／源码;二維碼／二维码;亂碼／乱码
    D6||code, encoding of a Chinese character into the Latin alphabet
     X<||電碼／电码
-   D7||Classifier for things, matter.
    D8|#colloquial|to pile up
    D9|#colloquial|(in varieties that don't use 邁) kilometer per hour
    D10|C #neologism|pixelization
    D11|C #dated-Internet-slang|to reply to a post for reading it later
    D12|C #neologism|to type a document
+  C classifier
+   D7||Classifier for things, matter.
 W|w|結／结
  P||jie2;jie1
   C character
@@ -27372,6 +27540,7 @@ W|w|結／结
    D13|xC #Quanzhou-and-Taiwanese-Hokkien #Xiamen|fine and firm (not loose); well-bound; thick and sturdy
    D14|x #Mainland-China-Hokkien #figurative|hangup; problem; preoccupation; knot (in one's heart)
    D15|x #Taiwanese-Hokkien|to be in a knot; to be entangled with
+  C classifier
    D16|x #Xiamen-and-Quanzhou-Hokkien|Classifier for bundles of thread-like objects.
 W|w|順路／顺路
  P||shun4lu4
@@ -27558,7 +27727,6 @@ W|w|宿
    D4||perching bird; resting bird
    D5||to keep watch at night; to be on night duty
    D6||night; nighttime
-   D7||Classifier for the number of nights: night
    D8||to be content with
    D9||to stay; to stay behind; to delay; to stop over; to be stationed
    D10||(from) last night; the previous night; overnight
@@ -27580,6 +27748,8 @@ W|w|宿
    D25|x #historical|(～縣) The name of an abolished county, now the Suzhou city in Anhui province.
    D26||Short for 宿州 (Sùzhōu, “Suzhou city in Anhui province”).
    D27||a surname
+  C classifier
+   D7||Classifier for the number of nights: night
  P||xiu4
   C character
    D28|x #Chinese-astronomy #archaic|constellation; “mansion” of the zodiac
@@ -27955,6 +28125,7 @@ W|w|缺
    D6|#colloquial|to be mean; to be wicked
    D7|#colloquial|to be stupid; to be dense
    D8|x #Hokkien|chipped part; broken edge (on a bowl, cup, etc.)
+  C classifier
    D9|x #Taiwanese-Hokkien|Classifier for chipped parts on the edge of a container.
 W|w|扑
  P||pu1
@@ -28066,8 +28237,9 @@ W|w|劍／剑
   C character
    D1||sword (bladed on both sides); sabre
     XM||口;把
-   D2||Classifier for swings of a sword.
    D3||a surname
+  C classifier
+   D2||Classifier for swings of a sword.
 W|w|游
  P||you2
   C character
@@ -28106,9 +28278,10 @@ W|w|泡
     X<||豆腐泡
    D3||bladder
    D4||small lake
-   D5||Classifier for excreta.
    D6||Rubus sp.
    D7||Name of a river.
+  C classifier
+   D5||Classifier for excreta.
  P||pao4
   C character
    D8||bubble
@@ -28295,6 +28468,7 @@ W|w|卷
    D4||volume; chapter; fascicle
    D5|#computing|volume
    D6||examination paper
+  C classifier
    D7||Classifier for volume or chapter of books.
  P|T|quan2
   C character
@@ -29229,10 +29403,11 @@ W|w|便當／便当
 W|w|戶／户
  P||hu4
   C character
-   D1||Classifier for households.
    D2|&|bank account
     X<||賬戶／账户;開戶／开户
    D3||a surname
+  C classifier
+   D1||Classifier for households.
 W|w|動靜／动静
  P||dong4jing4
   C noun
@@ -29292,9 +29467,10 @@ W|w|味
     X<||品味
    D5||interest; fun; taste
     X<||意味;趣味
+   D8|#particle-physics|flavor
+  C classifier
    D6||Classifier for ingredients of a Chinese medicine prescription.
    D7||Classifier for dishes.
-   D8|#particle-physics|flavor
 W|w|幸好
  P||xing4hao3
   C adv
@@ -29862,6 +30038,7 @@ W|w|餐
     X<||早餐
    D3||cuisine; (type of) food
     X<||西餐
+  C classifier
    D4||Classifier for meals.
 W|w|說到底／说到底
  P||shuo1dao4di3
@@ -29994,8 +30171,9 @@ W|w|主
    D14||a surname
  P|x|zhu4
   C character
-   D15||Classifier for events.
    D16||Alternative form of 注 (zhù, “to pour into”)
+  C classifier
+   D15||Classifier for events.
 W|w|否定
  P||fou3ding4
   C adj
@@ -30023,8 +30201,9 @@ W|w|季
    D6||period of time; season
     X<||雨季;淡季
    D7|#broadcasting|season
-   D8||Classifier for harvests.
    D9||a surname: Ji
+  C classifier
+   D8||Classifier for harvests.
 W|w|尊嚴／尊严
  P||zun1yan2
   C adj
@@ -30052,8 +30231,9 @@ W|w|窩／窝
    D8||to hide something; to cause something to not be found
    D9||to lay idle
    D10|#colloquial|to stay (in a place)
-   D11||Classifier for litter; brood.
    D12|#Internet-slang|Eye dialect spelling of 我 (wǒ, “I; me”).
+  C classifier
+   D11||Classifier for litter; brood.
 W|w|坦白
  P||tan3bai2
   C adj
@@ -30520,8 +30700,9 @@ W|w|握
   C character
    D1||to hold in the hand; to grip; to grasp
    D2||to control
-   D3||Classifier for a handful of something.
    D4||Used in 握齪／握龊 (wòchuò).
+  C classifier
+   D3||Classifier for a handful of something.
 W|w|殘酷／残酷
  P||can2ku4
   C adj
@@ -30574,7 +30755,6 @@ W|w|孔
   C character
    D1||hole; aperture; opening
     X<||鼻孔
-   D2||classifier for cave dwellings, oil wells, etc..
    D3|- #literary|(for irrigation, drainage) ditch; trench; canal; channel
    D4|-& #literary|profound; far-reaching
    D5|-& #literary|unimpeded; unblocked
@@ -30585,6 +30765,8 @@ W|w|孔
    D10||a surname
    D11|#specifically|Short for 孔子 (Kǒngzǐ, “Confucius”).
     X<||祭孔
+  C classifier
+   D2||classifier for cave dwellings, oil wells, etc..
    D12|x #Quanzhou-Hokkien|classifier for partitioned grid units in a tool.
 W|w|掛號／挂号
  P||gua4hao4
@@ -32010,6 +32192,7 @@ W|w|巡
   C character
    D1||to patrol; to go on circuit; to cruise
    D2|x #Hokkien|mark; line
+  C classifier
    D3||Classifier for rounds of drinks during a banquet.
    D4|x #Hokkien|Classifier for lines.
 W|w|一道
@@ -32293,13 +32476,14 @@ W|w|房
     XM||套
    D8|T|apartment
     XM||間／间
-   D9||Classifier for relatives.
-   D10||Classifier for wives, concubines or daughters-in-law.
-   D11||Classifier for fruits: bunch
    D12|#Chinese-astronomy|(～宿) Room (one of Twenty-Eight Mansions)
    D13||a surname. Fang
    D14||(～縣) Fang County (a county of Shiyan, Hubei, China)
    D15|x #obsolete|side room
+  C classifier
+   D9||Classifier for relatives.
+   D10||Classifier for wives, concubines or daughters-in-law.
+   D11||Classifier for fruits: bunch
  P||fang2 |-C|pang2
   C character
    D16||Used in 阿房宮／阿房宫 (Ēfánggōng).
@@ -32460,7 +32644,7 @@ W|w|令
    D15||Used in 脊令.
    D16||Original form of 瓴 (líng).
  P||ling4 |C|ling3
-  C character
+  C classifier
    D17||Classifier for reams of paper.
  P|x|lian2
   C character
@@ -32560,11 +32744,12 @@ W|w|造
    D4|x #literary #obsolete|to start
    D5|x #literary #obsolete|to establish
    D6|x #dialectal|harvest of crops
-   D7|x #dialectal|Classifier for harvests.
    D8|#law|party concerned in the suit
     X<||對造／对造
    D9||Used in 新造 (xīnzào, “Xinzao, a town in Guangzhou”).
    D10|#slang|Contraction of 知道 (zhīdào).
+  C classifier
+   D7|x #dialectal|Classifier for harvests.
  P||zao4 |T|cao4
   C character
    D11|- #literary|to go to; to visit; to reach
@@ -32757,6 +32942,7 @@ W|w|股
    D4||ply (of a strand or rope)
    D5||share; proportion
    D6|#finance|share; stock
+  C classifier
    D7||Classifier for shares in a company.
    D8||Classifier for air, smoke, smells or scent.
    D9||Classifier for strength, forces.
@@ -33553,6 +33739,7 @@ W|w|任
    D11||officeholder; postholder
    D12||even if; even though
    D13||no matter how; regardless of
+  C classifier
    D14||Classifier for terms of office.
  P||ren2;ren4
   C character
@@ -33715,6 +33902,7 @@ W|w|帖
  P||tie3;tie4
   C character
    D5||note; invitation; card; identity card
+  C classifier
    D6||Classifier for doses of herbal medicine.
  P||tie4;tie3
   C character
@@ -34038,16 +34226,18 @@ W|w|載／载
    D15||vehicle; car; ship
    D16||things loaded; loads
    D17||affair; cause; undertaking
-   D18||Classifier for amount loaded by one chariot.
    D19|x #Eastern-Min|would rather; rather
+  C classifier
+   D18||Classifier for amount loaded by one chariot.
  P||zai3;zai4
   C character
    D20||to record; to put down in writing (i.e. “to be conveyed”)
    D21||to describe; to depict
  P||zai3
   C character
-   D22||Classifier for years.
    D23|#numeral|hundred tredecillion (10⁴⁴)
+  C classifier
+   D22||Classifier for years.
 W|w|淘汰
  P||tao2tai4
   C verb
@@ -34243,8 +34433,9 @@ W|w|箱
   C character
    D1||(large) box; chest; trunk
    D2||box-shaped thing
-   D3||Classifier for boxes or chests.
    D4||Alternative form of 廂／厢 (xiāng, “side room”)
+  C classifier
+   D3||Classifier for boxes or chests.
 W|w|難堪／难堪
  P||nan2kan1
   C adj
@@ -34866,9 +35057,10 @@ W|w|株
    D1||tree stump
     X<||守株待兔
    D2||plant
-   D3||Classifier for plants. ⇒ all nouns using this classifier
-   D4||Classifier for viruses.
    D5||root
+  C classifier
+   D3||Classifier for plants.
+   D4||Classifier for viruses.
 W|w|引導／引导
  P||yin3dao3
   C verb
@@ -34899,10 +35091,11 @@ W|w|章
    D8||(alt. form 彰) obvious; well-known
    D9||(alt. form 彰) to make manifest; to display; to express
    D10||(alt. form 彰) to commend; to praise; to distinguish
-   D11||Classifier for chapters, etc.
    D12|#Chinese-astronomy|the cycle of 19 years (approximate common multiple for the synodic month and tropical year, similar to the Metonic cycle)
     X<||章動／章动
    D13||a surname. Zhang; Cheung
+  C classifier
+   D11||Classifier for chapters, etc.
 W|w|黑暗
  P||hei1an4
   C adj
@@ -35538,15 +35731,15 @@ W|w|枚
    D1|x #archaic|stalk of shrub; trunk of tree
    D2|x #historical|wooden peg (a gag for marching soldiers to prevent talking)
    D3|x #obsolete|small wooden rod; counting rod
-   D6||Classifier for certain small, flat objects, such as coins, stamps, badges, pearls, sporting medals. ⇒ all nouns using this classifier
-   D7||Classifier for rockets, satellites and certain weapons (especially bombs).
-   D8|#neologism|Classifier for people.
-   D9|#neologism|Classifier for flat thin objects (especially followed by 入 mimicking Japanese usage to give an exotic flair or exaggerated quality perception of a product)
    D10||a surname: Mei
   C classifier
    D4|x #dated|Classifier for generic countable objects.
     D5||one by one; each
      X<||枚舉／枚举
+   D6||Classifier for certain small, flat objects, such as coins, stamps, badges, pearls, sporting medals.
+   D7||Classifier for rockets, satellites and certain weapons (especially bombs).
+   D8|#neologism|Classifier for people.
+   D9|#neologism|Classifier for flat thin objects (especially followed by 入 mimicking Japanese usage to give an exotic flair or exaggerated quality perception of a product)
 W|w|裁判
  P||cai2pan4
   C noun
@@ -35565,6 +35758,7 @@ W|w|噴／喷
    D3|#colloquial #slang|to angrily rebuke or scold
    D4||(of smell) strong; fragrant
    D5|#colloquial|busy season (of something)
+  C classifier
    D6||Classifier for the number of times a plant blooms, bears fruits, ripens or is harvested.
 W|w|密
  P||mi4
@@ -36082,8 +36276,9 @@ W|w|責怪／责怪
 W|w|艘
  P||sou1;sao1
   C character
-   D1||Classifier for boats, ships, vessels.
    D2|- #literary|ship
+  C classifier
+   D1||Classifier for boats, ships, vessels.
 W|w|萬事／万事
  P||wan4shi4
   C noun
@@ -36883,8 +37078,9 @@ W|w|丸
    D2|#medicine|pill
    D3|x #obsolete|egg (of a bird)
    D4|x #obsolete|to roll into a ball
-   D5||Classifier for pills of Chinese medicine.
    D6||a surname: Wan
+  C classifier
+   D5||Classifier for pills of Chinese medicine.
  P|x|huan2
   C character
    D7||Used in 烏丸／乌丸.
@@ -37213,6 +37409,7 @@ W|w|攤／摊
    D3||to distribute; to share (responsibility)
    D4||to cook by flattening and frying a batter or paste
    D5||to befall; to encounter (something undesirable)
+  C classifier
    D6|x #Southern-Min|Classifier for work, business, meals.
  P|x|nan4
   C character
@@ -37345,6 +37542,7 @@ W|w|餅／饼
   C character
    D1||pastry; biscuit; cookie
    D2||any round and flat pancake-like object
+  C classifier
    D3|x #Eastern-Min|Classifier for pastry or flat objects.
 W|w|膝蓋／膝盖
  P||xi1gai4
@@ -37462,6 +37660,7 @@ W|w|擔／担
    D8||picul, a traditional Chinese unit of weight equal to 100 catties
     D5|C|picul; equal to 50 kilograms
     D6|xC #HongKong|picul; equal to 60.478982 kilograms
+  C classifier
    D7||Classifier for things carried on a shoulder pole: load
 W|w|居住
  P||ju1zhu4
@@ -38344,6 +38543,7 @@ W|w|遭
   C character
    D1||to come across; to meet with; to encounter
    D2||to suffer; to be subjected to; passive voice marker (for negative events)
+  C classifier
    D3||Classifier for number of occurrences of events: times; turns
 W|w|和諧／和谐
  P||he2xie2
@@ -38556,6 +38756,7 @@ W|w|抹
    D5|- #literary|to cut
    D6|- #literary|to twirl
    D7|- #literary|to look; to aim; to glance
+  C classifier
    D8||Classifier for rays of sunlight, rosy clouds, etc..
  P||mo4
   C character
@@ -38753,7 +38954,7 @@ W|w|純／纯
   C character
    D6|- #Classical|border of a piece of clothing
  P|x|tun2
-  C character
+  C classifier
    D7|- #Classical|Classifier for a section of cloth.
 W|w|志
  P||zhi4
@@ -39306,8 +39507,9 @@ W|w|桌
  P||zhuo1
   C character
    D1||table; desk; stand
-   D2||Classifier for tablefuls of dishes or people: table
    D3|x #Hokkien|feast; banquet
+  C classifier
+   D2||Classifier for tablefuls of dishes or people: table
 W|w|模型
  P||mo2xing2
   C noun
@@ -39369,12 +39571,13 @@ W|w|景
    D5||scenery; view
    D6||conditions; situation
    D7||scene; setting; scenario
-   D8||Classifier for scenes of a play, drama, etc.
    D9||a surname
    D10||great; large
    D11||auspicious
    D12||to admire; to appreciate
    D13||Alternative form of 幜 (jǐng, “a kind of coat”)
+  C classifier
+   D8||Classifier for scenes of a play, drama, etc.
  P|T|ying3
   C character
    D14||Alternative form of 影 (yǐng, “shadow”)
@@ -39853,11 +40056,12 @@ W|w|堂
    D6|x #dialectal|class; lesson
    D7||of the same paternal grandfather or great-grandfather
    D8|#honorific|mother
+   D13||a surname
+  C classifier
    D9||Classifier for sets of furniture.
    D10||Classifier for classes or lessons.
    D11||Classifier for court sessions.
    D12||Classifier for scenes or murals.
-   D13||a surname
 W|w|投胎
  P||tou2tai1
   C verb
@@ -40315,8 +40519,9 @@ W|w|港
    D4||large airport
    D5||shorthand for Hong Kong
    D6|#colloquial|Hong Kong-styled
-   D7|x #Hokkien|Classifier for fluids: stream
    D8||a surname
+  C classifier
+   D7|x #Hokkien|Classifier for fluids: stream
  P|x|hong4
   C character
    D9||Only used in 港洞.
@@ -40537,9 +40742,10 @@ W|w|宗
     X<||宗旨
    D7||to revere; to respect; to follow
    D8|x #historical|an administrative division in historical Tibet, equivalent to a county
+   D11||a surname
+  C classifier
    D9||Classifier for things, sums of money, goods, etc.
    D10||Classifier for cases (e.g. traffic accidents, criminal cases, medical cases, etc.).
-   D11||a surname
 W|w|手臂
  P||shou3bi4
   C noun
@@ -40759,6 +40965,7 @@ W|w|筷
   C character
    D1||chopsticks
     X<||公筷
+  C classifier
    D2|x #Wu|Classifier for an amount of food held with a pair of chopsticks.
 W|w|正直
  P||zheng4zhi2
@@ -40775,6 +40982,7 @@ W|w|籌／筹
    D2||plan; stratagem; means
    D3||to plan; to prepare
    D4||to raise (money, funds, etc.)
+  C classifier
    D5|x #archaic|Classifier for persons.
 W|w|鄭重／郑重
  P||zheng4zhong4
@@ -40918,12 +41126,13 @@ W|w|格
    D9||to investigate
    D10||22nd tetragram of the Taixuanjing; "resistance" (𝌛)
    D11|x #Hokkien|breed; body type (of certain poultry and livestock)
-   D12|x #Hokkien|Classifier for graduation in a measuring container.
    D13|x #Mainland-China-Hokkien|to examine; to explore; to inspect; to check out (the reason, principle, etc.)
    D14|x #Mainland-China-Hokkien|to change the original structural layout (to increase number of spaces, etc.)
    D15|x #Taiwanese-Hokkien|Used in place names to describe the topography of a watershed.
    D16|x #Zhangzhou-Hokkien|to build by laying bricks or stones
    D17||a surname
+  C classifier
+   D12|x #Hokkien|Classifier for graduation in a measuring container.
  P|-T|ge1
   C character
    D18||An onomatopoeia.
@@ -41046,7 +41255,7 @@ W|w|視野／视野
    D2||field of vision
    D3|#figurative|one's knowledge and experience; one's horizons
 W|w|臂
- P||bi4 |T|bei4 |-C|bei5
+ P||bi4 |-C|bei5 |T|bei4
   C character
    D1|#anatomy|arm
 W|w|前邊／前边
@@ -41199,8 +41408,9 @@ W|w|襲／袭
    D2||to follow the pattern; to carry on as before
    D3||to lap over; to superpose
    D4||to inherit
-   D5||Classifier for a suit or set of clothes.
    D6||a surname
+  C classifier
+   D5||Classifier for a suit or set of clothes.
 W|w|在座
  P||zai4zuo4
   C verb
@@ -41764,11 +41974,12 @@ W|w|紮／扎
  P||za1 |T|zha2
   C character
    D1||to tie; to bind
-   D2|#regional|Classifier for objects put into a bundle: bundle
    D3|x #Hokkien|to wrap up; to bind up; to pack; to bundle; to bandage
    D4|x #Hokkien|to raise; to lift up; to pull up (curtain, clothing, etc.)
    D5|x #Hokkien|to assist; to aid; to help; to guide and support (someone)
    D6|xC #Xiamen #Zhangzhou-and-Taiwanese-Hokkien|to carry; to bring along (on one's person, usually concealed originally on one's waist)
+  C classifier
+   D2|#regional|Classifier for objects put into a bundle: bundle
  P|C|zha1 |T|zha2
   C character
    D7|#military|to be stationed; to encamp; to be quartered (of troops)
@@ -42499,6 +42710,7 @@ W|w|目
    D13|- #Classical|to call; to address (of people's names and titles)
    D14|x #Hokkien #obsolete|hole; cavity; eyelet
    D15|x #Hokkien|joint; knot; lump
+  C classifier
    D16|x #Hokkien|Classifier for segments, such as sugar cane.
    D17|x #Taiwanese-Hokkien|Classifier for pieces in Go.
 W|w|禮拜天／礼拜天
@@ -44659,10 +44871,11 @@ W|w|截
    D2||to bar; to stop; to obstruct; to block
    D3||to close; to end
    D4||section
-   D5||Classifier for sections or lengths of objects.
    D6||neat; well-ordered; orderly
    D7||Alternative form of 接 (jiē, “to pick up”)
    D8||a surname: Jie
+  C classifier
+   D5||Classifier for sections or lengths of objects.
 W|w|併／并
  P||bing4
   C character
@@ -45617,6 +45830,7 @@ W|w|具
    D6||Alternative form of 俱 (“all; every”)
    D7||feast
    D8||in full detail
+  C classifier
    D9||Classifier for coffins, corpses, and certain instruments.
 W|w|江山
  P||jiang1shan1
@@ -46173,6 +46387,7 @@ W|w|桿／杆
     X<||操縱桿／操纵杆
    D3||shaft; barrel
     X<||槍桿／枪杆
+  C classifier
    D4||Classifier for long, cylindrical objects, such as guns.
 W|w|族
  P||zu2
@@ -46362,6 +46577,7 @@ W|w|樁／桩
   C character
    D1||wooden pile; stake
    D2||pile (large stake driven into the earth or sea-bed for the support of a building)
+  C classifier
    D3||Classifier for events, deals, legal cases, etc..
 W|w|混合
  P||hun4he2 |-T|hun3he2
@@ -47082,10 +47298,11 @@ W|w|疊／叠
    D1||to fold; to fold up
    D2||to fold over in layers; to pile up; to be piled up
    D3||to repeat; to duplicate; to be repetitious
-   D4||Classifier for piles/layers.
    D5|x #Southern-Min|to add; to increase (over the existing foundation)
    D6||Alternative form of 㲲 (dié)
    D7||a surname: Die
+  C classifier
+   D4||Classifier for piles/layers.
 W|w|和氣／和气
  P||he2qi4 |C|he2qi5
   C adj
@@ -47803,9 +48020,10 @@ W|w|汪
  P||wang1
   C character
    D1||(of bodies of water) vast and deep
-   D2||Classifier for masses of liquid.
    D3|#onomatopoeia|woof; bark (the cry of a dog)
    D4||a surname, listed 104th in the Hundred Family Surnames
+  C classifier
+   D2||Classifier for masses of liquid.
 W|w|畏懼／畏惧
  P||wei4ju4
   C verb
@@ -48066,14 +48284,16 @@ W|w|尊
    D1||to respect; to revere; to venerate
    D2||to honor
    D3|x #historical|zun (a type of container for alcoholic beverage in historical China)
-   D4||Classifier for heavy and chiefly immobile artificial objects; colossuses. ⇒ all nouns using this classifier
    D5||your (honorfic)
     X<||尊夫人
    D6|#ACG|glorious; marvelous; wonderful
+  C classifier
+   D4||Classifier for heavy and chiefly immobile artificial objects; colossuses.
 W|w|盞／盏
  P||zhan3
   C character
    D1||small cup or container
+  C classifier
    D2||Classifier for lamps, lanterns, or cups of drink.
 W|w|大衛／大卫
  P||Da4wei4
@@ -48478,7 +48698,7 @@ W|w|揀／拣
   C character
    D1||to choose; to pick
    D2||Alternative form of 撿／捡 (“to pick up”)
-W|w|閒話／闲话;閑話/闲话
+W|w|閒話／闲话;閑話／闲话
  P||xian2hua4
   C noun
    D1||words of little importance; casual words; digression
@@ -48720,8 +48940,9 @@ W|w|尾
    D1||tail
    D2||end
    D3||last; final
-   D4||Classifier for fish, snakes, shrimps, etc. ⇒ all nouns using this classifier
    D5|#Chinese-astronomy|(～宿) Tail (one of Twenty-Eight Mansions)
+  C classifier
+   D4||Classifier for fish, snakes, shrimps, etc.
 W|w|粘
  P||zhan1
   C character
@@ -48933,6 +49154,7 @@ W|w|標／标
    D7||standard; norm; example
    D8||prize; award
    D9||bid
+  C classifier
    D10|x #dated|Classifier for groups and teams.
 W|w|十五
  P||shi2wu3
@@ -49770,6 +49992,7 @@ W|w|腹
    D2|#figurative|belly-shaped object; belly (of a bottle, jar, etc.)
    D3|#figurative|heart; mind
    D4|#figurative|inside; interior
+  C classifier
    D5|x #Mainland-China-Hokkien|Classifier for for a full container of something.: stomachful
 W|w|約束／约束
  P||yue1shu4
@@ -50073,6 +50296,7 @@ W|w|扇
   C character
    D1||leaf of door
    D2||fan
+  C classifier
    D3||Classifier for doors, windows and folding screens.
  P||shan1
   C character
@@ -50714,7 +50938,6 @@ W|w|羽
    D1||feather; plume
    D2||wing
    D3||birds
-   D4||Classifier for birds.
    D5||fletching
    D6||arrow
    D7||banner; flag
@@ -50725,6 +50948,8 @@ W|w|羽
     X<||黨羽／党羽
    D12|#music|fifth note in the Chinese pentatonic scale
    D13||a surname
+  C classifier
+   D4||Classifier for birds.
  P|x|hu4
   C character
    D14||The meaning of this term is uncertain. Possibilities include:
@@ -51549,6 +51774,7 @@ W|w|劑／剂
    D6||pharmaceutical preparation; medicament
    D7||dose; dosage
    D8|#chemistry|agent; reagent
+  C classifier
    D9||Classifier for doses of medicine.
 W|w|悲劇／悲剧
  P||bei1ju4
@@ -51958,6 +52184,7 @@ W|w|捆
   C character
    D1||to tie up; to bind; to truss
    D2||bundle; bunch
+  C classifier
    D3||Classifier for bundled items.
 W|w|名下
  P||ming2xia4
@@ -53369,7 +53596,7 @@ W|w|交叉
    D6||to alternate; to stagger
 W|w|噸／吨
  P|C|dun1 |T|dun4
-  C character
+  C classifier
    D1||Classifier for metric ton.
    D2||Classifier for ton; tonne.
    D3||Classifier for registered ton.
@@ -54858,11 +55085,12 @@ W|w|伙
    D1||companion; colleague
     X<||伙伴
    D2||group of such people
-   D3||Classifier for groups of people.
    D4||jointly
    D5||meal; food
-   D6|xC #HongKong|Classifier for flats or families.
    D7||a surname
+  C classifier
+   D3||Classifier for groups of people.
+   D6|xC #HongKong|Classifier for flats or families.
 W|w|破爛／破烂
  P||po4lan4
   C adj
@@ -55915,6 +56143,7 @@ W|w|摺
    D3||booklet
    D4||foldable
    D5||side
+  C classifier
    D6|x #Mainland-China-Hokkien|Classifier for folds of thin sheets.
  P|x|xie2
   C character
@@ -56264,11 +56493,12 @@ W|w|介
    D7||such; like this; this kind of
    D8||Original form of 界 (jiè, “boundary; role; duty”).
    D9||iota; tiny bit. Alternative form of 芥
-   D10||Classifier for people or copper coins.
    D11||seashell; shell
    D12||to wear armour
    D13|x #Eastern-Min|again; re-
    D14|T|zepto- (SI unit prefix)
+  C classifier
+   D10||Classifier for people or copper coins.
 W|w|作息
  P|C|zuo4xi1 |T|zuo4xi2
   C verb
@@ -57188,6 +57418,7 @@ W|w|炷
   C character
    D1||to burn (incense, etc.)
    D2||wick of an oil lamp
+  C classifier
    D3||Classifier for lit incense sticks.
 W|w|書面／书面
  P||shu1mian4
@@ -57957,6 +58188,7 @@ W|w|杖
    D5||to support; to prop
    D6||to hold; to grasp
    D7||Alternative form of 仗 (zhàng, “to rely on; to depend on”)
+  C classifier
    D8|x #Eastern-Min|Classifier for segments of sugarcane.
 W|w|表態／表态
  P||biao3tai4
@@ -58276,9 +58508,10 @@ W|w|席
   C character
    D1||seat
    D2||food of a banquet
+   D5||a surname
+  C classifier
    D3||Classifier for conversations.
    D4||Classifier for seats (members) in a meeting.
-   D5||a surname
 W|w|不宜
  P||bu4yi2
   C adj
@@ -59152,6 +59385,7 @@ W|w|籃／篮
    D2|#sports|ring; basket (in basketball)
    D3|#sports|basketball (sport)
     X<||女籃／女篮;男籃／男篮
+  C classifier
    D4||Classifier for baskets.
 W|w|諒／谅
  P||liang4
@@ -60028,8 +60262,9 @@ W|w|逝
    D2||to pass; to leave; to go off
    D3||to pass away; to die
    D4|- #literary|Sentence-initial exclamatory particle.
-   D5|x #Southern-Min|Classifier for journeys or occasions.
    D6||Alternative form of 誓 (shì, “to vow”)
+  C classifier
+   D5|x #Southern-Min|Classifier for journeys or occasions.
 W|w|恭敬
  P||gong1jing4
   C adj
@@ -60161,6 +60396,7 @@ W|w|柄
    D3|-& #literary|mistake which can be used against someone
    D4|-& #literary|power; authority
    D5|-& #literary|to wield; to be in control of
+  C classifier
    D6|x #dialectal|Classifier for something with a handle.
 W|w|無家可歸／无家可归
  P||wu2 jia1 ke3 gui1
@@ -60171,6 +60407,7 @@ W|w|灘／滩
   C character
    D1||shoal
    D2||beach
+  C classifier
    D3||Classifier for liquid or paste spread over a surface: pool; puddle
 W|w|各地
  P||ge4di4
@@ -60328,9 +60565,10 @@ W|w|叢／丛
    D1||to collect; to gather; to assemble; to crowd together
    D2||bush; shrub; thicket; grove
    D3||collection; crowd
+   D6||a surname
+  C classifier
    D4|x #Northern-Min #Southern-Min|Classifier for plants.
    D5|x #Hokkien|Classifier for long objects.
-   D6||a surname
 W|w|套餐
  P||tao4can1
   C noun
@@ -60541,6 +60779,7 @@ W|w|核
    D5|#algebra #linear-algebra #mathematics|kernel
    D6|x #Hokkien|swelling in the lymph glands (lymphatic hard lumps due to inflammation, etc.)
    D7||(Xiamen and Zhangzhou and Taiwanese Hokkien) small formed lump
+  C classifier
    D8|x #Xiamen-and-Zhangzhou-Hokkien|Classifier for fruits with a pit inside.
  P||he2
   C character
@@ -61054,7 +61293,7 @@ W|w|呼呼
   C noun
    D2|#onomatopoeia|the sound of the wind or the breathing of somebody who is sound asleep, the sound of snoring
 W|w|血跡／血迹
- P|C|xue4ji4 |T|xie3ji1 |-C|xue3ji4;xie3ji4
+ P|C|xue4ji4 |-C|xue3ji4;xie3ji4 |T|xie3ji1
   C noun
    D1||bloodstain
 W|w|紡織／纺织
@@ -61253,6 +61492,7 @@ W|w|拗
    D5|x #Hokkien|to fold; to droop; to hem; to pleat
    D6|x #Hokkien|to coerce; to force; to compel; to oppress; to treat unjustly; to make false claims or deliberately misinterpret
    D7|x #Hokkien|to shortchange; to skimp; to scrimp; to give insufficiently
+  C classifier
    D8|x #Taiwanese-Hokkien|Classifier for folds of thin sheets.
  P||niu4
   C character
@@ -61340,7 +61580,7 @@ W|w|水餃／水饺
     XM||粒;顆／颗
    D2|#regional|jiaozi dumpling (in general)
 W|w|潛意識／潜意识
- P|C|qian2yi4shi2 |T|qian2yi4shi4 |-C|qian3yi4shi2 |-T|qian3yi4shi4
+ P|C|qian2yi4shi2 |-C|qian3yi4shi2 |T|qian2yi4shi4 |-T|qian3yi4shi4
   C noun
    D1||the unconscious mind; the subconscious; subconsciousness
 W|w|薑／姜
@@ -62183,7 +62423,7 @@ W|w|液體／液体
  P||ye4ti3 |-T|yi4ti3
   C noun
    D1||liquid; fluid
-W|w|詞典／词典;辭典/辞典
+W|w|詞典／词典;辭典／辞典
  P||ci2dian3
   C noun
    D1||dictionary
@@ -62734,6 +62974,7 @@ W|w|幢
    D4||umbrella
    D5|#Buddhism|stone pillar inscribed with religious writings
    D6||wavering (in the manner of a shadow)
+  C classifier
    D7||Classifier for buildings.
 W|w|情勢／情势
  P||qing2shi4
@@ -64297,6 +64538,7 @@ W|w|跡／迹
     X<||古跡／古迹
    D3||thing done; deed; exploit
     X<||奇跡／奇迹;劣跡／劣迹
+  C classifier
    D4|x #Hokkien|Classifier for a place.
    D5|x #Zhangzhou-Hokkien|Classifier for marks, prints, and traces.
 W|w|上等
@@ -65196,10 +65438,11 @@ W|w|丘
     X<||山丘;沙丘
    D2||grave
    D3||to place a coffin in a temporary shelter pending burial
-   D4|x #dialectal|Classifier for fields: plot
    D5|x #obsolete|ruins
    D6|x #obsolete|empty
    D7||a surname
+  C classifier
+   D4|x #dialectal|Classifier for fields: plot
 W|w|軌跡／轨迹
  P|C|gui3ji4 |T|gui3ji1
   C noun
@@ -66314,10 +66557,11 @@ W|w|梗
    D8||to resist; to defy
    D9||to straighten up; to stiffen
    D10||upright; straightforward; upstanding
-   D11|x #Ningbonese|Classifier for long, slender objects, including ropes, fish, feathers, sticks. ⇒ all nouns using this classifier
    D12||strong; violent
    D13||illness; disaster
    D14||a surname
+  C classifier
+   D11|x #Ningbonese|Classifier for long, slender objects, including ropes, fish, feathers, sticks.
 W|w|謙遜／谦逊
  P||qian1xun4
   C adj
@@ -67870,8 +68114,9 @@ W|w|竿
  P||gan1
   C character
    D1||bamboo pole
-   D2||Classifier for bamboo.
    D3||a surname: Gan
+  C classifier
+   D2||Classifier for bamboo.
 W|w|接洽
  P||jie1qia4
   C verb
@@ -67967,6 +68212,7 @@ W|w|裁
    D5|-& #literary|to select and plan
    D6|-& #literary|form of writing
     X<||體裁／体裁
+  C classifier
    D7||Classifier for divisions of standard-size printing paper.
 W|w|恍然大悟
  P||huang3ran2da4wu4
@@ -68946,6 +69192,7 @@ W|w|沐
    D6|x #Quanzhou-and-Xiamen-Hokkien|to sink into; to fall into
    D7|x #Quanzhou-and-Xiamen-Hokkien|to put in; to invest (money, etc.)
    D8|x #Xiamen-Hokkien|to swallow a big gulp (of liquid)
+  C classifier
    D9|x #Xiamen-Hokkien|Classifier for phlegm, blood, water.
 W|w|鯨魚／鲸鱼
  P||jing1yu2
@@ -70231,12 +70478,13 @@ W|w|伐
    D14||Alternative form of 罰／罚 (fá, “to punish”)
    D15|x #Min|to stride; to take a stride; to step forward; to step over
    D16|x #Min|step; footstep; stride
-   D17|x #Min|Classifier for footsteps: step
    D18|x #Wu|Alternative form of 𠲎 (⁰va, “final interrogative particle on a yes/no question”)
    D19|x #Wu|Alternative form of 勿 (“not”)
    D20||Used in transcription.
     X<||斯洛伐克;巴伐利亞／巴伐利亚
    D21||a surname
+  C classifier
+   D17|x #Min|Classifier for footsteps: step
 W|w|詹
  P||zhan1
   C character
@@ -71101,8 +71349,9 @@ W|w|勺
     XM||把
    D2||ladle-like object
    D3|x #historical|A unit of capacity: one tenth of a 合 (gě), now 1 市勺 equals 1 centilitre.
-   D4||Classifier for an amount held by a spoon or ladle: scoop; spoonful
    D5|x #obsolete|little; small amount
+  C classifier
+   D4||Classifier for an amount held by a spoon or ladle: scoop; spoonful
  P|T|zhuo2
   C character
    D6|x #obsolete|Alternative form of 酌 (zhuó, “to scoop; to dip”)
@@ -71639,7 +71888,7 @@ W|w|的確良／的确良
   C noun
    D1||dacron; terylene (polyethylene terephthalate)
 W|w|稍息
- P|C|shao4xi1 |T|shao1xi2 |-C|shao1xi1
+ P|C|shao4xi1 |-C|shao1xi1 |T|shao1xi2
   C verb
    D1|#military|to be at ease
 W|w|暮
@@ -74755,11 +75004,12 @@ W|w|掠
    D4|x #Hokkien|to massage by kneading
    D5|x #Hokkien|to estimate; to evaluate; to assess; to suppose
    D6|x #Hokkien|to control; to manipulate; to work out (to bring about or maintain a certain result)
-   D7|x #Hokkien|Classifier for lengths in spans, or the width of an open hand from the end of the thumb to the end of the middle finger: span
    D8|x #Hokkien|used to introduce the target of a following verb phrase
    D9|x #Mainland-China-Hokkien|to mend (especially by knitting)
    D10|x #Taiwanese-Hokkien|to identify the problem area
    D11|- #Classical|to flog; to beat
+  C classifier
+   D7|x #Hokkien|Classifier for lengths in spans, or the width of an open hand from the end of the thumb to the end of the middle finger: span
 W|w|回味
  P||hui2wei4
   C noun
@@ -74991,6 +75241,7 @@ W|w|注
     X<||注視／注视;專注／专注;注意
    D3|#gambling|stake
     X<||賭注／赌注
+  C classifier
    D4||Classifier for sums of money, business deals.
 W|w|砸爛／砸烂
  P||za2lan4
@@ -76875,8 +77126,9 @@ W|w|彪
    D2|- #literary|tiger; small tiger
    D3|#figuratively|(of a person) big and tall; strong; stalwart
    D4|- #literary|clear; evident; obvious
-   D5||Classifier for detachment of troops.
    D6||a surname
+  C classifier
+   D5||Classifier for detachment of troops.
 W|w|嘆息／叹息
  P|C|tan4xi1 |T|tan4xi2
   C verb
@@ -78901,7 +79153,7 @@ W|w|空軍／空军
   C verb
    D2|#slang|to return from a fishing trip empty-handed; to get skunked
 W|w|度量
- P||du4liang4 |T|duo4liang2 |-C|duo2liang2
+ P||du4liang4 |-C|duo2liang2 |T|duo4liang2
   C noun
    D1||tolerance; capacity to forgive
    D2||measure
@@ -79514,6 +79766,7 @@ W|w|盅
   C character
    D1||small handleless cup; goblet
    D2|x #Hainanese|drinkware; cup (in general, with or without a handle)
+  C classifier
    D3||Classifier for the amount of liquid or objects in a handleless cup.
    D4|x #Hainanese|Classifier for the amount of liquid or objects in a cup.
  P|x|chong1
@@ -81533,11 +81786,12 @@ W|w|撮
    D5||to scoop up (dirt using a dustpan)
    D6|x #colloquial #dialectal|to eat (as a group at a restaurant)
    D7|x #Hakka|to cheat; to deceive; to hoax
-   D8||Classifier for small amounts of something (that can be picked up using one's fingertips, or figuratively): pinch; handful
    D9|x #Zhangzhou-Hokkien|to pass on; to transfer
+  C classifier
+   D8||Classifier for small amounts of something (that can be picked up using one's fingertips, or figuratively): pinch; handful
    D10|x #Teochew|Classifier for an indefinite amount: bunch; group
  P||zuo3 |T|cuo4
-  C character
+  C classifier
    D11||Classifier for tufts of hair.
 W|w|亡靈／亡灵
  P||wang2ling2
@@ -81682,6 +81936,7 @@ W|w|墩
    D1||mound
    D2||block of stone or wood
    D3||to mop (the floor)
+  C classifier
    D4||Classifier for densely growing plants: cluster
    D5||Classifier for rounds in a card game: trick
 W|w|兇狠／凶狠
@@ -81876,6 +82131,7 @@ W|w|絞／绞
   C character
    D1||to twist; to wring
    D2||to wind; to intertwine; to grind
+  C classifier
    D3||Classifier for skeins of wools or thread.
  P|x|xiao2
   C character
@@ -84009,8 +84265,9 @@ W|w|綜／综
    D2||to synthesize; to sum up
    D3||to manage; to administer
    D4||to be proficient in
-   D5||Classifier for threads or hairs: strand
    D6||to become crumpled; to crease
+  C classifier
+   D5||Classifier for threads or hairs: strand
  P|C|zeng4 |T|zong4
   C character
    D7||heddle (on a loom)
@@ -86450,7 +86707,8 @@ W|w|瓣
    D3||segment; section; piece; clove (of garlic)
    D4|#medicine|Short for 瓣膜 (bànmó, “valve”).
     X<||二尖瓣
-   D5||Classifier for pieces and segments, such as those of (cut-up) fruits or petals. ⇒ all nouns using this classifier
+  C classifier
+   D5||Classifier for pieces and segments, such as those of (cut-up) fruits or petals.
 W|w|抵消
  P||di3xiao1
   C verb
@@ -88540,6 +88798,7 @@ W|w|縷／缕
   C character
    D1||thread
    D2||detailed, precise
+  C classifier
    D3||Classifier for wisps, threads, or strands.
 W|w|乘機／乘机
  P||cheng2ji1
@@ -88868,6 +89127,7 @@ W|w|槽
    D2||square or rectangular container
    D3||concave section; depression
    D4||ditch; trench; canal
+  C classifier
    D5|x #dialectal|Classifier for doors, windows or anything that partitions a room.
    D6|x #dialectal|Classifier for period of pig raising from buying in to selling out.
 W|w|拜別／拜别
@@ -91887,6 +92147,7 @@ W|w|輯／辑
   C character
    D1||to gather up; to collect
    D2||to edit; to compile
+  C classifier
    D3||Classifier for parts or volumes of a book or other literary work.
 W|w|飛彈／飞弹
  P||fei1dan4
@@ -93568,6 +93829,7 @@ W|w|泓
  P||hong2
   C character
    D1||(of water) deep
+  C classifier
    D2||Classifier for bodies of clear water.
 W|w|伎
  P||ji4
@@ -93800,6 +94062,7 @@ W|w|棧／栈
    D2||tavern; inn
    D3|#computing|stack
    D4|x #Southern-Min|storey; floor; stratum
+  C classifier
    D5|x #Southern-Min|Classifier for things arranged in layers, storeys or levels.
 W|w|回鍋肉／回锅肉
  P||hui2guo1rou4
@@ -95193,7 +95456,7 @@ W|w|巨資／巨资
   C noun
    D1||vast sum; huge amount of money
 W|w|血泊
- P||xue4bo2 |C|xue4po1 |T|xie3bo2 |-C|xue3po1;xie3po1
+ P||xue4bo2 |C|xue4po1 |-C|xue3po1;xie3po1 |T|xie3bo2
   C noun
    D1||pool of blood (at the scene)
 W|w|叩頭／叩头
@@ -96083,6 +96346,7 @@ W|w|暝
  P||ming2;ming4
   C character
    D1||(Classical or Min) night; evening
+  C classifier
    D2|x #Southern-Min|Classifier for the number of nights.
 W|w|模具
  P||mo2ju4 |C|mu2ju4
@@ -98279,6 +98543,7 @@ W|w|垛
   C character
    D1||to pile; to stack
    D2||pile; stack
+  C classifier
    D3||Classifier for piles or stacks.
  P||duo3
   C character
@@ -98557,10 +98822,11 @@ W|w|簇
   C character
    D1||to swarm; to crowd together; to cluster; to pile up
    D2||cluster; pile; bouquet
-   D3||Classifier for bunched objects: cluster; bundle; bunch
    D4|#mathematics|(algebraic) variety
    D5||completely
     X<||簇新
+  C classifier
+   D3||Classifier for bunched objects: cluster; bundle; bunch
 W|w|嘖嘖／啧啧
  P||ze2ze2
   C adj
@@ -99568,6 +99834,7 @@ W|w&|括
    D4||to include; to encompass
    D5||to enclose in brackets
    D6||a surname
+  C classifier
    D7|x #Hokkien|Classifier for groups of people.
 W|w|裂口
  P||lie4kou3
@@ -101882,6 +102149,7 @@ W|w|淌
    D1||to drip; to trickle; to flow down
    D2||to shed (tears)
    D3||Alternative form of 蹚 (tāng, “to ford; to wade”)
+  C classifier
    D4|x #dialectal|Classifier for blood over a surface.
  P|x|chang3
   C character
@@ -102513,6 +102781,7 @@ W|w|拃
  P||zha3
   C character
    D1||to measure by handspans; to span
+  C classifier
    D2||Classifier for lengths in spans, or the width of an open hand from the end of the thumb to the end of the middle finger or little finger: span
  P||zhan3
   C character
@@ -102636,6 +102905,7 @@ W|w|闋／阕
  P||que4
   C character
    D1|- #literary|to stop; to end
+  C classifier
    D2||Classifier for songs, poems, etc.
    D3||Classifier for stanzas of a poem.
 W|w|亞聖／亚圣
@@ -103720,7 +103990,7 @@ W|w|紛雜／纷杂
    D1|- #literary|numerous and complicated
    D2|- #literary|jumbled up; in a state of disarray; disorderly
 W|w|血跡斑斑／血迹斑斑
- P|C|xue4ji4ban1ban1 |T|xie3ji1ban1ban1 |-C|xue3ji4ban1ban1;xie3ji4ban1ban1
+ P|C|xue4ji4ban1ban1 |-C|xue3ji4ban1ban1;xie3ji4ban1ban1 |T|xie3ji1ban1ban1
   C phrase
    D1||besmeared with blood; bloodstained
 W|w|悶聲不響／闷声不响
@@ -104733,6 +105003,7 @@ W|w|楹
  P||ying2
   C character
    D1||column; pillar (especially in front of a hall)
+  C classifier
    D2|- #literary|Classifier for buildings or rooms.
 W|w|乖覺／乖觉
  P||guai1jue2
@@ -105335,6 +105606,7 @@ W|w|爿
    D2|x #Hokkien|thin piece; slice
    D3|x #Eastern-Min #Southern-Min #Wu|side
    D4|x #Eastern-Min #Hokkien #linguistics|radical
+  C classifier
    D5|x #dialectal|Classifier for fields.
    D6|x #dialectal|Classifier for shops, factories, etc.
    D7|x #Hokkien|Classifier for slices.
@@ -107850,6 +108122,7 @@ W|w|莖／茎
  P||jing1 |x|jing4
   C character
    D1||stem; stalk; something like a stalk
+  C classifier
    D2||Classifier for strips or stalks of objects.
  P|x|ying1
   C character
@@ -109431,7 +109704,7 @@ W|w|閤／合
    D6||(alt. form 合, 闔) to close; to shut
    D7||(alt. form 闔) all of; whole of; entire
 W|w|薄膜
- P|C|bo2mo2 |T|bo2mo4 |-C|bao2mo2
+ P|C|bo2mo2 |-C|bao2mo2 |T|bo2mo4
   C noun
    D1||film; thin film
    D2|#botany #zoology|membrane
@@ -114226,7 +114499,7 @@ W|w|㞎
    D1|x #dialectal #often-childish|dung; faeces; excrement
    D2|x #dialectal|to excrete; to take a dump
  P||pa1
-  C character
+  C classifier
    D3|x #dialectal|Classifier for piles of excrement.
 W|w|㞎㞎
  P||ba3ba5
@@ -121811,7 +122084,7 @@ W|w|一驚／一惊
   C verb
    D1||to be surprised
 W|w|一骨碌
- P|C|yi1gu1lu5 |T|yi1gu2lu5 |-C|yi1gu1lu4
+ P|C|yi1gu1lu5 |-C|yi1gu1lu4 |T|yi1gu2lu5
   C verb
    D1|#colloquial|Describes a quick rolling action, especially of the body.
 W|w|一體兩面／一体两面
@@ -161421,7 +161694,7 @@ W|w|儲蓄銀行／储蓄银行
   C noun
    D1||savings bank
 W|w|儲藏室／储藏室
- P|C|chu3cang2shi4 |T|chu2cang2shi4 |-C|chu3cang2shi3
+ P|C|chu3cang2shi4 |-C|chu3cang2shi3 |T|chu2cang2shi4
   C noun
    D1||storage room; storeroom
     XM||間／间
@@ -177379,7 +177652,7 @@ W|w|削壁
   C noun
    D1||precipice; cliff
 W|w|削尖
- P|C|xiao1jian1 |T|xue4jian1 |-C|xue1jian1
+ P|C|xiao1jian1 |-C|xue1jian1 |T|xue4jian1
   C verb
    D1||to sharpen (to make sharp)
 W|w|削筆刀／削笔刀
@@ -179483,10 +179756,11 @@ W|w|剾／𠛅
    D6|x #Mainland-China-Hokkien|to adjust a sail (to move a sea vessel forward with the wind)
    D7|x #Mainland-China-Hokkien|to abort (a baby)
    D8|x #Mainland-China-Hokkien|to toy maliciously with; to philander with (a woman)
-   D9|x #Mainland-China-Hokkien|Classifier for wool.
    D10|x #Taiwanese-Hokkien|to ridicule; to satirize
    D11|x #Quanzhou-Hokkien|to remove earwax
    D12|x #Zhangzhou-Hokkien|to eliminate fats off one's body by consuming something unpalatable
+  C classifier
+   D9|x #Mainland-China-Hokkien|Classifier for wool.
 W|w|剿戮
  P||jiao3lu4
   C verb
@@ -185001,11 +185275,12 @@ W|w|匜
 W|w|匝
  P||za1
   C character
-   D1|- #dialectal #literary|Classifier for circuits or circles.
-   D2|x #dialectal|Classifier for times, as in frequency.
    D3|- #literary|to surround; to encircle
    D4|- #literary|to spread all over; to reach (a limit); to complete a full cycle
     X<||匝月
+  C classifier
+   D1|- #dialectal #literary|Classifier for circuits or circles.
+   D2|x #dialectal|Classifier for times, as in frequency.
 W|w|匝凱／匝凯
  P||Za1kai3
   C name
@@ -187906,7 +188181,7 @@ W|w|卓見／卓见
   C noun
    D1||excellent opinion; brilliant idea
 W|w|卓識／卓识
- P|C|zhuo2shi2 |T|zhuo2shi4 |-C|zhuo1shi2
+ P|C|zhuo2shi2 |-C|zhuo1shi2 |T|zhuo2shi4
   C noun
    D1||sagacity; clearsightedness; superior judgement
 W|w|協元／协元
@@ -190354,6 +190629,7 @@ W|w|卮
  P||zhi1
   C character
    D1|x #historical|cylindrical wine vessel, often with a lid, handle, and three legs
+  C classifier
    D2||Classifier for the volume of liquid in one zhi (goblet).
 W|w|卯時／卯时
  P||mao3shi2
@@ -195352,7 +195628,7 @@ W|w|口嫌體正直／口嫌体正直
 W|w|口子
  P||kou3zi5
   C classifier
-   D1||Classifier for families or members of a family: people ⇒ all nouns using this classifier
+   D1||Classifier for families or members of a family: people
   C noun
    D2||hole; opening (in an object)
    D3||cut; cleft (in the human body)
@@ -209994,6 +210270,7 @@ W|w|喙
   C character
    D1||beak; snout
    D2|x #Min #obsolete|mouth
+  C classifier
    D3|x #Min|Classifier for bites or mouthfuls.
 W|w|喙突
  P|C|hui4tu1 |T|hui4tu2
@@ -211482,7 +211759,7 @@ W|w|嗐
   C character
    D1||alas (an interjection)
 W|w|嗑
- P||ke4 |T|he2 |-C|ke1 |x|xia1;xia2
+ P||ke4 |-C|ke1 |T|he2 |x|xia1;xia2
   C character
    D1||to crack between the teeth
    D2||to talk; to gab
@@ -211626,7 +211903,7 @@ W|w|嗜血
    D1||bloodthirsty; blood-sucking
    D2||hemophile
 W|w|嗜血桿菌／嗜血杆菌
- P|C|shi4xue4 gan3jun1 |T|shi4xie3 gan3jun4 |-C|shi4xue3 gan3jun1
+ P|C|shi4xue4 gan3jun1 |-C|shi4xue3 gan3jun1 |T|shi4xie3 gan3jun4
   C noun
    D1|#bacteriology|(～屬) Haemophilus
 W|w|嗜酒
@@ -221227,6 +221504,7 @@ W|w|坵／丘
  P||qiu1
   C character
    D1||mound; hill
+  C classifier
    D2|x #dialectal|Classifier for fields: plot
 W|w|坷
  P||ke3
@@ -251522,7 +251800,7 @@ W|w|室韋／室韦
    D1|x #historical|Shiwei, an ancient ethnic group in China
    D2|x #historical|previous county in Hulunbuir
 W|w|室顫／室颤
- P|C|shi4chan4 |T|shi4zhan4 |-C|shi3chan4
+ P|C|shi4chan4 |-C|shi3chan4 |T|shi4zhan4
   C noun
    D1|#pathology|Short for 心室顫動／心室颤动 (xīnshì chàndòng, “ventricular fibrillation”).
 W|w|宥
@@ -254237,6 +254515,7 @@ W|w|寣
  P||hu1
   C character
    D1||sound of a child wailing
+  C classifier
    D2|x #Northern-Wu|Classifier for a period between falling asleep and naturally waking up.
 W|w|寤
  P||wu4
@@ -264944,6 +265223,7 @@ W|w|峰
   C character
    D1||peak; summit
    D2||hump (of a camel)
+  C classifier
    D3||Classifier for camels.
 W|w|峰值
  P||feng1zhi2
@@ -270961,8 +271241,9 @@ W|w|帙
   C character
    D1||fabric slipcase for a book or painting
    D2||to arrange; to sort out (books)
-   D3||Classifier for sets of books in a slipcase.
    D4||a surname
+  C classifier
+   D3||Classifier for sets of books in a slipcase.
 W|w|帚
  P||zhou3
   C character
@@ -271998,9 +272279,10 @@ W|w|幀率／帧率
 W|w|幀／帧
  P|C|zhen1 |T|zheng4
   C character
-   D1||Classifier for pictures.
    D2|#computing|frame, fps (frame per second)
     X<||掉幀／掉帧
+  C classifier
+   D1||Classifier for pictures.
 W|w|幁
  P||xu1
   C character
@@ -282508,8 +282790,9 @@ W|w|徛
    D11|x #Southern-Min|to stay
    D12|x #Chuqu-Wu #Datian-Min #Northern-Min|to build (a house)
    D13|x #Southern-Min|stand (something that keeps an object upright)
-   D14|x #Southern-Min|Classifier for upright objects.
    D15|x #Southern-Min|vertical stroke in a Chinese character (丨)
+  C classifier
+   D14|x #Southern-Min|Classifier for upright objects.
 W|w|徛靈／徛灵
  P||an1ling2
   C verb
@@ -283702,7 +283985,7 @@ W|w|微絨毛／微绒毛
   C noun
    D1|#anatomy|microvillus
 W|w|微絲血管／微丝血管
- P|C|wei1si1 xue4guan3 |T|wei2si1 xie3guan3 |-C|wei1si1 xue3guan3;wei1si1 xie3guan3
+ P|C|wei1si1 xue4guan3 |-C|wei1si1 xue3guan3;wei1si1 xie3guan3 |T|wei2si1 xie3guan3
   C noun
    D1|#anatomy|capillary
     XM||根;條／条
@@ -283747,7 +284030,7 @@ W|w|微處理機／微处理机
   C noun
    D1|#computer-hardware|microprocessor
 W|w|微血管
- P|C|wei1xue4guan3 |T|wei2xie3guan3 |-C|wei1xue3guan3
+ P|C|wei1xue4guan3 |-C|wei1xue3guan3 |T|wei2xie3guan3
   C noun
    D1|#anatomy|capillary
 W|w|微血管充填
@@ -284721,7 +285004,7 @@ W|w|心室撲動／心室扑动
   C noun
    D1|#pathology|ventricular flutter (VF)
 W|w|心室顫動／心室颤动
- P|C|xin1shi4 chan4dong4 |T|xin1shi4 zhan4dong4 |-C|xin1shi3 chan4dong4
+ P|C|xin1shi4 chan4dong4 |-C|xin1shi3 chan4dong4 |T|xin1shi4 zhan4dong4
   C noun
    D1|#pathology|ventricular fibrillation
 W|w|心宿
@@ -288379,7 +288662,7 @@ W|w|怯口
   C noun
    D1||Synonym of 變口／变口 (biànkǒu)
 W|w|怯場／怯场
- P|C|qie4chang3 |T|que4chang2 |-C|qie4chang2 |-T|que4chang3
+ P|C|qie4chang3 |-C|qie4chang2 |T|que4chang2 |-T|que4chang3
   C verb
    D1||to have stage fright
 W|w|怯夫
@@ -302373,9 +302656,10 @@ W|w|抔
  P||pou2
   C character
    D1||to hold with cupped hands
-   D2||classifier for handfuls of things
    D3|x #Hokkien|to gather up; to rake up; to rake in (into a pile on the ground, etc.)
    D4|x #Hokkien #figurative|to rake in (to receive or to collect a large quantity of money, etc.)
+  C classifier
+   D2||classifier for handfuls of things
 W|w|抔飲／抔饮
  P||pou2yin3
   C verb
@@ -308648,7 +308932,7 @@ W|w|捆束
   C verb
    D1||to bind; to tie up
 W|w|捆紮／捆扎
- P|C|kun3za1 |T|kun3zha2 |-C|kun3zha1
+ P|C|kun3za1 |-C|kun3zha1 |T|kun3zha2
   C verb
    D1||to tie up; to bind
 W|w|捆邊／捆边
@@ -313657,8 +313941,9 @@ W|w|搣
    D3||to snap one's fingers
    D4|x #Hakka|to do; to make
    D5|x #Taiwanese-Hokkien|to grab a handful with the hands
-   D6|x #Taiwanese-Hokkien|Classifier for handfuls of something, such as grains, soil, etc..
    D7|x #Wu|to twist; to turn; to screw
+  C classifier
+   D6|x #Taiwanese-Hokkien|Classifier for handfuls of something, such as grains, soil, etc..
 W|w|搦
  P||nuo4
   C character
@@ -313668,8 +313953,9 @@ W|w|搦
    D4|x #Hokkien|to rub and knead (with five fingers togethers)
    D5|x #Mainland-China-Hokkien|to tread on; to step on; to trample on
    D6|xC #Quanzhou #Xiamen-and-Taiwanese-Hokkien|to rub in water
-   D7|x #Quanzhou-and-Xiamen-Hokkien|Classifier for handfuls of something, such as grains, sand, soil.
    D8|x #Taiwanese-Hokkien|to clean; to cleanse; to wash; to tidy up
+  C classifier
+   D7|x #Quanzhou-and-Xiamen-Hokkien|Classifier for handfuls of something, such as grains, sand, soil.
 W|w|搦戰／搦战
  P||nuo4zhan4
   C verb
@@ -314279,6 +314565,7 @@ W|w|摞
  P||luo4;luo2
   C character
    D2||to stack; to pile up
+  C classifier
    D3||Classifier for objects in a pile or stack: pile; stack
 W|w|摟住／搂住
  P||lou3zhu4
@@ -324015,9 +324302,10 @@ W|w|斡
    D1||to revolve; to spin; to rotate
    D2||a surname: Wo
    D3|x #Southern-Min #Taiwanese-Hakka|to change direction; to turn
-   D4|x #Hokkien|Classifier for bends, curves or turns.
    D5|x #Hokkien|curved; crooked; bent
    D6|x #Zhangzhou-Hokkien|to safeguard; to shield; to back; to stick up for
+  C classifier
+   D4|x #Hokkien|Classifier for bends, curves or turns.
 W|w|斡旋
  P||wo4xuan2
   C verb
@@ -343938,6 +344226,7 @@ W|w&|枇
  P||pi2
   C character
    D1||Only used in 枇杷 (pípá).
+  C classifier
    D2|x #Southern-Min|Classifier for clusters.
  P|x|bi3
   C character
@@ -343990,6 +344279,7 @@ W|w|枋
    D1||sandalwood
    D2||tree used as timber
    D3|x #Southern-Min|slab
+  C classifier
    D4|x #Southern-Min|Classifier for pieces of object.
 W|w|枋寮
  P||Fang1liao2
@@ -349426,6 +349716,7 @@ W|w|梭
   C character
    D1||weaver's shuttle
    D2||go to and fro
+  C classifier
    D3||Classifier for shuttles of threads.
  P|x|xun4
   C character
@@ -351193,6 +351484,7 @@ W|w|椽
  P||chuan2
   C character
    D1||rafter; beam; support
+  C classifier
    D2||Classifier for rooms.
 W|w|椽子
  P||chuan2zi5
@@ -352266,7 +352558,7 @@ W|w|楻
    D4|x #Eastern-Min|to manage, control
 W|w|榀
  P||pin3
-  C character
+  C classifier
    D1||Classifier for roof beams and trusses.
 W|w|概似
  P||gai4si4
@@ -355701,7 +355993,7 @@ W|w|橦
   C character
    D3||to pierce
  P||zhong1
-  C character
+  C classifier
    D4||classifier for woods
 W|w|橩
  P||qiong2
@@ -356102,6 +356394,7 @@ W|w|橬
  P||qian2
   C character
    D1||accumulate firewood in water to raise fish
+  C classifier
    D2||Classifier for objects in bunches or bundles.
 W|w|橶
  P||ji2
@@ -357087,8 +357380,9 @@ W|w|欈
 W|w|欉
  P||cong1
   C character
-   D1|x #Southern-Min|Classifier for flowers, trees, etc.
    D2|x #Penang-Hokkien|tree
+  C classifier
+   D1|x #Southern-Min|Classifier for flowers, trees, etc.
 W|w|權且／权且
  P||quan2qie3
   C adv
@@ -370431,9 +370725,10 @@ W|w|沓
    D5|x #historical|An ancient county in modern Liaoning
    D6||a surname
    D7||Alternative form of 錔／𰾓 (tà)
+  C classifier
    D8||Classifier for a set of objects.
  P||ta4 |C|da2
-  C character
+  C classifier
    D9||Classifier for sheets of papers, etc.
 W|w|沓沓
  P||ta4ta4
@@ -390700,6 +390995,7 @@ W|w|潽
   C character
    D1|#informal|(of liquids) boil over, boil and spurt
    D2|x #Wu|(of liquids) to overflow; to spill from being too full
+  C classifier
    D3|x #Wu|Classifier for an unspecified amount of liquid collectively used for a certain application.
 W|w|潿洲島／涠洲岛
  P||Wei2zhou1dao3
@@ -414797,6 +415093,7 @@ W|w|甌／瓯
    D2||Abbreviation of 溫州／温州 (Wēnzhōu): Wenzhou (a prefecture-level city in Zhejiang, in southeastern China)
    D3||a surname
    D4|x #Penang-Hokkien|cup
+  C classifier
    D5|x #Penang-Hokkien|classifier for cups of drinks
 W|w|甏
  P||beng4;peng4
@@ -418606,8 +418903,9 @@ W|w|畈
  P||fan4
   C character
    D1|#dialect|cropland
-   D2||Classifier for large fields.
    D3||Used in placenames.
+  C classifier
+   D2||Classifier for large fields.
 W|w|畋
  P||tian2
   C character
@@ -437375,6 +437673,7 @@ W|w|碇
  P||ding4
   C character
    D1||anchor
+  C classifier
    D2|x #Southern-Min|Classifier for the weight of precious metal.
 W|w|碇內／碇内
  P||Ding4nei4
@@ -437754,8 +438053,9 @@ W|w|碟
   C character
    D1||small plate; small dish
    D2||dish (of food)
-   D3||Classifier for dishes of food: dish; plate
    D4|#computing|disc-based data storage device, such as a CD or a DVD
+  C classifier
+   D3||Classifier for dishes of food: dish; plate
 W|w|碟煞
  P||die2sha1
   C noun
@@ -438951,7 +439251,7 @@ W|w|磨洋工
  P||mo2yang2gong1
   C verb
    D1||to dawdle over one's work; to loaf on the job; to lie down on the job
-W|w|磨煉／磨炼;磨練/磨练
+W|w|磨煉／磨炼;磨練／磨练
  P||mo2lian4
   C noun
    D1||self-discipline; endurance
@@ -439074,6 +439374,7 @@ W|w|磴
    D1|- #literary|stone steps on ledge, cliff, or hill
    D2|- #literary|stone bridge with steps
    D3||stone bench; stone stool
+  C classifier
    D4||Classifier for steps or rungs.
  P|x|deng1
   C character
@@ -445324,12 +445625,13 @@ W|w|稔
   C character
    D1||year
    D2||(of crops, grains) to ripen; ripe; mature; fully-grown
-   D3||Classifier for number of crops grown in a year: crop; harvest
    D4||to accumulate in the course of time; to collect; to pile up
    D5||to be familiar with; to know
    D6||usually; normally
    D7||beautiful
    D8||Alternative form of 飪／饪 (rèn, “to steam (till cooked)”)
+  C classifier
+   D3||Classifier for number of crops grown in a year: crop; harvest
 W|w|稖頭／稖头
  P||bang4tou2
   C noun
@@ -447884,8 +448186,9 @@ W|w|窟
    D2||den; lair; a place where a certain kind of people or things gather
     X<||魔窟;貧民窟／贫民窟
    D3|x #Hokkien|depression; dip; hollow
-   D4|x #Hokkien|Classifier for holes, cavities, or hollows.
    D5|x #obsolete|house made of earth
+  C classifier
+   D4|x #Hokkien|Classifier for holes, cavities, or hollows.
 W|w|窟室
  P||ku1shi4 |x|ku1shi3
   C noun
@@ -451787,9 +452090,10 @@ W|w|箍
   C character
    D1||hoop; ring
    D2||to bind; to encircle
-   D3|x #Hakka #Hokkien #Malaysian-Cantonese #Teochew|Classifier for money: yuan; dollar; buck; peso; ringgit; rupiah
    D4|x #Tongan-Hokkien #vulgar|to fuck
    D5|xC #Gan #Wuhan-Mandarin #Xiang|to hug; to embrace
+  C classifier
+   D3|x #Hakka #Hokkien #Malaysian-Cantonese #Teochew|Classifier for money: yuan; dollar; buck; peso; ringgit; rupiah
 W|w|箍子
  P||gu1zi5
   C noun
@@ -452930,6 +453234,7 @@ W|w|篰
  P||bu4
   C character
    D1|x #dialectal|bamboo basket
+  C classifier
    D2||Classifier for food.
 W|w|篲
  P||hui4
@@ -453073,6 +453378,7 @@ W|w|簍／篓
  P||lou3
   C character
    D1||(bamboo) basket
+  C classifier
    D2||Classifier for things in a basket.
 W|w|簙
  P||bo2
@@ -461660,6 +461966,7 @@ W|w|絖／𬘢
  P||kuang4
   C character
    D1||Alternative form of 纊／纩 (kuàng, “silk wadding; silk floss”)
+  C classifier
    D2||Classifier for eighty threads.
 W|w|絛蟲病／绦虫病
  P||tao1chong2bing4
@@ -462333,7 +462640,7 @@ W|w|綁票／绑票
   C verb-object
    D1||to kidnap for ransom
 W|w|綁紮／绑扎
- P|C|bang3za1 |T|bang3zha2 |-C|bang3zha1
+ P|C|bang3za1 |-C|bang3zha1 |T|bang3zha2
   C verb
    D1||to tie up; to bind; to wrap
 W|w|綁縛／绑缚
@@ -464666,6 +464973,7 @@ W|w|緎／𰬟
  P||yu4
   C character
    D1||seam
+  C classifier
    D2|x #obsolete|Classifier for bundles of silk threads.
 W|w|緒言／绪言
  P||xu4yan2
@@ -465426,7 +465734,7 @@ W|w|緩釋／缓释
    D1|#pharmacology|sustained release
 W|w|緫
  P||zong1
-  C character
+  C classifier
    D1||classifier for silk
 W|w|緬A／缅A
  P||mian3ei1
@@ -465743,11 +466051,12 @@ W|w|縛／缚
    D1||to tie up; to bind; to truss
    D2|x #Hokkien|to weave from bamboo strips (tools, utensils, etc.)
    D3|x #Hokkien|feeling tight when worn (of clothes)
-   D4|x #Hokkien|Classifier for bundled items.
    D5|x #Mainland-China-Hokkien|to take on a contract; to undertake (a job, construction project, etc.)
    D6|x #Mainland-China-Hokkien|to wrap; to bind up
    D7|x #Xiamen-Hokkien|to rent; to lease
    D8||a surname
+  C classifier
+   D4|x #Hokkien|Classifier for bundled items.
 W|w|縞瑪瑙／缟玛瑙
  P||gao3ma3nao3
   C noun
@@ -467267,6 +467576,7 @@ W|w|纊／纩
    D1|- #literary|silk wadding; silk floss
    D2||silkworm cocoon
    D3||Alternative form of 曠／旷 (kuàng, “vast; broad”)
+  C classifier
    D4||Classifier for eighty threads.
 W|w|續任／续任
  P||xu4ren4
@@ -477240,7 +477550,7 @@ W|w|肉墩
   C noun
    D1||butcher block
 W|w|肉夾饃／肉夹馍
- P|C|rou4jia1mo2 |T|rou4jia2mo2 |-C|rou4ga1mo2
+ P|C|rou4jia1mo2 |-C|rou4ga1mo2 |T|rou4jia2mo2
   C noun
    D1||roujiamo (sliced meat sandwich popular in northern China)
 W|w|肉孜節／肉孜节
@@ -495565,9 +495875,10 @@ W|w|茬
    D4|#agriculture|stubble (short stalks left in a field after crops have been harvested)
    D5||stubble (short, coarse hair on a man’s face)
    D6||something just said
+   D9||Alternative form of 槎 (chá, “to chop slantingly”).
+  C classifier
    D7||Classifier for batches of crops.
    D8||Classifier for generations or batches of people.
-   D9||Alternative form of 槎 (chá, “to chop slantingly”).
 W|w|茬兒
  P||cha2r5
   C noun
@@ -497795,6 +498106,7 @@ W|w&|莢／荚
  P||jia2
   C character
    D1||pods of leguminous plants
+  C classifier
    D2|x #Hokkien|Classifier for pod of legumes.
    D3|x #Taiwanese-Hokkien|Classifier for bananas.
 W|w|莥
@@ -501182,8 +501494,9 @@ W|w|葉／叶
    D2||era; epoch
    D3||leaf-like thing
     X<||肺葉／肺叶;百葉窗／百叶窗
-   D4||Classifier for small boats.
    D5||Alternative form of 頁／页 (“page”)
+  C classifier
+   D4||Classifier for small boats.
  P||Ye4;ye4 |T|She4
   C character
    D6||a surname
@@ -501678,6 +501991,7 @@ W|w|葤／荮
  P||zhou4
   C character
    D1|x #dialectal|to wrap or bind with straw
+  C classifier
    D2|x #dialectal|Classifier for objects (bowls, plates, etc.) bound with straw.
 W|w|葥
  P||qian2
@@ -501725,7 +502039,7 @@ W|w|葨
    D1||a kind of grass that grows in the mountains
 W|w|葩
  P||pa1
-  C character
+  C classifier
    D1|x #Southern-Min|Classifier for lamps.
    D2|x #Southern-Min|Classifier for things that are strung together.
 W|w|葩經／葩经
@@ -503227,8 +503541,9 @@ W|w|蓬
    D4||disheveled
    D5||flourishing; vigorous
    D6|#colloquial|fluffy; soft
-   D7||Classifier for clumps of items.
    D8||a surname
+  C classifier
+   D7||Classifier for clumps of items.
 W|w|蓬山
  P||Peng2shan1
   C name
@@ -503920,6 +504235,7 @@ W|w|蔸
  P||dou1
   C character
    D1|x #dialectal|root and stem of certain plants
+  C classifier
    D2|x #dialectal|Classifier for plants: clump
 W|w|蔻
  P||kou4
@@ -504057,6 +504373,7 @@ W|w|蕊
   C character
    D1|#botany|stamen; gynoecium (reproductive organ of a flower)
    D2||flower bud
+  C classifier
    D3|x #Hokkien #Taiwanese-Hakka #Teochew|Classifier for flowers and eyes.
 W|w|蕍
  P||yu2
@@ -507861,7 +508178,7 @@ W|w|虋
   C character
    D1|x #obsolete|red-stalked millet
 W|w|虎不拉
- P|C|hu4bu5la3 |T|hu3bu5la1 |-C|hu4ba5la3;hu4bo5la3
+ P|C|hu4bu5la3 |-C|hu4ba5la3;hu4bo5la3 |T|hu3bu5la1
   C adj
    D1|xC #Beijing|rude and unreasonable
   C noun
@@ -518098,8 +518415,9 @@ W|w|褔
  P||fu4
   C character
    D1||to be filled with; to brim with; to have in abundance
-   D2||Classifier for sets of clothing.
    D3||Alternative form of 副 (“to match; to correspond with”)
+  C classifier
+   D2||Classifier for sets of clothing.
 W|w|褕
  P||yu2
   C character
@@ -522415,6 +522733,7 @@ W|w|觳
   C character
    D1|x #Hokkien|small container cup for rice or liquid
    D2|x #Hokkien|small box
+  C classifier
    D3|x #Hokkien|Classifier for volume of a measuring cup.
 W|w|觳觫
  P||hu2su4
@@ -541802,9 +542121,10 @@ W|w|踅
    D1||to circle; to whirl; to spin
    D2||to walk to and fro
    D3||to turn back
-   D4|x #Mainland-China-Hokkien|Classifier for laps of a race, loops, orbits, etc.
    D5|x #Xiamen-Hokkien|to be tied up; to be entangled (by a matter, etc.)
    D6||Only used in 踅子.
+  C classifier
+   D4|x #Mainland-China-Hokkien|Classifier for laps of a race, loops, orbits, etc.
  P||chi4
   C character
    D7||to walk on one foot
@@ -544876,6 +545196,7 @@ W|w|軸／轴
    D4||spool; roller
    D5|xC #Teochew #Xiamen #Zhangzhou-and-Taiwanese-Hokkien|large, oblong banner of silk carrying an appropriate message (usually for funerals)
    D6||switch (of a keyboard key)
+  C classifier
    D7||Classifier for rolled-up things.
  P||zhou4;zhou2
   C character
@@ -562604,7 +562925,7 @@ W|w|量子點／量子点
   C noun
    D1|#nanotechnology #quantum-mechanics|quantum dot
 W|w|量度
- P|C|liang2du4 |T|liang2duo4 |-C|liang2duo2
+ P|C|liang2du4 |-C|liang2duo2 |T|liang2duo4
   C noun
    D1||measurement
   C verb
@@ -566866,6 +567187,7 @@ W|w|錠／锭
   C character
    D1||spindle
    D2||ingot-shaped tablet (of metal, medicine, etc.)
+  C classifier
    D3||Classifier for ingot-shaped objects: ingot
 W|w|錡／锜
  P||qi2
@@ -596774,6 +597096,7 @@ W|w|飣／饤
   C character
    D1|- #literary|to display food for show; to sacrifice
    D2|- #by-extension #literary|to prepare, arrange food
+  C classifier
    D3|- #literary|Classifier for dishes of food.
 W|w|飥／饦
  P||tuo1
@@ -601503,9 +601826,10 @@ W|w|駟／驷
    D1||a vehicle drawn by four horses
    D2||a horse
    D3||to drive; to ride
+   D6||a surname
+  C classifier
    D4|x #archaic|Classifier for vehicles drawn by four horses.
    D5|x #archaic|Classifier for horses.
-   D6||a surname
 W|w|駠
  P||liu2
   C character
@@ -618737,7 +619061,7 @@ W|w|齠／龆
    D1|- #literary|to lose (baby teeth) and get (permanent teeth)
 W|w|齣子／出子
  P||chu1zi5
-  C noun
+  C classifier
    D1||Classifier for times, as in frequency.
 W|w|齤／𱌲
  P||quan2
@@ -621530,7 +621854,7 @@ W|w|𣄸／𬀥
    D1||Alternative form of 禍／祸 (huò)
 W|w|𣅃
  P||zai3
-  C character
+  C classifier
    D1|x #dialectal|Classifier for bags of things.
 W|w|𣅍
  P||bing1
@@ -621673,7 +621997,7 @@ W|w|𣱼𣱼
    D1|- #literary|flexible; flowing
 W|w|𣲩
  P||pa2
-  C character
+  C classifier
    D1|x #Sichuanese|Classifier for bodily fluids and excrement: pool; puddle
 W|w|𣲶
  P||niu3
@@ -622975,7 +623299,6 @@ W|w|𩛩／𩠃
  P||jia2
   C character
    D1|x #Hokkien #Teochew|to wrap up; to stuff; to roll; to envelop (into something)
-   D2|x #Hokkien|Classifier for rolled or wrapped things: roll, wrap
    D3|x #Taiwanese-Hokkien|roll; wrap (food)
    D4|x #Taiwanese-Hokkien|to smear; to daub; to spread (e.g. jam over the surface of bread, etc.)
    D5|x #Hokkien #Teochew|to become moldy or fermented (due to lack of air from being wrapped up)
@@ -622984,6 +623307,8 @@ W|w|𩛩／𩠃
    D8|x #Taiwanese-Hokkien|to rust
    D9|x #Taiwanese-Hokkien|to be swallowed up (by waves)
    D10|x #Teochew|to generate (interest from one's capital)
+  C classifier
+   D2|x #Hokkien|Classifier for rolled or wrapped things: roll, wrap
 W|w|𩟗／𫗚
  P||jian3
   C character

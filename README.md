@@ -29,14 +29,27 @@ Wiktionary data imported from https://kaikki.org (January 2025)
 - an sqlite sample file is available in the github releases
 - currently supported tags and reference types can be found in rust/config.rs
 
-## TODO
+### Word Classes
 
-Some things that are on the radar:
-
-- semi-automatically:
-    - add tags to distinguish Chinese and Taiwanese pronunciations
-    - move some information in parentheses to tags: (chiefly Taiwan) --> t, (obsolete) --> x
-    - some entries have a very large number of definitions which would need to be assigned a relevance class using tags
-- characters all have the same class / part-of-speech label at the moment
-- comparison to MDBG data
-- add missing entries which are in vocabulary lists used by Chinese learners (e.g. HSK and TOCFL)
+- character
+- pron
+- noun
+- verb
+- adj
+- adv
+- intj
+- conj
+- prep
+- particle
+- phrase
+- name
+- verb-object
+- classifier
+- det
+- num
+- postp
+- proverb
+- prefix
+- symbol
+- suffix
+- circumpos

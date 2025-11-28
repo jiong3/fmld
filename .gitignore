@@ -4,3 +4,5 @@ target
 profile.json.gz
 docs/todo.txt
 rust/tests/txt2db2txt_test_output.txt
+*.db
+*.txt

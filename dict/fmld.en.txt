@@ -5425,11 +5425,14 @@ W|w|一般
  P||yi1ban1
   C adj
    D1||general; generic; typical
+    X~||平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
    D2||so-so; average
+    X~||平常#D2
    D3||same; identical
    D4|#grammar|(tense) simple
   C adv
    D5||usually; in general; generally
+    X~||平常#D3;通常#D2;慣常／惯常#D2
    D6||(像 (xiàng) ) (just) like
    D7||in the same degree
 W|w|參加／参加
@@ -7401,8 +7404,10 @@ W|w|經常／经常
  P||jing1chang2
   C adj
    D1||ordinary; everyday; common
+    X~||一般#D1;平常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
   C adv
    D2||often; regularly; frequently
+    X~||慣常／惯常#D2
 W|w|全
  P||quan2
   C character
@@ -8976,9 +8981,12 @@ W|w|平常
  P||ping2chang2
   C adj
    D1||ordinary; common; usual; not rare; unexceptional
+    X~||一般#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
    D2|#euphemistic|so-so; average
+    X~||一般#D2
   C adv
    D3||ordinarily; usually; generally
+    X~||一般#D5;通常#D2;慣常／惯常#D2
 W|w|討論／讨论
  P||tao3lun4
   C verb
@@ -16359,6 +16367,7 @@ W|w|普通
  P||pu3tong1
   C adj
    D1||ordinary; plain; average; nothing special; general
+    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;平凡#D1;慣常／惯常#D1
    D2||common; universal; widespread
 W|w|面對／面对
  P||mian4dui4
@@ -18442,8 +18451,10 @@ W|w|通常
  P||tong1chang2
   C adj
    D1||regular; usual; normal
+    X~||一般#D1;平常#D1;經常／经常#D1;普通#D1;平凡#D1;慣常／惯常#D1
   C adv
    D2||usually; normally; generally; ordinarily
+    X~||一般#D5;平常#D3;慣常／惯常#D2
 W|w|稍
  P||shao1;shao4
   C character
@@ -28082,6 +28093,7 @@ W|w|平凡
  P||ping2fan2
   C adj
    D1||ordinary; simple; uneventful; mediocre; common; routine
+    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;慣常／惯常#D1
    D2|#mathematics|trivial
 W|w|涼快／凉快
  P||liang2kuai4
@@ -101407,8 +101419,10 @@ W|w|慣常／惯常
  P||guan4chang2
   C adj
    D1||usual; customary
+    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1
   C adv
    D2||usually; often; regularly
+    X~||一般#D5;平常#D3;經常／经常#D2;通常#D2
 W|w|勞役／劳役
  P||lao2yi4
   C noun

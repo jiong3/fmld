@@ -49294,7 +49294,7 @@ W|w|施展
  P||shi1zhan3
   C verb
    D1||to put to (good) use; to give free play to
-W|w|訂婚／订婚
+W|w|訂婚／订婚;定婚
  P||ding4hun1
   C verb
    D1||to get engaged; to be betrothed
@@ -51859,11 +51859,6 @@ W|w|車輛／车辆
  P||che1liang4
   C noun
    D1|#collective|vehicle; car
-W|w|唇
- P||zhen1;zhen4
-  C character
-   D1||terrified
-   D2||sound of fear; trembling
 W|w|打消
  P||da3xiao1
   C verb
@@ -76208,7 +76203,7 @@ W|w|著實／着实
   C adv
    D1||really; indeed
    D2||severely; seriously
-W|w|嘴脣／嘴唇
+W|w|嘴唇;嘴脣／嘴唇
  P||zui3chun2
   C noun
    D1||lip(s)
@@ -98422,12 +98417,16 @@ W|w|繳交／缴交
  P||jiao3jiao1
   C verb
    D1||to hand in (fee, etc.); to hand over
-W|w|脣／唇
+W|w|唇;脣／唇
  P||chun2
   C character
    D1|#anatomy|lip
    D2|#figurative|lip-shaped thing
    D3|x #Hakka #Southern-Min #literary|side; edge
+ P|X|zhen1;zhen4
+  C character
+   D4|X|terrified
+   D5|X|sound of fear; trembling
 W|w|五臺山／五台山
  P||Wu3tai2 Shan1
   C name
@@ -126573,11 +126572,11 @@ W|w|上胸圍／上胸围
  P||shang4xiong1wei2
   C noun
    D1||overbust circumference
-W|w|上脣舉肌／上唇举肌
+W|w|上唇舉肌／上唇举肌;上脣舉肌／上唇举肌
  P||shang4chun2ju3ji1
   C noun
    D1|#anatomy|levator labii superioris muscle
-W|w|上脣／上唇
+W|w|上唇;上脣／上唇
  P||shang4chun2
   C noun
    D1||upper lip
@@ -127766,11 +127765,11 @@ W|w|下胸圍／下胸围
  P||xia4xiong1wei2
   C noun
    D1||underbust circumference
-W|w|下脣掣肌／下唇掣肌
+W|w|下唇掣肌;下脣掣肌／下唇掣肌
  P||xia4chun2che4ji1
   C noun
    D1|#anatomy|depressor labii inferioris muscle
-W|w|下脣／下唇
+W|w|下唇;下脣／下唇
  P||xia4chun2
   C noun
    D1||lower lip
@@ -164118,7 +164117,7 @@ W|w|兔肉
  P||tu4rou4
   C noun
    D1||rabbit meat
-W|w|兔脣／兔唇
+W|w|兔唇;兔脣／兔唇
  P||tu4chun2
   C noun
    D1||harelip
@@ -194353,11 +194352,11 @@ W|w|反背
   C verb
    D1|- #Hokkien #literary|to betray
    D2|- #Hokkien #literary|to be contrary; to go against
-W|w|反脣相稽／反唇相稽
+W|w|反唇相稽;反脣相稽／反唇相稽
  P||fan3chun2-xiang1ji1
   C phrase
    D1||to make a sarcastic remark rather than submit to another's criticism; to rebut with sarcastic remarks; to make a sarcastic comeback; to talk back
-W|w|反脣相譏／反唇相讥
+W|w|反唇相譏／反唇相讥;反脣相譏／反唇相讥
  P||fan3chun2-xiang1ji1
   C phrase
    D1||to make a sarcastic remark rather than submit to another's criticism; to rebut with sarcastic remarks; to make a sarcastic comeback; to talk back
@@ -212882,10 +212881,10 @@ W|w|嘴緊／嘴紧
  P||zui3jin3
   C adj
    D1||tight-lipped
-W|w|嘴脣兒／嘴唇儿
+W|w|嘴唇兒／嘴唇儿;嘴脣兒／嘴唇儿
  P||zui3chun2r5
   C noun
-   D1||Erhua form of 嘴脣／嘴唇 (zuǐchún, “lip”).
+   D1||Erhua form of 嘴唇 (zuǐchún, “lip”).
 W|w|嘴臉／嘴脸
  P||zui3lian3
   C noun
@@ -218056,7 +218055,7 @@ W|w|圓肉／圆肉
  P||yuan2rou4
   C noun
    D1||dried longan fruit
-W|w|圓脣／圆唇
+W|w|圓唇／圆唇;圓脣／圆唇
  P||yuan2chun2
   C adj
    D1|#linguistics|(of a vowel) rounded
@@ -234345,7 +234344,7 @@ W|w|大陪審團／大陪审团
  P||da4 pei2shen3tuan2
   C noun
    D1|#law|grand jury
-W|w|大陰脣／大阴唇
+W|w|大陰唇／大阴唇;大陰脣／大阴唇
  P||da4yin1chun2
   C noun
    D1|#anatomy|labia majora
@@ -260379,7 +260378,7 @@ W|w|小陰沙／小阴沙
  P||Xiao3yin1sha1
   C name
    D1||Xiaoyinsha, a former island of the Yangtze estuary now merged into Chongming Island in Shanghai
-W|w|小陰脣／小阴唇
+W|w|小陰唇／小阴唇;小陰脣／小阴唇
  P||xiao3yin1chun2
   C noun
    D1|#anatomy|labia minora
@@ -390532,7 +390531,7 @@ W|w|潤筆／润笔
    D1|x #dated|remuneration for a writer, painter, or calligrapher
   C verb
    D2||to dip in ink (of a writing brush)
-W|w|潤脣膏／润唇膏
+W|w|潤唇膏／润唇膏;潤脣膏／润唇膏
  P||run4chun2gao1
   C noun
    D1||lip balm
@@ -425761,7 +425760,7 @@ W|w|白胺酸
  P|C|bai2an4suan1 |T|bai2an1suan1
   C noun
    D1|T #biochemistry|Alternative name for 亮胺酸 (liàng'ànsuān, “leucine”).
-W|w|白脣鹿／白唇鹿
+W|w|白唇鹿;白脣鹿／白唇鹿
  P||bai2chun2lu4
   C noun
    D1||white-lipped deer; Thorold's deer (Cervus albirostris)
@@ -457983,7 +457982,7 @@ W|w|紅脖子／红脖子
  P||hong2bo2zi5
   C noun
    D1||redneck
-W|w|紅脣／红唇
+W|w|紅唇／红唇;紅脣／红唇
  P||hong2chun2
   C noun
    D1||ruddy lips
@@ -462592,7 +462591,7 @@ W|w|絳河／绛河
    D1||A legendary river of the South China Sea.
   C noun
    D2|- #literary|Milky Way
-W|w|絳脣／绛唇
+W|w|絳唇／绛唇;絳脣／绛唇
  P||jiang4chun2
   C noun
    D1|x #archaic|crimson lips; red lips
@@ -481916,75 +481915,75 @@ W|w|脢
  P||mei2
   C character
    D1||meat from the back of an animal
-W|w|脣亡齒寒／唇亡齿寒
+W|w|唇亡齒寒／唇亡齿寒;脣亡齒寒／唇亡齿寒
  P||chun2wang2chi3han2
   C phrase
    D1||to share a common lot; to share the same fate
-W|w|脣印／唇印
+W|w|唇印;脣印／唇印
  P||chun2yin4
   C noun
    D1||lip print
-W|w|脣彩／唇彩
+W|w|唇彩;脣彩／唇彩
  P||chun2cai3
   C noun
    D1||lip gloss
-W|w|脣毛／唇毛
+W|w|唇毛;脣毛／唇毛
  P||chun2mao2
   C noun
    D1||upper lip hair
-W|w|脣線筆／唇线笔
+W|w|唇線筆／唇线笔;脣線筆／唇线笔
  P||chun2xian4bi3
   C noun
    D1||lip liner
-W|w|脣線／唇线
+W|w|唇線／唇线;脣線／唇线
  P||chun2xian4
   C noun
    D1||lipline
-W|w|脣膏／唇膏
+W|w|唇膏;脣膏／唇膏
  P||chun2gao1
   C noun
    D1||lipstick (make-up for the lips)
     XM||支
    D2||lip balm
     XM||支
-W|w|脣若塗脂／唇若涂脂
+W|w|唇若塗脂／唇若涂脂;脣若塗脂／唇若涂脂
  P||chun2ruo4tu2zhi1 |x|chun2ruo4tu2zhi3
   C phrase
    D1||(of lips) bright red and plump
-W|w|脣裂／唇裂
+W|w|唇裂;脣裂／唇裂
  P||chun2lie4
   C noun
    D1|#pathology|cleft lip
-W|w|脣讀／唇读
+W|w|唇讀／唇读;脣讀／唇读
  P||chun2du2
   C noun
    D1||lipreading
-W|w|脣音／唇音
+W|w|唇音;脣音／唇音
  P||chun2yin1
   C noun
    D1|#phonetics|labial sound
-W|w|脣顎裂／唇颚裂
+W|w|唇顎裂／唇颚裂;脣顎裂／唇颚裂
  P||chun2e4lie4
   C noun
    D1|#pathology|cleft lip and cleft palate
-W|w|脣齒相依／唇齿相依
+W|w|唇齒相依／唇齿相依;脣齒相依／唇齿相依
  P||chun2chi3xiang1yi1
   C phrase
    D1|#figurative|to be closely related and mutually dependent (like the lips and teeth)
-W|w|脣齒音／唇齿音
+W|w|唇齒音／唇齿音;脣齒音／唇齿音
  P||chun2chi3yin1
   C noun
    D1|#phonetics|labiodental
-W|w|脣齒／唇齿
+W|w|唇齒／唇齿;脣齒／唇齿
  P||chun2chi3
   C adj
    D1|#figurative|intimately related; interdependent
   C noun
    D2|#literally|lips and teeth
-W|w|脣齶裂／唇腭裂
+W|w|唇齶裂／唇腭裂;脣齶裂／唇腭裂
  P||chun2e4lie4
   C noun
-   D1|#pathology|Alternative form of 脣顎裂／唇颚裂 (chún'èliè, “cleft lip and cleft palate”)
+   D1|#pathology|Alternative form of 唇顎裂／唇颚裂 (chún'èliè, “cleft lip and cleft palate”)
 W|w|脦
  P||de5;te5;te4
   C character
@@ -489984,7 +489983,7 @@ W|w|舌背音
  P||she2bei4yin1
   C noun
    D1|#phonetics|dorsal
-W|w|舌脣音／舌唇音
+W|w|舌唇音;舌脣音／舌唇音
  P||she2chun2yin1
   C noun
    D1|#phonetics|linguolabial sound
@@ -490246,7 +490245,7 @@ W|w|舚破
  P||tian4po4
   C verb
    D1||lick one's lips
-W|w|舚脣咂嘴／舚唇咂嘴
+W|w|舚唇咂嘴;舚脣咂嘴／舚唇咂嘴
  P||tian4chun2za1zui3
   C phrase
    D1||well-fed and satisfied after a meal
@@ -516907,7 +516906,7 @@ W|w|裂縫噴發口／裂缝喷发口
  P||lie4feng2 pen1fa1kou3
   C noun
    D1|#geology #volcanology|fissure vent
-W|w|裂脣／裂唇
+W|w|裂唇;裂脣／裂唇
  P||lie4chun2
   C noun
    D1|#pathology|cleft lip
@@ -530309,7 +530308,7 @@ W|w|護胸／护胸
  P||hu4xiong1
   C noun
    D1|#fencing|chest guard
-W|w|護脣膏／护唇膏
+W|w|護唇膏／护唇膏;護脣膏／护唇膏
  P||hu4chun2gao1
   C noun
    D1||lip balm
@@ -530529,7 +530528,7 @@ W|w|讀者群／读者群
  P||du2zhe3qun2
   C noun
    D1||readership
-W|w|讀脣／读唇
+W|w|讀唇／读唇;讀脣／读唇
  P||du2chun2
   C verb-object
    D1||to lipread
@@ -531975,7 +531974,7 @@ W|w|豐胸／丰胸
    D1||to enhance one's breasts through breast surgery
   C noun
    D2||large breasts
-W|w|豐脣／丰唇
+W|w|豐唇／丰唇;豐脣／丰唇
  P||feng1chun2
   C noun
    D1||plump lips
@@ -545696,7 +545695,7 @@ W|w|輕聲／轻声
    D1||quietly; softly
   C noun
    D2|#phonology|neutral tone; in Hanyu Pinyin usually left unmarked (or optionally marked with ·) and in bopomofo marked with ˙
-W|w|輕脣音／轻唇音
+W|w|輕唇音／轻唇音;輕脣音／轻唇音
  P||qing1chun2yin1
   C noun
    D1|#Chinese-phonetics|labiodental
@@ -562367,7 +562366,7 @@ W|w|重聽／重听
  P||zhong4ting1
   C adj
    D1||hard of hearing
-W|w|重脣音／重唇音
+W|w|重唇音;重脣音／重唇音
  P||zhong4chun2yin1
   C noun
    D1|#Chinese-phonetics|bilabial
@@ -578780,7 +578779,7 @@ W|w|陰線／阴线
  P||yin1xian4
   C noun
    D1|#economics|bearish candlestick (in a candlestick chart)
-W|w|陰脣／阴唇
+W|w|陰唇／阴唇;陰脣／阴唇
  P||yin1chun2
   C noun
    D1|#anatomy|labia
@@ -582860,11 +582859,11 @@ W|w|雙胍／双胍
  P||shuang1gua1
   C noun
    D1|#organic-chemistry|biguanide
-W|w|雙脣音／双唇音
+W|w|雙唇音／双唇音;雙脣音／双唇音
  P||shuang1chun2yin1
   C noun
    D1|#phonetics|bilabial
-W|w|雙脣／双唇
+W|w|雙唇／双唇;雙脣／双唇
  P||shuang1chun2
   C noun
    D1|#anatomy|(two) lips
@@ -603213,7 +603212,7 @@ W|w|驢肉／驴肉
   C noun
    D1||donkey meat
     X<||驢肉火燒／驴肉火烧
-W|w|驢脣不對馬嘴／驴唇不对马嘴
+W|w|驢唇不對馬嘴／驴唇不对马嘴;驢脣不對馬嘴／驴唇不对马嘴
  P||lv2chun2 bu4 dui4 ma3zui3
   C phrase
    D1||the answer is totally irrelevant to the question; a square peg cannot fit into a round hole; to be beside the point
@@ -607622,7 +607621,7 @@ W|w|魚肝油／鱼肝油
  P||yu2gan1you2
   C noun
    D1||cod liver oil
-W|w|魚脣／鱼唇
+W|w|魚唇／鱼唇;魚脣／鱼唇
  P||yu2chun2
   C adj
    D1|#Internet-slang #humorous #neologism|Alternative form of 愚蠢 (yúchǔn)
@@ -618447,7 +618446,7 @@ W|w|鼻胃管
  P||bi2wei4guan3
   C noun
    D1|#medicine|nasogastric tube (NG tube)
-W|w|鼻脣舉肌／鼻唇举肌
+W|w|鼻唇舉肌／鼻唇举肌;鼻脣舉肌／鼻唇举肌
  P||bi2chun2ju3ji1
   C noun
    D1|#anatomy|levator labii superioris alaeque nasi muscle
@@ -618968,7 +618967,7 @@ W|w|齒系／齿系
  P||chi3xi4
   C noun
    D1|#dentistry|dentition
-W|w|齒脣音／齿唇音
+W|w|齒唇音／齿唇音;齒脣音／齿唇音
  P||chi3chun2yin1
   C noun
    D1|#phonetics|labiodental

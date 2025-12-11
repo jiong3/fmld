@@ -216,6 +216,7 @@ fn main() -> anyhow::Result<()> {
     db_autofix::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
 
     db_autofix::sort_pronunciations_by_tag_rank(&tx)?;
+    db_autofix::sort_words_after_pivot(&tx)?;
     tx.commit()?;
 
     if let Some(meta_path) = &cli.finalize_with_meta {

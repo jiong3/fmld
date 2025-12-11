@@ -11,7 +11,6 @@
   Format Description
   
   - encoded in utf-8
-   - character variant mapping: 裏->裡
   - single indentation (space or tab) creates a child element
   - double indentation relative to previous line continues previous line (intended for notes and comments)
   - the first letter indicates the content of the line:
@@ -2290,7 +2289,7 @@ W|w|帶／带
    D14|x #Hokkien|to worry about; to care for
    D15|x #Hokkien|to involve in trouble; to implicate
    D16|#Internet-slang #neologism|Pronunciation spelling of 大.
-W|w|裡／里
+W|w|裡／里;裏／里
  P||li3
   C character
    D1|#postpositional|in; inside
@@ -46789,7 +46788,7 @@ W|w|務／务
    D5||26th tetragram of the Taixuanjing; "endeavor" (𝌟)
    D6||a surname
 W|w|癌症
- P||ai2zheng4 |T|yan2zheng4
+ P||ai2zheng4 |-T|yan2zheng4
   C noun
    D1||cancer (disease in which the cells of a tissue undergo proliferation)
 W|w|稱為／称为
@@ -53622,7 +53621,7 @@ W|w|文具
    D1||stationery
    D2|x #archaic|article devoid of substance or practicality
 W|w|癌癥／癌症
- P|C|ai2zheng1 |T|yan2zheng1
+ P||ai2zheng1 |-T|yan2zheng1
   C noun
    D1||Alternative term for 癌症 (áizhèng, “cancer”).
 W|w|隱約／隐约
@@ -58997,7 +58996,7 @@ W|w|先後／先后
   C adv
    D1||continuously; one after another; bit by bit; in turn; successively; in succession
 W|w|癌
- P||ai2;yan2
+ P||ai2 |-T|yan2
   C character
    D1||cancer; carcinoma
     X<||癌症;致癌;肺癌;直男癌
@@ -67358,6 +67357,9 @@ W|w|藥水／药水
  P||yao4shui3
   C noun
    D1||medicine in liquid form; bottled medicine; lotion
+    X<||眼藥水／眼药水#D1
+   D2||chemical solution (hair dye, perm solution, film developer, etc.)
+   D3|#video-games|potion
 W|w|弊端
  P||bi4duan1
   C noun
@@ -126387,7 +126389,7 @@ W|w|上皮
   C noun
    D1|#histology|epithelium
 W|w|上皮癌
- P|C|shang4pi2ai2 |T|shang4pi2yan2
+ P||shang4pi2ai2 |-T|shang4pi2yan2
   C noun
    D1||epithelioma
 W|w|上皮組織／上皮组织
@@ -137134,7 +137136,7 @@ W|w|乳牛
    D1||milk cow; dairy cow; dairy cattle
    D2|#regional|female cow
 W|w|乳癌
- P|C|ru3ai2 |T|ru3yan2
+ P||ru3ai2 |-T|ru3yan2
   C noun
    D1||breast cancer
 W|w|乳癖
@@ -137229,7 +137231,7 @@ W|w|乳腺炎
   C noun
    D1|#pathology|mastitis
 W|w|乳腺癌
- P|C|ru3xian4ai2 |T|ru3xian4yan2
+ P||ru3xian4ai2 |-T|ru3xian4yan2
   C noun
    D1||breast cancer
 W|w|乳膏
@@ -177860,7 +177862,7 @@ W|w|前列腺炎
   C noun
    D1|#pathology|prostatitis
 W|w|前列腺癌
- P|C|qian2lie4xian4ai2 |T|qian2lie4xian4yan2
+ P||qian2lie4xian4ai2 |-T|qian2lie4xian4yan2
   C noun
    D1||prostate cancer
 W|w|前列腺素
@@ -195879,7 +195881,7 @@ W|w|口腔潰瘍／口腔溃疡
   C noun
    D1|#pathology|aphthous ulcer; mouth ulcer; canker sore
 W|w|口腔癌
- P|C|kou3qiang1ai2 |T|kou3qiang1yan2
+ P||kou3qiang1ai2 |-T|kou3qiang1yan2
   C noun
    D1||oral cancer
 W|w|口腔科
@@ -210135,7 +210137,7 @@ W|w|喉炎
   C noun
    D1|#pathology|laryngitis
 W|w|喉癌
- P|C|hou2ai2 |T|hou2yan2
+ P||hou2ai2 |-T|hou2yan2
   C noun
    D1||throat cancer
 W|w|喉科
@@ -233569,7 +233571,7 @@ W|w|大腸桿菌／大肠杆菌
   C noun
    D1||Escherichia coli
 W|w|大腸癌／大肠癌
- P|C|da4chang2ai2 |T|da4chang2yan2
+ P||da4chang2ai2 |-T|da4chang2yan2
   C noun
    D1||colorectal cancer; colon cancer
 W|w|大腸鏡檢查／大肠镜检查
@@ -245931,7 +245933,7 @@ W|w|子宮環／子宫环
   C noun
    D1|#contraception #medicine|intrauterine device (IUD); coil
 W|w|子宮癌／子宫癌
- P||zi3gong1ai2;zi3gong1yan2
+ P||zi3gong1ai2 |-T|zi3gong1yan2
   C noun
    D1||uterine cancer
 W|w|子宮肌瘤／子宫肌瘤
@@ -245952,7 +245954,7 @@ W|w|子宮頸炎／子宫颈炎
   C noun
    D1|#pathology|cervicitis
 W|w|子宮頸癌／子宫颈癌
- P|C|zi3gong1jing3ai2 |T|zi3gong1jing3yan2
+ P||zi3gong1jing3ai2 |-T|zi3gong1jing3yan2
   C noun
    D1||cervical cancer
 W|w|子宮頸／子宫颈
@@ -252022,7 +252024,7 @@ W|w|宮頸塗片／宫颈涂片
   C noun
    D1|#medicine|Pap smear
 W|w|宮頸癌／宫颈癌
- P|C|gong1jing3ai2 |T|gong1jing3yan2
+ P||gong1jing3ai2 |-T|gong1jing3yan2
   C noun
    D1|#oncology|cervical cancer
 W|w|宮頸糜爛／宫颈糜烂
@@ -259798,7 +259800,7 @@ W|w|小紅點／小红点
   C name
    D1||Little Red Dot (nickname for Singapore)
 W|w|小細胞肺癌／小细胞肺癌
- P|C|xiao3xi4bao1 fei4ai2 |T|xiao3xi4bao1 fei4yan2
+ P||xiao3xi4bao1 fei4ai2 |-T|xiao3xi4bao1 fei4yan2
   C noun
    D1|#pathology|small cell lung cancer; small-cell carcinoma
 W|w|小組件／小组件
@@ -290059,7 +290061,7 @@ W|w|患病率
   C noun
    D1|#epidemiology|prevalence of a disease
 W|w|患癌
- P|C|huan4ai2 |T|huan4yan2
+ P||huan4ai2 |-T|huan4yan2
   C verb
    D1|#medicine|to get cancer; to be diagnosed with cancer
 W|w|患處／患处
@@ -295014,7 +295016,7 @@ W|w|懶漢／懒汉
   C noun
    D1||lazybones, idle fellow
 W|w|懶癌／懒癌
- P|C|lan3ai2 |T|lan3yan2
+ P||lan3ai2 |-T|lan3yan2
   C noun
    D1|#humorous #neologism|“laziness cancer”; the underlying cause of one's slothfulness; biological reason for one's procrastination
 W|w|懶腰／懒腰
@@ -298790,7 +298792,7 @@ W|w|手痕
    D1||mark made from lines on the hand; fingerprint or handprint
    D2|- #literary|handwriting
 W|w|手癌
- P|C|shou3ai2 |T|shou3yan2
+ P||shou3ai2 |-T|shou3yan2
   C noun
    D1|#Internet-slang #humorous #neologism|a purported typing disorder, characterised by habitually sending texts containing many typos, sending the wrong emojis, replying with irrelevant content and so on
 W|w|手癢／手痒
@@ -302525,7 +302527,7 @@ W|w|抑止
   C verb
    D1||to restrain; to keep in check; to inhibit
 W|w|抑癌
- P|C|yi4ai2 |T|yi4yan2
+ P||yi4ai2 |-T|yi4yan2
   C verb
    D1|#biochemistry|to suppress tumour
 W|w|抑菌
@@ -303269,11 +303271,11 @@ W|w|抗瘧藥／抗疟药
   C noun
    D1||antimalarial; antiperiodic
 W|w|抗癌
- P|C|kang4ai2 |T|kang4yan2
+ P||kang4ai2 |-T|kang4yan2
   C verb
    D1|#medicine|to fight or prevent cancer; to be anticancer
 W|w|抗癌藥／抗癌药
- P|C|kang4ai2yao4 |T|kang4yan2yao4
+ P||kang4ai2yao4 |-T|kang4yan2yao4
   C noun
    D1|#medicine|anticancer drug
 W|w|抗禦／抗御
@@ -318247,7 +318249,7 @@ W|w|攝護腺炎／摄护腺炎
   C noun
    D1|T #pathology|prostatitis
 W|w|攝護腺癌／摄护腺癌
- P|C|she4hu4xian4ai2 |T|she4hu4xian4yan2
+ P||she4hu4xian4ai2 |-T|she4hu4xian4yan2
   C noun
    D1|T|prostate cancer
 W|w|攝護腺素／摄护腺素
@@ -347582,11 +347584,11 @@ W|w|根瘤菌
   C noun
    D1||Rhizobium
 W|w|根癌
- P|C|gen1ai2 |T|gen1yan2
+ P||gen1ai2 |-T|gen1yan2
   C noun
    D1|#phytopathology|crown gall
 W|w|根癌農桿菌／根癌农杆菌
- P|C|gen1ai2 nong2gan3jun1 |T|gen1yan2 nong2gan3jun4
+ P|C|gen1ai2 nong2gan3jun1 |T|gen1ai2 nong2gan3jun4 |-T|gen1yan2 nong2gan3jun4
   C noun
    D1||Agrobacterium tumefaciens
 W|w|根究
@@ -381394,7 +381396,7 @@ W|w|淋巴瘤
   C noun
    D1|#oncology #pathology|lymphoma
 W|w|淋巴癌
- P|C|lin2ba1ai2 |T|lin2ba1yan2
+ P||lin2ba1ai2 |-T|lin2ba1yan2
   C noun
    D1|#pathology|lymphoma
 W|w|淋巴管
@@ -418122,7 +418124,7 @@ W|w|甲狀腺球蛋白／甲状腺球蛋白
   C noun
    D1|#biochemistry|thyroglobulin
 W|w|甲狀腺癌／甲状腺癌
- P|C|jia3zhuang4xian4ai2 |T|jia3zhuang4xian4yan2
+ P||jia3zhuang4xian4ai2 |-T|jia3zhuang4xian4yan2
   C noun
    D1|#pathology|thyroid cancer
 W|w|甲狀腺素／甲状腺素
@@ -423188,31 +423190,31 @@ W|w|癉／瘅
   C character
    D1||disease, suffering, distress
 W|w|癌基因
- P|C|ai2ji1yin1 |T|yan2ji1yin1
+ P||ai2ji1yin1 |-T|yan2ji1yin1
   C noun
    D1|#genetics #oncology|oncogene
 W|w|癌患
- P|C|ai2huan4 |T|yan2huan4
+ P||ai2huan4 |-T|yan2huan4
   C noun
    D1|#medicine|cancer patient
 W|w|癌痛
- P|C|ai2tong4 |T|yan2tong4
+ P||ai2tong4 |-T|yan2tong4
   C noun
    D1||pain caused by cancer; cancer pain
 W|w|癌瘤
- P|C|ai2liu2 |T|yan2liu2
+ P||ai2liu2 |-T|yan2liu2
   C noun
    D1||cancer tumor
 W|w|癌細胞／癌细胞
- P|C|ai2xi4bao1 |T|yan2xi4bao1
+ P||ai2xi4bao1 |-T|yan2xi4bao1
   C noun
    D1||cancer cell
 W|w|癌腫／癌肿
- P|C|ai2zhong3 |T|yan2zhong3
+ P||ai2zhong3 |-T|yan2zhong3
   C noun
    D1|#oncology|malignant tumor; cancer
 W|w|癌變／癌变
- P|C|ai2bian4 |T|yan2bian4
+ P||ai2bian4 |-T|yan2bian4
   C noun
    D1|#medicine|carcinogenesis; cancerization
 W|w|癍
@@ -428337,7 +428339,7 @@ W|w|皮膚病／皮肤病
   C noun
    D1|#medicine|dermatosis; skin disease
 W|w|皮膚癌／皮肤癌
- P||pi2fu1ai2 |T|pi2fu1yan2
+ P||pi2fu1ai2 |-T|pi2fu1yan2
   C noun
    D1||skin cancer
 W|w|皮膚科／皮肤科
@@ -430359,7 +430361,7 @@ W|w|直男
    D1|#neologism #slang|heterosexual man; straight man
    D2|#neologism #slang|man who fails to understand women
 W|w|直男癌
- P|C|zhi2nan2ai2 |T|zhi2nan2yan2
+ P||zhi2nan2ai2 |-T|zhi2nan2yan2
   C noun
    D1|#derogatory #neologism #slang|male chauvinism
 W|w|直疝
@@ -430425,7 +430427,7 @@ W|w|直腸病／直肠病
   C noun
    D1|#medicine|colorectal disease
 W|w|直腸癌／直肠癌
- P|C|zhi2chang2ai2 |T|zhi2chang2yan2
+ P||zhi2chang2ai2 |-T|zhi2chang2yan2
   C noun
    D1||rectal cancer
 W|w|直腸直肚／直肠直肚
@@ -433372,7 +433374,7 @@ W|w|睩
    D2||eye roll
    D3||eye
 W|w|睪丸癌／睾丸癌
- P|C|gao1wan2ai2 |T|gao1wan2yan2 |x|gao3wan2ai2
+ P||gao1wan2ai2 |-T|gao1wan2yan2 |x|gao3wan2ai2
   C noun
    D1||testicular cancer
 W|w|睪丸網／睾丸网
@@ -434014,10 +434016,6 @@ W|w|矇矓／蒙眬
   C adj
    D1||(of eyes) heavy with sleep
    D2||(of vision) fuzzy; indistinct; blurred
-W|w|矇蔽／蒙蔽;蒙蔽
- P||meng2bi4
-  C verb
-   D1||to hoodwink; to deceive; to hide the truth from; to pull the wool over someone's eyes
 W|w|矇騙／蒙骗
  P||meng1pian4
   C verb
@@ -461439,7 +461437,7 @@ W|w|結盟／结盟
   C verb
    D1||to ally; to form an alliance
 W|w|結直腸癌／结直肠癌
- P|C|jie2zhi2chang2ai2 |T|jie2zhi2chang2yan2
+ P||jie2zhi2chang2ai2 |-T|jie2zhi2chang2yan2
   C noun
    D1|#pathology|colorectal cancer
 W|w|結直腸／结直肠
@@ -461526,7 +461524,7 @@ W|w|結腸炎／结肠炎
   C noun
    D1||colitis
 W|w|結腸癌／结肠癌
- P|C|jie2chang2ai2 |T|jie2chang2yan2
+ P||jie2chang2ai2 |-T|jie2chang2yan2
   C noun
    D1|#pathology|colon cancer
 W|w|結腸繫膜／结肠系膜
@@ -478572,7 +478570,7 @@ W|w|肝病
   C noun
    D1|#pathology|liver disease; hepatopathy; hepatosis
 W|w|肝癌
- P|C|gan1ai2 |T|gan1yan2
+ P||gan1ai2 |-T|gan1yan2
   C noun
    D1|#pathology|liver cancer; hepatoma
 W|w|肝硬化
@@ -478592,7 +478590,7 @@ W|w|肝素
   C noun
    D1|#biochemistry #medicine|heparin
 W|w|肝細胞癌／肝细胞癌
- P|C|gan1xi4bao1ai2 |T|gan1xi4bao1yan2
+ P||gan1xi4bao1ai2 |-T|gan1xi4bao1yan2
   C noun
    D1|#pathology|hepatocellular carcinoma
 W|w|肝總管／肝总管
@@ -479451,7 +479449,7 @@ W|w|肺癆／肺痨
   C noun
    D1|#pathology|(chiefly traditional Chinese medicine or regional) pulmonary tuberculosis
 W|w|肺癌
- P|C|fei4ai2 |T|fei4yan2
+ P||fei4ai2 |-T|fei4yan2
   C noun
    D1|#oncology|lung cancer
 W|w|肺積水／肺积水
@@ -479475,7 +479473,7 @@ W|w|肺腑之言
   C phrase
    D1||words from the heart; heartfelt words
 W|w|肺腺癌
- P|C|fei4xian4ai2 |T|fei4xian4yan2
+ P||fei4xian4ai2 |-T|fei4xian4yan2
   C noun
    D1|#oncology|lung adenocarcinoma
 W|w|肺臟／肺脏
@@ -479511,7 +479509,7 @@ W|w|肺魚／肺鱼
   C noun
    D1||lungfish
 W|w|肺鱗癌／肺鳞癌
- P|C|fei4lin2ai2 |T|fei4lin2yan2
+ P||fei4lin2ai2 |-T|fei4lin2yan2
   C noun
    D1|#informal|squamous-cell carcinoma of the lung
 W|w|肼
@@ -479616,7 +479614,7 @@ W|w|胃痛
    D1||stomachache
    D2||(in general) epigastric pain
 W|w|胃癌
- P|C|wei4ai2 |T|wei4yan2
+ P||wei4ai2 |-T|wei4yan2
   C noun
    D1|#pathology|gastric cancer; stomach cancer
 W|w|胃石
@@ -480996,7 +480994,7 @@ W|w|胰腺炎
   C noun
    D1|#pathology|pancreatitis
 W|w|胰腺癌
- P|C|yi2xian4ai2 |T|yi2xian4yan2
+ P||yi2xian4ai2 |-T|yi2xian4yan2
   C noun
    D1||pancreatic cancer
 W|w|胰臟炎／胰脏炎
@@ -481004,7 +481002,7 @@ W|w|胰臟炎／胰脏炎
   C noun
    D1|#pathology|pancreatitis
 W|w|胰臟癌／胰脏癌
- P|C|yi2zang4ai2 |T|yi2zang4yan2
+ P||yi2zang4ai2 |-T|yi2zang4yan2
   C noun
    D1|#HongKong|pancreatic cancer
 W|w|胰臟／胰脏
@@ -482654,7 +482652,7 @@ W|w|腎病／肾病
   C noun
    D1||nephropathy; nephrosis
 W|w|腎癌／肾癌
- P|C|shen4ai2 |T|shen4yan2
+ P||shen4ai2 |-T|shen4yan2
   C noun
    D1||kidney cancer
 W|w|腎皮質／肾皮质
@@ -482706,7 +482704,7 @@ W|w|腎絲球／肾丝球
   C noun
    D1|T|glomerulus (of the kidney)
 W|w|腎臟癌／肾脏癌
- P|C|shen4zang4ai2 |T|shen4zang4yan2
+ P||shen4zang4ai2 |-T|shen4zang4yan2
   C noun
    D1|#pathology|Alternative term for 腎癌／肾癌 (shèn'ái, “kidney cancer”).
 W|w|腎臟科／肾脏科
@@ -484010,7 +484008,7 @@ W|w|腸瘺／肠瘘
   C noun
    D1|#pathology|intestinal fistula
 W|w|腸癌／肠癌
- P|C|chang2ai2 |T|chang2yan2
+ P||chang2ai2 |-T|chang2yan2
   C noun
    D1||bowel cancer
 W|w|腸管／肠管
@@ -484302,7 +484300,7 @@ W|w|腺瘤
   C noun
    D1||adenoma
 W|w|腺癌
- P|C|xian4ai2 |T|xian4yan2
+ P||xian4ai2 |-T|xian4yan2
   C noun
    D1|#oncology|adenocarcinoma
 W|w|腺苷
@@ -484377,7 +484375,7 @@ W|w|膀胱炎
   C noun
    D1|#pathology|cystitis
 W|w|膀胱癌
- P||pang2guang1yan2 |x|pang2guang1ai2
+ P||pang2guang1ai2 |-T|pang2guang1yan2
   C noun
    D1||bladder cancer
 W|w|膀胱鏡／膀胱镜
@@ -485102,7 +485100,7 @@ W|w|膽管炎／胆管炎
   C noun
    D1|#pathology|cholangitis
 W|w|膽管癌／胆管癌
- P|C|dan3guan3ai2 |T|dan3guan3yan2
+ P||dan3guan3ai2 |-T|dan3guan3yan2
   C noun
    D1|#pathology|cholangiocarcinoma
 W|w|膽管／胆管
@@ -488541,19 +488539,19 @@ W|w|致病菌
   C noun
    D1|#immunology #pathology|pathogenic bacteria; bad germs
 W|w|致癌
- P|C|zhi4ai2 |T|zhi4yan2
+ P||zhi4ai2 |-T|zhi4yan2
   C verb
    D1||to cause cancer; to be carcinogenic
 W|w|致癌基因
- P|C|zhi4ai2 ji1yin1 |T|zhi4yan2 ji1yin1
+ P||zhi4ai2 ji1yin1 |-T|zhi4yan2 ji1yin1
   C noun
    D1|#genetics #oncology|oncogene
 W|w|致癌性
- P|C|zhi4ai2xing4 |T|zhi4yan2xing4
+ P||zhi4ai2xing4 |-T|zhi4yan2xing4
   C noun
    D1|#oncology|carcinogenicity
 W|w|致癌物
- P|C|zhi4ai2wu4 |T|zhi4yan2wu4
+ P||zhi4ai2wu4 |-T|zhi4yan2wu4
   C noun
    D1||carcinogen
 W|w|致癌物質／致癌物质
@@ -489968,7 +489966,7 @@ W|w|舌燦蓮花／舌灿莲花
   C phrase
    D1||flamboyant and pleasant sounding speech
 W|w|舌癌
- P|C|she2ai2 |T|she2yan2
+ P||she2ai2 |-T|she2yan2
   C noun
    D1|#pathology|tongue cancer
 W|w|舌耕
@@ -502376,6 +502374,10 @@ W|w|蒘
  P||na2;ru2
   C character
    D1||Only used in 蕏蒘 (zhūná) and 蘮蒘 (jìrú).
+W|w|矇蔽／蒙蔽;蒙蔽
+ P||meng2bi4
+  C verb
+   D1||to hoodwink; to deceive; to hide the truth from; to pull the wool over someone's eyes
 W|w|蒙主寵召／蒙主宠召
  P||meng2zhu3chong3zhao4
   C phrase
@@ -526435,7 +526437,7 @@ W|w|語療師／语疗师
   C noun
    D1||Short for 言語治療師／言语治疗师 (yányǔ zhìliáoshī, “speech therapist”).
 W|w|語癌／语癌
- P|C|yu3ai2 |T|yu3yan2
+ P||yu3ai2 |-T|yu3yan2
   C noun
    D1|#informal|"language cancer": inability to use clear and understandable language
 W|w|語碼轉換／语码转换
@@ -594721,7 +594723,7 @@ W|w|類病毒／类病毒
   C noun
    D1|#virology|viroid
 W|w|類癌／类癌
- P|C|lei4ai2 |T|lei4yan2
+ P||lei4ai2 |-T|lei4yan2
   C noun
    D1|#medicine|carcinoid
 W|w|類神經網路／类神经网路
@@ -596910,7 +596912,7 @@ W|w|食管炎
   C noun
    D1|#pathology|oesophagitis
 W|w|食管癌
- P|C|shi2guan3ai2 |T|shi2guan3yan2
+ P||shi2guan3ai2 |-T|shi2guan3yan2
   C noun
    D1|#pathology|Synonym of 食道癌 (shídào'ái, “oesophageal cancer”)
 W|w|食管胃十二指腸鏡／食管胃十二指肠镜
@@ -603492,7 +603494,7 @@ W|w|骨瘦如柴
   C phrase
    D1||as thin as a stick; emaciated; unhealthily skinny
 W|w|骨癌
- P|C|gu3ai2 |T|gu3yan2
+ P||gu3ai2 |-T|gu3yan2
   C noun
    D1||bone cancer
 W|w|骨盆
@@ -609271,7 +609273,7 @@ W|w|鱗狀／鳞状
   C adj
    D1|#attributive #medicine|squamous
 W|w|鱗癌／鳞癌
- P|C|lin2ai2 |T|lin2yan2
+ P||lin2ai2 |-T|lin2yan2
   C noun
    D1||squamous cell carcinoma
 W|w|鱗石英／鳞石英
@@ -618252,7 +618254,7 @@ W|w|鼻咽
    D1||nose and throat
    D2|#anatomy|nasopharynx
 W|w|鼻咽癌
- P|C|bi2yan1ai2 |T|bi2yan1yan2
+ P||bi2yan1ai2 |-T|bi2yan1yan2
   C noun
    D1|#medicine #specifically|nasopharyngeal carcinoma
    D2|#medicine|(in general) cancers of the nose and throat

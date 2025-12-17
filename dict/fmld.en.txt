@@ -80,7 +80,7 @@
   
   New notes should be added with a note id ? or a number <100. They will be automatically replaced with a new id.
   The current maximum note id is linked in the line below:
-N->102
+N->103
 W|w|我
  P||wo3 |x|e3
   C character
@@ -164723,6 +164723,9 @@ W|w|光頭黨／光头党
   C noun
    D1||skinheads (subculture)
 W|w|光頭／光头
+ X~||禿頭／秃头
+  N103 [禿頭／秃头] bald due to hair loss
+    [光頭／光头] bald as a haircut
  P||guang1tou2
   C noun
    D1||bald head; shaved head
@@ -444952,8 +444955,7 @@ W|w|禿筆／秃笔
    D1||poor writing ability; low skill at composition
 W|w|禿頭／秃头
  X~||光頭／光头
-  N? [禿頭／秃头] bald due to hair loss
-    [光頭／光头] bald as a haircut
+  N->103
  P||tu1tou2
   C noun
    D1||bald head

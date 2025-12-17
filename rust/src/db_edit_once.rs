@@ -8,6 +8,7 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
+use serde::Deserialize;
 
 /// not for regular use, uses unwrap
 pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
@@ -453,6 +454,289 @@ pub fn add_classifier_class(conn: &Transaction) -> Result<(), SqliteError> {
             update_rank_stmt.execute(params![max_rank, new_rel, shared_id])?;
         }
     }
+
+    Ok(())
+}
+
+
+
+#[derive(Deserialize)]
+struct ImportEntry {
+    after_simp: String,
+    after_trad: String,
+    #[serde(default)]
+    word_tags: String,
+    simp: String,
+    trad: String,
+    defs: HashMap<String, Vec<String>>,
+    pinyins: Vec<String>,
+    comment: Vec<String>,
+}
+/*
+json format, one json object with each entry looking like this:
+"光是": {
+        "after_simp": "", (if not empty, add the new entry after this one)
+        "after_trad": "說了算",  (if not empty, add the new entry after this one, has priority over afer_simp)
+        "source": "MDBG",
+        "word_tags": "m", (add letters as ascii tags to the word)
+        "simp": "光是", (simp in dict_word)
+        "trad": "光是", (trad in dict_word)
+        "defs": { (this object contains the pronunciation in pinyin as key and the list of definitions to be added as values)
+        "guang1shi4": [
+            "solely",
+            "just"
+    ]
+    },
+    "pinyins": [
+        "guang1shi4" (use this as fallback if the pinyin of a definition is an empty string, which is true for some words)
+    ],
+    "comment": [ (add all lines as a single comment to the word, merge entries with new-lines)
+    ]
+},
+*/
+pub fn import_entries_from_json(
+    conn: &Transaction,
+    path: &str,
+    from_idx: usize,
+    to_idx: usize, // [from_idx..to_idx]
+) -> Result<(), Box<dyn Error>> {
+    // 1. Parse JSON into a HashMap
+    let file = File::open(path)?;
+    let reader = BufReader::new(file);
+    let entries: HashMap<String, ImportEntry> = serde_json::from_reader(reader)?;
+
+    // 2. Sort keys to ensure deterministic order and slice the range
+    let mut keys: Vec<&String> = entries.keys().collect();
+    keys.sort();
+
+    // Handle out of bounds indices gracefully
+    let start = std::cmp::min(from_idx, keys.len());
+    let end = std::cmp::min(to_idx, keys.len());
+
+    if start >= end {
+        return Ok(());
+    }
+
+    // 3. Prepare DB statements
+    let class_word: SqliteId = conn.query_row(
+        "SELECT id FROM dict_class WHERE name = 'word'",
+        [],
+        |row| row.get(0),
+    )?;
+    let class_char: SqliteId = conn.query_row(
+        "SELECT id FROM dict_class WHERE name = 'character'",
+        [],
+        |row| row.get(0),
+    )?;
+
+    // Check if word exists
+    let mut stmt_check_exists = conn.prepare(
+        "SELECT 1 FROM dict_word WHERE trad = ?1 AND simp = ?2"
+    )?;
+
+    // Find anchor rank
+    let mut stmt_find_anchor = conn.prepare(
+        r#"
+        SELECT s.rank
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        WHERE w.trad = ?1 OR (w.simp = ?2 AND ?2 <> '')
+        ORDER BY CASE WHEN w.trad = ?1 THEN 0 ELSE 1 END
+        LIMIT 1
+        "#,
+    )?;
+
+    let mut stmt_get_max_rel = conn.prepare(
+        "SELECT MAX(rank_relative) FROM dict_shared WHERE rank = ?1"
+    )?;
+
+    let mut stmt_get_max_rank = conn.prepare(
+        "SELECT MAX(rank) FROM dict_shared"
+    )?;
+
+    let mut stmt_insert_comment = conn.prepare(
+        "INSERT INTO dict_comment (comment) VALUES (?1)"
+    )?;
+
+    let mut stmt_insert_shared = conn.prepare(
+        "INSERT INTO dict_shared (rank, rank_relative, comment_id) VALUES (?1, ?2, ?3)"
+    )?;
+
+    let mut stmt_insert_word = conn.prepare(
+        "INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1, ?2, ?3)"
+    )?;
+
+    let mut stmt_insert_def = conn.prepare(
+        r#"
+        INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id)
+        VALUES (?1, ?2, ?3, ?4, ?5)
+        "#
+    )?;
+
+    let mut stmt_find_pron = conn.prepare("SELECT id FROM dict_pron WHERE pinyin_num = ?1")?;
+    let mut stmt_insert_pron = conn.prepare(
+        "INSERT INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1, ?2)"
+    )?;
+
+    let mut stmt_insert_shared_pron = conn.prepare(
+        "INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1, ?2)"
+    )?;
+
+    let mut stmt_insert_pron_def = conn.prepare(
+        "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1, ?2)"
+    )?;
+
+    let mut stmt_remove_prefixed_comments = conn.prepare(
+        "UPDATE dict_shared
+            SET comment_id = NULL
+            FROM dict_comment
+            WHERE dict_shared.comment_id = dict_comment.id
+            AND dict_comment.comment LIKE ?1;"
+    )?;
+
+
+    // 4. Iterate through the selected range
+    for key in &keys[start..end] {
+        let entry = &entries[*key];
+
+        // Check if the word is already in the database
+        if stmt_check_exists.exists(params![entry.trad, entry.simp])? {
+            continue;
+        }
+
+        // --- Determine Rank ---
+        let (rank, mut rank_relative) = {
+            let anchor_trad = &entry.after_trad;
+            let anchor_simp = &entry.after_simp;
+
+            let target_rank: Option<i64> = if !anchor_trad.is_empty() {
+                stmt_find_anchor.query_row(params![anchor_trad, ""], |row| row.get(0)).ok()
+            } else if !anchor_simp.is_empty() {
+                stmt_find_anchor.query_row(params!["", anchor_simp], |row| row.get(0)).ok()
+            } else {
+                None
+            };
+
+            if let Some(r) = target_rank {
+                // Found anchor. Insert after it (same rank, increment relative).
+                // Target relative is NULL (0-ish logic), so we look for max relative currently at this rank.
+                let max_rel: Option<i64> = stmt_get_max_rel.query_row(params![r], |row| row.get(0)).ok().flatten();
+                let next_rel = max_rel.unwrap_or(0) + 1;
+                (r, next_rel)
+            } else {
+                // Append to end
+                let max_rank: i64 = stmt_get_max_rank.query_row([], |row| row.get(0)).unwrap_or(0);
+                (max_rank + 1, 0)
+            }
+        };
+
+        // --- Insert Comment ---
+        let comment_id = if !entry.comment.is_empty() {
+            let joined = entry.comment.join("\n");
+            stmt_insert_comment.execute(params![joined])?;
+            Some(conn.last_insert_rowid())
+        } else {
+            None
+        };
+
+        // --- Insert Shared ---
+        stmt_insert_shared.execute(params![rank, rank_relative, comment_id])?;
+        let shared_id = conn.last_insert_rowid();
+
+        // --- Insert Word ---
+        println!("Writing word {} / {}", entry.trad, entry.simp);
+        stmt_insert_word.execute(params![shared_id, entry.trad, entry.simp])?;
+        let word_id = conn.last_insert_rowid();
+
+        // --- Add Tags ---
+        for tag_char in entry.word_tags.chars() {
+            if config::tag_to_txt_ascii_common(tag_char).is_some() {
+                 db_edit::add_tag(conn, db_edit::EntryId::Word(word_id), db_edit::Tag::Ascii(tag_char))?;
+            }
+        }
+
+        // --- Definitions ---
+        let class_id = if entry.trad.chars().count() > 1 { class_word } else { class_char };
+        
+        let mut ext_def_id = 1;
+        for (pinyin_key, def_list) in &entry.defs {
+            // Resolve Pinyins for this definition group
+            // If the key is empty, use the fallback list from entry.pinyins
+            let effective_pinyins = if pinyin_key.is_empty() {
+                &entry.pinyins
+            } else {
+                // Otherwise use the key as the single pinyin (wrapped in a slice/vec for iteration)
+                // We create a temporary vec here to allow iteration
+                // Note: constructing a temporary vec of references is tricky with mixed lifetimes,
+                // so we just clone the string key into a vec for the loop.
+                // It's not the most efficient but safe and simple.
+                // However, entry.pinyins is Vec<String>.
+                // We need to iterate over &String.
+                // Let's just normalize logic inside the loop.
+                &vec![pinyin_key.clone()] // Temporary vector
+            };
+
+            // Use fallback if the specific pinyin list is somehow empty (though logic above handles keys)
+            // The JSON logic: "use [pinyins] as fallback if the pinyin of a definition is an empty string"
+            let pinyins_to_iterate = if pinyin_key.is_empty() {
+                &entry.pinyins
+            } else {
+                effective_pinyins
+            };
+
+            let mut shared_pron_ids = Vec::new();
+            for p in pinyins_to_iterate {
+                let p_norm = pinyin::pinyin_num_normalized(p);
+                
+                // Get or Insert Pron
+                let pron_id: SqliteId = if let Ok(id) = stmt_find_pron.query_row(params![p_norm], |row| row.get(0)) {
+                    id
+                } else {
+                    let mark = pinyin::pinyin_mark_from_num(&p_norm);
+                    stmt_insert_pron.execute(params![p_norm, mark])?;
+                    conn.last_insert_rowid()
+                };
+
+                // Get or Insert Shared Pron (Word <-> Pron link)
+                let sp_id: SqliteId = {
+                    rank_relative += 1;
+                    let no_comment: Option<SqliteId> = None;
+                    stmt_insert_shared.execute(params![rank, rank_relative, no_comment])?;
+                    let shared_id = conn.last_insert_rowid();
+                    stmt_insert_shared_pron.execute(params![shared_id, pron_id])?;
+                    conn.last_insert_rowid()
+                };
+                shared_pron_ids.push(sp_id);
+            }
+
+            
+            // Insert Definitions
+            for def_text in def_list {
+                println!("  Def: {ext_def_id} {def_text}");
+                rank_relative += 1;
+                let no_comment: Option<SqliteId> = None;
+                stmt_insert_shared.execute(params![rank, rank_relative, no_comment])?;
+                let shared_id = conn.last_insert_rowid();
+                stmt_insert_def.execute(params![
+                    shared_id,
+                    word_id,
+                    def_text,
+                    ext_def_id,
+                    class_id
+                ])?;
+                let def_id = conn.last_insert_rowid();
+
+                // Link Definition to Pinyins
+                for sp_id in &shared_pron_ids {
+                    stmt_insert_pron_def.execute(params![sp_id, def_id])?;
+                }
+
+                ext_def_id += 1;
+            }
+        }
+    }
+
+    stmt_remove_prefixed_comments.execute(params!["TODOx"])?;
 
     Ok(())
 }

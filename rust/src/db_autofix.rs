@@ -439,6 +439,7 @@ pub fn sort_pronunciations_by_tag_rank(conn: &Transaction) -> Result<(), SqliteE
 /// Sorts the words in the second part, which is not sorted by frequency, by the codepoint of the first traditional character
 /// The "pivot" indicating the start of the second part is "%" or any other character with a codepoint smaller than "%".
 /// All entries up to "%" keep their order. The internal order of a word block (word, definitions, pronunciations) is preserved.
+/// Word entries which have variant_of != NULL are not considered, since they share the same shared_id as the main variant.
 ///
 /// The goal of the sorting is to be able to split the file into smaller files based on unicode ranges, if necessary.
 /// 
@@ -507,7 +508,7 @@ pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
         SELECT w.shared_id, w.trad, w.simp
         FROM dict_word w
         JOIN dict_shared s ON w.shared_id = s.id
-        WHERE s.rank >= ?1
+        WHERE s.rank >= ?1 AND w.variant_of IS NULL
         ORDER BY s.rank ASC
         ",
     )?;

@@ -444951,6 +444951,9 @@ W|w|禿筆／秃笔
   C noun
    D1||poor writing ability; low skill at composition
 W|w|禿頭／秃头
+ X~||光頭／光头
+  N? [禿頭／秃头] bald due to hair loss
+    [光頭／光头] bald as a haircut
  P||tu1tou2
   C noun
    D1||bald head

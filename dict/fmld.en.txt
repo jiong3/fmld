@@ -461,6 +461,16 @@ W|w|那
  P||na4
   C character
    D16||Used in place names in southern China
+W|w|讓／让
+ P||rang4
+  C character
+   D1||to allow; to let; to permit
+   D2||to ask (someone to do something); to get (someone to do something); to have (someone do something)
+   D3||to yield; to concede
+   D4|#driving|to yield; to give way
+   D5||by (passive signifier)
+   D6|#literary|to criticise; to reproach
+   D7||A transliteration of the French surname and male given name Jean
 W|w|現在／现在
  P||xian4zai4 |xX|xian4ai4
   C noun
@@ -1588,6 +1598,10 @@ W|w|看看
    D5||to examine and survey; to see
    D6||to visit; to call on
    D7||to see the sights
+W|m|沒法兒／没法儿
+ P||mei2fa3r5
+  C verb
+   D1||Erhua form of 沒法／没法
 W|w|說／说
  P||shuo1
   C character
@@ -2011,6 +2025,10 @@ W|w|自己
    D1||by oneself
   C pron
    D2||self; oneself
+W|m|說老實話／说老实话
+ P||shuo1lao3shi5hua4
+  C verb
+   D1||to be honest; to tell the truth; to be frank
 W|w|回
  P||hui2
   C character
@@ -3166,6 +3184,10 @@ W|w|漂亮
   C adj
    D1||pretty; beautiful; handsome
    D2||brilliant; splendid
+W|m|近年來／近年来
+ P||jin4nian2lai2
+  C noun
+   D1||for the past few years
 W|w|這麼／这么
  P||zhe4me5 |x|ze4me5;zhen4me5;zen4me5
   C adv
@@ -4065,7 +4087,7 @@ W|w|借
    D3||(alt. form 藉) to make use of; to take advantage of (an opportunity)
    D4||(alt. form 藉) to rely on; to depend on
    D5||(alt. form 藉) to use as a pretext
-W|w|為／为
+W|w|為／为;爲／为
  P||wei2
   C character
    D1||to do; to make
@@ -6361,6 +6383,11 @@ W|w|生日
  P||sheng1ri4
   C noun
    D1||birthday
+W|m|這就是說／这就是说
+ X>||就是說／就是说
+ P||zhe4jiu4shi4shuo1
+  C adv
+   D1||that is to say; in other words
 W|w|只要
  P||zhi3yao4
   C conj
@@ -6640,7 +6667,7 @@ W|w|經過／经过
   C verb
    D3||to pass through
    D4||to undergo
-W|w|老闆／老板
+W|w|老闆／老板;老板
  P||lao3ban3
   C noun
    D1||shop owner; business proprietor
@@ -8477,7 +8504,7 @@ W|w|廁所／厕所
    D1||toilet; bathroom; lavatory; WC
     XM||間／间
     X<||上廁所／上厕所;去廁所／去厕所
-W|w|計劃／计划
+W|w|計劃／计划;計畫／计画
  P||ji4hua4
   C noun
    D1||plan; project; program; proposal
@@ -10645,6 +10672,10 @@ W|w|錯過／错过
  P||cuo4guo4
   C verb
    D1||to miss (a train, opportunity, etc.); to miss out; to let something slip by
+W|m|趕往／赶往
+ P||gan3wang3
+  C verb
+   D1||to hurry to (somewhere)
 W|w|紙／纸
  P||zhi3
   C character
@@ -11963,7 +11994,7 @@ W|w|撿／捡
    D4||Alternative form of 揀／拣 (jiǎn, “to pick”).
    D5|x #dialectal|to put in order
    D6|x #dialectal-Hakka|to take; to get
-W|w|精彩
+W|w|精彩;精采
  P||jing1cai3
   C adj
    D1||brilliant; splendid; outstanding; exquisite; amazing
@@ -16374,7 +16405,7 @@ W|w|事先
  P||shi4xian1
   C adv
    D1||beforehand; in advance; prior
-W|w|過分／过分
+W|w|過分／过分;過份／过份
  P||guo4fen4
   C adj
    D1||excessive; undue; overboard; over-; too much; out of line
@@ -16951,7 +16982,7 @@ W|w|巧
    D8||(Hefei Mandarin) cheap
    D9|#telegraphy|(～日) the eighteenth day of a month
    D10||a surname
-W|w|身份
+W|w|身份;身分
  P||shen1fen4
   C noun
    D1||status (of a person); identity
@@ -17386,6 +17417,10 @@ W|w|砸
    D4||to throw; to toss
    D5|x #dialectal|to sew with a sewing machine
    D6|#colloquial|to flop; to fail; to fall through
+W|m|防盜門／防盗门
+ P||fang2dao4men2
+  C noun
+   D1||security door
 W|w|自信
  P||zi4xin4
   C adj
@@ -17768,7 +17803,7 @@ W|w|執行／执行
    D1|#attributive|executive
   C verb
    D2||to carry out; to execute; to enforce
-W|w|徹底／彻底
+W|w|徹底／彻底;澈底／彻底
  P||che4di3
   C adj
    D1||thorough; thoroughgoing
@@ -18117,6 +18152,11 @@ W|w|甩
    D14|x #Wu|to wave; to rock
    D15|x #Hokkien|to sprinkle; to spray
    D16|x #Hokkien #vulgar|to heed; to pay attention to
+W|m|迎來／迎来
+ P||ying2lai2
+  C verb
+   D1||to welcome (a visitor or newcomer)
+   D2|#figurative|to usher in
 W|w|壓／压
  P||ya1 |C|ya4
   C character
@@ -18384,6 +18424,10 @@ W|w|度過／度过
   C verb
    D1||to pass; to spend (time)
    D2||to survive; to get through
+W|m|朝著／朝着
+ P||chao2zhe5
+  C prep
+   D1||towards
 W|w|彈／弹
  P||tan2
   C character
@@ -18555,6 +18599,10 @@ W|w|溫柔／温柔
  P||wen1rou2
   C adj
    D1||(of a person, especially a woman) loving; gentle; sweet
+W|m|說幹就幹／说干就干
+ P||shuo1gan4jiu4gan4
+  C phrase
+   D1||to do what needs to be done, without delay
 W|w|競爭／竞争
  P||jing4zheng1
   C verb
@@ -18958,7 +19006,7 @@ W|w|報紙／报纸
    D1||newspaper
     XM||份;張／张;期
    D2||newsprint
-W|w|註定／注定
+W|w|註定／注定;注定
  P||zhu4ding4
   C verb
    D1||to be destined or doomed to a particular outcome
@@ -21851,6 +21899,14 @@ W|w|初
     X<||民初
    D7||just
     X<||初出茅廬／初出茅庐;如夢初醒／如梦初醒
+W|m|熱騰騰／热腾腾
+ X~||熱氣騰騰／热气腾腾
+ P||re4teng2teng2 |-|re4teng1teng1
+  C adj
+   D1|#literal|steaming hot
+   D2|#figurative|bustling; hectic; excited; stirred up
+    X!||慢騰騰／慢腾腾#D1
+   D3|#figurative|created only a short time before; freshly minted; hot off the press
 W|w|罷了／罢了
  P||ba4liao3;ba4le5
   C particle
@@ -23202,7 +23258,7 @@ W|w|踏實／踏实
    D3||workable; practical; feasible
   C verb
    D4|- #literary|to walk steadily
-W|w|濕／湿
+W|w|濕／湿;溼／湿
  P||shi1
   C character
    D1||wet; damp; moist; humid
@@ -23965,6 +24021,10 @@ W|w|才華／才华
  P||cai2hua2
   C noun
    D1||talent; brillance of mind
+W|m|睜開／睁开
+ P||zheng1kai1
+  C verb
+   D1||to open (one's eyes)
 W|w|結論／结论
  P||jie2lun4
   C noun
@@ -24366,6 +24426,15 @@ W|w|翅膀
   C noun
    D1||wing (of a bird or insect)
    D2|#by-extension|wing-like object
+W|m|背著／背着
+ P||bei4zhe5
+  C verb
+   D1||turning one's back to (sth or sb)
+   D2||keeping sth secret from (sb)
+   D3||keeping (one's hands) behind one's back
+ P||bei1zhe5
+  C verb
+   D4||carrying on one's back
 W|w|眼前
  P||yan3qian2
   C noun
@@ -25034,7 +25103,7 @@ W|w|信號／信号
  P||xin4hao4
   C noun
    D1||signal
-W|w|老闆娘／老板娘
+W|w|老闆娘／老板娘;老板娘
  P||lao3ban3niang2
   C noun
    D1||proprietress; boss's wife; female boss
@@ -26162,6 +26231,10 @@ W|w|抽煙／抽烟
  P||chou1yan1
   C verb-object
    D1|#intransitive|to smoke (tobacco)
+W|m|車號／车号
+ P||che1hao4
+  C noun
+   D1||vehicle number (license plate number, taxi number, bus number, train car number)
 W|w|情人
  P||qing2ren2
   C noun
@@ -26473,7 +26546,7 @@ W|w|隨意／随意
  P||sui2yi4
   C adj
    D1||casual; as one pleases
-W|w|囉嗦／啰嗦;囉唆／啰唆
+W|w|囉嗦／啰嗦;囉唆／啰唆;羅嗦／罗嗦
  P|C|luo1suo5 |T|luo1suo1
   C adj
    D1||verbose; long-winded
@@ -26702,6 +26775,18 @@ W|w|寧／宁
  P||Ning2;Ning4
   C character
    D12||a surname
+W|w|簡／简
+ P||jian3
+  C character
+   D1||bamboo slip
+   D2||letter; epistle
+   D3||simple; uncomplicated
+   D4||terse; succinct; pithy; concise; brief; to the point
+   D5||to simplify
+   D6||to treat coldly; to give the cold-shoulder; to neglect
+   D7||to select; to choose; to pick
+   D8||a surname: Jian
+   D9||A transliteration of the English female given name Jane
 W|w|仁
  P||ren2
   C character
@@ -27500,6 +27585,10 @@ W|w|指示
   C verb
    D2||to show clearly; to point out; to indicate; to demonstrate
    D3||to instruct; to direct; to guide
+W|m|討人喜歡／讨人喜欢
+ P||tao3ren2xi3huan5
+  C phrase
+   D1||to attract people's affection; charming; delightful
 W|w|低頭／低头
  P||di1tou2
   C verb
@@ -27529,7 +27618,7 @@ W|w|干涉
    D2|#physics|interference (coherent superposition of waves)
   C verb
    D3|#intransitive #transitive|to interfere; to intervene
-W|w|沉默
+W|w|沉默;沈默／沉默
  P||chen2mo4
   C verb
    D1||to be silent; to not speak; to be reticent; to be taciturn; to be untalkative
@@ -29130,6 +29219,10 @@ W|w|不服
    D2||to not acknowledge defeat or inferiority
    D3||to be not accustomed to
     X<||水土不服
+W|m|遞給／递给
+ P||di4gei3
+  C verb
+   D1||to hand it (i.e. the aforementioned item) to (sb)
 W|w|偷偷
  P||tou1tou1
   C adv
@@ -29665,6 +29758,12 @@ W|w|發動／发动
   C verb
    D1||to start; to initiate; to launch; to unleash; to wage
    D2||to mobilize; to arouse
+W|m|網點／网点
+ P||wang3dian3
+  C noun
+   D1|#computing|node in a network
+   D2|#commerce|sales outlet; branch; service center
+   D3|#illustration|screentone; halftone dot
 W|w|發言／发言
  P||fa1yan2
   C verb-object
@@ -30006,6 +30105,12 @@ W|w|執／执
     X<||固執／固执
    D4||to carry out
    D5|- #literary|to arrest; to capture
+W|m|順著／顺着
+ P||shun4zhe5
+  C verb
+   D1||to follow
+  C adv
+   D2||following; along
 W|w|意願／意愿
  P||yi4yuan4
   C noun
@@ -30292,6 +30397,10 @@ W|w|表白
    D1||to express or state clearly; to explain; to clarify; to explain oneself
    D2|#specifically|to reveal or confess the true state of one's thoughts or feelings, especially one's love for another person
    D3|- #literary|to come clean
+W|m|糖醋魚／糖醋鱼
+ P||tang2cu4yu2
+  C noun
+   D1||sweet and sour fish
 W|w|主
  P||zhu3
   C character
@@ -30324,7 +30433,7 @@ W|w|否定
    D1|#attributive|(of a judgement, response, etc.) negative
   C verb
    D2||to negate; to deny
-W|w|橘子
+W|w|橘子;桔子
  P||ju2zi5
   C noun
    D1||mandarin orange
@@ -32415,6 +32524,10 @@ W|w|報案／报案
  P||bao4an4
   C verb-object
    D1|#intransitive|to report a crime (to the police)
+W|m|贊嘆不已／赞叹不已
+ P||zan4tan4bu4yi3
+  C phrase
+   D1||to be full of praise
 W|w|敬
  P||jing4
   C character
@@ -33207,7 +33320,7 @@ W|w|不巧
    D1||at a bad time
   C adv
    D2||as luck would have it; unfortunately; too bad
-W|w|沉重
+W|w|沉重;沈重／沉重
  P||chen2zhong4
   C adj
    D1||heavy (of an object or person)
@@ -33688,7 +33801,7 @@ W|w|改天
  P||gai3tian1
   C adv
    D1||on another day; some other time
-W|w|策劃／策划
+W|w|策劃／策划;策畫／策画
  P||ce4hua4
   C noun
    D1||plotter; planner; schemer; conspirator; engineer
@@ -34022,6 +34135,10 @@ W|w|迷人
  P||mi2ren2
   C adj
    D1||charming; fascinating; bewitching; bewildering; enchanting; engaging
+W|m|聯網／联网
+ P||lian2wang3
+  C verb
+   D1||to connect (or be connected) to a network; to network
 W|w|守
  P||shou3
   C character
@@ -34673,6 +34790,12 @@ W|w|來看／来看
  P||lai2kan4
   C phrase
    D1||to view it from the angle of ...; considering the ...; in terms of
+W|m|針／针;鍼／针
+ P||zhen1
+  C noun
+   D1||needle; pin
+   D2||injection
+   D3||stitch
 W|w|不妨
  P||bu4fang2
   C adv
@@ -35278,6 +35401,10 @@ W|w|黑暗
    D2|#figurative|backward; unenlightened; evil; corrupt; sordid; dark
   C noun
    D3|x #obsolete|rhinoceros horn
+W|m|由此看來／由此看来
+ P||you2ci3kan4lai2
+  C conj
+   D1||thereby; judging from this
 W|w|證／证
  P||zheng4
   C character
@@ -35321,6 +35448,12 @@ W|w|剛好／刚好
    D3||it so happened that
   C intj
    D4||used by itself to indicate that the correct amount of change has been given
+W|m|進門／进门
+ P||jin4men2
+  C verb
+   D1|#literal|to enter a door; to go in
+   D2|#figurative|to learn the basics of a subject
+   D3|#figurative|to join one's husband's household upon marriage
 W|w|肩
  P||jian1
   C character
@@ -35428,7 +35561,7 @@ W|w|且
  P|x|cu2
   C character
    D20||Alternative form of 徂 (cú, “to go to”)
-W|w|答覆
+W|w|答覆／答复;答復／答复;答覆
  P||da2fu4
   C noun
    D1||reply; response
@@ -36095,7 +36228,7 @@ W|w|影
     X<||影星
    D6|x #Hokkien|shade
    D7|#Chinese-linguistics|(～母) the Middle Chinese initial of 影 (MC 'jaengX)
-W|w|結賬／结账
+W|w|結賬／结账;結帳／结帐
  P||jie2zhang4
   C verb-object
    D1||to pay a bill; to settle an account
@@ -36420,6 +36553,10 @@ W|w|措施
  P||cuo4shi1
   C noun
    D1||measures; means to an end; intervention
+W|m|難得一見／难得一见
+ P||nan2de2yi1jian4
+  C phrase
+   D1||rarely seen
 W|w|例子
  P||li4zi5
   C noun
@@ -36681,6 +36818,10 @@ W|w|淨／净
    D5||only; merely; nothing but
    D6||all; all the time
    D7|#opera|painted-face role
+W|m|隨處可見／随处可见
+ P||sui2chu4ke3jian4
+  C phrase
+   D1||can be seen everywhere
 W|w|米飯／米饭
  P||mi3fan4
   C noun
@@ -37509,7 +37650,7 @@ W|w|長官／长官
   C noun
    D1|#chiefly-military|senior official; senior officer; commanding officer
    D2|t|sir (term of address for a senior officer, could be in military, civilian, or private sector)
-W|w|櫃檯／柜台
+W|w|櫃檯／柜台;櫃台／柜台
  P||gui4tai2
   C noun
    D1||counter (in a shop, airport, etc.); front desk
@@ -39059,7 +39200,7 @@ W|w|照應／照应
   C verb
    D1||to correspond; to match; to correlate
    D2||to look after; to take care of; to care for; to attend to
-W|w|發布／发布
+W|w|發布／发布;發佈／发布
  P||fa1bu4
   C verb
    D1||to release; to issue; to announce (of news, instructions, orders, etc.)
@@ -40629,6 +40770,10 @@ W|w|飯館／饭馆
  P||fan4guan3
   C noun
    D1||restaurant
+W|m|望見／望见
+ P||wang4jian4
+  C verb
+   D1||to espy; to spot
 W|w|化驗／化验
  P||hua4yan4
   C verb
@@ -40933,6 +41078,12 @@ W|w|發炎／发炎
  P||fa1yan2
   C verb-object
    D1|#pathology|to be inflamed
+W|m|響起／响起
+ P||xiang3qi3
+  C verb
+   D1||(of a sound) to come forth
+   D2||(of a sound source) to ring out
+   D3||to sound; to go off
 W|w|挽回
  P||wan3hui2
   C verb
@@ -41045,6 +41196,23 @@ W|w|逛街
  P||guang4jie1
   C verb
    D1||to stroll around the streets; to loiter on the street; to window-shop; to go shopping
+W|m|線／线;綫／线
+ P||xian4
+  C noun
+   D1||thread
+   D2||thread-like object; wire; line; string; ray
+   D3|#geometry|line
+   D4||route; path; line
+   D5||demarcation line; boundary; border; brink
+   D6||clue; sign
+   D7||secret agent
+   D8||ideological or political line
+   D9||plotline
+   D12||(after a number) tier (unofficial ranking of a Chinese city)
+  C classifier
+   D10||Classifier for for abstract nouns or numerals indicating few or little.
+  C name
+   D11||a surname
 W|w|中餐
  P||zhong1can1
   C noun
@@ -42287,6 +42455,10 @@ W|w|器
    D3||capacity; tolerance
    D4||talent; ability
     X<||大器晚成
+W|m|遠近聞名／远近闻名
+ P||yuan3jin4wen2ming2
+  C adj
+   D1||to be known far and wide; to be well-known
 W|w|光芒
  P||guang1mang2
   C noun
@@ -42416,7 +42588,7 @@ W|w|班長／班长
    D1|#education|class monitor; class president; prefect
    D2|#military|squad leader
    D3||team leader
-W|w|慾望／欲望
+W|w|慾望／欲望;欲望
  P||yu4wang4
   C noun
    D1||desire; longing; appetite; craving; lust; passion
@@ -42834,6 +43006,10 @@ W|w|作弊
   C verb-object
    D1||to practice fraud; to cheat
     D2||to cheat in an exam or test
+W|m|長期以來／长期以来
+ P|C|chang2qi1yi3lai2 |T|chang2qi2yi3lai2
+  C noun
+   D1||for a long time
 W|w|文字
  P||wen2zi4
   C noun
@@ -43381,6 +43557,10 @@ W|w|反駁／反驳
  P||fan3bo2
   C verb
    D1||to rebut; to refute
+W|m|許下／许下
+ P||xu3xia4
+  C verb
+   D1||to make a promise
 W|w|生理
  P||sheng1li3
   C noun
@@ -43446,6 +43626,10 @@ W|w|侯
  P|C|hou4
   C character
    D5||Only used in 閩侯／闽侯 (Mǐnhòu).
+W|m|燒死／烧死
+ P||shao1si3
+  C verb
+   D1||to burn to death
 W|w|棒球
  P||bang4qiu2
   C noun
@@ -43898,6 +44082,10 @@ W|w|茫茫
  P||mang2mang2
   C adj
    D1||boundless and indistinct; vast
+W|m|請進／请进
+ P||qing3jin4
+  C phrase
+   D1||"please come in"
 W|w|蒼蠅／苍蝇
  P||cang1ying5;cang1ying2
   C noun
@@ -44521,7 +44709,7 @@ W|w|後代／后代
    D2||descendants; progeny; offspring
    D3||later ages
    D4|#biology|progeny
-W|w|炮
+W|w|炮;砲／炮
  P||pao4
   C character
    D1||large gun; cannon; artillery
@@ -45591,6 +45779,10 @@ W|w|男女
    D4|- #literary|sons and daughters; children
    D5|- #literary|Term of address for, or a humble term of address used by, a person who has low social status.
    D6|- #literary|A term of abuse.
+W|m|落得
+ P|C|luo4de5 |T|luo4de2
+  C verb
+   D1||ending up as; leading to; resulting in; in total
 W|w|鬼話／鬼话
  P||gui3hua4
   C noun
@@ -46600,6 +46792,10 @@ W|w|提拔
  P||ti2ba2
   C verb
    D1||to promote; to advocate on behalf of someone
+W|m|老舍
+ P||lao3she3
+  C name
+   D1||Lao She (1899-1966), Chinese novelist and dramatist
 W|w|最佳
  P||zui4jia1
   C adj
@@ -46995,6 +47191,10 @@ W|w|淹死
  P||yan1si3
   C verb
    D1|#ergative|to drown
+W|m|煙花爆竹／烟花爆竹
+ P||yan1hua1bao4zhu2
+  C noun
+   D1||fireworks (i.e. pyrotechnic devices, not the display they produce)
 W|w|欣慰
  P||xin1wei4
   C adj
@@ -47140,7 +47340,7 @@ W|w|記恨／记恨
  P||ji4hen4
   C verb
    D1||to bear a grudge
-W|w|電臺／电台
+W|w|電臺／电台;電台
  P||dian4tai2
   C noun
    D1||broadcasting station
@@ -47670,6 +47870,10 @@ W|w|草地
    D1||lawn; grass
    D2||grassland; meadow
    D3|x #Taiwanese-Hokkien|country; rural area; countryside
+W|m|蘆花／芦花
+ P||lu2hua1
+  C noun
+   D1||reed catkin; reed flower
 W|w|萬萬／万万
  P||wan4wan4
   C adv
@@ -49413,6 +49617,10 @@ W|w|標／标
    D9||bid
   C classifier
    D10|x #dated|Classifier for groups and teams.
+W|m|特快專遞／特快专递
+ P||te4kuai4zhuan1di4
+  C noun
+   D1||express mail
 W|w|十五
  P||shi2wu3
   C num
@@ -49999,6 +50207,10 @@ W|w|發愁／发愁
  P||fa1chou2
   C verb
    D1||to worry; to be anxious
+W|m|看得出
+ P||kan4de5chu1
+  C verb
+   D1||can see; can tell
 W|w|傳真／传真
  P||chuan2zhen1
   C noun
@@ -51134,6 +51346,10 @@ W|w|院長／院长
  P||yuan4zhang3
   C noun
    D1||director (of an institute); dean (of a college or similar institution); president; department head; leader (of a governmental branch); rector
+W|m|齊白石／齐白石
+ P||qi2bai2shi2
+  C name
+   D1||Qi Baishi (1864-1957), famous Chinese painter
 W|w|不良
  P||bu4liang2
   C adj
@@ -51315,6 +51531,10 @@ W|w|癱瘓／瘫痪
   C verb
    D1|#medicine|to suffer from paralysis; to be paralyzed
    D2|#figurative|to be unable to function or move; to experience a malfunction; to collapse; to break down; to crash
+W|m|迷迷糊糊
+ P|C|mi2mi2hu1hu1 |T|mi2mi2hu2hu2
+  C adj
+   D1||in a daze; bewildered
 W|w|昂貴／昂贵
  P||ang2gui4
   C adj
@@ -51553,6 +51773,10 @@ W|m|不見了／不见了
  P||bu4jian4le5
   C verb
    D1||to have disappeared; to be missing; nowhere to be found
+W|m|武打片
+ P||wu3da3pian4
+  C noun
+   D1||action movie; kungfu movie
 W|w|半路
  P||ban4lu4
   C noun
@@ -51663,6 +51887,10 @@ W|m|居民樓／居民楼
  P||ju1min2lou2
   C noun
    D1||apartment building; residential tower
+W|m|麗麗／丽丽
+ P||li4li4
+  C name
+   D1||Lili
 W|w|釣魚／钓鱼
  P||diao4yu2
   C verb-object
@@ -51788,6 +52016,10 @@ W|w|穿越
   C verb
    D1||to pass through; to cut through; to cross
    D2|#neologism|to travel back through time; to time-travel
+W|m|疲憊不堪／疲惫不堪
+ P||pi2bei4bu4kan1
+  C adj
+   D1||exhausted; fatigued to the extreme
 W|w|鑒定／鉴定
  P||jian4ding4
   C noun
@@ -51808,6 +52040,15 @@ W|w|故障
    D1||breakdown; malfunction; fault; failure (of a mechanical or electronic device)
    D2|#figurative|obstacle; hitch
    D3|#computing|bug
+W|m|遊走／游走
+ P||you2zou3
+  C verb
+   D1||to wander about; to roam
+   D2||to move back and forth between (government and academia, two or more countries etc)
+   D3||to flow through (a circuit, a network, the body)
+   D4||to skirt (the border of legality)
+   D5||(of a singer's voice) to move within its range
+   D6||(of a stock price) to fluctuate within (a range)
 W|w|風趣／风趣
  P||feng1qu4
   C adj
@@ -51918,6 +52159,10 @@ W|m|心地善良
  P||xin1di4shan4liang2
   C adj
    D1||kindhearted; good-natured
+W|m|笑嘻嘻
+ P||xiao4xi1xi1
+  C verb
+   D1||grinning; smiling
 W|w|封建
  P||feng1jian4
   C adj
@@ -52729,6 +52974,10 @@ W|w|飲／饮
    D6||to give (animals) water to drink; to water (animals)
    D7|xC #Southwestern-Mandarin|to water (plants)
    D8|- #literary|to wine and dine (someone); to entertain with alcohol and food
+W|m|道聽途說／道听途说
+ P||dao4ting1tu2shuo1
+  C noun
+   D1||gossip; hearsay; rumor
 W|w|傢／家
  P||jia1
   C character
@@ -53376,6 +53625,10 @@ W|w|遺／遗
   C character
    D11|- #literary|to bestow; to offer as a gift
    D12||to hand over; to turn over; to pay
+W|m|煞車／煞车
+ P||sha1che1;sha4che1
+  C verb-object
+   D1||to brake (when driving)
 W|w|臨床／临床
  P||lin2chuang2
   C adj
@@ -54233,11 +54486,8 @@ W|w|言論／言论
    D1||open discussion on public affairs; views; remarks
   C verb
    D2||to talk; to discuss
-W|w|泄露
- P||xie4lu4 |C|xie4lou4
-  C verb
-   D1||to divulge; to disclose
-W|w|洩露／泄露
+W|w|洩露／泄露;泄露
+ XV||洩漏／泄漏
  P||xie4lu4 |x|xie4lou4
   C verb
    D1||to divulge; to disclose
@@ -56404,6 +56654,10 @@ W|w|卑微
  P|C|bei1wei1 |T|bei1wei2
   C adj
    D1||(of one's status, position, etc.) humble; lowly
+W|m|歡聲笑語／欢声笑语
+ P||huan1sheng1xiao4yu3
+  C noun
+   D1||cheers and laughter
 W|w|顧不上／顾不上
  P||gu4bu5shang4
   C verb
@@ -56833,6 +57087,10 @@ W|w|走私
  P||zou3si1
   C verb
    D1||to smuggle
+W|m|貪玩兒／贪玩儿
+ P||tan1wan2r5
+  C verb
+   D1||Erhua form of 貪玩／贪玩
 W|w|相識／相识
  P|C|xiang1shi2 |T|xiang1shi4
   C noun
@@ -57403,6 +57661,10 @@ W|w|賭場／赌场
   C noun
    D1||casino; gambling house
     XM||家;間／间
+W|m|鑑定／鉴定
+ P||jian4ding4
+  C verb
+   D1||to appraise; to identify; to evaluate
 W|w|專訪／专访
  P||zhuan1fang3
   C noun
@@ -57678,6 +57940,10 @@ W|w|加薪
  P||jia1xin1
   C verb
    D1||to raise someone's salary; to grant a pay rise
+W|m|陝西省／陕西省
+ P||shan3xi1sheng3
+  C name
+   D1||Shaanxi Province, capital Xi'an 西安市 (abbr. to 陝／陕 or 秦)
 W|w|氣息／气息
  P|C|qi4xi1 |T|qi4xi2
   C noun
@@ -57932,7 +58198,7 @@ W|w|巴黎
  P||Ba1li2
   C name
    D1||Paris (the capital and largest city of France; department of Île-de-France)
-W|w|鉤／钩
+W|w|鉤／钩;鈎／钩
  P||gou1
   C character
    D1||hook; barb
@@ -58278,6 +58544,10 @@ W|w|費力／费力
  P||fei4li4
   C verb-object
    D1|#intransitive|to need or exert great effort; to strain; to be strenuous
+W|m|臺上／台上
+ P||tai2shang4
+  C noun
+   D1||on stage
 W|w|圖片／图片
  P||tu2pian4
   C noun
@@ -58432,6 +58702,10 @@ W|w|刺殺／刺杀
   C verb
    D1||to assassinate
    D2||to stab to death
+W|m|由不得
+ P||you2bu5de5
+  C verb
+   D1||cannot help; to be beyond control of
 W|w|不相上下
  P||bu4xiang1shang4xia4
   C phrase
@@ -58627,6 +58901,10 @@ W|w|忌
    D7|- #Xiamen-and-Zhangzhou-Hokkien #literary|anniversary of the death of one's elder
     X<||忌辰;忌日
    D8||a surname: Ji
+W|m|稱之為／称之为
+ P||cheng1zhi1wei2
+  C verb
+   D1||to call it...; known as...
 W|w|貪婪／贪婪
  P||tan1lan2
   C adj
@@ -59658,6 +59936,10 @@ W|w|搗／捣
    D2||to beat with a stick; to smash
    D3||to make trouble; to disturb; to mess up
    D4||to attack (an enemy); to mount an offensive
+W|m|無可挽回／无可挽回
+ P||wu2ke3wan3hui2
+  C phrase
+   D1||irrevocable; the die is cast
 W|w|郵票／邮票
  P||you2piao4
   C noun
@@ -59945,6 +60227,10 @@ W|w|首要
    D1|#attributive|of utmost importance
   C noun
    D2||head (person in charge); leader
+W|m|賣完／卖完
+ P||mai4wan2
+  C adj
+   D1||to be sold out
 W|w|保健
  P||bao3jian4
   C verb
@@ -60290,6 +60576,10 @@ W|w|激
    D13|x #Teochew|to drown; to submerge in water; to flood
    D14|x #Teochew|to compete
    D15||a surname: Ji
+W|m|頂上／顶上
+ P||ding3shang4
+  C noun
+   D1||on top of; at the summit
 W|w|譴責／谴责
  P||qian3ze2
   C verb
@@ -62134,6 +62424,11 @@ W|w|處事／处事
  P||chu3shi4
   C verb
    D1||to handle affairs; to deal with things
+W|m|火坑
+ P||huo3keng1
+  C noun
+   D1|#literal|pit of fire
+   D2|#figurative|living hell
 W|w|鑼／锣
  P||luo2
   C character
@@ -62197,6 +62492,10 @@ W|w|拌
    D4|x #Hokkien|to pat, brush, or beat to remove dust, etc.
    D5|x #Hokkien|to drive out; to chase away (insects)
    D6|x #Mainland-China-Hokkien|to stir and mix
+W|m|火眼金睛
+ P||huo3yan3jin1jing1
+  C noun
+   D1||piercing eyes; discerning eyes
 W|w|日益
  P||ri4yi4
   C adv
@@ -62334,6 +62633,15 @@ W|w|點燃／点燃
  P||dian3ran2
   C verb
    D1||to ignite; to set on fire; to light; to kindle
+W|m|精華／精华
+ P||jing1hua2
+  C noun
+   D1||best feature; most important part of an object; quintessence; essence; soul
+W|m|翻過／翻过
+ P||fan1guo4
+  C verb
+   D1||to turn over
+   D2||to transform
 W|w|期盼
  P|C|qi1pan4 |T|qi2pan4
   C verb
@@ -62388,6 +62696,14 @@ W|w|墳／坟
     XM||座
    D2|- #literary|embankment; raised bank
    D3|- #literary|to bulge; to swell
+W|m|涮羊肉
+ P||shuan4yang2rou4
+  C noun
+   D1||Mongolian hot pot; instant-boiled mutton (dish)
+W|m|緊接著／紧接着
+ P||jin3jie1zhe5
+  C conj
+   D1||immediately afterwards; shortly after that
 W|w|名稱／名称
  P||ming2cheng1
   C noun
@@ -63165,6 +63481,11 @@ W|w|爐子／炉子
  P||lu2zi5
   C noun
    D1||oven; stove; furnace
+W|m|盯住
+ P||ding1zhu4
+  C verb
+   D1||to watch sb closely; to breathe down sb's neck
+   D2|#sports|to mark
 W|w|口舌
  P||kou3she2
   C noun
@@ -63280,6 +63601,10 @@ W|w|擺攤／摆摊
  P||bai3tan1
   C verb
    D1||to set up a stall (at a market, fair, etc.)
+W|m|脫口而出／脱口而出
+ P||tuo1kou3er2chu1
+  C phrase
+   D1||to blurt out; to let slip (an indiscreet remark)
 W|w|促使
  P||cu4shi3
   C verb
@@ -63511,6 +63836,11 @@ W|w|老外
     XM||個／个
    D2|#informal|layman; amateur
     XM||個／个
+W|m|相敬如賓／相敬如宾
+ P||xiang1jing4ru2bin1
+  C phrase
+   D1||to treat each other as an honored guest
+   D2||mutual respect between husband and wife
 W|w|平原
  P||ping2yuan2
   C name
@@ -63594,6 +63924,11 @@ W|w|請坐／请坐
  P||qing3 zuo4
   C phrase
    D1||please sit down; please be seated
+W|m|渣子
+ P||zha1zi5
+  C noun
+   D1||dregs; residue
+   D2||dregs (of society)
 W|w|加重
  P||jia1zhong4
   C verb
@@ -63631,6 +63966,12 @@ W|m|從長計議／从长计议
  P||cong2chang2ji4yi4
   C phrase
    D1||to take one's time making a decision; to consider at length
+W|m|煲
+ P||bao1
+  C verb
+   D1||to cook slowly over a low flame
+  C noun
+   D2||pot; saucepan
 W|w|外甥
  P||wai4sheng1
   C noun
@@ -63677,7 +64018,7 @@ W|w|破費／破费
  P||po4fei4
   C verb
    D1|#polite|to spend money; to go to some expense
-W|w|泛濫／泛滥
+W|w|泛濫／泛滥;氾濫／泛滥
  P||fan4lan4
   C adj
    D1|x #archaic|widespread; extensive; wide-ranging
@@ -65174,6 +65515,10 @@ W|w|宣誓
    D1||oath
   C verb
    D2||to take an oath
+W|m|毫不猶豫／毫不犹豫
+ P||hao2bu4you2yu4
+  C phrase
+   D1||without the slightest hesitation
 W|w|恩情
  P||en1qing2
   C noun
@@ -65568,6 +65913,10 @@ W|w|候選人／候选人
  P||hou4xuan3ren2
   C noun
    D1||candidate (person running in an election)
+W|m|遮住
+ P||zhe1zhu4
+  C verb
+   D1||to cover (up); to block; to obstruct; to shade
 W|w|攥
  P||zuan4
   C character
@@ -65640,6 +65989,10 @@ W|w|諾言／诺言
  P||nuo4yan2
   C noun
    D1||promise
+W||氣人／气人
+ P||qi4ren2
+  C adj
+   D1||annoying, irritating, angering
 W|w|發亮／发亮
  P||fa1liang4
   C verb
@@ -65798,6 +66151,10 @@ W|w|高見／高见
  P||gao1jian4
   C noun
    D1|#honorific|esteemed opinion
+W|m|酒醒
+ P||jiu3xing3
+  C verb
+   D1||to sober up
 W|w|淋濕／淋湿
  P||lin2shi1
   C verb
@@ -67098,6 +67455,10 @@ W|w|嬰／婴
    D7||to offend
    D8||to exert
    D9||a surname
+W|m|發憤圖強／发愤图强
+ P||fa1fen4tu2qiang2
+  C phrase
+   D1||to be strongly determined to succeed
 W|w|撓／挠
  P||nao2
   C character
@@ -68188,6 +68549,10 @@ W|w|棉
    D3||cotton-like material
     X<||石棉
    D4||a surname: Mian
+W|m|發短信／发短信
+ P||fa1duan3xin4
+  C verb
+   D1||to text; to send SMS messages
 W|w|番茄
  P||fan1qie2
   C noun
@@ -68468,6 +68833,11 @@ W|w|互聯網／互联网
  P||Hu4lian2wang3
   C name
    D1|Cc #HongKong #computing|Internet
+W|m|艷遇／艳遇
+ P||yan4yu4
+  C noun
+   D1||encounter with a beautiful woman
+   D2||romance; affair
 W|w|佈告／布告
  P||bu4gao4
   C noun
@@ -68747,6 +69117,10 @@ W|w|輾轉／辗转
   C verb
    D3||to toss and turn (in bed)
    D4||to pass through many hands or places
+W|m|長城飯店／长城饭店
+ P||chang2cheng2fan4dian4
+  C name
+   D1||Great Wall Hotel (Beijing Sheraton 喜來登／喜来登)
 W|w|中年人
  P||zhong1nian2ren2
   C noun
@@ -69005,6 +69379,10 @@ W|w|家園／家园
    D2|#figuratively #literally|home
     X<||精神家園／精神家园
    D3|#figuratively #literally|homeland
+W|m|獲得者／获得者
+ P||huo4de2zhe3
+  C noun
+   D1||recipient
 W|w|繳納／缴纳
  P||jiao3na4
   C verb
@@ -70271,6 +70649,10 @@ W|w|赫赫
  P||he4he4
   C adj
    D1|- #ideophonic #literary|majestic; grand; magnificent; illustrious; distinguished
+W|m|賴賬／赖账
+ P||lai4zhang4
+  C verb
+   D1||to renege on a debt
 W|w|戰火／战火
  P||zhan4huo3
   C noun
@@ -70609,6 +70991,10 @@ W|w|專用／专用
    D1|#attributive|dedicated; reserved; special; exclusive
   C verb
    D2||to reserve or dedicate for a specific purpose; to be for special use
+W|m|肩並肩／肩并肩
+ P||jian1bing4jian1
+  C adv
+   D1||shoulder to shoulder; abreast; side by side
 W|w|攙／搀
  P||chan1 |x|chan2
   C character
@@ -70625,6 +71011,10 @@ W|w|不復／不复
  P||bu4fu4
   C adv
    D1||no more; no longer
+W|m|炸糕
+ P||zha2gao1
+  C noun
+   D1||fried glutinous rice dough cake
 W|w|老二
  P||lao3er4
   C noun
@@ -71098,6 +71488,10 @@ W|w|背面
    D1||back (of something); reverse (side)
    D2|#anatomy|back
    D3|#anatomy|dorsal surface
+W|m|泛起
+ P||fan4qi3
+  C verb
+   D1||to appear; to emerge; to surface
 W|w|領土／领土
  P||ling3tu3
   C noun
@@ -71222,6 +71616,10 @@ W|w|雜貨店／杂货店
   C noun
    D1||grocery; grocery store; sundry store; general store; convenience store
     XM||家
+W|m|瞟
+ P||piao3
+  C verb
+   D1||to cast a glance
 W|w|工會／工会
  P||gong1hui4
   C noun
@@ -71582,6 +71980,10 @@ W|w|索賠／索赔
  P||suo3pei2
   C verb
    D1||to ask for compensation; to claim damages
+W|m|郭沫若
+ P||guo1mo4ruo4
+  C name
+   D1||Guo Moruo (1892-1978), writer, communist party intellectual and cultural apparatchik
 W|w|嚇死／吓死
  P||xia4si3
   C verb
@@ -71880,6 +72282,11 @@ W|w|供養／供养
   C verb
    D1||to provide and care for one's parents or elders
    D2||to give offerings to gods
+W|m|相伴
+ P||xiang1ban4
+  C verb
+   D1||to accompany sb
+   D2||to accompany each other
 W|w|陳舊／陈旧
  P||chen2jiu4
   C adj
@@ -72973,6 +73380,10 @@ W|m|意下如何
  P||yi4xia4ru2he2
   C phrase
    D1||how about it?; what do you think?
+W|m|雅致
+ P||ya3zhi4;ya3zhi5
+  C adj
+   D1||elegant; refined; in good taste
 W|w|暑
  P||shu3
   C character
@@ -73687,6 +74098,10 @@ W|w|聰／聪
    D2||hearing; sense of hearing
    D3||intelligent; clever; bright
    D4||satoshi (bitcoin unit)
+W|m|鐵了心／铁了心
+ P||tie3le5xin1
+  C adj
+   D1||determined; unshakable
 W|w|嗜好
  P||shi4hao4
   C noun
@@ -73985,6 +74400,10 @@ W|w|鞋帶／鞋带
   C noun
    D1||shoelace
     XM||條／条
+W|m|百貨大樓／百货大楼
+ P||bai3huo4da4lou2
+  C noun
+   D1||department store
 W|w|用法
  P||yong4fa3
   C noun
@@ -74516,7 +74935,7 @@ W|w|瑪麗／玛丽
  P||Ma3li4
   C name
    D1||A transliteration of the English female given name Mary
-W|w|解僱／解雇
+W|w|解僱／解雇;解雇
  P||jie3gu4
   C verb
    D1||to terminate someone's employment; to discharge; to dismiss; to fire; to sack
@@ -74743,6 +75162,10 @@ W|w|內斂／内敛
  P|C|nei4lian3 |T|nei4lian4
   C adj
    D1||introverted
+W|m|脊梁
+ P|C|ji3liang5 |T|ji3liang2
+  C noun
+   D1|#colloquial|back (of a human or other vertebrate); backbone; spine
 W|w|誕辰／诞辰
  P||dan4chen2
   C noun
@@ -74851,6 +75274,10 @@ W|w|黨章／党章
  P||dang3zhang1
   C noun
    D1||charter or constitution of a political party
+W|m|虛情假意／虚情假意
+ P||xu1qing2jia3yi4
+  C noun
+   D1||false friendship; hypocritical show of affection
 W|w|蒸蒸日上
  P||zheng1zheng1ri4shang4
   C phrase
@@ -75591,6 +76018,10 @@ W|m|下逐客令
   C verb
    D1||to ask sb to leave; to show sb the door
    D2||to give a tenant notice to leave
+W|m|殉國／殉国
+ P||xun4guo2
+  C verb
+   D1||to die for one's country
 W|w|挎
  P||kua4
   C character
@@ -76024,6 +76455,10 @@ W|w|忍辱負重／忍辱负重
  P|C|ren3ru3fu4zhong4 |T|ren3ru4fu4zhong4
   C phrase
    D1||to endure or tolerate humiliation to accomplish an important task
+W|m|送給／送给
+ P||song4gei3
+  C verb
+   D1||to send; to give as a present
 W|w|馬車／马车
  P||ma3che1
   C noun
@@ -76442,7 +76877,7 @@ W|w|演唱
    D1||singing; vocal performance
   C verb
    D2||to sing for performance; to perform a song
-W|w|獨佔／独占
+W|w|獨佔／独占;獨占
  P||du2zhan4
   C verb
    D1||to monopolize; to take over; to have something all to oneself
@@ -76585,13 +77020,17 @@ W|w|鎮守／镇守
  P||zhen4shou3
   C verb
    D1||to guard (a place, region, etc.)
-W|w|橋樑／桥梁
+W|w|橋樑／桥梁;橋梁／桥梁
  P||qiao2liang2
   C noun
    D1|#literal|bridge (structure connecting two places)
     XM||座
    D2|#figurative|bridge (something or someone which facilitates communication or creates a connection between two things)
     XM||座
+W|m|障眼法
+ P||zhang4yan3fa3
+  C noun
+   D1||diversionary tactic; smokescreen
 W|w|雕像
  P||diao1xiang4
   C noun
@@ -76904,6 +77343,10 @@ W|w|燭／烛
    D1||candle; taper
    D2||to shine; to illuminate
    D3|x #Taiwanese-Hokkien|candlepower (unit)
+W|m|等一下兒／等一下儿
+ P||deng3yi1xia4r5
+  C verb
+   D1||Erhua form of 等一下
 W|w|湖南
  P||Hu2nan2
   C name
@@ -77493,6 +77936,10 @@ W|w|交錯／交错
  P||jiao1cuo4
   C verb
    D1||to interlock; to crisscross
+W|m|沉得住氣／沉得住气
+ P||chen2de5zhu4qi4
+  C verb
+   D1||to stay calm; to keep one's composure
 W|w|撒氣／撒气
  P||sa1qi4
   C verb
@@ -77637,6 +78084,10 @@ W|w|法師／法师
    D1|#Buddhism|one who has mastered the sutras
    D2|#honorific|(usually as a title) Buddhist monastic
    D3|#fantasy|wizard; mage
+W|m|蹺課／跷课
+ P||qiao1ke4
+  C verb
+   D1||to skip class
 W|w|校規／校规
  P||xiao4gui1
   C noun
@@ -78007,6 +78458,10 @@ W|w|鄉鎮／乡镇
  P||xiang1zhen4
   C noun
    D1||small town; village; township
+W|m|陰錯陽差／阴错阳差
+ P||yin1cuo4yang2cha1
+  C phrase
+   D1||due to an unexpected turn of events
 W|w|帝國／帝国
  P||di4guo2
   C noun
@@ -78106,6 +78561,11 @@ W|w|清朝
  P||Qing1chao2
   C name
    D1||the Qing dynasty (1644-1911)
+W|m|桃樹／桃树
+ P||tao2shu4
+  C noun
+   D1||peach tree
+    XM||棵;株
 W|w|薰陶／熏陶
  P||xun1tao2
   C verb
@@ -78266,6 +78726,10 @@ W|w|刁
    D8||ear of grains
    D9||to make (time)
    D10||a surname
+W|m|鑑賞／鉴赏
+ P||jian4shang3
+  C verb
+   D1||to appreciate (as a connoisseur)
 W|w|虧得／亏得
  P||kui1de5
   C adv
@@ -78768,6 +79232,10 @@ W|w|工人階級／工人阶级
  P||gong1ren2 jie1ji2
   C noun
    D1||working class
+W|m|熬出頭／熬出头
+ P||ao2chu1tou2
+  C verb
+   D1||to break clear of all the troubles and hardships; to achieve success; to make it
 W|w|洩／泄
  P||xie4
   C character
@@ -79239,6 +79707,10 @@ W|w|農作物／农作物
   C noun
    D1|#agriculture|crop (anything that is planted for its yield)
     XM||種／种
+W|m|李白
+ P||li3bai2
+  C name
+   D1||Li Bai (701-762), famous Tang Dynasty poet
 W|w|顧不得／顾不得
  P||gu4bu4de2 |C|gu4bu5de5 |x|gu4bu4de5
   C verb
@@ -79753,6 +80225,10 @@ W|w|礦井／矿井
  P||kuang4jing3
   C noun
    D1||mine; shaft; pit
+W|m|隱去／隐去
+ P||yin3qu4
+  C verb
+   D1||to disappear; to hide
 W|w|空軍／空军
  P||kong1jun1
   C noun
@@ -80033,6 +80509,10 @@ W|w|歇業／歇业
   C verb
    D1||(of a business) to close; to suspend operations
    D2||to go out of business; to close down permanently
+W|m|熒屏／荧屏
+ P||ying2ping2
+  C noun
+   D1||fluorescent screen; TV screen
 W|w|知足常樂／知足常乐
  P||zhi1zu2chang2le4
   C phrase
@@ -80083,6 +80563,11 @@ W|w|唯心論／唯心论
  P||wei2xin1lun4
   C noun
    D1||idealism
+W|m|陷於／陷于
+ P||xian4yu2
+  C verb
+   D1||caught in (a bad situation)
+   D2||to fall into (trap etc)
 W|w|雜亂／杂乱
  P||za2luan4
   C adj
@@ -80324,6 +80809,12 @@ W|w|開辦／开办
  P||kai1ban4
   C verb
    D1||to found; to set up; to establish
+W|m|殷殷
+ P||yin1yin1
+  C adv
+   D1||earnest; ardent (hope etc)
+  C adj
+   D2||(of emotions) deep
 W|w|稻穀／稻谷
  P||dao4gu3
   C noun
@@ -80455,7 +80946,7 @@ W|w|取締／取缔
  P||qu3di4
   C verb
    D1||to ban; to prohibit (publications, customs, etc.); to outlaw; to suppress (violators)
-W|w|艱巨／艰巨
+W|w|艱巨／艰巨;艱鉅／艰钜
  P||jian1ju4
   C adj
    D1||arduous; onerous; formidable
@@ -80592,6 +81083,10 @@ W|w|售票員／售票员
  P||shou4piao4yuan2
   C noun
    D1||ticket seller; conductor
+W|m|附上
+ P||fu4shang4
+  C verb
+   D1||attached; included herewith
 W|w|解鈴還須繫鈴人／解铃还须系铃人
  P||jie3 ling2 hai2 xu1 xi4 ling2 ren2
   C phrase
@@ -80682,6 +81177,11 @@ W|w|功成名就
  P||gong1cheng2ming2jiu4
   C phrase
    D1||Synonym of 功成名遂 (gōngchéngmíngsuì, “merits accomplished and fame obtained”)
+W|m|浪跡天涯／浪迹天涯
+ X>||浪跡／浪迹;天涯
+ P|C|lang4ji4 tian1ya2 |T|lang4ji1 tian1ya2
+  C phrase
+   D1||to roam far and wide; to travel the world
 W|w|倒退
  P||dao4tui4
   C verb
@@ -81259,6 +81759,10 @@ W|w|顫／颤
   C character
    D1||to shake; to vibrate; to tremble
    D2||to shiver; to tremble
+W|m|開溜／开溜
+ P||kai1liu1
+  C verb
+   D1||to leave in stealth; to slip away
 W|w|無望／无望
  P||wu2wang4
   C verb
@@ -81472,6 +81976,10 @@ W|w|全貌
  P||quan2mao4
   C noun
    D1||the whole picture; the full story
+W|m|說閒話／说闲话
+ P||shuo1xian2hua4
+  C verb-object
+   D1||to chat; to gossip
 W|w|半數／半数
  P||ban4shu4
   C noun
@@ -81699,6 +82207,10 @@ W|w|璀璨
  P||cui3can4
   C adj
    D1|#figuratively #literally|radiant; bright; lustrous; resplendent; brilliant
+W|m|胡同
+ P||hu2tong4
+  C noun
+   D1||lane; alley
 W|w|鮮奶／鲜奶
  P||xian1nai3
   C noun
@@ -81853,6 +82365,16 @@ W|w|存貨／存货
    D1||to stock up
   C noun
    D2||goods in stock; stock; inventory
+W|m|無記名／无记名
+ P||wu2ji4ming2
+  C adj
+   D1||(of a document) not bearing a name
+   D2||unregistered (financial securities etc)
+   D3||bearer (bond)
+   D4||secret (ballot etc)
+   D5||anonymous
+   D6||unattributed (remarks)
+   D7||(of a check) payable to the bearer
 W|w|赤字
  P||chi4zi4
   C noun
@@ -83401,6 +83923,10 @@ W|w|連絡／连络
    D2||Alternative form of 聯絡／联络 (liánluò)
   C verb
    D3||Alternative form of 聯絡／联络 (liánluò)
+W|m|輕柔／轻柔
+ P||qing1rou2
+  C adj
+   D1||soft; gentle; pliable
 W|w|羨／羡
  P||xian4
   C character
@@ -83628,6 +84154,10 @@ W|w|參選／参选
   C verb
    D1||(of a person) to stand for election
    D2||(of a piece of work) to enter a contest for competitive selection
+W|m|買不起／买不起
+ P||mai3bu5qi3
+  C verb
+   D1||cannot afford; can't afford buying
 W|w|慘痛／惨痛
  P||can3tong4
   C adj
@@ -83682,6 +84212,12 @@ W|w|脫手／脱手
   C verb
    D1||to slip out of the hand
    D2||to get off one's hand; to dispose of; to sell
+W|m|錯車／错车
+ P||cuo4che1
+  C verb
+   D1|#driving|to give right of way to another vehicle
+  C noun
+   D2||the wrong bus
 W|w|道教
  P||Dao4jiao4
   C name
@@ -83699,6 +84235,10 @@ W|w|裘
    D2|- #literary|to wear a fur coat
    D3|x #Southern-Min|padded jacket; lined jacket
    D4||a surname
+W|m|苦勞／苦劳
+ P||ku3lao2
+  C noun
+   D1||toil; hard work
 W|w|觀望／观望
  P||guan1wang4
   C verb
@@ -83920,6 +84460,10 @@ W|w|屏東／屏东
   C name
    D1||(～縣) Pingtung (a county of Taiwan)
    D2||(～市) Pingtung (a city in Pingtung County, Taiwan)
+W|m|陸羽／陆羽
+ P||lu4yu3
+  C name
+   D1||Lu Yu (733-804), Chinese writer from Tang dynasty, known for his obsession with tea
 W|w|拖拉機／拖拉机
  P||tuo1la1ji1
   C noun
@@ -84400,6 +84944,10 @@ W|w|瘦肉
  P||shou4rou4
   C noun
    D1||lean meat (especially pork)
+W|m|楊家將／杨家将
+ P||yang2jia1jiang4
+  C name
+   D1||Yang Saga, a popular fiction from the Northern Song, depicting the heroic Yang family 楊業／杨业 of warriors
 W|w|頤和園／颐和园
  P||Yi2he2yuan2
   C name
@@ -84627,6 +85175,14 @@ W|w|落伍
   C verb
    D1|#military|to fall behind the ranks
    D2|#figurative|to be behind the times; to be outdated
+W|m|氣象局／气象局
+ P||qi4xiang4ju2
+  C noun
+   D1||weather bureau; meteorological office
+W|m|蠢蛋
+ P||chun3dan4
+  C noun
+   D1||fool; dolt
 W|w|糖衣
  P||tang2yi1
   C noun
@@ -84647,6 +85203,10 @@ W|w|清幽
  P||qing1you1
   C adj
    D1||quiet and beautiful; enchanting and secluded (of a landscape)
+W|m|音響設備／音响设备
+ P||yin1xiang3she4bei4
+  C noun
+   D1||sound equipment; stereo
 W|w|閉幕／闭幕
  P||bi4mu4
   C verb-object
@@ -85221,6 +85781,10 @@ W|w|蹏／蹄
  P||ti2
   C character
    D1||Alternative form of 蹄
+W|m|自視甚高／自视甚高
+ P||zi4shi4shen4gao1
+  C phrase
+   D1||to think highly of oneself; giving oneself airs; arrogant and self-important
 W|w|施肥
  P||shi1fei2
   C verb
@@ -85462,6 +86026,10 @@ W|w|羽毛球
   C noun
    D1||badminton (a racquet sport)
    D2||shuttlecock (an object used in badminton)
+W|m|班上
+ P||ban1shang4
+  C noun
+   D1||(in the) class
 W|w|收支
  P||shou1zhi1
   C noun
@@ -85740,6 +86308,12 @@ W|w|口信
  P||kou3xin4
   C noun
    D1||oral message
+W|m|爭戰／争战
+ P||zheng1zhan4
+  C noun
+   D1||fight
+  C verb
+   D2||to fight
 W|w|天壇／天坛
  P||Tian1tan2
   C name
@@ -85801,6 +86375,10 @@ W|w|大洋洲
  P||Da4yang2zhou1
   C name
    D1||Oceania
+W|m|滅掉／灭掉
+ P||mie4diao4
+  C verb
+   D1||to eliminate
 W|w|珍品
  P||zhen1pin3
   C noun
@@ -85879,6 +86457,10 @@ W|w|澎湖
    D2||(～島, ～本島) Penghu Island (the largest island of the Pescadores Islands)
    D3||(～縣) Penghu (a county of the Republic of China)
    D4||(～水道) Pescadores Channel (between the Pescadores Islands and Taiwan)
+W|m|清潔劑／清洁剂
+ P||qing1jie2ji4
+  C noun
+   D1||detergent; cleaning solution
 W|w|挪動／挪动
  P||nuo2dong4
   C verb
@@ -86014,6 +86596,10 @@ W|w|審議／审议
  P||shen3yi4
   C verb
    D1|#transitive|to deliberate; to review
+W|m|濟公／济公
+ P||ji4gong1
+  C name
+   D1||Jigong or Daoji (1130-1207), Southern Song Dynasty Buddhist monk
 W|w|質變／质变
  P|C|zhi4bian4 |T|zhi2bian4
   C verb
@@ -86206,7 +86792,7 @@ W|w|天壤之別／天壤之别
  P||tian1rang3zhi1bie2
   C phrase
    D1||to be poles apart; to be like night and day; to be a world of difference between them
-W|w|僱用／雇用
+W|w|僱用／雇用;雇用
  P||gu4yong4
   C verb
    D1||to employ; to hire (a worker, firm, etc.); to take on (a worker)
@@ -86816,10 +87402,19 @@ W|w|浪潮
   C noun
    D1|#literally|tide; wave; tidal wave
    D2|#figuratively|tendency; trend; social movement
+W|m|營帳／营帐
+ P||ying2zhang4
+  C noun
+   D1||tent
+   D2||camp
 W|w|勤勉
  P||qin2mian3
   C adj
    D1||hard-working; diligent; industrious
+W|m|當著／当着
+ P||dang1zhe5
+  C noun
+   D1||in front of; in the presence of
 W|w|構思／构思
  P||gou4si1
   C noun
@@ -86964,6 +87559,10 @@ W|w|孤寂
  P|C|gu1ji4 |T|gu1ji2
   C adj
    D1||lonely; lonesome; solitary; desolate
+W|m|水仙花
+ P||shui3xian1hua1
+  C name
+   D1||daffodil; narcissus
 W|w|峽／峡
  P||xia2
   C character
@@ -87375,6 +87974,7 @@ W|m|張飛／张飞
  P||zhang1fei1
   C name
    D1||Zhang Fei (168-221), general of Shu and blood-brother of Liu Bei in Romance of the Three Kingdoms, famous as fearsome fighter and lover of wine
+    XG||劉關張／刘关张#D1;劉備／刘备#D1;關羽／关羽#D1
 W|w|鹹菜／咸菜
  P||xian2cai4
   C adj
@@ -87765,6 +88365,10 @@ W|w|波士頓／波士顿
  P||Bo1shi4dun4
   C name
    D1||Boston (the capital and largest city of Massachusetts, United States)
+W|m|置之死地而後生／置之死地而后生
+ P||zhi4zhi1si3di4er2hou4sheng1
+  C phrase
+   D1||(idiom based on Sunzi's "The Art of War" 孫子兵法／孙子兵法) to deploy one's troops in such a way that there is no possibility of retreat, so that they will fight for their lives and win the battle; to fight desperately when confronted with mortal danger; to find a way to emerge from a dire situation
 W|w|氣急敗壞／气急败坏
  P||qi4ji2bai4huai4
   C phrase
@@ -88090,6 +88694,10 @@ W|m|作賊／作贼
   C verb
    D1||to be a thief
     X<||作賊心虛／作贼心虚
+W|m|衛生局／卫生局
+ P||wei4sheng1ju2
+  C noun
+   D1||health office; bureau of hygiene
 W|w|獵手／猎手
  P||lie4shou3
   C noun
@@ -88287,6 +88895,10 @@ W|w|卑賤／卑贱
   C adj
    D1||(of position or status) humble; lowly
    D2||(of character) mean and low
+W|m|瞎搞
+ P||xia1gao3
+  C verb
+   D1||to fool around; to mess with; to do sth without a plan
 W|w|用度
  P||yong4du4
   C noun
@@ -88385,6 +88997,10 @@ W|w|流寇
  P||liu2kou4
   C noun
    D1||roving bandits; rebels
+W|m|脫下／脱下
+ P||tuo1xia4
+  C verb
+   D1||to take off (clothing)
 W|w|鄉民／乡民
  P||xiang1min2
   C noun
@@ -88511,6 +89127,10 @@ W|w|嗓子眼
  P||sang3zi5yan3
   C noun
    D1|#colloquial|throat (the opening)
+W|m|武略
+ P||wu3lve4
+  C noun
+   D1||military strategy
 W|w|暴君
  P||bao4jun1
   C noun
@@ -88888,6 +89508,10 @@ W|w|涵養／涵养
    D1||self-possession; self-restraint
   C verb
    D2||to conserve (e.g. water)
+W|m|絆住／绊住
+ P||ban4zhu4
+  C verb
+   D1||to entangle; to hinder; to impede movement
 W|w|五金
  P||wu3jin1
   C noun
@@ -88906,6 +89530,10 @@ W|w|歸咎／归咎
  P||gui1jiu4
   C verb
    D1||to blame; to put the blame upon
+W|m|露頭／露头
+ P||lou4tou2;lu4tou2
+  C verb-object
+   D1||to show one's head; to give a sign to show one's presence
 W|w|眾矢之的／众矢之的
  P||zhong4shi3zhi1di4
   C phrase
@@ -89154,6 +89782,11 @@ W|w|領事／领事
   C noun
    D1|#countable #diplomacy|consul
     XM||名;位
+W|m|透亮
+ P||tou4liang4;tou4liang5
+  C adj
+   D1||bright; shining
+   D2||translucent; crystal clear
 W|w|出類拔萃／出类拔萃
  P||chu1lei4ba2cui4
   C phrase
@@ -89193,6 +89826,11 @@ W|w|依稀
  P||yi1xi1
   C adj
    D1|#ideophonic|vague; dim; faint
+W|m|風塵僕僕／风尘仆仆
+ P||feng1chen2pu2pu2
+  C phrase
+   D1|#literal|covered in dust
+   D2|#figurative|travel-worn
 W|w|風調雨順／风调雨顺
  P||feng1tiao2yu3shun4
   C phrase
@@ -89262,6 +89900,10 @@ W|w|首相
   C noun
    D1||prime minister
    D2|x #Song-dynasty #archaic #historical|highest level chancellor
+W|m|武松
+ P||wu3song1
+  C name
+   D1||Wu Song, a heroic outlaw of Liangshan Marsh in the classic novel Water Margin 水滸傳／水浒传, whose exploits include killing a tiger with his bare hands
 W|w|庄
  P||peng2
   C character
@@ -89463,6 +90105,10 @@ W|w|幽幽
   C adj
    D1||(of sound, light, etc.) faint
    D2||profound; far-reaching
+W|m|繁花
+ P||fan2hua1
+  C noun
+   D1||flourishing blossom; a mass of flowers; luxuriant flowers
 W|w|昇
  P||sheng1
   C character
@@ -89631,6 +90277,10 @@ W|w|翰林
    D1|x #historical|Hanlin Academy
    D2|x #historical|Hanlin Academy scholar
    D3|- #literary|literary circles
+W|m|魯迅／鲁迅
+ P||lu3xun4
+  C name
+   D1||Lu Xun (1881-1936), one of the earliest and best-known modern Chinese writers
 W|w|風尚／风尚
  P||feng1shang4
   C noun
@@ -89721,6 +90371,10 @@ W|w|殷勤
  P||yin1qin2
   C adj
    D1||eagerly attentive; earnest; courteous; sincere; diligent
+W|m|胸前
+ P||xiong1qian2
+  C noun
+   D1||(on the) chest; bosom
 W|w|相傳／相传
  P||xiang1chuan2
   C verb
@@ -89792,6 +90446,10 @@ W|w|大赦
    D2|#Roman-Catholicism|indulgence
   C verb
    D3||to grant an amnesty or general pardon (to prisoners, illegal migrants, etc.)
+W|m|賢良／贤良
+ P||xian2liang2
+  C adj
+   D1||(of a man) able and virtuous
 W|w|俠士／侠士
  P||xia2shi4
   C noun
@@ -90476,6 +91134,10 @@ W|w|奔喪／奔丧
  P||ben1sang1
   C verb-object
    D1||to hurry back (from a faraway place) for an older relative's funeral
+W||牢騷滿腹／牢骚满腹
+ P||lao2sao1man3fu4
+  C phrase
+   D1||full of grievances
 W|w|槐樹／槐树
  P||huai2shu4
   C noun
@@ -90574,6 +91236,16 @@ W|w|遮蔽
  P||zhe1bi4
   C verb
    D1||to hide from view; to obstruct; to cover; to block out; to shelter; to obscure
+W|m|水靈靈／水灵灵
+ XV||水靈／水灵
+ P||shui3ling2ling2
+  C adj
+   D1||See 水靈／水灵 
+W|m|禁地
+ P||jin4di4
+  C noun
+   D1|#literal|forbidden area; restricted area
+   D3|#figurative|sth considered off-limits
 W|w|湯圓／汤圆
  P||tang1yuan2
   C noun
@@ -90665,6 +91337,10 @@ W|w|要員／要员
   C noun
    D1||important official
    D2||key participant; VIP
+W|m|舞劍／舞剑
+ P||wu3jian4
+  C verb
+   D1||to perform a sword-dance
 W|w|鐵面無私／铁面无私
  P||tie3mian4wu2si1
   C phrase
@@ -90928,6 +91604,11 @@ W|w|政變／政变
  P||zheng4bian4
   C noun
    D1||coup d'état; change of government; coup
+W|m|東倒西歪／东倒西歪
+ P||dong1dao3xi1wai1
+  C phrase
+   D1||to lean unsteadily from side to side; to sway
+   D2||(of buildings etc) to lean at a crazy angle
 W|w|信奉
  P||xin4feng4
   C verb
@@ -91083,6 +91764,11 @@ W|w|論調／论调
  P||lun4diao4
   C noun
    D1|#derogatory|view; argument
+W|m|繞圈子／绕圈子
+ P||rao4quan1zi5
+  C verb
+   D1|#literal|to go around in circles; to make a detour
+   D2|#figurative|to beat about the bush
 W|w|請纓／请缨
  P||qing3ying1
   C verb
@@ -91092,6 +91778,10 @@ W|w|奉告
  P||feng4gao4
   C verb
    D1||to let someone know; to inform
+W|m|顯老／显老
+ P||xian3lao3
+  C adj
+   D1||to look old
 W|w|術語／术语
  P||shu4yu3
   C noun
@@ -91145,6 +91835,10 @@ W|w|漕運／漕运
  P||cao2yun4
   C verb
    D1||to transport grains by water
+W|m|用項／用项
+ P||yong4xiang4;yong4xiang5
+  C noun
+   D1||items of expenditure; expenditures
 W|w|稿紙／稿纸
  P||gao3zhi3
   C noun
@@ -91715,6 +92409,10 @@ W|w|性向
    D1||predisposition; tendency
    D2||aptitude
    D3||sexual orientation
+W|m|血書／血书
+ P|C|xue4shu1 |T|xie3shu1
+  C noun
+   D1||letter written in one's own blood, expressing determination, hatred, last wishes etc
 W|w|中飽私囊／中饱私囊
  P||zhong1bao3si1nang2
   C phrase
@@ -92018,6 +92716,10 @@ W|w|謾罵／谩骂
  P||man4ma4
   C verb
    D1||to hurl abuse; to deride
+W|m|花邊新聞／花边新闻
+ P||hua1bian1xin1wen2
+  C noun
+   D1||media gossip; sensational news
 W|w|奠
  P||dian4
   C character
@@ -92413,6 +93115,10 @@ W|w|化險為夷／化险为夷
  P||hua4 xian3 wei2 yi2
   C phrase
    D1||to head off a disaster
+W|m|穿著打扮／穿着打扮
+ P||chuan1zhuo2da3ban4
+  C noun
+   D1||style of dress; one's appearance
 W|w|官位
  P||guan1wei4
   C noun
@@ -92755,6 +93461,10 @@ W|w|歡聚一堂／欢聚一堂
  P||huan1ju4yi1tang2
   C phrase
    D1||to gather joyfully in the same place
+W|m|砸破
+ P||za2po4
+  C verb
+   D1||to break; to shatter
 W|w|大關／大关
  P||da4guan1
   C noun
@@ -92835,6 +93545,12 @@ W|m|副理
   C noun
    D1||deputy director
    D2||assistant manager
+W|m|鍾馗／钟馗
+ P||zhong1kui2
+  C name
+   D1||Zhong Kui (mythological figure, supposed to drive away evil spirits)
+  C noun
+   D2|#figurative|a person with the courage to fight against evil
 W|w|瑣／琐
  P||suo3
   C character
@@ -92951,6 +93667,10 @@ W|w|開戶／开户
  P||kai1hu4
   C verb-object
    D1|#intransitive|to open an account (e.g. a bank account)
+W|m|闖蕩江湖／闯荡江湖
+ P||chuang3dang4jiang1hu2
+  C verb
+   D1||to travel around the country
 W|w|匱／匮
  P||kui4
   C character
@@ -93017,6 +93737,11 @@ W|w|中等
  P||zhong1deng3
   C adj
    D1||medium; middle (grade, class, level, quality, degree, scale, scope, etc.); intermediate; moderate; middling; secondary (school); general; ordinary; common; average (e.g. of height)
+W|m|轅／辕
+ P||yuan2
+  C character
+   D1||shafts of cart
+   D2||yamen
 W|w|燈節／灯节
  P||deng1jie2
   C noun
@@ -93062,6 +93787,10 @@ W|w|木料
   C noun
    D1||wood; log; timber
     XM||塊／块
+W|m|相對象／相对象
+ P||xiang4dui4xiang4
+  C verb
+   D1||to meet a possible marriage partner
 W|w|外電／外电
  P||wai4dian4
   C noun
@@ -93233,6 +93962,10 @@ W|w|瑤池／瑶池
  P||Yao2chi2
   C name
    D1|#Chinese-mythology #Chinese-religion|Jade Pond; Gem Pond (a mythical location in the Kunlun Mountains associated with the Queen Mother of the West)
+W|m|落座
+ P||luo4zuo4
+  C verb
+   D1||to sit down; to take a seat
 W|w|錦緞／锦缎
  P||jin3duan4
   C noun
@@ -93294,7 +94027,7 @@ W|w|普查
   C verb
    D3||to conduct a comprehensive survey, study or investigation
    D4||to conduct a census
-W|w|超度
+W|w|超度;超渡
  P||chao1du4
   C verb
    D1||to surpass; to transcend
@@ -93395,6 +94128,10 @@ W|w|絕跡／绝迹
  P|C|jue2ji4 |T|jue2ji1
   C verb
    D1||to disappear; to vanish; to be stamped out
+W|m|視作／视作
+ P||shi4zuo4
+  C verb
+   D1||to regard as; to treat as
 W|w|威儀／威仪
  P||wei1yi2
   C noun
@@ -93717,6 +94454,13 @@ W|w|擋風玻璃／挡风玻璃
  P||dang3feng1 bo1li5 |x|dang3feng1 bo1li2
   C noun
    D1||windshield; windscreen
+W|m|迷津
+ X<||指點迷津／指点迷津
+ P||mi2jin1
+  C noun
+   D1||a maze
+  C verb
+   D2||to lose the way
 W|w|如魚得水／如鱼得水
  P||ru2yu2de2shui3
   C phrase
@@ -93912,6 +94656,10 @@ W|w|香客
  P||xiang1ke4
   C noun
    D1|#Buddhism|pilgrim
+W|m|無路可逃／无路可逃
+ P||wu2lu4ke3tao2
+  C phrase
+   D1||no way out; nowhere to go; trapped beyond hope of rescue; painted into a corner
 W|w|器物
  P||qi4wu4
   C noun
@@ -94066,6 +94814,10 @@ W||倫理道德／伦理道德
   C noun
    D1||moral principles that uphold human relationships
     X>||倫理／伦理#D1;道德#D2
+W||眼淚汪汪／眼泪汪汪
+ P||yan3lei4wang1wang1
+  C adj
+   D1||in tears; tearful
 W|w|癒合／愈合
  P||yu4he2
   C verb
@@ -94213,6 +94965,10 @@ W|w|織女／织女
    D2|#uranography|(～星) Weaving Girl, an asterism in the Chinese constellation Ox
   C noun
    D3|x #dated|weaving girl; weaver girl
+W|m|猛地
+ P||meng3de5
+  C adv
+   D1||suddenly
 W|w|富麗堂皇／富丽堂皇
  P||fu4li4 tang2huang2
   C phrase
@@ -94250,6 +95006,10 @@ W|w|沖淡／冲淡
   C verb
    D1||to dilute
    D2|#figurative|to weaken; to play down; to water down
+W|m|現身說法／现身说法
+ P||xian4shen1shuo1fa3
+  C phrase
+   D1||to talk from one's personal experience; to use oneself as an example
 W|w|六四
  P||Liu4-Si4
   C name
@@ -94429,6 +95189,13 @@ W|w|酷愛／酷爱
  P||ku4ai4
   C verb
    D1||to have a passion for; to be keen on; to ardently love
+W|m|評頭論足／评头论足
+ P||ping2tou2lun4zu2
+  C phrase
+   D1|#literal|to assess the head and discuss the feet; minute criticism of a woman's appearance
+   D2|#figurative|to find fault in minor details
+   D3||to remark upon a person's appearance
+   D4||nitpicking; overcritical; judgmental
 W|w|絕無僅有／绝无仅有
  P||jue2wu2jin3you3
   C phrase
@@ -94605,6 +95372,10 @@ W|w|跳井
  P||tiao4jing3
   C verb
    D1||to drown oneself in a well
+W|m|纖纖／纤纤
+ P||xian1xian1
+  C adj
+   D1||slim; slender
 W|w|相距
  P||xiang1ju4
   C verb
@@ -94877,11 +95648,15 @@ W|w|事體／事体
  P||shi4ti3
   C noun
    D1|x #Puxian-Min #Wu #literary|thing; matter
+W|m|歪門邪道／歪门邪道
+ P||wai1men2xie2dao4
+  C noun
+   D1||dishonest practices
 W|w|丟棄／丢弃
  P||diu1qi4
   C verb
    D1|#transitive|to abandon; to cast out; to throw away
-W|w|沉靜／沈静
+W|w|沉靜／沈静;沉靜／沉静
  P||chen2jing4
   C adj
    D1||quiet; calm; serene; placid
@@ -95160,6 +95935,10 @@ W|w|自制
    D1||restraint; self-control
   C verb
    D2||to exercise self-control; to restrain oneself
+W|m|花廳／花厅
+ P||hua1ting1
+  C noun
+   D1||reception pavilion (generally part of a large residence, and often built in a garden)
 W|w|煤油
  P||mei2you2
   C noun
@@ -95426,6 +96205,10 @@ W|w|紳／绅
    D1||girdle worn by officials in ancient China
    D2||to tie; to bind
    D3||gentleman
+W|m|靈骨塔／灵骨塔
+ P||ling2gu3ta3
+  C noun
+   D1||columbarium
 W|w|墨汁
  P||mo4zhi1
   C noun
@@ -95479,6 +96262,10 @@ W|w|挺進／挺进
  P||ting3jin4
   C verb
    D1||to boldly drive on; to press onward; to push forward
+W|m|水漬／水渍
+ P||shui3zi4
+  C noun
+   D1||water spot; water stain; wet spot; damp patch; water damage
 W|w|手捲／手卷
  P||shou3juan3
   C noun
@@ -95903,6 +96690,10 @@ W|w|招收
  P||zhao1shou1
   C verb
    D1||to recruit; to hire
+W|m|萬事大吉／万事大吉
+ P||wan4shi4da4ji2
+  C phrase
+   D1||everything is fine; all is well with the world
 W|w|外銷／外销
  P||wai4xiao1
   C verb
@@ -95911,6 +96702,10 @@ W|w|末了
  P||mo4liao3
   C adv
    D1||last; finally; in the end
+W|m|貞節牌坊／贞节牌坊
+ P||zhen1jie2pai2fang1
+  C noun
+   D1||memorial arch in honor of a chaste widow
 W|w|狂風暴雨／狂风暴雨
  P||kuang2feng1bao4yu3
   C noun
@@ -96114,6 +96909,10 @@ W|w|噴水池／喷水池
  P||pen1shui3chi2
   C noun
    D1||fountain (an artificial water feature)
+W|m|耳刮子
+ P||er3gua1zi5
+  C noun
+   D1|#colloquial|a slap on one's face
 W|w|談笑風生／谈笑风生
  P||tan2xiao4feng1sheng1
   C phrase
@@ -96179,6 +96978,10 @@ W|m|心急火燎
  P|C|xin1ji2hxuo3liao3 |T|xin1ji2huo3liao4
   C phrase
    D1||to burn with anxiety
+W|m|殺氣騰騰／杀气腾腾
+ P||sha1qi4teng2teng2
+  C adj
+   D1||ferocious; murderous-looking
 W|w|前瞻性
  P||qian2zhan1xing4
   C noun
@@ -96300,6 +97103,10 @@ W|w|搖身一變／摇身一变
  P||yao2shen1yi1bian4
   C phrase
    D1||(usually derogatory and said of bad people) to suddenly change into a different appearance or identity; to assume a different persona or disguise
+W|m|爐火／炉火
+ P||lu2huo3
+  C noun
+   D1||the fire of a stove
 W|w|冒雨
  P||mao4yu3
   C verb
@@ -96378,6 +97185,11 @@ W|w|酸溜溜
    D2|#colloquial #expressive|(of the body) aching; sore
    D3|#colloquial #expressive|(in one's mind) a bit envious or sad; jealous
    D4|#colloquial #expressive|(of one's words or a writing) pedantic; bookish
+W|m|熟透
+ P||shu2tou4
+  C adj
+   D1||completely ripe; ripened
+   D2||well-cooked
 W|w|龜兒子／龟儿子
  P||gui1er2zi5
   C noun
@@ -96434,6 +97246,10 @@ W|w|大刀闊斧／大刀阔斧
  P||da4dao1kuo4fu3
   C phrase
    D1||to handle something with daring and resolve; to be bold and decisive when handling an issue; drastic
+W|m|死要面子活受罪
+ P||si3yao4mian4zi5huo2shou4zui4
+  C proverb
+   D1||to go through hell for the sake of keeping up appearances
 W|w|嘎嘎
  P||ga1ga1
   C noun
@@ -96497,6 +97313,10 @@ W|w|不渝
  P||bu4yu2
   C verb
    D1|- #literary|to not change; to remain unchanged
+W|m|熱血沸騰／热血沸腾
+ P||re4xue4fei4teng2
+  C phrase
+   D1||to be fired up; to have one's blood racing; to be burning (with excitement, passion, anger etc)
 W|w|公雞／公鸡
  P||gong1ji1
   C noun
@@ -96522,6 +97342,10 @@ W|w|審批／审批
  P||shen3pi1
   C verb
    D1||to examine and approve
+W|m|苦熬
+ P||ku3ao2
+  C verb
+   D1||to endure (years of suffering)
 W|w|人種／人种
  P||ren2zhong3
   C noun
@@ -96584,6 +97408,10 @@ W|w|領隊／领队
    D1||leader (of a group, team, etc.)
   C verb
    D2||to lead a group
+W|m|高攀不上
+ P||gao1pan1bu4shang4
+  C phrase
+   D1||to be unworthy to associate with (sb of higher social status)
 W|w|翹首／翘首
  P||qiao2shou3
   C verb
@@ -96622,6 +97450,11 @@ W|m|呼嘯而過／呼啸而过
  P||hu1xiao4er2guo4
   C verb
    D1||to whistle past; to hurtle past; to zip by
+W|m|關羽／关羽
+ P||guan1yu3
+  C name
+   D1||Guan Yu (-219), general of Shu and blood-brother of Liu Bei in Romance of the Three Kingdoms, fearsome fighter famous for virtue and loyalty; posthumously worshipped and identified with the guardian Bodhisattva Sangharama
+    XG||劉關張／刘关张#D1;劉備／刘备#D1;張飛／张飞#D1
 W|w|麻醉劑／麻醉剂
  P||ma2zui4ji4
   C noun
@@ -96940,6 +97773,10 @@ W|w|巴士
   C noun
    D2|#regional|bus
     XM||輛／辆
+W|m|駙／驸
+ P||fu4
+  C noun
+   D1||prince consort
 W|w|花房
  P||hua1fang2
   C noun
@@ -97094,6 +97931,11 @@ W|w|大鼓
    D1||large Chinese drum
    D2||Western bass drum
    D3||form of Chinese singing/storytelling; drum ballad
+W|m|祚
+ P||zuo4
+  C noun
+   D1||blessing
+   D2||the throne
 W|w|權位／权位
  P||quan2wei4
   C noun
@@ -97611,6 +98453,10 @@ W|m|掌燈／掌灯
  P||zhang3deng1
   C verb
    D1||to light a lamp
+W|m|解厄
+ P||jie3e4
+  C verb
+   D1|- #literary|to save from a calamity
 W|w|遺腹子／遗腹子
  P||yi2fu4zi3
   C noun
@@ -97899,6 +98745,7 @@ W|m|劉備／刘备
  P||liu2bei4
   C name
    D1||Liu Bei (161-223), warlord at the end of the Han dynasty and founder of the Han kingdom of Shu 蜀漢／蜀汉 (c. 200-263), later the Shu Han dynasty
+    XG||劉關張／刘关张#D1;張飛／张飞#D1;關羽／关羽#D1
 W|w|閩南話／闽南话
  P|C|min3nan2hua4 |T|min2nan2hua4
   C noun
@@ -98042,6 +98889,10 @@ W|w|因由
   C noun
    D1||reason; cause; origin
    D2|#Buddhism|hetu and prataya; principal and secondary causes
+W|m|鄭重其事／郑重其事
+ P||zheng4zhong4qi2shi4
+  C phrase
+   D1||serious about the matter
 W|w|揮金如土／挥金如土
  P||hui1jin1ru2tu3
   C phrase
@@ -98070,6 +98921,11 @@ W|w|搖曳／摇曳
  P|C|yao2ye4 |T|yao2yi4
   C verb
    D1||to sway; to bend (in the wind); to oscillate naturally
+W|m|花果山
+ P||hua1guo3shan1
+  C name
+   D1||Mount Huaguo in Jiangsu, featured in 西遊記／西游记, tourist destination
+   D2||(also the name of mountains in other parts of China)
 W|w|才疏學淺／才疏学浅
  P||cai2shu1xue2qian3
   C phrase
@@ -98108,6 +98964,11 @@ W|w|三寸不爛之舌／三寸不烂之舌
  P||san1 cun4 bu4 lan4 zhi1 she2
   C phrase
    D1||to have a silver tongue; to have a way with words; to have an ability to schmooze
+W|m|行行出狀元／行行出状元
+ P||hang2hang2chu1zhuang4yuan2
+  C phrase
+   D1|#literal|in every trade, a master appears
+   D2|#figurative|You can produce outstanding achievements in any task, provided you put it enough love and diligence
 W|w|顴骨／颧骨
  P||quan2gu3
   C noun
@@ -98321,6 +99182,10 @@ W|w|不甘示弱
  P||bu4gan1shi4ruo4
   C phrase
    D1||to be unwilling to be outdone; not to be outdone
+W|m|盛況空前／盛况空前
+ P||sheng4kuang4kong1qian2
+  C phrase
+   D1||a magnificent and unprecedented event
 W|w|孟姜女
  P||Meng4jiang1nv3
   C name
@@ -98530,6 +99395,12 @@ W|w|汗馬功勞／汗马功劳
   C phrase
    D1||merit of war; battle achievements
    D2|#figuratively|achievement or contribution as a result of hard work
+W|m|湧進／涌进
+ P||yong3jin4
+  C verb
+   D1||to spill
+   D2||to overflow (of water, crowds)
+   D3||to crowd (into a space)
 W|w|潰敗／溃败
  P||kui4bai4
   C verb
@@ -98704,6 +99575,10 @@ W|w|人煙／人烟
  P||ren2yan1
   C noun
    D1||signs of human habitation
+W|m|荒無人煙／荒无人烟
+ P||huang1wu2ren2yan1
+  C phrase
+   D1||desolate and uninhabited
 W|w|九牛二虎之力
  P||jiu3 niu2 er4 hu3 zhi1 li4
   C phrase
@@ -98749,6 +99624,10 @@ W|w|荔枝
   C noun
    D1||lychee (Litchi chinensis)
     XM||顆／颗
+W|m|腰間／腰间
+ P||yao1jian1
+  C noun
+   D1||waist
 W|w|滾落／滚落
  P||gun3luo4
   C verb
@@ -98934,6 +99813,15 @@ W|w|提綱／提纲
  P||ti2gang1
   C noun
    D1||outline; summary
+W|m|李俊
+ P||li3jun4
+  C name
+   D1||Li Jun, fictional character from 水滸傳／水浒传
+W|m|鄴／邺
+ P||ye4
+  C name
+   D1||surname Ye
+   D2||ancient district in present-day Hebei 河北省
 W|w|可汗
  P||ke4han2
   C noun
@@ -99026,6 +99914,10 @@ W|w|哪吒
  P|C|Ne2zha1 |T|Nuo2zha4
   C name
    D1|#Chinese-folk-religion|Nezha, a protection deity in Chinese folk religion
+W|m|綃／绡
+ P||xiao1
+  C noun
+   D1||raw silk
 W|w|鵑／鹃
  P||juan1
   C character
@@ -99104,6 +99996,10 @@ W|w|中環／中环
    D1||Central (a place in Hong Kong)
    D2|#metonymically|(often in contrast with 西環) Government of the Hong Kong Special Administrative Region
    D3||(～路, ～道) Middle Ring Road (in many cities)
+W|m|神鳥／神鸟
+ P||shen2niao3
+  C noun
+   D1||supernatural bird
 W|w|教頭／教头
  P||jiao4tou2
   C noun
@@ -99239,6 +100135,10 @@ W|w|茶花
  P||cha2hua1
   C noun
    D1||camellia
+W|m|疾速
+ P||ji2su4
+  C adj
+   D1||very fast; at high speed
 W|w|蠻荒／蛮荒
  P||man2huang1
   C adj
@@ -99289,6 +100189,10 @@ W|w|卡爾／卡尔
  P||Ka3er3
   C name
    D1||A transliteration of the English or German male given name Carl or Karl
+W|m|秦檜／秦桧
+ P||qin2hui4
+  C name
+   D1||Qin Hui (1090-1155 AD), Song Dynasty official said to have betrayed General Yue Fei 岳飛／岳飞[Yue4 Fei1]
 W|w|洋行
  P||yang2hang2
   C noun
@@ -99346,6 +100250,12 @@ W|w|焊接
  P||han4jie1
   C verb
    D1||to weld; to solder
+W|m|緹／缇
+ P||ti2
+  C noun
+   D1||orange-red silk
+  C adj
+   D2||orange-red colored
 W|w|蟠桃
  P||pan2tao2
   C noun
@@ -99424,6 +100334,10 @@ W|w|饑／饥
   C character
    D1||crop failure; famine; a year in which harvest is poor
    D2||Alternative form of 飢／饥 (“hunger”)
+W|m|項羽／项羽
+ P||xiang4yu3
+  C name
+   D1||Xiang Yu the Conqueror (232-202 BC), warlord defeated by first Han emperor
 W|w|赤壁
  P||Chi4bi4
   C name
@@ -99540,6 +100454,10 @@ W|m|兩廂情願／两厢情愿
    D1||both sides are willing; by mutual consent
     X>||廂／厢#D2;情願／情愿#D2
     X!||一廂情願／一厢情愿#D1
+W|m|遺老／遗老
+ P||yi2lao3
+  C noun
+   D1||old fogy; adherent of previous dynasty
 W|w|曲藝／曲艺
  P||qu3yi4
   C noun
@@ -99696,6 +100614,10 @@ W|w|含辛茹苦
  P||han2xin1ru2ku3
   C phrase
    D1||to suffer untold hardships (to bring up one's child); to endure sufferings
+W|m|歡度／欢度
+ P||huan1du4
+  C verb
+   D1||to celebrate; to merrily spend (an occasion)
 W|w&|牲
  P||sheng1
   C character
@@ -99737,6 +100659,10 @@ W|w|數以萬計／数以万计
  P||shu4yi3wan4ji4
   C phrase
    D1||numbered by the ten thousands; a large number
+W|m|蘇東坡／苏东坡
+ P||su1dong1po1
+  C name
+   D1||Su Dongpo, another name for Su Shi 蘇軾／苏轼 (1037-1101), northern Song writer and calligrapher
 W|w|衣冠楚楚
  P||yi1guan1chu3chu3
   C phrase
@@ -99827,6 +100753,10 @@ W|w|入場券／入场券
  P|C|ru4chang3quan4 |T|ru4chang2quan4 |x|ru4chang3juan4
   C noun
    D1||admission ticket
+W|m|鋸開／锯开
+ P||ju4kai1
+  C verb
+   D1||to saw
 W|w|約摸／约摸
  P||yue1mo5
   C adv
@@ -99837,6 +100767,10 @@ W|w|老花鏡／老花镜
  P||lao3hua1jing4
   C noun
    D1||reading glasses (for sufferers of presbyopia)
+W|m|頭昏腦脹／头昏脑胀
+ P||tou2hun1nao3zhang4
+  C phrase
+   D1||to feel giddy; to feel dizzy; one's head spins
 W|w|揚長而去／扬长而去
  P||yang2chang2er2qu4
   C phrase
@@ -100089,6 +101023,10 @@ W|w|自豪感
  P||zi4hao2gan3
   C noun
    D1||sense of pride
+W|m|顯耀／显耀
+ P||xian3yao4
+  C verb
+   D1||to show off
 W|w|精深
  P||jing1shen1
   C adj
@@ -100137,6 +101075,10 @@ W|w|臣下
  P||chen2xia4
   C noun
    D1||official in feudal court; retainer; subject
+W|m|杜甫
+ P||du4fu3
+  C name
+   D1||Du Fu (712-770), great Tang dynasty poet
 W|w|不得人心
  P||bu4de2ren2xin1
   C adj
@@ -100154,6 +101096,10 @@ W|w|斜眼
    D1|#medicine|strabismus
    D2||walleye or cross-eye; squint
    D3||walleyed or cross-eyed person
+W|m|韓信／韩信
+ P||han2xin4
+  C name
+   D1||Han Xin (-196 BC), famous general of first Han emperor Liu Bang 劉邦／刘邦
 W|w|肅立／肃立
  P||su4li4
   C verb
@@ -100268,6 +101214,10 @@ W|w|道德經／道德经
  P||Dao4de2jing1
   C name
    D1||Tao Te Ching (ancient classic Chinese text whose authorship is attributed to Laozi)
+W|m|頭面人物／头面人物
+ P||tou2mian4ren2wu4
+  C noun
+   D1||leading figure; bigwig
 W|w|作古
  P||zuo4gu3
   C verb
@@ -100301,6 +101251,10 @@ W|w|扭頭／扭头
   C verb
    D1||to turn one's head around
    D2||to turn around
+W|m|死心眼兒／死心眼儿
+ P||si3xin1yan3r5
+  C adj
+   D1||Erhua form of 死心眼
 W|w|踱步
  P|C|duo2bu4 |T|duo4bu4
   C verb
@@ -100467,6 +101421,7 @@ W|w|包票
    D1|x #literally #obsolete|warranty slip; guarantee slip
    D2|#figuratively|guarantee; promise; assurance
 W|w|熱氣騰騰／热气腾腾
+ X~||熱騰騰／热腾腾
  P||re4qi4teng2teng2
   C phrase
    D1||steaming hot
@@ -100660,6 +101615,10 @@ W|w|青翠
    D1||(of grass) fresh and green; verdant; lush
   C noun
    D2|x #Wenzhounese #dialectal-Hakka|kingfisher
+W|m|貞烈／贞烈
+ P||zhen1lie4
+  C adj
+   D1||ready to die to preserve one's chastity
 W|w|尋短見／寻短见
  P||xun2duan3jian4
   C verb
@@ -100892,6 +101851,10 @@ W|w|門牙／门牙
  P||men2ya2
   C noun
    D1||incisor
+W|m|錄取率／录取率
+ P||lu4qu3lv4
+  C noun
+   D1||acceptance rate; admission rate
 W|w&|括
  P||kuo4 |T|gua1
   C character
@@ -100936,6 +101899,10 @@ W|w|光大
    D2||glorious and majestic
   C verb
    D3||to glorify; to carry forward; to develop
+W|m|高不成低不就
+ P||gao1bu4cheng2di1bu4jiu4
+  C phrase
+   D1||can't reach the high or accept the low; not good enough for a high post, but too proud to take a low one
 W|w|知名人士
  P||zhi1ming2 ren2shi4
   C noun
@@ -101052,6 +102019,10 @@ W|w|趙國／赵国
   C name
    D1||Zhao (a state of ancient China)
    D2|#Internet-slang #derogatory #neologism #sarcastic|China (ruled by its communist regime's corrupt elites and their families)
+W|m|渲
+ P||xuan4
+  C noun
+   D1||wash (color)
 W|w|惋
  P|C|wan3 |T|wan4
   C character
@@ -101129,6 +102100,10 @@ W|w|達意／达意
  P||da2yi4
   C verb
    D1|#formal|to express one's idea
+W|m|通判
+ P||tong1pan4
+  C noun
+   D1||local magistrate
 W|w|合肥
  P||He2fei2
   C name
@@ -101267,6 +102242,10 @@ W|w|旦角
  P||dan4jue2
   C noun
    D1|#opera|female role (in Chinese opera)
+W|m|枯水
+ P||ku1shui3
+  C noun
+   D1||scarce water; low water level
 W|w|半晌
  P||ban4shang3
   C noun
@@ -101290,6 +102269,10 @@ W|w|抗美援朝
   C name
    D1||Korean War (1950–1953)
    D2||China's intervention in the Korean War
+W|m|錄影機／录影机
+ P||lu4ying3ji1
+  C noun
+   D1|T|camcorder; video recorder; videocassette recorder
 W|w|墨客
  P||mo4ke4
   C noun
@@ -101407,6 +102390,10 @@ W|w|潑冷水／泼冷水
  P||po1 leng3shui3
   C verb-object
    D1|#idiomatic|to throw cold water on
+W|m|穆桂英
+ P||mu4gui4ying1
+  C name
+   D1||Mu Guiying, female warrior and heroine of the Yang Saga 楊家將／杨家将
 W|w|高幹／高干
  P||gao1gan4
   C noun
@@ -101419,6 +102406,10 @@ W|w|象形
  P||xiang4xing2
   C noun
    D1||pictogram, one of the six classifications of Chinese characters (六書／六书 (liùshū)).
+W|m|朱元璋
+ P||zhu1yuan2zhang1
+  C name
+   D1||Zhu Yuanzhang, personal name of first Ming dynasty emperor Hongwu 洪武
 W|w|教書匠／教书匠
  P||jiao1shu1jiang4
   C noun
@@ -101449,6 +102440,10 @@ W|w|山海關／山海关
   C name
    D1||Shanhai Pass
    D2||(～區) Shanhaiguan (a district of Qinhuangdao, Hebei, China)
+W|m|逕自／迳自
+ P||jing4zi4
+  C adv
+   D1||on one's own; without consulting others
 W|w|玉帝
  P||Yu4 Di4
   C name
@@ -101481,6 +102476,10 @@ W|w|偕同
  P||xie2tong2
   C adv
    D1||along with
+W|m|樓梯口／楼梯口
+ P||lou2ti1kou3
+  C noun
+   D1||head of a flight of stairs
 W|w|拆毀／拆毁
  P||chai1hui3
   C verb
@@ -101654,6 +102653,10 @@ W|w|轉彎抹角／转弯抹角
   C phrase
    D1||to twist and turn; to turn a corner here and there
    D2|#figurative|to speak in a roundabout way; to beat around the bush
+W|m|波光
+ P||bo1guang1
+  C noun
+   D1||gleaming reflection of waves in sunlight
 W|w|陽傘／阳伞
  P||yang2san3
   C noun
@@ -101666,6 +102669,10 @@ W|w|佳節／佳节
  P||jia1jie2
   C noun
    D1||festival; carnival; happy festival time
+W|m|湊足／凑足
+ P||cou4zu2
+  C verb
+   D1||to scrape together enough (people, money etc)
 W|w|鷓鴣／鹧鸪
  P||zhe4gu1
   C noun
@@ -101793,6 +102800,10 @@ W|w|簌簌
    D1|#onomatopoeia|(of leaves, snowflakes) describes a rustling sound
    D2|#ideophonic|(of tears, snowflakes) streaming down; trickling
    D3|#ideophonic|(of limbs of the body, fingers, etc.) trembling
+W|m|缺德鬼
+ P||que1de2gui3
+  C noun
+   D1||public nuisance; a wicked, mean spirited individual
 W|w|蜿蜒
  P||wan1yan2
   C verb
@@ -101807,6 +102818,10 @@ W|w|閂／闩
   C character
    D1||bolt; latch; crossbar
    D2||to bolt; to latch
+W|m|開路先鋒／开路先锋
+ P||kai1lu4xian1feng1
+  C noun
+   D1||pioneer; trailblazer
 W|w|海底撈針／海底捞针
  P||hai3di3lao1zhen1
   C phrase
@@ -101872,6 +102887,10 @@ W|w|僑民／侨民
  P||qiao2min2
   C noun
    D1||expatriate; expat; alien resident
+W|m|風姿綽約／风姿绰约
+ P||feng1zi1chuo4yue1
+  C adj
+   D1||graceful; lovely
 W|w|目空一切
  P||mu4kong1yi1qie4
   C phrase
@@ -102045,6 +103064,10 @@ W|m&|捫／扪
  P||men2
   C verb
    D1||lay hands on; to cover
+W|m|藺相如／蔺相如
+ P||lin4xiang1ru2
+  C name
+   D1||Ling Xiangru (dates unknown, 3rd century BC), famous statesman of Zhao 趙國／赵国
 W|w|集中營／集中营
  P||ji2zhong1ying2
   C noun
@@ -102210,6 +103233,10 @@ W|w|踟躕／踟蹰
   C verb
    D1||to walk back and forth
    D2|#figurative|to waver; to hesitate
+W|m|氈子／毡子
+ P||zhan1zi5
+  C noun
+   D1||felt (fabric)
 W|w|齊天大聖／齐天大圣
  P||Qi2tian1 Da4sheng4
   C name
@@ -102265,6 +103292,18 @@ W|w|良莠不齊／良莠不齐
  P||liang2you3bu4qi2
   C phrase
    D1||good and bad things mixed together
+W|m|漲紅／涨红
+ P||zhang4hong2
+  C verb
+   D1||to turn red (in the face); to flush (with embarrassment or anger)
+W|m|鋒面／锋面
+ P||feng1mian4
+  C noun
+   D1|#meteorology|front
+W|m|魅影
+ P||mei4ying3
+  C noun
+   D1||phantom (esp. of Western fantasy)
 W|w|毛利
  P||mao2li4
   C adj
@@ -102301,6 +103340,10 @@ W|w|認購／认购
  P||ren4gou4
   C verb
    D1||to offer to buy; to subscribe
+W|m|閉起／闭起
+ P||bi4qi3
+  C verb
+   D1||to shut
 W|w|總值／总值
  P||zong3zhi2
   C noun
@@ -102392,6 +103435,10 @@ W|w|剃刀
   C noun
    D1||razor
     XM||把
+W|m|雕梁畫棟／雕梁画栋
+ P||diao1liang2hua4dong4
+  C adj
+   D1||richly ornamented (building)
 W|w|咸豐／咸丰
  P||Xian2feng1
   C name
@@ -102671,6 +103718,10 @@ W|w|分門別類／分门别类
  P||fen1men2bie2lei4
   C phrase
    D1||to classify; to categorize; to organize into categories
+W|m|鍋台／锅台
+ P||guo1tai2
+  C noun
+   D1||top of a kitchen range
 W|w|陌路人
  P||mo4lu4ren2
   C noun
@@ -102799,6 +103850,10 @@ W|w|型態／型态
  P||xing2tai4
   C noun
    D1||form, shape, type, style, pattern
+W|m|黑澤明／黑泽明
+ P||hei1ze2ming2
+  C name
+   D1||Kurosawa Akira (1910-1998) Japanese movie director
 W|w|意識形態／意识形态
  P|C|yi4shi2 xing2tai4 |T|yi4shi4 xing2tai4
   C noun
@@ -102999,6 +104054,10 @@ W|w|出毛病
  P||chu1mao2bing4
   C verb
    D1|#colloquial|to go out of order; to malfunction
+W|m|枯水期
+ P|C|ku1shui3qi1 |T|ku1shui3qi2
+  C noun
+   D1||period of low water level (winter in North China)
 W|w|廢止／废止
  P||fei4zhi3
   C verb
@@ -103007,6 +104066,10 @@ W|w|屏氣／屏气
  P||bing3qi4
   C verb-object
    D1||to hold one's breath
+W|w|褲帶／裤带
+ P||ku4dai4
+  C noun
+   D1||trouser (waist) belt
 W|w|蛻／蜕
  P||tui4 |T|shui4
   C character
@@ -103220,6 +104283,10 @@ W|w|五顏六色／五颜六色
  P||wu3yan2liu4se4
   C phrase
    D1||multicoloured; colourful; variegated; of many colors
+W|m|焦黃／焦黄
+ P||jiao1huang2
+  C adj
+   D1||sallow; yellow and withered; sickly
 W|w|聚變／聚变
  P||ju4bian4
   C verb
@@ -103287,6 +104354,10 @@ W|w|小夜曲
  P||xiao3ye4qu1
   C noun
    D1||serenade
+W|m|河北省
+ P||he2bei3sheng3
+  C name
+   D1||Hebei Province, capital Shijiazhuang 石家莊市／石家庄市 (abbr. to 冀)
 W|w|脊背
  P||ji3bei4
   C noun
@@ -103417,6 +104488,12 @@ W|w|石刻
    D1||stone inscription (on a stele, wall, etc.)
   C verb
    D2||to inscribe on stone
+W|m|納賄／纳贿
+ P||na4hui4
+  C noun
+   D1||bribery
+  C verb
+   D2||to give or accept bribes
 W|w|賢人／贤人
  P||xian2ren2
   C noun
@@ -103563,6 +104640,10 @@ W|w|閹割／阉割
    D1|#literally|to castrate; to neuter; to emasculate
     X<||化學閹割／化学阉割
    D2|#figuratively|to castrate (to take something from; to render imperfect or ineffectual); to nerf
+W|m|直愣愣
+ P||zhi2leng4leng4
+  C verb
+   D1||staring blankly
 W|w|眺望
  P||tiao4wang4
   C verb
@@ -103802,6 +104883,10 @@ W|w|府庫／府库
  P||fu3ku4
   C noun
    D1|x #archaic|treasury for public funds; government repository
+W|m|李冰
+ P||li3bing1
+  C name
+   D1||Li Bing (c. 3rd century BC) hydraulic engineer who designed the Dujiangyan 都江堰 irrigation system in Sichuan
 W|w|殯／殡
  P||bin4
   C character
@@ -103924,6 +105009,11 @@ W|w|北港
   C name
    D1||(～鎮) Beigang (an urban township in Yunlin County, Taiwan)
    D2||(～溪) Beigang (a river in Taiwan)
+W|m|皮黃／皮黄
+ P||pi2huang2
+  C noun
+   D1||Beijing opera (or styles of song in)
+   D2||Short for 西皮二黃／西皮二黄
 W|w|胡琴
  P||hu2qin2
   C noun
@@ -104070,6 +105160,10 @@ W|w|普希金
  P||Pu3xi1jin1
   C name
    D1||A transliteration of the Russian surname Пушкин (Puškin), Pushkin
+W|m|萬年青／万年青
+ P||wan4nian2qing1
+  C name
+   D1||Nippon lily (Rohdea japonica)
 W|w|事奉
  P||shi4feng4
   C verb
@@ -104160,6 +105254,10 @@ W|w|織錦／织锦
   C noun
    D1||brocade
    D2||silk fabric with coloured pattern
+W|m|苦苦哀求
+ P||ku3ku3ai1qiu2
+  C verb
+   D1||to entreat piteously; to implore
 W|w|謀生／谋生
  P||mou2sheng1
   C verb
@@ -104170,6 +105268,10 @@ W|w|奶子
    D1|x #colloquial #dialectal|breast
    D2|x #colloquial #dialectal|milk; breast milk
    D3|x #colloquial #dialectal|wet nurse
+W|m|秋瑾
+ P||qiu1jin3
+  C name
+   D1||Qiu Jin (1875-1907), famous female martyr of the anti-Qing revolution, the subject of several books and films
 W|w|硬體／硬体
  P||ying4ti3
   C noun
@@ -104221,6 +105323,11 @@ W|w|匈
    D3||Used in 匈匈.
    D4||Alternative form of 凶 (xiōng, “famine”)
    D5||Alternative form of 兇／凶 (xiōng, “fearful; fierce; ferocious”)
+W|m|法源
+ P||fa3yuan2
+  C noun
+   D1||Origin of Dharma (in Buddhism)
+   D2||source of the law
 W|w|鄉土／乡土
  P||xiang1tu3
   C name
@@ -104326,6 +105433,10 @@ W|w|支書／支书
    D3||Short for 支部書記／支部书记 (zhībù shūjì).
     D1||branch secretary
     D2|C #specifically|secretary of a branch of the Communist Party or the Communist Youth League
+W|m|馬可波羅／马可波罗
+ P||ma3ke3bo1luo2
+  C name
+   D1||Marco Polo (1254-c. 1324), Venetian trader and explorer who traveled the Silk road to China, author of Il Milione (Travels of Marco Polo)
 W|w|繚／缭
  P||liao2
   C character
@@ -104363,6 +105474,14 @@ W|m|傻頭傻腦／傻头傻脑
  P||sha3tou2sha3nao3
   C phrase
    D1||stupid; muddle-headed
+W|m|生活作風／生活作风
+ P||sheng1huo2zuo4feng1
+  C noun
+   D1||behavior; conduct
+W|m|鷹架／鹰架
+ P||ying1jia4
+  C noun
+   D1||scaffolding
 W|w|煙鬼／烟鬼
  P||yan1gui3
   C noun
@@ -104404,6 +105523,10 @@ W|w|知青
  P||zhi1qing1
   C noun
    D1|x #historical|The zhiqing, "educated youth", "rusticated youth", or "sent-down youth": the young Chinese sent from urban areas to the work in poor villages during the PRC's Down to the Countryside Movement (上山下鄉運動)
+W|m|絮語／絮语
+ P||xu4yu3
+  C verb
+   D1||to chatter incessantly
 W|w|嘶啞／嘶哑
  P||si1ya3
   C adj
@@ -104417,10 +105540,19 @@ W|w|魚鷹／鱼鹰
   C noun
    D1||fish hawk; osprey
    D2||cormorant
+W|m|瞎指揮／瞎指挥
+ P||xia1zhi3hui1
+  C verb
+   D1||to give nonsensical instructions; to issue orders out of ignorance
 W|w|天安門廣場／天安门广场
  P|C|Tian1an1men2 Guang3chang3 |T|Tian1an1men2 Guang3chang2
   C name
    D1||Tiananmen Square (a plaza in Beijing, China)
+W|m|鵬鳥／鹏鸟
+ P||peng2niao3
+  C noun
+   D1||roc (mythical bird of prey)
+   D2||great talent
 W|w|倒映
  P||dao4ying4
   C verb
@@ -104593,6 +105725,12 @@ W|m|徽墨
  P||hui1mo4
   C name
    D1||Anhui ink (known for its quality)
+W|m|老態／老态
+ P||lao3tai4
+  C adj
+   D1||old and frail; decrepit
+  C noun
+   D2||decrepitude; infirmities of old age
 W|w|碩果僅存／硕果仅存
  P||shuo4guo3jin3cun2
   C phrase
@@ -104684,6 +105822,10 @@ W|w|驗光／验光
    D1||optometry
   C verb
    D2||to examine the eyes; to have an eye test
+W|m|行政權／行政权
+ P||xing2zheng4quan2
+  C noun
+   D1||administrative authority; executive power
 W|w|新澤西／新泽西
  P||Xin1 Ze2xi1
   C name
@@ -104731,6 +105873,10 @@ W|w|老墨
  P||lao3mo4
   C noun
    D1|#informal|Mexican person in the United States; amigo
+W|m|范仲淹
+ P||fan4zhong4yan1
+  C name
+   D1||Fan Zhongyan (989-1052), Song dynasty scholar and politician, author of On Yueyang Tower 岳陽樓記／岳阳楼记
 W|w|汨羅江／汨罗江
  P||Mi4luo2 Jiang1
   C name
@@ -104747,6 +105893,10 @@ W|w|欠身
  P||qian4shen1
   C verb
    D1||to half rise from one’s seat (especially as a gesture of courtesy)
+W|m|林沖／林冲
+ P||lin2chong1
+  C name
+   D1||Lin Chong, one of the Heroes of the Marsh in Water Margin 水滸傳／水浒传
 W|w|怔怔
  P|C|zheng4zheng4 |T|leng4leng4
   C adj
@@ -104817,6 +105967,10 @@ W|w|翩躚／翩跹
  P||pian1xian1
   C adj
    D1|- #literary|spry and lively (of dancing and movements); light; tripping
+W|m|行署
+ P||xing2shu3
+  C noun
+   D1||administrative office
 W|w|景教
  P||jing3jiao4
   C noun
@@ -104878,6 +106032,14 @@ W|w|讚頌／赞颂
  P||zan4song4
   C verb
    D1||to extol; to praise
+W|m|笑臉相迎／笑脸相迎
+ P||xiao4lian3xiang1ying2
+  C phrase
+   D1||to welcome sb with a smiling face
+W|m|錯案／错案
+ P||cuo4an4
+  C noun
+   D1||a misjudged legal case; a miscarriage (of justice)
 W|w|翻覆
  P||fan1fu4
   C verb
@@ -104933,6 +106095,10 @@ W|w|風和日麗／风和日丽
  P||feng1he2ri4li4
   C phrase
    D1||the bright sunshine and gentle breezes; warm and sunny weather
+W|m|百尺竿頭／百尺竿头
+ P||bai3chi3gan1tou2
+  C phrase
+   D1||to be at the highest level of enlightenment (Buddhist expression)
 W|w|有板有眼
  P||you3ban3you3yan3
   C adj
@@ -105013,10 +106179,20 @@ W|w|聚居
  P||ju4ju1
   C verb
    D1||to inhabit (a region)
+W|m|訃／讣
+ P||fu4
+  C verb
+   D1||to report a bereavement
+  C noun
+   D2||obituary
 W|w|尿盆
  P||niao4pen2
   C noun
    D1||chamber pot
+W|m|純利／纯利
+ P||chun2li4
+  C noun
+   D1||net profit
 W|w|泥坑
  P||ni2keng1
   C noun
@@ -105090,6 +106266,10 @@ W|m|取其精華／取其精华
  P||qu3qi2jing1hua2
   C phrase
    D1||to take the best; to absorb the essence
+W|m|當權者／当权者
+ P||dang1quan2zhe3
+  C noun
+   D1||ruler; those in power; the authorities
 W|w|堂皇
  P||tang2huang2
   C adj
@@ -105100,6 +106280,10 @@ W|w|盛產／盛产
  P||sheng4chan3
   C verb
    D1||to abound; to teem in; to be abundant in
+W|m|異鄉人／异乡人
+ P||yi4xiang1ren2
+  C noun
+   D1||stranger
 W|w|付諸東流／付诸东流
  P||fu4zhu1dong1liu2
   C phrase
@@ -105108,6 +106292,10 @@ W|w|積體電路／积体电路
  P||ji1ti3 dian4lu4
   C noun
    D1|T #electronics|integrated circuit
+W|m|票據法／票据法
+ P||piao4ju4fa3
+  C noun
+   D1||negotiable instruments act
 W|w|防洪
  P||fang2hong2
   C verb
@@ -105126,6 +106314,10 @@ W|w|紡紗／纺纱
    D1||spinning
   C verb
    D2||to spin fabric
+W|m|越禮／越礼
+ P||yue4li3
+  C verb
+   D1||to overstep etiquette; not to observe priorities
 W|w|藏語／藏语
  P||Zang4yu3
   C name
@@ -105134,6 +106326,10 @@ W|w|左傾／左倾
  P||zuo3qing1
   C verb
    D1|#chiefly-politics|to lean to the left
+W|m|王羲之
+ P||wang2xi1zhi1
+  C name
+   D1||Wang Xizhi (303-361), famous calligrapher of Eastern Jin, known as the sage of calligraphy 書聖／书圣
 W|w|漢口／汉口
  P||Han4kou3
   C name
@@ -105186,6 +106382,11 @@ W|w|即令
  P||ji2ling4
   C conj
    D1||even though; even if
+W|mw|著法／着法
+ P||zhao1fa3
+  C noun
+   D1|x #Xiamen-and-Zhangzhou-Hokkien|with the right method; in the right way
+   D2|#chess #martial-arts|a move
 W|w|消長／消长
  P||xiao1zhang3
   C verb
@@ -105268,6 +106469,11 @@ W|w|危地馬拉／危地马拉
  P|C|Wei1di4ma3la1 |T|Wei2di4ma3la1
   C name
    D1|C #HongKong|Guatemala (a country in Central America)
+W|m|楚懷王／楚怀王
+ P||chu3huai2wang2
+  C name
+   D1||King Huai of Chu (reigned 328-299 BC)
+   D2||later King Huai of Chu (reigned 208-205 BC)
 W|w|孜孜不倦
  P||zi1zi1bu4juan4
   C phrase
@@ -105281,6 +106487,10 @@ W|m|勞而無功／劳而无功
  P||lao2er2wu2gong1
   C phrase
    D1||to work hard while accomplishing little; to toil to no avail
+W|m|輕車簡從／轻车简从
+ P|C|qing1che1jian3cong2 |T|qing1ju1jian3zong4
+  C phrase
+   D1||(of an official) to travel with little luggage and just a small escort; to travel without ostentation
 W|w|血跡斑斑／血迹斑斑
  P|C|xue4ji4ban1ban1 |-C|xue3ji4ban1ban1;xie3ji4ban1ban1 |T|xie3ji1ban1ban1
   C phrase
@@ -105337,6 +106547,10 @@ W|m|切中要害
    D2|#figurative|to hit where it hurts
    D3|#figurative|to hit home
    D4|#figurative|an argument that hits the nail on the head
+W|m|林則徐／林则徐
+ P||lin2ze2xu2
+  C name
+   D1||Lin Zexu or Lin Tse-hsu "Commissioner Lin" (1785-1850), Qing official whose anti-opium activities led to first Opium war with Britain 1840-1842
 W|w|貶謫／贬谪
  P||bian3zhe2
   C verb
@@ -105349,6 +106563,10 @@ W|w|大英帝國／大英帝国
  P||Da4ying1 Di4guo2
   C name
    D1||the British Empire
+W|m|水滸／水浒
+ P||shui3hu3
+  C noun
+   D1||edge of the water; shore or sea, lake or river
 W|w|珍珠港
  P||Zhen1zhu1gang3
   C name
@@ -105378,6 +106596,10 @@ W|m|交通車／交通车
  P||jiao1tong1che1
   C noun
    D1||shuttle bus
+W|m|流於／流于
+ P||liu2yu2
+  C verb
+   D1||to change (for the worse)
 W|w|公轉／公转
  P||gong1zhuan4
   C verb
@@ -105406,6 +106628,10 @@ W|w|星期二
  P|C|xing1qi1er4 |T|xing1qi2er4
   C noun
    D1||Tuesday
+W|m|滿不在乎／满不在乎
+ P||man3bu4zai4hu5
+  C phrase
+   D1||not in the least concerned; reckless; couldn't give a damn about it; unperturbed; couldn't care less; harum scarum
 W|w|稻穗
  P||dao4sui4
   C noun
@@ -105453,11 +106679,20 @@ W|w|返國／返国
  P||fan3guo2
   C verb-object
    D1||to return to one's country (from abroad)
+W|m|海涅
+ P||hai3nie4
+  C name
+   D1||Heinrich Heine (1797-1856), German lyric poet
 W|w|行號／行号
  P||hang2hao4
   C noun
    D1||store, shop, business, company
    D2||line number (number of a line in a text file), row number
+W|m|經年累月／经年累月
+ P||jing1nian2lei3yue4
+  C phrase
+   D1||for years
+   D2||over the years
 W|w|猶太人／犹太人
  P||you2tai4ren2
   C noun
@@ -105471,6 +106706,14 @@ W|m|四川省
  P||si4chuan1sheng3
   C name
    D1||Sichuan Province, capital Chengdu 成都市 (abbr. to 川 or 蜀)
+W|m|街坊鄰里／街坊邻里
+ P||jie1fang5lin2li3
+  C noun
+   D1||neighbors; the whole neighborhood
+W|m|鑿沉／凿沉
+ P||zao2chen2
+  C verb
+   D1||to scuttle (a ship)
 W|w|戰國時代／战国时代
  P||Zhan4guo2 Shi2dai4
   C name
@@ -105484,6 +106727,10 @@ W|w|同治
   C name
    D1||(～帝) the Tongzhi Emperor (the ninth emperor of the Qing dynasty)
    D2||the Tongzhi era (a Chinese era name; the era of that emperor's reign, from 1862 to 1875)
+W|m|耶魯大學／耶鲁大学
+ P||ye1lu3da4xue2
+  C name
+   D1||Yale University
 W|w|鼾
  P||han1
   C character
@@ -105506,10 +106753,19 @@ W|w|腮幫子／腮帮子
  P||sai1bang1zi5
   C noun
    D1|#informal|cheek; lower part of the cheek
+W|m|盲流
+ P||mang2liu2
+  C noun
+   D1|C|flow of people from the countryside into the cities
+   D2||rural migrant without definite prospects; drifter
 W|w|餛／馄
  P||hun2
   C character
    D1||Only used in 餛飩／馄饨 (húntun).
+W|m|跨上
+ P||kua4shang4
+  C verb
+   D1||to mount (a horse, bike, flight of stairs, rickshaw etc)
 W|w|馬列／马列
  P||Ma3-Lie4
   C noun
@@ -105541,11 +106797,19 @@ W|w|雜色／杂色
    D1|#attributive|multicolored; motley; variegated; varicolored
   C noun
    D2||shade made up of a variety of colors
+W|m|管仲
+ P||guan3zhong4
+  C name
+   D1||Guan Zhong (-645 BC), famous politician of Qi 齊國／齐国 of Spring and Autumn period (also known as Guangzi 管子)
 W|w|仕女
  P||shi4nv3
   C noun
    D1|x #historical|maid in an imperial palace
    D2||traditional Chinese painting of beautiful women
+W|m|熟道
+ P||shu2dao4
+  C noun
+   D1||familiar road; well-trodden path
 W|w|雜劇／杂剧
  P||za2ju4
   C noun
@@ -105581,6 +106845,10 @@ W|w|穿針引線／穿针引线
  P||chuan1zhen1yin3xian4
   C phrase
    D1|#figuratively|to act as a go-between; to act as a middleman
+W|m|江澤民／江泽民
+ P||jiang1ze2min2
+  C name
+   D1||Jiang Zemin (1926-2022), politician, president of PRC 1993-2003
 W|w|儀仗隊／仪仗队
  P||yi2zhang4dui4
   C noun
@@ -105613,10 +106881,22 @@ W|w|博覽會／博览会
  P||bo2lan3hui4
   C noun
    D1||expo; fair
+W|m|翹起／翘起
+ P||qiao4qi3
+  C verb
+   D1||to stick up; to point sth up
+W|m|蓬亂／蓬乱
+ P||peng2luan4
+  C adj
+   D1||matted (of straw or hair); unkempt; overgrown; scraggly
 W|w|拉薩／拉萨
  P||La1sa4
   C name
    D1||(～市) Lhasa (the capital city of the Tibet Autonomous Region, China)
+W|m|枯燥無味／枯燥无味
+ P||ku1zao4wu2wei4
+  C adj
+   D1||tedious; dreary
 W|w&|徊
  P||huai2
   C character
@@ -105663,6 +106943,10 @@ W|w|蔔／卜
  P||bo2;bo5
   C character
    D1||carrot
+W|m|煞住
+ P||sha1zhu4
+  C verb
+   D1||to brake; to stop; to forbid
 W|w|跨國公司／跨国公司
  P||kua4guo2 gong1si1
   C noun
@@ -105676,6 +106960,11 @@ W|w|任重道遠／任重道远
  P||ren4zhong4dao4yuan3
   C phrase
    D1||to shoulder a heavy responsibility for a long time
+W|m|皇帝不急太監急／皇帝不急太监急
+ P||huang2di4bu4ji2tai4jian4ji2
+  C proverb
+   D1|#literal|the emperor is not worried, but his eunuchs are
+   D2|#figurative|the observers are more anxious than the person involved
 W|w|實例／实例
  P||shi2li4
   C noun
@@ -105907,6 +107196,14 @@ W|w|條文／条文
  P||tiao2wen2
   C noun
    D1||article; clause; text; explanatory note; provision
+W|m|能事
+ P||neng2shi4
+  C noun
+   D1||particular abilities; one's forte
+W|w|頭頸／头颈
+ P||tou2jing3
+  C noun
+   D1|x #Wu #anatomy|neck
 W|w|荀子
  P||Xun2zi3
   C name
@@ -105921,6 +107218,10 @@ W|w|禮義／礼义
   C noun
    D1||propriety and righteousness
    D2||ceremony; etiquette; rituals; rites; protocol; decorum
+W|m|蘇武／苏武
+ P||su1wu3
+  C name
+   D1||Su Wu (140-60 BC), Han Dynasty diplomat and statesman, regarded as a model of courage and faithful service
 W|w|行書／行书
  P||xing2shu1
   C noun
@@ -106117,6 +107418,10 @@ W|w|端硯／端砚
  P||duan1yan4
   C noun
    D1||inkstone make from Duanzhou (now Zhaoqing, Guangdong)
+W|m|王莽
+ P||wang2mang3
+  C name
+   D1||Wang Mang (45 BC-23 AD), usurped power and reigned 9-23 between the former and later Han
 W|w|繁密
  P||fan2mi4
   C adj
@@ -106222,6 +107527,10 @@ W|w|午睡
    D1||afternoon nap; noontime siesta; afternoon siesta
   C verb
    D2||to take an afternoon nap; to take a nap after lunch
+W|m|跌破眼鏡／跌破眼镜
+ P|C|die1po4yan3jing4 |T|die2po4yan3jing4
+  C phrase
+   D1|#figurative|to be astounded
 W|w|百年大計／百年大计
  P||bai3nian2da4ji4
   C phrase
@@ -106249,6 +107558,10 @@ W|w|攘
  P|x|rang4
   C character
    D7||Original form of 讓／让 (ràng, “to yield; to give in”).
+W|m|立方公尺
+ P||li4fang1gong1chi3
+  C noun
+   D1||cubic meter (m³)
 W|w&|琵
  P||pi2
   C character
@@ -106313,6 +107626,14 @@ W|w|簡易／简易
   C adj
    D1||simple and easy
    D2||(of a structure, facility, etc.) simple and crude; unsophisticated
+W|m|爐膛／炉膛
+ P||lu2tang2
+  C noun
+   D1||furnace chamber; stove chamber
+W|m|犁地
+ P||li2di4
+  C verb
+   D1||to plow
 W|w|農奴／农奴
  P||nong2nu2
   C noun
@@ -106329,6 +107650,10 @@ W|w|演義／演义
    D2||historical dramatisation (in the form of a novel, play, TV show, etc.)
   C verb
    D3|- #literary|to explain in detail
+W|m|武俠小說／武侠小说
+ P||wu3xia2xiao3shuo1
+  C noun
+   D1||a martial arts (wuxia) novel
 W|w|地域
  P||di4yu4
   C adj
@@ -106407,6 +107732,14 @@ W|w|當權／当权
  P||dang1quan2
   C verb
    D1||to hold power
+W|m|纖腰／纤腰
+ P||xian1yao1
+  C adj
+   D1||slender waistline
+W|m|貢物／贡物
+ P||gong4wu4
+  C noun
+   D1||tribute
 W|w|不啻
  P||bu4chi4
   C verb
@@ -106450,6 +107783,10 @@ W|w|逆流
    D2|#figurative|reactionary tendency; minority viewpoint or movement
   C verb
    D3||to go against the current
+W|m|班超
+ P||ban1chao1
+  C name
+   D1||Ban Chao (33-102), noted Han diplomat and military man
 W|w|撿骨／捡骨
  P||jian3gu3
   C verb
@@ -106484,6 +107821,10 @@ W|w|掀動／掀动
   C verb
    D1||to stir; to lift
    D2||to set in motion
+W|m|竄紅／窜红
+ P||cuan4hong2
+  C verb
+   D1||to become suddenly popular; suddenly all the rage
 W|w|遏止
  P||e4zhi3
   C verb
@@ -106685,10 +108026,18 @@ W|m|彎彎曲曲／弯弯曲曲
  P||wan1wan1qu1qu1
   C adj
    D1||curved; meandering; zigzagging
+W|m|艱苦樸素／艰苦朴素
+ P||jian1ku3pu3su4
+  C phrase
+   D1||leading a plain, hardworking life
 W|w|受氣包／受气包
  P||shou4qi4bao1
   C noun
    D1||one who is habitually the subject of bullying or is the person that others vent their spleen on
+W|m|漸趨／渐趋
+ P||jian4qu1
+  C verb
+   D1||to become more and more; to gradually become
 W|w|驚惶失措／惊惶失措
  P||jing1huang2 shi1cuo4
   C phrase
@@ -106758,6 +108107,10 @@ W|m|嘆口氣／叹口气
  P||tan4kou3qi4
   C verb
    D1||to sigh
+W|m|求親／求亲
+ P||qiu2qin1
+  C verb
+   D1||to make an offer of marriage (to another family on behalf of one's son or daughter); to seek a marriage alliance
 W|w|喊道
  P||han3dao4
   C verb
@@ -106772,6 +108125,10 @@ W|w|盈盈
    D1|- #literary|limpid; pellucid
    D2|- #literary|(of a mood, atmosphere, etc.) expressive; revealing
    D3|- #literary|having good manners; having good bearing
+W|m|離亂／离乱
+ P||li2luan4
+  C noun
+   D1||social upheaval caused by war or famine etc
 W|w|愣住
  P||leng4zhu4
   C verb
@@ -106804,6 +108161,12 @@ W||和衣
  P||he2yi1
   C adv
    D1||with clothes on (e.g. when sleeping)
+W||違章建築／违章建筑
+ X>||違章／违章#D1;建築／建筑#D1
+ P||wei2zhang1 jian4zhu2
+  C noun
+   D1||illegally constructed building
+    X=||違建／违建#D1
 W|w|恬靜／恬静
  P||tian2jing4
   C adj
@@ -106922,6 +108285,11 @@ W|m|嘰嘰咕咕／叽叽咕咕
  P||ji1ji5gu1gu1
   C verb
    D1|#onomatopoeia|to mutter; to mumble; to whisper
+W|m|頹然／颓然
+ P||tui2ran2
+  C adj
+   D1||decrepit; ruined
+   D2||disappointed
 W|w|物質文明／物质文明
  P|C|wu4zhi4 wen2ming2 |T|wu4zhi2 wen2ming2
   C noun
@@ -107189,6 +108557,10 @@ W|w|上奏
  P||shang4zou4
   C verb
    D1|x #historical|to report to the Throne; to submit a matter to the Throne
+W||江心
+ P||jiang1xin1
+  C noun
+   D1||middle of a river
 W|w|告慰
  P||gao4wei4
   C verb
@@ -107247,6 +108619,10 @@ W||採藥／采药
  P||cai3yao4
   C verb
    D1||to collect medicinal materials (e.g. herbs, minerals)
+W||需索
+ P||xu1suo3
+  C verb
+   D1||to extort
 W|w|升空
  P||sheng1kong1
   C verb
@@ -107389,6 +108765,10 @@ W|w|煙館／烟馆
  P||yan1guan3
   C noun
    D1|x #historical|opium den
+W||相對地／相对地
+ P||xiang1dui4de5
+  C adv
+   D1||to undergo a relative change, to change in a related fashion
 W|w|寮國／寮国
  P||Liao2guo2
   C name
@@ -107409,6 +108789,10 @@ W|w|冒進／冒进
  P||mao4jin4
   C verb
    D1||to advance prematurely; to be rash
+W|m|燒開／烧开
+ P||shao1kai1
+  C verb
+   D1||to boil
 W|w|標榜／标榜
  P||biao1bang3
   C verb
@@ -107699,7 +109083,7 @@ W|w|哀悼
  P||ai1dao4
   C verb
    D1||to grieve; to mourn; to lament (a person's death)
-W|w|暗淡
+W|w|暗淡;黯淡
  P||an4dan4
   C adj
    D1|#figuratively #literally|dim; dull; dismal
@@ -108046,6 +109430,10 @@ W|w|洗衣粉
  P||xi3yi1fen3
   C noun
    D1||washing powder; laundry detergent
+W|m|起到……作用
+ P||qi3dao4
+  C verb
+   D1||to have (a (motivating etc.) effect); to play (a (stabilizing etc.) role
 W|w|車速／车速
  P||che1su4
   C noun
@@ -108407,6 +109795,10 @@ W|w|稀少
  P||xi1shao3
   C adj
    D1||sparse; rare; infrequent
+W|m|說不通／说不通
+ P||shuo1bu4tong1
+  C phrase
+   D1||it does not make sense
 W|w|當即／当即
  P||dang1ji2
   C adv
@@ -108473,6 +109865,10 @@ W|w|配送
  P||pei4song4
   C verb
    D1||to arrange goods (as per customer requirements) and be in charge of delivery; to deliver; to distribute
+W|m|無路可走／无路可走
+ P||wu2lu4ke3zou3
+  C phrase
+   D1||nowhere to go; at the end of one's tether
 W|w|隔開／隔开
  P||ge2kai1
   C verb
@@ -109852,6 +111248,10 @@ W|w|紡／纺
   C character
    D1||to spin; to reel; to weave
    D2||reeled pongee
+W|m|迷惑不解
+ P||mi2huo4bu4jie3
+  C phrase
+   D1||to feel puzzled
 W|w|序幕
  P||xu4mu4
   C noun
@@ -110765,6 +112165,13 @@ W|w|槓桿／杠杆
    D1||lever
    D2|#physics|leverage
    D3|#business #law|leverage (gearing)
+W|m|牛郎織女／牛郎织女
+ P||niu2lang2zhi1nv3
+  C noun
+   D1||Cowherd and Weaving maid (characters in folk story)
+   D2||separated lovers
+  C name
+   D3||Altair and Vega (stars)
 W|w|蕩漾／荡漾
  P||dang4yang4
   C verb
@@ -110824,6 +112231,10 @@ W|w|鋼材／钢材
   C noun
    D1||steel
    D2||steel products
+W|m|難以忍受／难以忍受
+ P||nan2yi3ren3shou4
+  C phrase
+   D1||hard to endure; unbearable
 W|w|愚公移山
  P||yu2gong1yi2shan1
   C phrase
@@ -111004,6 +112415,11 @@ W|w|歸結／归结
    D1||conclusion
   C verb
    D2||to sum up; to put in a nutshell
+W|m|涮火鍋／涮火锅
+ XV||涮鍋子／涮锅子
+ P||shuan4huo3guo1
+  C verb-object
+   D1||See 涮鍋子／涮锅子
 W|w|錦繡前程／锦绣前程
  P||jin3xiu4qian2cheng2
   C phrase
@@ -111116,6 +112532,11 @@ W|w|奶牛
  P||nai3niu2
   C noun
    D1||milk cow; dairy cow; dairy cattle
+W|m|狼狽不堪／狼狈不堪
+ P||lang2bei4bu4kan1
+  C adj
+   D1||battered and exhausted
+   D2||stuck in a dilemma
 W|w|熙熙攘攘
  P||xi1xi1rang3rang3 |-T|xi1xi1rang2rang2
   C phrase
@@ -111295,6 +112716,11 @@ W|w|油料
  P||you2liao4
   C noun
    D1||oilseed; oil
+W|m|西直門／西直门
+ P||xi1zhi2men2
+  C name
+   D1||Xizhimen neighborhood of Beijing
+   D2||the main northwest gate of Beijing
 W|w|醫療保險／医疗保险
  P||yi1liao2 bao3xian3
   C noun
@@ -111624,6 +113050,14 @@ W|w|兜兒／兜儿
  P||dou1r5
   C noun
    D1||Erhua form of 兜 (dōu, “pocket; plastic bag”).
+W|m|皮層／皮层
+ P||pi2ceng2
+  C noun
+   D1||cortex
+W|m|鄭和／郑和
+ P||zheng4he2
+  C name
+   D1||Zheng He (1371-1433), famous early Ming dynasty admiral and explorer
 W|w|橫向／横向
  P||heng2xiang4
   C adj
@@ -111909,6 +113343,10 @@ W|w|法郎
  P||fa3lang2
   C noun
    D2|#Catholicism|pharaoh (supreme ruler of ancient Egypt)
+W|m|走過／走过
+ P||zou3guo4
+  C verb
+   D1||to walk past; to pass by
 W|w|冰棍兒／冰棍儿
  P||bing1gun4r5
   C noun
@@ -112034,6 +113472,10 @@ W|w|藤椅
  P||teng2yi3
   C noun
    D1||rattan chair
+W|m|湧起／涌起
+ P||yong3qi3
+  C verb
+   D1||to well up; to boil out; to bubble forth; to spurt
 W|w|酣睡
  P||han1shui4
   C verb
@@ -112048,6 +113490,10 @@ W|m|勾踐／勾践
  P||gou1jian4
   C name
    D1||King Gou Jian of Yue (c. 470 BC), sometimes considered one of the Five Hegemons 春秋五霸
+W|m|言之有物
+ P||yan2zhi1you3wu4
+  C phrase
+   D1||(of one's words) to have substance
 W|w|會意／会意
  P||hui4yi4
   C noun
@@ -122163,12 +123609,6 @@ W|w|一時苟安／一时苟安
  P||yi1shi2gou3an1
   C phrase
    D1||temporary respite
-W|w|一晃
- P||yi1huang3;yi1huang4
-  C adv
-   D1||in a flash; in an instant
-  C verb
-   D2||to pass in a flash; to pass in an instant
 W|w|一晚
  P||yi1wan3
   C noun
@@ -123686,6 +125126,12 @@ W|m|一句話／一句话
  P||yi1ju4hua4
   C adv
    D1||in a word; in short
+W|w|一晃
+ P||yi1huang3;yi1huang4
+  C adv
+   D1||in a flash; in an instant
+  C verb
+   D2||to pass in a flash; to pass in an instant
 W|w|丁丁
  P||ding1ding1
   C adj
@@ -139591,6 +141037,10 @@ W|w|事到如今
  P||shi4dao4ru2jin1
   C phrase
    D1||as things stand; currently; getting this far; up to this point
+W|m|事已至此
+ P||shi4yi3zhi4ci3
+  C phrase
+   D1||as matters stand; things having reached this stage
 W|w|事前
  P||shi4qian2
   C adj
@@ -161967,7 +163417,7 @@ W|w|像樣子／像样子
  P||xiang4yang4zi5
   C adj
    D1||Synonym of 像樣／像样 (xiàngyàng, “presentable; decent; up to par”)
-W|w|像樣／像样
+W|w|像樣／像样;象樣／象样
  P||xiang4yang4
   C adj
    D1||presentable; decent; up to par
@@ -162387,7 +163837,7 @@ W|w|僰文
  P||bo2wen2
   C noun
    D1|x #historical|Bowen (script adapted from Hanzi for the Bai languages)
-W|w|僱主／雇主
+W|w|僱主／雇主;雇主
  P||gu4zhu3
   C noun
    D1||employer
@@ -181606,6 +183056,7 @@ W|w|劉關張／刘关张
  P||Liu2-Guan1-Zhang1
   C name
    D1||Liu Bei, Guan Yu and Zhang Fei (sworn brothers in the state of Shu Han in the Three Kingdoms period)
+    XG||劉備／刘备#D1;關羽／关羽#D1;張飛／张飞#D1
 W|w|劉集／刘集
  P||Liu2ji2
   C name
@@ -214308,7 +215759,7 @@ W|w|嘧啶
  P||mi4ding4
   C noun
    D1|#organic-chemistry|pyrimidine
-W|w|嘩然／哗然
+W|w|嘩然／哗然;譁然／哗然
  P||hua2ran2
   C adj
    D1|#ideophonic|chaotic; turbulent; uproarious; in an uproar
@@ -224816,10 +226267,6 @@ W|w|基準點／基准点
  P||ji1zhun3dian3
   C noun
    D1||point of reference; reference point
-W|w|基準／基准
- P||ji1zhun3
-  C noun
-   D1||benchmark; standard; reference
 W|w|基爾吉茲／基尔吉兹
  P||Ji1er3ji2zi1
   C name
@@ -225029,6 +226476,10 @@ W|w|基點／基点
    D2||starting point
    D3|#finance|basis point
    D4||centre (place where some function or activity occurs)
+W|w|基準／基准
+ P||ji1zhun3
+  C noun
+   D1||benchmark; standard; reference
 W|w|埼玉
  P||Qi2yu4
   C name
@@ -234863,13 +236314,6 @@ W|w|大笨鐘／大笨钟
  P||Da4ben4zhong1
   C name
    D1||Big Ben
-W|w|大筆／大笔
- P||da4bi3
-  C adj
-   D1||of a large amount
-  C noun
-   D2||pen
-   D3||(your) writing; (your) handwriting
 W|w|大筒
  P||da4tong3
   C noun
@@ -236477,6 +237921,13 @@ W|w|大齡／大龄
  P||da4ling2
   C adj
    D1||relatively old
+W|w|大筆／大笔
+ P||da4bi3
+  C adj
+   D1||of a large amount
+  C noun
+   D2||pen
+   D3||(your) writing; (your) handwriting
 W|w|夨
  P||ze4
   C character
@@ -292070,10 +293521,6 @@ W|w|惁
   C character
    D1||sorrow
    D2||respect
-W|w|情不自禁
- P||qing2bu4zi4jin1
-  C phrase
-   D1||cannot hold back one's emotion; can't help
 W|w|情事
  P||qing2shi4
   C noun
@@ -292355,6 +293802,10 @@ W|w|情頭／情头
  P||qing2tou2
   C noun
    D1|#social-media|Short for 情侶頭像／情侣头像 (qínglǚ tóuxiàng).
+W|w|情不自禁
+ P||qing2bu4zi4jin1
+  C phrase
+   D1||cannot hold back one's emotion; can't help
 W|w&|惆
  P||chou2
   C character
@@ -295146,6 +296597,7 @@ W|w|慢騰騰／慢腾腾
  P||man4teng2teng2
   C adj
    D1|#ideophonic|sluggish; slow; leisurely
+    X!||熱騰騰／热腾腾#D2
 W|w|慣伎／惯伎
  P||guan4ji4
   C noun
@@ -305690,7 +307142,7 @@ W|w|抵補／抵补
  P||di3bu3
   C verb
    D1||to compensate for; to make up for
-W|w|抵觸／抵触
+W|w|抵觸／抵触;牴觸／牴触
  P||di3chu4
   C verb
    D1||to affront; to resist
@@ -315781,7 +317233,7 @@ W|w|搭脈／搭脉
   C verb
    D1|x #Wu #figurative|to try to find out about a situation
    D2|x #Wu #figurative|to have a contest; to compete with
-W|w|搭腔
+W|w|搭腔;答腔
  P||da1qiang1
   C verb
    D1||to answer; to respond
@@ -340684,6 +342136,10 @@ W|w|朜
  P||tun1
   C character
    D1||moonlight
+W|m|朝夕相處／朝夕相处
+ P||zhao1xi1xiang1chu3
+  C phrase
+   D1||to spend all one's time together
 W|w|朝不保夕
  P|C|zhao1bu4bao3xi1 |T|zhao1bu4bao3xi4
   C phrase
@@ -354923,7 +356379,7 @@ W|w|槍擊／枪击
  P|C|qiang1ji1 |T|qiang1ji2
   C verb
    D1||to shoot (with a firearm)
-W|w|槍支／枪支
+W|w|槍支／枪支;槍枝／枪枝
  P||qiang1zhi1
   C noun
    D1|#collective|firearm
@@ -354969,7 +356425,7 @@ W|w|槍法／枪法
   C noun
    D1||marksmanship
    D2||spear fighting
-W|w|槍炮／枪炮
+W|w|槍炮／枪炮;槍砲／枪炮
  P||qiang1pao4
   C noun
    D1||firearm; guns and cannons
@@ -358169,7 +359625,7 @@ W|w|檎
  P||qin2
   C character
    D1||Only used in 林檎 (línqín).
-W|w|檐
+W|w|檐;簷／檐
  P||yan2
   C character
    D1||eaves of a house
@@ -361507,6 +362963,10 @@ W|w|正齒音
  P||zheng4chi3yin1
   C noun
    D1|#Chinese-phonetics|any of the group of consonants represented by the Middle Chinese pronunciation the following 字母 (zìmǔ): 照 (/tʃ/), 穿 (/tʃʰ/), 床 (/dʒ/), 審／审 (/ʃ/) and 禪／禅 (/ʒ/)
+W|m|此事
+ P||ci3shi4
+  C noun
+   D1||this matter
 W|w|此一時，彼一時／此一时，彼一时
  P||ci3 yi1shi2, bi3 yi1shi2
   C phrase
@@ -370637,24 +372097,6 @@ W|w|汘
  P||qian1
   C character
    D1||name of an ancient river
-W|w|汙
- P||wu1
-  C character
-   D1||dirt; filth
-   D2||unclean; dirty; filthy
-   D3||rotten; corrupt
-   D4||to make dirty; to pollute; to stain
-   D5||to defile; to smear; to tarnish
-   D6|- #literary|Alternative form of 洿 (wū, “stagnant pool; puddle”)
-   D7|- #literary|low-lying
-   D8|- #literary|low; lowly
-   D9|- #literary|decline
-   D10|#Internet-slang #humorous|embarrassing; obscene
-   D11|x #Wu|Alternative form of 惡／恶 (“excrement; dung”)
-W|w|汙泥／污泥
- P||wu1ni2
-  C noun
-   D1||mud; mire; sludge
 W|w|汛
  P||xun4
   C character
@@ -371114,6 +372556,24 @@ W|w|池鹽／池盐
  P||chi2yan2
   C noun
    D1||lake salt
+W|w|污;汙／污;汚／污
+ P||wu1
+  C character
+   D1||dirt; filth
+   D2||unclean; dirty; filthy
+   D3||rotten; corrupt
+   D4||to make dirty; to pollute; to stain
+   D5||to defile; to smear; to tarnish
+   D6|- #literary|Alternative form of 洿 (wū, “stagnant pool; puddle”)
+   D7|- #literary|low-lying
+   D8|- #literary|low; lowly
+   D9|- #literary|decline
+   D10|#Internet-slang #humorous|embarrassing; obscene
+   D11|x #Wu|Alternative form of 惡／恶 (“excrement; dung”)
+W|w|污泥
+ P||wu1ni2
+  C noun
+   D1||mud; mire; sludge
 W|w|污名
  P||wu1ming2
   C noun
@@ -378466,7 +379926,8 @@ W|w|洩湖
  P||Xie4hu2
   C name
    D1||(～鎮) Xiehu (a town in Lantian, Xi'an, Shaanxi, China)
-W|w|洩漏／泄漏
+W|w|洩漏／泄漏;泄漏
+ XV||洩露／泄露
  P||xie4lou4
   C verb
    D1||(of liquids and gases) to spill; to leak
@@ -407751,7 +409212,7 @@ W|w|犧牲品／牺牲品
  P||xi1sheng1pin3
   C noun
    D1||sacrifice (to something); victim (of); prey (to)
-W|w&|犧／牺
+W|w&|犧／牺;犠／牺
  P||xi1
   C character
    D1|x #historical|pure-colored sacrificial animal
@@ -412443,7 +413904,7 @@ W|w|玩忽職守／玩忽职守
  P||wan2hu1 zhi2shou3 |T|wan4hu1 zhi2shou3
   C phrase
    D1|C|to neglect one's duty; to engage in misconduct in public office
-W|w|玩意
+W|w|玩意;玩藝／玩艺
  P||wan2yi4
   C noun
    D1|#informal|thingamajig; thingie
@@ -414792,7 +416253,7 @@ W|w|瑜
    D1||Used in transcription of Sanskrit terms.
     X<||瑜伽;阿瑜陀耶
    D2||Used in personal names.
-W|w|瑜伽
+W|w|瑜伽;瑜珈
  P||yu2jia1
   C noun
    D1||yoga (physical, mental, and spiritual practice or discipline)
@@ -430720,10 +432181,6 @@ W|w|盟兄弟
  P||meng2xiong1di4
   C noun
    D1||blood brother
-W|w|盟友
- P||meng2you3
-  C noun
-   D1||ally (state or person)
 W|w|盟員／盟员
  P||meng2yuan2
   C noun
@@ -430756,6 +432213,10 @@ W|w|盟長／盟长
  P||meng2zhang3
   C noun
    D1||leader of an alliance; leading power
+W|w|盟友
+ P||meng2you3
+  C noun
+   D1||ally (state or person)
 W|w|盡享／尽享
  P||jin4xiang3
   C verb
@@ -432227,6 +433688,11 @@ W|w|直飛／直飞
  P||zhi2fei1
   C verb
    D1||(of an airplane) to fly directly to
+W|m|相對而言／相对而言
+ P||xiang1dui4er2yan2
+  C phrase
+   D1||relatively speaking
+   D2||comparatively speaking
 W|w|相並／相并
  P||xiang1bing4
   C verb
@@ -452410,10 +453876,6 @@ W|w|第一產業／第一产业
  P||di4-yi1 chan3ye4
   C noun
    D1|#economics|primary sector; primary industry
-W|w|第一線／第一线
- P||di4yi1xian4
-  C noun
-   D1|#figuratively #military|front line; forefront; forward position; leading position
 W|w|第一賣冰，第二做醫生／第一卖冰，第二做医生
  P||di4yi1 mai4 bing1, di4er4 zuo4 yi1sheng1
   C proverb
@@ -452666,6 +454128,10 @@ W|w|第聶伯羅彼得羅夫斯克／第聂伯罗彼得罗夫斯克
   C name
    D1||Dnipropetrovsk (a city in Ukraine)
    D2||(～州) Dnipropetrovsk Oblast (an oblast of Ukraine)
+W|w|第一線／第一线
+ P||di4yi1xian4
+  C noun
+   D1|#figuratively #military|front line; forefront; forward position; leading position
 W|w|笮
  P||ze2
   C character
@@ -453952,9 +455418,9 @@ W|w|算計／算计
    D2||to plan; to scheme; to plot
    D3||to consider; to think about; to take into consideration; to ponder; to think over
    D4||to guess; to surmise; to conjecture
-W|w|算賬／算账
+W|w|算賬／算账;算帳／算帐
  P||suan4zhang4
-  C verb
+  C verb-object
    D1|#literally|to do accounts; to balance the books; to make out the bills
    D2|#figurative|to square; to settle accounts (with somebody); to get even
 W|w|算錯／算错
@@ -460468,7 +461934,7 @@ W|w|紐幣／纽币
  P||niu3bi4
   C noun
    D1||New Zealand dollar
-W|w|紐扣／纽扣
+W|w|紐扣／纽扣;鈕扣／钮扣;鈕釦／钮扣
  P||niu3kou4
   C noun
    D1||button (on an item of clothing)
@@ -462864,7 +464330,7 @@ W|w|結塊／结块
  P||jie2kuai4
   C verb
    D1||to agglomerate; to form a lump; to cake
-W|w|結夥／结伙
+W|w|結夥／结伙;結伙／结伙
  P||jie2huo3
   C verb
    D1|#chiefly-derogatory|to join together; to team up; to gang up
@@ -474443,10 +475909,6 @@ W|w|老好人
  P||lao3hao3ren2
   C noun
    D1||benign and uncontentious person who is indifferent to matters of principle; one who keeps on the right side of everyone
-W|w|老妖
- P||lao3yao1
-  C noun
-   D1||Alternative form of 老幺 (lǎoyāo)
 W|w|老妹
  P||lao3mei4
   C noun
@@ -474690,7 +476152,7 @@ W|w|老幹部／老干部
   C noun
    D1||veteran cadre; senior cadre
    D2|C #specifically|cadre who joined the Communist Party of China before October 1, 1949
-W|w|老幺
+W|w|老幺;老么／老幺;老妖
  P||lao3yao1
   C noun
    D1||the youngest child of a family; the youngest one in a group
@@ -478753,6 +480215,10 @@ W|w|聻／𫆏
  P||ni3;jian4
   C character
    D1|x #obsolete|ghost of a dead spirit
+W|m|聽到／听到
+ P||ting1dao4
+  C verb
+   D1||to hear
 W|w|聽不懂／听不懂
  P||ting1bu4dong3
   C verb
@@ -489842,6 +491308,10 @@ W|w|臲
  P||nie4
   C character
    D1||Only used in 臲卼 and 危臲.
+W|m|至此
+ P||zhi4ci3
+  C adv
+   D1||up until now; so far
 W|w|至上
  P||zhi4shang4
   C adj
@@ -493816,6 +495286,10 @@ W|w|芛
  P||wei3
   C character
    D1||Newborn plants and flowers
+W|m|芝士
+ P||zhi1shi4
+  C noun
+   D1|#loanword|cheese
 W|w|芝
  P||zhi1
   C character
@@ -513009,7 +514483,7 @@ W|w|蝨目魚／虱目鱼
  P||shi1mu4yu2
   C noun
    D1||milkfish
-W|w|蝨／虱
+W|w|蝨／虱;虱
  P||shi1
   C character
    D1||louse
@@ -526470,7 +527944,7 @@ W|w|詝／𬣞
  P||zhu3
   C character
    D1|- #literary|wisdom; intelligence
-W|w|詞不達意／词不达意
+W|w|詞不達意／词不达意;辭不達意／词不达意
  P||ci2bu4da2yi4
   C phrase
    D1||words do not express one's intent; poorly expressed; senseless; inarticulate
@@ -544832,7 +546306,7 @@ W|w|身份盜竊／身份盗窃
  P||shen1fen4 dao4qie4
   C noun
    D1||identity theft
-W|w|身份證／身份证
+W|w|身份證／身份证;身分證／身分证
  P||shen1fen4zheng4
   C noun
    D1||identity card; ID card; identity document
@@ -554420,7 +555894,7 @@ W|w|逸
    D3||leisurely
    D4||indulgent
    D5||(alt. form 軼／轶, 佚) scattered; lost
-W|w|逸事
+W|w|逸事;軼事／轶事
  P||yi4shi4
   C noun
    D1||interesting but little known event in history; historical anecdote, episode or piece of trivia
@@ -556547,6 +558021,7 @@ W|w|違建／违建
  P||wei2jian4
   C noun
    D1||illegally constructed building
+    X=||違章建築／违章建筑#D1
 W|w|違心／违心
  P||wei2xin1
   C verb
@@ -588987,6 +590462,10 @@ W|w|需要是發明之母／需要是发明之母
  P||xu1yao4 shi4 fa1ming2 zhi1 mu3
   C proverb
    D1||necessity is the mother of invention
+W||需索無度／需索无度
+ P||xu1suo3wu2du4
+  C phrase
+   D1||to make endless demands
 W|w|霄
  P||xiao1
   C character
@@ -619901,7 +621380,7 @@ W|w|鼻樑兒／鼻梁儿
  P||bi2liang2r5
   C noun
    D1||Erhua form of 鼻樑／鼻梁 (bíliáng, “bridge (bony ridge of the nose)”).
-W|w|鼻樑／鼻梁
+W|w|鼻樑／鼻梁;鼻梁
  P||bi2liang2
   C noun
    D1|#anatomy|bridge (bony ridge of the nose)

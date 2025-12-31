@@ -225,7 +225,7 @@ ORDER BY s.rank, s.rank_relative;
 /// A symmetric reference should exist in both directions
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
     Some(match ref_type_char {
-        '=' => ("synonym-equal", true),
+        '=' => ("synonym-interchangeable", true),
         '~' => ("synonym-similar", true),
         '!' => ("antonym", true),
         '?' => ("could-be-confused-with", true),

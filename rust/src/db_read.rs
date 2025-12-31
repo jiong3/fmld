@@ -1,5 +1,13 @@
+use std::cmp::max;
+
 use crate::common::SqliteId;
-use rusqlite::{Connection, Error as SqliteError, Row};
+use rusqlite::{Connection, Error as SqliteError, Row, params};
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum SimpTrad {
+    Simp,
+    Trad,
+}
 
 #[derive(Debug, PartialEq, Eq, Default)]
 pub struct SharedIds {
@@ -225,9 +233,8 @@ pub fn read_pinyin_entries_for_definition(
     def_id: SqliteId,
     pron_shared_ids: &[SqliteId],
 ) -> Result<Vec<PronEntry>, SqliteError> {
-    let mut stmt = conn
-        .prepare_cached(
-            r"
+    let mut stmt = conn.prepare_cached(
+        r"
             SELECT
                 p.id,
                 p_s.id,
@@ -239,8 +246,7 @@ pub fn read_pinyin_entries_for_definition(
             LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
             WHERE def.id = ?1 AND p_s.id = ?2
             ",
-        )
-        .unwrap();
+    )?;
 
     // 1. Fetch all data into a Vec of PinyinData structs
     let pinyin_data: Result<Vec<PronEntry>, SqliteError> = pron_shared_ids
@@ -258,4 +264,69 @@ pub fn read_pinyin_entries_for_definition(
         })
         .collect();
     pinyin_data
+}
+
+pub fn get_words_starting_with_char(
+    conn: &Connection,
+    c: char,
+    simp_trad: &SimpTrad,
+) -> Result<Vec<(SqliteId, String)>, SqliteError> {
+    let mut stmt = if *simp_trad == SimpTrad::Trad {
+        conn.prepare_cached(
+            r"
+                SELECT
+                    id,
+                    trad
+                FROM dict_word
+                WHERE trad GLOB ?1
+                ",
+        )?
+    } else {
+        conn.prepare_cached(
+            r"
+                SELECT
+                    id,
+                    simp
+                FROM dict_word
+                WHERE simp GLOB ?1
+                ",
+        )?
+    };
+    let mut rows = stmt.query(params![format!("{c}*")])?;
+
+    let mut words = vec![];
+
+    while let Some(row) = rows.next()? {
+        let word_id: SqliteId = row.get(0)?;
+        let word_str: String = row.get(1)?;
+        words.push((word_id, word_str));
+    }
+    Ok(words)
+}
+
+// Return all dictionary words in the provided string and a list of characters not covered by any dictionary entry
+pub fn get_words_in_str<'a>(
+    conn: &Connection,
+    s: &'a str,
+    simp_trad: SimpTrad,
+) -> Result<(Vec<(SqliteId, &'a str)>, Vec<char>), SqliteError> {
+    let mut words: Vec<(SqliteId, &str)> = vec![];
+    let mut unknown_chars: Vec<char> = vec![];
+
+    let mut covered_end_idx = 0;
+    for (char_idx, c) in s.char_indices() {
+        let possible_words = get_words_starting_with_char(conn, c, &simp_trad)?;
+        for (word_id, word_str) in possible_words {
+            if s[char_idx..].starts_with(&word_str) {
+                let end_idx = char_idx + word_str.len();
+                words.push((word_id, &s[char_idx..end_idx]));
+                covered_end_idx = max(covered_end_idx, end_idx);
+            }
+        }
+        if char_idx + c.len_utf8() > covered_end_idx {
+            unknown_chars.push(c);
+        }
+    }
+
+    Ok((words, unknown_chars))
 }

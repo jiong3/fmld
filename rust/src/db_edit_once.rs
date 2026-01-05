@@ -107,7 +107,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
             db_edit::add_tag(
                 conn,
                 db_edit::EntryId::Definition(definition.id),
-                db_edit::Tag::Full {
+                db_read::Tag::Full {
                     name: full_tag,
                     category: "",
                 },
@@ -133,7 +133,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
                 db_edit::add_tag(
                     conn,
                     db_edit::EntryId::Definition(definition.id),
-                    db_edit::Tag::Ascii(ascii_char),
+                    db_read::Tag::Ascii(ascii_char),
                 )
                 .unwrap();
             } else {
@@ -288,7 +288,7 @@ pub fn apply_pinyin_tags_from_json(
                         db_edit::add_tag(
                             conn,
                             db_edit::EntryId::Pinyin(shared_pron_id),
-                            db_edit::Tag::Ascii(tag_char),
+                            db_read::Tag::Ascii(tag_char),
                         )?;
                     } else {
                         eprintln!(
@@ -651,7 +651,7 @@ pub fn import_entries_from_json(
         // --- Add Tags ---
         for tag_char in entry.word_tags.chars() {
             if config::tag_to_txt_ascii_common(tag_char).is_some() {
-                 db_edit::add_tag(conn, db_edit::EntryId::Word(word_id), db_edit::Tag::Ascii(tag_char))?;
+                 db_edit::add_tag(conn, db_edit::EntryId::Word(word_id), db_read::Tag::Ascii(tag_char))?;
             }
         }
 

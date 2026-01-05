@@ -1,4 +1,5 @@
 use crate::common::SqliteId;
+use crate::db_read::Tag;
 use crate::config;
 use rusqlite::{Error as SqliteError, Transaction, params};
 
@@ -12,16 +13,6 @@ pub enum EntryId {
     Pinyin(SqliteId),
     Reference(SqliteId),
 }
-
-/// An enum to represent a tag.
-#[derive(Debug)]
-pub enum Tag<'a> {
-    /// An ASCII tag which is a shorthand for a full tag,
-    Ascii(char),
-    /// A full tag with a name and a category.
-    Full { name: &'a str, category: &'a str },
-}
-
 
 #[allow(clippy::too_many_arguments)]
 pub fn insert_reference(

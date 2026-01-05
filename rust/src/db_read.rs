@@ -1,12 +1,19 @@
 use std::cmp::max;
-
+use std::collections::HashSet;
 use crate::common::SqliteId;
-use rusqlite::{Connection, Error as SqliteError, Row, params};
+use rusqlite::{Connection, Error as SqliteError, Row, ToSql, params, OptionalExtension};
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum SimpTrad {
     Simp,
     Trad,
+}
+
+pub enum Tag<'a> {
+    /// An ASCII tag which is a shorthand for a full tag,
+    Ascii(char),
+    /// A full tag with a name and a category.
+    Full { name: &'a str, category: &'a str },
 }
 
 #[derive(Debug, PartialEq, Eq, Default)]
@@ -94,6 +101,43 @@ pub fn read_shared_ids(conn: &Connection, shared_id: SqliteId) -> Result<SharedI
     })
 }
 
+/// Get ids for words matching the provided simplified or traditional word (both are considered if provided)
+pub fn get_words(
+    conn: &Connection,
+    simp: Option<&str>,
+    trad: Option<&str>,
+) -> Result<Vec<SqliteId>, SqliteError> {
+    assert!(
+        simp.is_some() || trad.is_some(),
+        "At least one of simp or trad must be provided"
+    );
+
+    let mut ids = vec![];
+
+    if let (Some(s), Some(t)) = (simp, trad) {
+        let mut stmt =
+            conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1 AND trad = ?2")?;
+        let mut rows = stmt.query(params![s, t])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    } else if let Some(s) = simp {
+        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1")?;
+        let mut rows = stmt.query(params![s])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    } else if let Some(t) = trad {
+        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE trad = ?1")?;
+        let mut rows = stmt.query(params![t])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    }
+
+    Ok(ids)
+}
+
 pub fn read_word(conn: &Connection, word_id: SqliteId) -> Result<WordEntry, SqliteError> {
     let mut stmt = conn.prepare(
         r"
@@ -149,6 +193,58 @@ fn row_to_definition_entry(conn: &Connection, row: &Row) -> Result<DefinitionEnt
     })
 }
 
+/// Add indentation level and grouping (word, pinyin, word class) information
+fn group_definitions(defs: Vec<DefinitionEntry>) -> Vec<(DefinitionEntry, EntryGrouping)> {
+    let mut def_groups = vec![];
+
+    let mut last_word_id = -1;
+    let mut last_pron_shared_ids = vec![];
+    let mut last_class_id = -1;
+    let mut definition_stack: Vec<SqliteId> = vec![];
+
+    for mut def_entry in defs {
+        let mut entry_grouping = EntryGrouping::default();
+
+        // set flags if changes in word, pronunciation or class occur
+        if def_entry.word_id != last_word_id {
+            last_word_id = def_entry.word_id;
+            last_pron_shared_ids.clear();
+            last_class_id = -1;
+            entry_grouping.new_word = true;
+            definition_stack.clear();
+        }
+        if def_entry.pron_shared_ids != last_pron_shared_ids {
+            last_pron_shared_ids = def_entry.pron_shared_ids.clone();
+            last_class_id = -1;
+            entry_grouping.new_pron = true;
+            definition_stack.clear();
+        }
+        if def_entry.class_id != last_class_id {
+            last_class_id = def_entry.class_id;
+            entry_grouping.new_class = true;
+            definition_stack.clear();
+        }
+
+        // determine the number of parent definitions
+        if let Some(parent_id) = def_entry.parent_id {
+             // note: it has to be ensured that, if parent definitions are filtered out, the child definitions are also removed
+            let parent_level = 1 + definition_stack
+                .iter()
+                .position(|i| *i == parent_id)
+                .expect("missing parent definition");
+            def_entry.nested_level += parent_level;
+            definition_stack.truncate(parent_level);
+        } else {
+            definition_stack.clear();
+        }
+        definition_stack.push(def_entry.id);
+
+        def_groups.push((def_entry, entry_grouping));
+    }
+    def_groups
+}
+
+/// Read all definitions in the dictionary
 pub fn read_definitions(
     conn: &Connection,
 ) -> Result<Vec<(DefinitionEntry, EntryGrouping)>, SqliteError> {
@@ -181,51 +277,134 @@ pub fn read_definitions(
 
     let mut rows = stmt.query([])?;
 
-    let mut last_word_id = -1;
-    let mut last_pron_shared_ids = vec![];
-    let mut last_class_id = -1;
-    let mut definition_stack: Vec<SqliteId> = vec![];
+    while let Some(row) = rows.next()? {
+        definitions.push(row_to_definition_entry(conn, row)?);
+    }
+    let def_groups = group_definitions(definitions);
+    Ok(def_groups)
+}
+
+/// Replace word ids with the target of variant_of, if not NULL
+pub fn resolve_word_variants(
+    conn: &Connection,
+    word_ids: &Vec<SqliteId>,
+) -> Result<Vec<SqliteId>, SqliteError> {
+    if word_ids.is_empty() {
+        return Ok(word_ids.clone());
+    }
+
+    // Since variants are rare, we only query for the specific IDs in the input list
+    // that have a 'variant_of' value set.
+    let placeholders: Vec<&str> = word_ids.iter().map(|_| "?").collect();
+    let sql = format!(
+        "SELECT id, variant_of FROM dict_word WHERE id IN ({}) AND variant_of IS NOT NULL",
+        placeholders.join(",")
+    );
+
+    let params: Vec<&dyn ToSql> = word_ids.iter().map(|id| id as &dyn ToSql).collect();
+
+    let mut stmt = conn.prepare(&sql)?;
+    let mut rows = stmt.query(&*params)?;
+
+    let mut replacement_map = std::collections::HashMap::new();
 
     while let Some(row) = rows.next()? {
-        let mut def_entry = row_to_definition_entry(conn, row)?;
-        let mut entry_grouping = EntryGrouping::default();
-
-        // set flags if changes in word, pronunciation or class occur
-        if def_entry.word_id != last_word_id {
-            last_word_id = def_entry.word_id;
-            last_pron_shared_ids.clear();
-            last_class_id = -1;
-            entry_grouping.new_word = true;
-            definition_stack.clear();
-        }
-        if def_entry.pron_shared_ids != last_pron_shared_ids {
-            last_pron_shared_ids = def_entry.pron_shared_ids.clone();
-            last_class_id = -1;
-            entry_grouping.new_pron = true;
-            definition_stack.clear();
-        }
-        if def_entry.class_id != last_class_id {
-            last_class_id = def_entry.class_id;
-            entry_grouping.new_class = true;
-            definition_stack.clear();
-        }
-
-        // determine the number of parent definitions
-        if let Some(parent_id) = def_entry.parent_id {
-            let parent_level = 1 + definition_stack
-                .iter()
-                .position(|i| *i == parent_id)
-                .expect("missing parent definition");
-            def_entry.nested_level += parent_level;
-            definition_stack.truncate(parent_level);
-        } else {
-            definition_stack.clear();
-        }
-        definition_stack.push(def_entry.id);
-
-        definitions.push((def_entry, entry_grouping));
+        let id: SqliteId = row.get(0)?;
+        let variant_of: SqliteId = row.get(1)?;
+        replacement_map.insert(id, variant_of);
     }
-    Ok(definitions)
+
+    // Optimization: If no variants were found, we can simply return the original list
+    // without reallocating or iterating.
+    if replacement_map.is_empty() {
+        return Ok(word_ids.clone());
+    }
+
+    // Replace IDs found in the map, keep others as they are
+    let resolved_ids = word_ids
+        .into_iter()
+        .map(|id| *replacement_map.get(&id).unwrap_or(&id))
+        .collect();
+
+    Ok(resolved_ids)
+}
+
+/// Read definitions for the provided word ids
+/// note: this implementation passes all word ids in one sql query
+pub fn read_definitions_for_words(
+    conn: &Connection,
+    word_ids: &Vec<SqliteId>,
+    must_have_tag: &Vec<SqliteId>,
+    without_tag: &Vec<SqliteId>,
+) -> Result<Vec<(DefinitionEntry, EntryGrouping)>, SqliteError> {
+    if word_ids.is_empty() {
+        return Ok(vec![]);
+    }
+    let mut sql = r"
+            SELECT
+                w.id AS word_id,
+                c.id AS class_id,
+                c.name AS class_name,
+                def.id AS def_id,
+                def.shared_id AS def_shared_id,
+                def.ext_def_id,
+                def.definition,
+                def.parent_id,
+                GROUP_CONCAT(p_s.id ORDER BY p_s.rank, p_s.rank_relative) AS pron_shared_ids -- NULLS FIRST default
+            FROM dict_definition def
+            JOIN dict_shared s ON def.shared_id = s.id
+            JOIN dict_word w ON def.word_id = w.id
+            JOIN dict_class c ON def.class_id = c.id
+            LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
+            LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
+            LEFT JOIN dict_pron p ON sp.pron_id = p.id
+            LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
+            WHERE ".to_owned();
+
+    let mut params: Vec<&dyn ToSql> =
+        Vec::with_capacity(word_ids.len() + must_have_tag.len() + without_tag.len());
+
+    let word_ids = resolve_word_variants(conn, word_ids)?;
+    
+    // Filter by word IDs
+    let word_placeholders: Vec<&str> = word_ids.iter().map(|_| "?").collect();
+    sql.push_str(&format!("w.id IN ({})", word_placeholders.join(",")));
+    for id in &word_ids {
+        params.push(id);
+    }
+
+    // Filter by tags that must be present
+    for tag_id in must_have_tag {
+        sql.push_str(" AND EXISTS (SELECT 1 FROM dict_shared_tag st WHERE st.for_shared_id = def.shared_id AND st.tag_id = ?)");
+        params.push(tag_id);
+    }
+
+    // Filter by tags that must NOT be present
+    if !without_tag.is_empty() {
+        let tag_placeholders: Vec<&str> = without_tag.iter().map(|_| "?").collect();
+        sql.push_str(&format!(" AND NOT EXISTS (SELECT 1 FROM dict_shared_tag st WHERE st.for_shared_id = def.shared_id AND st.tag_id IN ({}))", tag_placeholders.join(",")));
+        for tag_id in without_tag {
+            params.push(tag_id);
+        }
+    }
+
+    sql.push_str(" GROUP BY def.id ORDER BY s.rank, s.rank_relative;");
+
+    let mut stmt = conn.prepare(&sql)?;
+    let mut rows = stmt.query(&*params)?;
+    let mut definitions = vec![];
+    let mut available_def_ids = HashSet::new();
+    while let Some(row) = rows.next()? {
+        let def = row_to_definition_entry(conn, row)?;
+        // only add definition if their parent definition is also included
+        if def.parent_id.is_none() || available_def_ids.contains(&def.parent_id.unwrap()) {
+            available_def_ids.insert(def.id);
+            definitions.push(def);  
+        }
+        
+    }
+    let def_groups = group_definitions(definitions);
+    Ok(def_groups)
 }
 
 pub fn read_pinyin_entries_for_definition(
@@ -304,7 +483,7 @@ pub fn get_words_starting_with_char(
     Ok(words)
 }
 
-// Return all dictionary words in the provided string and a list of characters not covered by any dictionary entry
+/// Return all dictionary words in the provided string and a list of characters not covered by any dictionary entry
 pub fn get_words_in_str<'a>(
     conn: &Connection,
     s: &'a str,
@@ -329,4 +508,30 @@ pub fn get_words_in_str<'a>(
     }
 
     Ok((words, unknown_chars))
+}
+
+
+
+pub fn get_tag_ids<'a>(
+    conn: &Connection,
+    tags: Vec<Tag<'a>>,
+) -> Result<Vec<Option<SqliteId>>, SqliteError> {
+    let mut stmt_ascii = conn.prepare_cached("SELECT id FROM dict_tag WHERE ascii_symbol = ?1")?;
+    let mut stmt_full =
+        conn.prepare_cached("SELECT id FROM dict_tag WHERE tag = ?1 AND type = ?2")?;
+
+    let mut ids = Vec::with_capacity(tags.len());
+
+    for tag in tags {
+        let id = match tag {
+            Tag::Ascii(c) => stmt_ascii
+                .query_row(params![c.to_string()], |row| row.get(0))
+                .optional()?,
+            Tag::Full { name, category } => stmt_full
+                .query_row(params![name, category], |row| row.get(0))
+                .optional()?,
+        };
+        ids.push(id);
+    }
+    Ok(ids)
 }

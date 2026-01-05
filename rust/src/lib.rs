@@ -2,6 +2,7 @@ mod common;
 mod config;
 pub mod db_check;
 pub mod db_read;
+pub mod db_llm_prompts;
 pub mod db_edit;
 pub mod db_edit_once;
 pub mod db_autofix;

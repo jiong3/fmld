@@ -1,0 +1,90 @@
+# this file contains prompt texts
+# each prompt should contain: system_prompt, user_prompt_shared, expected_json_schema
+
+[match_synonym_definitions]
+
+system_prompt = "You are teaching Mandarin Chinese to adult English native speakers, using both traditional (繁體字) and simplified characters (简体字)."
+
+user_prompt_shared = '''
+Provided below are definitions from a dictionary for two possible synonyms, word_a and word_b. Each definition has an id number (Dx).
+Provide those pairs of definitions from both words which are most similar in meaning.
+Only include pairs of actual synonyms. Definitions shall not be included in multiple pairs.
+For each pair also provide:
+- a score indicating how similar the definitions actually are (also considering usage in different contexts)
+- a short, dictionary-like explanation in English, highlighting the differences in usage
+If there are no matching pairs, return an empty list.
+
+Possible similarity scores:
+1 identical, interchangeable in all contexts
+2 quite similar, interchangeable in some contexts
+3 roughly similar, but not interchangeable
+4 small overlap, but mostly different
+5 not a synonym
+
+Output a valid json using the following schema:
+'''
+
+# json schema created with https://json.ophir.dev/
+expected_json_schema = '''
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "word_a": {
+            "type": "string",
+            "description": "word_a (in traditional characters)"
+          },
+          "word_a_definition_id": {
+            "type": "number",
+            "description": "id of the definition for the word pair (Dx), D00 for missing definitions"
+          },
+          "word_a_definition_text": {
+            "type": "string",
+            "description": "text of the definition, add missing definitions if necessary"
+          },
+          "word_b": {
+            "type": "string",
+            "description": "word_b (in traditional characters)"
+          },
+          "word_b_definition_id": {
+            "type": "number",
+            "description": "id of the definition for the word pair (Dx), D00 for missing definitions"
+          },
+          "word_b_definition_text": {
+            "type": "string",
+            "description": "text of the definition, add missing definitions if necessary"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "similarity score"
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Short description of the differences in the usage of the two words, short and to the point, like in a dictionary."
+          }
+        },
+        "required": [
+          "word_a",
+          "word_a_definition_id",
+          "word_a_definition_text",
+          "word_b",
+          "word_b_definition_id",
+          "word_b_definition_text",
+          "score",
+          "explanation"
+        ]
+      }
+    }
+  },
+  "required": [
+    "synonyms"
+  ]
+}
+'''

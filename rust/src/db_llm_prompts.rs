@@ -13,7 +13,7 @@ use toml::{self, Table};
 struct LlmPromptTemplate {
     system_prompt: String,
     user_prompt_shared: String,
-    expected_json_schema: String,
+    expected_schema: String,
 }
 
 #[derive(Clone, Debug, Serialize)]

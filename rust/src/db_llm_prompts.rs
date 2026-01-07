@@ -1,5 +1,5 @@
-use crate::common::SqliteId;
-use crate::db_read;
+use crate::common::{self, SqliteId};
+use crate::db_read::{self, WordEntry};
 use itertools::Itertools;
 use rusqlite::{Connection, Error as SqliteError};
 use serde::{Deserialize, Serialize};
@@ -56,7 +56,7 @@ fn get_formatted_tags(conn: &Connection, shared_id: SqliteId) -> rusqlite::Resul
     }
 }
 
-fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<String> {
+fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<(WordEntry, String)> {
     let exclude_tags = vec![db_read::Tag::Ascii('X'), db_read::Tag::Ascii('x')];
     let exclude_tag_ids: Vec<SqliteId> = db_read::get_tag_ids(conn, exclude_tags)
         .unwrap()
@@ -64,9 +64,13 @@ fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<Str
         .map(|t| t.unwrap())
         .collect();
     let word_ids = db_read::get_words(conn, None, Some(trad)).unwrap_or(vec![]);
-    let word_ids = db_read::resolve_word_variants(conn, &word_ids).unwrap_or(vec![]);
+    let mut word_ids = db_read::resolve_word_variants(conn, &word_ids).unwrap_or(vec![]);
+    word_ids.sort();
+    word_ids.dedup();
     let mut formatted_word_defs = vec![];
     for word_id in word_ids {
+        let word = db_read::read_word(conn, word_id).unwrap();
+
         let word_defs =
             db_read::read_definitions_for_words(conn, &vec![word_id], &vec![], &exclude_tag_ids)
                 .unwrap();
@@ -84,7 +88,7 @@ fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<Str
             formatted_defs.push_str(&def_str);
         }
         if !formatted_defs.is_empty() {
-            formatted_word_defs.push(formatted_defs)
+            formatted_word_defs.push((word, formatted_defs))
         }
     }
     formatted_word_defs
@@ -116,12 +120,18 @@ pub fn create_match_synonym_definitions(
         let word_a_defs = format_word_defs_for_synonym_prompt(conn, word_a);
         let word_b_defs = format_word_defs_for_synonym_prompt(conn, word_b);
         let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
-        for word_a_def in &word_a_defs {
-            for word_b_def in &word_b_defs {
+        for (word_a, word_a_def) in &word_a_defs {
+            let word_a_str = common::format_word_def(&word_a.trad, &word_a.simp, None);
+            for (word_b, word_b_def) in &word_b_defs {
+                let word_b_str = common::format_word_def(&word_b.trad, &word_b.simp, None);
                 num_prompts += 1;
-                let prompt_txt =
-                    format!("word_a: {word_a}\n{word_a_def}\n\nword_b: {word_b}:\n{word_b_def}");
-                let prompt_key = format!("{key}_{num_prompts}");
+                let prompt_txt = format!(
+                    "word_a: {word_a_str}\n{word_a_def}\nword_b: {word_b_str}\n{word_b_def}"
+                );
+                let prompt_key = format!(
+                    "{key}_{num_prompts};{};{};{};{}",
+                    word_a.trad, word_a.simp, word_b.trad, word_b.simp
+                );
                 prompt_out.user_prompts.insert(prompt_key, prompt_txt);
             }
         }

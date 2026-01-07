@@ -284,7 +284,7 @@ pub fn read_definitions(
     Ok(def_groups)
 }
 
-/// Replace word ids with the target of variant_of, if not NULL
+/// Replace word ids with the target of variant_of (if not NULL), does NOT remove resulting duplicated ids
 pub fn resolve_word_variants(
     conn: &Connection,
     word_ids: &Vec<SqliteId>,
@@ -292,7 +292,6 @@ pub fn resolve_word_variants(
     if word_ids.is_empty() {
         return Ok(word_ids.clone());
     }
-
     // Since variants are rare, we only query for the specific IDs in the input list
     // that have a 'variant_of' value set.
     let placeholders: Vec<&str> = word_ids.iter().map(|_| "?").collect();

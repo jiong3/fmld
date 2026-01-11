@@ -56,7 +56,7 @@ fn get_formatted_tags(conn: &Connection, shared_id: SqliteId) -> rusqlite::Resul
     }
 }
 
-fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<(WordEntry, String)> {
+fn format_word_defs_for_prompt(conn: &Connection, trad: &str) -> Vec<(WordEntry, String)> {
     let exclude_tags = vec![db_read::Tag::Ascii('X'), db_read::Tag::Ascii('x')];
     let exclude_tag_ids: Vec<SqliteId> = db_read::get_tag_ids(conn, exclude_tags)
         .unwrap()
@@ -96,14 +96,15 @@ fn format_word_defs_for_synonym_prompt(conn: &Connection, trad: &str) -> Vec<(Wo
 
 /// Create a json with all the prompts, using data from the dictionary
 /// The input is expected to be a json file with key-value pairs, the keys are reused in the output, the values should be pairs of traditional characters
-pub fn create_match_synonym_definitions(
+pub fn create_prompts_match_definitions(
     conn: &Connection,
     prompt_templates_path: &str,
+    prompt_template_name: &str,
     prompt_input_path: &str,
     prompt_output_path: &str,
 ) -> Result<(), Box<dyn Error>> {
     let prompt_template = read_prompt_templates(prompt_templates_path)
-        .get("match_synonym_definitions")
+        .get(prompt_template_name)
         .unwrap()
         .clone();
     let mut prompt_out = LlmPromptResult {
@@ -117,8 +118,8 @@ pub fn create_match_synonym_definitions(
 
     // for each pair, create prompt which contains the definitions
     for (key, (word_a, word_b)) in input_pairs.iter() {
-        let word_a_defs = format_word_defs_for_synonym_prompt(conn, word_a);
-        let word_b_defs = format_word_defs_for_synonym_prompt(conn, word_b);
+        let word_a_defs = format_word_defs_for_prompt(conn, word_a);
+        let word_b_defs = format_word_defs_for_prompt(conn, word_b);
         let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
         for (word_a, word_a_def) in &word_a_defs {
             let word_a_str = common::format_word_def(&word_a.trad, &word_a.simp, None);

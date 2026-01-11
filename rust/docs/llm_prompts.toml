@@ -29,3 +29,29 @@ csv format:
 '''
 
 expected_schema = "word_a;definition id number for word_a;word_b;definition id number for word_b;score (1-5);explanation"
+
+
+[match_antonym_definitions]
+
+system_prompt = "You are teaching Mandarin Chinese to adult English native speakers, using both traditional (繁體字) and simplified characters (简体字)."
+
+user_prompt_shared = '''
+Provided below are definitions from a dictionary for two possible antonyms, word_a and word_b. Each definition has an id number (Dx).
+Provide the one pair of definitions from both words which fits best into one of the antonym categories described below.
+Additionally provide
+- what category of antonym it is (according to table below)
+- a short, dictionary-like explanation in English, highlighting why the definitions can be considered antonyms of the chosen category
+
+Possible categories of antonyms:
+1 Gradable antonyms: opposites on a continuous spectrum (young-old, heavy-light)
+2 Complementary antonyms: opposites with no continuous spectrum (left-right, even-odd)
+3 Relational antonyms: a relationship from opposite points of view (doctor-patient, come-go, parent-child)
+4 No antonym
+
+Output a valid csv (comma separated values) using the format described below (one row with columns separated with semicolon ";").
+Do not add any text before or after the csv output. The definition ids should be output as numbers, without the preceding D.
+
+csv format:
+'''
+
+expected_schema = "word_a;definition id number for word_a;word_b;definition id number for word_b;antonym category (1-4);explanation"

@@ -441,7 +441,7 @@ impl<'a> TxtToDb<'a> {
             };
 
             // create/get reference type
-            let Some((ref_type_full, is_symmetric)) = config::get_ref_type(reference.ref_type)
+            let Some((ref_type_full, is_symmetric, _rank)) = config::get_ref_type(reference.ref_type)
             else {
                 self.errors.push(TxtToDbErrorLine {
                     err_line_idx: reference.err_line_idx,

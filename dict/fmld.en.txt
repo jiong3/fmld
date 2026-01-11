@@ -4297,7 +4297,7 @@ W|w|為了／为了
  P||wei4le5
   C prep
    D1||for the sake of; in order to; for; to
-    X~||為的是／为的是#D1
+    X=||為的是／为的是#D1
 W|w|紅／红
  P||hong2
   C character
@@ -5455,14 +5455,14 @@ W|w|一般
  P||yi1ban1
   C adj
    D1||general; generic; typical
-    X~||平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
+    X=||平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
    D2||so-so; average
-    X~||平常#D2
+    X=||平常#D2
    D3||same; identical
    D4|#grammar|(tense) simple
   C adv
    D5||usually; in general; generally
-    X~||平常#D3;通常#D2;慣常／惯常#D2
+    X=||平常#D3;通常#D2;慣常／惯常#D2
    D6||(像 (xiàng) ) (just) like
    D7||in the same degree
 W|w|參加／参加
@@ -6177,7 +6177,7 @@ W|w|狗
   C character
    D1||dog
     XM||隻／只;條／条
-    X~||犬#D1
+    X=||犬#D1
     X<||餵狗／喂狗
    D5|#derogatory|something or someone unpleasant
     D2||Used as an attributive.
@@ -7467,10 +7467,10 @@ W|w|經常／经常
  P||jing1chang2
   C adj
    D1||ordinary; everyday; common
-    X~||一般#D1;平常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
+    X=||一般#D1;平常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
   C adv
    D2||often; regularly; frequently
-    X~||慣常／惯常#D2
+    X=||慣常／惯常#D2
 W|w|全
  P||quan2
   C character
@@ -9052,12 +9052,12 @@ W|w|平常
  P||ping2chang2
   C adj
    D1||ordinary; common; usual; not rare; unexceptional
-    X~||一般#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
+    X=||一般#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1;慣常／惯常#D1
    D2|#euphemistic|so-so; average
-    X~||一般#D2
+    X=||一般#D2
   C adv
    D3||ordinarily; usually; generally
-    X~||一般#D5;通常#D2;慣常／惯常#D2
+    X=||一般#D5;通常#D2;慣常／惯常#D2
 W|w|討論／讨论
  P||tao3lun4
   C verb
@@ -16475,7 +16475,7 @@ W|w|普通
  P||pu3tong1
   C adj
    D1||ordinary; plain; average; nothing special; general
-    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;平凡#D1;慣常／惯常#D1
+    X=||一般#D1;平常#D1;經常／经常#D1;通常#D1;平凡#D1;慣常／惯常#D1
    D2||common; universal; widespread
 W|w|面對／面对
  P||mian4dui4
@@ -17718,7 +17718,7 @@ W|wC|服務員／服务员
  P||fu2wu4yuan2
   C noun
    D1||server; attendant; waiter; waitress; clerk; porter; valet
-    X~||服務生／服务生#D1
+    X=||服務生／服务生#D1
 W|w|年代
  P||nian2dai4
   C noun
@@ -18080,7 +18080,7 @@ W|w|假裝／假装
  P||jia3zhuang1
   C verb
    D1||to pretend; to make believe; to feign
-    X~||裝作／装作#D1;裝成／装成#D1
+    X=||裝作／装作#D1;裝成／装成#D1
 W|w|眼光
  P||yan3guang1
   C noun
@@ -18587,10 +18587,10 @@ W|w|通常
  P||tong1chang2
   C adj
    D1||regular; usual; normal
-    X~||一般#D1;平常#D1;經常／经常#D1;普通#D1;平凡#D1;慣常／惯常#D1
+    X=||一般#D1;平常#D1;經常／经常#D1;普通#D1;平凡#D1;慣常／惯常#D1
   C adv
    D2||usually; normally; generally; ordinarily
-    X~||一般#D5;平常#D3;慣常／惯常#D2
+    X=||一般#D5;平常#D3;慣常／惯常#D2
 W|w|稍
  P||shao1;shao4
   C character
@@ -20782,7 +20782,6 @@ W|w|造成
  P||zao4cheng2
   C verb
    D1||to bring about; to cause; to lead to (typically a negative outcome)
-   D2||文藝就把這種日常的現象集中起來，把其中的矛盾和鬥爭典型化，造成文學作品或藝術作品 [MSC, trad.]
 W|w|掃／扫
  P||sao3
   C character
@@ -21981,7 +21980,7 @@ W|w|初
    D7||just
     X<||初出茅廬／初出茅庐;如夢初醒／如梦初醒
 W|m|熱騰騰／热腾腾
- X~||熱氣騰騰／热气腾腾
+ X=||熱氣騰騰／热气腾腾
  P||re4teng2teng2 |-|re4teng1teng1
   C adj
    D1|#literal|steaming hot
@@ -22145,7 +22144,7 @@ W|wc|自行車／自行车
     XM||輛／辆;臺／台
     X%||腳踏車／脚踏车#D1
      N101 TW: [自行車／自行车] also used in formal language
-    X~||單車／单车#D1
+    X=||單車／单车#D1
 W|w|用功
  P||yong4gong1
   C adj
@@ -28439,7 +28438,7 @@ W|w|平凡
  P||ping2fan2
   C adj
    D1||ordinary; simple; uneventful; mediocre; common; routine
-    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;慣常／惯常#D1
+    X=||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;慣常／惯常#D1
    D2|#mathematics|trivial
 W|w|涼快／凉快
  P||liang2kuai4
@@ -45263,7 +45262,7 @@ W|w|以便
  P||yi3bian4
   C conj
    D1||in order to
-    X~||為的是／为的是#D1
+    X=||為的是／为的是#D1
 W|w|起初
  P||qi3chu1
   C adv
@@ -46060,7 +46059,7 @@ W|w|犬
  P||quan3
   C noun
    D1|& #formal|dog
-    X~||狗#D1
+    X=||狗#D1
     X<||警犬;導盲犬／导盲犬
 W|w|叮囑／叮嘱
  P||ding1zhu3
@@ -48708,7 +48707,7 @@ W|w|棋子
 W|w|資訊／资讯
  P||zi1xun4
   C noun
-   D1|#HongKong|information
+   D1|t #HongKong|information
 W|w|愈
  P||yu4
   C character
@@ -48960,7 +48959,7 @@ W|wT|腳踏車／脚踏车
     XM||輛／辆;臺／台
     X%||自行車／自行车#D1
      N->101
-    X~||單車／单车#D1
+    X=||單車／单车#D1
 W|w|佩
  P||pei4
   C character
@@ -65858,7 +65857,7 @@ W|m|初來乍到／初来乍到
  P||chu1lai2zha4dao4
   C phrase
    D1||to be a newcomer; just off the boat
-    X~||新來乍到／新来乍到#D1
+    X=||新來乍到／新来乍到#D1
 W|w|瘋瘋癲癲／疯疯癫癫
  P||feng1feng5dian1dian1
   C adj
@@ -71859,6 +71858,7 @@ W|w|羽毛
    D1||feather; plumage
     XM||根;片
    D2|- #figurative #literary|reputation; fame; prestige
+    X<||愛惜羽毛／爱惜羽毛#D1
 W|w|臨近／临近
  P||lin2jin4
   C verb
@@ -73226,7 +73226,7 @@ W|m|起開／起开
  P||qi3kai5
   C intj
    D1|C #dialect|to step aside; Get out of the way!
-    X~||走開／走开#D1
+    X=||走開／走开#D1
 W|w|頭銜／头衔
  P||tou2xian2
   C noun
@@ -78803,7 +78803,7 @@ W|w|洞穴
   C noun
    D1||cave; cavern; grotto
 W|m|兩側／两侧
- X~||兩邊／两边
+ X=||兩邊／两边
  P||liang3ce4
   C noun
    D1||two sides; both sides
@@ -80461,7 +80461,7 @@ W|w|談何容易／谈何容易
    D1|x #chiefly-obsolete|it is no easy matter to give good advice (especially to one's superior); to speak is difficult
    D2||easier said than done
 W|m|嘰嘰喳喳／叽叽喳喳
- X~||唧唧喳喳
+ X=||唧唧喳喳
  P||ji1ji1zha1zha1;ji1ji5zha1zha1
   C noun
    D1|#onomatopoeia|chirp; twitter; buzzing
@@ -92525,7 +92525,7 @@ W|w|划不來／划不来
  P||hua2bu4lai2 |C|hua2bu5lai2
   C adj
    D1||not worthwhile; it doesn't pay
-    X~||不划算#D1;不值得#D1
+    X=||不划算#D1;不值得#D1
 W|w|據理力爭／据理力争
  P||ju4li3li4zheng1
   C phrase
@@ -94839,7 +94839,7 @@ W|m|不久前
  P||bu4jiu3qian2
   C adv
    D1||not long ago
-    X~||前不久#D1
+    X=||前不久#D1
 W|w|張貼／张贴
  P||zhang1tie1
   C verb
@@ -96125,7 +96125,7 @@ W|w|沉寂
    D1||quiet; still
    D2||having no news
 W|m|唧唧喳喳
- X~||嘰嘰喳喳／叽叽喳喳
+ X=||嘰嘰喳喳／叽叽喳喳
  P||ji1ji1zha1zha1
   C noun
    D1|#onomatopoeia|chattering or giggling  
@@ -102653,7 +102653,7 @@ W|w|包票
    D1|x #literally #obsolete|warranty slip; guarantee slip
    D2|#figuratively|guarantee; promise; assurance
 W|w|熱氣騰騰／热气腾腾
- X~||熱騰騰／热腾腾
+ X=||熱騰騰／热腾腾
  P||re4qi4teng2teng2
   C phrase
    D1||steaming hot
@@ -104830,10 +104830,10 @@ W|w|慣常／惯常
  P||guan4chang2
   C adj
    D1||usual; customary
-    X~||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1
+    X=||一般#D1;平常#D1;經常／经常#D1;通常#D1;普通#D1;平凡#D1
   C adv
    D2||usually; often; regularly
-    X~||一般#D5;平常#D3;經常／经常#D2;通常#D2
+    X=||一般#D5;平常#D3;經常／经常#D2;通常#D2
 W|w|勞役／劳役
  P||lao2yi4
   C noun
@@ -105058,7 +105058,7 @@ W|m|天高氣爽／天高气爽
  P||tian1gao1qi4shuang3
   C phrase
    D1||the sky is clear and the air is crisp
-    X~||秋高氣爽／秋高气爽#D1
+    X=||秋高氣爽／秋高气爽#D1
 W|w|直選／直选
  P||zhi2xuan3
   C noun
@@ -109943,7 +109943,7 @@ W||成群結夥／成群结伙
  P||cheng2qun2jie2huo3
   C phrase
    D1||to gather in groups; to gather in crowds; to band together (often with a negative connotation)
-    X~||成群結隊／成群结队#D1
+    X=||成群結隊／成群结队#D1
 W|w|好整以暇
  P||hao4zheng3yi3xia2
   C phrase
@@ -113603,7 +113603,7 @@ W|m|不可置信
   C adj
    D1||unbelievable; incredible
     X>||置信#D1
-    X~||難以置信／难以置信#D1
+    X=||難以置信／难以置信#D1
 W|w|沉甸甸
  P||chen2dian4dian4 |x|chen2dian1dian1
   C adj
@@ -132718,7 +132718,7 @@ W|w|不值得
  P||bu4zhi2de2
   C verb
    D1||to be not worth
-    X~||划不來／划不来#D1;不划算#D1
+    X=||划不來／划不来#D1;不划算#D1
    D2||to be worthless, unworthy or meaningless
 W|w|不值識者一笑／不值识者一笑
  P|C|bu4zhi2 shi2zhe3 yi1xiao4 |T|bu4zhi2 shi4zhe3 yi1xiao4
@@ -135628,7 +135628,7 @@ W|m|不划算
  P||bu4hua2suan4
   C adj
    D1||it isn't worth it; not cost-effective; not profitable; too expensive
-    X~||不值得#D1;划不來／划不来#D1
+    X=||不值得#D1;划不來／划不来#D1
 W|m|不穩／不稳
  P||bu4wen3
   C adj
@@ -150440,7 +150440,7 @@ W|w|以此
  P||yi3ci3
   C adv
    D1|#formal|with this; thereby; thus; because of this; for this reason; on this account
-    X~||藉此／借此#D1
+    X=||藉此／借此#D1
 W|w|以此類推／以此类推
  P||yi3ci3lei4tui1
   C phrase
@@ -167477,7 +167477,7 @@ W|w|光頭黨／光头党
   C noun
    D1||skinheads (subculture)
 W|w|光頭／光头
- X~||禿頭／秃头
+ X=||禿頭／秃头
   N103 [禿頭／秃头] bald due to hair loss
     [光頭／光头] bald as a haircut
  P||guang1tou2
@@ -170959,7 +170959,7 @@ W|w|兩親／两亲
   C verb
    D2|#chemistry|to be amphiphilic
 W|w|兩邊／两边
- X~||兩側／两侧
+ X=||兩側／两侧
  P||liang3bian1
   C noun
    D1||both sides; both directions
@@ -175664,6 +175664,7 @@ W|w|冰河
  P||bing1he2
   C noun
    D1||glacier
+    X=||冰川#D1
 W|w|冰河時期／冰河时期
  P|C|bing1he2 shi2qi1 |T|bing1he2 shi2qi2
   C noun
@@ -182886,7 +182887,7 @@ W|w|前不久
  P||qian2bu4jiu3
   C adv
    D1||not long ago; not long before; recently; lately
-    X~||不久前#D1
+    X=||不久前#D1
 W|w|剎停／刹停
  P||sha1ting2
   C verb
@@ -215837,7 +215838,7 @@ W|w|單車／单车
   C noun
    D1|#regional|bicycle
     XM||輛／辆
-    X~||腳踏車／脚踏车#D1;自行車／自行车#D1
+    X=||腳踏車／脚踏车#D1;自行車／自行车#D1
 W|w|單軌火車／单轨火车
  P||dan1gui3 huo3che1
   C noun
@@ -300755,7 +300756,7 @@ W|w|成群結隊／成群结队
  P||cheng2qun2jie2dui4
   C phrase
    D1||to gather in groups; to gather in crowds; to band together
-    X~||成群結夥／成群结伙#D1
+    X=||成群結夥／成群结伙#D1
 W|w|成義／成义
  P||cheng2yi4
   C noun
@@ -329526,7 +329527,7 @@ W|w|新來乍到／新来乍到
  P||xin1lai2zha4dao4
   C phrase
    D1||to have just arrived; to be newly arrived; to be a newcomer
-    X~||初來乍到／初来乍到#D1
+    X=||初來乍到／初来乍到#D1
 W|w|新來的／新来的
  P||xin1lai2de5
   C adj
@@ -343296,7 +343297,7 @@ W|w|服務生／服务生
  P||fu2wu4sheng1
   C noun
    D1||server (chiefly male); waiter; bellboy
-    X~||服務員／服务员#D1
+    X=||服務員／服务员#D1
 W|w|服務社／服务社
  P||fu2wu4she4
   C noun
@@ -400131,7 +400132,7 @@ W|m|為的是／为的是
  P||wei4de5shi4
   C prep
    D1||for the sake of; for the purpose of
-    X~||為了／为了#D1;以便#D1
+    X=||為了／为了#D1;以便#D1
 W|w|為主／为主
  P||wei2zhu3
   C verb
@@ -448160,7 +448161,7 @@ W|w|禿筆／秃笔
   C noun
    D1||poor writing ability; low skill at composition
 W|w|禿頭／秃头
- X~||光頭／光头
+ X=||光頭／光头
   N->103
  P||tu1tou2
   C noun
@@ -448988,7 +448989,7 @@ W|w|秋高氣爽／秋高气爽
  P||qiu1gao1qi4shuang3
   C phrase
    D1||the autumn sky is clear and the air is crisp
-    X~||天高氣爽／天高气爽#D1
+    X=||天高氣爽／天高气爽#D1
 W|w|秋高馬肥／秋高马肥
  P||qiu1gao1ma3fei2
   C phrase
@@ -510611,7 +510612,7 @@ W|m|藉此／借此
  P||jie4ci3
   C adv
    D1||using this as a pretext; thereby
-    X~||以此#D1
+    X=||以此#D1
 W|w|藉以
  P||jie4yi3
   C conj
@@ -522247,7 +522248,7 @@ W|m|裝成／装成
  P||zhuang1cheng2
   C verb
    D1||to pretend (to be someone or something specific)
-    X~||裝作／装作#D1;假裝／假装#D1
+    X=||裝作／装作#D1;假裝／假装#D1
 W|w|裝13／装13
  P||zhuang1shi2san1 |x|zhuang1bi1
   C verb
@@ -522260,7 +522261,7 @@ W|w|裝作／装作
  P||zhuang1zuo4
   C verb
    D1||to pretend; to make believe; to feign
-    X~||假裝／假装#D1;裝成／装成#D1
+    X=||假裝／假装#D1;裝成／装成#D1
 W|w|裝假／装假
  P||zhuang1jia3
   C verb
@@ -543439,7 +543440,7 @@ W|w|走開／走开
  P||zou3kai1
   C verb
    D1||to move out of the way
-    X~||起開／起开#D1
+    X=||起開／起开#D1
    D2||to go somewhere else; to walk away; to leave
 W|w|走險／走险
  P||zou3xian3
@@ -589353,7 +589354,7 @@ W|w|難以置信／难以置信
   C phrase
    D1||unbelievable; incredible
     X>||置信#D1
-    X~||不可置信#D1
+    X=||不可置信#D1
 W|w|難以言喻／难以言喻
  P||nan2yi3yan2yu4
   C phrase

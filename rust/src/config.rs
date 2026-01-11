@@ -221,22 +221,21 @@ ORDER BY s.rank, s.rank_relative;
 
 "#;
 
-/// Get (full reference type name, is symmetric,) for the given reference type
+/// Get (full reference type name, is symmetric, rank) for the given reference type
 /// A symmetric reference should exist in both directions
-pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool)> {
+pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, u8)> {
     Some(match ref_type_char {
-        '=' => ("synonym-interchangeable", true),
-        '~' => ("synonym-similar", true),
-        '!' => ("antonym", true),
-        '?' => ("could-be-confused-with", true),
-        '<' => ("part-of", false),
-        '>' => ("contains", false),
-        'V' => ("word-variant-of", false),
-        'v' => ("character-variant-of", false),
-        'M' => ("used-with-measure-word", false),
-        'L' => ("collocation", false),
-        'G' => ("word-group", false),
-		'%' => ("cross-strait", true),
+        'M' => ("used-with-measure-word", false, 2),
+		'=' => ("synonym", true, 4),
+		'%' => ("cross-strait", true, 6),
+		'?' => ("could-be-confused-with", true, 8),
+        '!' => ("antonym", true, 10),
+        'V' => ("word-variant-of", false, 12),
+        'v' => ("character-variant-of", false, 14),
+        '<' => ("part-of", false, 16),
+        '>' => ("contains", false, 18),
+        'L' => ("collocation", false, 20),
+        'G' => ("word-group", false, 22),
         _ => {
             return None;
         }

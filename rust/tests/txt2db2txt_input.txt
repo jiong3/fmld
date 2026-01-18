@@ -23,18 +23,23 @@ W|wT #mysupertag #atag #yolotag| Trad1 / Simp1;VarATrad1/VarASimp1;VarBTrad1/Var
   C adj
    D1|| my first definition
     XV|| 你好/嗎#D3
+    X!||您好#D1
+     # should be deleted due to the X on the inverse reference
     # this definition is problematic
     N->375
    D2|T| my second definition, Taiwan only
+     Multiline Definition test
   C noun
    D3|c| another definition, chiefly China noun
 W|wc| 您好
- X~|A| Trad1 / Simp1
+ X=|A| Trad1 / Simp1
   N405 Test note which should be added to the symmetric counterpart
   # however this comment should not be added
  P|| pin2yin2
   C verb
    D2 || not actually a verb
+    X!|X|Trad1/Simp1#D1
+     # should be deleted due to the X
  P|m| no1pin2yin3
   C verb
    D3 || different pronunciation with different definition

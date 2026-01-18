@@ -12,7 +12,7 @@ W||Trad2／Simp2
    D1||variant of [Trad1 / Simp1]
     N406 automatically add a note id for this note
 W|wT #atag #mysupertag #yolotag|Trad1／Simp1;VarATrad1／VarASimp1;VarBTrad1／VarBSimp1
- X~|A|您好
+ X=|A|您好
   N405 Test note which should be added to the symmetric counterpart
  P||pin1yin1;pin1yin2 |T|pin1yin3
   P|C|pin1yin4;nv3
@@ -24,10 +24,11 @@ W|wT #atag #mysupertag #yolotag|Trad1／Simp1;VarATrad1／VarASimp1;VarBTrad1／
       Long note this one is!
     XV||你好／嗎#D3
    D2|T|my second definition, Taiwan only
+     Multiline Definition test
   C noun
    D3|c|another definition, chiefly China noun
 W|wc|您好
- X~|A|Trad1／Simp1
+ X=|A|Trad1／Simp1
   # however this comment should not be added
   N->405
  P||pin2yin2

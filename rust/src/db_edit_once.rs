@@ -108,8 +108,8 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
                 conn,
                 db_edit::EntryId::Definition(definition.id),
                 db_read::Tag::Full {
-                    name: full_tag,
-                    category: "",
+                    name: full_tag.to_owned(),
+                    category: "".to_owned(),
                 },
             )
             .unwrap();
@@ -266,9 +266,6 @@ pub fn apply_pinyin_tags_from_json(
         JOIN dict_pron p ON sp.pron_id = p.id
         ",
     )?;
-
-    // TODO normalize pinyin, same standard as in json file
-    // TODO check why 菌 is not in chars_pinyin.json for T
 
     // 3. Iterate over all pronunciations found in the database.
     let mut rows = stmt.query([])?;
@@ -458,48 +455,134 @@ pub fn add_classifier_class(conn: &Transaction) -> Result<(), SqliteError> {
     Ok(())
 }
 
+pub fn add_references_from_json(
+    conn: &Transaction,
+    json_path: &str,
+    ref_type: char,
+    add_dst_to_src: bool,
+    with_ascii_tags: Vec<char>,
+) -> Result<(), Box<dyn Error>> {
+    // Determine id of reference type
+    let ref_type_id = db_edit::get_ref_type_id(conn, ref_type)?
+        .ok_or_else(|| format!("Reference type '{}' not found", ref_type))?;
 
+    // Get tag ids for all ascii tags
+    let mut tag_ids = Vec::new();
+    for c in with_ascii_tags {
+        let tag_id = db_edit::get_or_insert_tag_id(conn, &db_read::Tag::Ascii(c))?;
+        tag_ids.push(tag_id);
+    }
 
-#[derive(Deserialize)]
-struct ImportEntry {
-    after_simp: String,
-    after_trad: String,
-    #[serde(default)]
-    word_tags: String,
-    simp: String,
-    trad: String,
-    defs: HashMap<String, Vec<String>>,
-    pinyins: Vec<String>,
-    comment: Vec<String>,
+    // Read JSON file
+    let file = File::open(json_path)?;
+    let reader = BufReader::new(file);
+    // Parse list of tuples: (src_trad, src_simp, src_ext_def_id, dst_trad, dst_simp, dst_ext_def_id)
+    let entries: Vec<(String, String, Option<usize>, String, String, Option<usize>)> =
+        serde_json::from_reader(reader)?;
+
+    // Prepared statement for adding tags to the shared entries
+    let mut stmt_add_tag = conn.prepare_cached(
+        "INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)",
+    )?;
+
+    for (src_trad, src_simp, src_def_ext, dst_trad, dst_simp, dst_def_ext) in entries {
+        // Resolve word IDs
+        let src_word_id = db_edit::get_word_id(conn, &src_trad, &src_simp)?;
+        let dst_word_id = db_edit::get_word_id(conn, &dst_trad, &dst_simp)?;
+        
+        // Only proceed if both words exist in the dictionary
+        if let (Some(s_id), Some(d_id)) = (src_word_id, dst_word_id) {
+            let src_def_id = match src_def_ext {
+                Some(def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, def_ext)?,
+                None => None
+            };
+            let dst_def_id = match dst_def_ext {
+                Some(def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, def_ext)?,
+                None => None
+            };
+            // Forward direction: Source -> Destination
+            let Ok((_, shared_id_fwd)) = db_edit::insert_reference(
+                conn,
+                ref_type_id,
+                s_id,
+                src_def_id,
+                d_id,
+                dst_def_id,
+            ) else {
+                continue;  // skip entries which e.g. have an invalid external definition id
+            };
+            
+            // Add tags to the new reference
+            for &tag_id in &tag_ids {
+                stmt_add_tag.execute(params![shared_id_fwd, tag_id])?;
+            }
+
+            // Inverse direction: Destination -> Source (if requested)
+            if add_dst_to_src {
+                let Ok((_, shared_id_inv)) = db_edit::insert_reference(
+                    conn,
+                    ref_type_id,
+                    d_id,
+                    dst_def_id,
+                    s_id,
+                    src_def_id,
+                ) else {
+                    continue; // skip entries which e.g. have an invalid external definition id
+                };
+                
+                for &tag_id in &tag_ids {
+                    stmt_add_tag.execute(params![shared_id_inv, tag_id])?;
+                }
+            }
+        }
+    }
+
+    Ok(())
 }
-/*
-json format, one json object with each entry looking like this:
-"光是": {
-        "after_simp": "", (if not empty, add the new entry after this one)
-        "after_trad": "說了算",  (if not empty, add the new entry after this one, has priority over afer_simp)
-        "source": "MDBG",
-        "word_tags": "m", (add letters as ascii tags to the word)
-        "simp": "光是", (simp in dict_word)
-        "trad": "光是", (trad in dict_word)
-        "defs": { (this object contains the pronunciation in pinyin as key and the list of definitions to be added as values)
-        "guang1shi4": [
-            "solely",
-            "just"
-    ]
-    },
-    "pinyins": [
-        "guang1shi4" (use this as fallback if the pinyin of a definition is an empty string, which is true for some words)
-    ],
-    "comment": [ (add all lines as a single comment to the word, merge entries with new-lines)
-    ]
-},
-*/
+
+
+
 pub fn import_entries_from_json(
     conn: &Transaction,
     path: &str,
     from_idx: usize,
     to_idx: usize, // [from_idx..to_idx]
 ) -> Result<(), Box<dyn Error>> {
+    /*
+    json format, one json object with each entry looking like this:
+    "光是": {
+            "after_simp": "", (if not empty, add the new entry after this one)
+            "after_trad": "說了算",  (if not empty, add the new entry after this one, has priority over afer_simp)
+            "source": "MDBG",
+            "word_tags": "m", (add letters as ascii tags to the word)
+            "simp": "光是", (simp in dict_word)
+            "trad": "光是", (trad in dict_word)
+            "defs": { (this object contains the pronunciation in pinyin as key and the list of definitions to be added as values)
+            "guang1shi4": [
+                "solely",
+                "just"
+        ]
+        },
+        "pinyins": [
+            "guang1shi4" (use this as fallback if the pinyin of a definition is an empty string, which is true for some words)
+        ],
+        "comment": [ (add all lines as a single comment to the word, merge entries with new-lines)
+        ]
+    },
+    */
+    #[derive(Deserialize)]
+    struct ImportEntry {
+        after_simp: String,
+        after_trad: String,
+        #[serde(default)]
+        word_tags: String,
+        simp: String,
+        trad: String,
+        defs: HashMap<String, Vec<String>>,
+        pinyins: Vec<String>,
+        comment: Vec<String>,
+    }
+
     // 1. Parse JSON into a HashMap
     let file = File::open(path)?;
     let reader = BufReader::new(file);

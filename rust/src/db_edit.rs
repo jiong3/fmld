@@ -19,30 +19,10 @@ pub fn insert_reference(
     conn: &Transaction,
     ref_type_id: SqliteId,
     src_word_id: SqliteId,
-    src_def_ext_id: Option<usize>,
+    src_def_id: Option<SqliteId>,
     dst_word_id: SqliteId,
-    dst_def_ext_id: Option<usize>,
+    dst_def_id: Option<SqliteId>,
 ) -> Result<(SqliteId, SqliteId), SqliteError> {
-    // Helper to resolve external definition ID to internal ID
-    let resolve_def_id =
-        |word_id: SqliteId, ext_id: Option<usize>| -> Result<Option<SqliteId>, SqliteError> {
-            if let Some(ext) = ext_id {
-                let mut stmt = conn.prepare_cached(
-                    "SELECT id FROM dict_definition WHERE word_id = ?1 AND ext_def_id = ?2",
-                )?;
-                match stmt.query_row(params![word_id, ext as i64], |row| row.get(0)) {
-                    Ok(id) => Ok(Some(id)),
-                    Err(SqliteError::QueryReturnedNoRows) => Err(SqliteError::QueryReturnedNoRows),
-                    Err(e) => Err(e),
-                }
-            } else {
-                Ok(None)
-            }
-        };
-
-    let src_def_id = resolve_def_id(src_word_id, src_def_ext_id)?;
-    let dst_def_id = resolve_def_id(dst_word_id, dst_def_ext_id)?;
-
     // Determine the maximum rank in the database
     let rank_max: i64 = conn.query_row(
         "SELECT COALESCE(MAX(rank), 0) FROM dict_shared",
@@ -204,7 +184,26 @@ pub fn get_word_id(
     }
 }
 
-pub fn get_definition_id(
+pub fn get_definition_id_for_ext_id(
+    conn: &Transaction,
+    word_id: SqliteId,
+    ext_def_id: usize,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_definition
+        WHERE word_id = ?1 AND ext_def_id = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![word_id, ext_def_id], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+pub fn get_definition_id_for_str(
     conn: &Transaction,
     word_id: SqliteId,
     definition: &str,

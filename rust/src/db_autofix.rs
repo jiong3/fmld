@@ -1,4 +1,5 @@
 use crate::common::SqliteId;
+use crate::db_edit;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
 use std::collections::HashSet;
@@ -46,6 +47,7 @@ pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32
     Ok(base_ext_note_id)
 }
 
+/// Add corresponding symmetric inverse reference to all symmetric references if they are missing
 pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), SqliteError> {
     // find all references with missing symmetric counterpart
     let mut stmt_missing_references = conn.prepare(
@@ -72,104 +74,17 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
             AND symmetric_ref.id IS NULL;
         "
     )?;
-    let mut stmt_insert_at_shared_id = conn.prepare_cached(
-        r"
-        SELECT
-            CASE
-                /*
-                * First, check if the original reference points to a specific definition (definition_id_dst is not NULL).
-                */
-                WHEN original_ref.definition_id_dst IS NOT NULL THEN
-                    COALESCE(
-                        /*
-                        * Priority 1: Find the rank of the last outgoing reference from the destination definition.
-                        * The subquery looks for all references originating from that specific definition and picks the highest rank.
-                        * If no such references exist, this subquery will return NULL.
-                        */
-                        (
-                            SELECT MAX(shared.rank)
-                            FROM dict_reference AS outgoing_ref
-                            JOIN dict_shared AS shared ON outgoing_ref.shared_id = shared.id
-                            WHERE outgoing_ref.word_id_src = original_ref.word_id_dst
-                            AND outgoing_ref.definition_id_src = original_ref.definition_id_dst
-                        ),
-                        /*
-                        * Priority 2: If the first subquery was NULL (no outgoing references), COALESCE falls back to this one.
-                        * This finds the rank of the destination definition itself.
-                        */
-                        (
-                            SELECT shared.rank
-                            FROM dict_definition AS def
-                            JOIN dict_shared AS shared ON def.shared_id = shared.id
-                            WHERE def.id = original_ref.definition_id_dst
-                        )
-                    )
-
-                /*
-                * If definition_id_dst is NULL, the original reference points to a word in general.
-                * This corresponds to your third and fourth priority rules.
-                */
-                ELSE
-                    COALESCE(
-                        /*
-                        * Priority 3: Find the rank of the last outgoing reference from the destination word.
-                        * This subquery looks for references originating from the word itself (not tied to a specific definition).
-                        * It will return NULL if no such references exist.
-                        */
-                        (
-                            SELECT MAX(shared.rank)
-                            FROM dict_reference AS outgoing_ref
-                            JOIN dict_shared AS shared ON outgoing_ref.shared_id = shared.id
-                            WHERE outgoing_ref.word_id_src = original_ref.word_id_dst
-                            AND outgoing_ref.definition_id_src IS NULL
-                        ),
-                        /*
-                        * Priority 4: If the third subquery was NULL, COALESCE falls back to this one.
-                        * This finds the rank of the destination word itself.
-                        */
-                        (
-                            SELECT shared.rank
-                            FROM dict_word AS word
-                            JOIN dict_shared AS shared ON word.shared_id = shared.id
-                            WHERE word.id = original_ref.word_id_dst
-                        )
-                    )
-            END AS correct_rank
-        FROM
-            dict_reference AS original_ref
-        WHERE
-            original_ref.id = ?1;
-        "
-    )?;
 
     let mut rows = stmt_missing_references.query([])?;
 
-    // TODO log which lines have been added
     while let Some(row) = rows.next()? {
-        let ref_id: SqliteId = row.get("id")?;
         let ref_type_id: SqliteId = row.get("ref_type_id")?;
         let word_id_src: SqliteId = row.get("word_id_src")?;
         let definition_id_src: Option<SqliteId> = row.get("definition_id_src")?;
         let word_id_dst: SqliteId = row.get("word_id_dst")?;
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
-        let rank_to_insert_at: SqliteId =
-            stmt_insert_at_shared_id.query_one((ref_id,), |row| row.get(0))?;
-        // TODO use insert_reference function, potentially modify the insert_at_shared_id query so that references of the same kind are grouped together
-        let mut stmt =
-            conn.prepare_cached("INSERT INTO dict_shared (rank, rank_relative) VALUES (?1,?2)")?;
-        stmt.execute((rank_to_insert_at, 1))?;
-        let shared_id = conn.last_insert_rowid();
-        let mut stmt = conn
-            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)")?;
-        stmt.execute((
-            shared_id,
-            ref_type_id,
-            // switch source and destination ids
-            word_id_dst,
-            definition_id_dst,
-            word_id_src,
-            definition_id_src,
-        ))?;
+
+        db_edit::insert_reference(conn, ref_type_id, word_id_dst, definition_id_dst, word_id_src, definition_id_src)?;
     }
     Ok(())
 }
@@ -578,6 +493,115 @@ pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
             stmt_update.execute(params![current_rank, id])?;
             current_rank += 1;
         }
+    }
+
+    Ok(())
+}
+
+
+/// Removes all references which have the ascii_tag 'X' (excluded/deleted).
+/// If the reference type is symmetric, also removes the corresponding inverse reference.
+pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), SqliteError> {
+    // 1. Get the ID for the 'X' tag
+    let tag_id_res: Result<SqliteId, SqliteError> = conn.query_row(
+        "SELECT id FROM dict_tag WHERE ascii_symbol = 'X'",
+        [],
+        |row| row.get(0),
+    );
+
+    let tag_id = match tag_id_res {
+        Ok(id) => id,
+        Err(SqliteError::QueryReturnedNoRows) => return Ok(()), // Tag 'X' doesn't exist, nothing to delete
+        Err(e) => return Err(e),
+    };
+
+    // 2. Identify references marked with 'X'
+    // We select details needed to find the symmetric inverse if necessary
+    let mut stmt_candidates = conn.prepare(
+        r"
+        SELECT
+            r.shared_id,
+            r.ref_type_id,
+            r.word_id_src,
+            r.definition_id_src,
+            r.word_id_dst,
+            r.definition_id_dst,
+            rt.is_symmetric
+        FROM dict_reference r
+        JOIN dict_shared_tag st ON r.shared_id = st.for_shared_id
+        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        WHERE st.tag_id = ?1
+        ",
+    )?;
+
+    let mut rows = stmt_candidates.query(params![tag_id])?;
+    let mut shared_ids_to_delete = HashSet::new();
+    
+    // Helper list to process symmetric checks outside the borrow of stmt_candidates if strictly needed,
+    // but here we can just collect everything first.
+    let mut candidates = Vec::new();
+
+    while let Some(row) = rows.next()? {
+        let shared_id: SqliteId = row.get(0)?;
+        let ref_type_id: SqliteId = row.get(1)?;
+        let w_src: SqliteId = row.get(2)?;
+        let d_src: Option<SqliteId> = row.get(3)?;
+        let w_dst: SqliteId = row.get(4)?;
+        let d_dst: Option<SqliteId> = row.get(5)?;
+        let is_symmetric: bool = row.get(6)?;
+
+        candidates.push((shared_id, ref_type_id, w_src, d_src, w_dst, d_dst, is_symmetric));
+    }
+    // Drop the statement to free the borrow on conn
+    drop(rows);
+    drop(stmt_candidates);
+
+    // 3. Process candidates and find inverses
+    let mut stmt_find_inverse = conn.prepare_cached(
+        r"
+        SELECT shared_id 
+        FROM dict_reference 
+        WHERE ref_type_id = ?1
+          AND word_id_src = ?2
+          AND definition_id_src IS ?3
+          AND word_id_dst = ?4
+          AND definition_id_dst IS ?5
+        ",
+    )?;
+
+    for (shared_id, ref_type_id, w_src, d_src, w_dst, d_dst, is_symmetric) in candidates {
+        shared_ids_to_delete.insert(shared_id);
+
+        if is_symmetric {
+            // Find reference where Src and Dst are swapped
+            // Note: We map arguments: (ref_id, w_dst, d_dst, w_src, d_src)
+            let inverse_rows = stmt_find_inverse.query_map(
+                params![ref_type_id, w_dst, d_dst, w_src, d_src],
+                |row| row.get(0),
+            )?;
+
+            for id in inverse_rows {
+                shared_ids_to_delete.insert(id?);
+            }
+        }
+    }
+
+    if shared_ids_to_delete.is_empty() {
+        return Ok(());
+    }
+
+    // 4. Perform deletions
+    // Note: Due to foreign key constraints (ON DELETE NO ACTION), we must delete children first.
+    // Order: dict_shared_tag -> dict_reference -> dict_shared
+    
+    let mut stmt_del_tag = conn.prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1")?;
+    let mut stmt_del_ref = conn.prepare_cached("DELETE FROM dict_reference WHERE shared_id = ?1")?;
+    let mut stmt_del_shared = conn.prepare_cached("DELETE FROM dict_shared WHERE id = ?1")?;
+
+    for shared_id in shared_ids_to_delete {
+        stmt_del_tag.execute(params![shared_id])?;
+        stmt_del_ref.execute(params![shared_id])?;
+        stmt_del_shared.execute(params![shared_id])?;
     }
 
     Ok(())

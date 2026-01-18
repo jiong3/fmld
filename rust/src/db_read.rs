@@ -9,11 +9,11 @@ pub enum SimpTrad {
     Trad,
 }
 
-pub enum Tag<'a> {
+pub enum Tag {
     /// An ASCII tag which is a shorthand for a full tag,
     Ascii(char),
     /// A full tag with a name and a category.
-    Full { name: &'a str, category: &'a str },
+    Full { name: String, category: String },
 }
 
 #[derive(Debug, PartialEq, Eq, Default)]
@@ -509,11 +509,9 @@ pub fn get_words_in_str<'a>(
     Ok((words, unknown_chars))
 }
 
-
-
-pub fn get_tag_ids<'a>(
+pub fn get_tag_ids(
     conn: &Connection,
-    tags: Vec<Tag<'a>>,
+    tags: Vec<Tag>,
 ) -> Result<Vec<Option<SqliteId>>, SqliteError> {
     let mut stmt_ascii = conn.prepare_cached("SELECT id FROM dict_tag WHERE ascii_symbol = ?1")?;
     let mut stmt_full =
@@ -533,4 +531,28 @@ pub fn get_tag_ids<'a>(
         ids.push(id);
     }
     Ok(ids)
+}
+
+pub fn read_tags_for_shared_id(conn: &Connection, shared_id: SqliteId) -> rusqlite::Result<Vec<Tag>> {
+    let mut stmt = conn.prepare_cached(
+        "SELECT t.ascii_symbol, t.tag, t.type FROM dict_shared_tag st JOIN dict_tag t ON st.tag_id = t.id WHERE st.for_shared_id = ?1",
+    )?;
+    let mut rows = stmt.query([shared_id])?;
+    let mut tags = vec![];
+
+    while let Some(row) = rows.next()? {
+        let ascii_symbol: Option<String> = row.get(0)?;
+        let tag: String = row.get(1)?;
+        let category: String = row.get(2)?;
+
+        if let Some(symbol) = ascii_symbol {
+            if !symbol.is_empty() {
+                tags.push(Tag::Ascii(symbol.chars().nth(0).unwrap()));
+            }
+        } else {
+            tags.push(Tag::Full { name: tag, category: category });
+        }
+    }
+
+    Ok(tags)
 }

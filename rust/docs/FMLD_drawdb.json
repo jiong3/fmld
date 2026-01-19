@@ -520,6 +520,18 @@
             "word_id_src",
             "definition_id_src"
           ]
+        },
+        {
+          "id": 1,
+          "name": "dict_reference_index_unique",
+          "unique": true,
+          "fields": [
+            "ref_type_id",
+            "word_id_src",
+            "definition_id_src",
+            "word_id_dst",
+            "definition_id_dst"
+          ]
         }
       ],
       "color": "#175e7a",

@@ -122,6 +122,9 @@ CREATE TABLE IF NOT EXISTS "dict_reference" (
 
 CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
 ON "dict_reference" ("word_id_src", "definition_id_src");
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_reference_index_unique"
+ON "dict_reference" ("ref_type_id", "word_id_src", "definition_id_src", "word_id_dst", "definition_id_dst");
 /* dict_shared enables linking tags, notes or references to different entries in other tables
 rank indicates the order of the element, it is a continuous counter
 rank_relative can be used to add new elements with a certain order between two successive ranks */
@@ -199,6 +202,7 @@ CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 );
 
 
+
 /* Views (for manual browsing) */
 CREATE VIEW trad_simp_class_pinyin_def AS
 SELECT
@@ -234,7 +238,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, u8
         'v' => ("character-variant-of", false, 14),
         '<' => ("part-of", false, 16),
         '>' => ("contains", false, 18),
-        'L' => ("collocation", false, 20),
+        'L' => ("collocation", false, 20), // TODO change to {}
         'G' => ("word-group", false, 22),
         _ => {
             return None;

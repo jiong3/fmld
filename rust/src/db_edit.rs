@@ -14,7 +14,8 @@ pub enum EntryId {
     Reference(SqliteId),
 }
 
-/// Insert a new reference for the specified word or definition and resort all existing references by type and rank of destination
+/// Insert a new reference for the specified word or definition and re-sort all existing references by type and rank of destination
+/// Return (reference id, shared id, is newly added)
 pub fn insert_reference(
     conn: &Transaction,
     ref_type_id: SqliteId,
@@ -22,7 +23,34 @@ pub fn insert_reference(
     src_def_id: Option<SqliteId>,
     dst_word_id: SqliteId,
     dst_def_id: Option<SqliteId>,
-) -> Result<(SqliteId, SqliteId), SqliteError> {
+) -> Result<(SqliteId, SqliteId, bool), SqliteError> {
+        // Check if the reference already exists to avoid duplicates
+    {
+        let mut stmt_check = conn.prepare_cached(
+            r"
+            SELECT id, shared_id 
+            FROM dict_reference 
+            WHERE ref_type_id = ?1 
+              AND word_id_src = ?2 
+              AND definition_id_src IS ?3 
+              AND word_id_dst = ?4 
+              AND definition_id_dst IS ?5
+            ",
+        )?;
+
+        // SQLite's IS operator matches NULLs if the parameter is NULL (None)
+        let result = stmt_check.query_row(
+            params![ref_type_id, src_word_id, src_def_id, dst_word_id, dst_def_id],
+            |row| Ok((row.get(0)?, row.get(1)?)),
+        );
+
+        match result {
+            Ok((id, shared_id)) => return Ok((id, shared_id, false)),
+            Err(SqliteError::QueryReturnedNoRows) => { /* continue to insert */ }
+            Err(e) => return Err(e),
+        }
+    }
+    
     // Determine the maximum rank in the database
     let rank_max: i64 = conn.query_row(
         "SELECT COALESCE(MAX(rank), 0) FROM dict_shared",
@@ -142,7 +170,7 @@ pub fn insert_reference(
         stmt_update.execute(params![source_rank, rank_relative, shared_id])?;
     }
 
-    Ok((new_ref_id, new_shared_id))
+    Ok((new_ref_id, new_shared_id, true))
 }
 
 /// Get reference type id for ascii_char, only if this type already exists in DB

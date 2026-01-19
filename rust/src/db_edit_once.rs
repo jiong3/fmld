@@ -4,11 +4,11 @@ use crate::db_edit;
 use crate::db_read;
 use crate::pinyin;
 use rusqlite::{Error as SqliteError, Transaction, params};
+use serde::Deserialize;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
-use serde::Deserialize;
 
 /// not for regular use, uses unwrap
 pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
@@ -489,37 +489,35 @@ pub fn add_references_from_json(
         // Resolve word IDs
         let src_word_id = db_edit::get_word_id(conn, &src_trad, &src_simp)?;
         let dst_word_id = db_edit::get_word_id(conn, &dst_trad, &dst_simp)?;
-        
+        let mut newly_added = false;
+
         // Only proceed if both words exist in the dictionary
         if let (Some(s_id), Some(d_id)) = (src_word_id, dst_word_id) {
             let src_def_id = match src_def_ext {
-                Some(def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, def_ext)?,
-                None => None
+                Some(s_def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, s_def_ext)?,
+                None => None,
             };
             let dst_def_id = match dst_def_ext {
-                Some(def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, def_ext)?,
-                None => None
+                Some(d_def_ext) => db_edit::get_definition_id_for_ext_id(conn, d_id, d_def_ext)?,
+                None => None,
             };
             // Forward direction: Source -> Destination
-            let Ok((_, shared_id_fwd)) = db_edit::insert_reference(
-                conn,
-                ref_type_id,
-                s_id,
-                src_def_id,
-                d_id,
-                dst_def_id,
-            ) else {
-                continue;  // skip entries which e.g. have an invalid external definition id
+            let Ok((_, shared_id_fwd, newly_added)) =
+                db_edit::insert_reference(conn, ref_type_id, s_id, src_def_id, d_id, dst_def_id)
+            else {
+                continue; // skip entries which e.g. are duplicated
             };
-            
-            // Add tags to the new reference
-            for &tag_id in &tag_ids {
-                stmt_add_tag.execute(params![shared_id_fwd, tag_id])?;
+
+            if newly_added {
+                // Add tags to the new reference
+                for &tag_id in &tag_ids {
+                    stmt_add_tag.execute(params![shared_id_fwd, tag_id])?;
+                }
             }
 
             // Inverse direction: Destination -> Source (if requested)
-            if add_dst_to_src {
-                let Ok((_, shared_id_inv)) = db_edit::insert_reference(
+            if add_dst_to_src && newly_added {
+                let Ok((_, shared_id_inv, newly_added)) = db_edit::insert_reference(
                     conn,
                     ref_type_id,
                     d_id,
@@ -527,11 +525,12 @@ pub fn add_references_from_json(
                     s_id,
                     src_def_id,
                 ) else {
-                    continue; // skip entries which e.g. have an invalid external definition id
+                    continue; // skip entries which e.g. are duplicated
                 };
-                
-                for &tag_id in &tag_ids {
-                    stmt_add_tag.execute(params![shared_id_inv, tag_id])?;
+                if newly_added {
+                    for &tag_id in &tag_ids {
+                        stmt_add_tag.execute(params![shared_id_inv, tag_id])?;
+                    }
                 }
             }
         }
@@ -539,8 +538,6 @@ pub fn add_references_from_json(
 
     Ok(())
 }
-
-
 
 pub fn import_entries_from_json(
     conn: &Transaction,
@@ -601,11 +598,10 @@ pub fn import_entries_from_json(
     }
 
     // 3. Prepare DB statements
-    let class_word: SqliteId = conn.query_row(
-        "SELECT id FROM dict_class WHERE name = 'word'",
-        [],
-        |row| row.get(0),
-    )?;
+    let class_word: SqliteId =
+        conn.query_row("SELECT id FROM dict_class WHERE name = 'word'", [], |row| {
+            row.get(0)
+        })?;
     let class_char: SqliteId = conn.query_row(
         "SELECT id FROM dict_class WHERE name = 'character'",
         [],
@@ -613,9 +609,8 @@ pub fn import_entries_from_json(
     )?;
 
     // Check if word exists
-    let mut stmt_check_exists = conn.prepare(
-        "SELECT 1 FROM dict_word WHERE trad = ?1 AND simp = ?2"
-    )?;
+    let mut stmt_check_exists =
+        conn.prepare("SELECT 1 FROM dict_word WHERE trad = ?1 AND simp = ?2")?;
 
     // Find anchor rank
     let mut stmt_find_anchor = conn.prepare(
@@ -629,44 +624,35 @@ pub fn import_entries_from_json(
         "#,
     )?;
 
-    let mut stmt_get_max_rel = conn.prepare(
-        "SELECT MAX(rank_relative) FROM dict_shared WHERE rank = ?1"
-    )?;
+    let mut stmt_get_max_rel =
+        conn.prepare("SELECT MAX(rank_relative) FROM dict_shared WHERE rank = ?1")?;
 
-    let mut stmt_get_max_rank = conn.prepare(
-        "SELECT MAX(rank) FROM dict_shared"
-    )?;
+    let mut stmt_get_max_rank = conn.prepare("SELECT MAX(rank) FROM dict_shared")?;
 
-    let mut stmt_insert_comment = conn.prepare(
-        "INSERT INTO dict_comment (comment) VALUES (?1)"
-    )?;
+    let mut stmt_insert_comment = conn.prepare("INSERT INTO dict_comment (comment) VALUES (?1)")?;
 
-    let mut stmt_insert_shared = conn.prepare(
-        "INSERT INTO dict_shared (rank, rank_relative, comment_id) VALUES (?1, ?2, ?3)"
-    )?;
+    let mut stmt_insert_shared = conn
+        .prepare("INSERT INTO dict_shared (rank, rank_relative, comment_id) VALUES (?1, ?2, ?3)")?;
 
-    let mut stmt_insert_word = conn.prepare(
-        "INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1, ?2, ?3)"
-    )?;
+    let mut stmt_insert_word =
+        conn.prepare("INSERT INTO dict_word (shared_id, trad, simp) VALUES (?1, ?2, ?3)")?;
 
     let mut stmt_insert_def = conn.prepare(
         r#"
         INSERT INTO dict_definition (shared_id, word_id, definition, ext_def_id, class_id)
         VALUES (?1, ?2, ?3, ?4, ?5)
-        "#
+        "#,
     )?;
 
     let mut stmt_find_pron = conn.prepare("SELECT id FROM dict_pron WHERE pinyin_num = ?1")?;
-    let mut stmt_insert_pron = conn.prepare(
-        "INSERT INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1, ?2)"
-    )?;
+    let mut stmt_insert_pron =
+        conn.prepare("INSERT INTO dict_pron (pinyin_num, pinyin_mark) VALUES (?1, ?2)")?;
 
-    let mut stmt_insert_shared_pron = conn.prepare(
-        "INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1, ?2)"
-    )?;
+    let mut stmt_insert_shared_pron =
+        conn.prepare("INSERT INTO dict_shared_pron (shared_id, pron_id) VALUES (?1, ?2)")?;
 
     let mut stmt_insert_pron_def = conn.prepare(
-        "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1, ?2)"
+        "INSERT INTO dict_pron_definition (shared_pron_id, definition_id) VALUES (?1, ?2)",
     )?;
 
     let mut stmt_remove_prefixed_comments = conn.prepare(
@@ -674,9 +660,8 @@ pub fn import_entries_from_json(
             SET comment_id = NULL
             FROM dict_comment
             WHERE dict_shared.comment_id = dict_comment.id
-            AND dict_comment.comment LIKE ?1;"
+            AND dict_comment.comment LIKE ?1;",
     )?;
-
 
     // 4. Iterate through the selected range
     for key in &keys[start..end] {
@@ -693,9 +678,13 @@ pub fn import_entries_from_json(
             let anchor_simp = &entry.after_simp;
 
             let target_rank: Option<i64> = if !anchor_trad.is_empty() {
-                stmt_find_anchor.query_row(params![anchor_trad, ""], |row| row.get(0)).ok()
+                stmt_find_anchor
+                    .query_row(params![anchor_trad, ""], |row| row.get(0))
+                    .ok()
             } else if !anchor_simp.is_empty() {
-                stmt_find_anchor.query_row(params!["", anchor_simp], |row| row.get(0)).ok()
+                stmt_find_anchor
+                    .query_row(params!["", anchor_simp], |row| row.get(0))
+                    .ok()
             } else {
                 None
             };
@@ -703,12 +692,17 @@ pub fn import_entries_from_json(
             if let Some(r) = target_rank {
                 // Found anchor. Insert after it (same rank, increment relative).
                 // Target relative is NULL (0-ish logic), so we look for max relative currently at this rank.
-                let max_rel: Option<i64> = stmt_get_max_rel.query_row(params![r], |row| row.get(0)).ok().flatten();
+                let max_rel: Option<i64> = stmt_get_max_rel
+                    .query_row(params![r], |row| row.get(0))
+                    .ok()
+                    .flatten();
                 let next_rel = max_rel.unwrap_or(0) + 1;
                 (r, next_rel)
             } else {
                 // Append to end
-                let max_rank: i64 = stmt_get_max_rank.query_row([], |row| row.get(0)).unwrap_or(0);
+                let max_rank: i64 = stmt_get_max_rank
+                    .query_row([], |row| row.get(0))
+                    .unwrap_or(0);
                 (max_rank + 1, 0)
             }
         };
@@ -734,13 +728,21 @@ pub fn import_entries_from_json(
         // --- Add Tags ---
         for tag_char in entry.word_tags.chars() {
             if config::tag_to_txt_ascii_common(tag_char).is_some() {
-                 db_edit::add_tag(conn, db_edit::EntryId::Word(word_id), db_read::Tag::Ascii(tag_char))?;
+                db_edit::add_tag(
+                    conn,
+                    db_edit::EntryId::Word(word_id),
+                    db_read::Tag::Ascii(tag_char),
+                )?;
             }
         }
 
         // --- Definitions ---
-        let class_id = if entry.trad.chars().count() > 1 { class_word } else { class_char };
-        
+        let class_id = if entry.trad.chars().count() > 1 {
+            class_word
+        } else {
+            class_char
+        };
+
         let mut ext_def_id = 1;
         for (pinyin_key, def_list) in &entry.defs {
             // Resolve Pinyins for this definition group
@@ -770,15 +772,16 @@ pub fn import_entries_from_json(
             let mut shared_pron_ids = Vec::new();
             for p in pinyins_to_iterate {
                 let p_norm = pinyin::pinyin_num_normalized(p);
-                
+
                 // Get or Insert Pron
-                let pron_id: SqliteId = if let Ok(id) = stmt_find_pron.query_row(params![p_norm], |row| row.get(0)) {
-                    id
-                } else {
-                    let mark = pinyin::pinyin_mark_from_num(&p_norm);
-                    stmt_insert_pron.execute(params![p_norm, mark])?;
-                    conn.last_insert_rowid()
-                };
+                let pron_id: SqliteId =
+                    if let Ok(id) = stmt_find_pron.query_row(params![p_norm], |row| row.get(0)) {
+                        id
+                    } else {
+                        let mark = pinyin::pinyin_mark_from_num(&p_norm);
+                        stmt_insert_pron.execute(params![p_norm, mark])?;
+                        conn.last_insert_rowid()
+                    };
 
                 // Get or Insert Shared Pron (Word <-> Pron link)
                 let sp_id: SqliteId = {
@@ -792,7 +795,6 @@ pub fn import_entries_from_json(
                 shared_pron_ids.push(sp_id);
             }
 
-            
             // Insert Definitions
             for def_text in def_list {
                 println!("  Def: {ext_def_id} {def_text}");
@@ -800,13 +802,8 @@ pub fn import_entries_from_json(
                 let no_comment: Option<SqliteId> = None;
                 stmt_insert_shared.execute(params![rank, rank_relative, no_comment])?;
                 let shared_id = conn.last_insert_rowid();
-                stmt_insert_def.execute(params![
-                    shared_id,
-                    word_id,
-                    def_text,
-                    ext_def_id,
-                    class_id
-                ])?;
+                stmt_insert_def
+                    .execute(params![shared_id, word_id, def_text, ext_def_id, class_id])?;
                 let def_id = conn.last_insert_rowid();
 
                 // Link Definition to Pinyins

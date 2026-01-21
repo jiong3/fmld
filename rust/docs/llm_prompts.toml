@@ -55,3 +55,72 @@ csv format:
 '''
 
 expected_schema = "word_a;definition id number for word_a;word_b;definition id number for word_b;antonym category (1-4);explanation"
+
+
+[find_collocations]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+Complete the list below with up to 10 most common and idiomatic collocations for each word in traditional characters.
+The collocations should be separated by commas. Only output the list of words without any additional explanations etc.
+Each collocation could commonly appear before or after the word, only list the collocations, without the provided word.
+
+'''
+
+expected_schema = "小提琴:拉,家,演奏,弓,琴弦"
+
+
+[match_collocations_DRAFT]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = ''' TODO filter collocations before and only provide valid ones to match definitions
+Provided below are definitions from a dictionary for a Chinese word (WORD) and possible collocations (COLLOCATION_A-Z),
+which were derived using statistical analysis of a corpus of subtitles (from movies/tv series). Each definition has an id number (Dx).
+From the provided options, identify the subset of useful collocations for students to learn and practice so that their Chinese sounds more idiomatic.
+Ignore entries which are not real collocations and are merely a statistical artifact due to the limited size of the corpus,
+shortcomings in the statistical analysis or are common grammatical words etc.
+The identified collocations should reflect common usage in spoken language.
+It could also happen that no suitable collocations are available. In that case the output should be a single yaml object:
+COLLOCATIONS: 0
+
+For each identified collocation, provide one pair of definitions, one from the word and one from the collocation, indicating how they would be used together.
+Also provide an example sentence in traditional characters (繁體字) with an English translation, to illustrate the usage.
+
+Output the result as a valid yaml object without any additional text before or after.
+
+Example prompt:
+
+WORD:
+小提琴
+- D1 [music] violin
+
+COLLOCATION_C:
+拉
+...
+- D6 to play (a bowed instrument, an accordion, etc.)
+...
+
+Example yaml output:
+
+COLLOCATION_C:
+  ch: 我學過拉小提琴。
+  en: I have learned how to play the violin.
+  word: 小提琴
+  word_def_id: D1
+  col: 拉
+  col_def_id: D6
+
+The format shall be a valid yaml object with one object for each identified collocation:
+'''
+
+expected_schema = '''
+COLLOCATION_X: (identifier of the collocation)
+  ch: (example sentence in traditional characters)
+  en: (translation of the example sentence in American English)
+  word: (the word which the collocation refers to)
+  word_def_id: (the id of the definition of the word used with collocation)
+  col: (the collocation)
+  col_def_id: (the id of the definition of the collocation used with the word)
+'''

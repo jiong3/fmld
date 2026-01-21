@@ -145,3 +145,53 @@ pub fn create_prompts_match_definitions(
 
     Ok(())
 }
+
+pub fn create_prompts_find_collocations(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+    };
+    let relevant_classes = vec!["noun", "verb", "verb-object", "adj", "adv", "phrase"];
+
+    let words = db_read::read_words_with_classes(conn, relevant_classes).unwrap();
+    let mut trads: Vec<&str> = vec![];
+    for word in &words {
+        if word.trad == "%" {
+            break;
+        }
+        trads.push(&word.trad); 
+    }
+    // chunk words into groups of 50
+    let mut chunk_i = 0;
+    for trad_chunk in trads.chunks(50) {
+        chunk_i += 1;
+        let mut prompt_txt = trad_chunk.join(":\n");
+        prompt_txt.push_str(":\n");
+        let prompt_key = format!("chunk_{chunk_i}");
+        prompt_out.user_prompts.insert(prompt_key, prompt_txt);
+    }
+    // request collocations again, with a different order
+    trads.sort();
+    for trad_chunk in trads.chunks(50) {
+        chunk_i += 1;
+        let mut prompt_txt = trad_chunk.join(":\n");
+        prompt_txt.push_str(":\n");
+        let prompt_key = format!("chunk_{chunk_i}");
+        prompt_out.user_prompts.insert(prompt_key, prompt_txt);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+    Ok(())
+}

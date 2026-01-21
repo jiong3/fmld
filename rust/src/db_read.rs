@@ -1,7 +1,7 @@
+use crate::common::SqliteId;
+use rusqlite::{Connection, Error as SqliteError, OptionalExtension, Row, ToSql, params};
 use std::cmp::max;
 use std::collections::HashSet;
-use crate::common::SqliteId;
-use rusqlite::{Connection, Error as SqliteError, Row, ToSql, params, OptionalExtension};
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum SimpTrad {
@@ -227,7 +227,7 @@ fn group_definitions(defs: Vec<DefinitionEntry>) -> Vec<(DefinitionEntry, EntryG
 
         // determine the number of parent definitions
         if let Some(parent_id) = def_entry.parent_id {
-             // note: it has to be ensured that, if parent definitions are filtered out, the child definitions are also removed
+            // note: it has to be ensured that, if parent definitions are filtered out, the child definitions are also removed
             let parent_level = 1 + definition_stack
                 .iter()
                 .position(|i| *i == parent_id)
@@ -364,7 +364,7 @@ pub fn read_definitions_for_words(
         Vec::with_capacity(word_ids.len() + must_have_tag.len() + without_tag.len());
 
     let word_ids = resolve_word_variants(conn, word_ids)?;
-    
+
     // Filter by word IDs
     let word_placeholders: Vec<&str> = word_ids.iter().map(|_| "?").collect();
     sql.push_str(&format!("w.id IN ({})", word_placeholders.join(",")));
@@ -398,9 +398,8 @@ pub fn read_definitions_for_words(
         // only add definition if their parent definition is also included
         if def.parent_id.is_none() || available_def_ids.contains(&def.parent_id.unwrap()) {
             available_def_ids.insert(def.id);
-            definitions.push(def);  
+            definitions.push(def);
         }
-        
     }
     let def_groups = group_definitions(definitions);
     Ok(def_groups)
@@ -533,7 +532,10 @@ pub fn get_tag_ids(
     Ok(ids)
 }
 
-pub fn read_tags_for_shared_id(conn: &Connection, shared_id: SqliteId) -> rusqlite::Result<Vec<Tag>> {
+pub fn read_tags_for_shared_id(
+    conn: &Connection,
+    shared_id: SqliteId,
+) -> rusqlite::Result<Vec<Tag>> {
     let mut stmt = conn.prepare_cached(
         "SELECT t.ascii_symbol, t.tag, t.type FROM dict_shared_tag st JOIN dict_tag t ON st.tag_id = t.id WHERE st.for_shared_id = ?1",
     )?;
@@ -550,9 +552,65 @@ pub fn read_tags_for_shared_id(conn: &Connection, shared_id: SqliteId) -> rusqli
                 tags.push(Tag::Ascii(symbol.chars().nth(0).unwrap()));
             }
         } else {
-            tags.push(Tag::Full { name: tag, category: category });
+            tags.push(Tag::Full {
+                name: tag,
+                category: category,
+            });
         }
     }
 
     Ok(tags)
+}
+
+/// Read all words which have at least one definition with one of the provided word classes
+pub fn read_words_with_classes(
+    conn: &Connection,
+    word_classes: Vec<&str>,
+) -> Result<Vec<WordEntry>, SqliteError> {
+    if word_classes.is_empty() {
+        return Ok(vec![]);
+    }
+    let placeholders: Vec<&str> = word_classes.iter().map(|_| "?").collect();
+    let sql = format!(
+        r"
+        SELECT DISTINCT
+            w.id,
+            w.shared_id,
+            w.simp,
+            w.trad,
+            w.variant_of
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        JOIN dict_definition def ON def.word_id = w.id
+        JOIN dict_class c ON def.class_id = c.id
+        WHERE c.name IN ({})
+        ORDER BY s.rank, s.rank_relative
+    ",
+        placeholders.join(",")
+    );
+
+    let params: Vec<&dyn ToSql> = word_classes.iter().map(|c| c as &dyn ToSql).collect();
+    let mut stmt = conn.prepare(&sql)?;
+    let mut rows = stmt.query(&*params)?;
+
+    let mut words = vec![];
+
+    while let Some(row) = rows.next()? {
+        let word_id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let simp: String = row.get(2)?;
+        let trad: String = row.get(3)?;
+        let variant_of: Option<SqliteId> = row.get(4)?;
+
+        words.push(WordEntry {
+            id: word_id,
+            shared_id,
+            simp,
+            trad,
+            variant_of,
+            shared_ids: read_shared_ids(conn, shared_id)?,
+        });
+    }
+
+    Ok(words)
 }

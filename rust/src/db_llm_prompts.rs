@@ -195,3 +195,57 @@ pub fn create_prompts_find_collocations(
     writer.flush()?;
     Ok(())
 }
+
+/// Create a json with all the prompts, using data from the dictionary
+/// The input is expected to be a json file with key-value pairs, the keys are a word and the values a list of collocations for the word
+pub fn create_prompts_match_collocation_definitions(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_input_path: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+    };
+
+    let file = File::open(prompt_input_path)?;
+    let reader = BufReader::new(file);
+    let word_collocs: HashMap<String, Vec<String>> = serde_json::from_reader(reader)?;
+
+    // for each pair, create prompt which contains the definitions
+    for (word_trad, collocs) in word_collocs.iter() {
+        let word_defs = format_word_defs_for_prompt(conn, word_trad);
+        
+        let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
+        for (word, word_def) in &word_defs {
+            let word_str = common::format_word_def(&word.trad, &word.simp, None);
+            let mut prompt_txt = format!("word:\n\n{word_str}\n{word_def}\n\ncollocations:\n\n");
+
+            for colloc in collocs {
+                let colloc_defs = format_word_defs_for_prompt(conn, colloc);
+                for (col_word, col_def) in &colloc_defs {
+                    let col_str = common::format_word_def(&col_word.trad, &col_word.simp, None);
+                    let col_def = format!("{col_str}\n{col_def}\n");
+                    prompt_txt.push_str(&col_def);
+                }
+            }
+            num_prompts += 1;
+            let prompt_key = format!(
+                    "{word_trad}_{}_{num_prompts}", collocs.join(";"));
+                prompt_out.user_prompts.insert(prompt_key, prompt_txt);
+        }
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+
+    Ok(())
+}

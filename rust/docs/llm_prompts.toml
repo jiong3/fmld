@@ -71,32 +71,31 @@ Each collocation could commonly appear before or after the word, only list the c
 expected_schema = "小提琴:拉,家,演奏,弓,琴弦"
 
 
-[match_collocations_DRAFT]
+[match_collocations]
 
 system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
 
-user_prompt_shared = ''' TODO filter collocations before and only provide valid ones to match definitions
-Provided below are definitions from a dictionary for a Chinese word (WORD) and possible collocations (COLLOCATION_A-Z),
-which were derived using statistical analysis of a corpus of subtitles (from movies/tv series). Each definition has an id number (Dx).
-From the provided options, identify the subset of useful collocations for students to learn and practice so that their Chinese sounds more idiomatic.
-Ignore entries which are not real collocations and are merely a statistical artifact due to the limited size of the corpus,
-shortcomings in the statistical analysis or are common grammatical words etc.
-The identified collocations should reflect common usage in spoken language.
-It could also happen that no suitable collocations are available. In that case the output should be a single yaml object:
-COLLOCATIONS: 0
+user_prompt_shared = '''
+Provided below are definitions from a dictionary for a Chinese word and its collocations. Each definition has an id number (Dx).
 
-For each identified collocation, provide one pair of definitions, one from the word and one from the collocation, indicating how they would be used together.
-Also provide an example sentence in traditional characters (繁體字) with an English translation, to illustrate the usage.
+For each collocation provide:
+- an example sentence in traditional characters (繁體字) with an English translation to illustrate the usage, use spaces to separate words in the Chinese sentence
 
-Output the result as a valid yaml object without any additional text before or after.
+- the one pair of definition ids, one id from the word and one id from the collocation, which best represents how they would be used together
+
+- optional: a tag which best characterizes the word-collocation pair using one of the options below:
+    - grammatical: the collocation usually has a grammatical function (pronoun, particle, etc.)
+    - synonym: both have similar meanings
+    - antonym: both have opposite meanings
+    - classifier: the collocation is a measure word / classifier for the word
 
 Example prompt:
 
-WORD:
+word:
 小提琴
 - D1 [music] violin
 
-COLLOCATION_C:
+collocations:
 拉
 ...
 - D6 to play (a bowed instrument, an accordion, etc.)
@@ -104,23 +103,19 @@ COLLOCATION_C:
 
 Example yaml output:
 
-COLLOCATION_C:
-  ch: 我學過拉小提琴。
+拉:
+  ch: 我 學 過 拉 小提琴。
   en: I have learned how to play the violin.
-  word: 小提琴
   word_def_id: D1
-  col: 拉
   col_def_id: D6
 
-The format shall be a valid yaml object with one object for each identified collocation:
+The format shall be a valid yaml object with one object for each collocation and no additional text before or after:
 '''
 
-expected_schema = '''
-COLLOCATION_X: (identifier of the collocation)
-  ch: (example sentence in traditional characters)
-  en: (translation of the example sentence in American English)
-  word: (the word which the collocation refers to)
-  word_def_id: (the id of the definition of the word used with collocation)
-  col: (the collocation)
-  col_def_id: (the id of the definition of the collocation used with the word)
+expected_schema = '''搭配: # (the collocation word)
+  ch: # (example sentence in traditional characters)
+  en: # (translation of the example sentence in American English)
+  tag: # (optional, tag picked from the given set of options)
+  word_def_id: # (the definition id of the word when used with the collocation)
+  col_def_id: # (the definition id of the collocation when used with the word)
 '''

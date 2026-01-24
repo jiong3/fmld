@@ -1,5 +1,6 @@
 use crate::common::SqliteId;
 use crate::db_edit;
+use crate::config;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
 use std::collections::HashSet;
@@ -602,6 +603,97 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         stmt_del_tag.execute(params![shared_id])?;
         stmt_del_ref.execute(params![shared_id])?;
         stmt_del_shared.execute(params![shared_id])?;
+    }
+
+    Ok(())
+}
+
+
+/// Re-sorts all references in the database based on the reference type configuration and destination rank.
+pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
+    // 1. Determine the maximum rank in the database (scaling factor)
+    let rank_max: i64 = conn.query_row(
+        "SELECT COALESCE(MAX(rank), 0) FROM dict_shared",
+        [],
+        |row| row.get(0),
+    )?;
+
+    // 2. Fetch all references with necessary data to calculate sorting
+    // We join word/definition tables to get the ranks of the source and destination.
+    // COALESCE is used to select the definition rank if it exists, otherwise the word rank.
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT
+            r.shared_id,
+            rt.ascii_symbol,
+            COALESCE(s_src_def.rank, s_src_word.rank) as source_rank,
+            COALESCE(s_dst_def.rank, s_dst_word.rank) as dest_rank,
+            s_ref.rank as current_ref_rank
+        FROM dict_reference r
+        JOIN dict_shared s_ref ON r.shared_id = s_ref.id
+        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        -- Source Joins
+        JOIN dict_word w_src ON r.word_id_src = w_src.id
+        JOIN dict_shared s_src_word ON w_src.shared_id = s_src_word.id
+        LEFT JOIN dict_definition d_src ON r.definition_id_src = d_src.id
+        LEFT JOIN dict_shared s_src_def ON d_src.shared_id = s_src_def.id
+        -- Destination Joins
+        JOIN dict_word w_dst ON r.word_id_dst = w_dst.id
+        JOIN dict_shared s_dst_word ON w_dst.shared_id = s_dst_word.id
+        LEFT JOIN dict_definition d_dst ON r.definition_id_dst = d_dst.id
+        LEFT JOIN dict_shared s_dst_def ON d_dst.shared_id = s_dst_def.id
+        ",
+    )?;
+
+    // We store updates in a vector to execute them after iteration
+    // Tuple: (shared_id, new_rank, new_rank_relative)
+    let mut updates: Vec<(SqliteId, i64, i64)> = Vec::new();
+
+    let rows = stmt.query_map([], |row| {
+        let shared_id: SqliteId = row.get(0)?;
+        let ascii_symbol: String = row.get(1)?;
+        let source_rank: i64 = row.get(2)?;
+        let dest_rank: i64 = row.get(3)?;
+        let current_ref_rank: i64 = row.get(4)?;
+        Ok((
+            shared_id,
+            ascii_symbol,
+            source_rank,
+            dest_rank,
+            current_ref_rank,
+        ))
+    })?;
+
+    for row in rows {
+        let (shared_id, ascii_symbol, source_rank, dest_rank, current_ref_rank) = row?;
+
+        // 3. Determine sorting parameters from config
+        let symbol_char = ascii_symbol.chars().next().unwrap_or('?');
+        let (sort_by_dest_rank, ref_relative_rank) =
+            if let Some((_, _, sort_by_dest_rank, rank)) = config::get_ref_type(symbol_char) {
+                (sort_by_dest_rank, rank as i64)
+            } else {
+                (false, 0)
+            };
+
+        // 4. Calculate new relative rank
+        let sort_rank = if sort_by_dest_rank {
+            dest_rank
+        } else {
+            current_ref_rank
+        };
+
+        let rank_relative = (rank_max * ref_relative_rank) + sort_rank;
+
+        updates.push((shared_id, source_rank, rank_relative));
+    }
+
+    // 5. Apply updates
+    let mut stmt_update =
+        conn.prepare_cached("UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3")?;
+
+    for (shared_id, new_rank, new_rank_relative) in updates {
+        stmt_update.execute(params![new_rank, new_rank_relative, shared_id])?;
     }
 
     Ok(())

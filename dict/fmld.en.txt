@@ -1878,12 +1878,13 @@ W|w|大家
    D2||master (as used by a servant)
    D3||emperor (as used by his consort)
    D4||rich and powerful family; old and well-known family
+    X!|a|小家#D1
     X<||大家閨秀／大家闺秀
    D5||master; great expert
     X!|a|外行#D1;外行人#D1;棒槌#D3;行外人#D1;門外漢／门外汉#D1
   C pron
    D8||everyone; everybody; all of us
-    X!|a|小家#D1
+    X!|aX|小家#D1
  P|x|da4gu1
   C noun
    D6|x #literary|Alternative form of 大姑 (dàgū, “respectful address for a woman”)
@@ -12527,7 +12528,7 @@ W|w|享受
     XM||種／种
   C verb
    D3||to enjoy; to relish; to delight in
-    XL|}|生活#D1;教育#D1;權利／权利;陽光／阳光#D4
+    X}||生活#D1;教育#D1;權利／权利;陽光／阳光#D4
     X?||欣賞／欣赏#D1
      N102 [享受] enjoy (can imply indulgence) experiences, comfort, also rights and benefits
        [欣賞／欣赏] enjoy (more formal or cultural) art, performances, music, scenery with your senses/mind
@@ -14471,7 +14472,7 @@ W|w|欣賞／欣赏
  P||xin1shang3
   C verb
    D1||to appreciate (art, scenery, etc.); to admire
-    XL|}|風景／风景#D1;作品;音樂／音乐#D1
+    X}||風景／风景#D1;作品;音樂／音乐#D1
     X?||享受#D3
      N->102
    D2||to like; to be fond of; to be keen on
@@ -17623,6 +17624,8 @@ W|w|威脅／威胁
  P||wei1xie2
   C verb
    D1|#figuratively #literally|to threaten; to menace; to intimidate
+  C noun
+   D2||threat; intimidation
 W|w|跑步
  P||pao3bu4
   C verb
@@ -60986,7 +60989,7 @@ W|m|酒後／酒后
  P||jiu3hou4
   C noun
    D1||after drinking; under the influence of alcohol
-    XL|}|亂性／乱性#D1;失言#D1;胡言#D1
+    X}||亂性／乱性#D1;失言#D1;胡言#D1
     X<||酒後吐真言／酒后吐真言#D1
 W|w|輕而易舉／轻而易举
  P||qing1er2yi4ju3
@@ -70252,7 +70255,7 @@ W|m|小本
  P||xiao3ben3
   C adj
    D1||small capital (business); on a shoestring
-    XL|}|生意#D1;買賣／买卖#D1;經營／经营#D1
+    X}||生意#D1;買賣／买卖#D1;經營／经营#D1
 W|w|歷年／历年
  P||li4nian2
   C noun
@@ -78725,7 +78728,7 @@ W|m|放低
  P||fang4di1
   C verb
    D1||to lower (demands, attitude)
-    XL|}|姿態／姿态#D4;要求#D1
+    X}||姿態／姿态#D4;要求#D1
    D2||to be humble
 W|m|急急忙忙
  P||ji2ji2mang2mang2;ji2ji5mang2mang2
@@ -172306,7 +172309,7 @@ W|m|全身心
  P||quan2shen1xin1
   C adv
    D1||wholeheartedly; (to devote oneself) heart and soul
-    XL|}|投入#D5
+    X}||投入#D5
 W|m|全無／全无
  P||quan2wu2
   C adj
@@ -176541,7 +176544,7 @@ W|m|冒著／冒着
  P||mao4zhe5
   C verb
    D1||to brave; to face dangers
-    XL|}|風險／风险#D2;危險／危险#D4
+    X}||風險／风险#D2;危險／危险#D4
 W|w|冓
  P||gou4
   C character
@@ -184651,7 +184654,7 @@ W|m|前腳／前脚
  P||qian2jiao3
   C adv
    D1||one moment ..., (the next ...)
-    XL|}|剛／刚#D5
+    X}||剛／刚#D5
   C noun
    D2||leading foot (in walking)
 W|w|前不久
@@ -192885,6 +192888,7 @@ W|w|千秋
    D2|#honorific|birthday (of an elderly person)
    D3||strength; advantage
     X!|a|毛病#D3;缺點／缺点#D1;缺陷#D1;弊端#D2;欠缺#D1;短處／短处#D1;缺失#D1;弊病#D2;弊害#D1;缺欠#D1
+    X<||各有千秋#D1
 W|w|千秋萬世／千秋万世
  P||qian1qiu1wan4shi4
   C phrase
@@ -275281,7 +275285,7 @@ W|w|差點沒／差点没
    D1||almost; nearly
    D2||(emphasising 沒) almost not
 W|m|差遠／差远
- XL|}|了
+ X}||了
  P||cha4yuan3
   C verb
    D1||inferior; not up to par; to fall far short
@@ -289895,7 +289899,7 @@ W|m|從何／从何
  P||cong2he2
   C pron
    D1||whence?; where from?
-    XL|}|說起／说起#D1
+    X}||說起／说起#D1
 W|m|從頭到腳／从头到脚
  P||cong2tou2dao4jiao3
   C phrase
@@ -326681,7 +326685,7 @@ W|m|放飛／放飞
  P||fang4fei1
   C verb
    D1||to allow to fly
-    XL|}|自我#D3;自己#D2
+    X}||自我#D3;自己#D2
 W|w|放下
  P||fang4xia4
   C verb
@@ -458572,7 +458576,7 @@ W|m|第一眼
  P||di4yi1yan3
   C adv
    D1||at first glance; at first sight
-    XL|}|看見／看见#D1;看到#D1
+    X}||看見／看见#D1;看到#D1
 W|m|第二位
  P||di4er4wei4
   C noun
@@ -601766,7 +601770,7 @@ W|m|領到／领到
  P||ling3dao4
   C verb
    D1||to receive
-    XL|}|錢／钱#D1
+    X}||錢／钱#D1
 W|w|領主／领主
  P||ling3zhu3
   C noun

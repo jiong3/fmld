@@ -225,21 +225,24 @@ ORDER BY s.rank, s.rank_relative;
 
 "#;
 
-/// Get (full reference type name, is symmetric, rank) for the given reference type
+// TODO configure automatic sorting of references by destination
+
+/// Get (full reference type name, is symmetric, sort by destination rank, relative rank of reference type) for the given reference type
 /// A symmetric reference should exist in both directions
-pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, u8)> {
+pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bool, u8)> {
     Some(match ref_type_char {
-        'M' => ("used-with-measure-word", false, 2),
-		'=' => ("synonym", true, 4),
-		'%' => ("cross-strait", true, 6),
-		'?' => ("could-be-confused-with", true, 8),
-        '!' => ("antonym", true, 10),
-        'V' => ("word-variant-of", false, 12),
-        'v' => ("character-variant-of", false, 14),
-        '<' => ("part-of", false, 16),
-        '>' => ("contains", false, 18),
-        'L' => ("collocation", false, 20), // TODO change to {}
-        'G' => ("word-group", false, 22),
+        'M' => ("used-with-measure-word", false, false, 2), // source word is used with destination measure-word / classifier
+		'=' => ("synonym", true, true, 4), // source has the same or a very similar meaning as destination
+		'%' => ("cross-strait", true, true, 6), // links two definitions with the same meaning but one is used in Taiwan, the other in China
+		'?' => ("could-be-confused-with", true, true, 8), // words which are easily mixed up but not synonyms
+        '!' => ("antonym", true, true, 10), // links words and definitions with opposite meanings
+        'V' => ("word-variant-of", false, false, 12), // source is a variant of a destination, with some differences in pronunciations or definitions
+        'v' => ("character-variant-of", false, false, 14),
+        '<' => ("part-of", false, true, 16), // source word is part of destination word (or definition)
+        '>' => ("contains", false, false, 18), // source word contains destination word (or definition)
+		'{' => ("collocation-before", false, true, 20), // destination words usually appear before source word
+		'}' => ("collocation-after", false, true, 22), // destination words usually appear after source word
+        'G' => ("word-group", false, false, 24), // fixed groups like North, South, East, West etc.
         _ => {
             return None;
         }
@@ -257,8 +260,6 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6),
         'a' => ("ai-partly", "ai", 6),
-		'{' => ("before", "order", 4), // for collocation references, destination words usually appear before source word
-		'}' => ("after", "order", 4), // for collocation references, destination words usually appear after source word 
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
         '+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary

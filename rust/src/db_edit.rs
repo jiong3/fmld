@@ -102,9 +102,11 @@ pub fn insert_reference(
             r"
             SELECT
                 r.shared_id,
+                s_ref.rank,
                 rt.ascii_symbol,
                 COALESCE(s_def.rank, s_word.rank) as dest_rank
             FROM dict_reference r
+            JOIN dict_shared s_ref ON r.shared_id = s_ref.id
             JOIN dict_ref_type rt ON r.ref_type_id = rt.id
             JOIN dict_word w_dst ON r.word_id_dst = w_dst.id
             JOIN dict_shared s_word ON w_dst.shared_id = s_word.id
@@ -119,9 +121,11 @@ pub fn insert_reference(
             r"
             SELECT
                 r.shared_id,
+                s_ref.rank,
                 rt.ascii_symbol,
                 COALESCE(s_def.rank, s_word.rank) as dest_rank
             FROM dict_reference r
+            JOIN dict_shared s_ref ON r.shared_id = s_ref.id
             JOIN dict_ref_type rt ON r.ref_type_id = rt.id
             JOIN dict_word w_dst ON r.word_id_dst = w_dst.id
             JOIN dict_shared s_word ON w_dst.shared_id = s_word.id
@@ -140,24 +144,30 @@ pub fn insert_reference(
     let mut updates = Vec::new();
     let rows = stmt_fetch.query_map(&*params_refs, |row| {
         let shared_id: SqliteId = row.get(0)?;
-        let ascii_symbol: String = row.get(1)?;
-        let dest_rank: i64 = row.get(2)?;
-        Ok((shared_id, ascii_symbol, dest_rank))
+        let ref_rank: i64 = row.get(1)?;
+        let ascii_symbol: String = row.get(2)?;
+        let dest_rank: i64 = row.get(3)?;
+        Ok((shared_id, ref_rank, ascii_symbol, dest_rank))
     })?;
 
     for row in rows {
-        let (shared_id, ascii_symbol, dest_rank) = row?;
+        let (shared_id, ref_rank, ascii_symbol, dest_rank) = row?;
 
         // Determine REF_RANK
         let symbol_char = ascii_symbol.chars().next().unwrap_or('?');
-        let ref_rank = if let Some((_, _, rank)) = config::get_ref_type(symbol_char) {
-            rank as i64
+        let (sort_by_dest_rank, ref_relative_rank) = if let Some((_, _, sort_by_dest_rank, rank)) = config::get_ref_type(symbol_char) {
+            (sort_by_dest_rank, rank as i64)
         } else {
-            0
+            (false, 0)
         };
 
-        // Calculate rank_relative: (RANK_MAX * REF_RANK) + RANK_DEST
-        let rank_relative = (rank_max * ref_rank) + dest_rank;
+        let sort_rank = if sort_by_dest_rank {
+            dest_rank // sort by destination rank
+        } else {
+            ref_rank // keep order as is was before
+        };
+
+        let rank_relative = (rank_max * ref_relative_rank) + sort_rank;
 
         updates.push((shared_id, rank_relative));
     }

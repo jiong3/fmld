@@ -1,7 +1,7 @@
 pub const WORD_SEP: &str = "／";
 pub const ITEMS_SEP: &str = ";";
 
-pub const APPROX_TXT_FILE_SIZE: usize = 16_000_000;
+pub const APPROX_TXT_FILE_SIZE: usize = 18_000_000;
 
 // TODO ? PRAGMA OPTIMIZE; ANALYZE; ?
 
@@ -225,12 +225,12 @@ ORDER BY s.rank, s.rank_relative;
 
 "#;
 
-// TODO configure automatic sorting of references by destination
 
 /// Get (full reference type name, is symmetric, sort by destination rank, relative rank of reference type) for the given reference type
 /// A symmetric reference should exist in both directions
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bool, u8)> {
     Some(match ref_type_char {
+		'>' => ("contains", false, false, 1), // source word contains destination word (or definition)
         'M' => ("used-with-measure-word", false, false, 2), // source word is used with destination measure-word / classifier
 		'=' => ("synonym", true, true, 4), // source has the same or a very similar meaning as destination
 		'%' => ("cross-strait", true, true, 6), // links two definitions with the same meaning but one is used in Taiwan, the other in China
@@ -238,8 +238,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bo
         '!' => ("antonym", true, true, 10), // links words and definitions with opposite meanings
         'V' => ("word-variant-of", false, false, 12), // source is a variant of a destination, with some differences in pronunciations or definitions
         'v' => ("character-variant-of", false, false, 14),
-        '<' => ("part-of", false, true, 16), // source word is part of destination word (or definition)
-        '>' => ("contains", false, false, 18), // source word contains destination word (or definition)
+        '<' => ("part-of", false, true, 18), // source word is part of destination word (or definition)
 		'{' => ("collocation-before", false, true, 20), // destination words usually appear before source word
 		'}' => ("collocation-after", false, true, 22), // destination words usually appear after source word
         'G' => ("word-group", false, false, 24), // fixed groups like North, South, East, West etc.

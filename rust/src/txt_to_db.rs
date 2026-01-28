@@ -1,6 +1,7 @@
 use rusqlite::{Connection, Error as SqliteError};
 
 use crate::config;
+use crate::common;
 use crate::pinyin;
 use crate::txt_parser::{
     DefinitionTag, DictLine, LineInfo, Note, ParserIterator, PinyinTagGroup, ReferenceTagGroup,
@@ -427,10 +428,9 @@ impl<'a> TxtToDb<'a> {
                     let Ok(dst_definition_id) = potential_dst_definition_id else {
                         self.errors.push(TxtToDbErrorLine {
                             err_line_idx: reference.err_line_idx,
-                            error: TxtToDbError::ReferenceTargetNotFound(format!(
-                                "{}D#{}",
-                                &reference.dst_word, dst_ext_ref_id
-                            )),
+                            error: TxtToDbError::ReferenceTargetNotFound(
+                                common::format_word_def(&trad, &simp, Some(dst_ext_ref_id)),
+                            ),
                         });
                         continue;
                     };

@@ -34,12 +34,15 @@ W|wc|您好
  P||pin2yin2
   C verb
    D2||not actually a verb
+    X!|A|你好／嗎
+     # should be deleted due to the X, but not the second part with the A tag
  P|m|no1pin2yin3
   C verb
    D3||different pronunciation with different definition
     # my comment
     N407 my note
 W|wC|你好／嗎
+ X!|A|您好#D2
  P||pin3yin3
   N->375
   C noun

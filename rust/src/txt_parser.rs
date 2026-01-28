@@ -9,8 +9,7 @@ use nom::{
 };
 
 use std::fmt;
-
-const WORD_SEP: &str = "／";
+use crate::common;
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub enum Tag {
@@ -33,11 +32,7 @@ pub struct Word {
 
 impl fmt::Display for Word {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        if let Some(s) = &self.simp {
-            write!(f, "{}{}{}", self.trad, WORD_SEP, s)
-        } else {
-            write!(f, "{}", self.trad)
-        }
+        write!(f, "{}", common::format_word_def(&self.trad, self.simp.as_ref().unwrap_or(&self.trad), None))
     }
 }
 
@@ -367,14 +362,18 @@ fn parse_reference(reference: &str) -> IResult<&str, Reference> {
     ))
 }
 
-fn parse_reference_tag_group(tag_group_str: &str) -> IResult<&str, ReferenceTagGroup> {
+fn parse_reference_tag_group(
+    tag_group_str: &str, 
+    ref_type: char
+) -> IResult<&str, ReferenceTagGroup> {
     let ref_list_parse = separated_list1(char(';'), parse_reference);
-    let (remainder, (ref_type, tags, references)) =
-        (anychar, parse_tags, ref_list_parse).parse(tag_group_str)?;
+    let (remainder, (tags, references)) = 
+        (parse_tags, ref_list_parse).parse(tag_group_str)?;
+        
     Ok((
         remainder,
         ReferenceTagGroup {
-            ref_type,
+            ref_type, // passed-in ref_type
             tags,
             references,
         },
@@ -382,7 +381,8 @@ fn parse_reference_tag_group(tag_group_str: &str) -> IResult<&str, ReferenceTagG
 }
 
 fn parse_reference_line(reference_line: &str) -> IResult<&str, Vec<ReferenceTagGroup>> {
-    all_consuming(many1(parse_reference_tag_group)).parse(reference_line)
+    let (input, ref_type) = anychar(reference_line)?;
+    all_consuming(many1(|i| parse_reference_tag_group(i, ref_type))).parse(input)
 }
 
 #[cfg(test)]

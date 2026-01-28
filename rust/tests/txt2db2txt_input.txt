@@ -38,8 +38,8 @@ W|wc| 您好
  P|| pin2yin2
   C verb
    D2 || not actually a verb
-    X!|X|Trad1/Simp1#D1
-     # should be deleted due to the X
+    X!|X|Trad1/Simp1#D1 |A|你好/嗎
+     # should be deleted due to the X, but not the second part with the A tag
  P|m| no1pin2yin3
   C verb
    D3 || different pronunciation with different definition

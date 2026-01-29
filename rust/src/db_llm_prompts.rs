@@ -20,6 +20,7 @@ struct LlmPromptTemplate {
 struct LlmPromptResult {
     template: LlmPromptTemplate,
     user_prompts: HashMap<String, String>, // id, prompt add after system and shared user prompt
+    user_prompts_meta: HashMap<String, Vec<String>>,
 }
 
 fn read_prompt_templates(prompt_templates_path: &str) -> HashMap<String, LlmPromptTemplate> {
@@ -110,6 +111,7 @@ pub fn create_prompts_match_definitions(
     let mut prompt_out = LlmPromptResult {
         template: prompt_template,
         user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
     };
 
     let file = File::open(prompt_input_path)?;
@@ -159,6 +161,7 @@ pub fn create_prompts_find_collocations(
     let mut prompt_out = LlmPromptResult {
         template: prompt_template,
         user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
     };
     let relevant_classes = vec!["noun", "verb", "verb-object", "adj", "adv", "phrase"];
 
@@ -168,7 +171,7 @@ pub fn create_prompts_find_collocations(
         if word.trad == "%" {
             break;
         }
-        trads.push(&word.trad); 
+        trads.push(&word.trad);
     }
     // chunk words into groups of 50
     let mut chunk_i = 0;
@@ -212,6 +215,7 @@ pub fn create_prompts_match_collocation_definitions(
     let mut prompt_out = LlmPromptResult {
         template: prompt_template,
         user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
     };
 
     let file = File::open(prompt_input_path)?;
@@ -221,24 +225,33 @@ pub fn create_prompts_match_collocation_definitions(
     // for each pair, create prompt which contains the definitions
     for (word_trad, collocs) in word_collocs.iter() {
         let word_defs = format_word_defs_for_prompt(conn, word_trad);
-        
+
         let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
         for (word, word_def) in &word_defs {
+            num_prompts += 1;
+            let prompt_key = format!("{word_trad}_{}_{num_prompts}", collocs.join(";"));
             let word_str = common::format_word_def(&word.trad, &word.simp, None);
+
             let mut prompt_txt = format!("word:\n\n{word_str}\n{word_def}\n\ncollocations:\n\n");
+            let mut prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
 
             for colloc in collocs {
                 let colloc_defs = format_word_defs_for_prompt(conn, colloc);
+                if colloc_defs.is_empty() {
+                    println!("no definitions for {colloc}");
+                }
                 for (col_word, col_def) in &colloc_defs {
                     let col_str = common::format_word_def(&col_word.trad, &col_word.simp, None);
                     let col_def = format!("{col_str}\n{col_def}\n");
                     prompt_txt.push_str(&col_def);
+                    prompt_meta.push(format!("{};{}", col_word.trad, col_word.simp));
                 }
             }
-            num_prompts += 1;
-            let prompt_key = format!(
-                    "{word_trad}_{}_{num_prompts}", collocs.join(";"));
-                prompt_out.user_prompts.insert(prompt_key, prompt_txt);
+
+            prompt_out
+                .user_prompts
+                .insert(prompt_key.clone(), prompt_txt);
+            prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
         }
     }
 

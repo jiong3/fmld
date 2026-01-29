@@ -1,7 +1,7 @@
 pub const WORD_SEP: &str = "／";
 pub const ITEMS_SEP: &str = ";";
 
-pub const APPROX_TXT_FILE_SIZE: usize = 18_000_000;
+pub const APPROX_TXT_FILE_SIZE: usize = 20_000_000;
 
 // TODO ? PRAGMA OPTIMIZE; ANALYZE; ?
 

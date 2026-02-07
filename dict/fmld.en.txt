@@ -214,8 +214,9 @@ W|w|也
   C character
    D1||also; too; as well; (in negative sentences) neither; either
    D5||Used for emphasis.
+    X<||連……也……／连……也……#D1
     D2||With object fronting.
-    D3||Used in the 連……也……／连……也…… constructions for stronger emphasis. Interchangeable with 都. even
+    D3|X|Used in the 連……也……／连……也…… constructions for stronger emphasis. Interchangeable with 都. even
     D4||Used in the 再……也…… concessive constructions. still, anyway, nevertheless
    D6|- #Classical|Particle used at the end of copular constructions involving a nominal predicate; to be (although not grammatically a verb)
     D7||Often used more loosely than the English copula to indicate a cause or relation.
@@ -87028,7 +87029,7 @@ W|w|出示
    D1||to show (a passport, identity card, etc.) to someone; to let someone see; to present
     X=|A|展示#D3
     X}|A|證明／证明#D2;文件#D1;護照／护照#D1 |a|證件／证件#D1 |A|票據／票据#D2 |a|身份證／身份证#D1
-W|w|跡／迹
+W|w|跡／迹;蹟／迹
  P|C|ji4 |T|ji1
   C character
    D1||footprint; trace; mark
@@ -107969,7 +107970,7 @@ W|w|糖尿病
     X=|a|消渴症#D1
     X{|A|控制#D1;治療／治疗#D1 |a|高血壓／高血压#D1
     X}|A|飲食／饮食#D2;患者#D1;併發症／并发症#D1
-W|w|榨
+W|w|榨;搾／榨
  P||zha4
   C character
    D1||to press or extract juices; to squeeze
@@ -250071,6 +250072,10 @@ W|w|咅
   C character
    D1||to spit out
    D2|x #obsolete #rare|A sound used to indicate refusal.
+W|m|咆
+ P||pao2
+  C character
+   D1||to roar
 W|w|咆哮大怒
  P||pao2xiao1 da4nu4
   C phrase
@@ -250872,7 +250877,7 @@ W|w|咧嘴
  P||lie3zui3
   C verb
    D1||to draw back the corners of one's mouth (can be emotionally neutral or the expression of a positive or negative emotion); to grin
-W|w|咨
+W|w|咨;諮／咨
  P||zi1
   C character
    D1||to consult
@@ -251186,6 +251191,10 @@ W|w|咽鼓管
  P||yan1gu3guan3
   C noun
    D1||Eustachian tube
+W|m|咾
+ P||lao3
+  C character
+   D1||a noise; a sound
 W|w|咿
  P||yi1
   C character
@@ -252444,6 +252453,10 @@ W|w|哦莫
  P||o4mo4
   C intj
    D1|#Koreanology #fandom-slang #neologism|oh, my goodness.
+W|m|哧
+ P||chi1
+  C character
+   D1|#onomatopoeia|giggling; breathing; tearing of paper, ripping of fabric etc
 W|w|哨卡
  P||shao4qia3
   C noun
@@ -253661,6 +253674,10 @@ W|w|唱高調／唱高调
  P||chang4 gao1diao4
   C verb
    D1|#figurative #idiomatic|to use grandiose words; to speak fine-sounding but empty words
+W|m|唳
+ P||li4
+  C character
+   D1||cry of a crane or wild goose
 W|w|唵
  P||an3
   C character
@@ -255205,6 +255222,11 @@ W|w|喐
    D1||Alternative form of 㖪 (“sound; voice”)
    D2||Alternative form of 𠸹 (“throat sound”)
    D3||Used in 喓喐 (“unclear talking sound”).
+W|w|喑;瘖／喑
+ P||yin1
+  C character
+   D1|x #dated|mute; dumb (unable to speak)
+   D2|x #dated|speechless
 W|w|喓
  P||yao1
   C character
@@ -309375,6 +309397,10 @@ W|w|屏風／屏风
   C noun
    D1||folding screen (temporary partition)
     XM||扇
+W|m|屐
+ P||ji1
+  C character
+   D1||clogs (wooden shoes)
 W|w|展位
  P||zhan3wei4
   C noun
@@ -312734,6 +312760,11 @@ W|w|巔／巅
    D1||summit of mountain; mountain top; peak
    D2||highest; top
    D3|#TCM #anatomy|head
+W||巖／岩
+ P||yan2
+  C character
+   D1||rock
+   D2||cliff
 W|w|巖巉／岩巉
  P||yan2chan2
   C adj
@@ -339773,6 +339804,10 @@ W|w|愛黨／爱党
  P||ai4dang3
   C verb-object
    D1|#politics|to love the party
+W|m|愜／惬
+ P||qie4
+  C character
+   D1||cheerful; satisfied
 W|w|愞
  P||nuo4
   C character
@@ -341140,6 +341175,10 @@ W|w|憍／㤭
  P||jiao1
   C character
    D1||Alternative form of 驕／骄 (jiāo, “conceited; arrogant; indulgent”)
+W|m|憎
+ P||zeng1
+  C character
+   D1||to detest
 W|w|憎惡／憎恶
  P||zeng1wu4
   C verb
@@ -341387,6 +341426,10 @@ W|w|憫／悯
   C character
    D1||to sympathize; to pity; to feel compassion for
    D2|- #literary|depressed; sorrowful
+W|m|憬
+ P||jing3
+  C character
+   D1||awaken
 W|w|憬悟
  P||jing3wu4
   C verb
@@ -341899,6 +341942,14 @@ W|w|應龍／应龙
   C noun
    D1|#Chinese-mythology|Yinglong, a winged dragon which is said to have assisted Yu the Great to control the prehistoric flood, using its tail to shape rivers to guide floodwater to the ocean.
    D2|#Chinese-mythology|A god of weather which is able to produce clouds and rain.
+W|w|懊
+ P||ao4
+  C character
+   D1|x #obsolete|vexed; worried; nervous
+   D2|x #obsolete|regret
+ P||yu2;yu4
+  C character
+   D3|x #obsolete|to covet
 W|w|懊恨
  P||ao4hen4
   C verb
@@ -365866,6 +365917,13 @@ W|w|擺龍門陣／摆龙门阵
   C verb-object
    D1|- #chiefly-dialectal|to chat; to gossip; to spin a yarn; to chew the rag
     X=|a|聊天#D1;攀談／攀谈#D1;閒聊／闲聊#D1;談天／谈天#D1;閒談／闲谈#D1
+W|m|擻／擞
+ P||sou3
+  C character
+   D1||Used in 抖擻／抖擞
+ P||sou3;sou4
+  C character
+   D2|x #dialectal|to stoke the embers (to revive a fire)
 W|w|擼串／撸串
  P||lu1chuan4
   C verb
@@ -366115,6 +366173,12 @@ W|w|攚
   C character
    D1||sound of calling to a calf
    D2||the lowing of a cow or ox
+W|m|攛／撺
+ P||cuan1
+  C character
+   D1||rush; hurry
+   D2||throw; fling
+   D3||rage
 W|w|攜同／携同
  P|C|xie2tong2 |T|xi1tong2
   C verb
@@ -379564,6 +379628,14 @@ W|w|昧旦
  P||mei4dan4
   C noun
    D1||right before dawn
+W|w&|昨
+ P||zuo2
+  C character
+   D1||yesterday
+   D2||in former times; past
+ P||zuo2
+  C character
+   D3|x #Taiwanese-Hokkien|Contraction of 昨昏 (cha-hng, “yesterday”).
 W|w|昨兒個／昨儿个
  P||zuo2r5ge5
   C noun
@@ -414564,6 +414636,11 @@ W|w|氛圍／氛围
    D1||atmosphere; ambiance
     X=|a|空氣／空气#D3;氣氛／气氛#D1
    D2|#music|ambient
+W|w|氛;雰／氛
+ P||fen1
+  C character
+   D1||atmosphere
+   D2||mist; fog
 W|w|氜
  P||ri4
   C character
@@ -457922,6 +457999,10 @@ W|w|猔
  P||zong4
   C character
    D1||Alternative form of 豵／𫎆 (zōng)
+W|m|猖
+ P||chang1
+  C character
+   D1||ferocious
 W|w|猖披
  P||chang1pi1
   C adj
@@ -459608,6 +459689,10 @@ W|w|獶獀
  P||you1sou1
   C noun
    D1||(Nanyue) dog
+W|m|獷／犷
+ P||guang3
+  C character
+   D1||rough; uncouth; boorish
 W|w|獸交／兽交
  P||shou4jiao1
   C noun
@@ -473347,11 +473432,6 @@ W|w|瘖默／喑默
  P||yin1mo4
   C adj
    D1||quiet
-W|w|瘖／喑
- P||yin1
-  C character
-   D1|x #dated|mute; dumb (unable to speak)
-   D2|x #dated|speechless
 W|w|瘙
  P||sao4;sao1
   C character
@@ -473599,6 +473679,10 @@ W|w|瘭疽
  P||biao1ju1
   C noun
    D1|#TCM|pyogenic infection of the pad of a finger; whitlow; felon
+W|m|瘮／瘆
+ P||shen4
+  C character
+   D1||to terrify
 W|w|瘰癧／瘰疬
  P||luo3li4
   C noun
@@ -484750,6 +484834,11 @@ W|w|瞮
    D1||bright; light; brilliant
    D2||clear; limpid (transparent; light-conducting; not obscured)
    D3||vision; sight (the ability to see)
+W|m|瞰
+ P||kan4
+  C character
+   D1||to look down from a height
+   D2||to spy on sth
 W|w|瞳
  P||tong2
   C character
@@ -510596,6 +510685,12 @@ W|w|純真／纯真
   C adj
    D1||sincere; pure
     X=|a|老實／老实#D1;單純／单纯#D2;純潔／纯洁#D1;忠厚#D1;清亮#D2;純正／纯正#D1
+W|m|紕／纰
+ P||pi1
+  C character
+   D1||error
+   D2||carelessness
+   D3||spoiled silk
 W|w|紕繆／纰缪
  P||pi1miu4
   C noun
@@ -517418,6 +517513,10 @@ W|w|緯／纬
    D3||planet
    D4||to weave; to wrap
    D5||Short for 緯書／纬书 (wěishū, “Confucian occult”).
+W|m|緲／缈
+ P||miao3
+  C character
+   D1||indistinct
 W|w|緲子偶素／缈子偶素
  P||miao3zi3ou3su4
   C noun
@@ -517650,6 +517749,10 @@ W|w|縛／缚
    D8||a surname
   C classifier
    D4|x #Hokkien|Classifier for bundled items.
+W|m|縝／缜
+ P||zhen3
+  C character
+   D1||fine and dense
 W|w|縞瑪瑙／缟玛瑙
  P||gao3ma3nao3
   C noun
@@ -518111,6 +518214,14 @@ W|w|縷析／缕析
  P||lv3xi1
   C verb
    D1||to make a detailed analysis
+W|m|縹／缥
+ P||piao3
+  C character
+   D1||(literary) light blue
+   D2||(literary) light blue silk fabric
+ P||piao1;piao3
+  C character
+   D3||Used in 縹渺／缥渺
 W|w|縹帙／缥帙
  P||piao3zhi4
   C noun
@@ -523700,6 +523811,10 @@ W|w|翦除
    D1|- #literary|to eliminate; to annihilate
     X=|a|解決／解决#D5;消滅／消灭#D1;毀滅／毁灭#D1;滅亡／灭亡#D2;撲滅／扑灭#D1;殲滅／歼灭#D1;滅絕／灭绝#D1;打掉#D3;根除#D1;絕滅／绝灭#D1
    D2|- #literary|to reject; to exclude
+W|m|翩
+ P||pian1
+  C character
+   D1||to fly fast
 W|w|翩翩
  P||pian1pian1
   C adj
@@ -536540,6 +536655,10 @@ W|w|膚質／肤质
  P|C|fu1zhi4 |T|fu1zhi2
   C noun
    D1||skin type
+W|m&|膛
+ P||tang2
+  C character
+   D1||hollow space
 W|w|膛線／膛线
  P||tang2xian4
   C noun
@@ -558725,6 +558844,13 @@ W|w|藏龍臥虎／藏龙卧虎
  P||cang2long2wo4hu3
   C phrase
    D1||to have many hidden talented individuals
+W|w|藐
+ Xv||渺
+ P||miao3
+  C character
+   D1|x #obsolete|small; young
+   D2|x #obsolete|to look down on; to think little of; to despise
+   D3|x #obsolete|Alternative form of 邈 (miǎo, “faraway; distant”)
 W|w|藐視法庭／藐视法庭
  P||miao3shi4 fa3ting2
   C noun
@@ -563223,6 +563349,11 @@ W|w|蜑民
  P||dan4min2
   C noun
    D1||Tanka people
+W|m|蜒
+ P||yan2
+  C character
+   D1||slug
+   D2||Used in 蜿蜒
 W|w|蜒蚰
  P||yan2you2
   C noun
@@ -563617,6 +563748,10 @@ W|w|蜾蠃
  P||guo3luo3
   C noun
    D1||potter wasp (a member of the Eumeninae subfamily)
+W|m|蜿
+ P||wan1
+  C character
+   D1||Used in 蜿蜒
 W|w|蜿蟺
  P|C|wan1shan4 |T|wan3shan4
   C adj
@@ -569416,6 +569551,10 @@ W|w|被髮／被发
  P|C|pi1fa4 |T|pi1fa3
   C verb
    D1||to have one's hair hang loose; to have unbound and dishevelled hair
+W|m&|袱
+ P||fu2
+  C character
+   D1||a cloth used to wrap or cover
 W|w|袲
  P||chi3;yi2;nuo3
   C character
@@ -578498,6 +578637,11 @@ W|w&|詫／诧
    D2|- #literary|to brag; to show off
    D3|- #literary|to tell; to inform
    D4|- #literary|to cheat; to deceive
+W|m|詬／诟
+ P||gou4
+  C character
+   D1||disgrace
+   D2||to revile
 W|w|詬罵／诟骂
  P||gou4ma4
   C verb
@@ -582256,6 +582400,14 @@ W|w|謨／谟
   C character
    D1|- #literary|plan; strategy
    D2|- #literary|to plan; to strategize; to deliberate
+W|m|謫／谪
+ P||zhe2
+  C character
+   D1||to relegate a high official to a minor post in an outlying region (punishment in imperial China)
+   D2||to banish or exile
+   D3||(of immortals) to banish from Heaven
+   D4||to censure
+   D5||to blame
 W|w|謫守／谪守
  P||zhe2shou3
   C verb
@@ -595995,6 +596147,10 @@ W|w|蹁躚／蹁跹
   C adj
    D1|- #literary|limping; staggering; hobbling
    D2||(of dance) whirling; swirling; spinning
+W|m|蹂
+ P||rou2
+  C character
+   D1||trample
 W|w|蹄兔
  P||ti2tu4
   C noun
@@ -596111,6 +596267,13 @@ W|w|蹋
   C character
    D1||Alternative form of 踏 (“to tread on; to stamp”)
    D2||to kick
+W|m|蹌／跄
+ P||qiang4
+  C character
+   D1||to stagger; to sway from side to side
+ P||qiang1
+  C character
+   D2||to walk rapidly
 W|w|蹍
  P||nian3;zhan3
   C character
@@ -596698,6 +596861,10 @@ W|w|躩步
  P||jue2bu4
   C verb
    D1|- #literary|to race; to go as fast as one can
+W|m|躪／躏
+ P||lin4
+  C character
+   D1||Used in 蹂躪／蹂躏
 W|w|身亡
  P||shen1wang2
   C verb
@@ -598899,6 +599066,10 @@ W|w|載體／载体
   C noun
    D1||carrier; vehicle; medium; purveyor
    D2|#molecular-biology|vector
+W|m|輊／轾
+ P||zhi4
+  C character
+   D1||back and lower of chariot
 W|w|輋／𪨶
  P||she1
   C character
@@ -602839,6 +603010,11 @@ W|w|迸裂
  P||beng4lie4
   C verb
    D1||to split; to burst open
+W|w|迺
+ Xv||乃
+ P||nai3
+  C character
+   D1|x #Hokkien|Alternative form of 踅
 W|w|追亡逐北
  P||zhui1wang2zhu2bei3
   C phrase
@@ -605666,6 +605842,12 @@ W|w|連……都……／连……都……
  P||lian2...dou1...
   C adv
    D1||even
+    X=||連……也……／连……也……#D1
+W|w|連……也……／连……也……
+ P||lian2...ye3...
+  C adv
+   D1||even
+    X=||連……都……／连……都……#D1
 W|w|連上／连上
  P||lian2shang4
   C verb
@@ -624108,6 +624290,13 @@ W|w|鑌／镔
  P||bin1
   C character
    D1|- #literary|wrought iron; high-quality iron
+W|m|鑑／鉴
+ P||jian4
+  C character
+   D1||bronze mirror (used in ancient times)
+   D2||to reflect; to mirror
+   D3||sth that serves as a warning or a lesson
+   D4||to examine; to scrutinize
 W|w|鑑別診斷／鉴别诊断
  P||jian4bie2 zhen3duan4
   C noun
@@ -629128,6 +629317,11 @@ W|w|闠／阓
  P||hui4
   C character
    D1|- #literary|gate of a city; city
+W|m|闡／阐
+ P||chan3
+  C character
+   D1||to open
+   D2||to disclose; to express
 W|w|闡揚／阐扬
  P||chan3yang2
   C verb
@@ -639767,11 +639961,6 @@ W|w|雯
  P||wen2
   C character
    D1||multicoloured clouds
-W|w|雰／氛
- P||fen1
-  C character
-   D1||atmosphere
-   D2||mist; fog
 W|w|雱
  P||pang1;pang2
   C character
@@ -653409,6 +653598,10 @@ W|w|饃／馍
  P||mo2
   C character
    D1||mantou
+W|m|饅／馒
+ P||man2
+  C character
+   D1||Used in 饅頭／馒头
 W|w|饆饠／𮩛𫗩
  P||bi4luo2
   C noun
@@ -653437,6 +653630,12 @@ W|w|饊／馓
  P||san3
   C character
    D1||fried round cakes of wheat flour
+W|w|饋／馈
+ P||kui4
+  C character
+   D1|& #obsolete|to send gift
+   D2|& #obsolete|to offer food to a superior
+   D3|& #obsolete|to transport; to ship
 W|w|饋贈／馈赠
  P||kui4zeng4
   C verb

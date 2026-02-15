@@ -25,7 +25,11 @@ Also contains data from MDBG: https://www.mdbg.net/chinese/dictionary
     - possibility to add (initially automatic) translations
 - two sections
     1. "learners section" at the beginning is roughly sorted by frequency and contains words particularly relevant to learners
+        - < 20k words
+        - relevant words are all words from vocabulary lists of text books, standardized tests, etc.
+        - prioritized for manual corrections and LLM enhancements
     2. "extended section" starts from the word "%" and is sorted by the codepoint of the first character
+        - all words not in the "learners section" with no upper limit
 
 ## Documentation
 
@@ -142,6 +146,7 @@ Results from the three models were merged using the following criteria:
 - discard any results with a type == 4 (not an antonym)
 - add a definition pair if two models agreed on one pair
 
+
 #### Collocations
 
 The references with collocations which could be confirmed by subtitle data are tagged with 'a', all others with 'A'.
@@ -182,3 +187,15 @@ As an exception to this condition, a collocation was still used as a reference t
 Whether a collocation usually appears before or after the word is determined by the subtitle data or, as a second priority, based on the order in the example sentences which were requested by the prompt.
 
 If word + collocation or collocation + word exist as an entry in the dictionary, a "part-of" reference (X<) was created instead of the collocation reference.
+
+
+#### Word Decompositions
+
+Words can be broken down into smaller words or single characters. LLMs were used to identify the best breakdown of each word in the "learners section" into components. If possible, the link should be to the most fitting definition of each component.
+
+Prompt template: match_decomposition
+
+Used LLMs:
+- mi: mistral-medium-latest
+- oa: gpt-4.1-2025-04-14
+- an: claude-sonnet-4-5-20250929

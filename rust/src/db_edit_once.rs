@@ -833,6 +833,56 @@ pub fn import_entries_from_json(
     Ok(())
 }
 
+pub fn fix_contains_references_from_part_of(conn: &Transaction) -> Result<usize, SqliteError> {
+    // 1. Get all "is-part-of" references ('<') that specify a source definition.
+    //    comp_word_id (def_id) IS PART OF whole_word_id
+    let mut stmt_part_of = conn.prepare(
+        r"
+        SELECT
+            r.word_id_src AS comp_word_id,
+            r.definition_id_src AS comp_def_id,
+            r.word_id_dst AS whole_word_id
+        FROM dict_reference r
+        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        WHERE rt.ascii_symbol = '<'
+          AND r.definition_id_src IS NOT NULL
+        ",
+    )?;
+
+    // Collect results first to release the borrow on conn needed for the update statement
+    let references: Vec<(u32, u32, u32)> = stmt_part_of
+        .query_map([], |row| {
+            Ok((
+                row.get("comp_word_id")?,
+                row.get("comp_def_id")?,
+                row.get("whole_word_id")?,
+            ))
+        })?
+        .collect::<Result<Vec<_>, _>>()?;
+
+    // 2. Update matching "contains" references ('>').
+    //    We look for: whole_word_id (generic) CONTAINS comp_word_id (generic)
+    //    And update to: whole_word_id (generic) CONTAINS comp_word_id (def_id)
+    let mut stmt_update = conn.prepare(
+        r"
+        UPDATE dict_reference
+        SET definition_id_dst = ?1
+        WHERE word_id_src = ?2
+          AND word_id_dst = ?3
+          AND ref_type_id = (SELECT id FROM dict_ref_type WHERE ascii_symbol = '>')
+          AND definition_id_src IS NULL
+        ",
+    )?;
+
+    let mut updated_count = 0;
+    for (comp_word_id, comp_def_id, whole_word_id) in references {
+        // params: [new_def_id, src_word (whole), dst_word (component)]
+        updated_count += stmt_update.execute([comp_def_id, whole_word_id, comp_word_id])?;
+    }
+
+    Ok(updated_count)
+}
+
 // TODO map synonyms to cross-strait references if applicable:
 /*
 SELECT

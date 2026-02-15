@@ -212,9 +212,10 @@ fn main() -> anyhow::Result<()> {
     }
     let tx = db_source.conn.transaction()?;
 
+    db_autofix::delete_references_marked_for_deletion(&tx)?;
     db_autofix::add_missing_symmetric_references(&tx)?;
     db_autofix::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
-
+    db_autofix::sort_references(&tx)?;
     db_autofix::sort_pronunciations_by_tag_rank(&tx)?;
     db_autofix::sort_words_after_pivot(&tx)?;
     tx.commit()?;

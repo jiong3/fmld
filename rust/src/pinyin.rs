@@ -21,6 +21,36 @@ pub fn pinyin_mark_from_num(pinyin_num: &str) -> String {
     pinyin_mark_syllables.join("")
 }
 
+/// Helper to separate the base pinyin from the tone number.
+/// e.g. "ni3" -> ("ni", 3). If no digit is found, defaults to tone 5.
+#[must_use]
+pub fn pinyin_get_syllable_tone(syllable: &str) -> (&str, u8) {
+    let bytes = syllable.as_bytes();
+    if let Some(last) = bytes.last() {
+        if last.is_ascii_digit() {
+            let tone = last - b'0';
+            let base = &syllable[0..syllable.len() - 1];
+            return (base, tone);
+        }
+    }
+    (syllable, 5)
+}
+
+/// Checks if two syllables match.
+/// The base (e.g., "ni") must be identical.
+/// The tones match if they are equal OR if at least one of them is the neutral tone (5).
+#[must_use]
+pub fn pinyin_match_excl_neutral_tone(s1: &str, s2: &str) -> bool {
+    let (b1, t1) = pinyin_get_syllable_tone(s1);
+    let (b2, t2) = pinyin_get_syllable_tone(s2);
+
+    if b1 != b2 {
+        return false;
+    }
+
+    t1 == t2 || t1 == 5 || t2 == 5
+}
+
 #[must_use]
 pub fn count_syllables(pinyin_num: &str) -> usize {
     let pattern = ['1', '2', '3', '4', '5'];

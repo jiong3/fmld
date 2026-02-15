@@ -7,6 +7,7 @@ pub use crate::config::APPROX_TXT_FILE_SIZE;
 use crate::pinyin;
 use regex::Regex;
 use rusqlite::{Connection, Error as SqliteError, Transaction};
+use std::collections::HashMap;
 
 use crate::db_to_txt;
 use crate::txt_to_db;
@@ -212,6 +213,9 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
             }
         }
     }
+
+    let mut decomp_pron_errors = check_decomposition_pronunciations(conn)?;
+    errors.append(&mut decomp_pron_errors);
     Ok(errors)
 }
 
@@ -240,4 +244,209 @@ pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
     } else {
         Ok(txt_b)
     }
+}
+
+
+/// Check if component references from a word have a pronunciation which fits to any pronunciation of the word
+/// Only decompositions on a word level (definition source id of the reference is NULL) are checked
+pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<String>, SqliteError> {
+    let mut errors = vec![];
+
+    // 1. Load all pronunciations into memory for fast lookup.
+    // Map: word_id -> List of (definition_id, pinyin_syllables)
+    let mut word_to_def_prons: HashMap<u32, Vec<(u32, Vec<String>)>> = HashMap::new();
+
+    let mut stmt_prons = conn.prepare(
+        r"
+        SELECT 
+            def.word_id, 
+            def.id AS def_id, 
+            p.pinyin_num
+        FROM dict_definition def
+        JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
+        JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
+        JOIN dict_pron p ON sp.pron_id = p.id
+        ",
+    )?;
+
+    let mut rows_prons = stmt_prons.query([])?;
+    while let Some(row) = rows_prons.next()? {
+        let word_id: u32 = row.get("word_id")?;
+        let def_id: u32 = row.get("def_id")?;
+        let pinyin_num: String = row.get("pinyin_num")?;
+
+        let syllables = pinyin::pinyin_num_normalized_syllables(&pinyin_num);
+
+        word_to_def_prons
+            .entry(word_id)
+            .or_default()
+            .push((def_id, syllables));
+    }
+
+    // 2. Query all decomposition references (type '>'), ordered by source word and rank
+    let mut stmt_refs = conn.prepare(
+        r"
+        SELECT
+            r.word_id_src,
+            ws.trad AS src_trad,
+            ws.simp AS src_simp,
+            r.word_id_dst,
+            r.definition_id_dst,
+            wd.trad AS dst_trad,
+            wd.simp AS dst_simp
+        FROM dict_reference r
+        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        JOIN dict_shared s ON r.shared_id = s.id
+        JOIN dict_word ws ON r.word_id_src = ws.id
+        JOIN dict_word wd ON r.word_id_dst = wd.id
+        WHERE rt.ascii_symbol = '>' AND r.source_id_dst IS NULL
+        ORDER BY r.word_id_src, s.rank, s.rank_relative
+        ",
+    )?;
+
+    let mut rows_refs = stmt_refs.query([])?;
+
+    struct Component {
+        word_id: u32,
+        def_id: Option<u32>,
+        trad: String,
+        simp: String,
+    }
+
+    let mut current_src_id = None;
+    let mut current_src_trad = String::new();
+    let mut current_src_simp = String::new();
+    let mut current_components: Vec<Component> = Vec::new();
+
+    // Helper closure to validate the current group
+    let mut validate_current_group =
+        |src_word_id: u32, src_trad: &str, src_simp: &str, components: &[Component]| {
+            let Some(src_prons) = word_to_def_prons.get(&src_word_id) else {
+                return; // No source pronunciations to check against
+            };
+
+            // We try to find *one* pronunciation of the source word that satisfies the sequence of components.
+            let mut any_src_pron_valid = false;
+
+            for (_, src_syllables) in src_prons {
+                let mut current_idx = 0;
+                let mut all_components_found = true;
+
+                for comp in components {
+                    let Some(comp_prons) = word_to_def_prons.get(&comp.word_id) else {
+                        // If a component has no pronunciation, we can't verify it.
+                        // Assuming valid data, this might be skippable or flagged elsewhere.
+                        continue;
+                    };
+
+                    let mut comp_found = false;
+
+                    // Try to find any valid pronunciation of this component
+                    // in the remaining part of the source word (src_syllables[current_idx..])
+                    'comp_pron_loop: for (def_id, comp_syllables) in comp_prons {
+                        if let Some(req_def) = comp.def_id {
+                            if req_def != *def_id {
+                                continue;
+                            }
+                        }
+
+                        if comp_syllables.is_empty() {
+                            continue;
+                        }
+
+                        // Optimization: Not enough space left in source
+                        if current_idx + comp_syllables.len() > src_syllables.len() {
+                            continue;
+                        }
+
+                        // Search for comp_syllables as a subsequence in src_syllables starting from current_idx
+                        // "Skipping" means we look for the first occurrence in the remainder.
+                        let search_limit = src_syllables.len() - comp_syllables.len();
+                        
+                        for search_i in current_idx..=search_limit {
+                            let src_slice = &src_syllables[search_i..search_i + comp_syllables.len()];
+                            
+                            // Check if this slice matches the component pronunciation (with fuzzy tone 5)
+                            let mut match_seq = true;
+                            for k in 0..comp_syllables.len() {
+                                if !pinyin::pinyin_match_excl_neutral_tone(&src_slice[k], &comp_syllables[k]) {
+                                    match_seq = false;
+                                    break;
+                                }
+                            }
+
+                            if match_seq {
+                                // Found the component! Move the index past this match.
+                                current_idx = search_i + comp_syllables.len();
+                                comp_found = true;
+                                break 'comp_pron_loop;
+                            }
+                        }
+                    }
+
+                    if !comp_found {
+                        all_components_found = false;
+                        break;
+                    }
+                }
+
+                if all_components_found {
+                    any_src_pron_valid = true;
+                    break;
+                }
+            }
+
+            if !any_src_pron_valid {
+                let comp_str: Vec<String> = components
+                    .iter()
+                    .map(|c| common::format_word_def(&c.trad, &c.simp, None))
+                    .collect();
+                errors.push(format!(
+                    "Decomposition Error: Components of {} do not match any of its pronunciations (allowing gaps and neutral tones). Components: {}",
+                    common::format_word_def(&src_trad, &src_simp, None), comp_str.join(";")
+                ));
+            }
+        };
+
+    while let Some(row) = rows_refs.next()? {
+        let word_id_src: u32 = row.get("word_id_src")?;
+        let src_trad: String = row.get("src_trad")?;
+        let src_simp: String = row.get("src_simp")?;
+
+        let comp = Component {
+            word_id: row.get("word_id_dst")?,
+            def_id: row.get("definition_id_dst")?,
+            trad: row.get("dst_trad")?,
+            simp: row.get("dst_simp")?,
+        };
+
+        if Some(word_id_src) != current_src_id {
+            if let Some(id) = current_src_id {
+                validate_current_group(
+                    id,
+                    &current_src_trad,
+                    &current_src_simp,
+                    &current_components,
+                );
+            }
+
+            current_src_id = Some(word_id_src);
+            current_src_trad = src_trad;
+            current_src_simp = src_simp;
+            current_components.clear();
+        }
+
+        current_components.push(comp);
+    }
+
+    if let Some(id) = current_src_id {
+        validate_current_group(
+            id,
+            &current_src_trad,
+            &current_src_simp,
+            &current_components,
+        );
+    }
+
+    Ok(errors)
 }

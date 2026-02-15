@@ -1,3 +1,6 @@
+// Functions which may be used occasionally to edit data, e.g. import, cleanup, etc.
+#![allow(clippy::all)]
+
 use crate::common::SqliteId;
 use crate::config;
 use crate::db_edit;
@@ -485,11 +488,13 @@ pub fn add_references_from_json(
         "INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)",
     )?;
 
+    let mut rank_relative = 0;
     for (src_trad, src_simp, src_def_ext, dst_trad, dst_simp, dst_def_ext) in entries {
         // Resolve word IDs
         let src_word_id = db_edit::get_word_id(conn, &src_trad, &src_simp)?;
         let dst_word_id = db_edit::get_word_id(conn, &dst_trad, &dst_simp)?;
-        let mut newly_added = false;
+
+        rank_relative += 1;
 
         // Only proceed if both words exist in the dictionary
         if let (Some(s_id), Some(d_id)) = (src_word_id, dst_word_id) {
@@ -502,9 +507,15 @@ pub fn add_references_from_json(
                 None => None,
             };
             // Forward direction: Source -> Destination
-            let Ok((_, shared_id_fwd, newly_added)) =
-                db_edit::insert_reference(conn, ref_type_id, s_id, src_def_id, d_id, dst_def_id)
-            else {
+            let Ok((_, shared_id_fwd, newly_added)) = db_edit::insert_reference(
+                conn,
+                ref_type_id,
+                s_id,
+                src_def_id,
+                d_id,
+                dst_def_id,
+                Some(rank_relative),
+            ) else {
                 continue; // skip entries which e.g. are duplicated
             };
 
@@ -524,6 +535,7 @@ pub fn add_references_from_json(
                     dst_def_id,
                     s_id,
                     src_def_id,
+                    Some(rank_relative),
                 ) else {
                     continue; // skip entries which e.g. are duplicated
                 };
@@ -820,3 +832,47 @@ pub fn import_entries_from_json(
 
     Ok(())
 }
+
+// TODO map synonyms to cross-strait references if applicable:
+/*
+SELECT
+  src_word.simp AS source_simp,
+  src_word.trad AS source_trad,
+  src_def.definition AS source_definition,
+  dst_word.simp AS dest_simp,
+  dst_word.trad AS dest_trad,
+  dst_def.definition AS dest_definition
+FROM dict_reference
+JOIN dict_ref_type
+  ON dict_reference.ref_type_id = dict_ref_type.id
+-- Join Source Definition and Word
+JOIN dict_definition AS src_def
+  ON dict_reference.definition_id_src = src_def.id
+JOIN dict_word AS src_word
+  ON src_def.word_id = src_word.id
+-- Join Destination Definition and Word
+JOIN dict_definition AS dst_def
+  ON dict_reference.definition_id_dst = dst_def.id
+JOIN dict_word AS dst_word
+  ON dst_def.word_id = dst_word.id
+WHERE dict_ref_type.ascii_symbol = '='
+  -- Check Source Tags for 'C' or 'c'
+  AND EXISTS (
+    SELECT 1
+    FROM dict_shared_tag
+    JOIN dict_tag
+      ON dict_shared_tag.tag_id = dict_tag.id
+    WHERE dict_shared_tag.for_shared_id = src_def.shared_id
+      AND dict_tag.ascii_symbol IN ('C', 'c')
+  )
+  -- Check Destination Tags for 'T' or 't'
+  AND EXISTS (
+    SELECT 1
+    FROM dict_shared_tag
+    JOIN dict_tag
+      ON dict_shared_tag.tag_id = dict_tag.id
+    WHERE dict_shared_tag.for_shared_id = dst_def.shared_id
+      AND dict_tag.ascii_symbol IN ('T', 't')
+  );
+
+*/

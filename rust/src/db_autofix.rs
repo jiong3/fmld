@@ -85,7 +85,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         let word_id_dst: SqliteId = row.get("word_id_dst")?;
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
 
-        db_edit::insert_reference(conn, ref_type_id, word_id_dst, definition_id_dst, word_id_src, definition_id_src)?;
+        db_edit::insert_reference(conn, ref_type_id, word_id_dst, definition_id_dst, word_id_src, definition_id_src, None)?;
     }
     Ok(())
 }
@@ -608,9 +608,39 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
     Ok(())
 }
 
+/// Normalizes the ranks in the DB.
+/// Reads entries in dict_shared ordered by (rank, rank_relative),
+/// then updates them to have a continuous rank sequence and rank_relative = NULL.
+///
+/// This effectively "bakes in" any relative ordering (insertions) into the main rank.
+pub fn normalize_ranks(conn: &Transaction) -> Result<(), SqliteError> {
+    // Collect all IDs first because we are modifying the columns used for sorting
+    // in the SELECT statement (rank, rank_relative), which could otherwise affect cursor iteration.
+    let mut stmt = conn.prepare(
+        "SELECT id FROM dict_shared ORDER BY rank ASC, rank_relative ASC",
+    )?;
+
+    let ids: Vec<SqliteId> = stmt
+        .query_map([], |row| row.get(0))?
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let mut stmt_update = conn.prepare_cached(
+        "UPDATE dict_shared SET rank = ?1, rank_relative = NULL WHERE id = ?2",
+    )?;
+
+    for (i, id) in ids.iter().enumerate() {
+        // Start ranks at 1 to maintain a clean counter
+        let new_rank = (i as i64) + 1;
+        stmt_update.execute(params![new_rank, id])?;
+    }
+
+    Ok(())
+}
 
 /// Re-sorts all references in the database based on the reference type configuration and destination rank.
 pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
+    normalize_ranks(conn)?;
+    
     // 1. Determine the maximum rank in the database (scaling factor)
     let rank_max: i64 = conn.query_row(
         "SELECT COALESCE(MAX(rank), 0) FROM dict_shared",

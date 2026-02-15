@@ -57,7 +57,35 @@ fn get_formatted_tags(conn: &Connection, shared_id: SqliteId) -> rusqlite::Resul
     }
 }
 
-fn format_word_defs_for_prompt(conn: &Connection, trad: &str) -> Vec<(WordEntry, String)> {
+fn format_word_defs_for_word_id(
+    conn: &Connection,
+    word_id: SqliteId,
+    exclude_tag_ids: &Vec<SqliteId>,
+) -> (WordEntry, String) {
+    let word = db_read::read_word(conn, word_id).unwrap();
+    let word_defs =
+        db_read::read_definitions_for_words(conn, &vec![word_id], &vec![], exclude_tag_ids)
+            .unwrap();
+    let mut formatted_defs = String::new();
+    for (def, def_group) in word_defs {
+        let mut tag_str = get_formatted_tags(conn, def.shared_id).unwrap();
+        if !tag_str.is_empty() {
+            tag_str.push_str(" ");
+        }
+        let indent = "    ".repeat(def.nested_level);
+        let def_str = format!(
+            "{}- D{} {}{}\n",
+            indent, def.ext_def_id, tag_str, def.definition
+        );
+        formatted_defs.push_str(&def_str);
+    }
+    (word, formatted_defs)
+}
+
+fn format_word_defs_for_prompt_trad_word(
+    conn: &Connection,
+    trad: &str,
+) -> Vec<(WordEntry, String)> {
     let exclude_tags = vec![db_read::Tag::Ascii('X'), db_read::Tag::Ascii('x')];
     let exclude_tag_ids: Vec<SqliteId> = db_read::get_tag_ids(conn, exclude_tags)
         .unwrap()
@@ -70,24 +98,7 @@ fn format_word_defs_for_prompt(conn: &Connection, trad: &str) -> Vec<(WordEntry,
     word_ids.dedup();
     let mut formatted_word_defs = vec![];
     for word_id in word_ids {
-        let word = db_read::read_word(conn, word_id).unwrap();
-
-        let word_defs =
-            db_read::read_definitions_for_words(conn, &vec![word_id], &vec![], &exclude_tag_ids)
-                .unwrap();
-        let mut formatted_defs = String::new();
-        for (def, def_group) in word_defs {
-            let mut tag_str = get_formatted_tags(conn, def.shared_id).unwrap();
-            if !tag_str.is_empty() {
-                tag_str.push_str(" ");
-            }
-            let indent = "    ".repeat(def.nested_level);
-            let def_str = format!(
-                "{}- D{} {}{}\n",
-                indent, def.ext_def_id, tag_str, def.definition
-            );
-            formatted_defs.push_str(&def_str);
-        }
+        let (word, formatted_defs) = format_word_defs_for_word_id(conn, word_id, &exclude_tag_ids);
         if !formatted_defs.is_empty() {
             formatted_word_defs.push((word, formatted_defs))
         }
@@ -120,8 +131,8 @@ pub fn create_prompts_match_definitions(
 
     // for each pair, create prompt which contains the definitions
     for (key, (word_a, word_b)) in input_pairs.iter() {
-        let word_a_defs = format_word_defs_for_prompt(conn, word_a);
-        let word_b_defs = format_word_defs_for_prompt(conn, word_b);
+        let word_a_defs = format_word_defs_for_prompt_trad_word(conn, word_a);
+        let word_b_defs = format_word_defs_for_prompt_trad_word(conn, word_b);
         let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
         for (word_a, word_a_def) in &word_a_defs {
             let word_a_str = common::format_word_def(&word_a.trad, &word_a.simp, None);
@@ -224,7 +235,7 @@ pub fn create_prompts_match_collocation_definitions(
 
     // for each pair, create prompt which contains the definitions
     for (word_trad, collocs) in word_collocs.iter() {
-        let word_defs = format_word_defs_for_prompt(conn, word_trad);
+        let word_defs = format_word_defs_for_prompt_trad_word(conn, word_trad);
 
         let mut num_prompts = 0; // should usually be 1, we don't expect many words to have more than one result in the queries
         for (word, word_def) in &word_defs {
@@ -236,7 +247,7 @@ pub fn create_prompts_match_collocation_definitions(
             let mut prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
 
             for colloc in collocs {
-                let colloc_defs = format_word_defs_for_prompt(conn, colloc);
+                let colloc_defs = format_word_defs_for_prompt_trad_word(conn, colloc);
                 if colloc_defs.is_empty() {
                     println!("no definitions for {colloc}");
                 }
@@ -260,5 +271,62 @@ pub fn create_prompts_match_collocation_definitions(
     serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
     writer.flush()?;
 
+    Ok(())
+}
+
+pub fn create_prompts_match_decomposition(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+
+    let words = db_read::read_words(conn).unwrap();
+
+    for word in &words {
+        if word.trad == "%" {
+            break;
+        }
+        // skip word if it's a single character
+        if word.trad.chars().count() == 1 {
+            continue;
+        }
+        let word_str = common::format_word_def(&word.trad, &word.simp, None);
+        let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
+        let mut prompt_txt =
+            format!("word:\n\n{word_str}\n{word_defs}\n\npossible components:\n\n");
+        let mut prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
+
+        // decompose word and add all possible components with their definitions to prompt
+        let (comp_word_ids, _unknown_chars) =
+            db_read::get_words_in_str(conn, &word.trad, db_read::SimpTrad::Trad)?;
+        for (comp_id, _) in comp_word_ids {
+            if comp_id == word.id {
+                continue;
+            }
+            let (comp_word, comp_defs) = format_word_defs_for_word_id(conn, comp_id, &vec![]);
+            let comp_str = common::format_word_def(&comp_word.trad, &comp_word.simp, None);
+            let comp_def = format!("{comp_str}\n{comp_defs}\n");
+            prompt_txt.push_str(&comp_def);
+            prompt_meta.push(format!("{};{}", comp_word.trad, comp_word.simp))
+        }
+
+        prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(word_str, prompt_meta);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
     Ok(())
 }

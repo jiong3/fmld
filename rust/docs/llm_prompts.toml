@@ -119,3 +119,58 @@ expected_schema = '''搭配: # (the collocation word)
   word_def_id: # (the definition id of the word when used with the collocation)
   col_def_id: # (the definition id of the collocation when used with the word)
 '''
+
+
+[match_decomposition]
+
+# possible prompt optimization: request decomposition for several words at once, e.g. request decompositions of decomposition words as well (recursively)
+# then add all two-character words which are made up of character already included anyway to prompt -- skipped for now since most words only have 2 characters
+# check result with existing X< references from characters and words
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers, using both traditional (繁體字) and simplified characters (简体字)."
+
+user_prompt_shared = '''
+Provided below are definitions from a dictionary for a Chinese word and all its possible decompositions into other words and characters with their definitions.
+Each definition has an id number (Dx).
+
+Identify the components (words or characters) from the subset which represent the best semantic decomposition of the word or explain the word best.
+The identified components put together should form the original word.
+
+If a definition of a component contributes to the main meanings of the decomposed word, provide the definition id for that component.
+
+In some cases the meanings of the components might not contribute to the meanings of the word. In that case provide the definition id D0 for that component.
+
+The output should consist of all components with their definition ids (or D0) separated by semicolons (;).
+Each component and its definition id should be joined by a '#' like so: 東西／东西#D1
+
+Do not add any further text before or after, no further explanations are necessary.
+
+Example prompt:
+
+word:
+英雄所見略同／英雄所见略同
+- D1 Great minds think alike.
+
+possible components:
+英雄
+...
+- D2 [figuratively, literally, martial-arts] hero
+...
+
+所
+...
+- D4 Prefix attached to verbs to form noun phrases, indicating the patient of the verb, similar to a passive participle.
+...
+
+見／见
+...
+- D6 opinion, idea, view
+...
+
+略同
+- D1 to be about the same; to be similar
+
+Expected output:
+'''
+
+expected_schema = '''英雄#D2;所#D4;見／见#D6;略同#D1'''

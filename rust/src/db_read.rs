@@ -562,6 +562,52 @@ pub fn read_tags_for_shared_id(
     Ok(tags)
 }
 
+/// Read all words
+pub fn read_words(
+    conn: &Connection,
+) -> Result<Vec<WordEntry>, SqliteError> {
+
+    let sql =
+        r"
+        SELECT DISTINCT
+            w.id,
+            w.shared_id,
+            w.simp,
+            w.trad,
+            w.variant_of
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        JOIN dict_definition def ON def.word_id = w.id
+        JOIN dict_class c ON def.class_id = c.id
+
+        ORDER BY s.rank, s.rank_relative
+    ";
+
+    let mut stmt = conn.prepare(&sql)?;
+    let mut rows = stmt.query([])?;
+
+    let mut words = vec![];
+
+    while let Some(row) = rows.next()? {
+        let word_id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let simp: String = row.get(2)?;
+        let trad: String = row.get(3)?;
+        let variant_of: Option<SqliteId> = row.get(4)?;
+
+        words.push(WordEntry {
+            id: word_id,
+            shared_id,
+            simp,
+            trad,
+            variant_of,
+            shared_ids: read_shared_ids(conn, shared_id)?,
+        });
+    }
+
+    Ok(words)
+}
+
 /// Read all words which have at least one definition with one of the provided word classes
 pub fn read_words_with_classes(
     conn: &Connection,

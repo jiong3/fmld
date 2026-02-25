@@ -1790,6 +1790,7 @@ W|w|點／点
     X<||點鈔／点钞
    D13||to choose; to select; to order (food)
    D14||to nod
+    X<||點頭／点头
    D15||to point
    D16||to tap; to touch
    D17||to click
@@ -36780,14 +36781,14 @@ W|w|推出
    D2|#literally|to push out
    D3|#aviation|to pushback an aircraft from its parking bay
 W|w|過敏／过敏
- X>|a|過／过;敏#D1
+ X>|a|過／过#D8;敏#D1
  P||guo4min3
   C adj
    D1||oversensitive; thin-skinned; touchy
   C verb
    D2|#medicine|to have an allergy; to be allergic
     X<|a|過敏反應／过敏反应
-    X{|a|容易#D2;皮膚／皮肤#D1;食物#D1;藥物／药物#D1 |A|體質／体质#D1 |a|花粉#D1
+    X{|a|對／对#D4;容易#D2;皮膚／皮肤#D1;食物#D1;藥物／药物#D1 |A|體質／体质#D1 |a|花粉#D1
     X}|a|嚴重／严重#D1 |A|症狀／症状#D1
 W|w|一點／一点
  X>|a|一#D1;點／点#D19
@@ -41044,6 +41045,7 @@ W|w|下水
     X}|A|游泳#D2
    D5||to soak in water to shrink cloth or fabric before use
    D6||to fall into evil ways; to take to evildoing
+    X<||拖下水#D2
 W|w|屍體／尸体
  X>|a|屍／尸#D1;體／体#D1
  P||shi1ti3
@@ -93249,6 +93251,7 @@ W|w|眼皮子
     X}|a|底下#D2 |A|跳動／跳动#D1
    D2|#colloquial #figurative|insight; view; scope
 W|m|拖下水
+ # todo: separable verb, not verb-object though, add ellipsis as a word to link in X> with one definition being "optional" for separable words and phrases
  X>|a|拖#D1;下;水#D1
  P||tuo1xia4shui3
   C phrase

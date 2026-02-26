@@ -245,6 +245,47 @@ pub fn convert_erhua_pinyin(conn: &Transaction) -> Result<(), SqliteError> {
     Ok(())
 }
 
+pub fn apply_definition_tags(
+    conn: &Transaction,
+    json_path: &str,
+    tags: Vec<db_read::Tag>,
+) -> Result<(), Box<dyn Error>> {
+    let file = File::open(json_path)?;
+    let reader = BufReader::new(file);
+    let entries: Vec<(String, String, usize)> = serde_json::from_reader(reader)?;
+
+    for (trad, simp, ext_def_id) in entries {
+        // Resolve Word ID
+        if let Some(word_id) = db_edit::get_word_id(conn, &trad, &simp)? {
+            // Resolve Definition ID
+            if let Some(def_id) = db_edit::get_definition_id_for_ext_id(conn, word_id, ext_def_id)?
+            {
+                // Add Tags
+                for tag in &tags {
+                    // Clone tag manually to avoid assuming Clone trait is derived/public
+                    let tag_clone = match tag {
+                        db_read::Tag::Ascii(c) => db_read::Tag::Ascii(*c),
+                        db_read::Tag::Full { name, category } => db_read::Tag::Full {
+                            name: name.clone(),
+                            category: category.clone(),
+                        },
+                    };
+                    db_edit::add_tag(conn, db_edit::EntryId::Definition(def_id), tag_clone)?;
+                }
+            } else {
+                eprintln!(
+                    "Warning: Definition not found for {} {} #{}",
+                    trad, simp, ext_def_id
+                );
+            }
+        } else {
+            eprintln!("Warning: Word not found for {} {}", trad, simp);
+        }
+    }
+
+    Ok(())
+}
+
 pub fn apply_pinyin_tags_from_json(
     conn: &Transaction,
     json_path: &str,

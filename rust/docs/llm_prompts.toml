@@ -123,10 +123,6 @@ expected_schema = '''搭配: # (the collocation word)
 
 [match_decomposition]
 
-# possible prompt optimization: request decomposition for several words at once, e.g. request decompositions of decomposition words as well (recursively)
-# then add all two-character words which are made up of character already included anyway to prompt -- skipped for now since most words only have 2 characters
-# check result with existing X< references from characters and words
-
 system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers, using both traditional (繁體字) and simplified characters (简体字)."
 
 user_prompt_shared = '''
@@ -174,3 +170,115 @@ Expected output:
 '''
 
 expected_schema = '''英雄#D2;所#D4;見／见#D6;略同#D1'''
+
+
+[identify_definitions_in_subtitles]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+Provided below are definitions from a dictionary for a Chinese word. Each definition has an id number (Dx).
+
+The goal is, based on the excerpts below, to identify those definitions which are used in modern, spoken Mandarin.
+
+The numbered text excerpts are lines of subtitles from movies and TV series. Each excerpt is independent.
+For each excerpt, provide (separated by semicolons):
+- the number of the excerpt
+- the English translation of the requested word in the context of the snippet
+- the id number of the definition which fits best to the usage of the given word in that context
+
+If no definition fits, provide the id D0. If multiple definitions could fit, separate the ids by comma (e.g. 3:D4,D8).
+
+Do not add any additional explanations or translations.
+
+Example:
+
+word:
+左右
+- D1 left and right
+- D2 left and right sides; both sides
+- D3 entourage; retinue; attendants
+- D4 about; or so; or thereabouts; around; approximately
+- D5 to control; to manipulate; to influence
+
+...
+9
+專家表示
+低溫狀態將持續一週左右
+體感濕冷
+...
+
+Response:
+'''
+
+expected_schema = '''
+9;around;D4
+'''
+
+
+[identify_stand_alone_definitions_of_chars]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+Chinese characters can have different meanings, depending on whether they are used as part of a word or independently as a word on its own.
+From the dictionary entry below, identify those definitions which refer to the usage as a stand-alone word in modern, spoken Mandarin.
+For definitions which refer to the usage as a stand-alone word in modern, spoken Mandarin, only provide the character on its own.
+For definitions which refer to the usage as a bound form, provide one common example word for that usage (in traditional characters).
+The output format shall be the definition id and the Chinese character or word, separated by a colon. Each definition id on a separate line.
+
+Example:
+
+word:
+所
+- D1 place; location
+- D2 establishment for a particular function; institution
+- D4 Prefix attached to verbs to form noun phrases, indicating the patient of the verb, similar to a passive participle.
+- D5 Used with 為／为 (wéi) or 被 (bèi) to form the passive voice.
+- D3 Classifier for buildings, schools, hospitals, etc.
+
+expected response:
+'''
+
+expected_schema = '''
+D1:住所
+D2:派出所
+D4:所得
+D5:所
+D3:所
+'''
+
+[identify_spoken_definitions_of_words]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+# note: verify result by checking if word is in short example
+
+user_prompt_shared = '''
+From the dictionary entry below, identify those definitions which are used in modern, standard, spoken Mandarin
+in China (普通話) or Taiwan (國語).
+For each definition, provide (separated by semicolon):
+- the definition id
+- a short example for the usage of this definition in traditional characters (if not possible, just the word itself)
+- a rating:
+  - standard: commonly used in standard, spoken language
+  - written: only used in written language, not in spoken language
+  - non-standard: not used in standard, spoken mandarin (could be colloquial, dialectal, regional, etc.)
+  - unknown: no clear rating possible
+
+Do not add any additional formatting, explanations or translations.
+
+Example:
+
+word:
+蝴蝶
+- D1 butterfly
+- D2 [Hokkien] hinge (device for the pivoting of a door)
+
+expected response:
+'''
+
+expected_schema = '''
+D1;蝴蝶飛來飛去;standard
+D2;蝴蝶;non-standard
+'''

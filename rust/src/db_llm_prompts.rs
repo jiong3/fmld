@@ -3,6 +3,7 @@ use crate::db_read::{self, WordEntry};
 use itertools::Itertools;
 use rusqlite::{Connection, Error as SqliteError};
 use serde::{Deserialize, Serialize};
+use std::cmp::{max, min};
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
@@ -159,6 +160,47 @@ pub fn create_prompts_match_definitions(
     Ok(())
 }
 
+pub fn get_subtitle_snippets(sub_db_conn: &Connection, trad: &str) -> Result<Vec<String>, SqliteError> {
+    let mut stmt = sub_db_conn.prepare_cached(
+            r#"
+            SELECT 
+                L1.line_trad_raw || CHAR(10) || L2.line_trad_raw || CHAR(10) || L3.line_trad_raw AS chunk
+            FROM line AS L2
+            -- 1. Use FTS to quickly find the 'center' line (Line 2)
+            JOIN fts_idx ON fts_idx.rowid = L2.id
+            -- 2. Join the previous line (Line 1) ensuring same Show ID
+            JOIN line AS L1 ON L1.id = (L2.id - 1) AND L1.show_id = L2.show_id
+            -- 3. Join the next line (Line 3) ensuring same Show ID
+            JOIN line AS L3 ON L3.id = (L2.id + 1) AND L3.show_id = L2.show_id
+            -- 4. Join the Show table to filter genres
+            JOIN "show" S ON L2.show_id = S.id
+            WHERE 
+                fts_idx.words_trad MATCH ?1
+                -- 5. Pause constraint: Sum of Line 2 and Line 3 pause < 10
+                AND (L2.pause + L3.pause) < 10
+                AND L1.line_trad_raw IS NOT NULL
+                AND L2.line_trad_raw IS NOT NULL
+                AND L3.line_trad_raw IS NOT NULL
+                -- 6. Genre exclusion logic
+                AND NOT EXISTS (
+                    SELECT 1 
+                    FROM json_each(S.info, '$.douban_genres')
+                    WHERE value IN ('Wuxia', 'Costume')
+                )
+                AND NOT S.name in ('QingChunYouNi3')
+            ORDER BY L1.id;
+            "#,
+        )?;
+    let mut rows = stmt.query([trad])?;
+
+    let mut snippets: Vec<String> = vec![];
+
+    while let Some(row) = rows.next()? {
+        snippets.push(row.get(0)?);
+    }
+    Ok(snippets)
+}
+
 pub fn create_prompts_find_collocations(
     conn: &Connection,
     prompt_templates_path: &str,
@@ -264,6 +306,159 @@ pub fn create_prompts_match_collocation_definitions(
                 .insert(prompt_key.clone(), prompt_txt);
             prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
         }
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+
+    Ok(())
+}
+
+pub fn create_prompts_identify_definitions_in_subtitles(
+    conn: &Connection,
+    sub_db_conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let max_snippets = 100;
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+    
+    // get all words in the learners section
+    let mut words_no_snippets = vec![];
+    let words = db_read::read_words(conn).unwrap();
+
+    for word in &words {
+        if word.trad == "%" {
+            break;
+        }
+        let word_str = common::format_word_def(&word.trad, &word.simp, None);
+        let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
+        let num_defs = word_defs.chars().filter(|c| *c == '\n').count();
+        let mut prompt_txt =
+            format!("dictionary entry:\n{word_str}\n{word_defs}\n\nsubtitle excerpts:\n\n");
+        let prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
+
+        // try to get subtitle snippets
+        let snippets = get_subtitle_snippets(sub_db_conn, &word.trad)?;
+        if snippets.is_empty() {
+            words_no_snippets.push(&word.trad);
+            continue;
+        }
+        let mut snippet_count = 0;
+        let step_size = max(1, snippets.len() / (min(num_defs * 10, max_snippets)));
+        for snippet in snippets.iter().step_by(step_size) {
+            snippet_count += 1;
+
+            // TODO exclude snippets which contain multiple occurances
+            let snippet_str = format!("{snippet_count}\n{snippet}\n\n");
+            prompt_txt.push_str(&snippet_str);
+        }
+
+        prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(word_str, prompt_meta);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+
+
+    for trad in words_no_snippets {
+        println!("no snippets for: {trad}");
+    }
+    Ok(())
+}
+
+pub fn create_prompts_identify_stand_alone_definitions_of_chars(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+    
+    // get all chars in the learners section
+    let words = db_read::read_words(conn).unwrap();
+
+    for word in &words {
+        if word.trad == "%" {
+            break;
+        }
+        if word.trad.chars().count() > 1 {
+            continue;
+        }
+        let word_str = common::format_word_def(&word.trad, &word.simp, None);
+        let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
+        let prompt_txt =
+            format!("dictionary entry:\n{word_str}\n{word_defs}");
+        let prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
+
+        prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(word_str, prompt_meta);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+
+    Ok(())
+}
+
+pub fn create_prompts_identify_spoken_definitions_of_words(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+    
+    // get all words, but not characters, in the learners section
+    let words = db_read::read_words(conn).unwrap();
+
+    for word in &words {
+        if word.trad == "%" {
+            break;
+        }
+        if word.trad.chars().count() == 1 {
+            continue;
+        }
+        let word_str = common::format_word_def(&word.trad, &word.simp, None);
+        let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
+        let prompt_txt =
+            format!("dictionary entry:\n{word_str}\n{word_defs}");
+        let prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
+
+        prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(word_str, prompt_meta);
     }
 
     let file = File::create(prompt_output_path)?;

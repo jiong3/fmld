@@ -12211,7 +12211,7 @@ W|w|社會／社会
   C adj
    D1|C #neologism #slang|thuggish; having the manner of a gangsta
   C noun
-   D2||society (aggregate of people living together); community
+   D2|+a|society (aggregate of people living together); community
     X<|a|社會問題／社会问题;社會地位／社会地位;社會現象／社会现象;社會福利／社会福利 ||社會秩序／社会秩序 |a|社會階層／社会阶层
     X{|a|現代／现代#D1
     X}|a|發展／发展#D1;責任／责任#D1
@@ -17685,7 +17685,7 @@ W|w|晚飯／晚饭
  X>|a|晚#D1;飯／饭#D3
  P||wan3fan4
   C noun
-   D1||dinner; supper (evening meal)
+   D1|+|dinner; supper (evening meal)
     X=|a|晚餐#D1;夜膳#D1;後晌飯／后晌饭#D1;晚膳#D1
     X{|a|吃#D1;一起#D1 |A|時間／时间#D4 |a|準備／准备#D2;煮#D1
     X}|a|前#D2
@@ -18237,7 +18237,7 @@ W|w|宿舍
  X>|a|宿#D3;舍#D1
  P||su4she4
   C noun
-   D1||dormitory; living quarters
+   D1|+|dormitory; living quarters
     XM||間／间
     X=|A|寢室／寝室#D2
     X{|a|住#D1;學生／学生#D1;員工／员工#D1
@@ -30352,11 +30352,11 @@ W|w|學長／学长
  X>|a|學／学#D4;長／长#D23
  P||xue2zhang3
   C noun
-   D1||fellow student; senior schoolmate; one's senior
+   D1|+a|fellow student; senior schoolmate; one's senior
     X=|A|師兄／师兄#D2;前輩／前辈#D1
     X{|a|優秀／优秀#D1
     X}|A|指導／指导#D2
-   D2|#specifically|senior male schoolmate
+   D2|+a #specifically|senior male schoolmate
     X=|A|前輩／前辈#D4;學姐／学姐#D1
     X}|a|學妹／学妹#D1;學姐／学姐#D1;學弟／学弟#D1
 W|w|勇
@@ -32571,7 +32571,7 @@ W|w|嫂子
  X>|a|嫂#D1;子
  P||sao3zi5
   C noun
-   D1||sister-in-law (elder brother's wife)
+   D1|+a|sister-in-law (elder brother's wife)
     X=|A|大嫂#D1 |a|嫂嫂#D1
     X{|a|哥哥#D2
    D2||friend's wife
@@ -33486,7 +33486,7 @@ W|w|挨
  P||ai1
   C character
    D1||to hit from behind; to hit the back
-   D2||to get close to; to be next to
+   D2|+a|to get close to; to be next to
    D3||to depend on; to rely on
    D4||to crowd; to push and squeeze
    D5||to follow in sequence; to be someone's turn; to go one by one
@@ -33496,7 +33496,7 @@ W|w|挨
    D9|x #Fuqing-Eastern-Min|to push
  P||ai2;ai1
   C character
-   D10||to suffer; to endure; to put up with
+   D10|+a|to suffer; to endure; to put up with
     X<||挨餓／挨饿
    D11||to drag out; to delay; to stall
    D12||to struggle to pull through; to wait (for a long time)
@@ -50057,7 +50057,7 @@ W|w|強求／强求
  X>|a|強／强#D9;求#D4
  P||qiang3qiu2 |x|qiang2qiu2
   C verb
-   D1||to force (someone) to (do something); to insist on; to impose; to make peremptory demands
+   D1|+|to force (someone) to (do something); to insist on; to impose; to make peremptory demands
     X{|a|事情#D1;不必#D1;何必#D1
     X}|A|結果／结果#D3;完美#D1
 W|w|不成
@@ -52698,7 +52698,7 @@ W|w|減輕／减轻
  X>|a|減／减#D1;輕／轻#D10
  P||jian3qing1
   C verb
-   D1||to lighten; to ease; to alleviate; to lessen; to relieve; to mitigate; to extenuate
+   D1|+|to lighten; to ease; to alleviate; to lessen; to relieve; to mitigate; to extenuate
     X=|A|降低#D1;緩解／缓解#D1 |a|壓縮／压缩#D2;收縮／收缩#D2 |A|舒緩／舒缓#D4 |a|消減／消减#D2;減損／减损#D1;省卻／省却#D1
     X}|a|壓力／压力#D3;痛苦#D3;負擔／负担#D1 |A|症狀／症状#D1 |a|重量#D1
 W|w|熱門／热门
@@ -55854,11 +55854,11 @@ W|w|惡化／恶化
  X>|a|惡／恶#D3;化
  P||e4hua4
   C verb
-   D1|#intransitive|to worsen; to deteriorate; to take a turn for the worse
+   D1|+a #intransitive|to worsen; to deteriorate; to take a turn for the worse
     X=|a|逆轉／逆转#D1 |A|退化#D2;加劇／加剧#D1;變壞／变坏#D1;變差／变差#D2
     X!|a|好轉／好转#D1
     X{|A|關係／关系#D1;情況／情况#D1 |a|狀況／状况#D2;病情#D1 |A|局勢／局势#D1
-   D2|#transitive|to make worse; to exacerbate; to harm; to damage
+   D2|+a #transitive|to make worse; to exacerbate; to harm; to damage
     X=|a|耽誤／耽误#D3
 W|w|磕
  P||ke1 |x|ke3
@@ -59161,7 +59161,7 @@ W|w|晴天
  X>|a|晴#D1;天#D5
  P||qing2tian1
   C noun
-   D1||sunny day; clear weather; fine weather
+   D1|+|sunny day; clear weather; fine weather
     X=|a|天晴#D1;好天#D1
     X<|a|晴天霹靂／晴天霹雳
     X{|A|萬里／万里#D3
@@ -64904,7 +64904,7 @@ W|w|叮囑／叮嘱
  X>|a|叮#D2;囑／嘱#D1
  P||ding1zhu3
   C verb
-   D1||to warn repeatedly; to urge; to exhort again and again
+   D1|+|to warn repeatedly; to urge; to exhort again and again
     X=|a|交代#D3;吩咐#D1;招呼#D3
     X{|a|再三#D1
     X}|a|注意#D2
@@ -65477,7 +65477,7 @@ W|w|硬是
 W|w|沙
  P||sha1
   C character
-   D1||sand
+   D1|+a|sand
     X<||沙漠;泥沙
    D2||(usually used in place names) shoal
    D3||something granular
@@ -65831,7 +65831,7 @@ W|w|悲傷／悲伤
  X>|a|悲#D1;傷／伤#D6
  P||bei1shang1
   C adj
-   D1||sad; sorrowful
+   D1|+|sad; sorrowful
     X=|a|難過／难过#D3 |A|傷心／伤心#D2 |a|難受／难受#D3 |A|悲哀#D1 |a|淒涼／凄凉#D1;悲痛#D1 |A|憂傷／忧伤#D1 |a|黯然#D2;慘淡／惨淡#D2;蒼涼／苍凉#D2;沉痛#D1;悲摧#D1;悽愴／凄怆#D1
     X{|A|心情#D1
     X}|a|故事#D1;難過／难过#D3;情緒／情绪#D1;氣氛／气氛#D1
@@ -71349,7 +71349,7 @@ W|w|問世／问世
  X>|a|問／问;世#D7
  P||wen4shi4
   C verb
-   D1||(of a publication, product, invention, etc.) to come out; to be published; to come on the scene; to come into being
+   D1|+|(of a publication, product, invention, etc.) to come out; to be published; to come on the scene; to come into being
     X=|a|誕生／诞生#D2;出世#D2;催生#D3;現世／现世#D2;生成#D3;登臺／登台#D3;行世#D1;長成／长成#D3
     X{|A|產品／产品#D1;作品#D1;著作#D1;新書／新书#D2
 W|w|藥物／药物
@@ -72054,7 +72054,7 @@ W|w|仁慈
  X>|a|仁#D1;慈#D2
  P||ren2ci2
   C adj
-   D1||humane; merciful; benevolent; kind
+   D1|+|humane; merciful; benevolent; kind
     X=|a|善良#D1;和氣／和气#D1;慈愛／慈爱#D1 |A|慈悲#D1 |a|祥和#D1
     X!|a|兇惡／凶恶#D1;猙獰／狰狞#D1
     X}|a|善良#D1 |A|上帝#D2;心腸／心肠#D2;寬厚／宽厚#D2
@@ -83830,7 +83830,7 @@ W|w|指引
     X=|a|指示#D1
     X}|a|方向#D1
   C verb
-   D2||to guide; to give directions and instructions
+   D2|+a|to guide; to give directions and instructions
     X=|a|指導／指导#D2;指揮／指挥#D4;指示#D3;指點／指点#D2;疏導／疏导#D3;引領／引领#D1;指授#D1;統御／统御#D1;董督#D1;誘導／诱导#D1
     X}|A|正確／正确#D1;人生#D1 |a|道路#D2
 W|w|概括
@@ -90537,7 +90537,7 @@ W|w|袖子
  X>|a|袖#D1;子
  P||xiu4zi5
   C noun
-   D1||sleeve (of clothing)
+   D1|+|sleeve (of clothing)
     X=|a|衣袖#D1;袖筒#D1
     X}|a|擦#D3 |A|捲起／卷起#D1
 W|m|殺掉／杀掉
@@ -92133,7 +92133,7 @@ W|w|一系列
  X>|a|一#D1;系列#D1
  P||yi1xi4lie4
   C adj
-   D1||a series of; string; catalogue; chain
+   D1|+|a series of; string; catalogue; chain
     X=|A|一連串／一连串#D1
     X}|A|問題／问题#D3;活動／活动#D4;措施#D1;改革#D1
 W|w|界限
@@ -98821,7 +98821,7 @@ W|w|撩
    D3||to wind around; to pester
    D4||to take; to pluck
    D5||to tease; to incite; to provoke
-   D6|#originally-dialectal #slang|to flirt with; to pick up
+   D6|+a #originally-dialectal #slang|to flirt with; to pick up
     X<||撩妹
  P||liao1
   C character
@@ -99027,7 +99027,7 @@ W|w|學者／学者
  X>|a|學／学#D2;者#D4
  P||xue2zhe3
   C noun
-   D1||scholar; academic
+   D1|+a|scholar; academic
     XM||個／个;名;位
     X=|A|專家／专家#D1 |a|人士#D3;書生／书生#D1;文人#D1;秀才#D3;墨客#D1;學士／学士#D3;儒生#D2;士人#D1;文士#D1 |A|研究者#D1 |a|騷人墨客／骚人墨客#D1;騷人／骚人#D1
     X{|a|專家／专家#D1
@@ -101021,7 +101021,7 @@ W|w|雄偉／雄伟
  X>|a|雄#D2;偉／伟#D1
  P||xiong2wei3
   C adj
-   D1||majestic; grand; magnificent
+   D1|+a|majestic; grand; magnificent
     X=|a|高大#D2;壯觀／壮观#D1;宏偉／宏伟#D1;壯麗／壮丽#D1;巍峨#D1;巖巖／岩岩#D2
     X}|A|建築／建筑#D1;氣勢／气势#D1;景象#D3;山峰#D1
    D2||tall and sturdy
@@ -103225,7 +103225,7 @@ W|w|宏偉／宏伟
  X>|a|宏#D1;偉／伟#D1
  P||hong2wei3
   C adj
-   D1||grand; imposing; magnificent
+   D1|+|grand; imposing; magnificent
     X=|a|龐大／庞大#D1;雄偉／雄伟#D1 |A|壯麗／壮丽#D1 |a|宏大#D1
     X}|A|計劃／计划#D1;目標／目标#D2;場面／场面#D3;工程#D2;建築／建筑#D1;規模／规模#D1;氣勢／气势#D1;藍圖／蓝图#D1
 W|w|中華／中华
@@ -108105,7 +108105,7 @@ W|w|男方
  X>|a|男#D1;方#D8
  P||nan2fang1
   C noun
-   D1||the male's side (when it contrasts with the female's side, such as in a marriage, love relationship or a competition); husband or bridegroom's side
+   D1|+|the male's side (when it contrasts with the female's side, such as in a marriage, love relationship or a competition); husband or bridegroom's side
     X!|a|女方#D1
     X}|A|代表#D1;要求#D1;家庭#D1;父母#D1 |a|家長／家长#D2;女方#D1 |A|親屬／亲属#D1
 W|w|車牌／车牌
@@ -108438,7 +108438,7 @@ W|w|一連串／一连串
  X>|a|一#D1;連串／连串#D1
  P||yi1lian2chuan4
   C adj
-   D1||a succession of; a series of; a string of; a chain of
+   D1|+|a succession of; a series of; a string of; a chain of
     X=|A|一系列#D1
     X}|a|的#D1 |A|問題／问题#D3 |a|發生／发生#D1;動作／动作#D2;數字／数字#D3 |A|事件#D1
 W|m|留有
@@ -112150,7 +112150,7 @@ W|w|毅然
  X>|a|毅#D1;然#D3
  P||yi4ran2
   C adv
-   D1||firmly; resolutely; without hesitation
+   D1|+|firmly; resolutely; without hesitation
     X<|a|毅然決然／毅然决然
     X}|A|決定／决定#D2 |a|離開／离开#D1 |A|選擇／选择#D2;接受#D1;放棄／放弃#D1;拒絕／拒绝#D1;面對／面对#D1
 W|w|憂慮／忧虑
@@ -112810,7 +112810,7 @@ W|w|防疫
  X>|a|防#D4;疫#D1
  P||fang2yi4
   C verb-object
-   D1||to prevent epidemics
+   D1|+|to prevent epidemics
     X}|A|工作#D3;人員／人员#D1;政策#D1;措施#D1;物資／物资#D1
 W|w|稱得上／称得上
  X>|a|稱／称#D2;得#D11;上#D24
@@ -123929,7 +123929,7 @@ W|w|一氣／一气
  X>|a|一#D1;氣／气
  P||yi1qi4
   C adv
-   D1||in one go; at a stretch
+   D1|+a|in one go; at a stretch
   C noun
    D2||one group (of bandits); one gang
    D3||one spell; a period of time
@@ -131627,7 +131627,7 @@ W|w|折服
    D1||to convince; to persuade
     X=|a|勸說／劝说#D1
     X{|A|令人#D4
-   D2||to be convinced; to be filled with admiration
+   D2|+a|to be convinced; to be filled with admiration
     X{|A|心悅誠服／心悦诚服#D1
 W|w|委派
  X>|a|委#D1;派#D4
@@ -134727,7 +134727,7 @@ W|w|滾燙／滚烫
  X>|a|滾／滚#D3;燙／烫#D5
  P||gun3tang4
   C adj
-   D1||boiling; scalding
+   D1|+|boiling; scalding
     X}|A|熱水／热水#D1;開水／开水#D2;燙傷／烫伤#D1
 W|w|壇／坛
  P||tan2
@@ -134961,7 +134961,7 @@ W|w|邦交
  X>|a|邦#D1;交#D6
  P||bang1jiao1
   C noun
-   D1||diplomatic relations
+   D1|+|diplomatic relations
     X<|a|邦交國／邦交国
     X{|A|恢復／恢复#D1;建立#D1;斷絕／断绝#D1
     X}|A|關係／关系#D1;外交#D1;正常化#D1
@@ -137356,7 +137356,7 @@ W|w|笨重
  X>|a|笨#D1;重#D1
  P||ben4zhong4
   C adj
-   D1||bulky; unwieldy; cumbersome
+   D1|+a|bulky; unwieldy; cumbersome
     X!|a|輕便／轻便#D1
     X}|A|機器／机器#D1;設備／设备#D1
    D2||arduous; strenuous; tiring
@@ -138495,7 +138495,7 @@ W|w|歷歷在目／历历在目
  X>|a|歷歷／历历#D1;在#D2;目#D1
  P||li4li4zai4mu4
   C phrase
-   D1||vivid in one's mind
+   D1|+|vivid in one's mind
     X=|a|記憶猶新／记忆犹新#D1
     X{|A|記憶／记忆#D1;情景#D1;往事#D1;畫面／画面#D1;景象#D3
 W|w|無償／无偿
@@ -139528,7 +139528,7 @@ W|w|便於／便于
  X>|a|便#D1;於／于#D3
  P||bian4yu2
   C verb
-   D1||to be easy to; to be convenient for
+   D1|+|to be easy to; to be convenient for
     X}|A|使用#D2;管理#D1;操作#D1;攜帶／携带#D1
 W|w|撲鼻／扑鼻
  X>|a|撲／扑;鼻#D1
@@ -143817,7 +143817,7 @@ W|w|弟媳
  X>|a|弟#D1;媳#D1
  P||di4xi2
   C noun
-   D1||sister-in-law (younger brother's wife)
+   D1|+|sister-in-law (younger brother's wife)
     X=|A|妯娌#D1 |a|弟婦／弟妇#D1;弟媳婦／弟媳妇#D1
     X}|A|關係／关系#D1;家庭#D1
 W|w|下嫁
@@ -145715,7 +145715,7 @@ W|w|火冒三丈
  X>|a|火#D7;冒#D10;三#D1;丈#D1
  P||huo3mao4san1zhang4
   C phrase
-   D1||to fly into a rage; to flare up; to lose one's temper
+   D1|+|to fly into a rage; to flare up; to lose one's temper
     X}|A|生氣／生气#D1;憤怒／愤怒#D1;怒氣／怒气#D1
 W|w|恰似
  X>|a|恰#D1;似#D1
@@ -145824,7 +145824,7 @@ W|w|熱火朝天／热火朝天
 W|w|蛆
  P||qu1
   C character
-   D1||maggot
+   D1|+a|maggot
    D2|#derogatory #figurative|despicable person
    D3|x #Puxian-Min #Southern-Min|wriggler; wiggler; mosquito larva
    D4|T #derogatory #neologism #slang|supporters of Kuomintang (KMT)
@@ -145916,7 +145916,7 @@ W|w|預言家／预言家
     X=|a|先知#D2
     X}|A|預測／预测#D1;先知#D2
 W|w|光合作用
- X>|a|光#D1;合#D2;作#D5;用#D1
+ X>|a|光合#D1;作用#D1
  P||guang1he2 zuo4yong4
   C noun
    D1|+ #biology|photosynthesis (biological process)
@@ -146655,7 +146655,7 @@ W|w|模具
  X>|a|模#D11;具#D1
  P||mo2ju4 |C|mu2ju4
   C noun
-   D1||mold; model; matrix
+   D1|+|mold; model; matrix
     X=|a|模型#D1;模子#D1
     X{|A|設計／设计#D3;開發／开发#D3
     X}|A|製造／制造#D1;精密#D1;注塑#D1
@@ -148878,7 +148878,7 @@ W|w|河川
  X>|a|河#D4;川#D1
  P||he2chuan1
   C noun
-   D1||rivers
+   D1|+|rivers
     X=|A|河流#D1
     X{|A|保護／保护#D1;污染#D1;治理#D2
     X}|A|管理#D1;生態／生态#D1;流域#D1
@@ -149120,7 +149120,7 @@ W|w|穿插
   C verb
    D2||to alternate; to do in turn
     X=|a|輪流／轮流#D1;交接#D4;交叉#D6;交替#D2;輪番／轮番#D2
-   D3||to weave in; to insert; to intersperse
+   D3|+a|to weave in; to insert; to intersperse
     X}|A|故事#D1;表演#D1;畫面／画面#D1
    D4|#military|to thrust deep into the enemy forces
 W|w|寶特瓶／宝特瓶
@@ -150429,7 +150429,7 @@ W|w|數以萬計／数以万计
  X>|a|數／数#D4;以#D2;萬／万#D3;計／计#D1
  P||shu4yi3wan4ji4
   C phrase
-   D1||numbered by the ten thousands; a large number
+   D1|+|numbered by the ten thousands; a large number
     X=|A|成千上萬／成千上万#D1
     X}|A|觀眾／观众#D1
 W|m|蘇東坡／苏东坡
@@ -152446,7 +152446,7 @@ W|w|興沖沖／兴冲冲
  X>|a|興／兴#D17;沖沖／冲冲#D1
  P||xing4chong1chong1
   C adj
-   D1||in high spirits; elated; uplifted
+   D1|+|in high spirits; elated; uplifted
     X=|a|振奮／振奋#D2;沖沖／冲冲#D1
     X!|a|不振#D1
 W|w|和緩／和缓
@@ -166630,7 +166630,7 @@ W|w|運動場／运动场
  X>|a|運動／运动#D2;場／场#D1
  P|C|yun4dong4chang3 |T|yun4dong4chang2
   C noun
-   D1||sportsfield, sports ground
+   D1|+|sportsfield, sports ground
     X}|A|操場／操场#D1;設施／设施#D1
 W|w|黨委／党委
  X>|a|黨／党#D3;委#D9
@@ -169434,7 +169434,7 @@ W|m|皮層／皮层
  X>|a|皮#D1;層／层#D3
  P||pi2ceng2
   C noun
-   D1||cortex
+   D1|+|cortex
     X{|A|大腦／大脑#D1
     X}|A|組織／组织#D2;神經／神经#D2;功能#D1;結構／结构#D1;細胞／细胞#D1
 W|m|鄭和／郑和

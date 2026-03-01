@@ -216,6 +216,8 @@ Used LLMs:
 
 If the model output the single character for a definition in both runs, this definition would be included as a candidate.
 
+The example words were added to character definitions with the 'A' (ai-only) tag if they could be confirmed by results from the decomposition prompt described above.
+
 ##### 2. Words
 
 The LLM was used to preselect definitions of words which can be considered modern, standard, spoken Mandarin in China or Taiwan.

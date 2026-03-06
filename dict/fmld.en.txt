@@ -116,12 +116,12 @@ W|w|的
    D10||really; truly; certainly
  P||de5;di4
   C character
-   D11|+a|Used after an attribute. Indicates that the previous word has possession of the next one. It functions like ’s in English (or like the word “of” but with the position of possessor and possessee switched). ’s; of
-   D12||Used to link a noun, an adjective or a phrase to a noun to describe it. that; who
-   D13||Used to form a noun phrase or nominal expression.
-   D14||Used after a verb or between a verb and its object to stress an element of the sentence. It can be used with 是 (shì) to surround the stressed element.
-   D15||Used at the end of a declarative sentence for emphasis.
-   D16||Used to express the idea of “of that kind”.
+   D11|+|Used after an attribute. Indicates that the previous word has possession of the next one. It functions like ’s in English (or like the word “of” but with the position of possessor and possessee switched). ’s; of
+   D12|+|Used to link a noun, an adjective or a phrase to a noun to describe it. that; who
+   D13|+|Used to form a noun phrase or nominal expression.
+   D14|+|Used after a verb or between a verb and its object to stress an element of the sentence. It can be used with 是 (shì) to surround the stressed element.
+   D15|+|Used at the end of a declarative sentence for emphasis.
+   D16|+|Used to express the idea of “of that kind”.
    D17|#informal|Used to express multiplication or addition. and, by
  P||di2;di4 |C|di1
   C character
@@ -136,9 +136,9 @@ W|w|是
     X<||是日
     D2|x #archaic #literary|a pronoun that refers to an anteposed object of the verb, usually introduced by the a topicalizer or constrative like 唯 in the form of 唯 …… 是 + V, adding emphasis to the object of the verb. Compare 之 (zhī), which as a pronoun can also refers to the topic as the object, and in earlier forms was also placed before the verb.
    D12|#copulative|to be
-    D3|+a|indicating that the subject and object are the same.
+    D3|+|indicating that the subject and object are the same.
      X=|A|等於／等于#D1
-    D4||indicating that the subject has the qualities described by a noun or noun phrase.
+    D4|+|indicating that the subject has the qualities described by a noun or noun phrase.
     D5||indicating a place being occupied by the object, where the place forms the subject.
    D6||a particle emphasizing the word following it.
    D7||a particle showing agreement. In this meaning, 是 is stressed. truly; indeed.
@@ -150,9 +150,11 @@ W|w|是
 W|w|不
  P||bu4
   C character
-   D1|+a|(preceding verbs and adjectives) not
+   D1|+|(preceding verbs and adjectives) not
     X=|A|沒／没#D5
-   D2|+a|(between a verb and a complement) cannot
+    X{|a|完全#D2;根本#D2;絲毫／丝毫#D1;一概#D1
+    X}|a|知道#D1;需要#D3;相信#D1;願意／愿意#D1;明白#D4;適合／适合#D1;滿意／满意#D1;合適／合适#D1;允許／允许#D1
+   D2|+|(between a verb and a complement) cannot
    D3||Used as an answer of refutation to a polar question: no (to a positive polar question); yes (to a negative polar question)
    D4||Used with 就 (jiù) to indicate the first of two alternatives.
    D5|#regional|Used to form polar questions, placed at the end of a question.
@@ -167,7 +169,7 @@ W|w|不
 W|w|他
  P||ta1 |x|tuo1
   C character
-   D1|+a|(originally gender-neutral; nowadays usually referring to males) he; him; she; her
+   D1|+|(originally gender-neutral; nowadays usually referring to males) he; him; she; her
     X=|A|她#D1
    D2||A dummy pronoun. Compare object pronoun 之 (zhī)
    D3||other; another
@@ -176,7 +178,7 @@ W|w|他
 W|w|嗎／吗
  P||ma5
   C character
-   D1|+a|Final interrogative particle, forming yes/no questions.
+   D1|+|Final interrogative particle, forming yes/no questions.
  P||ma3
   C character
    D2||Used as a phonetic character.
@@ -190,6 +192,7 @@ W|w|這／这
    D1|+a|this; these
     X=|A|那#D1
     X!|a|那#D1
+    X}|a|方面#D1;期間／期间#D1;一輩子／一辈子#D1
    D2||Synonym of 這樣／这样 (“like this; such”)
    D3||at this moment; right away; at once
    D4||here
@@ -202,10 +205,13 @@ W|w|這／这
 W|w|有
  P||you3
   C character
-   D1|+a|to have; to possess (when a subject is present)
+   D1|+|to have; to possess (when a subject is present)
     X=|A|擁有／拥有#D1;具備／具备#D1;具有#D1
     X!|a|沒／没#D1
-   D2||there is; to exist (when a subject is absent)
+    X}|a|好處／好处#D3;規定／规定#D1;耐心#D2;想法#D1;勇氣／勇气#D1;緣分／缘分#D1
+   D2|+|there is; to exist (when a subject is absent)
+    X{|a|總共／总共#D1;手邊／手边#D1;一共#D1
+    X}|a|問題／问题#D2;辦法／办法#D1;機會／机会#D1;起色#D1;必要#D2
    D3|#euphemistic|to be pregnant with a child
    D4||abundant; affluent
    D5||many; much; (of time) long; (of age) old
@@ -224,8 +230,10 @@ W|w|有
 W|w|也
  P||ye3
   C character
-   D1|+a|also; too; as well; (in negative sentences) neither; either
+   D1|+|also; too; as well; (in negative sentences) neither; either
     X=|A|都#D6;還／还#D7
+    X{|a|反正#D1;同時／同时#D2;偶爾／偶尔#D2
+    X}|a|同樣／同样#D2;算是#D2;不至於／不至于#D1;無能為力／无能为力#D1;不怎麼樣／不怎么样#D1;不好受#D1
    D5||Used for emphasis.
     X<||連……也……／连……也……#D1
     D2||With object fronting.
@@ -243,7 +251,10 @@ W|w|很
   C character
    D1|+a|very; rather; quite
     X=|A|真#D3 |a|非常#D2 |A|特別／特别#D4;挺#D6 |a|十分#D1 |A|極／极#D7;不得了#D3;相當／相当#D2 |a|超#D5;超級／超级#D2;異常／异常#D2;極其／极其#D1;頗／颇#D2;極端／极端#D2;極度／极度#D1
-   D2||(especially before monosyllabic adjectives) (no meaning, see usage note)
+    X{|a|覺得／觉得#D1;的確／的确#D1;一向#D1;看起來／看起来#D1;看上去#D1;聽起來／听起来#D1
+    X}|a|喜歡／喜欢#D2;漂亮#D1;容易#D1;重要#D1;高興／高兴#D1;舒服#D1;好吃#D1;簡單／简单#D1;奇怪#D1
+   D2||(especially before monosyllabic adjectives)
+     N? Mandarin speakers have a strong tendency to avoid monosyllabic terms. In order to satisfy this restriction, [很] is added before monosyllabic adjectives without any actual meaning.
    D7|x #obsolete|(original senses)
     D3||to disobey; to defy; to be querulous
     D4||struggle; dispute; lawsuit
@@ -257,10 +268,6 @@ W|w|個／个
    D2||height; build; stature
     X<||個子／个子;個兒／个儿
    D3|x #dialectal-Hakka #dialectal-Wu|(dialectal Min) one
-   D4|+a|The generic classifier for people or for things lacking specific classifiers.
-    X=|A|件#D4;張／张#D8;門／门#D9;支#D7;頂／顶#D10;篇#D4;項／项#D4;盞／盏#D2
-    X<||一個人／一个人
-   D6||Alternative classifier, for nouns having specific classifiers. Often colloquial and regional. Usage varies greatly between different topolects.
    D7|#colloquial|Particle, placed between a verb and numbers, showing that the following numbers are approximate, not accurate.
    D8|#colloquial|Particle used after 些 (xiē).
    D9||Particle between a verb and its complement.
@@ -271,14 +278,20 @@ W|w|個／个
    D13|x #Teochew|to be
    D14|x #Shanghainese #dated|Used to indicate the past tense.
   C classifier
-   D5||Classifier for hours and months.
+   D4|+|Generic classifier for people or for things lacking specific classifiers.
+    X<||一個人／一个人
+   D5|+|Classifier for hours and months.
+    X}|a|小時／小时#D1
+   D6|+|Alternative classifier, for nouns having specific classifiers. Often colloquial and regional. Usage varies greatly between different topolects.
 W|w|好
  P||hao3
   C character
-   D1|+a|good; well
+   D1|+|good; well
     X=|a|美好#D1
     X!|a|壞／坏#D1;衰#D1
     X<||好人
+    X{|a|運氣／运气#D2;酒量#D1;記性／记性#D1;心腸／心肠#D1;口才#D1;地段#D1;記憶力／记忆力#D1
+    X}|a|消息#D1;主意#D1;下場／下场#D1;榜樣／榜样#D1;眼力#D1
    D29||Used as an interjection.
     D2||good; very well; nice
     D3|+a|OK; alright
@@ -287,17 +300,19 @@ W|w|好
    D5||friendly; close; acquainted
     X<|A|友好 ||好朋友
    D6|#specifically|to start dating; to become romantic partners
-   D7||done; ready
+   D7|+|done; ready
     X<|A|好了
    D8||to be good to; easy to
    D9||(making it) convenient; easy for
-   D10||to recover from an illness
-   D11|+a|very; quite; rather; so
-    X=|a|非常#D2 |A|棒#D5 |a|十分#D1;超級／超级#D2
+   D10|+|to recover from an illness
+   D11|+|very; quite; rather; so
+    X=|a|很#D1;非常#D2;十分#D1;超級／超级#D2
+    X}|a|漂亮#D1;
    D12||a pleasure to (do something); good for (doing something)
     X<||好吃;好聽／好听;好用
    D13||(after a verb) properly; carefully
-   D14||Particle used after verbs to denote the completion or near-completion of an action.
+   D14|+|Particle used after verbs to denote the completion or near-completion of an action.
+    X{|a|準備／准备#D2;安頓／安顿#D2
    D15||Used after a noun or pronoun as a greeting.
     X<||你好;大家好
    D16||greeting
@@ -341,6 +356,7 @@ W|w|我們／我们
     X=|a|咱們／咱们#D1 |A|咱#D2 |a|吾儕／吾侪#D1;吾輩／吾辈#D1;我曹#D1;我輩／我辈#D1
    D2||(academic writing) we; us (referring to the author(s) of the paper, even if the paper has only one author)
 W|w|都
+ # todo: collocations below
  P||du1
   C character
    D1||metropolis; large city

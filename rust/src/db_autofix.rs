@@ -55,7 +55,7 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         r"
         SELECT
             original_ref.id,
-            original_ref.ref_type_id,
+            original_ref.ascii_symbol,
             original_ref.word_id_src,
             original_ref.definition_id_src,
             original_ref.word_id_dst,
@@ -63,11 +63,11 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         FROM
             dict_reference AS original_ref
         JOIN
-            dict_ref_type AS ref_type ON original_ref.ref_type_id = ref_type.id
+            dict_ref_type AS ref_type ON original_ref.ascii_symbol = ref_type.ascii_symbol
         LEFT JOIN
             dict_reference AS symmetric_ref ON original_ref.word_id_src = symmetric_ref.word_id_dst
                                             AND original_ref.word_id_dst = symmetric_ref.word_id_src
-                                            AND original_ref.ref_type_id = symmetric_ref.ref_type_id
+                                            AND original_ref.ascii_symbol = symmetric_ref.ascii_symbol
                                             AND (original_ref.definition_id_src = symmetric_ref.definition_id_dst OR (original_ref.definition_id_src IS NULL AND symmetric_ref.definition_id_dst IS NULL))
                                             AND (original_ref.definition_id_dst = symmetric_ref.definition_id_src OR (original_ref.definition_id_dst IS NULL AND symmetric_ref.definition_id_src IS NULL))
         WHERE
@@ -79,13 +79,13 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
     let mut rows = stmt_missing_references.query([])?;
 
     while let Some(row) = rows.next()? {
-        let ref_type_id: SqliteId = row.get("ref_type_id")?;
+        let ascii_symbol: String = row.get("ascii_symbol")?;
         let word_id_src: SqliteId = row.get("word_id_src")?;
         let definition_id_src: Option<SqliteId> = row.get("definition_id_src")?;
         let word_id_dst: SqliteId = row.get("word_id_dst")?;
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
 
-        db_edit::insert_reference(conn, ref_type_id, word_id_dst, definition_id_dst, word_id_src, definition_id_src, None)?;
+        db_edit::insert_reference(conn, ascii_symbol.chars().next().unwrap(), word_id_dst, definition_id_dst, word_id_src, definition_id_src, None)?;
     }
     Ok(())
 }
@@ -106,9 +106,9 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
         FROM
             dict_reference AS ref1
         JOIN
-            dict_ref_type AS ref_type ON ref1.ref_type_id = ref_type.id
+            dict_ref_type AS ref_type ON ref1.ascii_symbol = ref_type.ascii_symbol
         JOIN
-            dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst AND ref1.word_id_dst = ref2.word_id_src AND ref1.ref_type_id = ref2.ref_type_id AND (ref1.definition_id_src = ref2.definition_id_dst OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL)) AND (ref1.definition_id_dst = ref2.definition_id_src OR (ref1.definition_id_dst IS NULL AND ref2.definition_id_src IS NULL))
+            dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst AND ref1.word_id_dst = ref2.word_id_src AND ref1.ascii_symbol = ref2.ascii_symbol AND (ref1.definition_id_src = ref2.definition_id_dst OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL)) AND (ref1.definition_id_dst = ref2.definition_id_src OR (ref1.definition_id_dst IS NULL AND ref2.definition_id_src IS NULL))
         -- Get tags from ref1
         JOIN
             dict_shared_tag AS tags1 ON ref1.shared_id = tags1.for_shared_id
@@ -130,9 +130,9 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
         FROM
             dict_reference AS ref1
         JOIN
-            dict_ref_type AS ref_type ON ref1.ref_type_id = ref_type.id
+            dict_ref_type AS ref_type ON ref1.ascii_symbol = ref_type.ascii_symbol
         JOIN
-            dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst AND ref1.word_id_dst = ref2.word_id_src AND ref1.ref_type_id = ref2.ref_type_id AND (ref1.definition_id_src = ref2.definition_id_dst OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL)) AND (ref1.definition_id_dst = ref2.definition_id_src OR (ref1.definition_id_dst IS NULL AND ref2.definition_id_src IS NULL))
+            dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst AND ref1.word_id_dst = ref2.word_id_src AND ref1.ascii_symbol = ref2.ascii_symbol AND (ref1.definition_id_src = ref2.definition_id_dst OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL)) AND (ref1.definition_id_dst = ref2.definition_id_src OR (ref1.definition_id_dst IS NULL AND ref2.definition_id_src IS NULL))
         -- Get tags from ref2
         JOIN
             dict_shared_tag AS tags2 ON ref2.shared_id = tags2.for_shared_id
@@ -156,10 +156,10 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
             note_id = (
                 SELECT shared2.note_id
                 FROM dict_reference AS ref1
-                JOIN dict_ref_type AS ref_type ON ref1.ref_type_id = ref_type.id
+                JOIN dict_ref_type AS ref_type ON ref1.ascii_symbol = ref_type.ascii_symbol
                 JOIN dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst
                     AND ref1.word_id_dst = ref2.word_id_src
-                    AND ref1.ref_type_id = ref2.ref_type_id
+                    AND ref1.ascii_symbol = ref2.ascii_symbol
                     AND (ref1.definition_id_src = ref2.definition_id_dst
                         OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL))
                     AND (ref1.definition_id_dst = ref2.definition_id_src
@@ -175,10 +175,10 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
             AND dict_shared.id IN (
                 SELECT ref1.shared_id
                 FROM dict_reference AS ref1
-                JOIN dict_ref_type AS ref_type ON ref1.ref_type_id = ref_type.id
+                JOIN dict_ref_type AS ref_type ON ref1.ascii_symbol = ref_type.ascii_symbol
                 JOIN dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst
                     AND ref1.word_id_dst = ref2.word_id_src
-                    AND ref1.ref_type_id = ref2.ref_type_id
+                    AND ref1.ascii_symbol = ref2.ascii_symbol
                     AND (ref1.definition_id_src = ref2.definition_id_dst
                         OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL))
                     AND (ref1.definition_id_dst = ref2.definition_id_src
@@ -196,10 +196,10 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
             note_id = (
                 SELECT shared1.note_id
                 FROM dict_reference AS ref2
-                JOIN dict_ref_type AS ref_type ON ref2.ref_type_id = ref_type.id
+                JOIN dict_ref_type AS ref_type ON ref2.ascii_symbol = ref_type.ascii_symbol
                 JOIN dict_reference AS ref1 ON ref2.word_id_src = ref1.word_id_dst
                     AND ref2.word_id_dst = ref1.word_id_src
-                    AND ref2.ref_type_id = ref1.ref_type_id
+                    AND ref2.ascii_symbol = ref1.ascii_symbol
                     AND (ref2.definition_id_src = ref1.definition_id_dst
                         OR (ref2.definition_id_src IS NULL AND ref1.definition_id_dst IS NULL))
                     AND (ref2.definition_id_dst = ref1.definition_id_src
@@ -215,10 +215,10 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
             AND dict_shared.id IN (
                 SELECT ref2.shared_id
                 FROM dict_reference AS ref2
-                JOIN dict_ref_type AS ref_type ON ref2.ref_type_id = ref_type.id
+                JOIN dict_ref_type AS ref_type ON ref2.ascii_symbol = ref_type.ascii_symbol
                 JOIN dict_reference AS ref1 ON ref2.word_id_src = ref1.word_id_dst
                     AND ref2.word_id_dst = ref1.word_id_src
-                    AND ref2.ref_type_id = ref1.ref_type_id
+                    AND ref2.ascii_symbol = ref1.ascii_symbol
                     AND (ref2.definition_id_src = ref1.definition_id_dst
                         OR (ref2.definition_id_src IS NULL AND ref1.definition_id_dst IS NULL))
                         AND (ref2.definition_id_dst = ref1.definition_id_src
@@ -522,7 +522,7 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         r"
         SELECT
             r.shared_id,
-            r.ref_type_id,
+            r.ascii_symbol,
             r.word_id_src,
             r.definition_id_src,
             r.word_id_dst,
@@ -530,7 +530,7 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
             rt.is_symmetric
         FROM dict_reference r
         JOIN dict_shared_tag st ON r.shared_id = st.for_shared_id
-        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        JOIN dict_ref_type rt ON r.ascii_symbol = rt.ascii_symbol
         WHERE st.tag_id = ?1
         ",
     )?;
@@ -544,14 +544,14 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
 
     while let Some(row) = rows.next()? {
         let shared_id: SqliteId = row.get(0)?;
-        let ref_type_id: SqliteId = row.get(1)?;
+        let ascii_symbol: String = row.get(1)?;
         let w_src: SqliteId = row.get(2)?;
         let d_src: Option<SqliteId> = row.get(3)?;
         let w_dst: SqliteId = row.get(4)?;
         let d_dst: Option<SqliteId> = row.get(5)?;
         let is_symmetric: bool = row.get(6)?;
 
-        candidates.push((shared_id, ref_type_id, w_src, d_src, w_dst, d_dst, is_symmetric));
+        candidates.push((shared_id, ascii_symbol, w_src, d_src, w_dst, d_dst, is_symmetric));
     }
     // Drop the statement to free the borrow on conn
     drop(rows);
@@ -562,7 +562,7 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         r"
         SELECT shared_id 
         FROM dict_reference 
-        WHERE ref_type_id = ?1
+        WHERE ascii_symbol = ?1
           AND word_id_src = ?2
           AND definition_id_src IS ?3
           AND word_id_dst = ?4
@@ -570,14 +570,14 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         ",
     )?;
 
-    for (shared_id, ref_type_id, w_src, d_src, w_dst, d_dst, is_symmetric) in candidates {
+    for (shared_id, ascii_symbol, w_src, d_src, w_dst, d_dst, is_symmetric) in candidates {
         shared_ids_to_delete.insert(shared_id);
 
         if is_symmetric {
             // Find reference where Src and Dst are swapped
             // Note: We map arguments: (ref_id, w_dst, d_dst, w_src, d_src)
             let inverse_rows = stmt_find_inverse.query_map(
-                params![ref_type_id, w_dst, d_dst, w_src, d_src],
+                params![ascii_symbol, w_dst, d_dst, w_src, d_src],
                 |row| row.get(0),
             )?;
 
@@ -661,7 +661,7 @@ pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
             s_ref.rank as current_ref_rank
         FROM dict_reference r
         JOIN dict_shared s_ref ON r.shared_id = s_ref.id
-        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        JOIN dict_ref_type rt ON r.ascii_symbol = rt.ascii_symbol
         -- Source Joins
         JOIN dict_word w_src ON r.word_id_src = w_src.id
         JOIN dict_shared s_src_word ON w_src.shared_id = s_src_word.id

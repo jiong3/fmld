@@ -330,7 +330,7 @@ impl<'a> DbToTxt<'a> {
         let mut stmt = self.conn.prepare_cached(
             r"
             SELECT
-                rt.ascii_symbol,
+                r.ascii_symbol,
                 r.shared_id,
                 s.note_id,
                 s.comment_id,
@@ -339,7 +339,6 @@ impl<'a> DbToTxt<'a> {
                 def_dst.ext_def_id
             FROM dict_reference r
             JOIN dict_shared s ON r.shared_id = s.id
-            JOIN dict_ref_type rt ON r.ref_type_id = rt.id
             JOIN dict_word w_dst ON r.word_id_dst = w_dst.id
             LEFT JOIN dict_definition def_dst ON r.definition_id_dst = def_dst.id
             LEFT JOIN dict_definition def_src ON r.definition_id_src = def_src.id

@@ -456,21 +456,13 @@ impl<'a> TxtToDb<'a> {
                     (ref_type_full, reference.ref_type.to_string(), is_symmetric),
                 )
                 .unwrap();
-            let ref_type_id: SqliteId = self
-                .conn
-                .query_row(
-                    "SELECT id FROM dict_ref_type WHERE type=?1 ",
-                    (ref_type_full,),
-                    |row| row.get(0),
-                )
-                .unwrap();
             // create reference and link to shared_id
             let mut stmt = self
             .conn
-            .prepare_cached("INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
+            .prepare_cached("INSERT INTO dict_reference (shared_id, ascii_symbol, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
             stmt.execute((
                 reference.shared_id,
-                ref_type_id,
+                reference.ref_type.to_string(),
                 reference.src_word_id,
                 reference.src_definition_id,
                 dst_word_id,

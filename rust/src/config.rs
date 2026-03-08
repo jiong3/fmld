@@ -7,7 +7,9 @@ pub const APPROX_TXT_FILE_SIZE: usize = 20_000_000;
 
 pub const DB_SCHEMA: &str = r#"
 
-PRAGMA user_version = 2;
+PRAGMA user_version = 3;
+
+/* ------------------- generated start ---------------------- */
 
 /* Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.
 
@@ -22,11 +24,11 @@ The order of the text file is preserved using the rank field (dict_shared). New 
 ext_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id */
 CREATE TABLE IF NOT EXISTS "dict_definition" (
 	"id" INTEGER NOT NULL UNIQUE,
+	-- constant id, used for referencing definitions in the text representation of from external sources
+	"ext_def_id" INTEGER NOT NULL,
 	"shared_id" INTEGER NOT NULL,
 	"word_id" INTEGER NOT NULL,
 	"definition" TEXT NOT NULL,
-	-- constant id, used for referencing definitions in the text representation of from external sources
-	"ext_def_id" INTEGER NOT NULL,
 	"class_id" INTEGER NOT NULL,
 	"parent_id" INTEGER,
 	PRIMARY KEY("id"),
@@ -96,11 +98,12 @@ CREATE TABLE IF NOT EXISTS "dict_pron_definition" (
 
 CREATE INDEX IF NOT EXISTS "dict_pron_definition_index_0"
 ON "dict_pron_definition" ("definition_id");
-/* Relationship from a to b, e.g. measureword, antonym, synonym or variant. */
+/* Relationship from a to b, e.g. measureword, antonym, synonym or variant.
+Link to dict_ref_type uses the ascii_symbol so that the symbol is available in dict_reference directly to enable a partial unique index, exluding certain reference types from the unique constraint */
 CREATE TABLE IF NOT EXISTS "dict_reference" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
-	"ref_type_id" INTEGER NOT NULL,
+	"ascii_symbol" TEXT NOT NULL,
 	"word_id_src" INTEGER NOT NULL,
 	"definition_id_src" INTEGER,
 	"word_id_dst" INTEGER NOT NULL,
@@ -116,15 +119,12 @@ CREATE TABLE IF NOT EXISTS "dict_reference" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("definition_id_dst") REFERENCES "dict_definition"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("ref_type_id") REFERENCES "dict_ref_type"("id")
+	FOREIGN KEY ("ascii_symbol") REFERENCES "dict_ref_type"("ascii_symbol")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE INDEX IF NOT EXISTS "dict_reference_index_0"
 ON "dict_reference" ("word_id_src", "definition_id_src");
-
-CREATE UNIQUE INDEX IF NOT EXISTS "dict_reference_index_unique"
-ON "dict_reference" ("ref_type_id", "word_id_src", "definition_id_src", "word_id_dst", "definition_id_dst");
 /* dict_shared enables linking tags, notes or references to different entries in other tables
 rank indicates the order of the element, it is a continuous counter
 rank_relative can be used to add new elements with a certain order between two successive ranks */
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS "dict_ref_type" (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_ref_type_index_0"
-ON "dict_ref_type" ("type");
+ON "dict_ref_type" ("ascii_symbol");
 CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
@@ -201,27 +201,97 @@ CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* Example sentence for a definition, word_id is included to ensure uniqueness of word + ext_sen_id */
+CREATE TABLE IF NOT EXISTS "dict_sentence" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"ext_sen_id" INTEGER NOT NULL,
+	"shared_id" INTEGER NOT NULL,
+	"for_word_id" INTEGER NOT NULL,
+	"for_definition_id" INTEGER NOT NULL,
+	"sentence" TEXT NOT NULL,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("for_word_id") REFERENCES "dict_word"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("for_definition_id") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
 
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_example_index_0"
+ON "dict_sentence" ("word_id", "ext_sen_id");
 
-/* Views (for manual browsing) */
-CREATE VIEW trad_simp_class_pinyin_def AS
-SELECT
-    w.trad,
-    w.simp,
-    c.name AS class_name,
-    GROUP_CONCAT(p.pinyin_mark ORDER BY p_s.rank, p_s.rank_relative),
-    def.ext_def_id,
-    def.definition
-FROM dict_definition def
-JOIN dict_shared s ON def.shared_id = s.id
-JOIN dict_word w ON def.word_id = w.id
-JOIN dict_class c ON def.class_id = c.id
-LEFT JOIN dict_pron_definition pdp ON def.id = pdp.definition_id
-LEFT JOIN dict_shared_pron sp ON pdp.shared_pron_id = sp.id
-LEFT JOIN dict_pron p ON sp.pron_id = p.id
-LEFT JOIN dict_shared p_s ON sp.shared_id = p_s.id
-GROUP BY def.id
-ORDER BY s.rank, s.rank_relative;
+CREATE INDEX IF NOT EXISTS "dict_sentence_index_1"
+ON "dict_sentence" ("for_definition_id");
+/* Translations for any string in the dictionary which is seen by the user and in English in the original dictionary. */
+CREATE TABLE IF NOT EXISTS "dict_translation" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"txt" TEXT NOT NULL,
+	"lang" TEXT NOT NULL,
+	"dict_note_id" INTEGER,
+	"dict_def_id" INTEGER,
+	"dict_sen_id" INTEGER,
+	"dict_tag_id" INTEGER,
+	"dict_ref_type_id" INTEGER,
+	"dict_class_id" INTEGER,
+	PRIMARY KEY("id"),
+	FOREIGN KEY ("dict_ref_type_id") REFERENCES "dict_ref_type"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("dict_note_id") REFERENCES "dict_note"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("dict_def_id") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("dict_sen_id") REFERENCES "dict_sentence"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("dict_tag_id") REFERENCES "dict_tag"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("dict_class_id") REFERENCES "dict_class"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_note_index_0"
+ON "dict_translation" ("dict_note_id");
+
+CREATE INDEX IF NOT EXISTS "dict_translation_index_1"
+ON "dict_translation" ("dict_def_id");
+
+CREATE INDEX IF NOT EXISTS "dict_translation_index_2"
+ON "dict_translation" ("dict_sen_id");
+
+CREATE INDEX IF NOT EXISTS "dict_translation_index_3"
+ON "dict_translation" ("dict_tag_id");
+
+CREATE INDEX IF NOT EXISTS "dict_translation_index_4"
+ON "dict_translation" ("dict_ref_type_id");
+
+CREATE INDEX IF NOT EXISTS "dict_translation_index_5"
+ON "dict_translation" ("dict_class_id");
+/* In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.
+The word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank. */
+CREATE TABLE IF NOT EXISTS "dict_sentence_word" (
+	"sentence_id" INTEGER NOT NULL,
+	"word_rank" INTEGER NOT NULL,
+	"word_id" INTEGER NOT NULL,
+	"definition_id" INTEGER,
+	PRIMARY KEY("sentence_id", "word_rank"),
+	FOREIGN KEY ("sentence_id") REFERENCES "dict_sentence"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("definition_id") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_sen_word_index_0"
+ON "dict_sentence_word" ("sentence_id", "sentence_rank");
+
+/* ------------------- generated end ---------------------- */
+
+/* don't enforce unique contraint on decomposition references, since the same component might appear multiple times */
+CREATE UNIQUE INDEX IF NOT EXISTS "dict_reference_index_unique"
+ON "dict_reference" ("ascii_symbol", "word_id_src", "definition_id_src", "word_id_dst", "definition_id_dst")
+WHERE ascii_symbol != ">";
+
 
 "#;
 
@@ -230,7 +300,7 @@ ORDER BY s.rank, s.rank_relative;
 /// A symmetric reference should exist in both directions
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bool, u8)> {
     Some(match ref_type_char {
-		'>' => ("contains", false, false, 1), // source word contains destination word (or definition)
+		'>' => ("contains", false, false, 1), // source word contains destination word (or definition), duplicates allowed
         'M' => ("used-with-measure-word", false, false, 2), // source word is used with destination measure-word / classifier
 		'=' => ("synonym", true, true, 4), // source has the same or a very similar meaning as destination
 		'%' => ("cross-strait", true, true, 6), // links two definitions with the same meaning but one is used in Taiwan, the other in China
@@ -240,8 +310,9 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bo
         'v' => ("character-variant-of", false, false, 14),
         '<' => ("part-of", false, true, 18), // source word is part of destination word (or definition)
 		'{' => ("collocation-before", false, true, 20), // destination words usually appear before source word
+		'.' => ("collocation-within", false, true, 21), // destination words usually appear within source word (e.g. separable verbs, grammar patterns)
 		'}' => ("collocation-after", false, true, 22), // destination words usually appear after source word
-        'G' => ("word-group", false, false, 24), // fixed groups like North, South, East, West etc.
+        'G' => ("word-group", true, false, 24), // groups like North, South, East, West etc.
         _ => {
             return None;
         }
@@ -259,6 +330,8 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6),
         'a' => ("ai-partly", "ai", 6),
+		'E' => ("explanation-only", "explanation", 9), // the definition is not a translation but an explanation
+		'e' => ("explanation-partly", "explanation", 9), // the definition contains both a translation and an explanation
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
         '+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary

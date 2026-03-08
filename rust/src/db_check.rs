@@ -86,12 +86,12 @@ pub fn check_conflicting_notes_on_symmetric_references(
         FROM
             dict_reference AS ref1
         JOIN
-            dict_ref_type AS ref_type ON ref1.ref_type_id = ref_type.id
+            dict_ref_type AS ref_type ON ref1.ascii_symbol = ref_type.ascii_symbol
         -- This self-join finds the symmetric pair
         JOIN
             dict_reference AS ref2 ON ref1.word_id_src = ref2.word_id_dst
                                 AND ref1.word_id_dst = ref2.word_id_src
-                                AND ref1.ref_type_id = ref2.ref_type_id
+                                AND ref1.ascii_symbol = ref2.ascii_symbol
                                 AND (ref1.definition_id_src = ref2.definition_id_dst OR (ref1.definition_id_src IS NULL AND ref2.definition_id_dst IS NULL))
                                 AND (ref1.definition_id_dst = ref2.definition_id_src OR (ref1.definition_id_dst IS NULL AND ref2.definition_id_src IS NULL))
         -- Joins to get note information
@@ -295,7 +295,7 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
             wd.trad AS dst_trad,
             wd.simp AS dst_simp
         FROM dict_reference r
-        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        JOIN dict_ref_type rt ON r.ascii_symbol = rt.ascii_symbol
         JOIN dict_shared s ON r.shared_id = s.id
         JOIN dict_word ws ON r.word_id_src = ws.id
         JOIN dict_word wd ON r.word_id_dst = wd.id

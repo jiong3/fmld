@@ -307,7 +307,7 @@ pub fn convert_db_to_denormalized(
         let mut select_stmt = source_conn.prepare(
             r#"
             SELECT
-                r.id, r.ref_type_id, r.word_id_src, r.definition_id_src,
+                r.id, r.ascii_symbol, r.word_id_src, r.definition_id_src,
                 r.word_id_dst, r.definition_id_dst, s.note_id, r.shared_id
             FROM dict_reference r
             JOIN dict_shared s ON r.shared_id = s.id
@@ -315,7 +315,7 @@ pub fn convert_db_to_denormalized(
         )?;
         let mut insert_stmt = tx.prepare_cached(
             r#"
-            INSERT INTO dict_reference (id, ref_type, word_id_src, definition_id_src, word_id_dst, definition_id_dst, note_id, tags)
+            INSERT INTO dict_reference (id, ascii_symbol, word_id_src, definition_id_src, word_id_dst, definition_id_dst, note_id, tags)
             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)
             "#,
         )?;
@@ -325,7 +325,7 @@ pub fn convert_db_to_denormalized(
             let (tags, _full_tags) = tags_map.get(&shared_id).cloned().unwrap_or_default();
             insert_stmt.execute(params![
                 row.get::<_, SqliteId>(0)?, // id
-                row.get::<_, SqliteId>(1)?, // ref_type_id -> ref_type
+                row.get::<_, SqliteId>(1)?, // ascii_symbol
                 row.get::<_, SqliteId>(2)?, // word_id_src
                 row.get::<_, Option<SqliteId>>(3)?, // definition_id_src
                 row.get::<_, SqliteId>(4)?, // word_id_dst

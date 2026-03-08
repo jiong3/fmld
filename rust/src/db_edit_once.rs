@@ -507,7 +507,7 @@ pub fn add_references_from_json(
     with_ascii_tags: Vec<char>,
 ) -> Result<(), Box<dyn Error>> {
     // Determine id of reference type
-    let ref_type_id = db_edit::get_ref_type_id(conn, ref_type)?
+    let _ = db_edit::get_ref_type_id(conn, ref_type)?
         .ok_or_else(|| format!("Reference type '{}' not found", ref_type))?;
 
     // Get tag ids for all ascii tags
@@ -550,7 +550,7 @@ pub fn add_references_from_json(
             // Forward direction: Source -> Destination
             let Ok((_, shared_id_fwd, newly_added)) = db_edit::insert_reference(
                 conn,
-                ref_type_id,
+                ref_type,
                 s_id,
                 src_def_id,
                 d_id,
@@ -571,7 +571,7 @@ pub fn add_references_from_json(
             if add_dst_to_src && newly_added {
                 let Ok((_, shared_id_inv, newly_added)) = db_edit::insert_reference(
                     conn,
-                    ref_type_id,
+                    ref_type,
                     d_id,
                     dst_def_id,
                     s_id,
@@ -884,7 +884,7 @@ pub fn fix_contains_references_from_part_of(conn: &Transaction) -> Result<usize,
             r.definition_id_src AS comp_def_id,
             r.word_id_dst AS whole_word_id
         FROM dict_reference r
-        JOIN dict_ref_type rt ON r.ref_type_id = rt.id
+        JOIN dict_ref_type rt ON r.ascii_symbol = rt.ascii_symbol
         WHERE rt.ascii_symbol = '<'
           AND r.definition_id_src IS NOT NULL
         ",
@@ -910,7 +910,7 @@ pub fn fix_contains_references_from_part_of(conn: &Transaction) -> Result<usize,
         SET definition_id_dst = ?1
         WHERE word_id_src = ?2
           AND word_id_dst = ?3
-          AND ref_type_id = (SELECT id FROM dict_ref_type WHERE ascii_symbol = '>')
+          AND ascii_symbol = '>'
           AND definition_id_src IS NULL
         ",
     )?;
@@ -935,7 +935,7 @@ SELECT
   dst_def.definition AS dest_definition
 FROM dict_reference
 JOIN dict_ref_type
-  ON dict_reference.ref_type_id = dict_ref_type.id
+  ON dict_reference.ascii_symbol = dict_ref_type.ascii_symbol
 -- Join Source Definition and Word
 JOIN dict_definition AS src_def
   ON dict_reference.definition_id_src = src_def.id

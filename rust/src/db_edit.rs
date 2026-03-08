@@ -19,20 +19,21 @@ pub enum EntryId {
 #[allow(clippy::too_many_arguments)]
 pub fn insert_reference(
     conn: &Transaction,
-    ref_type_id: SqliteId,
+    ascii_symbol: char,
     src_word_id: SqliteId,
     src_def_id: Option<SqliteId>,
     dst_word_id: SqliteId,
     dst_def_id: Option<SqliteId>,
     rank_relative: Option<usize>,
 ) -> Result<(SqliteId, SqliteId, bool), SqliteError> {
-    // Check if the reference already exists to avoid duplicates
+    // Check if the reference already exists to avoid duplicates (also ensured by partial unique index)
+    if ascii_symbol != '>'
     {
         let mut stmt_check = conn.prepare_cached(
             r"
             SELECT id, shared_id 
             FROM dict_reference 
-            WHERE ref_type_id = ?1 
+            WHERE ascii_symbol = ?1 
               AND word_id_src = ?2 
               AND definition_id_src IS ?3 
               AND word_id_dst = ?4 
@@ -42,7 +43,7 @@ pub fn insert_reference(
 
         // SQLite's IS operator matches NULLs if the parameter is NULL (None)
         let result = stmt_check.query_row(
-            params![ref_type_id, src_word_id, src_def_id, dst_word_id, dst_def_id],
+            params![ascii_symbol.to_string(), src_word_id, src_def_id, dst_word_id, dst_def_id],
             |row| Ok((row.get(0)?, row.get(1)?)),
         );
 
@@ -58,24 +59,24 @@ pub fn insert_reference(
         let mut stmt = conn.prepare_cached(
             r"
             SELECT COALESCE(
-                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src = ?2 AND r.ref_type_id = ?3),
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src = ?2 AND r.ascii_symbol = ?3),
                 (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src = ?2),
                 (SELECT s.rank FROM dict_definition d JOIN dict_shared s ON d.shared_id = s.id WHERE d.id = ?2)
             )
             ",
         )?;
-        stmt.query_row(params![src_word_id, def_id, ref_type_id], |row| row.get(0))?
+        stmt.query_row(params![src_word_id, def_id, ascii_symbol.to_string()], |row| row.get(0))?
     } else {
         let mut stmt = conn.prepare_cached(
             r"
             SELECT COALESCE(
-                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src IS NULL AND r.ref_type_id = ?2),
+                (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src IS NULL AND r.ascii_symbol = ?2),
                 (SELECT MAX(s.rank) FROM dict_reference r JOIN dict_shared s ON r.shared_id = s.id WHERE r.word_id_src = ?1 AND r.definition_id_src IS NULL),
                 (SELECT s.rank FROM dict_word w JOIN dict_shared s ON w.shared_id = s.id WHERE w.id = ?1)
             )
             ",
         )?;
-        stmt.query_row(params![src_word_id, ref_type_id], |row| row.get(0))?
+        stmt.query_row(params![src_word_id, ascii_symbol.to_string()], |row| row.get(0))?
     };
 
     // Insert into dict_shared
@@ -91,13 +92,13 @@ pub fn insert_reference(
     // Insert into dict_reference
     let mut stmt_insert_ref = conn.prepare_cached(
         r"
-        INSERT INTO dict_reference (shared_id, ref_type_id, word_id_src, definition_id_src, word_id_dst, definition_id_dst)
+        INSERT INTO dict_reference (shared_id, ascii_symbol, word_id_src, definition_id_src, word_id_dst, definition_id_dst)
         VALUES (?1, ?2, ?3, ?4, ?5, ?6);
         ",
     )?;
     stmt_insert_ref.execute(params![
         shared_id,
-        ref_type_id,
+        ascii_symbol.to_string(),
         src_word_id,
         src_def_id,
         dst_word_id,

@@ -210,8 +210,8 @@ W|w|有
     X!|a|沒／没#D1
     X}|a|好處／好处#D3;規定／规定#D1;耐心#D2;想法#D1;勇氣／勇气#D1;緣分／缘分#D1
    D2|+|there is; to exist (when a subject is absent)
-    X{|a|總共／总共#D1;手邊／手边#D1;一共#D1
-    X}|a|問題／问题#D2;辦法／办法#D1;機會／机会#D1;起色#D1;必要#D2
+    X{|a|一共#D1;總共／总共#D1;手邊／手边#D1
+    X}|a|問題／问题#D2;辦法／办法#D1;機會／机会#D1;必要#D2;起色#D1
    D3|#euphemistic|to be pregnant with a child
    D4||abundant; affluent
    D5||many; much; (of time) long; (of age) old
@@ -250,7 +250,7 @@ W|w|很
  P||hen3
   C character
    D1|+a|very; rather; quite
-    X=|A|真#D3 |a|非常#D2 |A|特別／特别#D4;挺#D6 |a|十分#D1 |A|極／极#D7;不得了#D3;相當／相当#D2 |a|超#D5;超級／超级#D2;異常／异常#D2;極其／极其#D1;頗／颇#D2;極端／极端#D2;極度／极度#D1
+    X=|a|好#D11 |A|真#D3 |a|非常#D2 |A|特別／特别#D4;挺#D6 |a|十分#D1 |A|極／极#D7;不得了#D3;相當／相当#D2 |a|超#D5;超級／超级#D2;異常／异常#D2;極其／极其#D1;頗／颇#D2;極端／极端#D2;極度／极度#D1
     X{|a|覺得／觉得#D1;的確／的确#D1;一向#D1;看起來／看起来#D1;看上去#D1;聽起來／听起来#D1
     X}|a|喜歡／喜欢#D2;漂亮#D1;容易#D1;重要#D1;高興／高兴#D1;舒服#D1;好吃#D1;簡單／简单#D1;奇怪#D1
    D2||(especially before monosyllabic adjectives)
@@ -279,6 +279,7 @@ W|w|個／个
    D14|x #Shanghainese #dated|Used to indicate the past tense.
   C classifier
    D4|+|Generic classifier for people or for things lacking specific classifiers.
+    X=|A|件#D4;張／张#D8;門／门#D9;支#D7;頂／顶#D10;篇#D4;項／项#D4;盞／盏#D2
     X<||一個人／一个人
    D5|+|Classifier for hours and months.
     X}|a|小時／小时#D1
@@ -306,8 +307,8 @@ W|w|好
    D9||(making it) convenient; easy for
    D10|+|to recover from an illness
    D11|+|very; quite; rather; so
-    X=|a|很#D1;非常#D2;十分#D1;超級／超级#D2
-    X}|a|漂亮#D1;
+    X=|a|很#D1;非常#D2 |A|棒#D5 |a|十分#D1;超級／超级#D2
+    X}|a|漂亮#D1
    D12||a pleasure to (do something); good for (doing something)
     X<||好吃;好聽／好听;好用
    D13||(after a verb) properly; carefully
@@ -356,7 +357,7 @@ W|w|我們／我们
     X=|a|咱們／咱们#D1 |A|咱#D2 |a|吾儕／吾侪#D1;吾輩／吾辈#D1;我曹#D1;我輩／我辈#D1
    D2||(academic writing) we; us (referring to the author(s) of the paper, even if the paper has only one author)
 W|w|都
- # todo: collocations below
+ # todo: collocations for active defintions (+) of single characters below still have to be added
  P||du1
   C character
    D1||metropolis; large city
@@ -1002,7 +1003,7 @@ W|w|怎麼／怎么
   C verb
    D5||to do or become in what way
 W|w|謝謝／谢谢
- X>|a|謝／谢#D8
+ X>|a|謝／谢#D8;謝／谢#D8
  P||xie4xie5
   C intj
    D1|+a|thanks; thank you
@@ -1868,7 +1869,7 @@ W|w|四
    D4|#printing|English; The size of type between 小四 (little 4) and 小三 (little 3), standardized as 14 point.
    D5|#music|Kunqu gongche notation for the note low la (6̣).
 W|w|看看
- X>|a|看#D1
+ X>|a|看#D1;看#D1
  P||kan4kan4
   C adv
    D1||placed at the end of a sentence to indicate a suggestion, interchangeable with 看一下.
@@ -3086,7 +3087,7 @@ W|w|寫／写
    D15||Used in 寫意／写意 (xièyì, “comfortable; easy”).
    D16||Alternative form of 瀉／泻 (xiè, “to pour out; to leak”)
 W|w|好好
- X>|a|好#D11
+ X>|a|好#D11;好#D11
  P||hao3hao3 |x|hao3hao1
   C adj
    D1||very good; very well
@@ -3436,7 +3437,7 @@ W|w|以前
     X{|a|從／从#D5;好久#D1
     X}|a|生活#D1;從來／从来#D1
 W|w|昨天
- X>|a|天#D6
+ X>|a|昨;天#D6
  P||zuo2tian1
   C noun
    D1|+|yesterday
@@ -3595,7 +3596,7 @@ W|w|早
    D7|x #Hainanese|breakfast
    D8||a surname
 W|w|媽媽／妈妈
- X>|a|媽／妈#D1
+ X>|a|媽／妈#D1;媽／妈#D1
  P||ma1ma5 |x|ma3ma2
   C noun
    D1|+a #informal|mum (mom); mama
@@ -4656,7 +4657,7 @@ W|w|韆／千
   C character
    D1|&|swing (hanging seat)
 W|w|爸爸
- X>|a|爸#D1
+ X>|a|爸#D1;爸#D1
  P||ba4ba5 |x|ba3ba2
   C noun
    D1|+a #informal|dad; papa
@@ -6252,7 +6253,7 @@ W|w|向
    D12||name of two places in modern Henan
    D13||a surname
 W|w|哥哥
- X>|a|哥#D1
+ X>|a|哥#D1;哥#D1
  P||ge1ge5 |x|ge3ge2
   C name
    D1|#colloquial|Leslie Cheung (Cantopop singer)
@@ -6597,7 +6598,7 @@ W|w|發生／发生
     X=|A|出現／出现#D1 |a|產生／产生#D2;爆發／爆发#D2
     X}|a|什麼／什么#D1 |A|問題／问题#D3 |a|事情#D1;變化／变化#D1;意外#D2;衝突／冲突#D1;事故#D1;火災／火灾#D1
 W|w|姐姐
- X>|a|姐#D1
+ X>|a|姐#D1;姐#D1
  P||jie3jie5 |x|jie3jie2
   C noun
    D1|+a|elder sister; big sister
@@ -6714,7 +6715,7 @@ W|w|小時／小时
    D3|+a|childhood
     X=|a|童年#D1;幼年#D1;髫齔／髫龀#D1
 W|w|慢慢
- X>|a|慢#D1
+ X>|a|慢#D1;慢#D1
  P||man4man4 |x|man4man1
   C adv
    D1|+a|slowly; leisurely
@@ -6867,7 +6868,7 @@ W|w|參加／参加
    D2||to put forth (a point of view); to express (an opinion)
     X=|a|表示#D2;表現／表现#D5;表達／表达#D1;發揮／发挥#D2;發表／发表#D2;展現／展现#D2;提起#D4;表述#D1
 W|w|妹妹
- X>|a|妹#D1
+ X>|a|妹#D1;妹#D1
  P||mei4mei5 |x|mei3mei2
   C noun
    D1|+a|younger sister
@@ -8199,7 +8200,7 @@ W|w|其他;其它
     X=|a|別的／别的#D1;其餘／其余#D1
     X}|a|人#D5;地方#D2 |A|問題／问题#D3 |a|事情#D1;選擇／选择#D1;原因#D1;部分#D1;方面#D1;國家／国家#D1;人員／人员#D1;因素#D1
 W|w|弟弟
- X>|a|弟#D1
+ X>|a|弟#D1;弟#D1
  P||di4di5 |x|di3di2
   C noun
    D1|+a|younger brother
@@ -9031,7 +9032,7 @@ W|w|滿／满
   C classifier
    D12|x #Hakka|Classifier for occurrences of events.
 W|w|剛剛／刚刚
- X>|a|剛／刚#D5
+ X>|a|剛／刚#D5;剛／刚#D5
  P||gang1gang1
   C adv
    D1|+a|just; just now; a moment ago
@@ -9428,7 +9429,7 @@ W|w|上班
     X}|a|遲到／迟到#D1;下班#D1;路上#D2;打卡#D1
    D2||to be open (for business); to be trading
 W|w|叔叔
- X>|a|叔#D1
+ X>|a|叔#D1;叔#D1
  P|C|shu1shu5 |T|shu2shu5 |-T|shu3shu2
   C noun
    D1||paternal uncle (father's younger brother)
@@ -10642,7 +10643,7 @@ W|w|常
    D7||51st tetragram of the Taixuanjing; "constancy" (𝌸)
    D8||a surname
 W|w|常常
- X>|a|常#D3
+ X>|a|常#D3;常#D3
  P||chang2chang2
   C adv
    D1|+|frequently; often
@@ -11352,7 +11353,7 @@ W|w|有意思
    D3|+a|enjoyable; fun
    D4||having interest (in someone); having affection (for someone)
 W|w|越來越／越来越
- X>|a|越#D10;來／来
+ X>|a|越#D10;來／来;越#D10
  P||yue4lai2yue4
   C adv
    D1|+|more and more; increasingly
@@ -11975,7 +11976,7 @@ W|w|約／约
   C character
    D22||cord for the string of a stringed instrument
 W|w|太太
- X>|a|太#D5
+ X>|a|太#D5;太#D5
  P||tai4tai5
   C noun
    D1|+a|An honorific for adults, usually conferred on married women following the surname of their husband: Mrs
@@ -13818,7 +13819,7 @@ W|w|果然
   C noun
    D4|x #historical #literary|a kind of long-tailed ape
 W|w|爺爺／爷爷
- X>|a|爺／爷#D2
+ X>|a|爺／爷#D2;爺／爷#D2
  P||ye2ye5 |x|ye3ye2
   C noun
    D1|+a #colloquial|paternal grandfather
@@ -13899,7 +13900,7 @@ W|w|整理
     X=|A|收#D6;佈置／布置#D3 |a|清理#D3
     X}|a|資料／资料#D2 |A|文件#D1;檔案／档案#D1
 W|w|奶奶
- X>|a|奶#D7
+ X>|a|奶#D7;奶#D7
  P||nai3nai5 |x|nai3nai2
   C noun
    D1|+a #Jin #Northern-Min #endearing #informal|paternal grandmother; gramma; granny
@@ -18486,7 +18487,7 @@ W|w|想不到
     X{|a|真#D3;萬萬／万万#D1
     X}|a|這麼／这么#D1;辦法／办法#D1 |A|結果／结果#D2 |a|竟然#D1;居然#D1
 W|w|多多
- X>|a|多#D1
+ X>|a|多#D1;多#D1
  P||duo1duo1
   C adj
    D1||many; lots; as much as possible
@@ -20351,7 +20352,7 @@ W|w|由於／由于
    D2||owing to; due to; as a result of; because of
     X=|a|因為／因为#D2 |A|多虧／多亏#D1
 W|w|不得不
- X>|a|不#D1;得
+ X>|a|不#D1;得#D13;不#D1
  P||bu4de2bu4
   C verb
    D1|+|have no choice but to; cannot but; have to
@@ -20421,7 +20422,7 @@ W|w|糊塗／糊涂
    D2||messy; disordered; chaotic
     X=|a|混亂／混乱#D1;亂七八糟／乱七八糟#D1;凌亂／凌乱#D1;雜亂／杂乱#D1;烏七八糟／乌七八糟#D1;紊亂／紊乱#D1;擾擾／扰扰#D1;散亂／散乱#D1;無序／无序#D1;狼藉#D1;紛亂／纷乱#D1;蕪雜／芜杂#D1
 W|w|輕輕／轻轻
- X>|a|輕／轻#D8
+ X>|a|輕／轻#D8;輕／轻#D8
  P||qing1qing1
   C adv
    D1|+a|lightly; gently; softly
@@ -22962,7 +22963,7 @@ W|w|發揮／发挥
    D2||to develop (an idea); to express; to elaborate
     X=|a|參加／参加#D2;表示#D2;表現／表现#D5;表達／表达#D1;提出#D1;發表／发表#D2;展現／展现#D2;表述#D1
 W|w|明明
- X>|a|明#D3
+ X>|a|明#D3;明#D3
  P||ming2ming2
   C adv
    D1|+|obviously; plainly; clearly; also often used in an "even though"-type sentence
@@ -23830,7 +23831,7 @@ W|w|爺／爷
    D5|#honorific|term of address for gods and the Buddha
    D6|xC #Northern-China #colloquial #derogatory #familiar|(male) I; me
 W|w|氣氛／气氛
- X>|a|氣／气
+ X>|a|氣／气;氛
  P||qi4fen1 |x|qi4fen4
   C noun
    D1|+|atmosphere; ambiance
@@ -25678,7 +25679,7 @@ W|w|溫柔／温柔
     X{|A|性格#D1
     X}|A|聲音／声音#D1 |a|善良#D1;體貼／体贴#D1 |A|眼神#D1
 W|m|說幹就幹／说干就干
- X>|a|說／说#D1;幹／干#D2;就#D10
+ X>|a|說／说#D1;幹／干#D2;就#D10;幹／干#D2
  P||shuo1gan4jiu4gan4
   C phrase
    D1||to do what needs to be done, without delay
@@ -25717,7 +25718,7 @@ W|w|扛
     X=|A|背#D13
    D4||to contradict
 W|w|往往
- X>|a|往
+ X>|a|往;往
  P||wang3wang3
   C adv
    D1|+a|often
@@ -25927,7 +25928,7 @@ W|w|囂張／嚣张
     X{|a|態度／态度#D1;氣焰／气焰#D1
     X}|A|行為／行为#D1
 W|w|人人
- X>|a|人#D1
+ X>|a|人#D1;人#D1
  P||ren2ren2
   C noun
    D1|+a|everyone; everybody; all of us
@@ -26690,7 +26691,7 @@ W|w|平安
   C noun
    D6||(～卦) A combination 二上三中二下 in the Lingqijing.
 W|w|偏偏
- X>|a|偏#D9
+ X>|a|偏#D9;偏#D9
  P||pian1pian1
   C adv
    D1|+a|wilfully; insistently; persistently
@@ -27333,7 +27334,7 @@ W|w|不要緊／不要紧
     X=|a|無所謂／无所谓#D4
     X{|a|沒事／没事#D1
 W|m|逛逛
- X>|a|逛#D1
+ X>|a|逛#D1;逛#D1
  P|C|guang4guang5 |T|guang4guang4
   C verb
    D1|+|to roam around; to have a stroll
@@ -27571,7 +27572,7 @@ W|w|圍／围
    D4||(often in Guangdong and Hong Kong place names) walled village
    D5|#medicine|peri-
 W|w|舅舅
- X>|a|舅#D1
+ X>|a|舅#D1;舅#D1
  P||jiu4jiu5
   C noun
    D1|+ #colloquial|maternal uncle (mother's brother)
@@ -28323,7 +28324,7 @@ W|w|出院
     X{|a|可以#D4;已經／已经#D1;醫生／医生#D1;辦理／办理#D1
     X}|a|手續／手续#D1;回家#D1
 W|w|寶寶／宝宝
- X>|a|寶／宝#D8
+ X>|a|寶／宝#D8;寶／宝#D8
  P||bao3bao5;bao3bao3
   C noun
    D1|+a|baby; newborn
@@ -30914,7 +30915,7 @@ W|w|北京
     D9||Zhongdu (one of the capitals of Jin dynasty)—in modern-day Beijing
     D10||Kaifeng Fu (Ming dynasty)—in modern-day Kaifeng, Henan province
 W|w|悄悄
- X>|a|悄#D1
+ X>|a|悄#D1;悄#D1
  P|C|qiao1qiao1 |T|qiao3qiao3
   C adj
    D1|+a|quiet; silent
@@ -32717,7 +32718,7 @@ W|w|護照／护照
     X{|A|檢查／检查#D2;申請／申请#D2;辦理／办理#D1;遺失／遗失#D1 |a|持有#D1
     X}|A|有效#D1;過期／过期#D1
 W|w|伯伯
- X>|a|伯#D2
+ X>|a|伯#D2;伯#D2
  P||bo2bo5 |x|bai3bai5;bai1bai5;bo3bo2
   C noun
    D1|+a #endearing #informal|paternal uncle (father's elder brother)
@@ -32874,7 +32875,7 @@ W|w|要緊／要紧
   C adv
    D3|x #dialectal|in a hurry to; anxious to
 W|w|姑姑
- X>|a|姑#D1
+ X>|a|姑#D1;姑#D1
  P||gu1gu5 |x|gu1gu1;gu3gu2
   C noun
    D1|+a|father's sister; paternal aunt
@@ -35227,7 +35228,7 @@ W|w|撥／拨
   C classifier
    D18|+a|Classifier for people or things: group; batch
 W|w|滿滿／满满
- X>|a|滿／满#D1
+ X>|a|滿／满#D1;滿／满#D1
  P||man3man3
   C adj
    D1|+a|full of; brimming with
@@ -35235,7 +35236,7 @@ W|w|滿滿／满满
   C noun
    D2|x #Xiang|paternal uncle (father's younger brother)
 W|w|星星
- X>|a|星#D1
+ X>|a|星#D1;星#D1
  P||xing1xing1;xing1xing5
   C name
    D1||(～社區) Xingxing (a community of Chengzhong, Yingcheng, Xiaogan, Hubei, China)
@@ -36667,7 +36668,7 @@ W|w|認同／认同
     X<|a|文化認同／文化认同
     X}|A|身份#D1
 W|m|試一試／试一试
- X>|a|試／试#D2;一#D9
+ X>|a|試／试#D2;一#D9;試／试#D2
  P||shi4yi1shi4
   C verb
    D1|+|to have a try
@@ -37140,7 +37141,7 @@ W|w|師父／师父
    D2||term of address for a Buddhist monk or a nun
     X}|a|教導／教导#D2
 W|w|平平
- X>|a|平#D8
+ X>|a|平#D8;平#D8
  P||ping2ping2 |x|pian2pian2
   C adj
    D1|+a|mediocre; average
@@ -37209,7 +37210,7 @@ W|w|拔
    D10|xC #Quanzhou #Xiamen-and-Zhangzhou-Hokkien|to suck away someone else's chi (said as done by some people)
    D11||a surname
 W|w|重重
- X>|a|重#D11
+ X>|a|重#D11;重#D11
  P||chong2chong2
   C adj
    D1|+a|layer upon layer; level by level; multi-layered; encircled; surrounded (as in a besieged city or fortress)
@@ -37241,7 +37242,7 @@ W|w|比例
     X}|A|協調／协调#D1;適當／适当#D1;失調／失调#D3
    D3|#cartography|scale
 W|w|娃娃
- X>|a|娃#D4
+ X>|a|娃#D4;娃#D4
  P||wa2wa5
   C noun
    D1||baby
@@ -37542,7 +37543,7 @@ W|w|伺候
    D3||to wait for; to await
     X=|a|等待#D1;等候#D1;守候#D1
 W|w|眼睜睜／眼睁睁
- X>|a|眼#D1;睜／睁#D2
+ X>|a|眼#D1;睜／睁#D2;睜／睁#D2
  P||yan3zheng1zheng1
   C adj
    D1|+|looking on helplessly or unfeelingly
@@ -39163,7 +39164,7 @@ W|w|告辭／告辞
     X!|a|會合／会合#D1
     X{|a|先#D1 |A|主人#D2
 W|m|忽高忽低
- X>|a|忽#D1;高#D1;低#D1
+ X>|a|忽#D1;高#D1;忽#D1;低#D1
  P||hu1gao1hu1di1
   C phrase
    D1||alternately soaring and plunging
@@ -39267,7 +39268,7 @@ W|w|翻臉／翻脸
     X{|A|突然#D2
     X}|a|無情／无情#D1
 W|w|饅頭／馒头
- X>|a|頭／头
+ X>|a|饅／馒;頭／头
  P||man2tou5 |x|man2tou2
   C noun
    D1|+a|Chinese steamed bun (without filling); mantou
@@ -39770,7 +39771,7 @@ W|w|保
    D7|x #historical|bao (a unit of the ancient administrative system, consisting of some 100 households)
    D8||a surname: Bao
 W|w|狠狠
- X>|a|狠#D2
+ X>|a|狠#D2;狠#D2
  P||hen3hen3
   C adj
    D1|+a|fierce and malicious; ferocious
@@ -40322,7 +40323,7 @@ W|w|寵物／宠物
     X{|A|照顧／照顾#D3;飼養／饲养#D1
     X}|a|醫院／医院#D1;店#D1 |A|主人#D1;食品#D1;用品#D1
 W|m|一點一點／一点一点
- X>|a|一點／一点#D1
+ X>|a|一點／一点#D1;一點／一点#D1
  P||yi1dian3yi1dian3
   C adv
    D1|+|little by little; bit by bit; gradually
@@ -40358,7 +40359,7 @@ W|w|整體／整体
     X=|a|全體／全体#D1;全盤／全盘#D2 |A|大體／大体#D2 |a|總體／总体#D1;一體／一体#D1;悉數／悉数#D2
     X}|A|發展／发展#D1 |a|效果#D1;水平#D2;形象#D2 |A|利益#D1;觀念／观念#D1;規劃／规划#D1
 W|w|堂堂
- X>|a|堂#D3
+ X>|a|堂#D3;堂#D3
  P||tang2tang2
   C adj
    D1|- #literary|imposing; magnificent; majestic; stately
@@ -40847,7 +40848,7 @@ W|w|女孩子
     X}|a|可愛／可爱#D1;溫柔／温柔#D1 |A|活潑／活泼#D1
    D2||daughter
 W|w|默默
- X>|a|默#D1
+ X>|a|默#D1;默#D1
  P||mo4mo4
   C adv
    D1|+|quietly (without uttering a word); silently; in silence
@@ -41475,7 +41476,7 @@ W|m|遞給／递给
   C verb
    D1||to hand it (i.e. the aforementioned item) to (sb)
 W|w|偷偷
- X>|a|偷#D2
+ X>|a|偷#D2;偷#D2
  P||tou1tou1
   C adv
    D1|+|in secret; secretively; stealthily; without being detected
@@ -42267,7 +42268,7 @@ W|w|指教
     X<|a|不吝指教;多多指教
     X{|a|請／请#D8;批評／批评#D2
 W|w|等等
- X>|a|等#D6
+ X>|a|等#D6;等#D6
  P||deng3deng3
   C adv
    D1|+a|et cetera (etc.); and so on
@@ -42344,7 +42345,7 @@ W|w|淋
    D7|#TCM|strangury; urinary urgency and pain on urination
    D8|#pathology|gonorrhoea (i.e. “dripping”)
 W|w|口口聲聲／口口声声
- X>|a|口#D1;聲／声#D3
+ X>|a|口#D1;口#D1;聲／声#D3;聲／声#D3
  P||kou3kou3sheng1sheng1 |C|kou3kou5sheng1sheng1
   C phrase
    D1|+|keep on (saying); repeatedly (say); (say) over and over again
@@ -43086,7 +43087,7 @@ W|w|巨
    D5||Short for 巨港 (Jùgǎng, “Palembang”).
    D6|#neologism|super; very
 W|w|緊緊／紧紧
- X>|a|緊／紧#D1
+ X>|a|緊／紧#D1;緊／紧#D1
  P||jin3jin3
   C adv
    D1|+|closely; firmly; tightly
@@ -43217,7 +43218,7 @@ W|w|違背／违背
     X!|a|遵循#D1
     X}|a|原則／原则#D1 |A|道德#D2 |a|意願／意愿#D1;良心#D2;承諾／承诺#D1;誓言#D1 |A|諾言／诺言#D1;初衷#D1
 W|w|動不動／动不动
- X>|a|動／动#D7;不#D1
+ X>|a|動／动#D7;不#D1;動／动#D7
  P||dong4bu4dong4
   C adv
    D1|+|(usually of something undesirable) often; frequently; happening easily
@@ -43842,7 +43843,7 @@ W|w|暴
   C character
    D9||Used in 暴樂／暴乐 (bóluò).
 W|w|辛辛苦苦
- X>|a|辛#D2;苦#D3
+ X>|a|辛#D2;辛#D2;苦#D3;苦#D3
  P||xin1xin1ku3ku3
   C adj
    D1|+|laborious; hard; miserable; exhausting
@@ -45925,7 +45926,7 @@ W|w|釐米／厘米
    D1|+|centimetre
     X=|A|公分#D1
 W|w|深深
- X>|a|深#D7
+ X>|a|深#D7;深#D7
  P||shen1shen1
   C adv
    D1|- #literary|deeply
@@ -46267,7 +46268,7 @@ W|w|溫帶／温带
    D1||temperate zone; tepid zone (the zone between the tropics and the polar regions)
     X}|A|國家／国家#D1;地區／地区#D2;氣候／气候#D1
 W|w|天天
- X>|a|天#D6
+ X>|a|天#D6;天#D6
  P||tian1tian1
   C adj
    D1|x #Hakka|naive; innocent
@@ -47592,7 +47593,7 @@ W|w|想開／想开
     X{|A|事情#D1 |a|勸／劝#D2 |A|放下#D4
     X}|a|點／点#D1;一點／一点#D1 |A|釋懷／释怀#D1
 W|w|紛紛／纷纷
- X>|a|紛／纷#D4
+ X>|a|紛／纷#D4;紛／纷#D4
  P||fen1fen1
   C adj
    D1|#ideophonic|numerous and confused; in droves; in great numbers
@@ -47665,7 +47666,7 @@ W|w|需
    D4||should; ought to; must
    D5||fifth hexagram of the I Ching
 W|w|統統／统统
- X>|a|統／统#D4
+ X>|a|統／统#D4;統／统#D4
  P||tong3tong3
   C adv
    D1|+|all; entirely; completely; fully; totally
@@ -48166,7 +48167,7 @@ W|w|循環／循环
    D2|+a #medicine|(of blood) to circulate
     X<|a|循環系統／循环系统
 W|w|無緣無故／无缘无故
- X>|a|無／无#D10;緣／缘#D6;故#D2
+ X>|a|無／无#D10;緣／缘#D6;無／无#D10;故#D2
  P||wu2yuan2wu2gu4
   C adv
    D1|+|without cause or reason; for no reason at all
@@ -48257,7 +48258,7 @@ W|w|陷入
     X=|a|迷戀／迷恋#D1;沉迷#D1;入迷#D1;沉溺#D2;沉陷#D2;瘋魔／疯魔#D2;醉心#D1
     X}|A|沉思#D1
 W|w|嚷嚷
- X>|a|嚷#D1
+ X>|a|嚷#D1;嚷#D1
  P||rang3rang3 |C|rang1rang5 |T|rang1rang1
   C verb
    D1|+a #colloquial|to yell; to be noisy
@@ -48962,7 +48963,7 @@ W|w|危害
     X=|A|影響／影响#D9;威脅／威胁#D1 |a|傷害／伤害#D4;損傷／损伤#D5 |A|損害／损害#D1
     X}|A|安全#D4;健康#D3;環境／环境#D1 |a|社會／社会#D2;生命#D1
 W|w|好不好
- X>|a|好#D1;不#D1
+ X>|a|好#D1;不#D1;好#D1
  P||hao3bu4hao3
   C intj
    D1||Hey!
@@ -49958,7 +49959,7 @@ W|w|介入
     X=|a|參與／参与#D1 |A|干涉#D3;插手#D1
     X}|a|調查／调查#D3 |A|事件#D1;糾紛／纠纷#D2;干預／干预#D2
 W||慌慌張張／慌慌张张
- X>|a|慌#D4;張／张
+ X>|a|慌#D4;慌#D4;張／张;張／张
  P||huang1huang1zhang1zhang1
   C adj
    D1|+a|in a hurry; stressed
@@ -50033,7 +50034,7 @@ W|w|早點／早点
     X=|a|早飯／早饭#D1;早餐#D1;晨炊#D1;朝食#D1
     X}|a|休息#D1;回來／回来#D1;起床#D1;回家#D1;出門／出门#D1
 W|w|轉轉／转转
- X>|a|轉／转#D25
+ X>|a|轉／转#D25;轉／转#D25
  P||zhuan4zhuan4
   C verb
    D1|+ #colloquial|to take a walk; to go for a stroll
@@ -50201,7 +50202,7 @@ W|w|最少
     X!|a|最多#D1
     X}|A|時間／时间#D2;需要#D3;要求#D1;人數／人数#D1
 W|w|僅僅／仅仅
- X>|a|僅／仅#D1
+ X>|a|僅／仅#D1;僅／仅#D1
  P||jin3jin3
   C adv
    D1|+|merely; only; just
@@ -51108,7 +51109,7 @@ W|w|看起來／看起来
     X}|a|很#D1;不錯／不错#D2;好像#D1;似乎#D1
    D2||to look and perceive
 W|w|包袱
- X>|a|包#D1
+ X>|a|包#D1;袱
  P||bao1fu5
   C noun
    D1||cloth wrapper
@@ -53458,7 +53459,7 @@ W|w|列
    D6|C|Short for 列寧／列宁 (Lièníng, “Lenin”).
     X<|A|列寧／列宁
 W|w|區區／区区
- X>|a|區／区#D7
+ X>|a|區／区#D7;區／区#D7
  P||qu1qu1
   C adj
    D1||insignificant; trifling; small; negligible
@@ -53751,7 +53752,7 @@ W|w|文藝／文艺
     X}|A|活動／活动#D4;演出#D1;作品#D1;創作／创作#D2;晚會／晚会#D1
    D3|- #Classical|writing skills
 W|w|諮詢／咨询;咨詢／咨询
- X>|a|詢／询#D1
+ X>|a|諮／咨;詢／询#D1
  P||zi1xun2
   C verb
    D1|+|to consult; to seek advice; to make enquiries; to receive counseling
@@ -55037,7 +55038,7 @@ W|w|利潤／利润
     X{|a|高#D2 |A|追求#D1;最大化#D2;豐厚／丰厚#D2
     X}|A|微薄#D1
 W|w|漸漸／渐渐
- X>|a|漸／渐#D9
+ X>|a|漸／渐#D9;漸／渐#D9
  P||jian4jian4
   C adv
    D1|+|gradually; little by little; step by step; progressively
@@ -55352,7 +55353,7 @@ W|w|凌
   C character
    D11||to freeze up; to form ice
 W|w|白白
- X>|a|白#D10
+ X>|a|白#D10;白#D10
  P||bai2bai2
   C adj
    D1|x #Taiwanese-Hakka #Taiwanese-Hokkien|very white
@@ -55923,7 +55924,7 @@ W|w|火氣／火气
     X{|a|大#D4
    D4||cold-resistant capacity
 W|w|姥姥
- X>|a|姥#D2
+ X>|a|姥#D2;姥#D2
  P||lao3lao5
   C intj
    D1|#colloquial|bloody hell!; bastards!; like hell!; never!
@@ -56016,7 +56017,7 @@ W|w|導遊／导游
    D2||to conduct a tour
     X=|A|嚮導／向导#D3
 W|w|沒完沒了／没完没了
- X>|a|沒／没#D1;完#D2;了#D5
+ X>|a|沒／没#D9;完#D2;沒／没#D9;了#D5
  P||mei2wan2mei2liao3
   C verb
    D1|+|to be endless; to be without end
@@ -56633,7 +56634,7 @@ W|w|發布／发布;發佈／发布
     X=|a|宣布#D1;發表／发表#D1 |A|公布#D1;發出／发出#D1 |a|頒發／颁发#D1;揭示#D1;頒布／颁布#D1;披露#D1
     X}|a|消息#D1 |A|通知#D1;新聞／新闻#D1 |a|命令#D1 |A|聲明／声明#D1;公告#D1
 W|w|哈哈
- X>|a|哈#D2
+ X>|a|哈#D2;哈#D2
  P||ha1ha1
   C adj
    D1|#onomatopoeia|the sound of someone laughing out loud
@@ -57806,7 +57807,7 @@ W|w|鑽石／钻石
     X{|A|切割#D1
     X}|a|珍貴／珍贵#D1;戒指#D1 |A|耳環／耳环#D1
 W|w|單單／单单
- X>|a|單／单#D9
+ X>|a|單／单#D9;單／单#D9
  P||dan1dan1
   C adv
    D1|+a|only; exclusively
@@ -58861,7 +58862,7 @@ W|w|姻緣／姻缘
     X{|A|美好#D1
     X}|A|緣分／缘分#D1 |a|註定／注定#D1 |A|美滿／美满#D1;前世#D2
 W|w|處處／处处
- X>|a|處／处#D10
+ X>|a|處／处#D10;處／处#D10
  P||chu4chu4
   C adv
    D1|+a|everywhere
@@ -58936,7 +58937,7 @@ W|w|不只
    D1|+|not only; not merely
     X=|a|不但#D1 |A|不僅／不仅#D1 |a|不論／不论#D2;不單／不单#D1;不光#D2
 W|w|親親／亲亲
- X>|a|親／亲#D9
+ X>|a|親／亲#D9;親／亲#D9
  P||qin1qin1
   C adj
    D1||dear; beloved
@@ -59837,7 +59838,7 @@ W|w|鄭重／郑重
    D4|x #obsolete|tediously; in excessive detail
    D5|x #obsolete|in earnest; sincerely
 W|w|拜拜
- X>|a|拜#D6
+ X>|a|拜#D6;拜#D6
  P||bai4bai5;bai4bai4 |C|bai2bai2 |-C|bai1bai2
   C intj
    D1|+a #informal|bye-bye; goodbye
@@ -61457,7 +61458,7 @@ W|w|無恥／无耻
     X{|a|真是#D1
     X}|A|行為／行为#D1 |a|小人#D1;下流#D1 |A|嘴臉／嘴脸#D1
 W|w|一模一樣／一模一样
- X>|a|一#D5;模#D11;樣／样#D1
+ X>|a|一#D5;模#D11;一#D5;樣／样#D1
  P||yi1mo2yi1yang4 |C|yi1mu2yi1yang4
   C phrase
    D1|+|exactly the same; identical
@@ -62185,7 +62186,7 @@ W|w|均勻／均匀
     X{|A|呼吸#D1 |a|受熱／受热#D1
     X}|A|速度#D2;分配#D1;混合#D1;分佈／分布#D2;攪拌／搅拌#D1;塗抹／涂抹#D1
 W|w|娘娘
- X>|a|娘#D1
+ X>|a|娘#D1;娘#D1
  P||niang2niang5
   C noun
    D1|x #archaic|lady (a term for use when addressing an empress or a consort)
@@ -62661,7 +62662,7 @@ W|w|不得
    D3||complement placed after a verb to express impossibility or inability; cannot; be unable to
     X=|A|不可#D1
 W|w|整整
- X>|a|整#D7
+ X>|a|整#D7;整#D7
  P||zheng3zheng3
   C adj
    D1|+a|whole; full
@@ -63997,7 +63998,7 @@ W|w|發票／发票
     X{|a|電子／电子#D1 |A|索取#D1
     X}|A|收據／收据#D1;報銷／报销#D1
 W|w|茫茫
- X>|a|茫#D1
+ X>|a|茫#D1;茫#D1
  P||mang2mang2
   C adj
    D1|+|boundless and indistinct; vast
@@ -64374,7 +64375,7 @@ W|w|大象
     X{|A|非洲#D2
     X}|a|鼻子#D1
 W|w|婆婆
- X>|a|婆#D3
+ X>|a|婆#D3;婆#D3
  P||po2po5
   C noun
    D1|#Jin|mother-in-law (husband's mother)
@@ -64542,7 +64543,7 @@ W|w|過節／过节
     X}|A|放假#D1;氣氛／气氛#D1;團圓／团圆#D2;送禮／送礼#D1
    D4||to be after the festivities; to be after a festival
 W|w|一一
- X>|a|一#D2
+ X>|a|一#D2;一#D2
  P||yi1yi1
   C adv
    D1|+|one by one; one after another
@@ -64748,7 +64749,7 @@ W|w|精通
     X=|A|擅長／擅长#D1
     X}|A|專業／专业#D3;技術／技术#D1 |a|語言／语言#D1 |A|業務／业务#D1;英語／英语#D1;各種／各种#D1
 W|w|一舉一動／一举一动
- X>|a|一#D2;舉／举#D6;動／动#D2
+ X>|a|一#D2;舉／举#D6;一#D2;動／动#D2
  P||yi1ju3yi1dong4
   C phrase
    D1|+|each and every move; every single action
@@ -64885,7 +64886,7 @@ W|w|得分
     X=|A|進球／进球#D2
     X}|A|最高#D1
 W|w|年年
- X>|a|年#D1
+ X>|a|年#D1;年#D1
  P||nian2nian2
   C adv
    D1|+|year after year; year in, year out; every year
@@ -65679,7 +65680,7 @@ W|w|制
    D5|x #historical|edict of ancient Chinese rulers
    D6|x #historical|mourning rite on behalf of parents' deaths in ancient China
 W|w|大大
- X>|a|大#D4
+ X>|a|大#D4;大#D4
  P||da4da4
   C adv
    D1|+a|greatly; hugely; enormously; significantly; considerably
@@ -66950,7 +66951,7 @@ W|w|貴族／贵族
     X=|a|名門／名门#D1;有錢人家／有钱人家#D1;望族#D1;豪門／豪门#D1;高門／高门#D1
     X}|A|階級／阶级#D1
 W|w|樣樣／样样
- X>|a|樣／样#D3
+ X>|a|樣／样#D3;樣／样#D3
  P||yang4yang4
   C pron
    D1|+a|everything
@@ -67324,6 +67325,8 @@ W|w|精英
     X=|a|菁華／精华#D1;精髓#D1;菁英#D1
    D4|+a|elite; cream
     X=|a|人才#D2;材料#D4;天才#D2;菁英#D2;俊才#D1;棟樑／栋梁#D2
+    X!|a|庸才#D1
+    X{|A|培養／培养#D4
     X}|A|社會／社会#D2;教育#D1;人才#D2;團隊／团队#D1;階層／阶层#D2
   C verb
    D5|x #Zhangzhou-Hokkien|to be good at understanding others
@@ -69322,7 +69325,7 @@ W|w|求救
  P||qiu2jiu4
   C verb
    D1|+|to ask somebody to come to the rescue; to cry for help
-    X=|A|求援／求饶#D1;呼救#D1
+    X=|A|求援#D1;呼救#D1
     X<|a|求救信號／求救信号
     X{|A|電話／电话#D2;呼喊#D1;無助／无助#D1
 W|w|迪
@@ -69828,7 +69831,7 @@ W|m|蘆花／芦花
     X{|A|秋天#D1
     X}|A|飄揚／飘扬#D1
 W|w|萬萬／万万
- X>|a|萬／万#D5
+ X>|a|萬／万#D5;萬／万#D5
  P||wan4wan4
   C adv
    D1|+a|absolutely (not)
@@ -71600,7 +71603,7 @@ W|w|分心
     X}|A|影響／影响#D9;注意力#D1
    D2||to trouble (someone); to take trouble; to worry (someone)
 W|w|遲遲／迟迟
- X>|a|遲／迟#D2
+ X>|a|遲／迟#D2;遲／迟#D2
  P||chi2chi2
   C adv
    D1|+|(chiefly in the negative) slowly; tardily
@@ -72402,7 +72405,7 @@ W|w|歸還／归还
     X}|A|物品#D1;借款#D2;原主#D1
    D2|- #literary|to return
 W|w|無憂無慮／无忧无虑
- X>|a|無／无#D10;憂／忧#D2;慮／虑#D1
+ X>|a|無／无#D10;憂／忧#D2;無／无#D10;慮／虑#D1
  P||wu2you1wu2lv4
   C phrase
    D1|+|carefree and without worries
@@ -73387,7 +73390,7 @@ W|w|腦海／脑海
     X=|A|心#D2 |a|腦子／脑子#D2;心思#D1;頭腦／头脑#D2 |A|心中#D1 |a|腦筋／脑筋#D1
     X}|a|裡／里#D1;中#D3 |A|印象#D1;記憶／记忆#D1;深處／深处#D1 |a|浮現／浮现#D2
 W|w|自欺欺人
- X>|a|自#D1;欺#D1;人#D1
+ X>|a|自#D1;欺#D1;欺#D1;人#D1
  P||zi4qi1qi1ren2
   C phrase
    D1|+|to deceive oneself as well as others; to fool oneself alongside others
@@ -74784,7 +74787,7 @@ W|w|成人
    D7||(of a prostitute) to lose virginity
    D8|x #Xiamen-Hokkien|to betroth (a girl)
 W|w|討價還價／讨价还价
- X>|a|討／讨#D4;價／价#D1;還／还#D3
+ X>|a|討／讨#D4;價／价#D1;還／还#D3;價／价#D1
  P||tao3jia4huan2jia4
   C phrase
    D1|+|to negotiate back and forth; to bargain; to haggle
@@ -75894,7 +75897,7 @@ W|m|居民樓／居民楼
     X{|A|小區／小区#D1
     X}|A|建築／建筑#D1
 W|m|麗麗／丽丽
- X>|a|麗／丽
+ X>|a|麗／丽;麗／丽
  P||li4li4
   C name
    D1|+|Lili
@@ -76362,7 +76365,7 @@ W|w|封建
   C noun
    D3|x #historical|fengjian (a system of enfeoffment in ancient China); (by extension) feudalism; European feudalism
 W|w|苦苦
- X>|a|苦#D9
+ X>|a|苦#D9;苦#D9
  P||ku3ku3
   C adv
    D1|+a|painfully; with a lot of difficulty
@@ -76397,7 +76400,7 @@ W|w|預習／预习
    D1|+|(of students) to prepare for a lesson in advance
     X}|A|內容／内容#D1;作業／作业#D2;功課／功课#D1;課文／课文#D1
 W|w|就事論事／就事论事
- X>|a|就#D8;事#D1;論／论#D5
+ X>|a|就#D8;事#D1;論／论#D5;事#D1
  P||jiu4shi4lun4shi4
   C phrase
    D1|+|to consider the matter in isolation; to judge the case as it stands (and not a specific individual)
@@ -78130,7 +78133,7 @@ W|w|樣品／样品
     X=|a|樣本／样本#D1
     X{|A|提供#D1;檢驗／检验#D1;展示#D3;測試／测试#D1;試用／试用#D1
 W|w|癢癢／痒痒
- X>|a|癢／痒#D1
+ X>|a|癢／痒#D1;癢／痒#D1
  P||yang3yang5
   C adj
    D1|#colloquial|itchy
@@ -78367,7 +78370,7 @@ W|w|範／范
    D4||to restrict; to restrain
    D5|+a|Misspelling of 范 (fàn, surname).
 W|w|恰恰
- X>|a|恰#D1
+ X>|a|恰#D1;恰#D1
  P||qia4qia4
   C adv
    D1|+a|exactly; just; precisely
@@ -79025,7 +79028,7 @@ W|w|咖啡廳／咖啡厅
     X{|a|開／开#D8
     X}|a|坐#D1 |A|氛圍／氛围#D1
 W|w|閃閃／闪闪
- X>|a|閃／闪#D5
+ X>|a|閃／闪#D5;閃／闪#D5
  P||shan3shan3
   C adj
    D1|+a #ideophonic|glittering; glistening
@@ -80694,7 +80697,7 @@ W|w|敗壞／败坏
    D2|+a|to ruin; to corrupt; to spoil
     X}|A|社會／社会#D2;道德#D2;聲譽／声誉#D1;名聲／名声#D1;風氣／风气#D1;門風／门风#D1
 W|w|匆匆
- X>|a|匆#D1
+ X>|a|匆#D1;匆#D1
  P||cong1cong1
   C adj
    D1|+|hasty; hurried; in a hurry; in a rush
@@ -81212,7 +81215,7 @@ W|w|高潮
    D7|#figuratively|upsurge
     XM||個／个;次
 W|w|出爾反爾／出尔反尔
- X>|a|出;爾／尔#D5;反#D1
+ X>|a|出;爾／尔#D5;反#D1;爾／尔#D5
  P||chu1er3fan3er3
   C phrase
    D1|+|to break a promise
@@ -83308,7 +83311,7 @@ W|w|科目
    D2||heading (in an account book)
    D3|x #historical|name given to a subject in the imperial examination
 W|m|隨叫隨到／随叫随到
- X>|a|隨／随#D1;叫#D3;到#D1
+ X>|a|隨／随#D1;叫#D3;隨／随#D1;到#D1
  P||sui2jiao4sui2dao4
   C phrase
    D1|+|to be available at any time; to be on call
@@ -84001,7 +84004,7 @@ W|w|出嫁
     X=|a|出門／出门#D4;進屋／进屋#D2
     X{|a|女兒／女儿#D1 |A|姑娘#D1
 W|w|不見不散／不见不散
- X>|a|不#D1;見／见#D2;散#D21
+ X>|a|不#D1;見／见#D2;不#D1;散#D21
  P||bu4jian4bu4san4
   C phrase
    D1|+a|to stay put until other people have arrived
@@ -84481,7 +84484,7 @@ W|m|做大
     X{|A|公司#D1;企業／企业#D1
     X}|A|市場／市场#D2;生意#D1 |a|事業／事业#D1 |A|規模／规模#D1;產業／产业#D3;品牌#D1
 W|w|無時無刻／无时无刻
- X>|a|無／无#D7;時／时;刻#D11
+ X>|a|無／无#D7;時／时;無／无#D7;刻#D11
  P||wu2shi2wu2ke4
   C phrase
    D1||at no time; never
@@ -84552,7 +84555,7 @@ W|w|難熬／难熬
     X{|a|日子#D3
     X}|A|痛苦#D3;時光／时光#D2;夜晚#D1;煎熬#D3
 W|w|指指點點／指指点点
- X>|a|指#D2;點／点#D15
+ X>|a|指#D2;指#D2;點／点#D15;點／点#D15
  P||zhi3zhi3dian3dian3
   C verb
    D1||to gesticulate; to gesture; to point
@@ -84568,7 +84571,7 @@ W|w|粉紅色／粉红色
     X=|A|粉色#D1
     X}|A|衣服#D1;可愛／可爱#D1;裙子#D1;氣球／气球#D1
 W|w|牢牢
- X>|a|牢#D3
+ X>|a|牢#D3;牢#D3
  P||lao2lao2
   C adj
    D1|+a|firm
@@ -85001,7 +85004,7 @@ W|w|賭場／赌场
     XM||家;間／间
     X{|a|經營／经营#D1 |A|拉斯維加斯／拉斯维加斯#D1
 W|m|鑑定／鉴定
- X>|a|定#D6
+ X>|a|鑑／鉴;定#D6
  P||jian4ding4
   C verb
    D1|+|to appraise; to identify; to evaluate
@@ -85293,7 +85296,7 @@ W|w|暢／畅
    D6|x #Teochew|to know
    D7||a surname
 W|w|種種／种种
- X>|a|種／种#D4
+ X>|a|種／种#D4;種／种#D4
  P||zhong3zhong3
   C pron
    D1|+|a variety of; all sorts of; all kinds of; a number of; every
@@ -85344,7 +85347,7 @@ W|w|中風／中风
     X{|A|治療／治疗#D2
     X}|A|症狀／症状#D1;後遺症／后遗症#D1
 W|w|緩緩／缓缓
- X>|a|緩／缓#D3
+ X>|a|緩／缓#D3;緩／缓#D3
  P||huan3huan3
   C adv
    D1|+|slowly
@@ -85777,7 +85780,7 @@ W|w|古董
     X}|A|市場／市场#D1;價值／价值#D2;買賣／买卖#D1;拍賣／拍卖#D1
    D2|+a|old fogey
 W|w|各種各樣／各种各样
- X>|a|各#D1;種／种#D4;樣／样#D3
+ X>|a|各#D1;種／种#D4;各#D1;樣／样#D3
  P||ge4zhong3ge4yang4
   C phrase
    D1|+|all sorts; all kinds; various types
@@ -86091,7 +86094,7 @@ W|w|錘／锤
    D5|x #historical|an ancient unit of weight
    D6||a surname: Chui
 W|w|所作所為／所作所为
- X>|a|所#D4;作#D5;為／为#D1
+ X>|a|所#D4;作#D5;所#D4;為／为#D1
  P||suo3zuo4suo3wei2
   C phrase
    D1|+|everything one does
@@ -86107,7 +86110,7 @@ W|w|站穩／站稳
     X}|A|立場／立场#D1
    D3||to come to a stop
 W|m|拖拖拉拉
- X>|a|拖#D5;拉#D7
+ X>|a|拖#D5;拖#D5;拉#D7;拉#D7
  P||tuo1tuo1la1la1
   C verb
    D1|+|to procrastinate
@@ -86284,7 +86287,7 @@ W|w|過得去／过得去
     X=|a|勉強／勉强#D5;不大離／不大离#D2;巴巴結結／巴巴结结#D3
    D4|+a|(chiefly rhetorically) to feel at ease and justified; to have an easy conscience
 W|w|慢吞吞
- X>|a|慢#D1;吞
+ X>|a|慢#D1;吞;吞
  P||man4tun1tun1
   C adj
    D1|+ #ideophonic|sluggish; slow-moving; leisurely
@@ -86362,7 +86365,7 @@ W|w|藝術家／艺术家
     X=|A|畫家／画家#D1
     X}|a|作品#D1 |A|創作／创作#D2;畫家／画家#D1
 W|w|為所欲為／为所欲为
- X>|a|為／为#D1;所#D4;欲#D2
+ X>|a|為／为#D1;所#D4;欲#D2;為／为#D1
  P||wei2suo3yu4wei2
   C verb
    D1|+ #derogatory|to do as one pleases, without constraints or scruples
@@ -86421,7 +86424,7 @@ W|w|進而／进而
   C conj
    D1|+|and then; after that
 W|w|哭哭啼啼
- X>|a|哭#D1;啼#D1
+ X>|a|哭#D1;哭#D1;啼#D1;啼#D1
  P||ku1ku5ti2ti2
   C verb
    D1|+|to cry continuously; to weep endlessly; to weep and wail
@@ -86968,7 +86971,7 @@ W|w|摸索
     X=|a|找#D1;尋找／寻找#D1;試探／试探#D2;搜索#D1;探索#D1;搜#D2;追尋／追寻#D1;搜尋／搜寻#D1;尋覓／寻觅#D1;找尋／找寻#D1;尋查／寻查#D1;探尋／探寻#D1;查找#D1;追索#D2
     X}|A|方法#D1;經驗／经验#D2;道路#D2;出路#D1
 W|w|試試／试试
- X>|a|試／试#D2
+ X>|a|試／试#D2;試／试#D2
  P||shi4shi4 |T|shi4shi5
   C verb
    D1|#colloquial|to (have a) try
@@ -88230,7 +88233,7 @@ W|m|亂花錢／乱花钱
    D1|+|to spend money recklessly; to squander
     X}|A|浪費／浪费#D1;揮霍／挥霍#D1;大手大腳／大手大脚#D1
 W|w|自言自語／自言自语
- X>|a|自#D1;言#D1;語／语#D1
+ X>|a|自#D1;言#D1;自#D1;語／语#D1
  P||zi4yan2zi4yu3
   C verb
    D1|+ #idiomatic|to talk to oneself; to think aloud
@@ -88879,7 +88882,7 @@ W|w|求助
  P||qiu2zhu4
   C verb
    D1|+|to seek help; to ask for assistance
-    X=|a|求援／求饶#D1;搬兵#D2
+    X=|a|求援#D1;搬兵#D2
     X{|A|電話／电话#D2;他人#D1
     X}|A|熱線／热线#D1
 W|w|齡／龄
@@ -88916,7 +88919,7 @@ W|w|貪污／贪污
     X{|A|官員／官员#D1
     X}|a|受賄／受贿#D1
 W|w|縝密／缜密
- X>|a|密#D4
+ X>|a|縝／缜;密#D4
  P||zhen3mi4
   C adj
    D1|+|careful; meticulous; deliberate
@@ -89280,7 +89283,7 @@ W|m|信不過／信不过
    D1|+|to distrust; to be suspicious
     X{|a|還是／还是#D1
 W|w|紕漏／纰漏
- X>|a|漏#D3
+ X>|a|紕／纰#D2;漏#D3
  P||pi1lou4
   C noun
    D1|+|careless mistake
@@ -89411,6 +89414,7 @@ W|w|漁民／渔民
     X=|a|漁人／渔人#D1;漁夫／渔夫#D1;漁翁／渔翁#D1;討海人／讨海人#D1
     X}|A|生活#D1;生計／生计#D1;捕魚／捕鱼#D1;出海#D1
 W|w|菁華／精华
+ # todo: difference to 精華／精华?
  X>|a|菁;華／华#D9
  P||jing1hua2
   C noun
@@ -90679,7 +90683,7 @@ W|w|準則／准则
     X<|a|行為準則／行为准则;道德準則／道德准则
     X{|A|基本#D1;標準／标准#D1;原則／原则#D1;制定#D1
 W|m|冷冷
- X>|a|冷#D4
+ X>|a|冷#D4;冷#D4
  P||leng3leng3
   C adj
    D1|#literal|cold
@@ -90688,7 +90692,7 @@ W|m|冷冷
     X<|a|冷冷清清
     X}|a|的#D1 |A|回答#D2;眼神#D1
 W|w|兢兢業業／兢兢业业
- X>|a|兢#D1;業／业
+ X>|a|兢#D1;兢#D1;業／业;業／业
  P||jing1jing1ye4ye4
   C phrase
    D1|+ #ideophonic|cautious and conscientious; diligent and attentive
@@ -91297,7 +91301,7 @@ W|w|濃厚／浓厚
     X{|a|意味#D2
     X}|A|興趣／兴趣#D1;感情#D2;文化#D3;氣氛／气氛#D1;色彩#D2
 W|w|回饋／回馈
- X>|a|回#D2
+ X>|a|回#D2;饋／馈
  P||hui2kui4
   C noun
    D1|+a|feedback
@@ -91568,7 +91572,7 @@ W|m|郎才女貌
     X{|a|真是#D1
     X}|A|婚姻#D1;佳偶#D1;天作之合#D1
 W|w|磨磨蹭蹭
- X>|a|磨#D5;蹭#D4
+ X>|a|磨#D5;磨#D5;蹭#D4;蹭#D4
  P||mo2mo2ceng4ceng4
   C verb
    D1|+|to move slowly; to dawdle; to dillydally
@@ -91816,7 +91820,7 @@ W|w|拚命
     X=|a|拼命#D2;亡命#D2;掙命／挣命#D2;搏命#D1;玩命#D2
     X}|A|工作#D5;努力#D4;掙錢／挣钱#D2;奔跑#D1
 W|w|呼呼
- X>|a|呼#D4
+ X>|a|呼#D4;呼#D4
  P||hu1hu1
   C intj
    D1|#onomatopoeia|hoho; hihi
@@ -91916,7 +91920,7 @@ W|w|金子
     X=|a|黃金／黄金#D2
     X}|a|發光／发光#D1 |A|純度／纯度#D1
 W|w|悠悠
- X>|a|悠#D2
+ X>|a|悠#D2;悠#D2
  P||you1you1
   C adj
    D1||long; drawn-out; lasting for ages; remote (in time or space)
@@ -91937,7 +91941,7 @@ W|w|石油
    D2|x #dated #dialectal|kerosene
    D3|x #Xiang #dated|petrol
 W|w|各式各樣／各式各样
- X>|a|各#D1;式#D2;樣／样#D3
+ X>|a|各#D1;式#D2;各#D1;樣／样#D3
  P||ge4shi4ge4yang4
   C adj
    D1|+|(of) all kinds and sorts; various
@@ -91958,7 +91962,7 @@ W|w|無動於衷／无动于衷
     X{|A|態度／态度#D1;面對／面对#D1
     X}|A|冷漠#D1
 W|w|無法無天／无法无天
- X>|a|無／无#D10;法#D1;天
+ X>|a|無／无#D10;法#D1;無／无#D10;天
  P||wu2fa3wu2tian1
   C phrase
    D1|+|no respect for law and order; unruly
@@ -94245,7 +94249,7 @@ W|w|悲痛
     X{|A|心情#D1
     X}|A|萬分／万分#D1
 W|w|再接再厲／再接再厉
- X>|a|再#D1;接#D5;厲／厉#D5
+ X>|a|再#D1;接#D5;再#D1;厲／厉#D5
  P||zai4jie1zai4li4
   C phrase
    D1|+|to make persistent efforts; to redouble one's efforts; to keep up one's good work
@@ -94326,7 +94330,7 @@ W|w|口舌
    D6||(～卦) A combination 四上四下 in the Lingqijing.
    D7|xC #Huizhou #Jilu-Mandarin #dialectal-Wu|tongue
 W|w|全心全意
- X>|a|全#D2;心#D1;意#D1
+ X>|a|全#D2;心#D1;全#D2;意#D1
  P||quan2xin1quan2yi4
   C phrase
    D1|+|wholeheartedly; without reservation
@@ -94409,7 +94413,7 @@ W|w|大堂
     X{|A|飯店／饭店#D1 |a|酒店#D1
     X}|A|接待#D1;豪華／豪华#D1;寬敞／宽敞#D1
 W|w|時時／时时
- X>|a|時／时#D3
+ X>|a|時／时#D3;時／时#D3
  P||shi2shi2
   C adv
    D1|+|(very) often; constantly; always
@@ -95857,7 +95861,7 @@ W|w|球賽／球赛
     X{|A|觀看／观看#D1;轉播／转播#D1
     X}|A|精彩#D1;直播#D1;門票／门票#D1
 W|w|公公
- X>|a|公#D10
+ X>|a|公#D10;公#D10
  P||gong1gong5
   C noun
    D1|#Gan #Jin #Wu|father-in-law (husband's father)
@@ -95875,7 +95879,7 @@ W|w|維他命／维他命
     X{|a|補充／补充#D2 |A|缺乏#D1;攝取／摄取#D1
     X}|A|營養／营养#D1
 W|w|反饋／反馈
- X>|a|反#D2
+ X>|a|反#D2;饋／馈
  P||fan3kui4
   C noun
    D1|#control-theory|(figuratively or electronics, cybernetics) feedback
@@ -95935,7 +95939,7 @@ W|w|深處／深处
    D2||interior; the inside; the internal part
     X<|a|內心深處／内心深处
 W|m|無怨無悔／无怨无悔
- X>|a|無／无#D10;怨#D4;悔#D1
+ X>|a|無／无#D10;怨#D4;無／无#D10;悔#D1
  P||wu2yuan4wu2hui3
   C phrase
    D1|+|no complaints; to have no regrets
@@ -96572,7 +96576,7 @@ W|w|養育／养育
     X=|A|撫養／抚养#D1 |a|養活／养活#D2;育兒／育儿#D2
     X}|A|孩子#D1;責任／责任#D1;成長／成长#D1;費用／费用#D1;後代／后代#D2;成人#D4;子女#D1;恩情#D1
 W|w|胸膛
- X>|a|胸#D1
+ X>|a|胸#D1;膛
  P||xiong1tang2
   C noun
    D1|+|chest; thorax
@@ -96801,7 +96805,7 @@ W|m|初來乍到／初来乍到
     X=||新來乍到／新来乍到#D1
     X}|A|陌生#D1;人生地不熟#D1
 W|w|瘋瘋癲癲／疯疯癫癫
- X>|a|瘋／疯#D3;癲／癫#D1
+ X>|a|瘋／疯#D3;瘋／疯#D3;癲／癫#D1;癲／癫#D1
  P||feng1feng5dian1dian1
   C adj
    D1|+|mad; crazy; deranged
@@ -97646,7 +97650,7 @@ W|m|糾纏不清／纠缠不清
    D1|+|hopelessly muddled; impossible to unravel
     X{|A|問題／问题#D3;關係／关系#D1;矛盾#D2;是非#D1
 W|w|大大方方
- X>|a|大#D4;方#D3
+ X>|a|大#D4;大#D4;方#D3;方#D3
  P||da4da5fang1fang1
   C adj
    D1|+|confident, calm, poised
@@ -99794,14 +99798,14 @@ W|w|敝
    D7||Alternative form of 弊 (bì, “fault; defect; drawback”)
    D8||Alternative form of 蔽 (bì, “to cover; to shield; to deceive”)
 W|w|猖狂
- X>|a|狂#D5
+ X>|a|猖;狂#D5
  P||chang1kuang2
   C adj
    D1|+a|blatant; intemperate; profligate
     X}|A|態度／态度#D1;活動／活动#D4;行為／行为#D1;氣焰／气焰#D1
    D2||savage; furious; aggressive
 W|w|唧唧
- X>|a|唧#D2
+ X>|a|唧#D2;唧#D2
  P|C|ji1ji1 |T|ji2ji2
   C noun
    D1||sighing
@@ -100235,7 +100239,7 @@ W|m|量身
    D1|+|to take sb's measurements; to measure sb up
     X}|A|設計／设计#D3;製作／制作#D2;定制#D1 |a|打造#D2;訂做／订做#D1
 W|w|扭扭捏捏
- X>|a|扭#D4;捏#D1
+ X>|a|扭#D4;扭#D4;捏#D1;捏#D1
  P||niu3niu3nie1nie1
   C verb
    D1|+a|to pretend to be shy, coy or embarrassed
@@ -100860,7 +100864,7 @@ W|w|下樓／下楼
   C verb
    D1||to go downstairs
 W|w|轟轟烈烈／轰轰烈烈
- X>|a|轟／轰#D2;烈#D2
+ X>|a|轟／轰#D2;轟／轰#D2;烈#D2;烈#D2
  P||hong1hong1lie4lie4
   C phrase
    D1|+|vigorous; dynamic
@@ -101435,7 +101439,7 @@ W|w|老伴
    D2||old friend
    D3|#figurative|beloved things
 W|w|事蹟／事迹;事跡／事迹
- X>|a|事#D1
+ X>|a|事#D1;蹟／迹
  P|C|shi4ji4 |T|shi4ji1
   C noun
    D1||deed; achievement; important event of the past
@@ -101628,7 +101632,7 @@ W|w|相通
    D1|+|to communicate with each other; to be interlinked; to be connected
     X{|A|道理#D1 |a|心靈／心灵#D1 |A|相連／相连#D1
 W|w|藐視／藐视
- X>|a|視／视#D6
+ X>|a|藐;視／视#D6
  P||miao3shi4
   C verb
    D1|+|to despise; to look down on
@@ -101971,7 +101975,7 @@ W|w|機制／机制
     X=|a|系統／系统#D2;制度#D1;體系／体系#D1;體制／体制#D1
     X{|A|管理#D1
 W|w|不聞不問／不闻不问
- X>|a|不#D1;聞／闻#D1;問／问#D1
+ X>|a|不#D1;聞／闻#D1;不#D1;問／问#D1
  P||bu4wen2bu4wen4
   C phrase
    D1|+|to not bother to ask or to listen; to show no interest in; to be indifferent to
@@ -102563,7 +102567,7 @@ W|w|重擔／重担
     X{|A|生活#D1;家庭#D1;承擔／承担#D1;卸下#D1;肩負／肩负#D1;挑起#D1
     X}|A|壓力／压力#D3
 W|w|反反復復／反反复复;反反覆覆／反反复复
- X>|a|反#D1;復／复#D2
+ X>|a|反#D20;反#D20;復／复#D6;復／复#D6
  P||fan3fan3fu4fu4
   C adv
    D1|+|over and over, time and time again, repeatedly
@@ -102695,7 +102699,7 @@ W|w|死去活來／死去活来
    D1|+|to be devastated; to suffer terribly; to be within an inch of one's life
     X{|a|哭#D1 |A|折騰／折腾#D3
 W|w|久而久之
- X>|a|久#D1;而#D1;之
+ X>|a|久#D1;而#D1;久#D1;之
  P||jiu3er2jiu3zhi1
   C phrase
    D1|+|in the course of time; over a long period of time
@@ -102779,7 +102783,7 @@ W|w|貨物／货物
     X{|A|裝卸／装卸#D1
     X}|A|運輸／运输#D1
 W|w|闡述／阐述
- X>|a|述#D2
+ X>|a|闡／阐;述#D2
  P||chan3shu4
   C verb
    D1|+|to expound (a position); to elaborate on (a subject); to set forth (one’s views)
@@ -103287,7 +103291,7 @@ W|w|酬
     X<|A|應酬／应酬
    D5||to realize; to fulfill
 W|w|相親相愛／相亲相爱
- X>|a|相#D2;親／亲#D1;愛／爱#D1
+ X>|a|相#D2;親／亲#D1;相#D2;愛／爱#D1
  P||xiang1qin1xiang1ai4
   C phrase
    D1|+|to love each other deeply
@@ -103633,7 +103637,7 @@ W|m|動口／动口
     X{|a|君子#D1
     X}|A|說話／说话#D5 |a|動手／动手#D1
 W|w|或多或少
- X>|a|或#D1;多#D1;少#D1
+ X>|a|或#D1;多#D1;或#D1;少#D1
  P||huo4duo1huo4shao3
   C phrase
    D1|+|more or less (in varying degrees)
@@ -104094,7 +104098,7 @@ W|w|反之
     X<|a|反之亦然
     X}|A|否則／否则#D1;相反#D2;反過來／反过来#D1
 W|w|吞吞吐吐
- X>|a|吞#D1;吐#D2
+ X>|a|吞#D1;吞#D1;吐#D2;吐#D2
  P||tun1tun1tu3tu3
   C verb
    D1|+|to mutter and mumble; to hum and haw; to stumble over one's words; to speak in a halting way
@@ -104238,7 +104242,7 @@ W|w|著作
    D2||to write
     X=|a|製作／制作#D3;寫字／写字#D1;編寫／编写#D2;撰述#D2;行文#D2;行筆／行笔#D1
 W|w|自暴自棄／自暴自弃
- X>|a|自#D1;暴#D4;棄／弃#D1
+ X>|a|自#D1;暴#D4;自#D1;棄／弃#D1
  P||zi4bao4zi4qi4 |x|zi4pu4zi4qi4
   C phrase
    D1|+|to give in to despair
@@ -104510,7 +104514,7 @@ W|w|商討／商讨
     X=|a|討論／讨论#D1;商量#D1;研究#D3;計較／计较#D4;評論／评论#D4;協商／协商#D2;磨合#D3;接洽#D1;磋商#D1;言說／言说#D1;說合／说合#D2;說道／说道#D3;闡論／阐论#D2
     X}|A|問題／问题#D3;方案#D1;對策／对策#D1;事宜#D1
 W|w|隱隱／隐隐
- X>|a|隱／隐#D3
+ X>|a|隱／隐#D3;隱／隐#D3
  P||yin3yin3
   C adj
    D1|+ #ideophonic|faint; indistinct; dull
@@ -104710,7 +104714,7 @@ W|w|更正
     X{|A|錯誤／错误#D2
     X}|A|資料／资料#D2;聲明／声明#D1
 W|w|支支吾吾
- X>|a|支;吾#D4
+ X>|a|支;支;吾#D4;吾#D4
  P||zhi1zhi1wu2wu2
   C verb
    D1|+|to prevaricate; to falter; to hum and haw
@@ -105388,7 +105392,7 @@ W|w|鳳凰／凤凰
     X}|A|神鳥／神鸟#D1;展翅#D1 |a|涅槃#D1
    D7|+a|phoenix
 W|w|無情無義／无情无义
- X>|a|無／无#D10;情#D1;義／义#D1
+ X>|a|無／无#D10;情#D1;無／无#D10;義／义#D1
  P||wu2qing2wu2yi4
   C phrase
    D1|+|cold and ruthless
@@ -105674,7 +105678,7 @@ W|w|板凳
    D2|x #dialectal|chair
    D3|#Internet-slang|second person to reply or comment on an online forum
 W|w|如醉如痴
- X>|a|如#D1;醉#D3;痴#D2
+ X>|a|如#D1;醉#D3;如#D1;痴#D2
  P||ru2zui4ru2chi1
   C phrase
    D1||Alternative form of 如痴如醉 (rúchīrúzuì, “spellbound; fascinated”)
@@ -105861,7 +105865,7 @@ W|w|意大利文
     X{|A|學習／学习#D1
     X}|A|老師／老师#D1;翻譯／翻译#D1;課程／课程#D1
 W|w|赫赫
- X>|a|赫#D3
+ X>|a|赫#D3;赫#D3
  P||he4he4
   C adj
    D1|- #ideophonic #literary|majestic; grand; magnificent; illustrious; distinguished
@@ -106462,7 +106466,7 @@ W|w|專用／专用
   C verb
    D2||to reserve or dedicate for a specific purpose; to be for special use
 W|m|肩並肩／肩并肩
- X>|a|肩#D1;並／并#D1
+ X>|a|肩#D1;並／并#D1;肩#D1
  P||jian1bing4jian1
   C adv
    D1|+|shoulder to shoulder; abreast; side by side
@@ -106567,7 +106571,7 @@ W|w|皆大歡喜／皆大欢喜
     X{|A|結果／结果#D3;結局／结局#D2;圓滿／圆满#D1
     X}|A|喜劇／喜剧#D1;收場／收场#D1
 W|w|連連／连连
- X>|a|連／连#D7
+ X>|a|連／连#D7;連／连#D7
  P||lian2lian2
   C adv
    D1|+a|repeatedly; again and again; one after another
@@ -106646,7 +106650,7 @@ W|w|化驗單／化验单
     X{|A|醫生／医生#D1;醫院／医院#D1
     X}|A|檢查／检查#D4;結果／结果#D3;報告／报告#D1
 W|w|愜意／惬意
- X>|a|意#D1
+ X>|a|愜／惬;意#D1
  P||qie4yi4
   C adj
    D1|+ #formal|pleased; contented; satisfied; pleasant; agreeable; carefree; comfortable
@@ -107455,7 +107459,7 @@ W|w|攤位／摊位
     X}|A|擺設／摆设#D3
 W|m|空空
  # todo: add 空空盪盪, variants for 盪盪/荡荡 exist
- X>|a|空#D1
+ X>|a|空#D1;空#D1
  P||kong1kong1
   C adj
    D1|+a|empty; vacuous; vacant; nothing
@@ -107531,7 +107535,7 @@ W|w|打太極拳／打太极拳
     X}|A|健身#D1
    D2|#figuratively|to shirk responsibility and pass the buck
 W|w|懊惱／懊恼
- X>|a|惱／恼#D2
+ X>|a|懊;惱／恼#D2
  P||ao4nao3
   C adj
    D1|+a|upset; vexed; annoyed
@@ -108117,7 +108121,7 @@ W|w|供不應求／供不应求
     X{|A|市場／市场#D2;產品／产品#D1;商品#D1
     X}|A|情況／情况#D1;現象／现象#D1;局面#D1
 W|w|合情合理
- X>|a|合#D3;情#D5;理#D6
+ X>|a|合#D3;情#D5;合#D3;理#D6
  P||he2qing2he2li3
   C phrase
    D1|+|fair and reasonable; fair and sensible
@@ -108887,7 +108891,7 @@ W|w|殖民地
     X{|A|統治／统治#D1
     X}|A|國家／国家#D1;獨立／独立#D4
 W|w|毛手毛腳／毛手毛脚
- X>|a|毛#D9;手#D1;腳／脚#D1
+ X>|a|毛#D9;手#D1;毛#D9;腳／脚#D1
  P||mao2shou3mao2jiao3
   C phrase
    D1|+a|to be careless (in handling things)
@@ -109069,7 +109073,7 @@ W|w|腫瘤／肿瘤
     X{|A|發現／发现#D2;檢查／检查#D4
     X}|A|治療／治疗#D2 |a|細胞／细胞#D1;切除#D1
 W|w|一了百了
- X>|a|一#D1;了#D6;百#D3
+ X>|a|一#D1;了#D6;百#D3;了#D6
  P||yi1liao3bai3liao3
   C phrase
    D1||all troubles end when the main trouble ends
@@ -109132,7 +109136,7 @@ W|w|說情／说情
    D1|+|to plead mercy for somebody; to intercede on someone's behalf
     X}|A|幫忙／帮忙#D1;求情#D1;走後門／走后门#D2
 W|w|漫漫
- X>|a|漫#D3
+ X>|a|漫#D3;漫#D3
  P||man4man4
   C adj
    D1|- #literary|stretching for miles; spreading out without end
@@ -109270,7 +109274,7 @@ W|w|阿公
   C noun
    D1|x #Wu #dialectal #dialectal-Hakka #dialectal-Xiang|father-in-law (husband's father)
 W|w|晶晶
- X>|a|晶#D1
+ X>|a|晶#D1;晶#D1
  P||jing1jing1
   C adj
    D1|+ #ideophonic|bright; shining
@@ -110977,7 +110981,7 @@ W|w|出境
     X!|a|入境#D1
     X}|A|檢查／检查#D2;手續／手续#D1;證件／证件#D1;簽證／签证#D1;通關／通关#D1
 W|w|戰戰兢兢／战战兢兢
- X>|a|戰／战#D3;兢#D1
+ X>|a|戰／战#D3;戰／战#D3;兢#D1;兢#D1
  P||zhan4zhan4jing1jing1
   C phrase
    D1|+ #ideophonic|trembling with fear; apprehensive and careful; fearful and cautious
@@ -111161,7 +111165,7 @@ W|w|內行／内行
    D2||expert; master; professional
     X=|a|通家#D2
 W|w|憎恨
- X>|a|恨#D1
+ X>|a|憎;恨#D1
  P||zeng1hen4
   C noun
    D1||hatred; enmity
@@ -111311,7 +111315,7 @@ W|w|不可開交／不可开交
    D1|+|unable to break away from one's duties or tasks; can't catch a break
     X{|A|爭得／争得#D1
 W|w|有始有終／有始有终
- X>|a|有#D1;始#D1;終／终#D1
+ X>|a|有#D1;始#D1;有#D1;終／终#D1
  P||you3shi3you3zhong1
   C phrase
    D1||to have a beginning and an end
@@ -111526,7 +111530,7 @@ W|w|嗜好
    D2||to be specially interested in; to indulge in; to be addicted to
     X=|a|喜歡／喜欢#D2;欣賞／欣赏#D2;愛好／爱好#D2;偏嗜#D2;喜好#D2
 W|w|爹爹
- X>|a|爹#D1
+ X>|a|爹#D1;爹#D1
  P||die1die5
   C noun
    D1|x #Wu #Xiang #colloquial #dialectal #dialectal-Gan #dialectal-Hakka #dialectal-Jin|daddy
@@ -111766,7 +111770,7 @@ W|w|大體／大体
    D4|#euphemistic|remains; corpse
     X=|a|屍體／尸体#D1;屍首／尸首#D1;遺體／遗体#D1;遺骸／遗骸#D1;屍身／尸身#D1;屍骨／尸骨#D2;屍骸／尸骸#D2;死人#D7;死屍／死尸#D1;骸骨#D1
 W|w|綿綿／绵绵
- X>|a|綿／绵#D2
+ X>|a|綿／绵#D2;綿／绵#D2
  P||mian2mian2
   C adj
    D1|+|continuous
@@ -111999,7 +112003,7 @@ W|w|議事／议事
     X<|a|議事日程／议事日程
     X}|A|討論／讨论#D1;會議／会议#D1;規則／规则#D2;程序#D1
 W|w|每每
- X>|a|每#D4
+ X>|a|每#D4;每#D4
  P||mei3mei3
   C adv
    D1||often
@@ -112457,7 +112461,7 @@ W|w|見效／见效
     X{|A|治療／治疗#D1
     X}|A|明顯／明显#D1
 W|w|暗暗
- X>|a|暗#D3
+ X>|a|暗#D3;暗#D3
  P||an4an4
   C adj
    D1|x #Hakka|pitch-black
@@ -112493,7 +112497,7 @@ W|w|含有
     X=|A|包含#D1 |a|包容#D2 |A|具有#D1 |a|容納／容纳#D1;儲藏／储藏#D3;包舉／包举#D2 |A|富含#D1 |a|蘊含／蕴含#D1;蘊涵／蕴涵#D1;貯藏／贮藏#D2
     X}|a|豐富／丰富#D1 |A|營養／营养#D1 |a|大量#D1 |A|物質／物质#D2 |a|成分#D1 |A|元素#D1;水分#D1;毒素#D1
 W|w|汪汪
- X>|a|汪#D3
+ X>|a|汪#D3;汪#D3
  P||wang1wang1
   C adj
    D1||moist with tears; tearful
@@ -113316,7 +113320,7 @@ W|w|前期
     X!|a|後期／后期#D1
     X}|A|準備／准备#D1;工作#D3;投資／投资#D1;建設／建设#D4;規劃／规划#D1;籌備／筹备#D1;調研／调研#D1
 W|w|嗡嗡
- X>|a|嗡#D1
+ X>|a|嗡#D1;嗡#D1
  P||weng1weng1
   C adj
    D1|+ #onomatopoeia|whirring; buzzing
@@ -113392,7 +113396,7 @@ W|m|虛情假意／虚情假意
    D1|+|false friendship; hypocritical show of affection
     X}|A|敷衍#D1;客套#D1;做作#D1
 W|w|蒸蒸日上
- X>|a|蒸#D5;日#D3;上#D9
+ X>|a|蒸#D5;蒸#D5;日#D3;上#D9
  P||zheng1zheng1ri4shang4
   C phrase
    D1|+|to become more prosperous by the day; to make progress
@@ -113421,7 +113425,7 @@ W|w|甚至於／甚至于
   C conj
    D1|+|even; even if; go so far as to; to the extent that
 W|m|時好時壞／时好时坏
- X>|a|時／时#D11;好#D1;壞／坏#D1
+ X>|a|時／时#D11;好#D1;時／时#D11;壞／坏#D1
  P||shi2hao3shi2huai4
   C phrase
    D1|+|sometimes good, sometimes bad
@@ -113549,7 +113553,7 @@ W|w|顯而易見／显而易见
     X{|A|問題／问题#D3;道理#D2
     X}|A|結果／结果#D3;事實／事实#D2
 W|w|姊姊
- X>|a|姊#D1
+ X>|a|姊#D1;姊#D1
  P||zi3zi3 |T|jie3jie5
   C noun
    D1|+a|older sister; elder sister; big sister
@@ -114655,7 +114659,7 @@ W|w|惱火／恼火
     X=|A|生氣／生气#D1 |a|氣／气#D8;發火／发火#D3;起火#D3;惱怒／恼怒#D1;冒煙／冒烟#D2;尥蹶子#D2;急眼#D2;發飆／发飙#D1
     X}|A|生氣／生气#D1;惱怒／恼怒#D1
 W|w|無窮無盡／无穷无尽
- X>|a|無／无#D10;窮／穷#D6;盡／尽#D1
+ X>|a|無／无#D10;窮／穷#D6;無／无#D10;盡／尽#D1
  P||wu2qiong2wu2jin4
   C phrase
    D1|+|endless; boundless; inexhaustible
@@ -114901,7 +114905,7 @@ W|w|人世
     X=|a|塵俗／尘俗#D1
     X}|A|悲歡／悲欢#D1;無常／无常#D3
 W|w|硬邦邦
- X>|a|硬#D1;邦
+ X>|a|硬#D1;邦;邦
  P||ying4bang1bang1
   C adj
    D1|+a #ideophonic|hard (like rock); frozen hard or stiff
@@ -115104,7 +115108,7 @@ W|w|藥材／药材
    D2|#TCM|herbal preparation; Chinese patent medicine
     X=|A|藥品／药品#D1
 W|w|相輔相成／相辅相成
- X>|a|相#D2;輔／辅#D3;成#D1
+ X>|a|相#D2;輔／辅#D3;相#D2;成#D1
  P||xiang1fu3xiang1cheng2
   C phrase
    D1|+|to be mutually supporting; to complement each other
@@ -116237,7 +116241,7 @@ W|w|幫襯／帮衬
    D3|x #Hakka|to enhance by contrast
    D4|x #Northern-Min|to help; to lend a helping hand
 W|w|憧憬
- X>|a|憧
+ X>|a|憧;憬
  P||chong1jing3
   C noun
    D1||vision for the future
@@ -116691,7 +116695,7 @@ W|w|苦澀／苦涩
     X{|A|感覺／感觉#D1
     X}|A|回憶／回忆#D1;表情#D1;滋味#D2
 W|w|無聲無息／无声无息
- X>|a|無／无#D10;聲／声#D1;息
+ X>|a|無／无#D10;聲／声#D1;無／无#D10;息
  P|C|wu2sheng1wu2xi1 |T|wu2sheng1wu2xi2
   C phrase
    D1|+a|soundless; silent
@@ -116765,7 +116769,7 @@ W|w|邊疆／边疆
     X=|a|邊界／边界#D1;邊境／边境#D1
     X}|A|穩定／稳定#D1;建設／建设#D6;開發／开发#D2;地區／地区#D2
 W|w|似笑非笑
- X>|a|似#D3;笑#D1;非#D1
+ X>|a|似#D3;笑#D1;非#D1;笑#D1
  P||si4xiao4fei1xiao4
   C phrase
    D1||to give a faint or forced smile
@@ -117699,7 +117703,7 @@ W|w|粗暴
     X<|a|簡單粗暴／简单粗暴
     X}|A|態度／态度#D1;方式#D1;行為／行为#D1;對待／对待#D1;手段#D1
 W|w|糊裡糊塗／糊里糊涂
- X>|a|糊#D5;裡／里;塗／涂
+ X>|a|糊#D5;裡／里;糊#D5;塗／涂
  P||hu2li5hu2tu2;hu2li3hu2tu2
   C adj
    D1|+|Synonym of 糊塗／糊涂
@@ -118293,7 +118297,7 @@ W|w|擴展／扩展
     X=|a|擴大／扩大#D1;開拓／开拓#D2;擴張／扩张#D1;壯大／壮大#D2 |A|拓展#D1 |a|擴充／扩充#D1
     X}|A|市場／市场#D2;空間／空间#D1;範圍／范围#D1;業務／业务#D1;領域／领域#D2;規模／规模#D1;版圖／版图#D2
 W|w|咆哮
- X>|a|哮#D2
+ X>|a|咆;哮#D2
  P||pao2xiao4 |T|pao2xiao1
   C verb
    D1||(of a fierce animal) to roar; to howl
@@ -118367,7 +118371,7 @@ W|w|押解
    D2||to escort goods in transportation
     X=|A|押送#D2
 W|w|毛毛
- X>|a|毛#D1
+ X>|a|毛#D1;毛#D1
  P||mao2mao2
   C adj
    D1||uncomfortable and scared
@@ -118854,7 +118858,7 @@ W|w|刁
    D9||to make (time)
    D10||a surname
 W|m|鑑賞／鉴赏
- X>|a|賞／赏
+ X>|a|鑑／鉴;賞／赏
  P||jian4shang3
   C verb
    D1|+|to appreciate (as a connoisseur)
@@ -119162,7 +119166,7 @@ W|w|妒
    D2|#by-extension|to be jealous or envious of; to envy
     X<|A|嫉妒
 W|w|不亢不卑
- X>|a|不#D1;亢#D1;卑#D3
+ X>|a|不#D1;亢#D1;不#D1;卑#D3
  P||bu4kang4bu4bei1
   C phrase
    D1||neither obsequious nor supercilious
@@ -119735,7 +119739,7 @@ W|w|談何容易／谈何容易
    D2|+a|easier said than done
     X{|A|成功#D7;實現／实现#D2;做到#D1
 W|m|嘰嘰喳喳／叽叽喳喳
- X>|a|嘰／叽#D3;喳#D1
+ X>|a|嘰／叽#D3;嘰／叽#D3;喳#D1;喳#D1
  X=||唧唧喳喳
  P||ji1ji1zha1zha1;ji1ji5zha1zha1
   C noun
@@ -120609,7 +120613,7 @@ W|w|同班
     X}|A|朋友#D1
    D3||classmate
 W|w|熊熊
- X>|a|熊
+ X>|a|熊;熊
  P||xiong2xiong2
   C adj
    D1|+a #ideophonic|(of flame) raging; flaming
@@ -121047,7 +121051,7 @@ W|w|複合／复合
    D2||to combine multiple components together; to mix several ingredients
     X=|a|聯繫／联系#D3;結合／结合#D3;融合#D2;連繫／连系#D3
 W|w|飄飄／飘飘
- X>|a|飄／飘#D2
+ X>|a|飄／飘#D2;飄／飘#D2
  P||piao1piao1
   C adv
    D1|- #literary|fluttering in the wind
@@ -121711,13 +121715,13 @@ W|w|單親家庭／单亲家庭
    D1|+|single-parent family
     X}|A|問題／问题#D3;孩子#D1;教育#D1;成長／成长#D1
 W|w|醉醺醺
- X>|a|醉#D1;醺#D1
+ X>|a|醉#D1;醺#D1;醺#D1
  P||zui4xun1xun1
   C adj
    D1|+ #ideophonic|tipsy; drunk; intoxicated
     X}|A|模樣／模样#D2
 W|w|大富大貴／大富大贵
- X>|a|大#D2;富#D2;貴／贵#D3
+ X>|a|大#D2;富#D2;大#D2;貴／贵#D3
  P||da4fu4da4gui4
   C phrase
    D1|+|to have great wealth and prestige
@@ -122077,7 +122081,7 @@ W|w|開辦／开办
     X=|A|開／开#D8 |a|創辦／创办#D1 |A|開設／开设#D1
     X}|A|學校／学校#D1;公司#D1;業務／业务#D1;企業／企业#D1;課程／课程#D1
 W|m|殷殷
- X>|a|殷#D6
+ X>|a|殷#D6;殷#D6
  P||yin1yin1
   C adv
    D1||earnest; ardent (hope etc)
@@ -122144,7 +122148,7 @@ W|w|賞光／赏光
     X{|a|請／请#D5
     X}|A|參加／参加#D1;光臨／光临#D1;蒞臨／莅临#D1
 W|w|人見人愛／人见人爱
- X>|a|人#D4;見／见;愛／爱#D1
+ X>|a|人#D4;見／见;人#D4;愛／爱#D1
  P||ren2jian4ren2ai4
   C adj
    D1|+|loved by all
@@ -122208,7 +122212,7 @@ W|w|盅
   C character
    D5||(of a container) empty
 W|w|跌跌撞撞
- X>|a|跌#D1;撞#D1
+ X>|a|跌#D1;跌#D1;撞#D1;撞#D1
  P|C|die1die1zhuang4zhuang4 |T|die2die2zhuang4zhuang4
   C adj
    D1|+a #ideophonic|doddering; tottering; faltering
@@ -122510,7 +122514,7 @@ W|w|列為／列为
    D1|+|to be classified as; to list as
     X}|A|保護／保护#D1;重點／重点#D1;對象／对象#D2;目標／目标#D2;名單／名单#D1
 W|w|蹦蹦跳跳
- X>|a|蹦#D1;跳#D1
+ X>|a|蹦#D1;蹦#D1;跳#D1;跳#D1
  P||beng4beng4tiao4tiao4
   C phrase
    D1|+|bouncing and vivacious
@@ -122538,7 +122542,7 @@ W|m|附上
    D1|+|attached; included herewith
     X}|A|照片#D1;說明／说明#D1;資料／资料#D2;文件#D1;圖片／图片#D1;清單／清单#D1
 W|w|解鈴還須繫鈴人／解铃还须系铃人
- X>|a|解#D1;鈴／铃#D1;還／还#D6;須／须#D1;繫／系#D2;人#D1
+ X>|a|解#D1;鈴／铃#D1;還／还#D1;須／须#D1;繫／系#D1;鈴／铃#D1;人#D1
  P||jie3 ling2 hai2 xu1 xi4 ling2 ren2
   C phrase
    D1||The only one who can fix the problem is the one who created the problem.
@@ -122783,7 +122787,7 @@ W|w|吨
   C character
    D1||Only used in 吨吨.
 W|w|徐徐
- X>|a|徐#D1
+ X>|a|徐#D1;徐#D1
  P||xu2xu2
   C adv
    D1|+|slowly; gently
@@ -122963,7 +122967,7 @@ W|w|仙草
    D3|t #Singapore|grass jelly
     X=|a|仙草凍／仙草冻#D1
 W|w|各行各業／各行各业
- X>|a|各#D1;行#D12;業／业#D1
+ X>|a|各#D1;行#D12;各#D1;業／业#D1
  P||ge4hang2ge4ye4
   C phrase
    D1|+|all walks of life, with special reference to occupation; every trade; all professions; all classes of society
@@ -123782,7 +123786,7 @@ W|w|絕食／绝食
    D1|+|to go without food; to go on a hunger strike; to starve oneself
     X}|A|運動／运动#D4;抗議／抗议#D2;鬥爭／斗争#D2;示威#D4
 W|w|百依百順／百依百顺
- X>|a|百#D3;依#D3;順／顺#D2
+ X>|a|百#D3;依#D3;百#D3;順／顺#D2
  P||bai3yi1bai3shun4
   C phrase
    D1|+|docile and obedient; complete obedience
@@ -123985,7 +123989,7 @@ W|w|半數／半数
     X{|A|不到#D2
     X}|A|以上#D1;人口#D1
 W|w|馬馬虎虎／马马虎虎
- X>|a|馬／马;虎#D6
+ X>|a|馬／马;馬／马;虎#D6;虎#D6
  P||ma3ma3hu1hu1
   C adj
    D1|+a|careless; sloppy
@@ -124050,14 +124054,14 @@ W|w|裝聾作啞／装聋作哑
    D1|+|to pretend to not know; to deliberately to not ask or listen
     X{|A|故意#D1;假裝／假装#D1;視而不見／视而不见#D1
 W|w|無影無蹤／无影无踪
- X>|a|無／无#D10;影#D3;蹤／踪#D1
+ X>|a|無／无#D10;影#D3;無／无#D10;蹤／踪#D1
  P||wu2ying3wu2zong1
   C phrase
    D1|+|without a trace; vanished into thin air
     X{|a|消失#D1
     X}|A|不見／不见#D3
 W|w|亂糟糟／乱糟糟
- X>|a|亂／乱#D1;糟#D3
+ X>|a|亂／乱#D1;糟#D3;糟#D3
  P||luan4zao1zao1
   C adj
    D1|+ #colloquial|messy
@@ -124286,7 +124290,7 @@ W|w|溫差／温差
     X{|A|適應／适应#D2;季節／季节#D1;調節／调节#D2 |a|晝夜／昼夜#D1
     X}|a|大#D1 |A|變化／变化#D1;明顯／明显#D1
 W|w|人山人海
- X>|a|人#D1;山#D1;海#D1
+ X>|a|人#D1;山#D1;人#D1;海#D1
  P||ren2shan1ren2hai3
   C phrase
    D1|+|very crowded or congested (with people)
@@ -124663,7 +124667,7 @@ W|w|微薄
    D1|+|meager; scanty; negligible
     X}|A|力量#D1;收入#D1
 W|w|以訛傳訛／以讹传讹
- X>|a|以#D2;訛／讹#D1;傳／传#D7
+ X>|a|以#D2;訛／讹#D1;傳／传#D7;訛／讹#D1
  P||yi3e2chuan2e2
   C phrase
    D1|+a|to incorrectly relay an erroneous message (so that it becomes increasingly distorted)
@@ -124711,7 +124715,7 @@ W|w|下星期
     X=|a|下禮拜／下礼拜#D1;下週／下周#D1
     X}|A|開始／开始#D2
 W|w|草草
- X>|a|草#D7
+ X>|a|草#D7;草#D7
  P||cao3cao3
   C adv
    D1|+|rashly; hastily; carelessly; roughly
@@ -125306,6 +125310,7 @@ W|w|朝野
    D2||the government and the opposition
     X}|A|反應／反应#D2;人士#D1;上下#D2;輿論／舆论#D1;共識／共识#D1;各界#D1
 W|w|菁英
+ # todo: definitions seem to be a subset of 精英, merge?
  X>|a|菁;英#D4
  P||jing1ying1
   C noun
@@ -125958,7 +125963,7 @@ W|w|錐／锥
    D4||cone; pyramid
     X<||圓錐／圆锥
 W|w|嘿嘿
- X>|a|嘿#D2
+ X>|a|嘿#D2;嘿#D2
  P||hei1hei1
   C intj
    D1|+|hehe; tee hee; lol
@@ -126522,7 +126527,7 @@ W|w|趣
   C character
    D13||Alternative form of 掫 (“to go on night patrol and sound the night watches”)
 W|w|頻頻／频频
- X>|a|頻／频#D2
+ X>|a|頻／频#D2;頻／频#D2
  P||pin2pin2
   C adv
    D1|+|again and again; repeatedly
@@ -127512,7 +127517,7 @@ W|w|充電器／充电器
     XM||個／个
     X{|A|手機／手机#D1 |a|無線／无线#D1
 W|w|攛掇／撺掇
- X>|a|掇#D3
+ X>|a|攛／撺;掇#D3
  P||cuan1duo5
   C verb
    D1|+ #colloquial|to urge; to egg on; to coax; to abet
@@ -128165,7 +128170,7 @@ W|w|盲從／盲从
    D1|+|to follow blindly
     X}|A|跟風／跟风#D1
 W|w|懊悔
- X>|a|悔#D1
+ X>|a|懊;悔#D1
  P||ao4hui3
   C verb
    D1|- #literary|to regret
@@ -128555,7 +128560,7 @@ W|w|雄壯／雄壮
     X<|a|威武雄壯／威武雄壮
     X}|A|聲音／声音#D1;氣勢／气势#D1;歌聲／歌声#D1
 W|w|響噹噹／响当当
- X>|a|響／响#D2;噹／当#D1
+ X>|a|響／响#D2;噹／当#D1;噹／当#D1
  P||xiang3dang1dang1
   C adj
    D1||(of a percussion sound) loud and resounding
@@ -128621,7 +128626,7 @@ W|w|父親節／父亲节
     X{|A|慶祝／庆祝#D1
     X}|A|禮物／礼物#D1;活動／活动#D4;祝福#D3;卡片#D1
 W|w|礙手礙腳／碍手碍脚
- X>|a|礙／碍#D1;手#D1;腳／脚#D1
+ X>|a|礙／碍#D1;手#D1;礙／碍#D1;腳／脚#D1
  P||ai4shou3ai4jiao3
   C phrase
    D1|+|to be in the way; to be a hindrance
@@ -129191,7 +129196,7 @@ W|w|失靈／失灵
    D1|+|to malfunction; to be out of order; to not work properly
     X{|A|機器／机器#D1;系統／系统#D2;設備／设备#D1;功能#D1 |a|剎車／刹车#D4 |A|儀器／仪器#D1;裝置／装置#D1
 W|w|無拘無束／无拘无束
- X>|a|無／无#D10;拘#D2;束#D2
+ X>|a|無／无#D10;拘#D2;無／无#D10;束#D2
  P||wu2ju1wu2shu4
   C phrase
    D1|+|unrestrained; unconstrained; free and easy
@@ -130061,7 +130066,7 @@ W|w|名家
    D3||distinguished family
     X=|a|大家#D4;大方#D7
 W|w|某某
- X>|a|某#D1
+ X>|a|某#D1;某#D1
  P||mou3mou3
   C noun
    D1|+a|someone; so-and-so
@@ -130325,7 +130330,7 @@ W|w|而後／而后
   C adv
    D1|+|after that; then
 W|w|忍無可忍／忍无可忍
- X>|a|忍#D1;無／无;可#D1
+ X>|a|忍#D1;無／无;可#D1;忍#D1
  P||ren3wu2ke3ren3
   C phrase
    D1|+|to reach the limit of one's patience; to be unable to bear any more
@@ -131256,7 +131261,7 @@ W|w|運動鞋／运动鞋
     X{|a|穿#D4 |A|休閒／休闲#D1
     X}|A|品牌#D1
 W|w|少之又少
- X>|a|少#D1;之;又#D1
+ X>|a|少#D1;之;又#D1;少#D1
  P||shao3zhi1you4shao3
   C phrase
    D1|+|very few; few and far between
@@ -131295,7 +131300,7 @@ W|w|嫖
   C character
    D2||nimble; agile
 W|w|畏畏縮縮／畏畏缩缩
- X>|a|畏#D1;縮／缩
+ X>|a|畏#D1;畏#D1;縮／缩;縮／缩
  P||wei4wei4suo1suo1
   C adj
    D1|+|timid; lacking courage; cowardly
@@ -131729,7 +131734,7 @@ W|w|觸動／触动
    D3|#figurative|to affect (people's interests); to go against
     X}|A|神經／神经#D2
 W|w|自吹自擂
- X>|a|自#D1;吹#D5;擂#D2
+ X>|a|自#D1;吹#D5;自#D1;擂#D2
  P||zi4chui1zi4lei2
   C phrase
    D1|+|to toot one's own horn; to boast about oneself
@@ -132348,7 +132353,7 @@ W|w|同業／同业
     X}|A|合作#D4;交流#D1;協會／协会#D1
    D3||colleagues
 W|w|嬌滴滴／娇滴滴
- X>|a|嬌／娇#D2;滴#D7
+ X>|a|嬌／娇#D2;滴#D7;滴#D7
  P||jiao1di1di1
   C adj
    D1|+|cute; sweet; charming
@@ -133136,7 +133141,7 @@ W|w|安身立命
    D1||to settle down and get on with one's pursuit
     X}|A|生存#D1
 W|w|詬病／诟病
- X>|a|病#D6
+ X>|a|詬／诟;病#D6
  P||gou4bing4
   C verb
    D1|- #literary|to denounce; to castigate; to criticise
@@ -133415,7 +133420,7 @@ W|w|羽絨服／羽绒服
     X{|a|件#D4 |A|冬天#D1
     X}|A|外套#D2;保暖#D1;品牌#D1
 W|w|俯瞰
- X>|a|俯#D3
+ X>|a|俯#D3;瞰
  P||fu3kan4
   C verb
    D1|+|to overlook (a city, surroundings, etc.); to look down at; to get a bird's-eye view
@@ -133881,7 +133886,7 @@ W|w|濃度／浓度
    D1|+|concentration
     X{|a|高#D2 |A|調整／调整#D1;測量／测量#D1;稀釋／稀释#D1
 W|w|隱隱約約／隐隐约约
- X>|a|隱隱／隐隐#D1;約／约#D18
+ X>|a|隱隱／隐隐#D1;約／约#D18;約／约#D18
  P||yin3yin3yue1yue1
   C adj
    D1||vague; dim; faint
@@ -134027,7 +134032,7 @@ W|w|絮
   C character
    D9||(of silk) disorderly; tangled
 W|w|稍稍
- X>|a|稍#D1
+ X>|a|稍#D1;稍#D1
  P||shao1shao1
   C adv
    D1|+a|slightly; a little; somewhat
@@ -134106,7 +134111,7 @@ W|w|圍牆／围墙
     X=|A|牆／墙#D1;牆壁／墙壁#D1
     X<||柏林圍牆／柏林围墙
 W|w|嫂嫂
- X>|a|嫂#D1
+ X>|a|嫂#D1;嫂#D1
  P||sao3sao5
   C noun
    D1|+ #regional|sister-in-law (elder brother's wife)
@@ -135162,7 +135167,7 @@ W|w|疲於奔命／疲于奔命
     X{|A|工作#D3;忙碌#D1
     X}|A|應付／应付#D2
 W|w|作威作福
- X>|a|作#D5;威#D2;福#D1
+ X>|a|作#D5;威#D2;作#D5;福#D1
  P||zuo4wei1zuo4fu2
   C verb
    D1|+|to openly abuse power; to tyrannize
@@ -135281,7 +135286,7 @@ W|w|龍頭／龙头
    D9|x #archaic #historical|Alternative name for 狀元／状元 (zhuàngyuan, “zhuangyuan, person ranked first class in the palace examination, the highest level of the Chinese imperial examination”).
    D10|x #Suzhounese|postage stamp
 W|w|自顧自／自顾自
- X>|a|自#D1;顧／顾#D6
+ X>|a|自#D1;顧／顾#D6;自#D1
  P||zi4gu4zi4
   C phrase
    D1|+|each for himself; everyone looks to himself (without worrying for others)
@@ -136055,7 +136060,7 @@ W|w|誡／诫
    D2||to take precautions; to guard against
    D3|#religion|commandments; precepts; tenets
 W|w|心心相印
- X>|a|心#D3;相#D2;印#D3
+ X>|a|心#D3;心#D3;相#D2;印#D3
  P||xin1xin1xiang1yin4
   C phrase
    D1|+|have mutual affinity; be kindred spirit
@@ -136238,7 +136243,7 @@ W|w|依稀
     X=|a|隱約／隐约#D1;恍惚#D2;含糊#D1;朦朧／朦胧#D2;低迷#D2;微茫#D1;淡漠#D2;約略／约略#D2
     X}|A|記得／记得#D1;看見／看见#D1;感覺／感觉#D3;記憶／记忆#D1;可見／可见#D1
 W|m|風塵僕僕／风尘仆仆
- X>|a|風塵／风尘#D2;僕／仆
+ X>|a|風塵／风尘#D2;僕／仆;僕／仆
  P||feng1chen2pu2pu2
   C phrase
    D1|#literal|covered in dust
@@ -136415,7 +136420,7 @@ W|w|限於／限于
     X{|a|只#D1;僅／仅#D1
     X}|A|時間／时间#D2;條件／条件#D2;能力#D1;範圍／范围#D1
 W|w|結結巴巴／结结巴巴
- X>|a|結／结#D11;巴#D29
+ X>|a|結／结#D11;結／结#D11;巴#D29;巴#D29
  P||jie1jie5ba1ba1
   C adj
    D1|+|tongue-tied; stuttering; stammering
@@ -136618,7 +136623,7 @@ W|w|通商
     X{|A|開放／开放#D5
     X}|A|關係／关系#D1;貿易／贸易#D1;往來／往来#D2;條約／条约#D1;協定／协定#D1
 W|w|自私自利
- X>|a|自#D1;私#D2;利#D1
+ X>|a|自#D1;私#D2;自#D1;利#D1
  P||zi4si1zi4li4
   C phrase
    D1|+|selfish; self-centered
@@ -136680,7 +136685,7 @@ W|w|暈船／晕船
     X}|a|藥／药#D1 |A|嚴重／严重#D1
    D2|#euphemistic #figurative|fallen for someone hard
 W|w|幽幽
- X>|a|幽#D1
+ X>|a|幽#D1;幽#D1
  P||you1you1
   C adj
    D1|+a|(of sound, light, etc.) faint
@@ -136859,7 +136864,7 @@ W|w|乘機／乘机
    D2||to take a plane
     X}|A|起飛／起飞#D1
 W|w|咪咪
- X>|a|咪#D1
+ X>|a|咪#D1;咪#D1
  P||mi1mi1
   C adv
    D1||Alternative form of 瞇瞇／眯眯 (“smilingly”)
@@ -137005,7 +137010,7 @@ W|w|公義／公义
     X{|A|社會／社会#D2;追求#D1;維護／维护#D1;伸張／伸张#D1
     X}|A|正義／正义#D3
 W|w|天兵天將／天兵天将
- X>|a|天#D2;兵;將／将#D31
+ X>|a|天#D2;兵;天#D2;將／将#D31
  P||tian1bing1tian1jiang4
   C phrase
    D1||soldiers and generals of Heaven; army of Heaven
@@ -137963,7 +137968,7 @@ W|m|伸冤
    D1|+|to right wrongs; to redress an injustice
     X{|A|申訴／申诉#D1
     X}|A|平反#D1;昭雪#D1
-W|w|求援／求饶
+W|w|求援
  X>|a|求#D3;援#D3
  P||qiu2yuan2
   C verb
@@ -138071,7 +138076,7 @@ W|w|公祭
    D1||public memorial
     X}|A|活動／活动#D4;儀式／仪式#D1;典禮／典礼#D1
 W|w|氣喘吁吁／气喘吁吁
- X>|a|氣／气#D3;喘#D1;吁#D1
+ X>|a|氣／气#D3;喘#D1;吁#D1;吁#D1
  P||qi4chuan3xu1xu1
   C phrase
    D1|+|to pant or gasp heavily; to be out of breath
@@ -138333,7 +138338,7 @@ W|w|褲襠／裤裆
    D1|+|crotch (part of a garment that passes between the legs)
     X=|a|胯襠／胯裆#D1
 W|w|微乎其微
- X>|a|微#D1;乎;其
+ X>|a|微#D1;乎;其;微#D1
  P|C|wei1hu1qi2wei1 |T|wei2hu1qi2wei2
   C phrase
    D1|+|very little; next to nothing
@@ -138633,7 +138638,7 @@ W|w|濫用／滥用
     X<|a|濫用藥物／滥用药物
     X}|A|資源／资源#D3;權力／权力#D1;暴力#D2;職權／职权#D1;公款#D1
 W|w|伴君如伴虎
- X>|a|伴#D2;君#D1;如#D1;虎#D1
+ X>|a|伴#D2;君#D1;如#D1;伴#D2;虎#D1
  P||ban4 jun1 ru2 ban4 hu3
   C proverb
    D1||It can be dangerous to follow one's leader.
@@ -140342,7 +140347,7 @@ W|w|校車／校车
     X{|A|學生／学生#D1
     X}|A|安全#D4;司機／司机#D1;路線／路线#D1;接送#D1
 W|w|本本
- X>|a|本#D9
+ X>|a|本#D9;本#D9
  P||ben3ben3
   C adv
    D1|x #Hakka|still; yet; as before
@@ -140456,7 +140461,7 @@ W|w|海岸
    D1|+|coast; seashore
     X=|A|海邊／海边#D1;沿海#D1;海濱／海滨#D1
 W|w|猖獗
- X>|a|獗#D1
+ X>|a|猖;獗#D1
  P||chang1jue2
   C adj
    D1|+a|rampant; running wild; unchecked; unrestrained
@@ -141122,7 +141127,7 @@ W|w|避孕
    D1|+|to prevent conception; to avoid pregnancy; to practice contraception
     X}|A|方法#D1;措施#D1
 W|w|啦啦隊／啦啦队;拉拉隊／拉拉队
- X>|a|啦;隊／队#D1
+ X>|a|啦;啦;隊／队#D1
  P||la1la1dui4
   C noun
    D1|+|cheerleading squad
@@ -142466,7 +142471,7 @@ W|w|食客
     X{|A|眾多／众多#D1
    D2|x #archaic|retainer (in an aristocratic household)
 W|m|古蹟／古迹
- X>|a|古#D2
+ X>|a|古#D2;蹟／迹
  P|C|gu3ji4 |T|gu3ji1
   C noun
    D1|+|place of historic interest; historical site
@@ -142539,7 +142544,7 @@ W|m|手足之情
     X{|A|珍惜#D1
     X}|A|深厚#D2
 W|w|嘩啦啦／哗啦啦
- X>|a|嘩／哗#D3;啦
+ X>|a|嘩／哗#D3;啦;啦
  P||hua1la1la1
   C intj
    D1|+ #onomatopoeia|Used for the pitter-patter of rain or numerous objects falling down and scattering on the ground.
@@ -142928,7 +142933,7 @@ W|w|場次／场次
     X{|A|安排#D1;電影／电影#D1;增加#D1;減少／减少#D1;首映#D1
     X}|A|演出#D1
 W|w|精益求精
- X>|a|精#D9;益#D5;求#D1
+ X>|a|精#D9;益#D5;求#D1;精#D9
  P||jing1yi4qiu2jing1
   C phrase
    D1|+|to keep on improving; to constantly improve
@@ -143037,7 +143042,7 @@ W|w|日報／日报
     X{|A|訂閱／订阅#D1
     X}|A|新聞／新闻#D1;記者／记者#D1;發行／发行#D2
 W|w|諄諄／谆谆
- X>|a|諄／谆#D1
+ X>|a|諄／谆#D1;諄／谆#D1
  P||zhun1zhun1
   C adj
    D1|#ideophonic|(of teaching) earnest and sincere; tireless and impassioned
@@ -144056,7 +144061,7 @@ W|w|陰冷／阴冷
    D2||somber; glum (of a person's look)
     X{|A|氣氛／气氛#D1
 W|w|沾沾自喜
- X>|a|沾#D6;自#D1;喜#D1
+ X>|a|沾#D6;沾#D6;自#D1;喜#D1
  P||zhan1zhan1zi4xi3
   C phrase
    D1|+|to feel complacent; to be pleased with oneself
@@ -144851,7 +144856,7 @@ W|w|跳井
    D1||to drown oneself in a well
     X}|A|自殺／自杀#D1
 W|m|纖纖／纤纤
- X>|a|纖／纤#D4
+ X>|a|纖／纤#D4;纖／纤#D4
  P||xian1xian1
   C adj
    D1||slim; slender
@@ -145448,7 +145453,7 @@ W|w|晝／昼
    D3||An ancient placename in modern-day Zibo, Shandong province, China.
    D4||a surname
 W|w|冉冉
- X>|a|冉
+ X>|a|冉;冉
  P||ran3ran3
   C adj
    D1|- #ideophonic #literary|walking slowly
@@ -146206,7 +146211,7 @@ W|w|娃娃臉／娃娃脸
     X{|A|年輕／年轻#D1
     X}|A|可愛／可爱#D1;稚氣／稚气#D1
 W|w|若即若離／若即若离
- X>|a|若#D6;即#D2;離／离#D3
+ X>|a|若#D6;即#D2;若#D6;離／离#D3
  P||ruo4ji2ruo4li2
   C phrase
    D1|+a|to be neither friendly nor aloof; to maintain a lukewarm relationship
@@ -146275,7 +146280,7 @@ W|w|屈原
   C name
    D1||(～鎮) Quyuan (a town in Zigui, Yichang, Hubei, China)
 W|w|耿耿
- X>|a|耿#D1
+ X>|a|耿#D1;耿#D1
  P||geng3geng3
   C adj
    D1|#ideophonic|bright; shining
@@ -146723,7 +146728,7 @@ W|w|對頭／对头
    D7||(chiefly in the negative) to agree; to get along
     X=|a|適合／适合#D2;合手#D3
 W|w|躍躍欲試／跃跃欲试
- X>|a|躍／跃#D3;欲#D3;試／试#D2
+ X>|a|躍／跃#D3;躍／跃#D3;欲#D3;試／试#D2
  P||yue4yue4yu4shi4
   C phrase
    D1|+|to itch for a try
@@ -146911,7 +146916,7 @@ W|w|痛心疾首
    D1||to be deeply sorrowful and intensely grieve for or abhor something
     X{|A|感到#D1;令人#D4
 W|m|整整齊齊／整整齐齐
- X>|a|整#D5;齊／齐#D1
+ X>|a|整#D5;整#D5;齊／齐#D1;齊／齐#D1
  P||zheng3zheng3qi2qi2
   C adj
    D1|+|neat and tidy
@@ -147000,7 +147005,7 @@ W|w|搭便車／搭便车
     X}|A|免費／免费#D1
    D2||to be a free rider; to benefit from a public good without paying for it directly
 W|w|多倫多／多伦多
- X>|a|多;倫／伦
+ X>|a|多;倫／伦;多
  P||Duo1lun2duo1
   C name
    D1|+|Toronto (the capital city of Ontario, Canada, and largest city in Canada)
@@ -147127,7 +147132,7 @@ W|w|首度
     X!|a|末次#D1
     X}|A|公開／公开#D2;發表／发表#D2;訪問／访问#D1;登場／登场#D2;亮相#D2
 W|m|亂哄哄／乱哄哄
- X>|a|亂／乱#D1;哄#D4
+ X>|a|亂／乱#D1;哄#D4;哄#D4
  P||luan4hong1hong1
   C adj
    D1|+|noisy and in disarray; in an uproar
@@ -147413,7 +147418,7 @@ W|w|瘡／疮
    D2|+a|sore; skin ulcer; boil
     XM||個／个;塊／块
 W|w|隆隆
- X>|a|隆#D5
+ X>|a|隆#D5;隆#D5
  P||long2long2
   C adj
    D1|+ #onomatopoeia|(of thunder, machines, guns, etc.) rumbling
@@ -147673,7 +147678,7 @@ W|m|死要面子活受罪
   C proverb
    D1|+|to go through hell for the sake of keeping up appearances
 W|w|嘎嘎
- X>|a|嘎#D1
+ X>|a|嘎#D1;嘎#D1
  P||ga1ga1
   C noun
    D1|#onomatopoeia|The sound of certain birds, e.g. ducks and geese: quack; honk
@@ -147944,7 +147949,7 @@ W|w|沿襲／沿袭
     X=|a|沿用#D1;承襲／承袭#D2
     X}|A|傳統／传统#D3;做法#D1;制度#D1;習俗／习俗#D1
 W|w|不屈不撓／不屈不挠
- X>|a|不#D1;屈#D4;撓／挠#D5
+ X>|a|不#D1;屈#D4;不#D1;撓／挠#D5
  P||bu4qu1bu4nao2
   C phrase
    D1|+|unyielding; indomitable; dauntless
@@ -149345,7 +149350,7 @@ W|w|增益
    D2||to add; to increase
     X=|a|加大#D1;廣益／广益#D2;附益#D1
 W|w|咕咾肉
- X>|a|咕;肉#D2
+ X>|a|咕;咾;肉#D2
  P||gu1lao3rou4
   C noun
    D1|+|sweet-and-sour pork
@@ -149763,7 +149768,7 @@ W|w|暴行
     X{|A|譴責／谴责#D1
     X}|A|殘忍／残忍#D1
 W|w|蒙蒙
- X>|a|蒙#D2
+ X>|a|蒙#D2;蒙#D2
  P||meng2meng2
   C adj
    D1|- #literary|covering densely; (of rain or snow) drizzling
@@ -150117,7 +150122,7 @@ W|w|屹立
     X=|a|聳立／耸立#D1;矗立#D1
     X}|A|不倒#D1;不動／不动#D1;巍然#D1
 W|w|祖祖輩輩／祖祖辈辈
- X>|a|祖#D1;輩／辈#D2
+ X>|a|祖#D1;祖#D1;輩／辈#D2;輩／辈#D2
  P||zu3zu3bei4bei4
   C noun
    D1||(for) generations and generations (in the past)
@@ -150130,7 +150135,7 @@ W|w|遭逢
    D1||to come across; to encounter; to have (an accident); to meet with; to run into; to find
     X}|A|困難／困难#D3;不幸#D3;挫折#D1;困境#D1;變故／变故#D1
 W|w|不倫不類／不伦不类
- X>|a|不#D1;倫／伦#D1;類／类#D1
+ X>|a|不#D1;倫／伦#D1;不#D1;類／类#D1
  P||bu4lun2bu4lei4
   C phrase
    D1|+|nondescript; neither fish nor fowl
@@ -150263,7 +150268,7 @@ W|w|三寸不爛之舌／三寸不烂之舌
   C phrase
    D1||to have a silver tongue; to have a way with words; to have an ability to schmooze
 W|m|行行出狀元／行行出状元
- X>|a|行#D12;出#D6;狀元／状元#D3
+ X>|a|行#D12;行#D12;出#D6;狀元／状元#D3
  P||hang2hang2chu1zhuang4yuan2
   C phrase
    D1|#literal|in every trade, a master appears
@@ -150310,7 +150315,7 @@ W|w|踏板
     X{|A|鋼琴／钢琴#D1;剎車／刹车#D1;機車／机车#D3
     X}|A|油門／油门#D1
 W|w|絮絮叨叨
- X>|a|絮#D5;叨#D1
+ X>|a|絮#D5;絮#D5;叨#D1;叨#D1
  P||xu4xu5dao1dao1
   C adj
    D1|+ #colloquial #ideophonic|long-winded; talking endlessly; jabbering
@@ -150480,7 +150485,7 @@ W|w|泡影
     X<|a|化為泡影／化为泡影
     X{|A|希望#D1;成為／成为#D1;夢想／梦想#D1;落空#D1;破滅／破灭#D1
 W|w|古色古香
- X>|a|古#D2;色#D1;香#D1
+ X>|a|古#D2;色#D1;古#D2;香#D1
  P||gu3se4gu3xiang1
   C phrase
    D1|+|having an ancient or antique elegance
@@ -150660,7 +150665,7 @@ W|w|字體／字体
    D3||school of calligraphy
    D4|+a|handwriting
 W|w|粗獷／粗犷
- X>|a|粗#D1
+ X>|a|粗#D1;獷／犷
  P||cu1guang3 |x|cu1kuang4
   C adj
    D1||rough; rude; boorish
@@ -150739,7 +150744,7 @@ W|w|棄置／弃置
     X{|A|不用#D1
     X}|A|垃圾#D2;角落#D1;物品#D1;一旁#D1
 W|w|罵罵咧咧／骂骂咧咧
- X>|a|罵／骂#D2;咧
+ X>|a|罵／骂#D2;罵／骂#D2;咧;咧
  P||ma4ma4lie1lie1 |C|ma4ma5lie1lie1 |x|ma4ma4lie3lie3
   C phrase
    D1|+|foul-mouthed; showering curses and abuse; continuously swearing
@@ -150763,7 +150768,7 @@ W|w|靡靡之音
     X{|A|充斥#D1
     X}|A|流行#D3
 W|w|饃饃／馍馍
- X>|a|饃／馍#D1
+ X>|a|饃／馍#D1;饃／馍#D1
  P||mo2mo5
   C noun
    D1||steamed bun
@@ -150793,7 +150798,7 @@ W|w|高等
     X=|A|高級／高级#D1 |a|高明#D1;高超#D1;高深#D1;精深#D1;湛深#D2
     X<|a|高等學校／高等学校;高等數學／高等数学
 W|w|風聲鶴唳／风声鹤唳
- X>|a|風聲／风声;鶴／鹤#D1
+ X>|a|風聲／风声;鶴／鹤#D1;唳
  P||feng1sheng1he4li4
   C phrase
    D1||to panic and feel apprehensive for even the slightest sound
@@ -151078,7 +151083,7 @@ W|w|長衫／长衫
     X{|A|穿著／穿着#D2
    D2|#regional|cheongsam; qipao (a long gown worn by females)
 W|w|光禿禿／光秃秃
- X>|a|光#D3;禿／秃#D2
+ X>|a|光#D3;禿／秃#D2;禿／秃#D2
  P||guang1tu1tu1
   C adj
    D1|+|(of the top of the head, a hillside, etc.) bare; bald; naked
@@ -151643,7 +151648,7 @@ W|w|魏國／魏国
    D1|x #historical|Wei, a Chinese march during the Zhou dynasty
    D2|x #historical #informal|Liang, the same realm after it was raised to a kingdom
 W|w|囡囡
- X>|a|囡#D1
+ X>|a|囡#D1;囡#D1
  P||nan1nan1
   C noun
    D1|x #chiefly-Northern-Wu|little darling (term of endearment for a baby or child)
@@ -152094,7 +152099,7 @@ W|w|消融
     X=|a|消失#D1;消滅／消灭#D1;不見／不见#D3;收斂／收敛#D1;蒸發／蒸发#D2;消逝#D1;泯絕／泯绝#D2;絕滅／绝灭#D2
    D3|#medicine|to ablate
 W|w|喃喃
- X>|a|喃#D1
+ X>|a|喃#D1;喃#D1
  P||nan2nan2
   C adv
    D1|+a #onomatopoeia|describes the act of speaking softly or murmuring
@@ -153052,7 +153057,7 @@ W|w|簇
   C classifier
    D3||Classifier for bunched objects: cluster; bundle; bunch
 W|w|嘖嘖／啧啧
- X>|a|嘖／啧#D2
+ X>|a|嘖／啧#D2;嘖／啧#D2
  P||ze2ze2
   C adj
    D1|#onomatopoeia|Describes the sound of chirping.
@@ -153223,7 +153228,7 @@ W|w|凌空
    D1|+|to be high up in the sky
     X}|A|飛翔／飞翔#D1;翱翔#D1
 W|w|十全十美
- X>|a|十#D2;全;美#D3
+ X>|a|十#D2;全;十#D2;美#D3
  P||shi2quan2shi2mei3
   C phrase
    D1|+|perfect; flawless
@@ -154964,7 +154969,7 @@ W|w|鱷魚／鳄鱼
     X<|a|鱷魚眼淚／鳄鱼眼泪
     X}|a|皮#D2
 W|w|裊裊／袅袅
- X>|a|裊／袅#D2
+ X>|a|裊／袅#D2;裊／袅#D2
  P||niao3niao3
   C adj
    D1|- #ideophonic #literary|(of smoke etc.) slowly billowing upwards; curling upwards; spiralling up
@@ -155818,7 +155823,7 @@ W|w|議定／议定
    D1||to reach an agreement (after negotiations)
     X}|A|內容／内容#D1;協議／协议#D1;條款／条款#D1;事項／事项#D1
 W|w|斷斷續續／断断续续
- X>|a|斷／断#D2;續／续#D1
+ X>|a|斷／断#D2;斷／断#D2;續／续#D1;續／续#D1
  P||duan4duan4xu4xu4
   C adj
    D1|+|intermittent; off and on; discontinuous; stop-go; stammering; disjointed; inarticulate
@@ -156045,7 +156050,7 @@ W|w|漢書／汉书
   C name
    D1|#history|Book of Han (history of the Western Han dynasty finished in 111)
 W|w|簌簌
- X>|a|簌#D1
+ X>|a|簌#D1;簌#D1
  P||su4su4
   C adj
    D1|#onomatopoeia|(of leaves, snowflakes) describes a rustling sound
@@ -156066,7 +156071,7 @@ W|w|蜿蜒
     X=|A|曲折#D1 |a|宛延#D2
     X}|A|道路#D1;曲折#D1;延伸#D1;河流#D1;盤旋／盘旋#D1;山路#D1
 W|m|慢慢吞吞
- X>|a|慢慢#D1;吞
+ X>|a|慢慢#D1;吞;吞
  P||man4man5tun1tun1
   C adj
    D1|+|very slow
@@ -156873,7 +156878,7 @@ W|w|精神抖擻／精神抖擞
     X=|a|容光煥發／容光焕发#D1
     X}|A|狀態／状态#D1
 W|w|愣頭愣腦／愣头愣脑
- X>|a|愣#D2;頭／头#D19;腦／脑
+ X>|a|愣#D2;頭／头#D19;愣#D2;腦／脑
  P||leng4tou2leng4nao3
   C phrase
    D1|+a|rash; hotheaded; reckless
@@ -157077,7 +157082,7 @@ W|w|紙醉金迷／纸醉金迷
    D1||to indulge in a life of luxury and dissipation
     X}|A|生活#D1;奢華／奢华#D1;享樂／享乐#D1
 W|w|七七事變／七七事变
- X>|a|七#D1;事#D3;變／变
+ X>|a|七#D1;七#D1;事#D3;變／变
  P||Qi1qi1 Shi4bian4
   C name
    D1||Marco Polo Bridge Incident
@@ -157144,7 +157149,7 @@ W|m|問名／问名
   C noun
    D2||one of a set of six traditional marriage protocols (六禮／六礼), in which name as well as date and time of birth (for horoscope) are formally requested of the prospective bride's family
 W|w|半推半就
- X>|a|半#D1;推#D3;就#D5
+ X>|a|半#D1;推#D3;半#D1;就#D5
  P||ban4tui1ban4jiu4
   C phrase
    D1|+|to be half willing (at heart) and half unwilling (in appearance); to yield after making a show of resistance; to yield with a show of resistance
@@ -157317,13 +157322,13 @@ W|w|邊患／边患
    D1|- #literary|disaster in a border area caused by foreign invasion; frontier threat
     X}|A|外患#D1
 W|w|挨門挨戶／挨门挨户
- X>|a|挨#D5;門／门#D1;戶／户#D1
+ X>|a|挨#D5;門／门#D1;挨#D5;戶／户#D1
  P||ai1men2ai1hu4
   C phrase
    D1||Synonym of 挨家挨戶／挨家挨户 (āijiā'āihù, “(to go) from door to door”)
     X}|A|調查／调查#D3;宣傳／宣传#D1;拜訪／拜访#D1;推銷／推销#D1;收費／收费#D1
 W|w|載歌載舞／载歌载舞
- X>|a|載／载#D11;歌#D1;舞#D1
+ X>|a|載／载#D11;歌#D1;載／载#D11;舞#D1
  P||zai4ge1zai4wu3
   C phrase
    D1|+|singing and dancing; festive celebrations
@@ -157741,7 +157746,7 @@ W|w|主食
     X!|a|副食#D1
     X{|A|麵包／面包#D1;饅頭／馒头#D1;米飯／米饭#D1
 W|w|抖擻／抖擞
- X>|a|抖#D1
+ X>|a|抖#D1;擻／擞
  P||dou3sou3
   C adj
    D1|- #literary|mighty; in high spirits
@@ -158478,7 +158483,7 @@ W|w|伸開／伸开
    D1||to stretch; to stretch out
     X}|A|四肢#D1;手腳／手脚#D1;雙手／双手#D1;雙臂／双臂#D1
 W|w|坑坑窪窪／坑坑洼洼
- X>|a|坑#D1;窪／洼#D1
+ X>|a|坑#D1;坑#D1;窪／洼#D1;窪／洼#D1
  P||keng1keng5wa1wa1
   C adj
    D1|+|bumpy (of roads)
@@ -158679,7 +158684,7 @@ W|w|柩
    D1||coffin which contains a corpse
     X<|A|靈柩／灵柩
 W|w|巖石／岩石
- X>|a|石#D1
+ X>|a|巖／岩#D1;石#D1
  P||yan2shi2
   C noun
    D1||big and tall piece of rock
@@ -158863,7 +158868,7 @@ W|w|閹割／阉割
    D2|#figuratively|to castrate (to take something from; to render imperfect or ineffectual); to nerf
     X}|A|文化#D3;思想#D1
 W|m|直愣愣
- X>|a|直#D7;愣#D1
+ X>|a|直#D7;愣#D1;愣#D1
  P||zhi2leng4leng4
   C verb
    D1||staring blankly
@@ -158894,7 +158899,7 @@ W|w|俏麗／俏丽
     X=|a|姣美#D1
     X}|A|姑娘#D1;模樣／模样#D2;容貌#D1;身影#D1
 W|w|榻榻米
- X>|a|榻#D1;米
+ X>|a|榻#D1;榻#D1;米
  P||ta4ta4mi3
   C noun
    D1||tatami (straw matting in Japanese houses)
@@ -158937,7 +158942,7 @@ W|w|顧惜／顾惜
     X=|a|心疼#D1;呵護／呵护#D2;珍重#D1
     X}|A|身體／身体#D2
 W|w|纍纍／累累
- X>|a|纍／累#D1
+ X>|a|纍／累#D1;纍／累#D1
  P||lei2lei2
   C adj
    D1||weak; listless; exhausted
@@ -159079,7 +159084,7 @@ W|w|大壩／大坝
     X{|A|建設／建设#D4;修建#D1
     X}|A|工程#D2;水庫／水库#D1;防洪#D1
 W|w|喑啞／喑哑
- X>|a|啞／哑#D1
+ X>|a|喑;啞／哑#D1
  P||yin1ya3
   C adj
    D1||mute; dumb (unable to speak)
@@ -159510,7 +159515,7 @@ W|w|秉性
     X=|a|脾氣／脾气#D1;性格#D1;個性／个性#D1;人格#D1;性情#D1;本質／本质#D2;情性#D2;素性#D1
     X}|A|忠厚#D1;耿直#D1;剛直／刚直#D1
 W|w|甘迺迪
- X>|a|甘;迪
+ X>|a|甘;迺;迪
  P||Gan1nai3di2
   C name
    D1|#HongKong|Kennedy
@@ -160031,7 +160036,7 @@ W|w|列強／列强
    D2||great power (powerful state)
     X}|A|侵略#D1;瓜分#D1;爭霸／争霸#D1
 W|m|傻頭傻腦／傻头傻脑
- X>|a|傻#D1;頭／头;腦／脑#D1
+ X>|a|傻#D1;頭／头;傻#D1;腦／脑#D1
  P||sha3tou2sha3nao3
   C phrase
    D1|+|stupid; muddle-headed
@@ -160209,7 +160214,7 @@ W|w|酌情
    D2||to use one's discretion; to make allowances according to the situation; to take circumstances into consideration
     X}|A|決定／决定#D2;調整／调整#D1;減免／减免#D2
 W|w|有聲有色／有声有色
- X>|a|有#D1;聲／声#D1;色#D1
+ X>|a|有#D1;聲／声#D1;有#D1;色#D1
  P||you3sheng1you3se4
   C phrase
    D1|+|vivid and dramatic
@@ -160654,7 +160659,7 @@ W|m|林沖／林冲
   C name
    D1||Lin Chong, one of the Heroes of the Marsh in Water Margin 水滸傳／水浒传
 W|w|怔怔
- X>|a|怔#D2
+ X>|a|怔#D2;怔#D2
  P|C|zheng4zheng4 |T|leng4leng4
   C adj
    D1|#regional|dumbfounded; stupefied; startled
@@ -160762,7 +160767,7 @@ W|w|屋宇
     X=|a|房子#D1;房屋#D1;宅子#D1;寓所#D1;屋舍#D1;房舍#D1
     X{|A|建築／建筑#D1
 W|w|翩躚／翩跹
- X>|a|躚／跹#D1
+ X>|a|翩;躚／跹#D1
  P||pian1xian1
   C adj
    D1|- #literary|spry and lively (of dancing and movements); light; tripping
@@ -160969,7 +160974,7 @@ W|m|百尺竿頭／百尺竿头
    D1||to be at the highest level of enlightenment (Buddhist expression)
     X}|A|精進／精进#D1
 W|w|有板有眼
- X>|a|有#D1;板#D7;眼#D8
+ X>|a|有#D1;板#D7;有#D1;眼#D8
  P||you3ban3you3yan3
   C adj
    D1||orderly; methodical; rhythmical
@@ -161650,12 +161655,12 @@ W|m|林則徐／林则徐
   C name
    D1||Lin Zexu or Lin Tse-hsu "Commissioner Lin" (1785-1850), Qing official whose anti-opium activities led to first Opium war with Britain 1840-1842
 W|w|貶謫／贬谪
- X>|a|貶／贬#D2
+ X>|a|貶／贬#D2;謫／谪
  P||bian3zhe2
   C verb
    D1|x #historical|to be demoted and exiled to remote locations
 W|w|踉蹌／踉跄
- X>|a|踉
+ X>|a|踉;蹌／跄
  P||liang4qiang4 |x|liang4qiang1
   C verb
    D1||to totter; to stagger
@@ -162265,7 +162270,7 @@ W|w|任重道遠／任重道远
    D1|+|to shoulder a heavy responsibility for a long time
     X}|A|責任／责任#D1;使命#D1
 W|m|皇帝不急太監急／皇帝不急太监急
- X>|a|皇帝#D1;不#D1;急#D9;太監／太监#D1
+ X>|a|皇帝#D1;不#D1;急#D9;太監／太监#D1;急#D9
  P||huang2di4bu4ji2tai4jian4ji2
   C proverb
    D1|#literal|the emperor is not worried, but his eunuchs are
@@ -162280,7 +162285,7 @@ W|w|實例／实例
     X}|A|說明／说明#D2;分析#D3
    D2|#computing|shell
 W|w|從從容容／从从容容
- X>|a|從／从#D14;容#D8
+ X>|a|從／从#D14;從／从#D14;容#D8;容#D8
  P||cong1cong1rong2rong2
   C adj
    D1|+a|calm; unhurried; leisurely
@@ -163020,7 +163025,7 @@ W|w|養殖／养殖
     X<|a|水產養殖／水产养殖
     X}|a|場／场#D1 |A|技術／技术#D2 |a|漁業／渔业#D1
 W|w|哧溜
- X>|a|溜#D1
+ X>|a|哧;溜#D1
  P||chi1liu1
   C noun
    D1|#onomatopoeia|the sound made by sliding, tearing, gas leakage, etc.
@@ -163249,7 +163254,7 @@ W|w|簡易／简易
     X=|a|簡單／简单#D3;簡陋／简陋#D1
     X}|A|裝置／装置#D1
 W|m|爐膛／炉膛
- X>|a|爐／炉#D1
+ X>|a|爐／炉#D1;膛
  P||lu2tang2
   C noun
    D1||furnace chamber; stove chamber
@@ -163684,7 +163689,7 @@ W|w|前夕
    D2||the period of time immediately before an event; eve (of an event)
     X{|A|比賽／比赛#D1;戰爭／战争#D1;節日／节日#D1
 W|w|木屐
- X>|a|木#D2
+ X>|a|木#D2;屐
  P||mu4ji1
   C noun
    D1||clogs
@@ -163863,7 +163868,7 @@ W|w|違拗／违拗
    D1||to resist; to defy; to oppose
     X}|A|脾氣／脾气#D1;命令#D1
 W|m|彎彎曲曲／弯弯曲曲
- X>|a|彎彎／弯弯#D1;曲#D9
+ X>|a|彎彎／弯弯#D1;曲#D9;曲#D9
  P||wan1wan1qu1qu1
   C adj
    D1|+|curved; meandering; zigzagging
@@ -164025,7 +164030,7 @@ W|w|樹幹／树干
    D1|+|tree trunk
     X}|A|筆直／笔直#D1;樹皮／树皮#D1;粗壯／粗壮#D2
 W|w|盈盈
- X>|a|盈#D3
+ X>|a|盈#D3;盈#D3
  P||ying2ying2
   C adj
    D1|- #literary|limpid; pellucid
@@ -164072,7 +164077,7 @@ W|w|閒聊／闲聊
    D1||to chat
     X=|a|聊天#D1;聊天兒／聊天儿#D1;閒話／闲话#D5;攀談／攀谈#D1;談天／谈天#D1;擺龍門陣／摆龙门阵#D1;閒扯／闲扯#D1;閒談／闲谈#D1
 W|m|奇蹟／奇迹
- X>|a|奇#D2
+ X>|a|奇#D2;蹟／迹
  P|C|qi2ji4 |T|qi2ji1
   C noun
    D1||miracle; wonder; marvel
@@ -164114,7 +164119,7 @@ W|w|指揮部／指挥部
     X{|A|臨時／临时#D1;設立／设立#D1
     X}|A|成立#D1;作戰／作战#D1;總部／总部#D1
 W|w|懊喪／懊丧
- X>|a|喪／丧#D11
+ X>|a|懊;喪／丧#D11
  P||ao4sang4
   C adj
    D1||dejected; despondent; depressed
@@ -164128,7 +164133,7 @@ W|w|書生氣／书生气
    D1||bookishness; scholarliness
     X{|A|十足#D1
 W|w|黑黝黝
- X>|a|黑#D1;黝#D1
+ X>|a|黑#D1;黝#D1;黝#D1
  P||hei1you3you3 |x|hei1you1you1
   C adj
    D1||shiny black
@@ -164274,7 +164279,7 @@ W|w|愚公
     X}|A|精神#D7
    D3|#figurative|recluse; hermit
 W|m|嘰嘰咕咕／叽叽咕咕
- X>|a|嘰／叽#D3;咕#D1
+ X>|a|嘰／叽#D3;嘰／叽#D3;咕#D1;咕#D1
  P||ji1ji5gu1gu1
   C verb
    D1|#onomatopoeia|to mutter; to mumble; to whisper
@@ -164322,7 +164327,7 @@ W|w|低垂
     X{|A|雲層／云层#D1;枝條／枝条#D1;眼皮#D1
     X}|A|眼簾／眼帘#D1
 W|w|乖乖
- X>|a|乖#D2
+ X>|a|乖#D2;乖#D2
  P||guai1guai1;guai1guai5
   C adj
    D1||well-behaved; obedient
@@ -164699,7 +164704,7 @@ W|w|顯靈／显灵
    D2||to make its presence or power felt (of a ghost or spirit)
     X{|A|祖先#D1;神明#D1
 W|w|細細／细细
- X>|a|細／细#D1
+ X>|a|細／细#D1;細／细#D1
  P||xi4xi4
   C adj
    D1|#colloquial|very thin; very fine
@@ -165343,7 +165348,7 @@ W|m|人民日報／人民日报
   C name
    D1||People's Daily (PRC newspaper)
 W|m|哪裡哪裡／哪里哪里
- X>|a|哪裡／哪里#D1
+ X>|a|哪裡／哪里#D1;哪裡／哪里#D1
  P||na3li3na3li3
   C intj
    D1||you're too kind; you flatter me
@@ -165900,7 +165905,7 @@ W|w|源泉
     X{|A|智慧#D1;靈感／灵感#D1;財富／财富#D1
     X}|A|力量#D2;動力／动力#D2
 W|w|嘩嘩／哗哗
- X>|a|嘩／哗#D2
+ X>|a|嘩／哗#D2;嘩／哗#D2
  P||hua1hua1
   C noun
    D1|+ #onomatopoeia|sound of flowing or gurgling water
@@ -168079,7 +168084,7 @@ W|w|國慶節／国庆节
   C name
    D1|+|National Day, especially that of the People's Republic of China (October 1)
 W|w|形形色色
- X>|a|形#D1;色#D2
+ X>|a|形#D1;形#D1;色#D2;色#D2
  P||xing2xing2se4se4
   C phrase
    D1|+|of all hues; all kinds of; assorted and varied
@@ -168900,7 +168905,7 @@ W|w|星期幾／星期几
    D1|+|which day of the week (question)
     X=|a|禮拜幾／礼拜几#D1
 W|w|大包大攬／大包大揽
- X>|a|大#D4;包#D2;攬／揽#D4
+ X>|a|大#D4;包#D2;大#D4;攬／揽#D4
  P||da4bao1da4lan3
   C phrase
    D1|+|to undertake a task (or contract) all by oneself
@@ -169376,7 +169381,7 @@ W|w|富強／富强
     X{|A|國家／国家#D1;民主#D3;繁榮／繁荣#D1;昌盛#D1
     X}|A|社會／社会#D2;文明#D4;民族#D2
 W|w|可歌可泣
- X>|a|可#D4;歌#D3;泣#D1
+ X>|a|可#D4;歌#D3;可#D4;泣#D1
  P||ke3ge1ke3qi4
   C phrase
    D1|+|epic; moving
@@ -169626,7 +169631,7 @@ W|w|提要
    D2||to extract the main points (for discussion)
     X=|a|總結／总结#D2;概括#D3;歸納／归纳#D2;摘要#D2;匯總／汇总#D3;小結／小结#D3;擇要／择要#D2;概述#D2
 W|w|多勞多得／多劳多得
- X>|a|多#D6;勞／劳#D4;得#D1
+ X>|a|多#D6;勞／劳#D4;多#D6;得#D1
  P||duo1lao2duo1de2
   C phrase
    D1|+|the harder one works, the more one gets paid
@@ -170102,7 +170107,7 @@ W|w|兵馬俑／兵马俑
     X{|A|參觀／参观#D1
     X}|A|歷史／历史#D2;博物館／博物馆#D1;文物#D1;出土#D2
 W|w|推來推去／推来推去
- X>|a|推#D1;來／来;去#D5
+ X>|a|推#D1;來／来;推#D1;去#D5
  P||tui1lai2tui1qu4
   C phrase
    D1|+a|to push one another rudely
@@ -170150,7 +170155,7 @@ W|w|輕便／轻便
     X}|A|行李#D1;服裝／服装#D1;裝備／装备#D1;鞋子#D1;攜帶／携带#D1
    D2||easy and convenient
 W|w|半真半假
- X>|a|半#D1;真#D1;假#D5
+ X>|a|半#D1;真#D1;半#D1;假#D5
  P||ban4zhen1ban4jia3
   C phrase
    D1|+|half true half false, not sincere or truthful, elusive
@@ -170682,7 +170687,7 @@ W|w|就餐
    D1|+|to dine
     X}|A|時間／时间#D3;習慣／习惯#D1;環境／环境#D2;地點／地点#D1;禮儀／礼仪#D1
 W|w|紅撲撲／红扑扑
- X>|a|紅／红#D1;撲／扑
+ X>|a|紅／红#D1;撲／扑;撲／扑
  P||hong2pu1pu1
   C adj
    D1|+|(of a complexion) rosy; flushed
@@ -170791,7 +170796,7 @@ W|m|不可置信
     X{|A|結果／结果#D3
     X}|A|消息#D1
 W|w|沉甸甸
- X>|a|沉#D8;甸#D5
+ X>|a|沉#D8;甸#D5;甸#D5
  P||chen2dian4dian4 |x|chen2dian1dian1
   C adj
    D1|+ #ideophonic|(of an object, a burden on the heart, etc.) heavy; weighty
@@ -170820,7 +170825,7 @@ W|w|貧乏／贫乏
     X=|a|淡薄#D5;貧瘠／贫瘠#D3
     X!|a|富翁#D1;富人#D1;有錢人／有钱人#D1;闊佬／阔佬#D1
 W|w|見仁見智／见仁见智
- X>|a|見／见#D6;仁;智#D1
+ X>|a|見／见#D6;仁;見／见#D6;智#D1
  P||jian4ren2jian4zhi4
   C phrase
    D1|+|different people have different views; opinions differ; there's no accounting for taste
@@ -171059,7 +171064,7 @@ W|m|狼狽不堪／狼狈不堪
     X{|A|處境／处境#D1
     X}|A|境地#D1
 W|w|熙熙攘攘
- X>|a|熙熙#D5;攘#D6
+ X>|a|熙熙#D5;攘#D6;攘#D6
  P||xi1xi1rang3rang3 |-T|xi1xi1rang2rang2
   C phrase
    D1|+ #ideophonic|bustling with activity; hustling and bustling
@@ -172209,7 +172214,7 @@ W|w|僱員／雇员
     X{|A|公司#D1;招聘#D1;解僱／解雇#D1
     X}|A|工資／工资#D1
 W|w|大模大樣／大模大样
- X>|a|大#D4;模#D10;樣／样#D1
+ X>|a|大#D4;模#D10;大#D4;樣／样#D1
  P||da4mu2da4yang4
   C phrase
    D1||natural and unhurried
@@ -172264,7 +172269,7 @@ W|w|文言
    D2||Classical Chinese (literary language used in old China)
     X!|a|白話／白话#D1
 W|w|沒吃沒穿／没吃没穿
- X>|a|沒／没#D1;吃#D1;穿#D4
+ X>|a|沒／没#D1;吃#D1;沒／没#D1;穿#D4
  P||mei2chi1mei2chuan1
   C verb
    D1||to be without food or clothing; to be very poor
@@ -342207,7 +342212,7 @@ W|w|庸才
  P||yong1cai2
   C noun
    D1||mediocre person; person of mediocre ability
-    X!|a|人才#D2;材料#D4;天才#D2;菁英#D2;俊才#D1;棟樑／栋梁#D2
+    X!|a|人才#D2;材料#D4;天才#D2;精英#D4;菁英#D2;俊才#D1;棟樑／栋梁#D2
 W|w|庸碌
  P||yong1lu4
   C adj
@@ -381428,9 +381433,9 @@ W|w|搬兵
  P||ban1bing1
   C verb
    D1|#literally|to call for reinforcements
-    X=|a|求援／求饶#D2
+    X=|a|求援#D2
    D2|#figuratively|to ask for help
-    X=|a|求助#D1;求援／求饶#D1
+    X=|a|求助#D1;求援#D1
 W|w|搬出
  P||ban1chu1
   C verb

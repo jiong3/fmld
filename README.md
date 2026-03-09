@@ -201,7 +201,7 @@ Used LLMs:
 - an: claude-sonnet-4-5-20250929
 
 
-#### Active Definitions (+)
+#### Active Definitions
 
 The wiktionary data includes many definitions for words and especially characters without indication of the relative significance. Since Chinese learners need a way to know which definition should be actually learned as active vocabulary, LLMs were used, in combination with data from subtitles, to identify the most important definitions. Avoiding false positives was more important than avoiding false negatives for this task, meaning there will be some important definitions which are not yet tagged and hopefully few definitions which got a tag and are actually not used in spoken language.
 
@@ -240,4 +240,4 @@ Used LLMs:
 - oa: gpt-4.1-2025-04-14
 - mi: mistral-medium-latest
 
-If both models identify the same definition in the same excerpt and the definition is a candidated according to step 2 or 4, this definition is tagged as active vocabulary ('+'). If there is more than one defintion for that word, the 'a' tag is added to indicate that AI was used.
+If both models identify the same definition in the same excerpt and the definition is a candidate according to step 2 or 4, this definition is tagged as a candidate for active vocabulary (tag '*', or '+' if it's the only definition of the word).

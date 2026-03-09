@@ -328,13 +328,14 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'c' => ("china-chiefly", "country", 10),
         '&' => ("in-compounds", "in-compounds", 8),
         'i' => ("irregular", "checks", 7), // skip automatic checks
-        'A' => ("ai-only", "ai", 6),
-        'a' => ("ai-partly", "ai", 6),
+        'A' => ("ai-only", "ai", 6), // content was generated/checked by multiple LLMs
+        'a' => ("ai-partly", "ai", 6), // content was partly generated/checked by LLMs (e.g. matching word definitions for references)
 		'E' => ("explanation-only", "explanation", 9), // the definition is not a translation but an explanation
 		'e' => ("explanation-partly", "explanation", 9), // the definition contains both a translation and an explanation
         'w' => ("wiktionary", "source", 3),
         'm' => ("mdbg", "source", 2),
-        '+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary
+        '*' => ("active-candidate", "relevance", 1), // candidate for a + tag (involving LLMs)
+		'+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary
         '-' => ("extended", "relevance", 1), // extended (passive) vocabulary
         'x' => ("excluded", "relevance", 1), // excluded from the dictionary
         'X' => ("deleted", "relevance", 1),

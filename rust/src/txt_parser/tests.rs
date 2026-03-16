@@ -51,7 +51,7 @@ fn test_parse_word() {
         ))
     );
     assert_eq!(
-        parse_word(" 傳統 ／ 传统 "),
+        parse_word("傳統／传统"),
         Ok((
             "",
             Word {
@@ -282,6 +282,96 @@ fn test_parse_reference_line_full() {
         }],
     ));
     assert_eq!(parse_reference_line(line), expected);
+}
+
+#[test]
+fn test_parse_sentence_line_basic() {
+    let line = "1| | 這是 一個 句子#D1\nThis is a sentence.";
+    let expected = Ok((
+        "",
+        SentenceTag {
+            tags: vec![],
+            id: 1,
+            words: vec![
+                SentenceWord::DictWord((
+                    Reference {
+                        target_word: Word {
+                            trad: "這是".to_string(),
+                            simp: None,
+                        },
+                        target_id: None,
+                    },
+                    None,
+                )),
+                SentenceWord::DictWord((
+                    Reference {
+                        target_word: Word {
+                            trad: "一個".to_string(),
+                            simp: None,
+                        },
+                        target_id: None,
+                    },
+                    None,
+                )),
+                SentenceWord::DictWord((
+                    Reference {
+                        target_word: Word {
+                            trad: "句子".to_string(),
+                            simp: None,
+                        },
+                        target_id: Some(('D', 1)),
+                    },
+                    None,
+                )),
+            ],
+            translation: "This is a sentence.".to_string(),
+        },
+    ));
+    assert_eq!(parse_sentence_line(line), expected);
+}
+
+#[test]
+fn test_parse_sentence_line_with_ascii_and_refs() {
+    let line = "2|t| OK , 我們 走<走#D1\nOK, let's go.";
+    let expected = Ok((
+        "",
+        SentenceTag {
+            tags: vec![Tag::Ascii('t')],
+            id: 2,
+            words: vec![
+                SentenceWord::AsciiWord("OK".to_string()),
+                SentenceWord::AsciiWord(",".to_string()),
+                SentenceWord::DictWord((
+                    Reference {
+                        target_word: Word {
+                            trad: "我們".to_string(),
+                            simp: None,
+                        },
+                        target_id: None,
+                    },
+                    None,
+                )),
+                SentenceWord::DictWord((
+                    Reference {
+                        target_word: Word {
+                            trad: "走".to_string(),
+                            simp: None,
+                        },
+                        target_id: None,
+                    },
+                    Some(Reference {
+                        target_word: Word {
+                            trad: "走".to_string(),
+                            simp: None,
+                        },
+                        target_id: Some(('D', 1)),
+                    }),
+                )),
+            ],
+            translation: "OK, let's go.".to_string(),
+        },
+    ));
+    assert_eq!(parse_sentence_line(line), expected);
 }
 
 // Top-level parse_line dispatcher

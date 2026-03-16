@@ -555,6 +555,9 @@ impl<'a> TxtToDb<'a> {
                 self.add_cross_reference_line_to_db(reference_tag_groups),
                 true,
             ),
+            DictLine::Sentence(_) => {
+                (Ok(vec![]), false)
+            },
             DictLine::Note(note) => {
                 let is_link = note.is_link;
                 (self.add_note_line_to_db(&note), is_link)

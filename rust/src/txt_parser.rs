@@ -2,10 +2,10 @@ use nom::{
     IResult, Parser,
     branch::alt,
     bytes::complete::{tag, take_while1},
-    character::complete::{anychar, char, multispace0, none_of, u32},
+    character::complete::{anychar, char, space0, none_of, u32, newline},
     combinator::{all_consuming, fail, map, opt, rest, value},
     multi::{many0, many1, separated_list1},
-    sequence::{delimited, pair, preceded, terminated},
+    sequence::{delimited, pair, separated_pair, preceded, terminated},
 };
 
 use std::fmt;
@@ -61,10 +61,24 @@ pub struct DefinitionTag {
 }
 
 #[derive(Debug, PartialEq, Eq)]
+pub enum SentenceWord {
+    DictWord((Reference, Option<Reference>)),
+    AsciiWord(String)
+}
+
+#[derive(Debug, PartialEq, Eq)]
 pub struct Note {
     pub id: Option<u32>,
     pub is_link: bool,
     pub txt: String,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct SentenceTag {
+    pub tags: Tags,
+    pub id: u32,
+    pub words: Vec<SentenceWord>,
+    pub translation: String,
 }
 
 #[derive(Debug, PartialEq)]
@@ -74,6 +88,7 @@ pub enum DictLine {
     Class(String),
     Definition(DefinitionTag),
     CrossReference(Vec<ReferenceTagGroup>),
+    Sentence(SentenceTag),
     Note(Note),
     Comment(String),
 }
@@ -195,6 +210,7 @@ fn parse_line(line: &str) -> Result<DictLine, ()> {
             preceded(char('X'), parse_reference_line),
             DictLine::CrossReference,
         ),
+        map(preceded(char('S'), parse_sentence_line), DictLine::Sentence),
         map(preceded(char('N'), parse_note_line), DictLine::Note),
         map(preceded(char('#'), parse_comment_line), DictLine::Comment),
     ));
@@ -205,23 +221,23 @@ fn parse_line(line: &str) -> Result<DictLine, ()> {
 }
 
 fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
-    let parse_ascii_tag = delimited(multispace0, none_of("#|"), multispace0);
+    let parse_ascii_tag = delimited(space0, none_of("#|"), space0);
     let parse_ascii_tags = many0(parse_ascii_tag);
     let parse_full_tag = delimited(
-        multispace0,
+        space0,
         preceded(
             char('#'),
             take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'),
         ),
-        multispace0,
+        space0,
     );
     let parse_full_tags = many0(parse_full_tag);
     let parse_ascii_full_tags = pair(parse_ascii_tags, parse_full_tags);
 
     let (remainder, tags) = delimited(
-        delimited(multispace0, char('|'), multispace0),
+        delimited(space0, char('|'), space0),
         parse_ascii_full_tags,
-        delimited(multispace0, char('|'), multispace0),
+        delimited(space0, char('|'), space0),
     )
     .parse(tag_str)?;
     let mut all_tags: Vec<Tag> = tags.0.iter().map(|c| Tag::Ascii(*c)).collect();
@@ -235,29 +251,27 @@ fn parse_tags(tag_str: &str) -> IResult<&str, Tags> {
 }
 
 fn parse_word(word_str: &str) -> IResult<&str, Word> {
-    let simp_trad = delimited(
-        multispace0::<&str, _>,
-        take_while1(|c: char| !"|#;/／".contains(c)),
-        multispace0,
-    );
-    let simp = delimited(
-        multispace0,
-        take_while1(|c: char| !"#|;".contains(c)),
-        multispace0,
-    );
+    let simp_trad = take_while1(|c: char| !"|#;/／< \n\t\r".contains(c));
+    let simp = take_while1(|c: char| !"#|;< \n\t\r".contains(c));
 
     map(
-        pair(simp_trad, opt(preceded(alt((char('/'), char('／'))), simp))),
+        pair(
+            preceded(space0::<&str, _>, simp_trad),
+            opt(preceded(
+                delimited(space0, alt((char('/'), char('／'))), space0),
+                simp
+            ))
+        ),
         |word_pair| Word {
-            trad: word_pair.0.trim().to_owned(),
-            simp: word_pair.1.map(|s| s.trim().to_owned()),
+            trad: word_pair.0.to_owned(),
+            simp: word_pair.1.map(|s| s.to_owned()),
         },
     )
     .parse(word_str)
 }
 
 fn parse_word_list(word_list: &str) -> IResult<&str, Vec<Word>> {
-    separated_list1(char(';'), parse_word).parse(word_list)
+    separated_list1(delimited(space0, char(';'), space0), parse_word).parse(word_list)
 }
 
 fn parse_word_tag_group(tag_group_str: &str) -> IResult<&str, WordTagGroup> {
@@ -276,9 +290,9 @@ fn parse_word_line(word_line: &str) -> IResult<&str, Vec<WordTagGroup>> {
 
 fn parse_pinyin_list(pinyin_list: &str) -> IResult<&str, Vec<&str>> {
     let pinyin_parser = delimited(
-        multispace0,
+        space0,
         take_while1(|c: char| c.is_ascii_alphanumeric() || "ê. -,".contains(c)),
-        multispace0,
+        space0,
     );
     separated_list1(char(';'), pinyin_parser).parse(pinyin_list)
 }
@@ -295,7 +309,7 @@ fn parse_pinyin_line(pinyin_line: &str) -> IResult<&str, Vec<PinyinTagGroup>> {
 }
 
 fn parse_class_line(class_line: &str) -> IResult<&str, String> {
-    map(all_consuming(preceded(multispace0, rest)), |c: &str| {
+    map(all_consuming(preceded(space0, rest)), |c: &str| {
         c.to_owned()
     })
     .parse(class_line)
@@ -315,7 +329,7 @@ fn parse_definition_line(definition_line: &str) -> IResult<&str, DefinitionTag> 
 }
 
 fn parse_comment_line(comment_line: &str) -> IResult<&str, String> {
-    let (remainder, comment) = all_consuming(preceded(multispace0, rest)).parse(comment_line)?;
+    let (remainder, comment) = all_consuming(preceded(space0, rest)).parse(comment_line)?;
     Ok((remainder, comment.to_owned()))
 }
 
@@ -326,12 +340,12 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
             (
                 opt(value(true, tag("->"))),
                 u32,
-                preceded(multispace0, rest),
+                preceded(space0, rest),
             ),
             (
                 opt(fail()),
                 alt((u32, value(0, char('?')))),
-                preceded(multispace0, rest),
+                preceded(space0, rest),
             ),
         )),
     )
@@ -349,7 +363,7 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
 fn parse_reference(reference: &str) -> IResult<&str, Reference> {
     let (remainder, (word, id)) = pair(
         parse_word,
-        opt(preceded(tag("#D"), terminated(u32, multispace0))),
+        opt(preceded(tag("#D"), u32)),
     )
     .parse(reference)?;
 
@@ -366,7 +380,7 @@ fn parse_reference_tag_group(
     tag_group_str: &str, 
     ref_type: char
 ) -> IResult<&str, ReferenceTagGroup> {
-    let ref_list_parse = separated_list1(char(';'), parse_reference);
+    let ref_list_parse = separated_list1(delimited(space0, char(';'), space0), parse_reference);
     let (remainder, (tags, references)) = 
         (parse_tags, ref_list_parse).parse(tag_group_str)?;
         
@@ -383,6 +397,44 @@ fn parse_reference_tag_group(
 fn parse_reference_line(reference_line: &str) -> IResult<&str, Vec<ReferenceTagGroup>> {
     let (input, ref_type) = anychar(reference_line)?;
     all_consuming(many1(|i| parse_reference_tag_group(i, ref_type))).parse(input)
+}
+
+fn parse_sentence_word_ascii(sentence_word: &str) -> IResult<&str, SentenceWord> {
+    let (r, w) = take_while1(|c: char| c.is_ascii() && !" \n".contains(c)).parse(sentence_word)?;
+    Ok((r, SentenceWord::AsciiWord(w.to_owned())))
+}
+
+fn parse_sentence_word_hanzi(sentence_word: &str) -> IResult<&str, SentenceWord> {
+    // complete_word is only relevant for separated words
+    let (r, (word, complete_word)) = (parse_reference, opt(preceded(char('<'), parse_reference))).parse(sentence_word)?;
+    Ok((r, SentenceWord::DictWord((word, complete_word))))
+}
+
+fn parse_sentence_word(sentence_word: &str) -> IResult<&str, SentenceWord> {
+    alt((parse_sentence_word_ascii, parse_sentence_word_hanzi)).parse(sentence_word)
+}
+
+fn parse_sentence_words(sentence_words: &str) -> IResult<&str, Vec<SentenceWord>> {
+    separated_list1(char(' '), parse_sentence_word).parse(sentence_words)
+}
+
+fn parse_sentence(sentence: &str) -> IResult<&str, (Vec<SentenceWord>, String)> {
+    let (remainder, (words, translation)) = separated_pair(parse_sentence_words, newline, rest).parse(sentence)?;
+    Ok((remainder, (words, translation.to_owned())))
+}
+
+fn parse_sentence_line(sentence_line: &str) -> IResult<&str, SentenceTag> {
+let (remainder, (id, tags, (words, translation))) =
+        (u32, parse_tags, parse_sentence).parse(sentence_line)?;
+    Ok((
+        remainder,
+        SentenceTag {
+            tags,
+            id,
+            words,
+            translation,
+        },
+    ))
 }
 
 #[cfg(test)]

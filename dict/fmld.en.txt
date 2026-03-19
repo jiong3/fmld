@@ -71,7 +71,7 @@
   ascii_symbol = any non-special, visible ASCII character excluding |
   tag_letter = A-Za-z0-9 and "-"
   tag_word = tag_letter {tag_letter}
-  hanzi = anything except "|#;/／"
+  hanzi = anything except "|#;/／< \n"
   hanzi_word = hanzi {hanzi}
   pinyin_letter = A-Za-z0-9 and "ê. -,"
   pinyin = pinyin_letter {pinyin_letter}
@@ -8401,7 +8401,6 @@ W|w|倒
    D13|xC #Southwestern-Mandarin|to put upside down; to invert; to be inverted
    D14||to reverse; to move backwards; to turn back
    D15||upside down; inverted; flipped; reversed
-    X<|A|顛倒／颠倒
    D16|*|to pour out; to dump; to empty
     X<||倒垃圾
    D17||to cast; to mould
@@ -11202,7 +11201,7 @@ W|w|條件／条件
    D5||(of a person) financial status; wealth
     X=|a|財產／财产#D1;資本／资本#D2;財富／财富#D1;貨幣／货币#D1;財物／财物#D1;物質條件／物质条件#D2;銀彈／银弹#D2;錢財／钱财#D1
 W|w|答應／答应
- X>|a|答#D3;應／应#D2
+ X>|a|答#D3;應／应#D4
  P||da1ying4
   C verb
    D1||to answer; to respond
@@ -20357,7 +20356,7 @@ W|w|由於／由于
    D2||owing to; due to; as a result of; because of
     X=|a|因為／因为#D2 |A|多虧／多亏#D1
 W|w|不得不
- X>|a|不#D1;得#D13;不#D1
+ X>|a|不#D1;得#D7;不#D1
  P||bu4de2bu4
   C verb
    D1|+|have no choice but to; cannot but; have to
@@ -22529,7 +22528,7 @@ W|w|面對／面对
     X{|a|選擇／选择#D1;勇敢#D1
     X}|a|問題／问题#D3;困難／困难#D3;壓力／压力#D3;未來／未来#D2 |A|事實／事实#D2 |a|現實／现实#D4;挑戰／挑战#D1
 W|w|空間／空间
- X>||空#D20;間／间#D1
+ X>||空#D1;間／间#D1
  P||kong1jian1
   C noun
    D1|*|space (a gap or empty place); room
@@ -25201,8 +25200,8 @@ W|w|出租車／出租车
   C noun
    D1|+c|taxi; taxicab
     XM||輛／辆;臺／台
-    X=|a|計程車／计程车#D1;小黃／小黄#D1
-    X%||計程車／计程车#D1
+    X=|a|出租#D1;出租汽車／出租汽车#D1
+    X%||計程車／计程车#D1;小黃／小黄#D1
     X{|a|叫#D7;上#D1;攔／拦#D1
     X}|a|司機／司机#D1
 W|w|燒／烧
@@ -33367,7 +33366,7 @@ W|w|程序
     X<|a|程序正義／程序正义
     X{|a|按照#D1;法律#D1
    D2|*c #computing|computer program
-    X=|a|程式#D2;計算機程式／计算机程式#D1;電腦程式／电脑程式#D1
+    X=|a|計算機程式／计算机程式#D1;電腦程式／电脑程式#D1
     X%||程式#D2
     X{|a|執行／执行#D2 |A|操作#D1
 W|w|透
@@ -43613,7 +43612,6 @@ W|w|軟件／软件
   C noun
    D1|*C #computing|software
     XM||個／个;套
-    X=|A|軟體／软体#D2
     X%||軟體／软体#D2
     X<|a|軟件工程師／软件工程师
     X{|A|開發／开发#D3;更新#D1;安裝／安装#D1
@@ -52004,7 +52002,8 @@ W|w|出租
  P||chu1zu1
   C noun
    D1||Short for 出租汽車／出租汽车 (chūzū qìchē, “taxi”).
-    X=|a|計程車／计程车#D1;小黃／小黄#D1
+    X=|a|出租車／出租车#D1
+    X%||計程車／计程车#D1 |a|小黃／小黄#D1
   C verb
    D2|*|to rent out
     X=|A|租賃／租赁#D2
@@ -56022,7 +56021,7 @@ W|w|導遊／导游
    D2||to conduct a tour
     X=|A|嚮導／向导#D3
 W|w|沒完沒了／没完没了
- X>|a|沒／没#D9;完#D2;沒／没#D9;了#D5
+ X>|a|沒／没#D1;完#D2;沒／没#D1;了#D5
  P||mei2wan2mei2liao3
   C verb
    D1|+|to be endless; to be without end
@@ -62657,7 +62656,7 @@ W|w|吃力
    D4||to bear force
     X=|a|吃勁／吃劲#D2;吃重#D3
 W|w|不得
- X>|a|不#D1;得
+ X>|a|不#D1;得#D7
  P||bu4de2 |x|bu5de5;bu4de5;bu5de2
   C verb
    D1|* #auxiliary|must not; should not; not be allowed
@@ -66988,7 +66987,7 @@ W|m|壓住／压住
     X}|A|情緒／情绪#D1
    D4|*|to keep down (voice)
 W|w|顛倒／颠倒
- X>|a|顛／颠#D4;倒#D15
+ X>|a|顛／颠#D4;倒#D1
  P||dian1dao3
   C conj
    D1|x #Taiwanese-Hakka #Teochew #Xiamen-and-Taiwanese-Hokkien #literary|instead; on the contrary
@@ -70871,7 +70870,7 @@ W|w|百分之
     X<|a|百分之百
     X}|a|十#D1;七十#D1;三十#D1;九十#D1;二十#D3;五十#D1;八十#D1;六十#D1;四十#D1
 W|w|較量／较量
- X>|a|較／较#D9;量#D4
+ X>|a|較／较#D1;量#D4
  P||jiao4liang4
   C verb
    D1|*|to have a trial of strength or skill; to have a contest; to compete with
@@ -96430,8 +96429,7 @@ W|w|眼皮子
     X}|a|底下#D2 |A|跳動／跳动#D1
    D2|#colloquial #figurative|insight; view; scope
 W|m|拖下水
- # todo: separable verb, not verb-object though, add ellipsis as a word to link in X> with one definition being "optional" for separable words and phrases
- X>|a|拖#D1;下;水#D1
+ X>|a|拖#D1;……#D4;下;水#D1
  P||tuo1xia4shui3
   C phrase
    D1|#literal|to pull sb into the water
@@ -98762,8 +98760,8 @@ W|w|計程車／计程车
   C noun
    D1|+t|taxi; cab
     XM||輛／辆;臺／台
-    X=|a|出租車／出租车#D1;出租#D1;出租汽車／出租汽车#D1;小黃／小黄#D1
-    X%||出租車／出租车#D1
+    X=||小黃／小黄#D1
+    X%||出租車／出租车#D1;出租#D1 |a|出租汽車／出租汽车#D1
     X{|a|叫#D7;搭#D4
     X}|A|司機／司机#D1
 W|w|流產／流产
@@ -101374,7 +101372,7 @@ W|w|轍／辙
    D4||rhyme
     X<||合轍／合辙
 W|w|調和／调和
- X>|a|調／调#D5;和#D14
+ X>|a|調／调#D1;和#D1
  P||tiao2he2
   C adj
    D1|*|harmonious; well-matched
@@ -101388,7 +101386,7 @@ W|w|調和／调和
    D4||to mediate; to act as mediator
     X=|a|調解／调解#D1;斡旋#D1;調停／调停#D1
     X}|A|衝突／冲突#D1
-   D5|*|(chiefly in the negative) to reconcile; to compromise
+   D5|* #chiefly-in-the-negative|to reconcile; to compromise
     X=|a|和平#D15;中和#D11;折中#D1
     X}|A|矛盾#D2;平衡#D2
    D6|- #literary|to season; to add flavouring to
@@ -101861,7 +101859,8 @@ W|w|出租汽車／出租汽车
   C noun
    D1|+c|taxi; cab
     XM||輛／辆;臺／台
-    X=|a|計程車／计程车#D1;小黃／小黄#D1
+    X=|a|出租車／出租车#D1
+    X%|a|計程車／计程车#D1;小黃／小黄#D1
     X}|A|公司#D1;服務／服务#D1;司機／司机#D1;行業／行业#D1
 W|w|配角
  X>|a|配#D1;角#D7
@@ -111789,7 +111788,7 @@ W|w|程式
    D1||form; pattern; formula
     X=|a|格式#D1;樣板／样板#D2
    D2|*t #computing|computer program
-    X=|a|程序#D2;計算機程序／计算机程序#D1;計算機程式／计算机程式#D1;電腦程式／电脑程式#D1
+    X=|a|計算機程序／计算机程序#D1;計算機程式／计算机程式#D1;電腦程式／电脑程式#D1
     X%||程序#D2
     X<|a|應用程式／应用程式;程式語言／程式语言
     X{|A|設計／设计#D3;開發／开发#D3;安裝／安装#D1;編寫／编写#D2
@@ -141577,6 +141576,7 @@ W|w|問號／问号
  P||wen4hao4
   C noun
    D1|*|question mark
+    X=||？#D1
    D2|* #figurative|unknown factor; unsolved problem
 W|w|青銅／青铜
  X>|a|青#D1;銅／铜#D1
@@ -148916,7 +148916,7 @@ W|w|軟體／软体
   C noun
    D2|*T #computing|software
     XM||個／个;套
-    X=|A|軟件／软件#D1;應用／应用#D3
+    X=|A|應用／应用#D3
     X%||軟件／软件#D1
     X{|A|設計／设计#D3;開發／开发#D3;應用／应用#D3;更新#D1;安裝／安装#D1;下載／下载#D1
     X}|A|公司#D1;系統／系统#D3;程式#D2
@@ -166059,11 +166059,11 @@ W|w|洗衣粉
     X{|A|品牌#D1
     X}|A|用量#D1
 W|m|起到……作用
- X>|a|起#D5;到#D3;作用
+ X>|a|起#D5;到#D3;……#D3;作用
  P||qi3dao4...zuo4yong4
   C verb
    D1||to have (a (motivating etc.) effect); to play (a (stabilizing etc.) role
-    X{|A|重要#D1;關鍵／关键#D1;積極／积极#D1;促進／促进#D2;推動／推动#D1
+    X.|A|重要#D1;關鍵／关键#D1;積極／积极#D1;促進／促进#D2;推動／推动#D1
 W|w|車速／车速
  X>|a|車／车#D1;速#D2
  P||che1su4
@@ -174172,10 +174172,11 @@ W|w|ace球
  P||ei4si5-qiu2
   C noun
    D1|#tennis|ace
-W|w|all right
+W|w|all-right
+ # "-" is used since no spaces are allowed within words in the format of this file
  P||ou4lai5
   C intj
-   D1|T #rail-transport|(point and call)
+   D1|T #rail-transport|all right (point and call)
 W|w|big膽／big胆
  P||bi4ge5dan3
   C adj
@@ -174548,6 +174549,14 @@ W|w|φ鍵／φ键
  P||fai4-jian4 |x|fo2ai4-jian4;fu2yi1-jian4
   C noun
    D1|#physical-chemistry|phi bond
+W||……;⋯⋯
+ P|i|shan1jie2hao4;sheng3lve4hao4
+  C punctuation
+   D1||ellipsis (indicating omission)
+    X=|a|刪節號／删节号#D1;省略號／省略号#D1
+   D2||(used in decompositions of this dictionary)
+    D3||(placeholder in phrases, sentence patterns, etc.)
+    D4||(placeholder for optional objects within separable words)
 W|w|……來……去／……来……去
  P||... lai2... qu4
   C verb
@@ -174584,6 +174593,16 @@ W|w|⿱𡩧⿺進⿰貝招
  P||zhao1cai2jin4bao3
   C character
    D1||Ligature form of 招財進寶／招财进宝 (zhāocáijìnbǎo)
+W||、
+ P|i|dun4hao4
+  C punctuation
+   D1||comma (used for separating items in a list)
+    X=||頓號／顿号#D1
+W||。
+ P|i|ju4hao4
+  C punctuation
+   D1||full stop (indicates end of a sentence)
+    X=||句號／句号#D1
 W|w|の
  P||de5
   C particle
@@ -233946,6 +233965,7 @@ W|w|冒號／冒号
  P||mao4hao4
   C noun
    D1||colon (：)
+    X=||：#D1
 W|w|冒認／冒认
  P||mao4ren4
   C verb
@@ -238312,6 +238332,7 @@ W|w|分號／分号
   C noun
    D1||branch store
    D2||semicolon ( ; )
+    X=||；#D1
 W|w|分行
  P||fen1hang2
   C noun
@@ -240478,7 +240499,7 @@ W|w|刪節號／删节号
  P||shan1jie2hao4
   C noun
    D1||ellipsis (……) (punctuation mark)
-    X=|a|省略號／省略号#D1
+    X=|a|……#D1;省略號／省略号#D1
 W|w|刪節／删节
  P||shan1jie2
   C verb
@@ -261104,6 +261125,7 @@ W|w|句號／句号
  P||ju4hao4
   C noun
    D1||ideographic full stop (。); full stop (.); period
+    X=||。#D1
    D2|#figurative|end; completion; conclusion
 W|w|句吳／句吴
  P||Gou1wu2
@@ -268865,7 +268887,7 @@ W|w|周王
  P||zhou1wang2
   C noun
    D1|x #historical|king of Zhou
-W|w|周瑜打黃蓋 一個願打，一個願挨／周瑜打黄盖 一个愿打，一个愿挨
+W|w|周瑜打黃蓋，一個願打，一個願挨／周瑜打黄盖，一个愿打，一个愿挨
  P||Zhou1 Yu2 da3 Huang2 Gai4, yi1 ge5 yuan4 da3, yi1 ge5 yuan4 ai2
   C phrase
    D1|#literally|one is willing to give a beating, and one is willing to take a beating
@@ -276853,7 +276875,7 @@ W|w|嘆號／叹号
  P||tan4hao4
   C noun
    D1||exclamation mark (！)
-    X=|a|感嘆號／感叹号#D1;驚嘆號／惊叹号#D1
+    X=|a|感嘆號／感叹号#D1;驚嘆號／惊叹号#D1;！#D1
 W|w|嘆詞／叹词
  P||tan4ci2
   C noun
@@ -326434,7 +326456,8 @@ W|w|小黃／小黄
  P||xiao3huang2
   C noun
    D1|T #colloquial|taxi
-    X=|a|出租車／出租车#D1;出租#D1;計程車／计程车#D1;出租汽車／出租汽车#D1
+    X=||計程車／计程车#D1
+    X%||出租車／出租车#D1 |a|出租#D1;出租汽車／出租汽车#D1
 W|w|小黑屋
  P||xiao3hei1wu1
   C noun
@@ -359407,7 +359430,7 @@ W|w|感嘆號／感叹号
  P||gan3tan4hao4
   C noun
    D1||exclamation mark (！)
-    X=|a|嘆號／叹号#D1;驚嘆號／惊叹号#D1
+    X=|a|嘆號／叹号#D1;驚嘆號／惊叹号#D1;！#D1
 W|w|感嘆詞／感叹词
  P||gan3tan4ci2
   C noun
@@ -501861,7 +501884,7 @@ W|w|省略號／省略号
  P||sheng3lve4hao4
   C noun
    D1||ellipsis (……) (punctuation mark)
-    X=|a|刪節號／删节号#D1
+    X=|a|……#D1;刪節號／删节号#D1
 W|w|省立
  P||sheng3li4
   C adj
@@ -624024,7 +624047,7 @@ W|w|逗號／逗号
  P||dou4hao4
   C noun
    D1||comma (，) (punctuation mark)
-    X=|a|逗點／逗点#D1
+    X=|a|逗點／逗点#D1 ||，#D1
 W|w|逗趣
  P||dou4qu4
   C verb
@@ -624037,7 +624060,7 @@ W|w|逗點／逗点
  P||dou4dian3
   C noun
    D1||comma (Punctuation mark ',')
-    X=|a|逗號／逗号#D1
+    X=|a|逗號／逗号#D1 ||，#D1
 W|m|這幾天／这几天
  P||zhe4ji3tian1
   C noun
@@ -667632,6 +667655,7 @@ W|w|頓號／顿号
  P||dun4hao4
   C noun
    D1||ideographic comma; the Chinese comma (、) used for separating items in a list
+    X=||、#D1
 W|w|頓首／顿首
  P||dun4shou3
   C verb
@@ -677632,7 +677656,7 @@ W|w|驚嘆號／惊叹号
  P||jing1tan4hao4
   C noun
    D1||exclamation mark (！)
-    X=|a|嘆號／叹号#D1;感嘆號／感叹号#D1
+    X=|a|嘆號／叹号#D1;感嘆號／感叹号#D1;！#D1
 W|w|驚堂木／惊堂木
  P||jing1tang2mu4
   C noun
@@ -695414,6 +695438,31 @@ W|w|﨩
  P||dao3
   C character
    D1||island mountain
+W||！
+ P|i|gan3tan4hao4;jing1tan4hao4
+  C punctuation
+   D1||exclamation mark (indicates end of an exclamory sentence)
+    X=|a|嘆號／叹号#D1;感嘆號／感叹号#D1;驚嘆號／惊叹号#D1
+W||，
+ P|i|dou4hao4;dou4dian3
+  C punctuation
+   D1||comma
+    X=||逗號／逗号#D1;逗點／逗点#D1
+W||：
+ P|i|mao4hao4
+  C punctuation
+   D1||colon (used befor a speech, quotation, summary, explanation, etc.)
+    X=||冒號／冒号#D1
+W||；
+ P|i|fen1hao4
+  C punctuation
+   D1||semicolon
+    X=||分號／分号#D2
+W||？
+ P|i|wen4hao4
+  C punctuation
+   D1||question mark (indicates end of a question)
+    X=||問號／问号#D1
 W|w|🌶
  P||la5
   C particle

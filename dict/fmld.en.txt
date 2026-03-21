@@ -411,9 +411,9 @@ W|w|還／还
   C character
    D1||to return to a place; to go back to a place
     X<||還原／还原;還俗／还俗;還家／还家;還鄉／还乡
-   D2||to return an object; to give back
+   D2|+|to return an object; to give back
     X<||償還／偿还;還書／还书
-   D3||to do or give something in return
+   D3|+|to do or give something in return
     X<||以眼還眼，以牙還牙／以眼还眼，以牙还牙;還價／还价;還嘴／还嘴;還手／还手;還擊／还击;還禮／还礼
    D4|x #Malaysian-Hokkien #Singapore-Hokkien|(obsolete in Philippine Hokkien) to pay
    D5||a surname
@@ -3525,7 +3525,6 @@ W|w|行
  P|T|hang4
   C character
    D18||order; rank
-    X<|A|排行
    D19||Used in 行行 (“bold; staunch; strong”).
    D20||Used in 樹行子／树行子 (“row of trees”).
 W|w|見／见
@@ -34727,7 +34726,7 @@ W|w|發誓／发誓
    D1|+|to swear; to vow; to pledge
     X=|A|宣誓#D2 |a|立誓#D1
     X}|a|永遠／永远#D1 |A|保證／保证#D2
-W|w|在地／当地
+W|w|在地
  X>|a|在#D2;地#D7
  P||zai4di4
   C adj
@@ -42821,7 +42820,7 @@ W|w|當作／当作
     X{|a|把#D7
     X}|a|朋友#D1;參考／参考#D1
 W|w|彆扭／别扭
- X>|a|彆#D3;扭#D6
+ X>|a|彆／别#D3;扭#D6
  P||bie4niu5 |x|bie4niu3;bie2niu3
   C adj
    D1|*|uncomfortable; not going as one wishes
@@ -65471,7 +65470,7 @@ W|w|巴
     X<||尾巴;下巴
    D4||Used as a suffix for objects that are clumped together due to dryness or stickiness.
     X<||泥巴
-   D5|*|to cling to; to stick to
+   D5||to cling to; to stick to
    D6|xC #Jilu-Mandarin #Sichuanese #dialectal-Wu|to be close to; to be next to
    D7|xC #Beijing #Jilu-Mandarin|to open; to spread
    D8|x #Sichuanese|to suit; to fit
@@ -69753,7 +69752,7 @@ W|w|喜愛／喜爱
     X!|a|討厭／讨厌#D4;厭惡／厌恶#D1;憎惡／憎恶#D1
     X{|a|最#D1;深受#D1
 W|w|崗／岗
- P||gang3
+ P||gang3;gang1
   C character
    D1||hillock; mound
     X<|A|山崗／山岗
@@ -102571,7 +102570,7 @@ W|w|重擔／重担
     X{|A|生活#D1;家庭#D1;承擔／承担#D1;卸下#D1;肩負／肩负#D1;挑起#D1
     X}|A|壓力／压力#D3
 W|w|反反復復／反反复复;反反覆覆／反反复复
- X>|a|反#D20;反#D20;復／复#D6;復／复#D6
+ X>|a|反#D6;反#D6;復／复#D6;復／复#D6
  P||fan3fan3fu4fu4
   C adv
    D1|+|over and over, time and time again, repeatedly
@@ -106224,7 +106223,7 @@ W|m|稍早
    D1|+|a little earlier; a little early
     X}|A|時間／时间#D3;消息#D1;報導／报导#D1
 W|w|排行
- X>|a|排#D1;行#D18
+ X>|a|排#D1;行#D14
  P||pai2hang2
   C noun
    D1|*|ranking; position; seniority
@@ -122546,7 +122545,7 @@ W|m|附上
    D1|+|attached; included herewith
     X}|A|照片#D1;說明／说明#D1;資料／资料#D2;文件#D1;圖片／图片#D1;清單／清单#D1
 W|w|解鈴還須繫鈴人／解铃还须系铃人
- X>|a|解#D1;鈴／铃#D1;還／还#D1;須／须#D1;繫／系#D1;鈴／铃#D1;人#D1
+ X>|a|解#D1;鈴／铃#D1;還／还#D6;須／须#D1;繫／系#D4;鈴／铃#D1;人#D1
  P||jie3 ling2 hai2 xu1 xi4 ling2 ren2
   C phrase
    D1||The only one who can fix the problem is the one who created the problem.
@@ -136424,7 +136423,7 @@ W|w|限於／限于
     X{|a|只#D1;僅／仅#D1
     X}|A|時間／时间#D2;條件／条件#D2;能力#D1;範圍／范围#D1
 W|w|結結巴巴／结结巴巴
- X>|a|結／结#D11;結／结#D11;巴#D29;巴#D29
+ X>|a|結／结#D11;結／结#D11;巴;巴
  P||jie1jie5ba1ba1
   C adj
    D1|+|tongue-tied; stuttering; stammering
@@ -146733,7 +146732,7 @@ W|w|對頭／对头
    D7||(chiefly in the negative) to agree; to get along
     X=|a|適合／适合#D2;合手#D3
 W|w|躍躍欲試／跃跃欲试
- X>|a|躍／跃#D3;躍／跃#D3;欲#D3;試／试#D2
+ X>|a|躍／跃#D1;躍／跃#D1;欲#D3;試／试#D2
  P||yue4yue4yu4shi4
   C phrase
    D1|+|to itch for a try
@@ -154800,7 +154799,7 @@ W|w|後來居上／后来居上
   C phrase
    D1|+|the up-and-coming youngster outstrips the older generation; the pupil surpasses the master
 W|w|哈密
- X>|a|哈#D23;密
+ X>|a|哈;密
  P||Ha1mi4
   C name
    D1||(～市) Hami (a prefecture-level city in Xinjiang, China)
@@ -345872,7 +345871,7 @@ W|w|彄／𫸩
   C character
    D1|- #literary|nock at both ends of a bow
    D2|- #literary|ring; ring-like object
-W|w|彆
+W|w|彆／别
  P||bie4
   C character
    D1||ends of bow
@@ -658676,10 +658675,10 @@ W|w|難以為繼／难以为继
   C phrase
    D1||difficult to sustain; unsustainable
 W|w|難以置信／难以置信
+ X>||難以／难以#D1;置信#D1
  P||nan2yi3zhi4xin4
   C phrase
    D1||unbelievable; incredible
-    X>||置信#D1
     X=||不可置信#D1
 W|w|難以言喻／难以言喻
  P||nan2yi3yan2yu4

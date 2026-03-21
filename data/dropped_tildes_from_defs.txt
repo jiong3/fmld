@@ -1,0 +1,94 @@
+Skipped ~X: 通道#D1: (～侗族自治縣, ～縣) Tongdao County (an autonomous county of Huaihua, Hunan, China) - '侗族自治縣' does not exist in the dictionary
+Skipped ~X: 長安／长安#D6: (～鄉, ～土家族鄉) Chang'an (a township in Fengjie, Chongqing, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 河南#D5: (～縣, ～蒙古族自治縣) Henan (a Mongolian Autonomous County in Huangnan, Qinghai, China) - '蒙古族自治縣' does not exist in the dictionary
+Skipped ~X: 安西#D2: (～都護府, ～大都護府) Anxi Protectorate - '大都護府' does not exist in the dictionary
+Skipped ~X: 三江#D2: (～侗族自治縣, ～縣) Sanjiang (an autonomous county of Liuzhou, Guangxi, China) - '侗族自治縣' does not exist in the dictionary
+Skipped ~X: 下谷坪#D1: (～土家族鄉) Xiaguping (a township in Shennongjia, Hubei, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 世宗#D2: (～市, ～特別自治市) Sejong (a special self-governing city of South Korea) - '特別自治市' does not exist in the dictionary
+Skipped ~X: 九嶷山#D2: (～瑤族鄉, ～鄉) Jiuyishan (a Yao ethnic township in Ningyuan, Yongzhou, Hunan, China) - '瑤族鄉' does not exist in the dictionary
+Skipped ~X: 乳源#D1: (～瑤族自治縣) Ruyuan (an autonomous county of Shaoguan, Guangdong, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 二龍／二龙#D1: (～回族鄉, ～鄉) Erlong (a township in Dingyuan, Chuzhou, Anhui, China) - '回族鄉' does not exist in the dictionary
+Skipped ~X: 于家堡#D1: (～金融區) Yujiapu (a financial district in Tianjin, China) - '金融區' does not exist in the dictionary
+Skipped ~X: 五龍山／五龙山#D1: (～瑤族鄉, ～鄉) Wulongshan (a Yao ethnic township in Ningyuan, Yongzhou, Hunan, China) - '瑤族鄉' does not exist in the dictionary
+Skipped ~X: 伊通#D1: (～滿族自治縣, ～縣) Yitong (an autonomous county of Siping, Jilin, China) - '滿族自治縣' does not exist in the dictionary
+Skipped ~X: 保亭#D1: (～黎族苗族自治縣, ～縣) Baoting (a Li and Miao autonomous county in Hainan, China) - '黎族苗族自治縣' does not exist in the dictionary
+Skipped ~X: 前海#D2: (～深港現代服務業合作區) Qianhai Shenzhen-Hong Kong Modern Service Industry Cooperation Zone (an area in Shenzhen, Guangdong, China) - '深港現代服務業合作區' does not exist in the dictionary
+Skipped ~X: 前郭爾羅斯／前郭尔罗斯#D1: (～蒙古族自治縣, ～縣) Qian Gorlos Mongol Autonomous County (an autonomous county of Songyuan, Jilin, China) - '蒙古族自治縣' does not exist in the dictionary
+Skipped ~X: 化隆#D1: (～回族自治縣, ～縣) Hualong (an autonomous county of Haidong, Qinghai, China) - '回族自治縣' does not exist in the dictionary
+Skipped ~X: 北川#D1: (～羌族自治縣, ～縣) Beichuan (a Qiang autonomous county in Mianyang, Sichuan, China) - '羌族自治縣' does not exist in the dictionary
+Skipped ~X: 卸甲坪#D1: (～土家族鄉) Xiejiaping (a township in Songzi, Jingzhou, Hubei, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 吉隆坡#D1: (～聯邦直轄區, ～市) Kuala Lumpur (the capital city and largest city in Malaysia) - '聯邦直轄區' does not exist in the dictionary
+Skipped ~X: 和布克賽爾／和布克赛尔#D1: (～蒙古自治縣, ～縣) Hoboksar (an autonomous county of Tacheng prefecture, Xinjiang, China) - '蒙古自治縣' does not exist in the dictionary
+Skipped ~X: 嘉定#D2: (～鎮街道, formerly ～鎮) Jiading (a subdistrict and former town in Jiading district, Shanghai, China) - '鎮街道' does not exist in the dictionary
+Skipped ~X: 城步#D1: (～苗族自治縣, ～縣) Chengbu (an autonomous county of Shaoyang, Hunan, China) - '苗族自治縣' does not exist in the dictionary
+Skipped ~X: 墨江#D1: (～哈尼族自治縣, ～縣) Mojiang (an autonomous county of Pu'er, Yunnan, China) - '哈尼族自治縣' does not exist in the dictionary
+Skipped ~X: 大化#D1: (～瑤族自治縣, ～縣) Dahua (an autonomous county of Hechi, Guangxi, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 大柴旦#D1: (～行政委員會) Da Qaidam (a region of Haixi prefecture, Qinghai, China) - '行政委員會' does not exist in the dictionary
+Skipped ~X: 大通#D2: (～回族土族自治縣, ～縣) Datong (an autonomous county of Xining, Qinghai, China) - '回族土族自治縣' does not exist in the dictionary
+Skipped ~X: 太和#D6: (～鄉, ～土家族鄉) Taihe (a township in Fengjie, Chongqing, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 姐告#D1: (～邊境貿易區) Jiegao (a border trade zone in Ruili, Dehong prefecture, Yunnan, China) - '邊境貿易區' does not exist in the dictionary
+Skipped ~X: 威寧／威宁#D1: (～彝族回族苗族自治縣) Weining Yi, Hui, and Miao Autonomous County (a county of Bijie, Guizhou, China) - '彝族回族苗族自治縣' does not exist in the dictionary
+Skipped ~X: 孟連／孟连#D1: (～傣族拉祜族佤族自治縣, ～縣) Menglian (an autonomous county of Pu'er, Yunnan, China) - '傣族拉祜族佤族自治縣' does not exist in the dictionary
+Skipped ~X: 定海#D4: (～直隸廳) Dinghai Subprefecture, a former division of Zhejiang encompassing the Zhoushan Archipelago under the late Qing - '直隸廳' does not exist in the dictionary
+Skipped ~X: 察布查爾／察布查尔#D1: (～錫伯自治縣, ～縣) Qapqal (an autonomous county of Ili prefecture, Xinjiang, China) - '錫伯自治縣' does not exist in the dictionary
+Skipped ~X: 察爾汗／察尔汗#D2: (～行政委員會) Qarhan, a region of Golmud in Haixi Prefecture, Qinghai, China. - '行政委員會' does not exist in the dictionary
+Skipped ~X: 寧洱／宁洱#D1: (～哈尼族彝族自治縣, ～縣) Ning'er (an autonomous county of Pu'er, Yunnan, China) - '哈尼族彝族自治縣' does not exist in the dictionary
+Skipped ~X: 寧蒗／宁蒗#D1: (～彝族自治縣, ～縣) Ninglang (an autonomous county of Lijiang, Yunnan, China) - '彝族自治縣' does not exist in the dictionary
+Skipped ~X: 寬甸／宽甸#D1: (～滿族自治縣, ～縣) Kuandian (an autonomous county of Dandong, Liaoning, China) - '滿族自治縣' does not exist in the dictionary
+Skipped ~X: 尋甸／寻甸#D1: (～回族彝族自治縣, ～縣) Xundian (an autonomous county of Kunming, Yunnan, China) - '回族彝族自治縣' does not exist in the dictionary
+Skipped ~X: 小滄／小沧#D1: (～畲族鄉) Xiaocang (a Shezu township in Lianjiang, Fuzhou, Fujian, China) - '畲族鄉' does not exist in the dictionary
+Skipped ~X: 巍山#D1: (～彝族回族自治縣, ～縣) Weishan (a Yi and Hui Autonomous County in Dali prefecture, Yunnan, China) - '彝族回族自治縣' does not exist in the dictionary
+Skipped ~X: 川邊／川边#D1: (～道, ～特別行政區, ～特別區) Chuanbian (a region comprising most of the Kham region of Tibet, i.e. present-day western Sichuan Province and eastern Tibet Autonomous Region, and was the predecessor of Xikang province) - '特別區' does not exist in the dictionary
+Skipped ~X: 巴里坤#D1: (～哈薩克自治縣, ～縣) Barköl, Barkol (an autonomous county of Hami, Xinjiang, China) - '哈薩克自治縣' does not exist in the dictionary
+Skipped ~X: 巴馬／巴马#D1: (～瑤族自治縣, ～縣) Bama (an autonomous county of Hechi, Guangxi, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 循化#D1: (～撒拉族自治縣, ～縣) Xunhua (an autonomous county of Haidong, Qinghai, China) - '撒拉族自治縣' does not exist in the dictionary
+Skipped ~X: 恭城#D1: (～瑤族自治縣, ～縣) Gongcheng (an autonomous county of Guilin, Guangxi, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 新晃#D1: (～侗族自治縣, ～縣) Xinhuang (an autonomous county of Huaihua, Hunan, China) - '侗族自治縣' does not exist in the dictionary
+Skipped ~X: 昌江#D1: (～黎族自治縣, ～縣) Changjiang (an autonomous county of Hainan, China) - '黎族自治縣' does not exist in the dictionary
+Skipped ~X: 景寧／景宁#D1: (～畲族自治縣, ～縣) Jinning (a She autonomous county in Lishui, Zhejiang) - '畲族自治縣' does not exist in the dictionary
+Skipped ~X: 景東／景东#D1: (～彝族自治縣, ～縣) Jingdong (an autonomous county of Pu'er, Yunnan, China) - '彝族自治縣' does not exist in the dictionary
+Skipped ~X: 景谷#D1: (～傣族彝族自治縣, ～縣) Jinggu (an autonomous county of Pu'er, Yunnan, China) - '傣族彝族自治縣' does not exist in the dictionary
+Skipped ~X: 曉關／晓关#D1: (～侗族鄉) Xiaoguan (a township in Xuan'en, Enshi prefecture, Hubei, China) - '侗族鄉' does not exist in the dictionary
+Skipped ~X: 木壘／木垒#D1: (～哈薩克自治縣, ～縣) Mori (an autonomous county of Changji prefecture, Xinjiang, China) - '哈薩克自治縣' does not exist in the dictionary
+Skipped ~X: 木里#D1: (～藏族自治縣, ～縣) Muli (an autonomous county of Liangshan prefecture, Sichuan, China) - '藏族自治縣' does not exist in the dictionary
+Skipped ~X: 松桃#D1: (～苗族自治縣, ～縣) Songtao (an autonomous county of Tongren, Guizhou, China) - '苗族自治縣' does not exist in the dictionary
+Skipped ~X: 桐木漯#D1: (～瑤族鄉, ～鄉) Tongmuluo (a Yao ethnic township in Ningyuan, Yongzhou, Hunan, China) - '瑤族鄉' does not exist in the dictionary
+Skipped ~X: 桓仁#D1: (～滿族自治縣, ～縣) Huanren (an autonomous county of Benxi, Liaoning, China) - '滿族自治縣' does not exist in the dictionary
+Skipped ~X: 棉花坪#D1: (～瑤族鄉, ～鄉) Mianhuaping (a Yao ethnic township in Ningyuan, Yongzhou, Hunan, China) - '瑤族鄉' does not exist in the dictionary
+Skipped ~X: 樂東／乐东#D1: (～黎族自治縣, ～縣) Ledong (an autonomous county of Hainan, China) - '黎族自治縣' does not exist in the dictionary
+Skipped ~X: 滄源／沧源#D1: (～佤族自治縣, ～縣) Cangyuan (an autonomous county of Lincang, Yunnan, China) - '佤族自治縣' does not exist in the dictionary
+Skipped ~X: 漾濞#D1: (～彝族自治縣, ～縣) Yangbi (an autonomous county of Dali prefecture, Yunnan, China) - '彝族自治縣' does not exist in the dictionary
+Skipped ~X: 潘家灣／潘家湾#D1: (～土家族鄉, ～鄉) Panjiawan (an ethnic township in Yidu, Yichang, Hubei, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 濟州／济州#D5: (～道, ～特別自治道) Jeju (a province of South Korea; capital: Jeju) - '特別自治道' does not exist in the dictionary
+Skipped ~X: 環江／环江#D1: (～縣, ～毛南族自治縣) Huanjiang (an autonomous county of Hechi, Guangxi, China) - '毛南族自治縣' does not exist in the dictionary
+Skipped ~X: 瓊中／琼中#D1: (～黎族苗族自治縣, ～縣) Qiongzhong (an autonomous county of Hainan, China) - '黎族苗族自治縣' does not exist in the dictionary
+Skipped ~X: 白沙#D1: (～黎族自治縣, ～縣) Baisha (an autonomous county of Hainan, China) - '黎族自治縣' does not exist in the dictionary
+Skipped ~X: 石林#D2: (～彝族自治縣, ～縣) Shilin (a Yi autonomous county in Kunming, Yunnan, China) - '彝族自治縣' does not exist in the dictionary
+Skipped ~X: 祿勸／禄劝#D1: (～彝族苗族自治縣, ～縣) Luquan (an autonomous county of Yunnan, China) - '彝族苗族自治縣' does not exist in the dictionary
+Skipped ~X: 管城#D1: (～回族區, ～區) Guancheng (a Hui district in Zhengzhou, Henan, China) - '回族區' does not exist in the dictionary
+Skipped ~X: 納希切萬／纳希切万#D1: (～自治共和國) Nakhchivan Autonomous Republic (an autonomous republic of Azerbaijan) - '自治共和國' does not exist in the dictionary
+Skipped ~X: 維西／维西#D1: (～縣, ～傈僳族自治縣) Weixi (an autonomous county of Dêqên prefecture, Yunnan, China) - '傈僳族自治縣' does not exist in the dictionary
+Skipped ~X: 羅城／罗城#D1: (～仡佬族自治縣, ～縣) Longsheng (an autonomous county of Hechi, Guangxi, China) - '仡佬族自治縣' does not exist in the dictionary
+Skipped ~X: 耿馬／耿马#D1: (～傣族佤族自治縣, ～縣) Gengma (an autonomous county of Lincang, Yunnan, China) - '傣族佤族自治縣' does not exist in the dictionary
+Skipped ~X: 芭蕉#D1: (～侗族鄉) Bajiao (a township in Enshi, Enshi prefecture, Hubei, China) - '侗族鄉' does not exist in the dictionary
+Skipped ~X: 芷江#D1: (～侗族自治縣, ～縣) Zhijiang (an autonomous county of Huaihua, Hunan, China) - '侗族自治縣' does not exist in the dictionary
+Skipped ~X: 蘭坪／兰坪#D1: (～白族普米族自治縣, ～縣) Lanping (an autonomous county of Lijiang prefecture, Yunnan, China) - '白族普米族自治縣' does not exist in the dictionary
+Skipped ~X: 融水#D1: (～苗族自治縣, ～縣) Rongshui (an autonomous county of Liuzhou, Guangxi, China) - '苗族自治縣' does not exist in the dictionary
+Skipped ~X: 西盟#D1: (～佤族自治縣, ～縣) Ximeng (a county of Pu'er, Yunnan, China) - '佤族自治縣' does not exist in the dictionary
+Skipped ~X: 貢山／贡山#D1: (～獨龍族怒族自治縣, ～縣) Gongshan (an autonomous county of Nujiang prefecture, Yunnan, China) - '獨龍族怒族自治縣' does not exist in the dictionary
+Skipped ~X: 都安#D1: (～瑤族自治縣, ～縣) Du'an (an autonomous county of Hechi, Guangxi, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 金平#D2: (～苗族瑤族傣族自治縣, ～縣) Jinping (an autonomous county of Honghe prefecture, Yunnan, China) - '苗族瑤族傣族自治縣' does not exist in the dictionary
+Skipped ~X: 金秀#D1: (～瑤族自治縣, ～縣) Jinxiu (an autonomous county of Laibin, Guangxi, China) - '瑤族自治縣' does not exist in the dictionary
+Skipped ~X: 鎮寧／镇宁#D1: (～布依族苗族自治縣, ～縣) Zhenning (an autonomous county of Anshun, Guizhou, China) - '布依族苗族自治縣' does not exist in the dictionary
+Skipped ~X: 長潭河／长潭河#D1: (～侗族鄉) Changtanhe (a township in Xuan'en, Enshi prefecture, Hubei, China) - '侗族鄉' does not exist in the dictionary
+Skipped ~X: 長白／长白#D1: (～朝鮮族自治縣, ～自治縣) Changbai (a Korean autonomous county in Baishan, Jilin, China) - '朝鮮族自治縣' does not exist in the dictionary
+Skipped ~X: 長陽／长阳#D1: (～土家族自治縣, ～縣) Changyang (an autonomous county of Yichang, Hubei, China) - '土家族自治縣' does not exist in the dictionary
+Skipped ~X: 門源／门源#D1: (～回族自治縣, ～縣) Menyuan (an autonomous county of Haibei prefecture, Qinghai, China) - '回族自治縣' does not exist in the dictionary
+Skipped ~X: 陵水#D1: (～黎族自治縣, ～縣) Lingshui (an autonomous county of Hainan, China) - '黎族自治縣' does not exist in the dictionary
+Skipped ~X: 隆林#D1: (～各族自治縣, ～縣) Longlin (an autonomous county of Baise, Guangxi, China) - '各族自治縣' does not exist in the dictionary
+Skipped ~X: 雲霧／云雾#D1: (～鄉, ～土家族鄉) Yunwu (a township in Fengjie, Chongqing, China) - '土家族鄉' does not exist in the dictionary
+Skipped ~X: 靖州#D1: (～苗族侗族自治縣, ～縣) Jingzhou (an autonomous county of Huaihua, Hunan, China) - '苗族侗族自治縣' does not exist in the dictionary
+Skipped ~X: 響螺灣／响螺湾#D1: (～商務區) Xiangluowan (a business district of Tianjin, China) - '商務區' does not exist in the dictionary
+Skipped ~X: 麻陽／麻阳#D1: (～苗族自治縣, ～縣) Mayang (an autonomous county of Huaihua, Hunan, China) - '苗族自治縣' does not exist in the dictionary
+Skipped ~X: 龍勝／龙胜#D1: (～各族自治縣, ～縣) Longsheng (an autonomous county of Guilin, Guangxi, China) - '各族自治縣' does not exist in the dictionary
+Skipped ~X: 龍橋／龙桥#D1: (～鄉, ～土家族鄉) Longqiao (a township in Fengjie, Chongqing, China) - '土家族鄉' does not exist in the dictionary

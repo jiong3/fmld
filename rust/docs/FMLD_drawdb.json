@@ -1269,7 +1269,7 @@
           "check": "",
           "primary": false,
           "unique": false,
-          "notNull": true,
+          "notNull": false,
           "increment": false,
           "comment": "",
           "size": "",
@@ -1280,7 +1280,7 @@
           "name": "definition_id",
           "type": "INTEGER",
           "default": "",
-          "check": "",
+          "check": "definition_id IS NULL OR word_id IS NOT NULL",
           "primary": false,
           "unique": false,
           "notNull": false,
@@ -1288,9 +1288,22 @@
           "comment": "",
           "size": "",
           "values": []
+        },
+        {
+          "id": "PipMmeEeqnClbvRDmNQjj",
+          "name": "ascii_txt",
+          "type": "TEXT",
+          "default": "",
+          "check": "(word_id IS NULL) != (ascii_txt IS NULL)",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": 65535
         }
       ],
-      "comment": "In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.\nThe word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.",
+      "comment": "In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.\nThe word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.\nascii_txt is used for: spaces between words, numbers, English names, etc.\nOnly one of word_id and ascii_txt must be NOT NULL for each row.\nBetween two words there must always be an ascii_txt, usually just a space.",
       "indices": [
         {
           "id": 0,

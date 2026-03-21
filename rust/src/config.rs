@@ -267,12 +267,16 @@ ON "dict_translation" ("dict_ref_type_id");
 CREATE INDEX IF NOT EXISTS "dict_translation_index_5"
 ON "dict_translation" ("dict_class_id");
 /* In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.
-The word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank. */
+The word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.
+ascii_txt is used for: spaces between words, numbers, English names, etc.
+Only one of word_id and ascii_txt must be NOT NULL for each row.
+Between two words there must always be an ascii_txt, usually just a space. */
 CREATE TABLE IF NOT EXISTS "dict_sentence_word" (
 	"sentence_id" INTEGER NOT NULL,
 	"word_rank" INTEGER NOT NULL,
-	"word_id" INTEGER NOT NULL,
-	"definition_id" INTEGER,
+	"word_id" INTEGER,
+	"definition_id" INTEGER CHECK(definition_id IS NULL OR word_id IS NOT NULL),
+	"ascii_txt" TEXT CHECK((word_id IS NULL) != (ascii_txt IS NULL)),
 	PRIMARY KEY("sentence_id", "word_rank"),
 	FOREIGN KEY ("sentence_id") REFERENCES "dict_sentence"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
@@ -301,7 +305,8 @@ WHERE ascii_symbol != ">";
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bool, u8)> {
     Some(match ref_type_char {
 		'>' => ("contains", false, false, 1), // source word contains destination word (or definition), duplicates allowed
-        'M' => ("used-with-measure-word", false, false, 2), // source word is used with destination measure-word / classifier
+		'~' => ("definition-suffix", false, false, 2), // used instead of the (～X) convention in the wiktionary definitions
+        'M' => ("used-with-measure-word", false, false, 3), // source word is used with destination measure-word / classifier
 		'=' => ("synonym", true, true, 4), // source has the same or a very similar meaning as destination
 		'%' => ("cross-strait", true, true, 6), // links two definitions with the same meaning but one is used in Taiwan, the other in China
 		'?' => ("could-be-confused-with", true, true, 8), // words which are easily mixed up but not synonyms

@@ -1,6 +1,7 @@
 // Functions which may be used occasionally to edit data, e.g. import, cleanup, etc.
 #![allow(clippy::all)]
 
+use crate::common;
 use crate::common::SqliteId;
 use crate::config;
 use crate::db_edit;
@@ -11,6 +12,7 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
+use regex::Regex;
 use std::io::{self, BufRead, BufReader};
 
 /// not for regular use, uses unwrap
@@ -924,46 +926,133 @@ pub fn fix_contains_references_from_part_of(conn: &Transaction) -> Result<usize,
     Ok(updated_count)
 }
 
-// TODO map synonyms to cross-strait references if applicable:
-/*
-SELECT
-  src_word.simp AS source_simp,
-  src_word.trad AS source_trad,
-  src_def.definition AS source_definition,
-  dst_word.simp AS dest_simp,
-  dst_word.trad AS dest_trad,
-  dst_def.definition AS dest_definition
-FROM dict_reference
-JOIN dict_ref_type
-  ON dict_reference.ascii_symbol = dict_ref_type.ascii_symbol
--- Join Source Definition and Word
-JOIN dict_definition AS src_def
-  ON dict_reference.definition_id_src = src_def.id
-JOIN dict_word AS src_word
-  ON src_def.word_id = src_word.id
--- Join Destination Definition and Word
-JOIN dict_definition AS dst_def
-  ON dict_reference.definition_id_dst = dst_def.id
-JOIN dict_word AS dst_word
-  ON dst_def.word_id = dst_word.id
-WHERE dict_ref_type.ascii_symbol = '='
-  -- Check Source Tags for 'C' or 'c'
-  AND EXISTS (
-    SELECT 1
-    FROM dict_shared_tag
-    JOIN dict_tag
-      ON dict_shared_tag.tag_id = dict_tag.id
-    WHERE dict_shared_tag.for_shared_id = src_def.shared_id
-      AND dict_tag.ascii_symbol IN ('C', 'c')
-  )
-  -- Check Destination Tags for 'T' or 't'
-  AND EXISTS (
-    SELECT 1
-    FROM dict_shared_tag
-    JOIN dict_tag
-      ON dict_shared_tag.tag_id = dict_tag.id
-    WHERE dict_shared_tag.for_shared_id = dst_def.shared_id
-      AND dict_tag.ascii_symbol IN ('T', 't')
-  );
 
-*/
+/// Extracts suffix patterns like (～縣) or (～區, formerly ～縣) from the start of definitions.
+/// Priority 1: Full target word (Source + Suffix) using '<' reference.
+/// Priority 2: Suffix word using '~' reference.
+pub fn extract_suffix_references(conn: &Transaction) -> Result<(), Box<dyn std::error::Error>> {
+    // 1. Regex to find the parenthetical at the start containing a tilde.
+    let re_prefix = Regex::new(r"^\(([^)]*～[^)]*)\)\s*")?;
+    // Regex to find Traditional Chinese characters immediately following a tilde.
+    let re_trad_word = Regex::new(r"～([\u4e00-\u9fa5·]+)")?;
+
+    // 2. Prepare statements
+    let mut stmt_defs = conn.prepare(
+        r#"
+        SELECT 
+            d.id, 
+            d.word_id, 
+            d.ext_def_id,
+            d.definition, 
+            s.rank,
+            w.trad,
+            w.simp
+        FROM dict_definition d
+        JOIN dict_shared s ON d.shared_id = s.id
+        JOIN dict_word w ON d.word_id = w.id
+        WHERE d.definition LIKE '(～%'
+        "#,
+    )?;
+
+    let mut stmt_find_word = conn.prepare("SELECT id FROM dict_word WHERE trad = ?1 LIMIT 1")?;
+
+    let mut stmt_max_rel = conn.prepare(
+        "SELECT MAX(rank_relative) FROM dict_shared WHERE rank = ?1"
+    )?;
+
+    // 3. Collect definitions to avoid borrowing issues
+    struct SourceInfo {
+        def_id: SqliteId,
+        word_id: SqliteId,
+        ext_def_id: usize,
+        definition: String,
+        rank: i64,
+        src_trad: String,
+        src_simp: String,
+    }
+
+    let definitions = stmt_defs.query_map([], |row| {
+        Ok(SourceInfo {
+            def_id: row.get(0)?,
+            word_id: row.get(1)?,
+            ext_def_id: row.get(2)?,
+            definition: row.get(3)?,
+            rank: row.get(4)?,
+            src_trad: row.get(5)?,
+            src_simp: row.get(6)?,
+        })
+    })?.collect::<Result<Vec<_>, _>>()?;
+
+    for info in definitions {
+        if let Some(caps) = re_prefix.captures(&info.definition) {
+            let full_paren_match = caps.get(0).unwrap().as_str();
+            let inner_content = caps.get(1).unwrap().as_str();
+
+            let mut current_rel: i64 = stmt_max_rel
+                .query_row(params![info.rank], |row| row.get::<_, Option<i64>>(0))?
+                .unwrap_or(0);
+
+            // Iterate through all matches of ～TraditionalWord
+            for mat in re_trad_word.captures_iter(inner_content) {
+                let trad_target = &mat[1];
+                let start_idx = mat.get(1).unwrap().start();
+                
+                // Skip everything after "formerly" inside the parentheses
+                if inner_content[..start_idx].contains("formerly") {
+                    break; 
+                }
+
+                // Logic Part 1: Check for Full Target Word (Source + Suffix)
+                let full_target_word = format!("{}{}", info.src_trad, trad_target);
+                let full_word_id: Option<SqliteId> = stmt_find_word
+                    .query_row(params![full_target_word], |row| row.get(0))
+                    .ok();
+
+                if let Some(dst_id) = full_word_id {
+                    current_rel += 1;
+                    db_edit::insert_reference(
+                        conn,
+                        '<', // Reference type: part-of
+                        info.word_id,
+                        Some(info.def_id),
+                        dst_id,
+                        None,
+                        Some(current_rel as usize),
+                    )?;
+                } else {
+                    // Logic Part 2: Fallback to Suffix Word
+                    let suffix_word_id: Option<SqliteId> = stmt_find_word
+                        .query_row(params![trad_target], |row| row.get(0))
+                        .ok();
+
+                    if let Some(dst_id) = suffix_word_id {
+                        current_rel += 1;
+                        db_edit::insert_reference(
+                            conn,
+                            '~', // Reference type: suffix
+                            info.word_id,
+                            Some(info.def_id),
+                            dst_id,
+                            None,
+                            Some(current_rel as usize),
+                        )?;
+                    } else {
+                        // Logic Part 3: Neither exists
+                        println!(
+                            "Skipped ~X: {}: {} - '{}' does not exist in the dictionary",
+                            common::format_word_def(&info.src_trad, &info.src_simp, Some(info.ext_def_id as u32)),
+                            info.definition,
+                            trad_target
+                        );
+                    }
+                }
+            }
+
+            // 4. Update the definition text to remove the parentheses block
+            let new_def_text = info.definition.replacen(full_paren_match, "", 1);
+            db_edit::update_definition_text(conn, info.def_id, new_def_text.trim())?;
+        }
+    }
+
+    Ok(())
+}

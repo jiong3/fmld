@@ -3276,6 +3276,8 @@ W|w|它
   C character
    D9||Only used in 它它.
 W|w|著／着
+ # split into 著／着 and 著 due to different simplifications for different definitions, definition ids kept from original entry
+ XV||著
  P||zhuo2;zhao2;zhao1
   C character
    D1|- #Hokkien #literary|to attach to; to stick to; to adhere to
@@ -3322,6 +3324,9 @@ W|w|著／着
    D37||Particle indicating the continuation of an action or a state. Often used with 正在 (zhèngzài) or 正 (zhèng).
    D38||Particle used after some adjectives to denote comparison of levels.
    D39||Particle denoting a command, request or advice.
+W|w|著
+ # split into 著／着 and 著 due to different simplifications for different definitions, definition ids kept from original entry
+ XV||著／着
  P||zhu4
   C character
    D40|- #literary|notable; remarkable; striking
@@ -3372,13 +3377,6 @@ W|w|沒關係／没关系
    D2|*|to have nothing to do with; to matter little; to be irrelevant
     X=|a|不要緊／不要紧#D1;無所謂／无所谓#D4
     X!|a|有關係／有关系#D1
-W|w|拏／拿
- P||na2
-  C character
-   D1||to connect
-   D4||Alternative form of 拿
-    D2||to take with hand; to grasp
-    D3||to capture
 W|w|先生
  X>|a|先#D1;生
  P||xian1sheng1
@@ -8544,7 +8542,7 @@ W|w|經過／经过
    D4|*|to undergo
     X=|a|通過／通过#D4;經歷／经历#D2 |A|歷經／历经#D1
 W|w|老闆／老板;老板
- X>|a|老;闆／𬮳
+ X>|a|老;闆／板
  P||lao3ban3
   C noun
    D1|*|shop owner; business proprietor
@@ -9476,7 +9474,7 @@ W|w|安靜／安静
  P||an1jing4
   C adj
    D1|+|quiet; peaceful; tranquil
-    X=|a|寂寞#D2;和平#D1;悄悄#D1;寧靜／宁静#D1 |A|幽靜／幽静#D1 |a|沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|寂寞#D2;和平#D1;悄悄#D1;寧靜／宁静#D1 |A|幽靜／幽静#D1 |a|沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|嘈雜／嘈杂#D1
     X{|a|請／请#D8;保持#D1 |A|氣氛／气氛#D1
     X}|a|地方#D2;環境／环境#D1;下來／下来#D2
@@ -16577,7 +16575,7 @@ W|w|樣／样
   C classifier
    D7||Classifier for kinds or types of things.
 W|w|秘密
- X>|a|秘／祕#D1;密#D3
+ X>|a|秘#D1;密#D3
  P||mi4mi4
   C adj
    D1|*|secret (being or kept hidden)
@@ -18448,7 +18446,7 @@ W|w|碰
    D4|*|to offend; to provoke
    D5|#mahjong|to form a pung
 W|w|蘋果／苹果
- X>|a|蘋／𬞟#D1;果#D1
+ X>|a|蘋／苹#D1;果#D1
  P||ping2guo3
   C name
    D1||Apple Inc.
@@ -20048,7 +20046,7 @@ W|w|下課／下课
     X}|a|時間／时间#D3;休息#D1;後／后#D2
    D2|#figurative|to be fired; to be dismissed
    D3|x #Malaysia #Singapore|to have break time; to have recess
-W|w|藉／借
+W|w|藉／借;藉
  P||jie4
   C character
    D1|x #obsolete|straw mat used to offer sacrifices
@@ -21164,7 +21162,7 @@ W|w|汗
     X<|A|可汗;成吉思汗
  P|x|gan1
   C character
-   D8||Only used in 餘汗／馀汗.
+   D8||Only used in 餘汗／余汗.
 W|w|讓開／让开
  X>|a|讓／让;開／开#D17
  P||rang4kai1
@@ -24840,7 +24838,7 @@ W|w|寂寞
     X{|a|感覺／感觉#D1;感到#D1;孤單／孤单#D1;孤獨／孤独#D1;耐#D2
     X}|a|無聊／无聊#D1 |A|夜晚#D1 |a|空虛／空虚#D1
    D2||quiet; still
-    X=|a|安靜／安静#D1;平靜／平静#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;平靜／平静#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
 W|w|對了／对了
  X>|a|對／对#D1;了#D2
  P||dui4le5
@@ -25695,7 +25693,7 @@ W|w|平靜／平静
  P||ping2jing4
   C adj
    D1|+|quiet; tranquil; still; smooth; peaceful
-    X=|A|冷靜／冷静#D1 |a|寂寞#D2;和平#D1;悄悄#D1;清靜／清静#D1;安寧／安宁#D1;寧靜／宁静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|A|冷靜／冷静#D1 |a|寂寞#D2;和平#D1;悄悄#D1;清靜／清静#D1;安寧／安宁#D1;寧靜／宁静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|激烈#D1;劇烈／剧烈#D1
     X{|a|心情#D1 |A|環境／环境#D1 |a|保持#D1;恢復／恢复#D1 |A|氣氛／气氛#D1 |a|內心／内心#D1;海面#D1 |A|湖面#D1
     X}|a|生活#D1;下來／下来#D2
@@ -27764,7 +27762,7 @@ W|w|於／于
    D10||Alternative form of 嗚／呜 (wū, “alas!; oh!”)
    D11||Used in 於菟／於檡／於兔／於䖘 (wūtú, “tiger”).
 W|w|神秘
- X>|a|神#D5;秘／祕#D2
+ X>|a|神#D5;秘#D2
  P||shen2mi4
   C adj
    D1|*|mysterious; mystical
@@ -30052,14 +30050,14 @@ W|w|和平
  P||he2ping2
   C adj
    D1|*|peaceful; tranquil; calm
-    X=|a|安靜／安静#D1;平靜／平静#D1;清靜／清静#D1;安寧／安宁#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;平靜／平静#D1;清靜／清静#D1;安寧／安宁#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
     X<|a|和平共處／和平共处;世界和平;和平條約／和平条约;和平談判／和平谈判
     X{|a|維護／维护#D1
     X}|a|相處／相处#D1
    D2||(of drug effect, etc.) mild; moderate; gentle
     X=|a|平和#D1
    D3||harmonious
-    X=|a|團結／团结#D1;協調／协调#D1;和諧／和谐#D1;和好#D1;和氣／和气#D2;和睦#D1;融洽#D1;調和／调和#D1;沉靜／沈静#D2;平和#D3;和洽#D1;融和#D2;親睦／亲睦#D1
+    X=|a|團結／团结#D1;協調／协调#D1;和諧／和谐#D1;和好#D1;和氣／和气#D2;和睦#D1;融洽#D1;調和／调和#D1;沉靜／沉静#D2;平和#D3;和洽#D1;融和#D2;親睦／亲睦#D1
   C name
    D4||Heping (a mountain indigenous district of Taichung, Taiwan)
     X~||區／区
@@ -30592,7 +30590,7 @@ W|w|應付／应付
     X=|a|敷衍#D1;塞責／塞责#D1;搪塞#D1;走過場／走过场#D2
     X}|A|工作#D3
 W|w|著名
- X>|a|著／着#D40;名#D3
+ X>|a|著#D40;名#D3
  P||zhu4ming2
   C adj
    D1|+|famous; well-known; noted; renowned
@@ -31011,7 +31009,7 @@ W|w|悄悄
  P|C|qiao1qiao1 |T|qiao3qiao3
   C adj
    D1|*|quiet; silent
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;默默#D1;清靜／清静#D1 |A|小聲／小声#D1 |a|寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1;靜靜／静静#D1
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;默默#D1;清靜／清静#D1 |A|小聲／小声#D1 |a|寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1;靜靜／静静#D1
    D2|- #literary|distressed; sorrowful
   C adv
    D3|*|in secret; stealthily; without allowing others to notice
@@ -32210,7 +32208,7 @@ W|w|咱
   C character
    D7||Alternative form of 咋 (“how”)
 W|w|秘書／秘书
- X>|a|秘／祕;書／书#D6
+ X>|a|秘;書／书#D6
  P||mi4shu1
   C noun
    D1|+|secretary (person who does clerical work)
@@ -38918,7 +38916,7 @@ W|w|此
   C character
    D1|- #literary|this
    D2|- #literary|here
-W|w|餘／馀
+W|w|餘／余;餘／馀
  P||yu2
   C character
    D1||to remain; to have left
@@ -41854,7 +41852,7 @@ W|w|天賦／天赋
   C verb
    D2||to be born with; to be innate or inborn
 W|w|多餘／多余
- X>|a|多#D7;餘／馀#D4
+ X>|a|多#D7;餘／余#D4
  P||duo1yu2
   C adj
    D1|*|superfluous; unnecessary; surplus; uncalled-for; spare; excessive; redundant
@@ -42933,7 +42931,7 @@ W|w|伙伴;夥伴
  P||huo3ban4
   C noun
    D1|+|companion; mate; comrade; partner
-    X=|a|朋友#D1;伴侶／伴侣#D1;搭檔／搭档#D1;同伴#D1
+    X=|a|朋友#D1;伴侶／伴侣#D1 ||伙計／伙计#D1 |a|搭檔／搭档#D1;同伴#D1
     X<|a|合作伙伴
     X{|a|工作#D5;事業／事业#D1
 W|w|不願／不愿
@@ -50208,7 +50206,7 @@ W|w|哎喲／哎哟
    D1|+|aiyo; hey; oh; ouch; ow (expressing surprise, pain, annoyance, regret, frustration, admiration, etc.)
     X=|A|哎呀#D1
 W|w|其餘／其余
- X>|a|其#D3;餘／馀#D4
+ X>|a|其#D3;餘／余#D4
  P||qi2yu2
   C noun
    D1|+|the rest; the others; the remaining; the remainder
@@ -52810,14 +52808,12 @@ W|w|長期／长期
     X!|a|短期#D1
     X<|a|長期以來／长期以来
     X}|A|發展／发展#D1 |a|合作#D4 |A|目標／目标#D2 |a|觀察／观察#D1 |A|投資／投资#D1 |a|規劃／规划#D1;抗戰／抗战#D1
-W|w|夥
+W|w|夥／伙
+ XV||伙
  P||huo3
   C character
    D1||many; much; a lot of; numerous
-   D2||(alt. form 伙) companion; partner; assistant
- P|x|xie4
-  C character
-   D3||Only used in 夥頤／伙颐.
+   D2||companion; partner; assistant
 W|w|責怪／责怪
  X>|a|責／责#D3;怪#D3
  P||ze2guai4
@@ -53362,7 +53358,7 @@ W|w|清靜／清静
  P||qing1jing4
   C adj
    D1|+|tranquil; quiet; peaceful
-    X=|a|寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X}|a|地方#D2 |A|生活#D1;心情#D1;環境／环境#D1
 W|w|徒
  P||tu2
@@ -62978,7 +62974,7 @@ W|w|戰略／战略
     X{|A|調整／调整#D1;制定#D1
     X}|a|合作#D4 |A|目標／目标#D2 |a|部署#D1
 W|w|業餘／业余
- X>|a|業／业#D1;餘／馀#D5
+ X>|a|業／业#D1;餘／余#D5
  P||ye4yu2
   C adj
    D1|#attributive|spare (time)
@@ -67548,7 +67544,7 @@ W|w|精英
    D2|x #Zhangzhou-Hokkien|clear-headed; sober
   C noun
    D3||best feature or most important part (of something); essence; quintessence
-    X=|a|菁華／精华#D1;精髓#D1;菁英#D1
+    X=|a|精華／精华#D1;精髓#D1;菁英#D1
    D4|*|elite; cream
     X=|a|人才#D2;材料#D4;天才#D2;菁英#D2;俊才#D1;棟樑／栋梁#D2
     X!|a|庸才#D1
@@ -68001,7 +67997,7 @@ W|w|光輝／光辉
     X~||村
   C noun
    D3|*|radiance; glory
-    X=|A|光彩#D1 |a|菁華／精华#D2
+    X=|A|光彩#D1 |a|精華／精华#D2
     X<|a|光輝燦爛／光辉灿烂
     X}|A|歷史／历史#D2;形象#D2 |a|歲月／岁月#D1
 W|w|識相／识相
@@ -69367,13 +69363,15 @@ W|w|民主
     X}|A|自由#D3
    D4|- #Classical|monarch
    D5|- #Classical|functionary; official
-W|m|伙計／伙计
+W|w|伙計／伙计;夥計／伙计
  X>|a|伙#D1;計／计
  P|C|huo3ji5 |T|huo3ji4
   C noun
-   D1||partner; fellow; mate
-   D2|*|waiter; servant; shop assistant
+   D1|+ #informal|partner; fellow; mate
+    X=||伙伴#D1
     X{|a|老
+   D2|x #dated #informa|waiter; servant; shop assistant
+   D3|x #Taiwanese-Hokkien|mistress
 W|w|進化／进化
  X>|a|進／进#D1;化#D1
  P||jin4hua4
@@ -73416,7 +73414,7 @@ W|w|敏銳／敏锐
     X{|A|判斷／判断#D1;直覺／直觉#D1 |a|嗅覺／嗅觉#D1
     X}|A|感覺／感觉#D2;反應／反应#D1;眼光#D2;思維／思维#D2;觸覺／触觉#D1
 W|w|餘地／余地
- X>|a|餘／馀#D5;地#D10
+ X>|a|餘／余#D5;地#D10
  P||yu2di4
   C noun
    D1|+ #literally|additional space; spare room; (figuratively) leeway; room (for negotiation, to maneuver, etc.); latitude; margin; space
@@ -82069,6 +82067,7 @@ W|w|盲
     X<|A|文盲
    D5||carelessly; blindly
 W|w|伙
+ XV||夥／伙
  P||huo3
   C character
    D1||companion; colleague
@@ -82927,7 +82926,7 @@ W|w|耗費／耗费
     X=|a|浪費／浪费#D2;消耗#D2;開銷／开销#D2;花費／花费#D2;開支／开支#D2
     X}|A|時間／时间#D2;資源／资源#D2 |a|精力#D1;大量#D1 |A|成本#D1;體力／体力#D1;金錢／金钱#D1;人力#D1;財力／财力#D1;物力#D1
 W|w|顯著／显著
- X>|a|顯／显#D1;著／着#D40
+ X>|a|顯／显#D1;著#D40
  P||xian3zhu4
   C adj
    D1|+|notable; remarkable; outstanding; prominent; marked; striking; distinctive
@@ -83806,7 +83805,7 @@ W|w|分歧
     X=|A|不同#D2 |a|差別／差别#D1 |A|衝突／冲突#D1
     X{|A|解決／解决#D3 |a|出現／出现#D1;意見／意见#D2 |A|存在#D2;產生／产生#D2;立場／立场#D1
     X}|A|嚴重／严重#D1
-W|w|摺
+W|w|摺／折
  P||zhe2
   C character
    D1||to destroy
@@ -87550,7 +87549,7 @@ W|w|寧靜／宁静
  P||ning2jing4
   C adj
    D1|+|quiet; peaceful; tranquil; serene
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;安寧／安宁#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;安寧／安宁#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|嘈雜／嘈杂#D1
     X}|A|生活#D1;環境／环境#D1;氣氛／气氛#D1;時光／时光#D2;夜晚#D1
 W|w|市民
@@ -87913,7 +87912,9 @@ W|w|班主任
    D1|+C #HongKong|teacher in charge of a class; class teacher; homeroom teacher; form master
     X{|a|當／当#D4
     X}|a|老師／老师#D1 |A|管理#D1
-W|w|覆／复
+W|w|覆
+ # split into 覆／复 and 覆 due to different simplifications for different definitions, definition ids kept from original entry
+ XV||覆／复
  P||fu4
   C character
    D1||to cover
@@ -87921,13 +87922,18 @@ W|w|覆／复
    D2||to tip over; to overturn; to flip over
     X<|A|顛覆／颠覆
    D3|x #obsolete|to pour out
-   D4||to return (simplifies to 复)
-   D5||to reply (simplifies to 复)
    D6||to destroy; to overturn; to perish
     X<||覆滅／覆灭
    D7||again
    D8|x #Hokkien|to lie on one's stomach; to rest one's body on a surface
    D9|x #Mainland-China-Hokkien|to press close to; to nestle up against
+W|w|覆／复
+ # split into 覆／复 and 覆 due to different simplifications for different definitions, definition ids kept from original entry
+ XV||覆
+ P||fu4
+  C verb
+   D4||to return
+   D5||to reply
 W|w|拘留
  X>|a|拘#D1;留#D2
  P||ju1liu2
@@ -89706,15 +89712,14 @@ W|w|漁民／渔民
    D1|+|fishermen; fisherfolk
     X=|a|漁人／渔人#D1;漁夫／渔夫#D1;漁翁／渔翁#D1;討海人／讨海人#D1
     X}|A|生活#D1;生計／生计#D1;捕魚／捕鱼#D1;出海#D1
-W|w|菁華／精华
- # todo: difference to 精華／精华?
- X>|a|菁;華／华#D9
+W|mw|精華／精华;菁華／精华
+ X>|a|精#D2;華／华#D9
  P||jing1hua2
   C noun
-   D1||essence; quintessence; marrow; pith; essential parts
+   D1|+|best feature; most important part of an object; quintessence; essence; soul
     X=|a|精英#D3;精髓#D1;菁英#D1
-    X{|A|精華／精华#D1
-    X}|A|部分#D1;內容／内容#D1
+    X{|a|吸收#D1 |A|濃縮／浓缩#D1;萃取#D1
+    X}|A|部分#D1;內容／内容#D1 |a|所在#D1
    D2|- #literary|brilliance; splendor; radiance; glory
     X=|a|光輝／光辉#D3;光耀#D2;光華／光华#D1
 W|w|拘謹／拘谨
@@ -92444,7 +92449,7 @@ W|w|姪子／侄子
  P||zhi2zi5
   C noun
    D1|*|fraternal nephew (brother's son)
-    X=|a|姪兒／姪儿#D1
+    X=|a|姪兒／侄儿#D1
     X{|a|小#D5
    D2||son of a male friend or relative of a similar age
 W|w|拗
@@ -93261,13 +93266,6 @@ W|w|點燃／点燃
    D1|+|to ignite; to set on fire; to light; to kindle
     X=|a|發火／发火#D2
     X}|A|希望#D1;蠟燭／蜡烛#D1;火焰#D1;激情#D1;火把#D1
-W|m|精華／精华
- X>|a|精#D2;華／华#D9
- P||jing1hua2
-  C noun
-   D1|+|best feature; most important part of an object; quintessence; essence; soul
-    X{|a|吸收#D1 |A|濃縮／浓缩#D1;萃取#D1
-    X}|A|部分#D1 |a|所在#D1
 W|m|不死心
  X>|a|不#D1;死心#D1
  P||bu4si3xin1
@@ -97046,7 +97044,7 @@ W|w|余
   C character
    D6||Only used in 褒余.
 W|w|秘訣／秘诀
- X>|a|秘／祕#D1;訣／诀#D1
+ X>|a|秘#D1;訣／诀#D1
  P||mi4jue2
   C noun
    D1|+|secret method; trick
@@ -100918,7 +100916,7 @@ W|w|青春期
   C noun
    D1|+|puberty
     X}|A|心理#D2 |a|煩惱／烦恼#D2 |A|成長／成长#D1;少年#D3;發育／发育#D1;叛逆#D1;荷爾蒙／荷尔蒙#D1
-W|w|鍾／锺
+W|w|鍾／钟;鍾／锺
  P||zhong1
   C character
    D1||vessel for containing alcohol
@@ -101868,7 +101866,7 @@ W|w|乘坐
     X=|A|搭#D4;搭乘#D1
     X}|A|飛機／飞机#D1;火車／火车#D2;汽車／汽车#D1;地鐵／地铁#D1 |a|航班#D1 |A|巴士#D2;交通工具#D1
 W|w|合夥／合伙
- X>|a|合#D2;夥#D2
+ X>|a|合#D2;夥／伙#D2
  P||he2huo3
   C verb
    D1|+|to form a partnership
@@ -103170,7 +103168,7 @@ W|w|掌櫃／掌柜
  P||zhang3gui4
   C noun
    D1|*|shopkeeper; manager of a shop
-    X}|A|店鋪／店铺#D1;夥計／伙计#D2
+    X}|A|伙計／伙计#D2;店鋪／店铺#D1
    D2|x #dialectal|husband
 W|m|加派
  # todo: add 加派人手
@@ -104579,7 +104577,7 @@ W|m|挑嘴
   C verb
    D2||to sow discord
 W|w|著作
- X>|a|著／着#D43;作#D8
+ X>|a|著#D43;作#D8
  P||zhu4zuo4
   C noun
    D1|*|work; writings
@@ -106194,7 +106192,7 @@ W|w|助興／助兴
     X{|A|節目／节目#D1
     X}|a|表演#D1 |A|氣氛／气氛#D1
 W|w|覆蓋／覆盖
- X>|a|覆／复#D1;蓋／盖#D1
+ X>|a|覆#D1;蓋／盖#D1
  P||fu4gai4
   C noun
    D1||cover
@@ -109326,10 +109324,10 @@ W|w|嗓門／嗓门
     X{|A|提高#D1;壓低／压低#D1
     X}|a|大#D4 |A|聲音／声音#D1
 W|m|富餘／富余
- X>|a|富#D1;餘／馀#D4
- P||fu4yu5
+ X>|a|富#D1;餘／余#D4
+ P|C|fu4yu5 |T|fu4yu2
   C adj
-   D1|+|in surplus
+   D1|+|in surplus; more than needed
     X}|A|時間／时间#D4;資源／资源#D3;資金／资金#D1;糧食／粮食#D1
 W|w|節育／节育
  X>|a|節／节#D17;育#D1
@@ -109578,7 +109576,7 @@ W|w|慢跑
     X=|A|跑步#D1
     X}|A|習慣／习惯#D1;運動／运动#D2;健身#D1
 W|w|慰藉
- X>|a|慰#D1;藉／借
+ X>|a|慰#D1;藉
  P||wei4jie4
   C noun
    D1|- #literary|consolation; comfort
@@ -112116,7 +112114,7 @@ W|w|上進心／上进心
   C noun
    D1|+|desire to do better, ambition; pursuit for improvement
     X{|A|鼓勵／鼓励#D1;培養／培养#D4;缺乏#D1
-W|w|姪兒／姪儿
+W|w|姪兒／侄儿
  X>|a|姪／侄#D1;兒／儿#D5
  P||zhi2r5;zhi2er2
   C noun
@@ -114135,7 +114133,7 @@ W|w|雷霆
    D2|*|wrath; rage; ire
     X}|A|發威／发威#D1;震怒#D1
 W|w|剩餘／剩余
- X>|a|剩#D1;餘／馀#D4
+ X>|a|剩#D1;餘／余#D4
  P||sheng4yu2
   C noun
    D1|*|the rest; remainder; surplus
@@ -114364,11 +114362,6 @@ W|w|射箭
    D2|*|to shoot an arrow; to let loose an arrow
     X{|A|訓練／训练#D1
     X}|A|弓箭#D1
-W|w|祕
- P||mi4;bi4
-  C character
-   D1||Alternative form of 秘
-   D2||a surname
 W|w|善人
  X>|a|善#D1;人#D1
  P||shan4ren2
@@ -117743,7 +117736,7 @@ W|w|精髓
  P||jing1sui3
   C noun
    D1|+|essence; quintessence; marrow; pith
-    X=|A|核心#D2 |a|精英#D3;菁華／精华#D1;菁英#D1
+    X=|A|核心#D2 |a|精英#D3;精華／精华#D1;菁英#D1
     X{|a|文化#D3 |A|傳統／传统#D3;藝術／艺术#D1;思想#D2
     X}|A|所在#D1
 W|w|過客／过客
@@ -119037,7 +119030,7 @@ W|m|桃樹／桃树
     X{|A|種植／种植#D1
     X}|A|結果／结果#D1;開花／开花#D1
 W|w|薰陶／熏陶
- X>|a|薰;陶#D3
+ X>|a|薰／熏;陶#D3
  P||xun1tao2
   C verb
    D1|+|to be influenced (in a positive way)
@@ -119272,7 +119265,7 @@ W|w|實地／实地
    D3|*|on the spot; on site
     X}|A|調查／调查#D3 |a|考察#D1 |A|測量／测量#D1;走訪／走访#D1
 W|w|翻來覆去／翻来覆去
- X>|a|翻#D2;來／来;覆／复#D2;去
+ X>|a|翻#D2;來／来;覆#D2;去
  P||fan1lai2fu4qu4
   C phrase
    D1|*|toss and turn sleeplessly
@@ -122533,7 +122526,7 @@ W|m|殷殷
    D2||(of emotions) deep
     X}|A|關懷／关怀#D1
 W|w|稻穀／稻谷
- X>|a|稻#D1;穀#D1
+ X>|a|稻#D1;穀／谷#D1
  P||dao4gu3
   C noun
    D1|+|rice crop; paddy
@@ -123978,7 +123971,7 @@ W|w|吆喝
     X=|a|說話／说话#D7;責怪／责怪#D1;責備／责备#D1;訓斥／训斥#D1;斥責／斥责#D1;痛罵／痛骂#D1;叱罵／叱骂#D1;叱責／叱责#D2;呵叱#D1;呵斥#D1;指摘#D1;指斥#D1;數說／数说#D2;申斥#D1;責罵／责骂#D1;貶責／贬责#D1
    D5|#colloquial|to yell loudly to urge on an animal
 W|w|穀子／谷子
- X>|a|穀#D2;子#D9
+ X>|a|穀／谷#D2;子#D9
  P||gu3zi5
   C noun
    D1||(especially northern China) foxtail millet (Setaria italica, the plant or the unhulled grain)
@@ -125774,7 +125767,7 @@ W|w|菁英
  P||jing1ying1
   C noun
    D1||best feature or most important part (of something); essence; quintessence
-    X=|a|精英#D3;菁華／精华#D1;精髓#D1
+    X=|a|精英#D3;精華／精华#D1;精髓#D1
    D2|*|elite; cream
     X=|a|人才#D2;材料#D4;天才#D2;精英#D4;俊才#D1;棟樑／栋梁#D2
     X!|a|庸才#D1
@@ -127296,7 +127289,7 @@ W|w|提煉／提炼
  P||ti2lian4
   C verb
    D1|+ #figuratively #literally|to extract and purify; to refine
-    X}|A|技術／技术#D1;金屬／金属#D1;石油#D1;精華／精华#D1
+    X}|A|技術／技术#D1;金屬／金属#D1;精華／精华#D1;石油#D1
 W|w|粗俗
  X>|a|粗#D2;俗#D1
  P||cu1su2
@@ -131065,7 +131058,7 @@ W|w|飛天／飞天
     X{|A|夢想／梦想#D1
    D3||to travel into space
 W|w|顛覆／颠覆
- X>|a|顛／颠#D3;覆／复#D2
+ X>|a|顛／颠#D3;覆#D2
  P||dian1fu4
   C verb
    D1||to turn over; to overturn (physically)
@@ -131356,7 +131349,7 @@ W|w|幽靜／幽静
  P||you1jing4
   C adj
    D1|+|quiet and secluded; peaceful
-    X=|A|安靜／安静#D1 |a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;僻靜／僻静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|A|安靜／安静#D1 |a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;僻靜／僻静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|熱鬧／热闹#D1;喧鬧／喧闹#D1;鬧熱／闹热#D1
     X{|A|環境／环境#D1
     X}|A|夜晚#D1;小徑／小径#D1;氛圍／氛围#D1
@@ -132703,7 +132696,7 @@ W|w|廁／厕
   C character
    D3||Used in 廁足／厕足 (cèzú).
 W|w|覆滅／覆灭
- X>|a|覆／复#D6;滅／灭#D1
+ X>|a|覆#D6;滅／灭#D1
  P||fu4mie4
   C verb
    D1||to be destroyed; to collapse
@@ -133281,7 +133274,7 @@ W|w|言聽計從／言听计从
   C phrase
    D1|+|to always follow somebody's advice; to act upon whatever somebody says; to have implicit faith in somebody
 W|w|存摺／存折
- X>|a|存#D3;摺#D3
+ X>|a|存#D3;摺／折#D3
  P||cun2zhe2
   C noun
    D1|+|passbook; deposit book; bankbook
@@ -135361,14 +135354,6 @@ W|w|圖騰／图腾
    D1||totem
     X{|A|崇拜#D2;民族#D2;部落#D1
     X}|A|文化#D3;象徵／象征#D1;標誌／标志#D1;信仰#D1
-W|w|夥計／伙计
- X>|a|夥#D2;計／计
- P||huo3ji4
-  C noun
-   D1|x #dated #informal|shop assistant; sales rep
-   D2|#informal|partner; associate; mate; buddy
-    X}|A|伙伴#D1
-   D3|x #Taiwanese-Hokkien|mistress
 W|w|浮雕
  X>|a|浮#D1;雕#D1
  P||fu2diao1
@@ -135503,7 +135488,7 @@ W|w|草擬／草拟
    D1|+|to draft; to draw up (a plan)
     X=|A|擬定／拟定#D2 |a|擬／拟#D4;起草#D1;草創／草创#D2
     X}|A|計劃／计划#D1;報告／报告#D1;文件#D1;方案#D1;合同#D2;協議／协议#D1;初稿#D1
-W|w|穀
+W|w|穀／谷
  P||gu3
   C character
    D1||corn; grain; cereal
@@ -136903,7 +136888,7 @@ W|w|庄
   C character
    D1||flat
 W|w|瘮人／瘆人
- X>|a|人#D1
+ X>|a|瘮／瘆;人#D1
  P||shen4ren2
   C adj
    D1|+|creepy
@@ -138179,7 +138164,7 @@ W|w|活菩薩／活菩萨
    D1|+ #figurative|(sometimes ironic) a kind-hearted, merciful, and helpful person
     X{|A|慈悲#D1
 W|w|鍾情／钟情
- X>|a|鍾／锺#D2;情#D2
+ X>|a|鍾／钟;情#D2
  P||zhong1qing2
   C verb
    D1|+|to be deeply in love; to fall in love
@@ -139973,7 +139958,7 @@ W|w|寅
    D1|- #Classical|to revere, respect
    D2||third of twelve earthly branches (十二支)
    D3||tiger (虎) of Chinese zodiac
-W|w|蘋／𬞟
+W|w|蘋／苹
  P||ping2
   C character
    D1||Used in 蘋果／苹果 (píngguǒ, “apple”).
@@ -139982,6 +139967,7 @@ W|w|蘋／𬞟
  P||pin2
   C character
    D3||water clover, clover fern (family Marsileaceae)
+    X<||白蘋／白苹#D1
 W|w|禁軍／禁军
  X>|a|禁#D15;軍／军#D1
  P||jin4jun1
@@ -141601,7 +141587,7 @@ W|w|化干戈為玉帛／化干戈为玉帛
    D1||to turn hostility into friendship; to bury the hatchet
     X}|A|和解#D1
 W|w|餘黨／余党
- X>|a|餘／馀#D5;黨／党#D2
+ X>|a|餘／余#D5;黨／党#D2
  P||yu2dang3
   C noun
    D1||the remnants of an overthrown clique; remaining confederates
@@ -141919,7 +141905,7 @@ W|m|慢慢來／慢慢来
   C phrase
    D1|+|take your time; take it easy
 W|w|奧秘／奥秘
- X>|a|奧／奥;秘／祕#D2
+ X>|a|奧／奥;秘#D2
  P||ao4mi4
   C noun
    D1||profound mystery
@@ -142612,7 +142598,7 @@ W|m|副理
     X{|A|公司#D1
     X}|A|經理／经理#D1;助理#D1;職位／职位#D1
 W|m|鍾馗／钟馗
- X>|a|鍾／锺#D6;馗#D2
+ X>|a|鍾／钟;馗#D2
  P||zhong1kui2
   C name
    D1||Zhong Kui (mythological figure, supposed to drive away evil spirits)
@@ -143109,7 +143095,7 @@ W|w|嘩啦啦／哗啦啦
   C intj
    D1|+ #onomatopoeia|Used for the pitter-patter of rain or numerous objects falling down and scattering on the ground.
 W|w|鍾愛／钟爱
- X>|a|鍾／锺#D2;愛／爱#D1
+ X>|a|鍾／钟;愛／爱#D1
  P||zhong1ai4
   C verb
    D1|+|to cherish; to treasure; to dote on (a child); to be very fond of
@@ -143268,7 +143254,7 @@ W|w|頂用／顶用
     X=|a|濟事／济事#D1
     X!|a|不中#D1
 W|w|餘下／余下
- X>|a|餘／馀#D1;下
+ X>|a|餘／余#D1;下
  P||yu2xia4
   C verb
    D1|+|to be left over; to remain
@@ -144646,7 +144632,7 @@ W|w|沉寂
  P|C|chen2ji4 |T|chen2ji2
   C adj
    D1|*|quiet; still
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
     X{|A|夜晚#D1;一片#D1
    D2||having no news
     X}|A|多年#D1
@@ -145251,7 +145237,7 @@ W|w|呼風喚雨／呼风唤雨
    D2|*|(of a person) to have extraordinary capabilities (and be influential)
     X}|A|能力#D1
 W|w|餘力／余力
- X>|a|餘／馀#D5;力#D1
+ X>|a|餘／余#D5;力#D1
  P||yu2li4
   C noun
    D1||one's remaining energy; energy left over (to do something else)
@@ -145803,8 +145789,7 @@ W|w|丟棄／丢弃
    D1|+ #transitive|to abandon; to cast out; to throw away
     X=|a|犧牲／牺牲#D3;丟掉／丢掉#D2 |A|拋棄／抛弃#D1 |a|拋／抛#D1 |A|扔掉#D1 |a|遺棄／遗弃#D1;捨去／舍去#D1
     X}|A|垃圾#D2;包袱#D3
-W|w|沉靜／沈静;沉靜／沉静
- # todo: is the variant char for simplified correct?
+W|w|沉靜／沉静;沉靜／沈静
  X>|a|沉#D10;靜／静#D1
  P||chen2jing4
   C adj
@@ -147916,11 +147901,11 @@ W|w|平和
  P||ping2he2
   C adj
    D1|*|having a mild temperament; polite
-    X=|a|和平#D2 |A|溫和／温和#D1 |a|和好#D1;柔弱#D2;和善#D1;沉靜／沈静#D2;平易#D1;柔順／柔顺#D1;溫存／温存#D1
+    X=|a|和平#D2 |A|溫和／温和#D1 |a|和好#D1;柔弱#D2;和善#D1;沉靜／沉静#D2;平易#D1;柔順／柔顺#D1;溫存／温存#D1
     X{|A|性格#D1
     X}|A|態度／态度#D1;語氣／语气#D1
    D2|*|peaceful; placid
-    X=|a|安靜／安静#D1;平靜／平静#D1;和平#D1;悄悄#D1 |A|溫和／温和#D2 |a|清靜／清静#D1;寧靜／宁静#D1;調和／调和#D7;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;寂靜／寂静#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;平靜／平静#D1;和平#D1;悄悄#D1 |A|溫和／温和#D2 |a|清靜／清静#D1;寧靜／宁静#D1;調和／调和#D7;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;寂靜／寂静#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
     X{|A|氣氛／气氛#D1
     X}|A|心態／心态#D1
    D3||harmonious; concordant
@@ -149233,18 +149218,11 @@ W|w|華盛頓／华盛顿
  X>|a|華／华;盛;頓／顿#D17
  P||Hua2sheng4dun4
   C name
-   D1|*|A transliteration of the English surname Washington
-   D2||Washington, D.C. (federal capital of the United States of America)
+   D1||A transliteration of the English surname Washington
+   D2|+|Washington, D.C. (federal capital of the United States of America)
     X<||華盛頓哥倫比亞特區／华盛顿哥伦比亚特区;華盛頓特區／华盛顿特区
-   D3|*|Washington (a state of the United States)
+   D3|+|Washington (a state of the United States)
     X~||州
-W|w|乾隆
- X>|a|乾／干#D15;隆
- P||Qian2long2
-  C name
-   D1||the Qianlong Emperor (the fifth emperor of the Qing dynasty)
-    X~||帝
-   D2||the Qianlong era (a Chinese era name; the era of that emperor's reign, from 1736 to 1795)
 W|w|功績／功绩
  X>|a|功#D1;績／绩#D2
  P|C|gong1ji4 |T|gong1ji1
@@ -151074,7 +151052,7 @@ W|w|寂靜／寂静
  P|C|ji4jing4 |T|ji2jing4
   C adj
    D1|+|quiet; tranquil; still
-    X=|a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|嘈雜／嘈杂#D1
     X{|A|四周#D1
     X}|A|夜晚#D1;無聲／无声#D1
@@ -152333,7 +152311,7 @@ W|w|細碎／细碎
    D1|+|small and broken; small and irregular
     X}|A|聲音／声音#D1;步伐#D1;碎片#D1
 W|w|哪吒
- X>|a|哪#D8;吒／咤#D2
+ X>|a|哪#D8;吒#D2
  P|C|Ne2zha1 |T|Nuo2zha4
   C name
    D1|#Chinese-folk-religion|Nezha, a protection deity in Chinese folk religion
@@ -154833,7 +154811,7 @@ W|w|油然而生
    D1||(of a thought, feeling, emotion, etc.) to arise spontaneously
     X{|A|感動／感动#D1;感慨#D1;敬意#D1
 W|w|卓著
- X>|a|卓#D2;著／着#D40
+ X>|a|卓#D2;著#D40
  P||zhuo2zhu4 |x|zhuo1zhu4
   C adj
    D1|+|distinguished; outstanding; eminent
@@ -156827,7 +156805,7 @@ W|w|簡短／简短
    D1|+|short; curt; concise; succinct; brief; terse (of writing or speech)
     X=|A|簡要／简要#D1
     X}|A|講話／讲话#D3;扼要#D1
-W|w|闆／𬮳
+W|w|闆／板;闆／𬮳
  P||ban3
   C character
    D1||Only used in 老闆／老板 (lǎobǎn).
@@ -159377,7 +159355,7 @@ W|w|靜悄悄／静悄悄
  P|C|jing4qiao1qiao1 |T|jing4qiao3qiao3
   C adj
    D1|* #ideophonic|very quiet
-    X=|a|寂寞#D2;悄悄#D1;沉寂#D1;沉靜／沈静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|寂寞#D2;悄悄#D1;沉寂#D1;沉靜／沉静#D1;寂寥#D1;恬淡#D2;清淨／清净#D1
     X{|A|房間／房间#D1;夜晚#D1
   C adv
    D2|* #ideophonic|quietly; stealthily
@@ -161071,7 +161049,7 @@ W|w|刊載／刊载
    D2|- #literary|to record
     X=|a|記錄／记录#D1;記載／记载#D1;手記／手记#D3
 W|w|餘波／余波
- X>|a|餘／馀#D1;波#D1
+ X>|a|餘／余#D1;波#D1
  P||yu2bo1
   C noun
    D1|+|after-effect; repercussion; fallout; aftermath
@@ -161581,7 +161559,7 @@ W|m|錯案／错案
     X{|A|糾正／纠正#D1
     X}|A|平反#D1
 W|w|翻覆
- X>|a|翻#D2;覆／复#D2
+ X>|a|翻#D2;覆#D2
  P||fan1fu4
   C verb
    D1||to turn over; to turn upside down
@@ -163161,12 +163139,11 @@ W|w|白髮蒼蒼／白发苍苍
    D1||hoary; white-haired
     X{|A|滿頭／满头#D1
     X}|A|老人#D1;年邁／年迈#D1;老翁#D1;老者#D1
-W|w|咔啦／卡拉
+W|w|咔啦;卡拉
  X>|a|咔#D1;啦
  P||ka3la1;ka1la1
   C adj
    D1|T #attributive|(usually of chicken) crispy-fried; deep-fried; karaage
-    X}|A|聲音／声音#D1;一聲／一声#D1;斷裂／断裂#D1
 W|w|奔流
  X>|a|奔#D1;流#D1
  P||ben1liu2
@@ -164173,7 +164150,7 @@ W|w|疑忌
    D1|- #literary|to be suspicious and jealous
     X{|A|互相#D1
 W|w|餘杭／余杭
- X>|a|餘／馀;杭#D5
+ X>|a|餘／余;杭#D5
  P||Yu2hang2
   C name
    D1|x #historical|Yuhang (a former county of Zhejiang, China)
@@ -164826,7 +164803,7 @@ W|w|恬靜／恬静
  P||tian2jing4
   C adj
    D1||quiet; silent; peaceful; tranquil
-    X=|a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
+    X=|a|寂寞#D2;和平#D1;悄悄#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂寥#D1;恬淡#D2;清淨／清净#D1
     X!|a|嘈雜／嘈杂#D1
     X{|A|心情#D1
     X}|A|生活#D5;環境／环境#D1;夜晚#D1
@@ -167879,7 +167856,7 @@ W|w|唾液
     X{|A|檢測／检测#D1
     X}|A|分泌#D1;吞嚥／吞咽#D1
 W|w|殘餘／残余
- X>|a|殘／残#D6;餘／馀#D1
+ X>|a|殘／残#D6;餘／余#D1
  P||can2yu2
   C adj
    D1|* #attributive|residual; remaining
@@ -170933,7 +170910,7 @@ W|w|縱深／纵深
    D1|#military|depth; penetration
     X}|A|發展／发展#D1;戰略／战略#D1;防禦／防御#D1;推進／推进#D2
 W|w|闡明／阐明
- X>|a|明#D2
+ X>|a|闡／阐#D2;明#D2
  P||chan3ming2
   C verb
    D1||to clarify; to expound; to explain
@@ -201353,6 +201330,12 @@ W|w|乾麵／干面
    D1||noodles served without a soup; dry noodles
     X!|a|湯麵／汤面#D1
    D2|xC #Jianghuai-Mandarin #Wu|flour
+W|w|乾隆
+ P||Qian2long2
+  C name
+   D1||the Qianlong Emperor (the fifth emperor of the Qing dynasty)
+    X~||帝
+   D2||the Qianlong era (a Chinese era name; the era of that emperor's reign, from 1736 to 1795)
 W|w|亂世／乱世
  P||luan4shi4
   C noun
@@ -227709,7 +227692,7 @@ W|w|光耀
     X=|a|炫耀#D1;體面／体面#D1;光彩#D1
   C noun
    D2||brilliance; brightness; luminosity
-    X=|a|光彩#D3;菁華／精华#D2
+    X=|a|光彩#D3;精華／精华#D2
   C verb
    D3||to shine (brightly)
     X=|a|照耀#D1;輝映／辉映#D1;照射#D1;映照#D1
@@ -227737,7 +227720,7 @@ W|w|光華／光华
  P||guang1hua2
   C noun
    D1||brilliance; splendor
-    X=|a|菁華／精华#D2
+    X=|a|精華／精华#D2
 W|w|光蛋
  P||guang1dan4
   C noun
@@ -260782,7 +260765,7 @@ W|w|取之不盡，用之不竭／取之不尽，用之不竭
  P||qu3 zhi1 bu4 jin4, yong4 zhi1 bu4 jie2
   C phrase
    D1||(of resources) inexhaustible
-W|w|取之不盡，用之有餘／取之不尽，用之有馀
+W|w|取之不盡，用之有餘／取之不尽，用之有余
  P||qu3 zhi1 bu4 jin4, yong4 zhi1 you3 yu2
   C phrase
    D1||Synonym of 取之不盡，用之不竭／取之不尽，用之不竭 (qǔ zhī bù jìn, yòng zhī bù jié, “(of resources) inexhaustible”)
@@ -268966,11 +268949,11 @@ W|w|向風群島／向风群岛
  P||Xiang4feng1 Qun2dao3
   C name
    D1||Windward Islands
-W|w|吒／咤
+W|w|吒;吒／咤
  P||zha4
   C character
    D1||braided hair
- P||zha4 |C|zha1
+ P|C|zha1 |T|zha4
   C character
    D2||Used in names of mythological characters.
  P|C|zha1
@@ -321868,7 +321851,7 @@ W|w|寂寥
  P|C|ji4liao2 |T|ji2liao2
   C adj
    D1||quiet; tranquil; still
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;恬淡#D2;清淨／清净#D1
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;恬淡#D2;清淨／清净#D1
    D2||open; spacious; empty; void
    D3||lonely; lonesome; solitary; desolate
     X=|a|寂寞#D1;孤單／孤单#D1;孤獨／孤独#D1;落寞#D2;孤寂#D1;索寞#D2
@@ -322855,10 +322838,6 @@ W|w|富陽／富阳
   C name
    D1||Fuyang (a district, a former county, a former county-level city in Hangzhou, Zhejiang, China)
     X~||區／区
-W|w|富餘／富馀
- P||fu4yu5 |x|fu4yu2
-  C verb
-   D1||to have more than needed; to have an abundance of; to be in surplus
 W|w|富馬酸／富马酸
  P||fu4ma3suan1
   C noun
@@ -360146,7 +360125,7 @@ W|w|恬淡
   C adj
    D1||indifferent to fame or gain
    D2||peaceful; quiet; tranquil
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;清淨／清净#D1
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;清淨／清净#D1
 W|w|恬然
  P||tian2ran2
   C adj
@@ -377031,6 +377010,13 @@ W|w|拎走
  P||lin1zou3
   C verb
    D1||to seize something, to take something away
+W|w|拏／拿
+ P||na2
+  C character
+   D1||to connect
+   D4||Alternative form of 拿
+    D2||to take with hand; to grasp
+    D3||to capture
 W|w|拐子
  P||guai3zi5
   C noun
@@ -458907,7 +458893,7 @@ W|w|清淨／清净
  P||qing1jing4
   C adj
    D1||peaceful; quiet; tranquil
-    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沈静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2
+    X=|a|安靜／安静#D1;寂寞#D2;平靜／平静#D1;和平#D1;悄悄#D1;清靜／清静#D1;寧靜／宁静#D1;幽靜／幽静#D1;沉寂#D1;沉靜／沉静#D1;平和#D2;寂靜／寂静#D1;靜悄悄／静悄悄#D1;恬靜／恬静#D1;寂寥#D1;恬淡#D2
    D2||clear; clean
     X=|a|乾淨／干净#D1;衛生／卫生#D2;清潔／清洁#D1;潔淨／洁净#D1
    D3|#Buddhism|purified of defiling illusion
@@ -503016,7 +503002,7 @@ W|w|白蘇／白苏
  P||bai2su1
   C noun
    D1||perilla (Perilla frutescens)
-W|w|白蘋／白𬞟
+W|w|白蘋／白苹
  P||bai2pin2
   C noun
    D1||Synonym of 馬尿花／马尿花 (“Hydrocharis asiatica”)
@@ -522503,7 +522489,7 @@ W|w|秘魯／秘鲁
  P||Bi4lu3 |x|Mi4lu3
   C name
    D1||Peru (a country in South America)
-W|w|秘／祕
+W|w|秘;祕
  P||mi4;bi4
   C character
    D1||secret; undisclosed; confidential
@@ -524257,7 +524243,7 @@ W|w|穀城／谷城
   C name
    D1||Gucheng (a county of Xiangyang, Hubei, China)
     X~||縣／县
-W|w|穀旦
+W|w|穀旦／谷旦
  P||gu3dan4
   C noun
    D1||auspicious day
@@ -524266,12 +524252,12 @@ W|w|穀木／谷木
   C noun
    D1||Memecylon
     X~||屬／属
-W|w|穀梁
+W|w|穀梁／谷梁
  P||Gu3liang2
   C name
    D1||a surname
-   D2||Short for 穀梁傳／穀梁传 (Gǔliángzhuàn, “Guliang Zhuan”).
-W|w|穀梁傳／穀梁传
+   D2||Short for 穀梁傳／谷梁传 (Gǔliángzhuàn, “Guliang Zhuan”).
+W|w|穀梁傳／谷梁传
  P||Gu3liang2zhuan4
   C name
    D1||Guliang Zhuan; Commentary of Guliang
@@ -585781,7 +585767,7 @@ W|w|薯餅／薯饼
  P||shu3bing3
   C noun
    D1||hash browns in the shape of a patty
-W|w|薰
+W|w|薰／熏;薰
  P||xun1
   C character
    D1||fragrance of flowers

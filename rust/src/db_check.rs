@@ -216,6 +216,11 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
 
     let mut decomp_pron_errors = check_decomposition_pronunciations(conn)?;
     errors.append(&mut decomp_pron_errors);
+    let mut decomp_incomplete_errors = check_incomplete_decompositions(conn)?;
+    errors.append(&mut decomp_incomplete_errors);
+
+    println!("Checks complete!");
+
     Ok(errors)
 }
 
@@ -246,6 +251,53 @@ pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
     }
 }
 
+/// Check for decompositions where concatenated destination components don't match the source word.
+pub fn check_incomplete_decompositions(conn: &Connection) -> Result<Vec<String>, SqliteError> {
+    let mut errors = vec![];
+    let mut stmt = conn.prepare(
+        r"
+        WITH OrderedDecompositions AS (
+            SELECT 
+                r.word_id_src,
+                w_src.trad AS src_trad,
+                w_src.simp AS src_simp,
+                w_dst.trad AS dst_trad,
+                w_dst.simp AS dst_simp
+            FROM dict_reference r
+            JOIN dict_word w_src ON r.word_id_src = w_src.id
+            JOIN dict_word w_dst ON r.word_id_dst = w_dst.id
+            JOIN dict_shared s ON r.shared_id = s.id
+            WHERE r.ascii_symbol = '>' AND r.definition_id_src IS NULL
+            ORDER BY r.word_id_src, s.rank ASC
+        )
+        SELECT 
+            word_id_src, 
+            src_trad AS trad, 
+            src_simp AS simp,
+            GROUP_CONCAT(dst_trad, '') AS concat_trad,
+            GROUP_CONCAT(dst_simp, '') AS concat_simp
+        FROM OrderedDecompositions
+        GROUP BY word_id_src, src_trad, src_simp
+        HAVING GROUP_CONCAT(dst_trad, '') != src_trad 
+            OR GROUP_CONCAT(dst_simp, '') != src_simp;
+        "
+    )?;
+
+    let mut rows = stmt.query([])?;
+    while let Some(row) = rows.next()? {
+        let trad: String = row.get("trad")?;
+        let simp: String = row.get("simp")?;
+        let concat_trad: String = row.get("concat_trad")?;
+        let concat_simp: String = row.get("concat_simp")?;
+        
+        let word = common::format_word_def(&trad, &simp, None);
+        errors.push(format!(
+            "Decomposition Error: Incomplete decomposition for {word}. Components combined to traditional: {concat_trad}, simplified: {concat_simp}"
+        ));
+    }
+
+    Ok(errors)
+}
 
 /// Check if component references from a word have a pronunciation which fits to any pronunciation of the word
 /// Only decompositions on a word level (definition source id of the reference is NULL) are checked
@@ -295,11 +347,10 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
             wd.trad AS dst_trad,
             wd.simp AS dst_simp
         FROM dict_reference r
-        JOIN dict_ref_type rt ON r.ascii_symbol = rt.ascii_symbol
         JOIN dict_shared s ON r.shared_id = s.id
         JOIN dict_word ws ON r.word_id_src = ws.id
         JOIN dict_word wd ON r.word_id_dst = wd.id
-        WHERE rt.ascii_symbol = '>' AND r.source_id_dst IS NULL
+        WHERE r.ascii_symbol = '>' AND r.definition_id_src IS NULL
         ORDER BY r.word_id_src, s.rank, s.rank_relative
         ",
     )?;
@@ -359,30 +410,25 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                             continue;
                         }
 
-                        // Search for comp_syllables as a subsequence in src_syllables starting from current_idx
-                        // "Skipping" means we look for the first occurrence in the remainder.
-                        let search_limit = src_syllables.len() - comp_syllables.len();
+                        let src_slice = &src_syllables[current_idx..current_idx + comp_syllables.len()];
                         
-                        for search_i in current_idx..=search_limit {
-                            let src_slice = &src_syllables[search_i..search_i + comp_syllables.len()];
-                            
-                            // Check if this slice matches the component pronunciation (with fuzzy tone 5)
-                            let mut match_seq = true;
-                            for k in 0..comp_syllables.len() {
-                                if !pinyin::pinyin_match_excl_neutral_tone(&src_slice[k], &comp_syllables[k]) {
-                                    match_seq = false;
-                                    break;
-                                }
-                            }
-
-                            if match_seq {
-                                // Found the component! Move the index past this match.
-                                current_idx = search_i + comp_syllables.len();
-                                comp_found = true;
-                                break 'comp_pron_loop;
+                        // Check if this slice matches the component pronunciation (with fuzzy tone 5)
+                        let mut match_seq = true;
+                        for k in 0..comp_syllables.len() {
+                            if !pinyin::pinyin_match_excl_neutral_tone(&src_slice[k], &comp_syllables[k]) {
+                                match_seq = false;
+                                break;
                             }
                         }
+
+                        if match_seq {
+                            // Found the component! Move the index past this match.
+                            current_idx += comp_syllables.len();
+                            comp_found = true;
+                            break 'comp_pron_loop;
+                        }
                     }
+
 
                     if !comp_found {
                         all_components_found = false;
@@ -402,7 +448,7 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                     .map(|c| common::format_word_def(&c.trad, &c.simp, None))
                     .collect();
                 errors.push(format!(
-                    "Decomposition Error: Components of {} do not match any of its pronunciations (allowing gaps and neutral tones). Components: {}",
+                    "Decomposition Error: Components of {} do not match any of its pronunciations (allowing neutral tones). Components: {}",
                     common::format_word_def(&src_trad, &src_simp, None), comp_str.join(";")
                 ));
             }

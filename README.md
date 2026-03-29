@@ -8,7 +8,7 @@ Based on the English-Chinese Wiktionary: https://en.wiktionary.org/
 
 Wiktionary data imported from https://kaikki.org (January 2025)
 
-Also contains data from MDBG: https://www.mdbg.net/chinese/dictionary
+Also contains data from MDBG/CEDICT: https://www.mdbg.net/chinese/dictionary
 
 ## Features
 
@@ -241,3 +241,18 @@ Used LLMs:
 - mi: mistral-medium-latest
 
 If both models identify the same definition in the same excerpt and the definition is a candidate according to step 2 or 4, this definition is tagged as a candidate for active vocabulary (tag '*', or '+' if it's the only definition of the word).
+
+
+#### Classifiers / Measure Words
+
+The wiktionary data already contains classifiers, but there were still many nouns without any.
+
+Prompt template: find_classifiers
+
+Used LLMs:
+- mi: mistral-large-latest
+- oa: gpt-4.1-2025-04-14
+- an: claude-sonnet-4-5-20250929
+
+For all nouns (excluding single characters which still have the class "character"), a list of classifiers was requested from the LLMs two times, in different orders.
+If a classifier was suggested at least 5 out of 6 times for a specific definition, the classifier was added to the dictionary with the tag 'A'.

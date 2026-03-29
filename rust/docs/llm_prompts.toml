@@ -282,3 +282,58 @@ expected_schema = '''
 D1;蝴蝶飛來飛去;standard
 D2;蝴蝶;non-standard
 '''
+
+
+[identify_description_definitions]
+
+system_prompt = "You are an editor for a Mandarin-English dictionary for Chinese learners."
+
+user_prompt_shared = '''
+Provided below are dictionary definitions for Chinese words. Classify each definition into one of the following categories:
+T: translation, the definition is a translation, giving the English meaning of the word
+D: description, the definition is a description or explanation how this word is used or what it indicates
+M: mixed, the definition contains both a translation and a description
+
+Some typical indicators (not exclusive) for descriptions are words like "used", "indicate", "particle", "denote".
+Descriptions also often start with a capital letter like "Alternative form of...", "Short for ...".
+If there is both a translation and a description, the description is usually provided in parentheses: translation (description).
+
+Each input line contains the word and definition id plus the definition text, separated by a colon (:).
+Each output line in the response should contain the word and definition id with the definition text replaced by the rating.
+Do not add any additional formatting, explanations or translations.
+
+Example:
+
+巴#D3:Used as a suffix for objects that are located below or behind.
+阻攔／阻拦#D1:to obstruct; to stop
+下去#D3:down (indicating motion to a lower or farther position)
+
+expected response:
+'''
+
+expected_schema = '''
+巴#D3:D
+阻攔／阻拦#D1:T
+下去#D3:M
+'''
+
+[find_classifiers]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+Given a list of requests, each consisting of a Chinese word (a noun) and one of its definitions (with id Dx), for every entry provide:
+- the word
+- the definition id
+- if the given definition is used with classifiers in Chinese, output 一, followed by a list of the corresponding measures words / classifiers commonly used in spoken language in traditional characters, separated by commas and in order of frequency (most common first)
+  else, if the noun is uncountable, output "/" with no list of classifiers
+
+Do not include additional information.
+
+For each entry, use a separate line with the items separated by semicolon (;) as shown in the following example output:
+'''
+
+expected_schema = '''
+房子;D1;一;個,坐
+民主;D1;/
+'''

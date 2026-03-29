@@ -9,6 +9,8 @@ use std::error::Error;
 use std::fs::File;
 use std::io::{self, BufReader, BufWriter, Write};
 use toml::{self, Table};
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 struct LlmPromptTemplate {
@@ -22,6 +24,12 @@ struct LlmPromptResult {
     template: LlmPromptTemplate,
     user_prompts: HashMap<String, String>, // id, prompt add after system and shared user prompt
     user_prompts_meta: HashMap<String, Vec<String>>,
+}
+
+fn calculate_hash_for_random_order<T: Hash>(t: &T) -> u64 {
+    let mut s = DefaultHasher::new();
+    t.hash(&mut s);
+    s.finish()
 }
 
 fn read_prompt_templates(prompt_templates_path: &str) -> HashMap<String, LlmPromptTemplate> {
@@ -517,6 +525,84 @@ pub fn create_prompts_match_decomposition(
 
         prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
         prompt_out.user_prompts_meta.insert(word_str, prompt_meta);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+    Ok(())
+}
+
+
+pub fn create_prompts_find_classifiers(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+    let relevant_classes = vec!["noun"];
+    let exclude_tags = vec![db_read::Tag::Ascii('X'), db_read::Tag::Ascii('x')];
+    let exclude_tag_ids: Vec<SqliteId> = db_read::get_tag_ids(conn, exclude_tags)
+        .unwrap()
+        .into_iter()
+        .map(|t| t.unwrap())
+        .collect();
+    let words = db_read::read_words_with_classes(conn, relevant_classes).unwrap();
+    let mut defs: Vec<(String, String, u32, String)> = vec![]; // trad, simp, definition id, definition
+    for word in &words {
+        let word_defs =
+            db_read::read_definitions_for_words(conn, &vec![word.id], &vec![], &exclude_tag_ids)
+            .unwrap();
+        for (def, def_group) in word_defs {
+            let mut tag_str = get_formatted_tags(conn, def.shared_id).unwrap();
+            if !tag_str.is_empty() {
+                tag_str.push_str(" ");
+            }
+            let def_str = format!(
+                "{};D{};{}{}\n",
+                word.trad, def.ext_def_id, tag_str, def.definition
+            );
+            defs.push((word.trad.to_owned(), word.simp.to_owned(), def.ext_def_id, def_str));
+        }
+    }
+    // chunk definitions into groups of 50
+    let mut chunk_i = 0;
+    for def_chunk in defs.chunks(50) {
+        chunk_i += 1;
+        let mut prompt_txt = "requests:\n".to_owned();
+        let mut prompt_meta = vec![];
+        for (word_trad, word_simp, def_id, def_str) in def_chunk {
+            prompt_txt.push_str(def_str);
+            prompt_meta.push(format!("{word_trad};{word_simp};{def_id}"));
+        }
+        let prompt_key = format!("chunk_{chunk_i}");
+        prompt_out.user_prompts.insert(prompt_key.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
+    }
+
+    // shuffle definitions and copy paste from above
+    defs.sort_by_key(|i| calculate_hash_for_random_order(&i.3));
+    for def_chunk in defs.chunks(50) {
+        chunk_i += 1;
+        let mut prompt_txt = "requests:\n".to_owned();
+        let mut prompt_meta = vec![];
+        for (word_trad, word_simp, def_id, def_str) in def_chunk {
+            prompt_txt.push_str(def_str);
+            prompt_meta.push(format!("{word_trad};{word_simp};{def_id}"));
+        }
+        let prompt_key = format!("chunk_{chunk_i}");
+        prompt_out.user_prompts.insert(prompt_key.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
     }
 
     let file = File::create(prompt_output_path)?;

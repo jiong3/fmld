@@ -285,7 +285,6 @@ W|w|個／个
    D14|x #Shanghainese #dated|Used to indicate the past tense.
   C classifier
    D4|+|Generic classifier for people or for things lacking specific classifiers.
-    X=|A|件#D4;張／张#D8;門／门#D9;支#D7;頂／顶#D10;篇#D4;項／项#D4;盞／盏#D2
     X<||一個人／一个人
    D5|+|Classifier for hours and months.
     X}|a|小時／小时#D1
@@ -2210,7 +2209,6 @@ W|w|件
    D5||a surname
   C classifier
    D4|*|Classifier for things which can be numerically counted, such as pieces of luggage, clothes, events: piece
-    X=|A|個／个#D4
 W|w|告訴／告诉
  X>|a|告#D2;訴／诉#D1
  P||gao4su5;gao4su4
@@ -2490,7 +2488,6 @@ W|w|張／张
   C classifier
    D7||Classifier for objects that can be expanded.
    D8|*|Classifier for objects with a flat surface: sheet
-    X=|A|個／个#D4
    D9||Classifier for votes.
  P|T|zhang4
   C character
@@ -4957,7 +4954,7 @@ W|w|門／门
    D16||a surname
   C classifier
    D9|*|Classifier for lessons, subjects, branches of technology, and languages.
-    X=|A|個／个#D4;項／项#D4
+    X=|A|項／项#D4
    D10||Classifier for livelihoods, trades, skills, businesses, etc.
    D11||Classifier for thoughts, ideas, or emotions, particularly those forming a system or complex.
    D12|*|Classifier for marriage, romantic, or family relations.
@@ -9002,7 +8999,7 @@ W|w|支
     X~||日
   C classifier
    D7|*|Classifier for long, thin objects.
-    X=|A|個／个#D4;根#D13
+    X=|A|根#D13
    D8|*|Classifier for songs or musical pieces.
    D9|x #Southern-Min|Classifier for certain body parts.
 W|w|年紀／年纪
@@ -13978,7 +13975,6 @@ W|w|頂／顶
     X!|a|踩#D2
   C classifier
    D10|*|Classifier for objects with a top, such as hats and palanquins.
-    X=|A|個／个#D4
    D11|x #Southern-Min|Classifier for vehicles.
 W|w|傻
  P||sha3
@@ -14298,8 +14294,9 @@ W|w|裡面／里面
  X>|a|裡／里#D1;面
  P||li3mian4
   C noun
-   D1|*|inside; interior
+   D1|*|inside; interior (spatial, not time)
     X=|A|裡／里#D1;內／内#D1 |a|裡邊／里边#D1 |A|當中／当中#D1 |a|裡頭／里头#D1;裡邊兒／里边儿#D1;裡面兒／里面儿#D1
+    X?||以內／以内#D1
     X!|a|外面#D1;外邊／外边#D1;外頭／外头#D1
     X{|a|在#D2;從／从#D5;房間／房间#D1;屋子#D1;箱子#D1
     X}|a|內容／内容#D1
@@ -16254,7 +16251,6 @@ W|w|篇
    D3||sheet of paper
   C classifier
    D4|*|Classifier for written items, book leaves, etc.: piece
-    X=|A|個／个#D4
 W|w|司機／司机
  X>|a|司#D1;機／机#D2
  P||si1ji1
@@ -18031,7 +18027,7 @@ W|w|項／项
    D9||a surname: Xiang
   C classifier
    D4|*|Classifier for items, tasks, principles, clauses, etc.
-    X=|A|個／个#D4;門／门#D9
+    X=|A|門／门#D9
 W|w|驕傲／骄傲
  X>|a|驕／骄#D2;傲#D1
  P||jiao1ao4
@@ -25345,14 +25341,15 @@ W|w|無數／无数
     X}|a|次#D7;遍#D3;生命#D1
   C verb
    D2||to not know for certain
-W|w|針／𰾗
+W|w|針／针;鍼／针
  P||zhen1
-  C character
+  C noun
    D1|* #countable|needle
     XM||根;枚
    D2|*|needle-like object; pin; brooch; hand (of a clock or watch); tack
    D3||injection
    D4||acupuncture
+  C verb
    D5||to poke; to sting
   C classifier
    D6||Classifier for the number of injections.
@@ -42009,7 +42006,7 @@ W|w|不和
    D1|+|discordant; on bad terms; at loggerheads
     X{|A|關係／关系#D1;意見／意见#D1;家庭#D1;兄弟#D2 |a|鬧／闹#D2 |A|夫妻#D1;父子#D1
 W|w|打針／打针
- X>|a|打#D18;針／针#D2
+ X>|a|打#D18;針／针#D3
  P||da3zhen1
   C verb
    D1|+ #medicine|to give or receive an injection
@@ -50044,12 +50041,6 @@ W|w|來看／来看
   C phrase
    D1|+|to view it from the angle of ...; considering the ...; in terms of
     X{|A|現在／现在#D1 |a|從／从#D5;情況／情况#D1;目前#D1;表現／表现#D1;整體／整体#D1;長遠／长远#D1
-W|m|針／针;鍼／针
- P||zhen1
-  C noun
-   D1|*|needle; pin
-   D2|*|injection
-   D3|*|stitch
 W|w|不妨
  X>|a|不#D1;妨#D2
  P||bu4fang2
@@ -71380,7 +71371,6 @@ W|w|盞／盏
    D1||small cup or container
   C classifier
    D2|*|Classifier for lamps, lanterns, or cups of drink.
-    X=|A|個／个#D4
 W|w|大衛／大卫
  X>|a|大;衛／卫
  P||Da4wei4
@@ -77479,7 +77469,7 @@ W|w|子女
     X=|A|孩子#D2 |a|兒女／儿女#D1
     X{|A|教育#D2;培養／培养#D4;撫養／抚养#D1
     X}|a|父母#D1
-W|w|捆
+W|w|捆;綑／捆
  P||kun3
   C character
    D1|*|to tie up; to bind; to truss
@@ -89915,7 +89905,8 @@ W|w|以內／以内
  X>|a|以#D1;內／内#D1
  P||yi3nei4
   C postp
-   D1|+|within; inside of; less than
+   D1|+|within; inside of; less than (time, quantity, not spatial unless boundary is emphasized in formal language)
+    X?||裡面／里面#D1
 W|w|假象
  X>|a|假#D5;象#D6
  P||jia3xiang4
@@ -105212,7 +105203,7 @@ W|w|好萊塢／好莱坞
   C name
    D1|+|Hollywood
 W|w|指南針／指南针
- X>|a|指#D2;南#D1;針／针#D1
+ X>|a|指#D2;南#D1;針／针#D2
  P||zhi3nan2zhen1
   C noun
    D1|+ #figuratively #literally|compass
@@ -119718,7 +119709,7 @@ W|w|天主教
    D1|+|Catholicism
     X=|A|基督教#D1
 W|w|預防針／预防针
- X>|a|預防／预防#D1;針／针#D2
+ X>|a|預防／预防#D1;針／针#D3
  P||yu4fang2zhen1
   C noun
    D1|* #medicine|immunisation injection; vaccine
@@ -122929,8 +122920,8 @@ W|w|盆子
     X=|A|臉盆／脸盆#D1
     X}|A|洗臉／洗脸#D1
    D2|x #Wu|plate; dish
-W|m|稀裏糊塗／稀里糊涂
- X>|a|稀#D5;裏／里;糊塗／糊涂#D1
+W|m|稀裡糊塗／稀里糊涂
+ X>|a|稀#D5;裡／里;糊塗／糊涂#D1
  P||xi1li5hu2tu5
   C phrase
    D1|+|muddleheaded; careless
@@ -164078,7 +164069,7 @@ W|w|東面／东面
     X=|A|東邊／东边#D1
     X}|A|方向#D1
 W|w|針砭／针砭
- X>|a|針／针;砭#D1
+ X>|a|針／针#D1;砭#D1
  P||zhen1bian1
   C noun
    D1||ancient form of acupuncture

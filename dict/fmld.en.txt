@@ -3232,7 +3232,7 @@ W|w|水
  P||shui3
   C character
    D1|*|water
-    XM||瓶#D2;滴#D4;池;盆#D4;杯#D4
+    XM||瓶#D2;滴#D4;盆#D4;杯#D4
     X<||冰水;冷水;喝水;水中毒;碳水化合物
    D2||liquid; potion; juice
     X<||香水;口水 |A|藥水／药水 ||汗水;羊水
@@ -15534,7 +15534,7 @@ W|w|日子
  P||ri4zi5 |T|ri4zi3
   C noun
    D1|*|date; day
-    XM|A|個／个;天
+    XM|A|個／个
     X=|A|時間／时间#D3
    D2||time
     X=|A|時光／时光#D1;歲月／岁月#D1
@@ -48381,7 +48381,7 @@ W|w|臺階／台阶
  P||tai2jie1
   C noun
    D1|*|step (on a flight of stairs)
-    XM||級／级;階／阶
+    XM||級／级
     X=|A|階梯／阶梯#D1
     X<|a|下臺階／下台阶
     X{|a|上#D9 |A|一級／一级#D1
@@ -74050,8 +74050,8 @@ W|w|無憂無慮／无忧无虑
    D1|+|carefree and without worries
     X=|A|自由自在#D1
     X}|a|生活#D1 |A|心情#D1;日子#D3;時光／时光#D2;童年#D1
-W|w|大伙兒／大伙儿
- X>|a|大伙;兒／儿
+W|w|大夥兒／大伙儿
+ X>|a|大夥／大伙#D1;兒／儿
  P||da4huo3r5
   C noun
    D1|+|Erhua form of 大伙 (“everybody”).
@@ -87413,7 +87413,7 @@ W|w|民國／民国
   C name
    D1|*|Short for 中華民國／中华民国 (Zhōnghuá Mínguó, “Republic of China”).
     X}|A|建立#D1;成立#D1;政府#D2
-   D2|Cc #HongKong #Macau|Republic of China during 1912–1949 before its retreat to Taiwan
+   D2|C #HongKong #Macau|Republic of China during 1912–1949 before its retreat to Taiwan
    D3||the Republic of China era (a Chinese era name; the era beginning with the founding of the Republic of China in 1912)
     X}|a|時期／时期#D1 |A|初年#D1
   C noun
@@ -100835,7 +100835,7 @@ W|w|本科
  X>|a|本;科#D6
  P||ben3ke1
   C noun
-   D1|Cc #HongKong #Macau|undergraduate course
+   D1|C #HongKong #Macau|undergraduate course
     X=|A|大學／大学#D2;學士／学士#D1;本科生#D1
     X}|A|畢業／毕业#D1;教育#D1;課程／课程#D1;學歷／学历#D1;學位／学位#D1
    D2||major; main subject
@@ -105554,13 +105554,13 @@ W|w|互聯網／互联网
  X>|a|互#D1;聯／联#D1;網／网#D2
  P||Hu4lian2wang3
   C name
-   D1|+Cc #HongKong #computing|Internet
+   D1|+C #HongKong #computing|Internet
     X=|a|網路／网路#D1 |A|因特網／因特网#D1 |a|網際網路／网际网路#D1
-W|m|艷遇／艳遇
- X>|a|艷／艳;遇#D1
+W|m|豔遇／艳遇;艷遇／艳遇
+ X>|a|豔／艳;遇#D1
  P||yan4yu4
   C noun
-   D1||encounter with a beautiful woman
+   D1||encounter with a beautiful woman (from which a love affair likely develops)
     XM|A|次#D7;段
     X{|A|奇遇#D1
    D2|*|romance; affair
@@ -137373,14 +137373,19 @@ W|w|希臘／希腊
  P||Xi1la4
   C name
    D1|+|Greece (a country in Southeast Europe)
-W|w|姦／奸;奸
+W|w|奸
+ XV||姦／奸
  P||jian1
   C character
    D1||evil; wicked; treacherous
    D2||evildoer; treacherous person
-    X<||姦人／奸人
+    X<||奸人
    D3||to stage an armed rebellion or to steal
    D4||traitor; betrayer
+W|w|姦／奸
+ XV||奸
+ P||jian1
+  C character
    D5||to commit adultery
     X<||通姦／通奸
    D6||extramarital affair; adultery
@@ -146211,7 +146216,7 @@ W|w|快餐
  X>|a|快#D3;餐#D2
  P||kuai4can1
   C noun
-   D1|*Cc #HongKong|fast food
+   D1|*C #HongKong|fast food
     XM|A|份
     X=|A|速食#D1
     X}|A|文化#D3;食品#D1;連鎖／连锁#D1;速食#D1
@@ -146823,7 +146828,7 @@ W|w|錦緞／锦缎
  P||jin3duan4
   C noun
    D1||brocade
-    XM||匹;疋
+    XM||匹
 W|w|直至
  X>|a|直;至#D1
  P||zhi2zhi4
@@ -149481,7 +149486,7 @@ W|w|丟棄／丢弃
    D1|+ #transitive|to abandon; to cast out; to throw away
     X=|a|犧牲／牺牲#D3;丟掉／丢掉#D2 |A|拋棄／抛弃#D1 |a|拋／抛#D1 |A|扔掉#D1 |a|遺棄／遗弃#D1;捨去／舍去#D1
     X}|A|垃圾#D2;包袱#D3
-W|w|沉靜／沉静;沉靜／沈静
+W|w|沉靜／沉静;沈靜／沈静;沉靜／沈静
  X>|a|沉#D10;靜／静#D1
  P||chen2jing4
   C adj
@@ -168016,7 +168021,7 @@ W|w|激光
  X>|a|激#D2;光#D1
  P||ji1guang1
   C noun
-   D1|+Cc #HongKong|laser
+   D1|+C #HongKong|laser
     X<|a|激光束
     X}|A|技術／技术#D1;手術／手术#D1;治療／治疗#D1;武器#D1;切割#D2
 W|w|端硯／端砚
@@ -172101,7 +172106,7 @@ W|w|悉尼
  X>|a|悉;尼#D3
  P||Xi1ni2
   C name
-   D1|Cc #HongKong|Sydney (a city in New South Wales, Australia)
+   D1|C #HongKong|Sydney (a city in New South Wales, Australia)
    D2||A transliteration of the English surname and unisex given name Sydney or Sidney
 W|w|僧人
  X>|a|僧#D1;人#D1
@@ -196304,7 +196309,7 @@ W|w|下部
  P||xia4bu4
   C noun
    D1||lower part; lower portion; substructure
-    XM|A|個／个;部分
+    XM|A|個／个
     X!|a|上部#D1
    D2|#euphemistic|genitalia region
    D3||the last part (in a television or book series)
@@ -200754,7 +200759,7 @@ W|w|丙烯腈
 W|w|丙烯酰胺
  P|C|bing3xi1xian1an4 |T|bing3xi1xian1an1
   C noun
-   D1|Cc #HongKong #organic-chemistry|acrylamide
+   D1|C #HongKong #organic-chemistry|acrylamide
 W|w|丙烯酸
  P||bing3xi1suan1
   C noun
@@ -236778,7 +236783,7 @@ W|w|內在美／内在美
 W|w|內地人／内地人
  P||nei4di4ren2
   C noun
-   D1|Cc #HongKong|mainlander
+   D1|C #HongKong|mainlander
     XM|A|個／个;位#D9
     X=|a|外省人#D2;死阿陸／死阿陆#D1;滯臺中國人／滞台中国人#D1
 W|w|內地生／内地生
@@ -282135,17 +282140,13 @@ W|w|咧嘴
  P||lie3zui3
   C verb
    D1||to draw back the corners of one's mouth (can be emotionally neutral or the expression of a positive or negative emotion); to grin
-W|w|咨;諮／咨
+W|w|咨
+ XV||諮／咨
  P||zi1
   C character
-   D1||to consult
    D2||official document
    D3||an interjection used to indicate appreciation
    D4||to sigh
-   D5||to show the teeth
-   D6||Alternative form of 資／资 (zī)
-   D7||Alternative form of 茲／兹
-   D8||Alternative form of 齜／龇 (zī)
 W|w|咨問／咨问
  P||zi1wen4
   C verb
@@ -289176,7 +289177,7 @@ W|w&|嘌
 W|w|嘌呤
  P|C|piao4ling4 |T|piao1ling2
   C noun
-   D1|Cc #HongKong #organic-chemistry|purine
+   D1|C #HongKong #organic-chemistry|purine
 W|w|嘌呤黴素／嘌呤霉素
  P||piao4ling4mei2su4;piao1ling4mei2su4
   C noun
@@ -299000,8 +299001,9 @@ W|w|坦途
 W|w|坨
  P||tuo2
   C character
-   D1||lump
    D2||(of cooked wheaten food) to stick together
+  C classifier
+   D1||Classifier for lumps, nuggets (e.g. of animal droppings)
 W|w|坨子
  P||tuo2zi5
   C noun
@@ -303058,7 +303060,7 @@ W|w|塞族
 W|w|塞浦路斯
  P||Sai4pu3lu4si1
   C name
-   D1|Cc #HongKong #Macau|Cyprus (an island and country in the Mediterranean Sea, normally considered politically part of Southeast Europe but geographically part of Western Asia)
+   D1|C #HongKong #Macau|Cyprus (an island and country in the Mediterranean Sea, normally considered politically part of Southeast Europe but geographically part of Western Asia)
 W|w|塞爾日／塞尔日
  P||Sai4er3ri4
   C name
@@ -320841,6 +320843,11 @@ W|w|奸雄
   C noun
    D2|- #literary|an intelligent person who is capable of using cunning and deceit
     XM|A|個／个
+W|w|奸人
+ P||jian1ren2
+  C noun
+   D1||bad person; scoundrel; evildoer; malefactor
+    XM|A|個／个
 W|w|她倆／她俩
  P||ta1 lia3
   C pron
@@ -323282,11 +323289,6 @@ W|w|姥鯊／姥鲨
   C noun
    D1||basking shark
     XM|A|條／条
-W|w|姦人／奸人
- P||jian1ren2
-  C noun
-   D1||bad person; scoundrel; evildoer; malefactor
-    XM|A|個／个
 W|w|姦佞／奸佞
  P||jian1ning4
   C adj
@@ -354491,7 +354493,7 @@ W|w|布陣／布阵
 W|w|布隆方丹
  P||Bu4long2fang1dan1
   C name
-   D1|Cc #HongKong|Bloemfontein (a major city and judicial capital of South Africa)
+   D1|C #HongKong|Bloemfontein (a major city and judicial capital of South Africa)
 W|w|布隆泉
  P||Bu4long2quan2
   C name
@@ -386367,7 +386369,7 @@ W|w|打卦
 W|w|打印機／打印机
  P||da3yin4ji1
   C noun
-   D1|Cc #HongKong #computer-hardware #printing|printer (device used to print text or images)
+   D1|C #HongKong #computer-hardware #printing|printer (device used to print text or images)
     XM||臺／台;部#D4
     X=|a|列印機／列印机#D1;印表機／印表机#D1
     X<||點陣式打印機／点阵式打印机
@@ -414157,7 +414159,7 @@ W|w|新冠病毒
 W|w|新冠肺炎
  P||xin1guan1 fei4yan2
   C noun
-   D1|Cc #HongKong #pathology #virology|COVID-19
+   D1|C #HongKong #pathology #virology|COVID-19
 W|w|新制
  P||xin1zhi4
   C noun
@@ -433423,7 +433425,7 @@ W|w|杜馬／杜马
 W|w|杜魯多／杜鲁多
  P||Du4lu3duo1
   C name
-   D1|Cc #HongKong|A transliteration of the English surname Trudeau
+   D1|C #HongKong|A transliteration of the English surname Trudeau
 W|w|杜魯斯／杜鲁斯
  P||Du4lu3si1
   C name
@@ -466120,7 +466122,7 @@ W|w|沙特
 W|w|沙特阿拉伯
  P||Sha1te4 A1la1bo2
   C name
-   D1|Cc #HongKong|Saudi Arabia (a country in Western Asia, in the Middle East)
+   D1|C #HongKong|Saudi Arabia (a country in Western Asia, in the Middle East)
     X=|a|沙國／沙国#D1;沙烏地阿拉伯／沙乌地阿拉伯#D1;沙烏地／沙乌地#D2;沙特#D2
 W|w|沙特阿拉伯王國／沙特阿拉伯王国
  P||Sha1te4 A1la1bo2 Wang2guo2
@@ -470609,7 +470611,7 @@ W|w|泰米爾文／泰米尔文
 W|w|泰米爾納德／泰米尔纳德
  P||Tai4mi3er3 Na4de2
   C name
-   D1|Cc #HongKong|Tamil Nadu (a state of India)
+   D1|C #HongKong|Tamil Nadu (a state of India)
     X~||邦
 W|w|泰米爾語／泰米尔语
  P||Tai4mi3er3yu3
@@ -497857,12 +497859,12 @@ W|w|熒光幕／荧光幕
 W|w|熒光棒／荧光棒
  P||ying2guang1bang4
   C noun
-   D1|Cc #HongKong|glow stick
+   D1|C #HongKong|glow stick
     XM|A|根#D13;支
 W|w|熒光燈／荧光灯
  P||ying2guang1deng1
   C noun
-   D1|Cc #HongKong|fluorescent lamp; daylight lamp
+   D1|C #HongKong|fluorescent lamp; daylight lamp
     XM|A|盞／盏#D2
 W|w|熒光筆／荧光笔
  P||ying2guang1bi3
@@ -497873,8 +497875,8 @@ W|w|熒光／荧光
  P||ying2guang1
   C noun
    D1||light from the firefly
-   D2|Cc #HongKong #physics|fluorescence
-   D3|Cc #HongKong|fluorescent light
+   D2|C #HongKong #physics|fluorescence
+   D3|C #HongKong|fluorescent light
 W|w|熒幕／荧幕
  P||ying2mu4
   C noun
@@ -569550,6 +569552,8 @@ W|w|綹／绺
    D1||skein
    D2||tuft; lock
    D3||wrinkle
+  C classifier
+   D4||Classifier for strands, hanks, skeins
 W|w|綺室／绮室
  P||qi3shi4
   C noun
@@ -578967,7 +578971,7 @@ W|w|老掉牙
 W|w|老撾人民民主共和國／老挝人民民主共和国
  P||Lao3wo1 Ren2min2 Min2zhu3 Gong4he2guo2
   C name
-   D1|Cc #HongKong|Lao People's Democratic Republic (country in Southeast Asia (official name))
+   D1|C #HongKong|Lao People's Democratic Republic (country in Southeast Asia (official name))
 W|w|老撾人／老挝人
  P||lao3wo1ren2
   C noun
@@ -578984,7 +578988,7 @@ W|w|老撾語／老挝语
 W|w|老撾／老挝
  P|C|Lao3wo1 |T|Lao3zhua1
   C name
-   D1|Cc #HongKong #Macau #Malaysia #Singapore|Laos (a country in Southeast Asia)
+   D1|C #HongKong #Macau #Malaysia #Singapore|Laos (a country in Southeast Asia)
     X=|a|寮國／寮国#D1
 W|w|老於世故／老于世故
  P||lao3yu2shi4gu4
@@ -580036,7 +580040,7 @@ W|w|考辨
 W|w|考迪羅／考迪罗
  P||kao3di2luo2
   C noun
-   D1|Cc #HongKong|caudillo (military dictator in Spain, Portugal or Latin America)
+   D1|C #HongKong|caudillo (military dictator in Spain, Portugal or Latin America)
     XM|A|個／个;位#D9;名
 W|w|考過／考过
  P||kao3guo4
@@ -598976,7 +598980,7 @@ W|w|良田
  P||liang2tian2
   C noun
    D1||good or fertile farmland; fertile fields
-    XM|A|片;塊／块;畝／亩
+    XM|A|片;塊／块
 W|w|良知
  P||liang2zhi1
   C noun
@@ -611567,7 +611571,7 @@ W|w|蒙特內哥羅／蒙特内哥罗
 W|w|蒙特利爾／蒙特利尔
  P||Meng2te4li4er3
   C name
-   D1|Cc #HongKong|Montreal (the largest city in Quebec, Canada)
+   D1|C #HongKong|Montreal (the largest city in Quebec, Canada)
 W|w|蒙特勒
  P||Meng2te4le4
   C name
@@ -624862,7 +624866,7 @@ W|w|行政法
 W|w|行政法規／行政法规
  P||xing2zheng4 fa3gui1
   C noun
-   D1|Cc #Macau #law|administrative regulation; a legislation enacted by administrative authorities
+   D1|C #Macau #law|administrative regulation; a legislation enacted by administrative authorities
     XM|A|條／条;項／项#D4
 W|w|行政法院
  P||xing2zheng4 fa3yuan4
@@ -631103,7 +631107,7 @@ W|w|西藥房／西药房
 W|w|西蘭花／西兰花
  P||xi1lan2hua1
   C noun
-   D1|Cc #HongKong #Malaysia #Singapore|broccoli
+   D1|C #HongKong #Malaysia #Singapore|broccoli
     XM|A|棵#D1
     X=|a|綠花椰菜／绿花椰菜#D1;綠花菜／绿花菜#D1;綠菜花／绿菜花#D1;青花菜#D1
 W|w|西蘭／西兰
@@ -640065,7 +640069,12 @@ W|w|諭／谕
    D3||order from above; imperial decree
    D4||to make known; to make clear
    D5||to liken; to compare
-W|w|諮商／谘商
+W|w|諮／咨;諮／谘
+ XV||咨
+ P||zi1
+  C character
+   D1||to consult
+W|w|諮商／咨商
  P||zi1shang1
   C noun
    D1|T|(psychological) counseling
@@ -644354,11 +644363,6 @@ W|w|豔詩／艳诗
   C noun
    D1||love poem; erotic verse
     XM|A|首#D7
-W|w|豔遇／艳遇
- P||yan4yu4
-  C noun
-   D1||one's lucky encounter with a beautiful other (from which a love affair likely develops); romantic encounter
-    XM|A|次#D7
 W|w|豔陽天／艳阳天
  P||yan4yang2tian1
   C noun
@@ -668265,7 +668269,7 @@ W|w|過審／过审
 W|w|過山車／过山车
  P||guo4shan1che1
   C noun
-   D1|Cc #HongKong|rollercoaster
+   D1|C #HongKong|rollercoaster
     XM|A|輛／辆#D1
     X=|a|空中飛車／空中飞车#D1;雲霄飛車／云霄飞车#D1
 W|w|過床／过床
@@ -677132,7 +677136,7 @@ W|w|里肌肉
 W|w|里諾／里诺
  P||Li3nuo4
   C name
-   D1|Cc #HongKong|Reno (a city in Nevada, United States)
+   D1|C #HongKong|Reno (a city in Nevada, United States)
     X=|a|雷諾／雷诺#D1
 W|w|里長／里长
  P||li3zhang3
@@ -694252,7 +694256,7 @@ W|w|阿耳茨海默氏病
 W|w|阿聯酋／阿联酋
  P||A1lian2qiu2
   C name
-   D1|Cc #HongKong|UAE, United Arab Emirates (a country in Western Asia, in the Middle East)
+   D1|C #HongKong|UAE, United Arab Emirates (a country in Western Asia, in the Middle East)
     X=|a|阿拉伯聯合大公國／阿拉伯联合大公国#D1;阿拉伯聯合酋長國／阿拉伯联合酋长国#D1;阿聯／阿联#D1
 W|w|阿聯／阿联
  P||A1lian2
@@ -704595,7 +704599,7 @@ W|w|電勢差／电势差
 W|w|電勢能／电势能
  P||dian4shi4neng2
   C noun
-   D1|Cc #HongKong #physics|electric potential energy
+   D1|C #HongKong #physics|electric potential energy
 W|w|電勢／电势
  P||dian4shi4
   C noun
@@ -714007,7 +714011,7 @@ W|w|顛茄／颠茄
 W|w|顛覆國家政權／颠覆国家政权
  P||dian1fu4 guo2jia1 zheng4quan2
   C verb-object
-   D1|Cc #HongKong #law|to subvert state power
+   D1|C #HongKong #law|to subvert state power
 W|w|顛鸞倒鳳／颠鸾倒凤
  P||dian1luan2dao3feng4
   C phrase
@@ -726287,7 +726291,7 @@ W|w|高鉀血症／高钾血症
 W|w|高錳酸鉀／高锰酸钾
  P||gao1meng3suan1jia3
   C noun
-   D1|Cc #HongKong #inorganic-chemistry|potassium permanganate
+   D1|C #HongKong #inorganic-chemistry|potassium permanganate
 W|w|高錳酸／高锰酸
  P||gao1meng3suan1
   C noun

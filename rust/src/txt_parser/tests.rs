@@ -286,7 +286,7 @@ fn test_parse_reference_line_full() {
 
 #[test]
 fn test_parse_sentence_line_basic() {
-    let line = "1| | 這是 一個 句子#D1\nThis is a sentence.";
+    let line = "1| | 這是   一個  句子#D1\nThis is a sentence.";
     let expected = Ok((
         "",
         SentenceTag {
@@ -303,6 +303,7 @@ fn test_parse_sentence_line_basic() {
                     },
                     None,
                 )),
+                SentenceWord::AsciiWord(" ".to_string()),
                 SentenceWord::DictWord((
                     Reference {
                         target_word: Word {
@@ -313,6 +314,7 @@ fn test_parse_sentence_line_basic() {
                     },
                     None,
                 )),
+                SentenceWord::AsciiWord("".to_string()),
                 SentenceWord::DictWord((
                     Reference {
                         target_word: Word {
@@ -332,24 +334,29 @@ fn test_parse_sentence_line_basic() {
 
 #[test]
 fn test_parse_sentence_line_with_ascii_and_refs() {
-    let line = "2|t| OK , 我們 走<走#D1\nOK, let's go.";
+    let line = "2|t|OK, this is a longer ascii string 我<我們/我们 走#D1<走吧#D1\nOK, let's go.";
     let expected = Ok((
         "",
         SentenceTag {
             tags: vec![Tag::Ascii('t')],
             id: 2,
             words: vec![
-                SentenceWord::AsciiWord("OK".to_string()),
-                SentenceWord::AsciiWord(",".to_string()),
+                SentenceWord::AsciiWord("OK, this is a longer ascii string".to_string()),
                 SentenceWord::DictWord((
                     Reference {
                         target_word: Word {
-                            trad: "我們".to_string(),
+                            trad: "我".to_string(),
                             simp: None,
                         },
                         target_id: None,
                     },
-                    None,
+                    Some(Reference {
+                        target_word: Word {
+                            trad: "我們".to_string(),
+                            simp: Some("我们".to_string()),
+                        },
+                        target_id: None,
+                    }),
                 )),
                 SentenceWord::DictWord((
                     Reference {
@@ -357,11 +364,11 @@ fn test_parse_sentence_line_with_ascii_and_refs() {
                             trad: "走".to_string(),
                             simp: None,
                         },
-                        target_id: None,
+                        target_id: Some(('D', 1)),
                     },
                     Some(Reference {
                         target_word: Word {
-                            trad: "走".to_string(),
+                            trad: "走吧".to_string(),
                             simp: None,
                         },
                         target_id: Some(('D', 1)),

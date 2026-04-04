@@ -448,84 +448,42 @@ impl<'a> TxtToDb<'a> {
 
     fn complete_cross_reference_entries(&mut self) {
         for reference in mem::take(&mut self.cross_references) {
-            // TODO refactor to use self.resolve_to_word_def_id(&word, word_ref.part_of_ext_def_id, word_ref.err_line_idx);
-
-            // identify target word and definition
-            let trad = &reference.dst_word.trad;
-            let simp = &reference
-                .dst_word
-                .simp
-                .as_ref()
-                .unwrap_or(&reference.dst_word.trad);
-            let potential_dst_word_id: std::result::Result<SqliteId, rusqlite::Error> =
-                self.conn.query_row(
-                    "SELECT id FROM dict_word WHERE trad=?1 AND simp=?2",
-                    (trad, simp),
-                    |row| row.get(0),
-                );
-            let Ok(dst_word_id) = potential_dst_word_id else {
-                self.errors.push(TxtToDbErrorLine {
-                    err_line_idx: reference.err_line_idx,
-                    error: TxtToDbError::ReferenceTargetNotFound(format!(
-                        "{}",
-                        &reference.dst_word
-                    )),
-                });
-                continue;
-            };
-            let dst_definition_id: Option<SqliteId> =
-                {
-                    if let Some(dst_ext_ref_id) = reference.dst_ext_def_id {
-                        let potential_dst_definition_id = self.conn.query_row(
-                            "SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2",
-                            (dst_word_id, dst_ext_ref_id),
-                            |row| row.get(0),
-                        );
-                        let Ok(dst_definition_id) = potential_dst_definition_id else {
-                            self.errors.push(TxtToDbErrorLine {
-                                err_line_idx: reference.err_line_idx,
-                                error: TxtToDbError::ReferenceTargetNotFound(
-                                    common::format_word_def(&trad, &simp, Some(dst_ext_ref_id)),
-                                ),
-                            });
-                            continue;
-                        };
-                        Some(dst_definition_id)
-                    } else {
-                        None
-                    }
+            if let Some((dst_word_id, dst_definition_id)) = self.resolve_to_word_def_id(
+                &reference.dst_word,
+                reference.dst_ext_def_id,
+                reference.err_line_idx,
+            ) {
+                // create/get reference type
+                let Some((ref_type_full, is_symmetric, _sort_by_dest_rank, _rank)) =
+                    config::get_ref_type(reference.ref_type)
+                else {
+                    self.errors.push(TxtToDbErrorLine {
+                        err_line_idx: reference.err_line_idx,
+                        error: TxtToDbError::UnknownReferenceType(reference.ref_type),
+                    });
+                    continue;
                 };
 
-            // create/get reference type
-            let Some((ref_type_full, is_symmetric, _sort_by_dest_rank, _rank)) =
-                config::get_ref_type(reference.ref_type)
-            else {
-                self.errors.push(TxtToDbErrorLine {
-                    err_line_idx: reference.err_line_idx,
-                    error: TxtToDbError::UnknownReferenceType(reference.ref_type),
-                });
-                continue;
-            };
-
-            self.conn
-                .execute(
-                    "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol, is_symmetric) VALUES (?1,?2,?3)",
-                    (ref_type_full, reference.ref_type.to_string(), is_symmetric),
-                )
+                self.conn
+                    .execute(
+                        "INSERT OR IGNORE INTO dict_ref_type (type, ascii_symbol, is_symmetric) VALUES (?1,?2,?3)",
+                        (ref_type_full, reference.ref_type.to_string(), is_symmetric),
+                    )
+                    .unwrap();
+                // create reference and link to shared_id
+                let mut stmt = self
+                    .conn
+                    .prepare_cached("INSERT INTO dict_reference (shared_id, ascii_symbol, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
+                stmt.execute((
+                    reference.shared_id,
+                    reference.ref_type.to_string(),
+                    reference.src_word_id,
+                    reference.src_definition_id,
+                    dst_word_id,
+                    dst_definition_id,
+                ))
                 .unwrap();
-            // create reference and link to shared_id
-            let mut stmt = self
-            .conn
-            .prepare_cached("INSERT INTO dict_reference (shared_id, ascii_symbol, word_id_src, definition_id_src, word_id_dst, definition_id_dst) VALUES (?1,?2,?3,?4,?5,?6)").unwrap();
-            stmt.execute((
-                reference.shared_id,
-                reference.ref_type.to_string(),
-                reference.src_word_id,
-                reference.src_definition_id,
-                dst_word_id,
-                dst_definition_id,
-            ))
-            .unwrap();
+            }
         }
     }
 

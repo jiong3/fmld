@@ -7,7 +7,7 @@ pub const APPROX_TXT_FILE_SIZE: usize = 20_000_000;
 
 pub const DB_SCHEMA: &str = r#"
 
-PRAGMA user_version = 3;
+PRAGMA user_version = 4;
 
 /* ------------------- generated start ---------------------- */
 
@@ -204,11 +204,11 @@ CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 /* Example sentence for a definition, word_id is included to ensure uniqueness of word + ext_sen_id */
 CREATE TABLE IF NOT EXISTS "dict_sentence" (
 	"id" INTEGER NOT NULL UNIQUE,
-	"ext_sen_id" INTEGER NOT NULL,
+	"ext_sent_id" INTEGER NOT NULL,
 	"shared_id" INTEGER NOT NULL,
 	"for_word_id" INTEGER NOT NULL,
 	"for_definition_id" INTEGER NOT NULL,
-	"sentence" TEXT NOT NULL,
+	"translation" TEXT NOT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("shared_id") REFERENCES "dict_shared"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
@@ -226,11 +226,12 @@ ON "dict_sentence" ("for_definition_id");
 /* Translations for any string in the dictionary which is seen by the user and in English in the original dictionary. */
 CREATE TABLE IF NOT EXISTS "dict_translation" (
 	"id" INTEGER NOT NULL UNIQUE,
+	"revision_id" INTEGER NOT NULL,
 	"txt" TEXT NOT NULL,
-	"lang" TEXT NOT NULL,
+	"edited_on" DATE,
 	"dict_note_id" INTEGER,
 	"dict_def_id" INTEGER,
-	"dict_sen_id" INTEGER,
+	"dict_sent_id" INTEGER,
 	"dict_tag_id" INTEGER,
 	"dict_ref_type_id" INTEGER,
 	"dict_class_id" INTEGER,
@@ -241,11 +242,13 @@ CREATE TABLE IF NOT EXISTS "dict_translation" (
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("dict_def_id") REFERENCES "dict_definition"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY ("dict_sen_id") REFERENCES "dict_sentence"("id")
+	FOREIGN KEY ("dict_sent_id") REFERENCES "dict_sentence"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("dict_tag_id") REFERENCES "dict_tag"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("dict_class_id") REFERENCES "dict_class"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("revision_id") REFERENCES "dict_translation_revision"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -266,16 +269,17 @@ ON "dict_translation" ("dict_ref_type_id");
 
 CREATE INDEX IF NOT EXISTS "dict_translation_index_5"
 ON "dict_translation" ("dict_class_id");
-/* In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.
+/* In case of separable words, the part_of_word/definition_id is used to point to the word/definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the part_of_word/definition_id. The definition_id can still point to a definition of the word_id, e.g. in order to easily find the correct pronunciation.
 The word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.
 ascii_txt is used for: spaces between words, numbers, English names, etc.
-Only one of word_id and ascii_txt must be NOT NULL for each row.
-Between two words there must always be an ascii_txt, usually just a space. */
+Only one of word_id and ascii_txt must be NOT NULL for each row. */
 CREATE TABLE IF NOT EXISTS "dict_sentence_word" (
 	"sentence_id" INTEGER NOT NULL,
 	"word_rank" INTEGER NOT NULL,
 	"word_id" INTEGER,
 	"definition_id" INTEGER CHECK(definition_id IS NULL OR word_id IS NOT NULL),
+	"part_of_word_id" INTEGER,
+	"part_of_definition_id" INTEGER,
 	"ascii_txt" TEXT CHECK((word_id IS NULL) != (ascii_txt IS NULL)),
 	PRIMARY KEY("sentence_id", "word_rank"),
 	FOREIGN KEY ("sentence_id") REFERENCES "dict_sentence"("id")
@@ -283,11 +287,21 @@ CREATE TABLE IF NOT EXISTS "dict_sentence_word" (
 	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY ("definition_id") REFERENCES "dict_definition"("id")
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY ("part_of_word_id") REFERENCES "dict_word"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_sen_word_index_0"
-ON "dict_sentence_word" ("sentence_id", "sentence_rank");
+ON "dict_sentence_word" ("sentence_id", "word_rank");
+CREATE TABLE IF NOT EXISTS "dict_translation_revision" (
+	"id" INTEGER NOT NULL UNIQUE,
+	"lang" TEXT NOT NULL,
+	"date" DATE NOT NULL,
+	"info_json" TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+
 
 /* ------------------- generated end ---------------------- */
 

@@ -952,7 +952,7 @@
         },
         {
           "id": "zWulIAADMLQv5tBvtK9UY",
-          "name": "ext_sen_id",
+          "name": "ext_sent_id",
           "type": "INTEGER",
           "default": "",
           "check": "",
@@ -1008,7 +1008,7 @@
         },
         {
           "id": "HmIUzLaVA2s5724QMrFT7",
-          "name": "sentence",
+          "name": "translation",
           "type": "TEXT",
           "default": "",
           "check": "",
@@ -1045,8 +1045,8 @@
     {
       "id": "a4umSZQFDq8_0JDqGW2UK",
       "name": "dict_translation",
-      "x": -22.89159508922421,
-      "y": -1135.6930451817966,
+      "x": -19.55826175589084,
+      "y": -1155.6930451817966,
       "locked": false,
       "fields": [
         {
@@ -1062,6 +1062,20 @@
           "id": "IIi4jePwonGGOOHCz4OCD"
         },
         {
+          "id": "8OAXXOiyNv6-0qLqU-oPo",
+          "name": "revision_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
           "id": "S04CTUFMcmoFUq7wQfiyn",
           "name": "txt",
           "type": "TEXT",
@@ -1075,17 +1089,17 @@
           "size": 65535
         },
         {
-          "id": "JvSJQQVJz_au5oKtn7LtA",
-          "name": "lang",
-          "type": "TEXT",
+          "id": "fS0THLK_2R9Wrytg3wBhx",
+          "name": "edited_on",
+          "type": "DATE",
           "default": "",
           "check": "",
           "primary": false,
           "unique": false,
-          "notNull": true,
+          "notNull": false,
           "increment": false,
           "comment": "",
-          "size": 65535,
+          "size": "",
           "values": []
         },
         {
@@ -1118,7 +1132,7 @@
         },
         {
           "id": "KoHsyeGcjYA89XlveCRVe",
-          "name": "dict_sen_id",
+          "name": "dict_sent_id",
           "type": "INTEGER",
           "default": "",
           "check": "",
@@ -1290,6 +1304,34 @@
           "values": []
         },
         {
+          "id": "1lC061KFtFTg6xHhq6QuV",
+          "name": "part_of_word_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "vs8SyXxIV2PaPv7PUcXYH",
+          "name": "part_of_definition_id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
           "id": "PipMmeEeqnClbvRDmNQjj",
           "name": "ascii_txt",
           "type": "TEXT",
@@ -1303,7 +1345,7 @@
           "size": 65535
         }
       ],
-      "comment": "In case of separable words, the definition_id could point to the definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the definition_id.\nThe word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.\nascii_txt is used for: spaces between words, numbers, English names, etc.\nOnly one of word_id and ascii_txt must be NOT NULL for each row.\nBetween two words there must always be an ascii_txt, usually just a space.",
+      "comment": "In case of separable words, the part_of_word/definition_id is used to point to the word/definition of another word than the word_id, in that case the word_id indicates the word as it should be shown in the sentence and it must be a subset of the word indicated by the part_of_word/definition_id. The definition_id can still point to a definition of the word_id, e.g. in order to easily find the correct pronunciation.\nThe word_rank is the position of the word in the sentence, to get a correct sentence the words should be read ordered by word_rank.\nascii_txt is used for: spaces between words, numbers, English names, etc.\nOnly one of word_id and ascii_txt must be NOT NULL for each row.",
       "indices": [
         {
           "id": 0,
@@ -1311,10 +1353,74 @@
           "unique": true,
           "fields": [
             "sentence_id",
-            "sentence_rank"
+            "word_rank"
           ]
         }
       ],
+      "color": "#175e7a"
+    },
+    {
+      "id": "oMk_Yrl9kLzUC7AU861J6",
+      "name": "dict_translation_revision",
+      "x": -286.00000000000045,
+      "y": -1201.3333333333342,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": "FYnLlfZxGrKKzXN8NjbgN"
+        },
+        {
+          "id": "PwITOt8EPVST5ARGwXcpo",
+          "name": "lang",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        },
+        {
+          "id": "9wBuWoD2FHi2rL6w4lKUw",
+          "name": "date",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "jSQRSZD7XY0fkDMNmEYUB",
+          "name": "info_json",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [],
       "color": "#175e7a"
     }
   ],
@@ -1670,6 +1776,28 @@
       "deleteConstraint": "No action",
       "name": "fk_dict_sen_word_definition_id_dict_definition",
       "id": "LL-e-pKL-eAkW95ytR5ak"
+    },
+    {
+      "startTableId": "a4umSZQFDq8_0JDqGW2UK",
+      "startFieldId": "8OAXXOiyNv6-0qLqU-oPo",
+      "endTableId": "oMk_Yrl9kLzUC7AU861J6",
+      "endFieldId": "FYnLlfZxGrKKzXN8NjbgN",
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_translation_revision_id_dict_translation_revision",
+      "id": "DXndjM1LuBspgrYsjaTpt"
+    },
+    {
+      "startTableId": "6jDF5yn-wklwTXVk4UeSY",
+      "startFieldId": "1lC061KFtFTg6xHhq6QuV",
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "many_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_dict_sentence_word_part_of_word_id_dict_word",
+      "id": "1ppondGJXitFaqDwC3J_J"
     }
   ],
   "notes": [],

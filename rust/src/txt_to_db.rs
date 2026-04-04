@@ -1,11 +1,12 @@
 use rusqlite::{Connection, Error as SqliteError};
 
-use crate::config;
 use crate::common;
+use crate::config;
+use crate::db_read;
 use crate::pinyin;
 use crate::txt_parser::{
     DefinitionTag, DictLine, LineInfo, Note, ParserIterator, PinyinTagGroup, ReferenceTagGroup,
-    Tag, Tags, Word, WordTagGroup,
+    SentenceTag, SentenceWord, Tag, Tags, Word, WordTagGroup,
 };
 
 use std::io;
@@ -34,6 +35,18 @@ struct NoteReferenceEntry {
     err_line_idx: usize,
 }
 
+#[derive(Debug, PartialEq)]
+struct SentWordReferenceEntry {
+    sent_id: SqliteId,
+    word_rank: usize,
+    word: Option<Word>,
+    ext_def_id: Option<u32>,
+    part_of_word: Option<Word>,
+    part_of_ext_def_id: Option<u32>,
+    ascii_txt: Option<String>,
+    err_line_idx: usize,
+}
+
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum DictNode {
     Word((SqliteId, SqliteId)),                 // shared_id, word_id
@@ -41,6 +54,7 @@ enum DictNode {
     Class(SqliteId),                            // class_id
     Definition((SqliteId, SqliteId, SqliteId)), // shared_id, word_id, definition_id
     CrossReference(SqliteId),                   // shared_id
+    Sentence(SqliteId),                         // shared_id
 }
 
 #[derive(Debug)]
@@ -57,6 +71,7 @@ pub enum TxtToDbError {
     NoUsableParentNode,
     UnknownReferenceType(char),
     ReferenceTargetNotFound(String),
+    ReferenceTargetAmbiguous(String),
     NoteIdNotFound(u32),
 }
 
@@ -77,6 +92,12 @@ impl fmt::Display for TxtToDbError {
             }
             Self::ReferenceTargetNotFound(word) => {
                 write!(f, "Reference target not found: {word}")
+            }
+            Self::ReferenceTargetAmbiguous(word) => {
+                write!(
+                    f,
+                    "Reference target matches multiple words in the database: {word}"
+                )
             }
             Self::NoteIdNotFound(id) => {
                 write!(f, "No note with found for id: {id}")
@@ -100,6 +121,7 @@ impl std::error::Error for TxtToDbError {
             Self::NoUsableParentNode => None,
             Self::UnknownReferenceType(_) => None,
             Self::ReferenceTargetNotFound(_) => None,
+            Self::ReferenceTargetAmbiguous(_) => None,
             Self::NoteIdNotFound(_) => None,
         }
     }
@@ -124,9 +146,10 @@ pub struct TxtToDb<'a> {
     line_stack: Vec<Vec<DictNode>>,
     definition_stack: Vec<SqliteId>,
     cross_references: Vec<CrossReferenceEntry>, // references are added after all entries are in the DB
+    sent_word_references: Vec<SentWordReferenceEntry>,
     note_references: Vec<NoteReferenceEntry>,
     new_notes_num: u32,
-    pub err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for errors
+    pub err_lines: Vec<(String, LineInfo)>, // (word, line_info) keep line info for potential (!) errors
     pub errors: Vec<TxtToDbErrorLine>,
 }
 
@@ -140,6 +163,7 @@ impl<'a> TxtToDb<'a> {
             definition_stack: vec![],
             //definition_stack_strings: vec![],
             cross_references: vec![],
+            sent_word_references: vec![],
             note_references: vec![],
             new_notes_num: 0,
             err_lines: vec![],
@@ -194,8 +218,11 @@ impl<'a> TxtToDb<'a> {
                 }
             }
         }
-        self.complete_cross_reference_entries();
-        self.complete_id_reference_entries();
+        if self.errors.is_empty() {
+            self.complete_cross_reference_entries();
+            self.complete_sentence_word_entries();
+            self.complete_id_reference_entries();
+        } // TODO add another error line indicating that something was skipped due to previous errors?
         self.conn.execute("COMMIT", ()).unwrap();
     }
 
@@ -220,6 +247,32 @@ impl<'a> TxtToDb<'a> {
             error_strings.push(format!("  {}", err.error));
         }
         error_strings
+    }
+
+    fn resolve_to_word_def_id(
+        &mut self,
+        word: &Word,
+        ext_def_id: Option<u32>,
+        err_line_idx: usize,
+    ) -> Option<(SqliteId, Option<SqliteId>)> {
+        let word_def_ids =
+            db_read::get_word_def_ids(self.conn, &word.trad, word.simp.as_deref(), ext_def_id);
+        // handle error scenarios first
+        if word_def_ids.is_empty() {
+            self.errors.push(TxtToDbErrorLine {
+                err_line_idx: err_line_idx,
+                error: TxtToDbError::ReferenceTargetNotFound(format!("{}", &word)),
+            });
+            return None;
+        }
+        if word_def_ids.len() > 1 {
+            self.errors.push(TxtToDbErrorLine {
+                err_line_idx: err_line_idx,
+                error: TxtToDbError::ReferenceTargetAmbiguous(format!("{}", &word)),
+            });
+            return None;
+        }
+        Some(word_def_ids[0])
     }
 
     fn add_tag_for_entry(
@@ -395,6 +448,8 @@ impl<'a> TxtToDb<'a> {
 
     fn complete_cross_reference_entries(&mut self) {
         for reference in mem::take(&mut self.cross_references) {
+            // TODO refactor to use self.resolve_to_word_def_id(&word, word_ref.part_of_ext_def_id, word_ref.err_line_idx);
+
             // identify target word and definition
             let trad = &reference.dst_word.trad;
             let simp = &reference
@@ -418,30 +473,32 @@ impl<'a> TxtToDb<'a> {
                 });
                 continue;
             };
-            let dst_definition_id: Option<SqliteId> = {
-                if let Some(dst_ext_ref_id) = reference.dst_ext_def_id {
-                    let potential_dst_definition_id = self.conn.query_row(
-                        "SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2",
-                        (dst_word_id, dst_ext_ref_id),
-                        |row| row.get(0),
-                    );
-                    let Ok(dst_definition_id) = potential_dst_definition_id else {
-                        self.errors.push(TxtToDbErrorLine {
-                            err_line_idx: reference.err_line_idx,
-                            error: TxtToDbError::ReferenceTargetNotFound(
-                                common::format_word_def(&trad, &simp, Some(dst_ext_ref_id)),
-                            ),
-                        });
-                        continue;
-                    };
-                    Some(dst_definition_id)
-                } else {
-                    None
-                }
-            };
+            let dst_definition_id: Option<SqliteId> =
+                {
+                    if let Some(dst_ext_ref_id) = reference.dst_ext_def_id {
+                        let potential_dst_definition_id = self.conn.query_row(
+                            "SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2",
+                            (dst_word_id, dst_ext_ref_id),
+                            |row| row.get(0),
+                        );
+                        let Ok(dst_definition_id) = potential_dst_definition_id else {
+                            self.errors.push(TxtToDbErrorLine {
+                                err_line_idx: reference.err_line_idx,
+                                error: TxtToDbError::ReferenceTargetNotFound(
+                                    common::format_word_def(&trad, &simp, Some(dst_ext_ref_id)),
+                                ),
+                            });
+                            continue;
+                        };
+                        Some(dst_definition_id)
+                    } else {
+                        None
+                    }
+                };
 
             // create/get reference type
-            let Some((ref_type_full, is_symmetric, _sort_by_dest_rank, _rank)) = config::get_ref_type(reference.ref_type)
+            let Some((ref_type_full, is_symmetric, _sort_by_dest_rank, _rank)) =
+                config::get_ref_type(reference.ref_type)
             else {
                 self.errors.push(TxtToDbErrorLine {
                     err_line_idx: reference.err_line_idx,
@@ -469,6 +526,117 @@ impl<'a> TxtToDb<'a> {
                 dst_definition_id,
             ))
             .unwrap();
+        }
+    }
+
+    fn create_sentence_entry(
+        &mut self,
+        ext_sent_id: u32,
+        word_id_src: SqliteId,
+        definition_id_src: SqliteId,
+        sent_words: Vec<SentenceWord>,
+        translation: String,
+        tags: &Tags,
+    ) -> Result<DictNode> {
+        let shared_id = self.create_shared_entry()?;
+        let ref_entry = DictNode::Sentence(shared_id);
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_sentence (shared_id, ext_sent_id, for_word_id, for_definition_id, translation) VALUES (?1,?2,?3,?4,?5)")?;
+
+        stmt.execute((
+            shared_id,
+            ext_sent_id,
+            word_id_src,
+            definition_id_src,
+            translation,
+        ))?;
+        let sent_id = self.conn.last_insert_rowid();
+        self.add_tags_for_entry(shared_id, &ref_entry, tags)?;
+
+        let mut sent_word_refs: Vec<SentWordReferenceEntry> = Vec::with_capacity(sent_words.len());
+
+        for (i, e) in sent_words.into_iter().enumerate() {
+            let sent_word_ref = match e {
+                SentenceWord::DictWord((word_ref, part_of_ref)) => SentWordReferenceEntry {
+                    sent_id: sent_id,
+                    word_rank: i,
+                    word: Some(word_ref.target_word),
+                    ext_def_id: word_ref.target_id.map(|i| i.1),
+                    part_of_ext_def_id: part_of_ref
+                        .as_ref()
+                        .map(|r| r.target_id)
+                        .flatten()
+                        .map(|i| i.1),
+                    part_of_word: part_of_ref.map(|r| r.target_word),
+                    ascii_txt: None,
+                    err_line_idx: self.err_lines.len(),
+                },
+                SentenceWord::AsciiWord(ascii_txt) => SentWordReferenceEntry {
+                    sent_id: sent_id,
+                    word_rank: i,
+                    word: None,
+                    ext_def_id: None,
+                    part_of_word: None,
+                    part_of_ext_def_id: None,
+                    ascii_txt: Some(ascii_txt),
+                    err_line_idx: self.err_lines.len(),
+                },
+            };
+            sent_word_refs.push(sent_word_ref);
+        }
+        self.sent_word_references.extend(sent_word_refs);
+
+        Ok(ref_entry)
+    }
+
+    fn complete_sentence_word_entries(&mut self) {
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO dict_sentence_word (sentence_id, word_rank, word_id, definition_id, part_of_word_id, part_of_definition_id, ascii_txt) VALUES (?1,?2,?3,?4,?5,?6,?7)").unwrap();
+        for word_ref in mem::take(&mut self.sent_word_references) {
+            // deal with ascii words first
+            if word_ref.ascii_txt.is_some() {
+                stmt.execute((
+                    word_ref.sent_id,
+                    word_ref.word_rank,
+                    None::<SqliteId>,
+                    None::<SqliteId>,
+                    None::<SqliteId>,
+                    None::<SqliteId>,
+                    word_ref.ascii_txt.unwrap(),
+                ))
+                .unwrap();
+                continue;
+            }
+            let (part_of_word_id, part_of_def_id) = {
+                if let Some(word) = word_ref.part_of_word {
+                    let word_def_id = self.resolve_to_word_def_id(
+                        &word,
+                        word_ref.part_of_ext_def_id,
+                        word_ref.err_line_idx,
+                    );
+                    (word_def_id.map(|e| e.0), word_def_id.map(|e| e.1).flatten())
+                } else {
+                    (None, None)
+                }
+            };
+            if let Some(word) = word_ref.word {
+                if let Some((word_id, def_id)) =
+                    self.resolve_to_word_def_id(&word, word_ref.ext_def_id, word_ref.err_line_idx)
+                {
+                    stmt.execute((
+                        word_ref.sent_id,
+                        word_ref.word_rank,
+                        Some(word_id),
+                        def_id,
+                        part_of_word_id,
+                        part_of_def_id,
+                        None::<&str>,
+                    ))
+                    .unwrap();
+                }
+            }
         }
     }
 
@@ -540,6 +708,8 @@ impl<'a> TxtToDb<'a> {
     fn add_line_to_db(&mut self, line_info: &LineInfo, line: DictLine) -> (bool, bool) {
         self.line_stack.truncate(line_info.indentation);
 
+        // store line in case of an error, for references and sentences this error could be triggered after all lines
+        // have been processed and a referenced word has not been found
         let (line_items, keep_line) = match line {
             DictLine::Word(word_tag_groups) => (self.add_word_line_to_db(word_tag_groups), false),
             DictLine::Pinyin(pinyin_tag_groups) => {
@@ -555,9 +725,7 @@ impl<'a> TxtToDb<'a> {
                 self.add_cross_reference_line_to_db(reference_tag_groups),
                 true,
             ),
-            DictLine::Sentence(_) => {
-                (Ok(vec![]), false)
-            },
+            DictLine::Sentence(sentence_tag) => (self.add_sentence_line_to_db(sentence_tag), true),
             DictLine::Note(note) => {
                 let is_link = note.is_link;
                 (self.add_note_line_to_db(&note), is_link)
@@ -704,6 +872,34 @@ impl<'a> TxtToDb<'a> {
                     line_items.push(ref_entry);
                 }
             }
+        } else {
+            return Err(TxtToDbError::NoUsableParentNode);
+        }
+        Ok(line_items)
+    }
+
+    fn add_sentence_line_to_db(&mut self, sentence_tag: SentenceTag) -> Result<Vec<DictNode>> {
+        let mut line_items = vec![];
+        if let Some(DictNode::Word((_, src_word_id))) =
+            self.line_stack.first().and_then(|v| v.first().copied())
+        {
+            if let Some(DictNode::Definition((_, _, src_definition_id))) =
+                self.line_stack.last().and_then(|v| v.first().copied())
+            {
+                let ref_entry = self.create_sentence_entry(
+                    sentence_tag.id,
+                    src_word_id,
+                    src_definition_id,
+                    sentence_tag.words,
+                    sentence_tag.translation,
+                    &sentence_tag.tags,
+                )?;
+                line_items.push(ref_entry);
+            } else {
+                return Err(TxtToDbError::NoUsableParentNode);
+            }
+        } else {
+            return Err(TxtToDbError::NoUsableParentNode);
         }
         Ok(line_items)
     }
@@ -780,6 +976,7 @@ const fn get_shared_id_for_dict_node(dict_node: &DictNode) -> Result<SqliteId> {
         }
         DictNode::Definition((shared_id, _, _)) => shared_id,
         DictNode::CrossReference(shared_id) => shared_id,
+        DictNode::Sentence(shared_id) => shared_id,
     };
     Ok(*shared_id)
 }

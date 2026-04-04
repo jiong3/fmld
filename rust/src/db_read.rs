@@ -138,6 +138,44 @@ pub fn get_words(
     Ok(ids)
 }
 
+/// Get ids for words matching trad_or_simp (+ simp) and the optional definition id
+pub fn get_word_def_ids(
+    conn: &Connection,
+    trad_or_simp: &str,
+    simp: Option<&str>,
+    ext_def_id: Option<u32>,
+) -> Vec<(SqliteId, Option<SqliteId>)> {
+    // first try trad and simp together, simp either provided or assumed to be same as trad
+    let simp = simp.unwrap_or(trad_or_simp);
+    let mut word_ids = get_words(conn, Some(simp), Some(trad_or_simp)).unwrap_or(vec![]);
+    // if no words are found, try only trad
+    if word_ids.is_empty() {
+        let word_ids_trad = get_words(conn, None, Some(trad_or_simp)).unwrap_or(vec![]);
+        word_ids.extend(word_ids_trad);
+    }
+    // is still no words are found, try only simp
+    if word_ids.is_empty() {
+        let word_ids_simp = get_words(conn, Some(trad_or_simp), None).unwrap_or(vec![]);
+        word_ids.extend(word_ids_simp);
+    }
+    if ext_def_id.is_none() || word_ids.is_empty() {
+        return word_ids.into_iter().map(|i| (i, None)).collect();
+    }
+    
+    // add definition id
+    let mut word_def_ids = vec![];
+    let mut stmt = conn
+        .prepare_cached("SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2")
+        .unwrap();
+    for word_id in word_ids {
+        let mut rows = stmt.query(params![word_id, ext_def_id.unwrap()]).unwrap();
+        while let Some(row) = rows.next().unwrap() {
+            word_def_ids.push((word_id, row.get(0).unwrap()));
+        }
+    }
+    word_def_ids
+}
+
 pub fn read_word(conn: &Connection, word_id: SqliteId) -> Result<WordEntry, SqliteError> {
     let mut stmt = conn.prepare(
         r"
@@ -563,12 +601,8 @@ pub fn read_tags_for_shared_id(
 }
 
 /// Read all words
-pub fn read_words(
-    conn: &Connection,
-) -> Result<Vec<WordEntry>, SqliteError> {
-
-    let sql =
-        r"
+pub fn read_words(conn: &Connection) -> Result<Vec<WordEntry>, SqliteError> {
+    let sql = r"
         SELECT DISTINCT
             w.id,
             w.shared_id,

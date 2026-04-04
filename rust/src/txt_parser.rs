@@ -1,11 +1,5 @@
 use nom::{
-    IResult, Parser,
-    branch::alt,
-    bytes::complete::{tag, take_while1},
-    character::complete::{anychar, char, newline, none_of, space0, u32},
-    combinator::{all_consuming, fail, map, opt, rest, value},
-    multi::{many0, many1, separated_list1},
-    sequence::{delimited, pair, preceded, separated_pair, terminated},
+    AsChar, IResult, Parser, branch::alt, bytes::complete::{tag, take_while1}, character::complete::{anychar, char, newline, none_of, space0, u32}, combinator::{all_consuming, fail, map, opt, rest, value}, multi::{many0, many1, separated_list1}, sequence::{delimited, pair, preceded, separated_pair, terminated}
 };
 
 use crate::common;
@@ -65,16 +59,16 @@ pub struct DefinitionTag {
 }
 
 #[derive(Debug, PartialEq, Eq)]
-pub enum SentenceWord {
-    DictWord((Reference, Option<Reference>)),
-    AsciiWord(String),
-}
-
-#[derive(Debug, PartialEq, Eq)]
 pub struct Note {
     pub id: Option<u32>,
     pub is_link: bool,
     pub txt: String,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum SentenceWord {
+    DictWord((Reference, Option<Reference>)),
+    AsciiWord(String),
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -396,7 +390,7 @@ fn parse_reference_line(reference_line: &str) -> IResult<&str, Vec<ReferenceTagG
 }
 
 fn parse_sentence_word_ascii(sentence_word: &str) -> IResult<&str, SentenceWord> {
-    let (r, w) = take_while1(|c: char| c.is_ascii() && !"\n".contains(c)).parse(sentence_word)?;
+    let (r, w) = take_while1(|c: char| c.is_ascii() && !c.is_newline()).parse(sentence_word)?;
     if w.ends_with(' ') {
         // leave the trailing space separator
         Ok((&sentence_word[w.len() - 1..], SentenceWord::AsciiWord(w[..w.len() - 1].to_owned())))

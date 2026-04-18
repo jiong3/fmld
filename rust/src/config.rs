@@ -320,7 +320,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bo
     Some(match ref_type_char {
 		'>' => ("contains", false, false, 1), // source word contains destination word (or definition), duplicates allowed
 		'~' => ("definition-suffix", false, false, 2), // used instead of the (～X) convention in the wiktionary definitions
-        'M' => ("used-with-measure-word", false, false, 3), // source word is used with destination measure-word / classifier
+        'C' => ("used-with-classifier", false, false, 3), // source word is used with destination classifier / measure word
 		'=' => ("synonym", true, true, 4), // source has the same or a very similar meaning as destination
 		'%' => ("cross-strait", true, true, 6), // links two definitions with the same meaning but one is used in Taiwan, the other in China
 		'?' => ("could-be-confused-with", true, true, 8), // words which are easily mixed up but not synonyms
@@ -331,6 +331,7 @@ pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bo
 		'{' => ("collocation-before", false, true, 20), // destination words usually appear before source word
 		'.' => ("collocation-within", false, true, 21), // destination words usually appear within source word (e.g. separable verbs, grammar patterns)
 		'}' => ("collocation-after", false, true, 22), // destination words usually appear after source word
+		'R' => ("relevant-reference", true, false, 23), // anything particularly relevant
         'G' => ("word-group", true, false, 24), // groups like North, South, East, West etc.
         _ => {
             return None;

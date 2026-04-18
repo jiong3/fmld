@@ -1027,8 +1027,8 @@
           "name": "dict_example_index_0",
           "unique": true,
           "fields": [
-            "word_id",
-            "ext_sen_id"
+            "ext_sent_id",
+            "for_word_id"
           ]
         },
         {

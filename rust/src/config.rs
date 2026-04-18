@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS "dict_sentence" (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_example_index_0"
-ON "dict_sentence" ("word_id", "ext_sen_id");
+ON "dict_sentence" ("ext_sent_id", "for_word_id");
 
 CREATE INDEX IF NOT EXISTS "dict_sentence_index_1"
 ON "dict_sentence" ("for_definition_id");
@@ -301,7 +301,6 @@ CREATE TABLE IF NOT EXISTS "dict_translation_revision" (
 	"info_json" TEXT NOT NULL,
 	PRIMARY KEY("id")
 );
-
 
 /* ------------------- generated end ---------------------- */
 

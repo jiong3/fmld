@@ -75,6 +75,7 @@ pub struct SentenceEntry {
     pub for_definition_id: SqliteId,
     pub translation: String,
     pub words: Vec<SentenceWordEntry>,
+    pub shared_ids: SharedIds,
 }
 
 #[derive(Debug, PartialEq, Eq, Default)]
@@ -441,6 +442,82 @@ pub fn get_words_starting_with_char(
         words.push((word_id, word_str));
     }
     Ok(words)
+}
+
+pub fn read_sentences_for_definition(
+    conn: &Connection,
+    def_id: SqliteId,
+) -> Result<Vec<SentenceEntry>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT
+            s.id,
+            s.shared_id,
+            s.ext_sent_id,
+            s.for_word_id,
+            s.for_definition_id,
+            s.translation
+        FROM dict_sentence s
+        JOIN dict_shared sh ON s.shared_id = sh.id
+        WHERE s.for_definition_id = ?1
+        ORDER BY sh.rank, sh.rank_relative -- NULLS FIRST default
+        ",
+    )?;
+
+    let mut rows = stmt.query(params![def_id])?;
+    let mut sentences = vec![];
+
+    while let Some(row) = rows.next()? {
+        let id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let ext_sent_id: u32 = row.get(2)?;
+        let for_word_id: SqliteId = row.get(3)?;
+        let for_definition_id: SqliteId = row.get(4)?;
+        let translation: String = row.get(5)?;
+
+        let mut word_stmt = conn.prepare_cached(
+            r"
+            SELECT
+                word_id,
+                definition_id,
+                part_of_word_id,
+                part_of_definition_id,
+                ascii_txt
+            FROM dict_sentence_word
+            WHERE sentence_id = ?1
+            ORDER BY word_rank
+            ",
+        )?;
+        let mut word_rows = word_stmt.query(params![id])?;
+        let mut words = vec![];
+
+        while let Some(w_row) = word_rows.next()? {
+            let word_id: Option<SqliteId> = w_row.get(0)?;
+            let def_id: Option<SqliteId> = w_row.get(1)?;
+            let p_word_id: Option<SqliteId> = w_row.get(2)?;
+            let p_def_id: Option<SqliteId> = w_row.get(3)?;
+            let ascii_txt: Option<String> = w_row.get(4)?;
+
+            words.push(SentenceWordEntry {
+                word: word_id.map(|w| (w, def_id)),
+                part_of_word: p_word_id.map(|w| (w, p_def_id)),
+                ascii_txt,
+            });
+        }
+
+        sentences.push(SentenceEntry {
+            id,
+            shared_id,
+            ext_sent_id,
+            for_word_id,
+            for_definition_id,
+            translation,
+            words,
+            shared_ids: read_shared_ids(conn, shared_id)?,
+        });
+    }
+
+    Ok(sentences)
 }
 
 /// Return all dictionary words in the provided string and a list of characters not covered by any dictionary entry

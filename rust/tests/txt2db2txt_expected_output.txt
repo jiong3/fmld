@@ -5,6 +5,10 @@
    one more indentation than necessary, should be preserved
   TODO a lot more cases should be added here, e.g. the four different places where symmetric references are automatically added
 N->407
+W|w|過秤／过秤
+ P||guo4cheng2
+  C verb
+   D1||to weigh; to measure the weight of an object
 W||Trad2／Simp2
  Xv||Trad1／Simp1
  P||piny1yin3
@@ -22,7 +26,7 @@ W|wT #atag #mysupertag #yolotag|Trad1／Simp1;VarATrad1／VarASimp1;VarBTrad1／
     # this definition is problematic
     N375 this is actually wrong! 
       Long note this one is!
-    XV||你好／嗎#D3
+    XV||你好#D3
    D2|T|my second definition, Taiwan only
      Multiline Definition test
   C noun
@@ -34,14 +38,14 @@ W|wc|您好
  P||pin2yin2
   C verb
    D2||not actually a verb
-    X!|A|你好／嗎
+    X!|A|你好
      # should be deleted due to the X, but not the second part with the A tag
  P|m|no1pin2yin3
   C verb
    D3||different pronunciation with different definition
     # my comment
     N407 my note
-W|wC|你好／嗎
+W|wC|你好
  X!|A|您好#D2
  P||pin3yin3
   N->375
@@ -50,3 +54,31 @@ W|wC|你好／嗎
     D4||subdefinition for D3
      # my own comment
      D5||subdefinition for D4, second level
+      S1||你好 過秤／过秤#D1 怎麼樣／怎么样 ？ Everything allright?
+        Hi, how is the process going? Everything allright?
+W||？
+ P||dian3
+  C punctuation
+   D1||full stop
+W|w|我
+ P||wo3 |x|e3
+  C character
+   D1|*|I; me; my
+W|w|我們／我们
+ P||wo3men5
+  C pron
+   D1|*|we; us
+W|w|走
+ P||zou3
+  C verb
+   D1|*|go
+W|w|走吧
+ P||zou3ba5
+  C verb
+   D1|*|let's go
+W||怎麼樣／怎么样
+ P||zen3me5yang4
+  C noun
+   D1||how
+    S3||OK, this is a longer ascii string 我<我們／我们 走#D1<走吧#D1
+      OK, let's go.

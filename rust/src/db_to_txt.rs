@@ -237,6 +237,7 @@ impl<'a> DbToTxt<'a> {
             entry.shared_ids.note_id,
             def_id_indent + 1,
         )?;
+        self.write_sentences(entry.id, def_id_indent + 1)?;
         self.write_cross_references(entry.word_id, Some(entry.id), def_id_indent + 1)?;
         Ok(())
     }
@@ -276,6 +277,89 @@ impl<'a> DbToTxt<'a> {
                 full_tags.iter().join(" ")
             ))
         }
+    }
+
+    fn write_sentences(&mut self, def_id: SqliteId, indent: usize) -> Result<()> {
+        let sentences = db_read::read_sentences_for_definition(self.conn, def_id)?;
+        if sentences.is_empty() {
+            return Ok(());
+        }
+
+        let indentation = self.indent_str.repeat(indent);
+        let translation_indentation = self.indent_str.repeat(indent + 2);
+
+        for sentence in sentences {
+            if sentence.translation.contains('\n') {
+                return Err(DbToTxtError::InvalidDbData(format!(
+                    "Sentence translation contains newline: {}",
+                    sentence.id
+                )));
+            }
+
+            let tags = self.get_formatted_tags(sentence.shared_id)?;
+            let mut formatted_words = vec![];
+
+            for sw in sentence.words {
+                if let Some(ascii_txt) = sw.ascii_txt {
+                    formatted_words.push(ascii_txt);
+                } else if let Some((w_id, d_id)) = sw.word {
+                    // Main word format
+                    let word = self.words.get(&w_id).ok_or_else(|| {
+                        DbToTxtError::InvalidDbData(format!(
+                            "Sentence word missing from cache: {w_id}"
+                        ))
+                    })?;
+                    let ext_d_id = d_id.and_then(|id| self.def_ext_ids.get(&id).copied());
+                    let mut w_str = common::format_word_def(&word.trad, &word.simp, ext_d_id);
+
+                    // Separable part logic (<partOfWord)
+                    if let Some((pw_id, pd_id)) = sw.part_of_word {
+                        let pword = self.words.get(&pw_id).ok_or_else(|| {
+                            DbToTxtError::InvalidDbData(format!(
+                                "Sentence part_of_word missing from cache: {pw_id}"
+                            ))
+                        })?;
+                        let pext_d_id = pd_id.and_then(|id| self.def_ext_ids.get(&id).copied());
+                        let pw_str =
+                            common::format_word_def(&pword.trad, &pword.simp, pext_d_id);
+                        w_str.push('<');
+                        w_str.push_str(&pw_str);
+                    }
+                    formatted_words.push(w_str);
+                } else {
+                    return Err(DbToTxtError::InvalidDbData(format!(
+                        "Sentence word has neither ascii_txt nor word_id: {}",
+                        sentence.id
+                    )));
+                }
+            }
+
+            // Write 'S' line
+            writeln!(
+                self.writer,
+                "{}S{}{}{}",
+                indentation,
+                sentence.ext_sent_id,
+                tags,
+                formatted_words.join(" ")
+            )?;
+
+            // Write translation line (+2 indent, no prefix)
+            writeln!(
+                self.writer,
+                "{}{}",
+                translation_indentation, sentence.translation
+            )?;
+
+            // Write shared items for sentence (indent + 1)
+            self.write_shared_items_from_ids(
+                sentence.shared_ids.comment_id,
+                sentence.shared_ids.note_id,
+                indent + 1,
+            )?;
+        }
+
+        Ok(())
     }
 
     fn write_shared_items_from_ids(

@@ -6128,7 +6128,7 @@ W|w|舒服
     X<|a|不舒服
     X{|a|身體／身体#D1
 W|w|下午
- X>|a|下#D4;午#D4
+ X>|a|下#D4;午#D2
  P||xia4wu3
   C noun
    D1|+|afternoon; p.m.
@@ -7914,7 +7914,7 @@ W|w|消息
 W|w|狗
  P||gou3
   C character
-   D1|*|dog
+   D1|* #Chinese-zodiac|dog
     XM||隻／只;條／条
     X=||犬#D1
     X<||餵狗／喂狗
@@ -9842,7 +9842,7 @@ W|w|床
 W|w|馬／马
  P||ma3
   C character
-   D1|*|horse
+   D1|* #Chinese-zodiac|horse
     XM||匹;隻／只
    D2||horse-shaped
    D3|#xiangqi|knight; horse: 🩪 (sometimes only on the black side)
@@ -11048,7 +11048,7 @@ W|w|來不及／来不及
     X{|a|已經／已经#D1;後悔／后悔#D1;恐怕#D1
     X}|a|了#D2;準備／准备#D2;解釋／解释#D3;反應／反应#D2
 W|w|中午
- X>|a|中#D1;午#D4
+ X>|a|中#D1;午#D2
  P||zhong1wu3
   C noun
    D1|+|noon; midday
@@ -13640,9 +13640,9 @@ W|w|遊戲／游戏
 W|w|豬／猪
  P||zhu1
   C character
-   D1|*|pig; hog; swine
+   D1|+ #Chinese-zodiac|pig; hog; swine
     XM||頭／头;口
-   D2|* #colloquial #figurative|(often as a term of abuse) pig (a lazy, lowly or contemptible person)
+   D2|#colloquial #figurative|(often as a term of abuse) pig (a lazy, lowly or contemptible person)
 W|w|方式
  X>|a|方#D12;式#D2
  P||fang1shi4
@@ -14914,7 +14914,7 @@ W|w|直
    D16||Alternative form of 值 (“to be worth”)
    D17||a surname
 W|w|上午
- X>|a|上#D5;午#D4
+ X>|a|上#D5;午#D2
  P||shang4wu3
   C name
    D1||Shangwu (a village in Gangwei, Longhai, Zhangzhou, Fujian, China)
@@ -14977,10 +14977,9 @@ W|w|壓力／压力
 W|w|雞／鸡
  P||ji1
   C character
-   D1|*|chicken; fowl
+   D1|* #Chinese-zodiac|chicken; fowl; rooster (zodiac)
     XM||隻／只
     X=|A|母雞／母鸡#D1
-   D2||10th of the Chinese zodiac animals (rooster)
    D3|#slang|female prostitute
    D4|#slang|penis
 W|w|搶／抢
@@ -17532,7 +17531,7 @@ W|w|趕緊／赶紧
 W|w|龍／龙
  P||long2
   C character
-   D1|* #mythology|Chinese dragon
+   D1|* #Chinese-zodiac #mythology|Chinese dragon
     XM||條／条
    D2|#mythology|Western dragon
    D3|#figurative|emperor; sovereign; king; of the emperor
@@ -19081,7 +19080,7 @@ W|w|破壞／破坏
 W|w|牛
  P||niu2
   C character
-   D1|*|bovine, e.g. cow, bull, ox, buffalo, bison, yak
+   D1|* #Chinese-zodiac|bovine, e.g. cow, bull, ox, buffalo, bison, yak
     XM||頭／头;條／条;隻／只
    D2||beef
     X<||乾炒牛河／干炒牛河
@@ -23928,7 +23927,11 @@ W|w|子
    D11||young; tender; small
    D12||Prefix attached to nouns, denoting "a part of", "belonging to" or "individual". sub-
     X<||子目錄／子目录
-   D13|#astrology|First earthly branch: rat in the Chinese zodiac, 11th solar month, midnight (11:00 pm to 1:00 am)
+   D13||First earthly branch
+    XV||鼠#D1
+    X<||子時／子时#D1;子月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D14|x #historical|viscount (fourth of five ranks of Chinese aristocracy under the Zhou dynasty)
    D15|#biology #physics|-on
     X<|A|電子／电子
@@ -25515,7 +25518,7 @@ W|w|牠們／它们
 W|w|蛇
  P||she2
   C character
-   D1|*|snake; serpent
+   D1|+ #Chinese-zodiac|snake; serpent
     XM||條／条;尾#D4
    D2||illegal immigrant
     X<||人蛇
@@ -28168,7 +28171,7 @@ W|w|工人
 W|w|羊
  P||yang2
   C character
-   D1|*|caprid (e.g. sheep, goat, antelope, etc.)
+   D1|* #Chinese-zodiac|caprid (e.g. sheep, goat, antelope, etc.)
     XM||隻／只
    D2|#humorous #neologism #slang|Alternative form of 陽／阳 (yáng, “positive result (in a medical test)”)
    D3||a surname: Yang
@@ -29618,7 +29621,7 @@ W|w|入
     X<||陽入／阳入
    D12||(retail, usually after a number and optional classifier) piece (inside packaging); n-pack
 W|w|午飯／午饭
- X>|a|午#D4;飯／饭#D3
+ X>|a|午#D2;飯／饭#D3
  P||wu3fan4
   C noun
    D1|+|lunch
@@ -39109,8 +39112,11 @@ W|w|未
    D2||not
     X<|A|未必
    D3||Alternative form of 味 (wèi)
-   D4||eighth of twelve earthly branches
-   D5||lamb (羊) of Chinese zodiac
+   D4||Eighth earthly branch
+    XV||羊#D1
+    X<||未時／未时#D1;未月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
 W|w|阬／坑
  P||keng1
   C character
@@ -46403,7 +46409,26 @@ W|w|歸／归
    D3||to submit to; to seek patronage
    D4||to tend towards; to converge
    D5|*|to belong to
-   D6||(between identical verbs) despite; notwithstanding
+    # todo: uncomment example S1||這個 病人 歸 你 負責 。
+      This patient is your responsibility.
+      S2||現在 所有 錢 都 是 歸 我 管
+      From now on, all the money is my responsibility.
+   D6||(between identical words) to be regardless of; to treat separately
+W||……歸／归……，但是……
+ # todo: 可是
+ X>||…A…#D1;歸／归#D6;…A…#D1;，;但是;…B…#D1
+ P||...gui1...,dan4shi4...
+  C pattern
+   D1|+ #pattern-AAB|A may be true, but B; granted that A is A, but B
+    # todo: add sentence: S1||比賽 重要 歸 重要 ， 但是 不 要 每次 都 把 責任 往 自己 身 上 扛 。
+      The competition is important, sure, but don’t take all the responsibility onto yourself every time.
+W||……歸／归……，……歸／归……
+ X>||…A…#D1;歸／归#D6;…A…#D1;，;…B…#D1;歸／归#D6;…B…#D1
+ P||...gui1...,...gui1...
+  C pattern
+   D1|+ #pattern-AABB|A is A, B is B (indicates A and B are different things or people with a clear boundary inbetween)
+    # todo: add sentence S1||感情 歸 感情 ， 工作 歸 工作
+      Personal feelings are one thing; work is another.
 W|w|應酬／应酬
  X>|a|應／应#D7;酬#D4
  P||ying4chou2 |C|ying4chou5
@@ -52436,7 +52461,7 @@ W|w|隆重
    D2||solemnly; ceremoniously
     X}|A|慶祝／庆祝#D1
 W|w|時辰／时辰
- X>|a|時／时#D6;辰#D6
+ X>|a|時／时#D6;辰#D7
  P||shi2chen5 |x|shi2chen2
   C noun
    D1||double-hour (one of the 12 two-hour periods into which the day was formerly divided before the Western chronology, each being the name of one of the 12 Earthly Branches)
@@ -65547,7 +65572,7 @@ W|w|䛊／识
 W|w|虎
  P||hu3
   C character
-   D1|*|tiger
+   D1|* #Chinese-zodiac|tiger
     X=|A|老虎#D1
     X<||老虎
    D2|#figurative|brave; fierce
@@ -69818,12 +69843,11 @@ W|w|辰
  P||chen2
   C character
    D1||to vibrate
-   D13||fifth of twelve earthly branches (地支), variously equated with
-    D2||(Chinese zodiac) dragon (龍)
-    D3||(navigation) a bearing of 120° (between ESE and SE)
-    D4||(Chinese calendar) the 3rd lunar month (三月)
-    D5||(Chinese calendar) the 5th day or year in a dozen
-    D6||(Chinese timekeeping) the 2-hour period between 7 and 9 am
+   D13||Fifth earthly branch
+    XV||龍／龙#D1
+    X<||辰時／辰时#D1;辰月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D7||time; day; season
    D8||heavenly body; stars
     X<|A|星辰
@@ -70821,10 +70845,11 @@ W|w|衛星／卫星
 W|w|卯
  P||mao3
   C character
-   D1||fourth of twelve earthly branches (十二支)
-   D2||rabbit (兔) of Chinese zodiac
-   D3||period from 5-7 a.m.
-   D4||early morning
+   D1||Fourth earthly branch
+    XV||兔#D1
+    X<||卯時／卯时#D1;卯月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D5||mortise
 W|w|傅
  P||fu4
@@ -76380,9 +76405,8 @@ W|w|發音／发音
 W|w|鼠
  P||shu3
   C character
-   D1||rat; mouse; any member of the superfamily Muroidea, rodent
+   D1|#Chinese-zodiac|rat; mouse; any member of the superfamily Muroidea, rodent
     X<||老鼠
-   D2|*|Rat (first of the Chinese zodiac signs)
    D3|#TCM|scrofula; scrofulous
 W|w|解答
  X>|a|解#D7;答#D1
@@ -77490,7 +77514,7 @@ W|w|佈／布
    D3||to arrange
     X<|A|佈置／布置
 W|w|午休
- X>|a|午#D4;休#D1
+ X>|a|午#D2;休#D1
  P||wu3xiu1
   C verb
    D1|+|to take a break after noon
@@ -79480,7 +79504,7 @@ W|w|耀眼
     X=|a|醒目#D1
     X}|A|明星#D1
 W|w|午餐
- X>|a|午#D4;餐#D2
+ X>|a|午#D2;餐#D2
  P||wu3can1
   C noun
    D1|+|lunch
@@ -81505,7 +81529,7 @@ W|w|永恆／永恒
 W|w|兔
  P||tu4
   C character
-   D1|*|leporid (hare or rabbit)
+   D1|* #Chinese-zodiac|leporid (hare or rabbit)
     X=|A|兔子#D1
    D2||moon
    D3||Short for 伏兔 (“a component of a chariot”).
@@ -90473,7 +90497,7 @@ W|w|瓦斯
 W|w|猴
  P||hou2
   C character
-   D1|*|monkey; ape
+   D1|* #Chinese-zodiac|monkey; ape
    D2||naughty child
    D3|x #Southern-Min|male paramour
    D4|x #dialectal|to lean on someone; to pester someone
@@ -97801,10 +97825,11 @@ W|w|申
    D5||to announce; to express
    D6||again; repeatedly
     X<||申命記／申命记
-   D14||ninth of twelve earthly branches (十二支)
-    D7||monkey of the Chinese zodiac
-    D8||3 to 5 p.m.
-    D9||seventh month of the Chinese calendar
+   D14||Ninth earthly branch
+    XV||猴#D1
+    X<||申時／申时#D1;申月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D10||Shen (vassal state during the Zhou dynasty)
     X~||國／国
    D11|*|Alternative name for 上海 (Shànghǎi, “Shanghai”).
@@ -98697,11 +98722,12 @@ W|w|見多識廣／见多识广
 W|w|午
  P||wu3
   C character
-   D5||the seventh of twelve earthly branches:
-    D1||(historical or astrology) the seventh year of the Jovian orbital cycle
-    D2|x #archaic|the fifth month of the Chinese traditional calendar
-    D3||(historical or archaic) the "Chinese" or "double hour" from 11 am to 1 pm
-    D4|*|noon (precisely)
+   D1||Seventh earthly branch
+    XV||馬／马#D1
+    X<||午時／午时#D1;午月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
+   D2||noon (precisely)
 W|w|事端
  X>|a|事#D3;端#D2
  P||shi4duan1
@@ -104847,8 +104873,11 @@ W|w|虛實／虚实
 W|w|丑
  P||chou3
   C character
-   D1||second of twelve earthly branches (地支)
-    D2||(Chinese zodiac) ox (牛)
+   D1||Second earthly branch
+    XV||牛#D1
+    X<||丑時／丑时#D1;丑月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D3||a surname
    D4||clown; comedian
 W|w|檢測／检测
@@ -129835,7 +129864,7 @@ W|w|咎
    D5||a surname
    D6||Alternative form of 皋 (gāo, “a surname”):
 W|w|正午
- X>|a|正#D17;午#D4
+ X>|a|正#D17;午#D2
  P||zheng4wu3
   C noun
    D1|+|noon; midday
@@ -137115,7 +137144,8 @@ W|m|張飛／张飞
  P||zhang1fei1
   C name
    D1||Zhang Fei (168-221), general of Shu and blood-brother of Liu Bei in Romance of the Three Kingdoms, famous as fearsome fighter and lover of wine
-    XG||劉關張／刘关张#D1;劉備／刘备#D1;關羽／关羽#D1
+    XR||劉關張／刘关张#D1
+    XG||劉備／刘备#D1;張飛／张飞#D1;關羽／关羽#D1
 W|w|鹹菜／咸菜
  X>|a|鹹／咸#D1;菜#D1
  P||xian2cai4
@@ -143425,8 +143455,11 @@ W|w|寅
  P||yin2
   C character
    D1|- #Classical|to revere, respect
-   D2||third of twelve earthly branches (十二支)
-   D3||tiger (虎) of Chinese zodiac
+   D2||Third earthly branch
+    XV||虎#D1
+    X<||寅時／寅时#D1;寅月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
 W|w|蘋／苹
  P||ping2
   C character
@@ -146520,8 +146553,11 @@ W|w|亥
  P||hai4
   C character
    D1|x #obsolete|grass root
-   D2||twelfth of twelve earthly branches (十二支)
-   D3||pig (豬) of the Chinese zodiac
+   D2||Twelfth earthly branch
+    XV||豬／猪#D1
+    X<||亥時／亥时#D1;亥月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D4||a surname
 W|w|鎮長／镇长
  X>|a|鎮／镇#D7;長／长#D24
@@ -149351,8 +149387,11 @@ W|w|傳記／传记
 W|w|巳
  P||si4
   C character
-   D1||sixth of twelve earthly branches (十二支)
-   D2||snake (蛇) of Chinese zodiac
+   D1||Sixth earthly branch
+    XV||蛇#D1
+    X<||巳時／巳时#D1;巳月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
 W|w|燒毀／烧毁
  X>|a|燒／烧#D1;毀／毁#D1
  P||shao1hui3
@@ -149607,9 +149646,11 @@ W|w|酉
  P||you3
   C character
    D1||an alcoholic drink vessel
-   D2||tenth of twelve earthly branches (十二支)
-   D3||rooster (鷄) of Chinese zodiac
-   D4||the period from 17:00 to 19:00
+   D2||Tenth earthly branch
+    XV||雞／鸡#D1
+    X<||酉時／酉时#D1;酉月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
    D5|#mathematics|unitary
 W|w|思慕
  X>|a|思#D2;慕#D2
@@ -150130,8 +150171,11 @@ W|w|蚱蜢
 W|w|戌
  P||xu1
   C character
-   D1|*|eleventh of twelve earthly branches (十二支)
-   D2||Dog (狗) of Chinese zodiac
+   D1||Eleventh earthly branch
+    XV||狗#D1
+    X<||戌時／戌时#D1;戌月#D1
+    XR||地支#D9;十二支#D1
+    XG||子#D13;丑#D1;寅#D2;卯#D1;辰#D13;巳#D1;午#D1;未#D4;申#D14;酉#D2;戌#D1;亥#D2
  P|C|qu5
   C character
    D3||Only used in 屈戌 (“metal fastening”).
@@ -152380,7 +152424,8 @@ W|m|關羽／关羽
  P||guan1yu3
   C name
    D1||Guan Yu (-219), general of Shu and blood-brother of Liu Bei in Romance of the Three Kingdoms, fearsome fighter famous for virtue and loyalty; posthumously worshipped and identified with the guardian Bodhisattva Sangharama
-    XG||劉關張／刘关张#D1;劉備／刘备#D1;張飛／张飞#D1
+    XR||劉關張／刘关张#D1
+    XG||劉備／刘备#D1;張飛／张飞#D1;關羽／关羽#D1
 W|w|麻醉劑／麻醉剂
  X>|a|麻醉#D1;劑／剂#D6
  P||ma2zui4ji4
@@ -154388,7 +154433,8 @@ W|m|劉備／刘备
  P||liu2bei4
   C name
    D1||Liu Bei (161-223), warlord at the end of the Han dynasty and founder of the Han kingdom of Shu 蜀漢／蜀汉 (c. 200-263), later the Shu Han dynasty
-    XG||劉關張／刘关张#D1;張飛／张飞#D1;關羽／关羽#D1
+    XR||劉關張／刘关张#D1
+    XG||劉備／刘备#D1;張飛／张飞#D1;關羽／关羽#D1
 W|w|閩南話／闽南话
  X>|a|閩南／闽南#D2;話／话#D3
  P|C|min3nan2hua4 |T|min2nan2hua4
@@ -168199,7 +168245,7 @@ W|w|惺忪
    D3|*|drowsy-eyed; wavering; indecisive
     X}|A|眼神#D1;朦朧／朦胧#D2;睡意#D1
 W|w|午睡
- X>|a|午#D4;睡#D1
+ X>|a|午#D2;睡#D1
  P||wu3shui4
   C noun
    D1|*|afternoon nap; noontime siesta; afternoon siesta
@@ -170696,7 +170742,7 @@ W|w|暗淡;黯淡
     X!|a|燦爛／灿烂#D1;鮮明／鲜明#D1;鮮豔／鲜艳#D1;鮮亮／鲜亮#D1
     X{|A|色彩#D1;前景#D2;光線／光线#D1;燈光／灯光#D1
 W|w|晌午
- X>|a|晌#D1;午#D4
+ X>|a|晌#D1;午#D2
  P||shang3wu3 |C|shang3wu5 |T|shang3huo5 |-T|shang2huo5
   C noun
    D1|#colloquial|midday; noon
@@ -180224,6 +180270,21 @@ W||……;⋯⋯
    D2||(used in decompositions of this dictionary)
     D3||(placeholder in phrases, sentence patterns, etc.)
     D4||(placeholder for optional objects within separable words)
+W||…A…
+ P|i|A
+  C punctuation
+   D1||(placeholder A)
+    XV||……#D2
+W||…B…
+ P|i|B
+  C punctuation
+   D1||(placeholder B)
+    XV||……#D2
+W||…C…
+ P|i|C
+  C punctuation
+   D1||(placeholder C)
+    XV||……#D2
 W|w|……來……去／……来……去
  P||... lai2... qu4
   C verb
@@ -253527,7 +253588,7 @@ W|w|劉關張／刘关张
  P||Liu2-Guan1-Zhang1
   C name
    D1||Liu Bei, Guan Yu and Zhang Fei (sworn brothers in the state of Shu Han in the Three Kingdoms period)
-    XG||劉備／刘备#D1;關羽／关羽#D1;張飛／张飞#D1
+    XR||劉備／刘备#D1;關羽／关羽#D1;張飛／张飞#D1
 W|w|劉集／刘集
  P||Liu2ji2
   C name
@@ -259973,6 +260034,8 @@ W|w|十二支
  P||shi2er4zhi1
   C noun
    D1||the 12 "earthly branches" 子 (zǐ), 丑 (chǒu), 寅 (yín), 卯 (mǎo), 辰 (chén), 巳 (sì), 午 (wǔ), 未 (wèi), 申 (shēn), 酉 (yǒu), 戌 (xū), 亥 (hài) (used cyclically in the calendar and as ordinal number)
+    X=||地支#D8
+    XR||子#D13;未#D4;辰#D13;卯#D1;申#D14;午#D1;丑#D1;寅#D2;亥#D2;巳#D1;酉#D2;戌#D1
    D2||a gambling game, commonly referred to as "chap ji kee" in English sources, which used the 12 cards of the 四色牌 (four colour cards) deck, each of which has a different character drawn from those used in Chinese chess (象棋 (xiàngqí))
 W|w|十二星座
  P||shi2er4 xing1zuo4
@@ -265225,7 +265288,7 @@ W|w|卮
 W|w|卯時／卯时
  P||mao3shi2
   C noun
-   D1|- #literary|morning; dawn; the hours of the rabbit (5:00am to 7:00am)
+   D1|- #literary|the hours of the rabbit (5:00am to 7:00am); morning; dawn
     X!|a|酉時／酉时#D1
 W|w|卯月
  P||Mao3yue4
@@ -297401,15 +297464,17 @@ W|w|地攤貨／地摊货
 W|w|地支
  P||di4zhi1
   C noun
-   D9||An earthly branch: one of the twelve terms used in East Asian cultures to represent
+   D9||An earthly branch: one of the twelve terms used in East Asian cultures
+    XR||子#D13;未#D4;辰#D13;卯#D1;申#D14;午#D1;丑#D1;寅#D2;亥#D2;巳#D1;酉#D2;戌#D1
     D1|x #historical-astronomy|The (approximately) twelve years of Jupiter's orbital period, forming the Chinese zodiac and personified as twelve or sixty gods known as Tai Sui.
     D2|#astrology|The twelve animals representing the Chinese zodiac, particularly as a birthyear.
-    D3|x #obsolete|The twelve months of the Chinese lunar year.
+    D3|#obsolete|The twelve months of the Chinese lunar year.
     D4||(historical navigation) The twelve bearings of traditional Chinese navigation, comprising 30° divisions of the compass beginning with due north.
-    D5|x #historical-astronomy|The duodecimal divisions of the Chinese seasons, beginning with the second of the three divisions of winter.
+    D5|#historical-astronomy|The duodecimal divisions of the Chinese seasons, beginning with the second of the three divisions of winter.
     D6||(historical chronometry) The duodecimal divisions of the day into "Chinese" or "double hours", beginning with 11 pm.
     D7||(historical chronometry) The exact time at the middle of a "Chinese" or "double hour", beginning with midnight.
    D8||The twelve earthly branches as a whole.
+    X=||十二支#D1
 W|w|地文
  P||di4wen2
   C noun

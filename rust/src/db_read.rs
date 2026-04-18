@@ -1,5 +1,5 @@
 use crate::common::SqliteId;
-use rusqlite::{Connection, Error as SqliteError, OptionalExtension, Row, ToSql, params};
+use rusqlite::{params, Connection, Error as SqliteError, OptionalExtension, Row, ToSql};
 use std::cmp::max;
 use std::collections::HashSet;
 
@@ -9,6 +9,7 @@ pub enum SimpTrad {
     Trad,
 }
 
+#[derive(Debug, PartialEq, Eq)]
 pub enum Tag {
     /// An ASCII tag which is a shorthand for a full tag,
     Ascii(char),
@@ -46,6 +47,34 @@ pub struct DefinitionEntry {
     pub class_id: SqliteId,
     pub class_name: String,
     pub shared_ids: SharedIds,
+}
+
+#[derive(Debug, PartialEq, Eq, Default)]
+pub struct ReferenceEntry {
+    pub id: SqliteId,
+    pub shared_id: SqliteId,
+    pub ascii_symbol: char,
+    pub src: (SqliteId, Option<SqliteId>), // word_id, def_id
+    pub dst: (SqliteId, Option<SqliteId>), // word_id, def_id
+    pub shared_ids: SharedIds,
+}
+
+#[derive(Debug, PartialEq, Eq, Default)]
+pub struct SentenceWordEntry {
+    pub word: Option<(SqliteId, Option<SqliteId>)>, // word_id, def_id
+    pub part_of_word: Option<(SqliteId, Option<SqliteId>)>, // word_id, def_id
+    pub ascii_txt: Option<String>,
+}
+
+#[derive(Debug, PartialEq, Eq, Default)]
+pub struct SentenceEntry {
+    pub id: SqliteId,
+    pub shared_id: SqliteId,
+    pub ext_sent_id: u32,
+    pub for_word_id: SqliteId,
+    pub for_definition_id: SqliteId,
+    pub translation: String,
+    pub words: Vec<SentenceWordEntry>,
 }
 
 #[derive(Debug, PartialEq, Eq, Default)]
@@ -101,112 +130,7 @@ pub fn read_shared_ids(conn: &Connection, shared_id: SqliteId) -> Result<SharedI
     })
 }
 
-/// Get ids for words matching the provided simplified or traditional word (both are considered if provided)
-pub fn get_words(
-    conn: &Connection,
-    simp: Option<&str>,
-    trad: Option<&str>,
-) -> Result<Vec<SqliteId>, SqliteError> {
-    assert!(
-        simp.is_some() || trad.is_some(),
-        "At least one of simp or trad must be provided"
-    );
 
-    let mut ids = vec![];
-
-    if let (Some(s), Some(t)) = (simp, trad) {
-        let mut stmt =
-            conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1 AND trad = ?2")?;
-        let mut rows = stmt.query(params![s, t])?;
-        while let Some(row) = rows.next()? {
-            ids.push(row.get(0)?);
-        }
-    } else if let Some(s) = simp {
-        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1")?;
-        let mut rows = stmt.query(params![s])?;
-        while let Some(row) = rows.next()? {
-            ids.push(row.get(0)?);
-        }
-    } else if let Some(t) = trad {
-        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE trad = ?1")?;
-        let mut rows = stmt.query(params![t])?;
-        while let Some(row) = rows.next()? {
-            ids.push(row.get(0)?);
-        }
-    }
-
-    Ok(ids)
-}
-
-/// Get ids for words matching trad_or_simp (+ simp) and the optional definition id
-pub fn get_word_def_ids(
-    conn: &Connection,
-    trad_or_simp: &str,
-    simp: Option<&str>,
-    ext_def_id: Option<u32>,
-) -> Vec<(SqliteId, Option<SqliteId>)> {
-    // first try trad and simp together, simp either provided or assumed to be same as trad
-    let simp = simp.unwrap_or(trad_or_simp);
-    let mut word_ids = get_words(conn, Some(simp), Some(trad_or_simp)).unwrap_or(vec![]);
-    // if no words are found, try only trad
-    if word_ids.is_empty() {
-        let word_ids_trad = get_words(conn, None, Some(trad_or_simp)).unwrap_or(vec![]);
-        word_ids.extend(word_ids_trad);
-    }
-    // is still no words are found, try only simp
-    if word_ids.is_empty() {
-        let word_ids_simp = get_words(conn, Some(trad_or_simp), None).unwrap_or(vec![]);
-        word_ids.extend(word_ids_simp);
-    }
-    if ext_def_id.is_none() || word_ids.is_empty() {
-        return word_ids.into_iter().map(|i| (i, None)).collect();
-    }
-    
-    // add definition id
-    let mut word_def_ids = vec![];
-    let mut stmt = conn
-        .prepare_cached("SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2")
-        .unwrap();
-    for word_id in word_ids {
-        let mut rows = stmt.query(params![word_id, ext_def_id.unwrap()]).unwrap();
-        while let Some(row) = rows.next().unwrap() {
-            word_def_ids.push((word_id, row.get(0).unwrap()));
-        }
-    }
-    word_def_ids
-}
-
-pub fn read_word(conn: &Connection, word_id: SqliteId) -> Result<WordEntry, SqliteError> {
-    let mut stmt = conn.prepare(
-        r"
-            SELECT
-                w.shared_id AS shared_id,
-                w.simp AS simp,
-                w.trad AS trad,
-                w.variant_of AS variant_of
-            FROM dict_word w
-            WHERE w.id = ?1
-            ",
-    )?;
-
-    let (shared_id, simp, trad, variant_of): (SqliteId, String, String, Option<SqliteId>) = stmt
-        .query_row([word_id], |row| {
-            Ok((
-                row.get("shared_id")?,
-                row.get("simp")?,
-                row.get("trad")?,
-                row.get("variant_of")?,
-            ))
-        })?;
-    Ok(WordEntry {
-        id: word_id,
-        shared_id,
-        simp,
-        trad,
-        variant_of,
-        shared_ids: read_shared_ids(conn, shared_id)?,
-    })
-}
 
 fn row_to_definition_entry(conn: &Connection, row: &Row) -> Result<DefinitionEntry, SqliteError> {
     let pron_shared_ids_str: Option<String> = row.get("pron_shared_ids")?;
@@ -573,7 +497,7 @@ pub fn get_tag_ids(
 pub fn read_tags_for_shared_id(
     conn: &Connection,
     shared_id: SqliteId,
-) -> rusqlite::Result<Vec<Tag>> {
+) -> Result<Vec<Tag>, SqliteError> {
     let mut stmt = conn.prepare_cached(
         "SELECT t.ascii_symbol, t.tag, t.type FROM dict_shared_tag st JOIN dict_tag t ON st.tag_id = t.id WHERE st.for_shared_id = ?1",
     )?;
@@ -600,7 +524,194 @@ pub fn read_tags_for_shared_id(
     Ok(tags)
 }
 
-/// Read all words
+pub fn read_comment(conn: &Connection, id: SqliteId) -> Result<String, SqliteError> {
+    let mut stmt = conn.prepare_cached("SELECT comment FROM dict_comment WHERE id = ?1")?;
+    stmt.query_row([id], |row| row.get(0))
+}
+
+pub fn read_note(conn: &Connection, id: SqliteId) -> Result<(String, SqliteId), SqliteError> {
+    let mut stmt = conn.prepare_cached("SELECT note, ext_note_id FROM dict_note WHERE id = ?1")?;
+    stmt.query_row([id], |row| Ok((row.get(0)?, row.get(1)?)))
+}
+
+pub fn read_references_for_item(
+    conn: &Connection,
+    src_word_id: SqliteId,
+    src_def_id: Option<SqliteId>,
+) -> Result<Vec<ReferenceEntry>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT
+            r.id,
+            r.ascii_symbol,
+            r.shared_id,
+            r.word_id_dst,
+            r.definition_id_dst
+        FROM dict_reference r
+        JOIN dict_shared s ON r.shared_id = s.id
+        WHERE
+            r.word_id_src = ?1 AND
+            r.definition_id_src IS ?2
+        ORDER BY s.rank, s.rank_relative -- NULLS FIRST default
+        ",
+    )?;
+
+    let mut rows = stmt.query(params![src_word_id, src_def_id])?;
+    let mut references = vec![];
+
+    while let Some(row) = rows.next()? {
+        let id: SqliteId = row.get(0)?;
+        let ascii_symbol_str: String = row.get(1)?;
+        let ascii_symbol = ascii_symbol_str.chars().next().unwrap_or(' ');
+        let shared_id: SqliteId = row.get(2)?;
+        let word_id_dst: SqliteId = row.get(3)?;
+        let definition_id_dst: Option<SqliteId> = row.get(4)?;
+
+        references.push(ReferenceEntry {
+            id,
+            shared_id,
+            ascii_symbol,
+            src: (src_word_id, src_def_id),
+            dst: (word_id_dst, definition_id_dst),
+            shared_ids: read_shared_ids(conn, shared_id)?,
+        });
+    }
+
+    Ok(references)
+}
+
+/// Get ids for words matching the provided simplified or traditional word (both are considered if provided)
+pub fn get_words(
+    conn: &Connection,
+    simp: Option<&str>,
+    trad: Option<&str>,
+) -> Result<Vec<SqliteId>, SqliteError> {
+    assert!(
+        simp.is_some() || trad.is_some(),
+        "At least one of simp or trad must be provided"
+    );
+
+    let mut ids = vec![];
+
+    if let (Some(s), Some(t)) = (simp, trad) {
+        let mut stmt =
+            conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1 AND trad = ?2")?;
+        let mut rows = stmt.query(params![s, t])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    } else if let Some(s) = simp {
+        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE simp = ?1")?;
+        let mut rows = stmt.query(params![s])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    } else if let Some(t) = trad {
+        let mut stmt = conn.prepare_cached("SELECT id FROM dict_word WHERE trad = ?1")?;
+        let mut rows = stmt.query(params![t])?;
+        while let Some(row) = rows.next()? {
+            ids.push(row.get(0)?);
+        }
+    }
+
+    Ok(ids)
+}
+
+/// Get ids for words matching trad_or_simp (+ simp) and the optional definition id
+pub fn get_word_def_ids(
+    conn: &Connection,
+    trad_or_simp: &str,
+    simp: Option<&str>,
+    ext_def_id: Option<u32>,
+) -> Vec<(SqliteId, Option<SqliteId>)> {
+    // first try trad and simp together, simp either provided or assumed to be same as trad
+    let simp = simp.unwrap_or(trad_or_simp);
+    let mut word_ids = get_words(conn, Some(simp), Some(trad_or_simp)).unwrap_or(vec![]);
+    // if no words are found, try only trad
+    if word_ids.is_empty() {
+        let word_ids_trad = get_words(conn, None, Some(trad_or_simp)).unwrap_or(vec![]);
+        word_ids.extend(word_ids_trad);
+    }
+    // is still no words are found, try only simp
+    if word_ids.is_empty() {
+        let word_ids_simp = get_words(conn, Some(trad_or_simp), None).unwrap_or(vec![]);
+        word_ids.extend(word_ids_simp);
+    }
+    if ext_def_id.is_none() || word_ids.is_empty() {
+        return word_ids.into_iter().map(|i| (i, None)).collect();
+    }
+    
+    // add definition id
+    let mut word_def_ids = vec![];
+    let mut stmt = conn
+        .prepare_cached("SELECT id FROM dict_definition WHERE word_id=?1 AND ext_def_id=?2")
+        .unwrap();
+    for word_id in word_ids {
+        let mut rows = stmt.query(params![word_id, ext_def_id.unwrap()]).unwrap();
+        while let Some(row) = rows.next().unwrap() {
+            word_def_ids.push((word_id, row.get(0).unwrap()));
+        }
+    }
+    word_def_ids
+}
+
+pub fn read_word(conn: &Connection, word_id: SqliteId) -> Result<WordEntry, SqliteError> {
+    let mut stmt = conn.prepare(
+        r"
+            SELECT
+                w.shared_id AS shared_id,
+                w.simp AS simp,
+                w.trad AS trad,
+                w.variant_of AS variant_of
+            FROM dict_word w
+            WHERE w.id = ?1
+            ",
+    )?;
+
+    let (shared_id, simp, trad, variant_of): (SqliteId, String, String, Option<SqliteId>) = stmt
+        .query_row([word_id], |row| {
+            Ok((
+                row.get("shared_id")?,
+                row.get("simp")?,
+                row.get("trad")?,
+                row.get("variant_of")?,
+            ))
+        })?;
+    Ok(WordEntry {
+        id: word_id,
+        shared_id,
+        simp,
+        trad,
+        variant_of,
+        shared_ids: read_shared_ids(conn, shared_id)?,
+    })
+}
+
+pub fn read_all_words(conn: &Connection) -> Result<Vec<WordEntry>, SqliteError> {
+    let mut stmt = conn.prepare("SELECT id, shared_id, simp, trad, variant_of FROM dict_word")?;
+    let mut rows = stmt.query([])?;
+    let mut words = vec![];
+
+    while let Some(row) = rows.next()? {
+        let id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let simp: String = row.get(2)?;
+        let trad: String = row.get(3)?;
+        let variant_of: Option<SqliteId> = row.get(4)?;
+
+        words.push(WordEntry {
+            id,
+            shared_id,
+            simp,
+            trad,
+            variant_of,
+            shared_ids: read_shared_ids(conn, shared_id)?,
+        });
+    }
+
+    Ok(words)
+}
+
 pub fn read_words(conn: &Connection) -> Result<Vec<WordEntry>, SqliteError> {
     let sql = r"
         SELECT DISTINCT

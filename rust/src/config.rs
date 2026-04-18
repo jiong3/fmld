@@ -314,6 +314,82 @@ WHERE ascii_symbol != ">";
 "#;
 
 
+//   Format Description (copy from header of fmld.en.txt)
+  
+//   - encoded in utf-8
+//   - single indentation (space or tab) creates a child element
+//   - double indentation relative to previous line continues previous line (intended for notes and comments)
+//   - the first letter indicates the content of the line:
+//     * W: word and optional variants
+//     * P: pronunciation in pinyin with tone marks, 5 for neutral tone
+//          allowed characters: A-Z; a-z; 1-5; v for ü; additionally: ê. -,
+//     * C: class / part-of-speech
+//     * D: definition
+//     * S: sentence, the first line contains the Chinese words, the second line the translation
+//     * X: cross-reference, the X is followed by another character indicating the type of reference
+//          (symmetric) means that the reference should exist in both directions
+//       * ~: definition-suffix (used instead of the (～X) convention in the wiktionary definitions)
+//       * =: synonym (symmetric)
+//       * !: antonym (symmetric)
+//       * ?: could-be-confused-with (symmetric)
+//       * %: cross-strait (symmetric) (mnemonic: the line in % is the Taiwan strait)
+//       * <: part-of
+//       * >: contains
+//       * V: word-variant-of
+//       * v: character-variant-of
+//       * C: used-with-classifier
+//       * {: collocation which usually appears before the word
+//       * .: collocation which usually appears within source word (e.g. separable verbs, grammar patterns)
+//       * }: collocation which usually appears after the word
+//       * G: word-group (e.g. North, South, East, West)
+//     * #: comment (meta information etc. which is not relevant to readers of the dictionary)
+//     * N: note, e.g. more detailed explanations
+//       * N->: direct reference to a note entry to avoid duplications in the text representation
+//   - allowed child elements for each entry type:
+//     * W: P, X, #, N
+//     * P: P (one level, to attach notes to individual pinyins), C, #, N
+//     * C: D
+//     * D: D (definitions can be nested), X, #, N, S
+//     * S: #, N
+//     * X: #, N
+//     * #: none
+//     * N: none
+//   - every entry must have at least one definition, leading to he following minimum structure: W->P->C->D
+//   - notes and definitions can contain references to words using brackets like [嗎／吗]
+//     or [嗎／吗#D1] if the link is to a single definition
+  
+  
+//   Grammar (EBNF)
+  
+//   {} is repeated zero or more times (like *)
+//   [] is repeated zero or one time (optional)
+  
+//   entry_line = "W" tags_ascii word_entry {; word_entry}
+//   pinyin_line = "P" tags_ascii pinyin {; pinyin} {tags_ascii pinyin {; pinyin}}
+//   class_line = "C" ascii_word
+//   definition_line = "D" id tags_full ...
+//   sentence_line = "S" id tags_ascii sentence_word {ascii_txt sentence_word} "\n" ...
+//   cross_reference_line = "X" ascii_symbol tags_ascii reference {; reference} {tags_ascii reference {; reference}}
+//   comment_line = "#" ...
+//   note_line = "N" ("?" | id) ...
+//   note_reference_line "N->" id ...
+  
+//   id = ? 1-9 {0-9}
+//   ascii_txt = any ASCII string 
+//   ascii_symbol = any non-special, visible ASCII character excluding |
+//   tag_letter = A-Za-z0-9 and "-"
+//   tag_word = tag_letter {tag_letter}
+//   hanzi = anything except "|#;/／< \n"
+//   hanzi_word = hanzi {hanzi}
+//   pinyin_letter = A-Za-z0-9 and "ê. -,"
+//   pinyin = pinyin_letter {pinyin_letter}
+//   word_entry = hanzi_word [("／" | "/") hanzi_word]
+//   sentence_word = word_entry ["<" word_entry "#D" id]
+//   reference = word_entry ["#D" id]
+//   tags_ascii = "|" {ascii_symbol} "|"
+//   tags_full = "|" {ascii_symbol} {"#" tag_word} "|"
+
+
 /// Get (full reference type name, is symmetric, sort by destination rank, relative rank of reference type) for the given reference type
 /// A symmetric reference should exist in both directions
 pub const fn get_ref_type(ref_type_char: char) -> Option<(&'static str, bool, bool, u8)> {

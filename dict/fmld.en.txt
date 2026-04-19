@@ -46409,10 +46409,10 @@ W|w|歸／归
    D2||to return to (a person, a status); to revert to
    D3||to submit to; to seek patronage
    D4||to tend towards; to converge
-   D5|*|to belong to
-    # todo: uncomment example S1||這個 病人 歸 你 負責 。
+   D5|+|to belong to
+    S1||這個 病人 歸 你 負責 。
       This patient is your responsibility.
-      S2||現在 所有 錢 都 是 歸 我 管
+    S2||現在 所有 錢 都 是 歸 我 管
       From now on, all the money is my responsibility.
    D6||(between identical words) to be regardless of; to treat separately
 W||……歸／归……，但是……
@@ -46421,14 +46421,14 @@ W||……歸／归……，但是……
  P||...gui1...,dan4shi4...
   C pattern
    D1|+ #pattern-AAB|A may be true, but B; granted that A is A, but B
-    # todo: add sentence: S1||比賽 重要 歸 重要 ， 但是 不 要 每次 都 把 責任 往 自己 身 上 扛 。
+    S1||比賽 重要 歸<#D 重要 ， 但是<#D 不 要 每次 都 把 責任 往 自己 身 上 扛 。
       The competition is important, sure, but don’t take all the responsibility onto yourself every time.
 W||……歸／归……，……歸／归……
  X>||…A…#D1;歸／归#D6;…A…#D1;，;…B…#D1;歸／归#D6;…B…#D1
  P||...gui1...,...gui1...
   C pattern
    D1|+ #pattern-AABB|A is A, B is B (indicates A and B are different things or people with a clear boundary inbetween)
-    # todo: add sentence S1||感情 歸 感情 ， 工作 歸 工作
+    S1||感情 歸<#D 感情 ， 工作 歸<#D 工作
       Personal feelings are one thing; work is another.
 W|w|應酬／应酬
  X>|a|應／应#D7;酬#D4

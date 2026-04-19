@@ -323,7 +323,12 @@ impl<'a> DbToTxt<'a> {
                         let pw_str =
                             common::format_word_def(&pword.trad, &pword.simp, pext_d_id);
                         w_str.push('<');
-                        w_str.push_str(&pw_str);
+                        // if the sentence word is part of the word which the definition belongs to, <#D is used
+                        if pd_id.is_some() && pd_id.unwrap() == def_id {
+                            w_str.push_str("#D")
+                        } else {
+                            w_str.push_str(&pw_str);
+                        }
                     }
                     formatted_words.push(w_str);
                 } else {

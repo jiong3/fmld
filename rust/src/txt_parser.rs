@@ -1,5 +1,5 @@
 use nom::{
-    AsChar, IResult, Parser, branch::alt, bytes::complete::{tag, take_while1}, character::complete::{anychar, char, newline, none_of, space0, u32}, combinator::{all_consuming, fail, map, opt, rest, value}, multi::{many0, many1, separated_list1}, sequence::{delimited, pair, preceded, separated_pair, terminated}
+    AsChar, IResult, Parser, branch::alt, bytes::complete::{tag, take_while1}, character::complete::{anychar, char, newline, none_of, space0, u32}, combinator::{all_consuming, fail, success, map, opt, rest, value}, multi::{many0, many1, separated_list1}, sequence::{delimited, pair, preceded, separated_pair, terminated}
 };
 
 use crate::common;
@@ -67,7 +67,7 @@ pub struct Note {
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum SentenceWord {
-    DictWord((Reference, Option<Reference>)),
+    DictWord((Reference, bool, Option<Reference>)),
     AsciiWord(String),
 }
 
@@ -401,9 +401,15 @@ fn parse_sentence_word_ascii(sentence_word: &str) -> IResult<&str, SentenceWord>
 
 fn parse_sentence_word_hanzi(sentence_word: &str) -> IResult<&str, SentenceWord> {
     // complete_word is only relevant for separated words
-    let (r, (word, complete_word)) =
-        (parse_reference, opt(preceded(char('<'), parse_reference))).parse(sentence_word)?;
-    Ok((r, SentenceWord::DictWord((word, complete_word))))
+    let (r, (word, (is_part_of, complete_word))) =
+        (parse_reference,
+            alt((
+                (value(true, tag("<#D")), opt(fail())),
+                (value(true, char('<')), opt(parse_reference)),
+                (success(false), opt(fail())),
+            ))
+        ).parse(sentence_word)?;
+    Ok((r, SentenceWord::DictWord((word, is_part_of, complete_word))))
 }
 
 fn parse_sentence_word(sentence_word: &str) -> IResult<&str, SentenceWord> {

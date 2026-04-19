@@ -41,6 +41,7 @@ struct SentWordReferenceEntry {
     word_rank: usize,
     word: Option<Word>,
     ext_def_id: Option<u32>,
+    part_of_parent_def: Option<(SqliteId, SqliteId)>, // (word id, def id)
     part_of_word: Option<Word>,
     part_of_ext_def_id: Option<u32>,
     ascii_txt: Option<String>,
@@ -516,25 +517,44 @@ impl<'a> TxtToDb<'a> {
 
         for (i, e) in sent_words.into_iter().enumerate() {
             let sent_word_ref = match e {
-                SentenceWord::DictWord((word_ref, part_of_ref)) => SentWordReferenceEntry {
-                    sent_id: sent_id,
-                    word_rank: i,
-                    word: Some(word_ref.target_word),
-                    ext_def_id: word_ref.target_id.map(|i| i.1),
-                    part_of_ext_def_id: part_of_ref
-                        .as_ref()
-                        .map(|r| r.target_id)
-                        .flatten()
-                        .map(|i| i.1),
-                    part_of_word: part_of_ref.map(|r| r.target_word),
-                    ascii_txt: None,
-                    err_line_idx: self.err_lines.len(),
-                },
+                SentenceWord::DictWord((word_ref, is_part_of, part_of_ref)) => {
+                    if !is_part_of || part_of_ref.is_some() {
+                        SentWordReferenceEntry {
+                            sent_id: sent_id,
+                            word_rank: i,
+                            word: Some(word_ref.target_word),
+                            ext_def_id: word_ref.target_id.map(|i| i.1),
+                            part_of_parent_def: None,
+                            part_of_ext_def_id: part_of_ref
+                                .as_ref()
+                                .map(|r| r.target_id)
+                                .flatten()
+                                .map(|i| i.1),
+                            part_of_word: part_of_ref.map(|r| r.target_word),
+                            ascii_txt: None,
+                            err_line_idx: self.err_lines.len(),
+                        }
+                    } else {
+                        // handle special case where is_part_of is true but target is #D --> use the current definition
+                        SentWordReferenceEntry {
+                            sent_id: sent_id,
+                            word_rank: i,
+                            word: Some(word_ref.target_word),
+                            ext_def_id: word_ref.target_id.map(|i| i.1),
+                            part_of_parent_def: Some((word_id_src, definition_id_src)),
+                            part_of_ext_def_id: None,
+                            part_of_word: None,
+                            ascii_txt: None,
+                            err_line_idx: self.err_lines.len(),
+                        }
+                    }
+                }
                 SentenceWord::AsciiWord(ascii_txt) => SentWordReferenceEntry {
                     sent_id: sent_id,
                     word_rank: i,
                     word: None,
                     ext_def_id: None,
+                    part_of_parent_def: None,
                     part_of_word: None,
                     part_of_ext_def_id: None,
                     ascii_txt: Some(ascii_txt),
@@ -568,7 +588,10 @@ impl<'a> TxtToDb<'a> {
                 continue;
             }
             let (part_of_word_id, part_of_def_id) = {
-                if let Some(word) = word_ref.part_of_word {
+                if let Some((word_id, def_id)) = word_ref.part_of_parent_def {
+                    (Some(word_id), Some(def_id))
+                }
+                else if let Some(word) = word_ref.part_of_word {
                     let word_def_id = self.resolve_to_word_def_id(
                         &word,
                         word_ref.part_of_ext_def_id,

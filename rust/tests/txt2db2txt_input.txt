@@ -72,10 +72,16 @@ W|w|走
  P||zou3
   C verb
    D1|*|go
+W|w|吧
+ P||ba5
+  C particle
+   D1|*|ba
 W|w|走吧
  P||zou3ba5
   C verb
    D1|*|let's go
+    S2||走#D1<#D 我們/我们 吧<#D
+      Some translation
 W||怎麼樣／怎么样
  P||zen3me5yang4
   C noun

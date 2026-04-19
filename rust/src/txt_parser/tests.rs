@@ -301,6 +301,7 @@ fn test_parse_sentence_line_basic() {
                         },
                         target_id: None,
                     },
+                    false,
                     None,
                 )),
                 SentenceWord::AsciiWord(" ".to_string()),
@@ -312,6 +313,7 @@ fn test_parse_sentence_line_basic() {
                         },
                         target_id: None,
                     },
+                    false,
                     None,
                 )),
                 SentenceWord::AsciiWord("".to_string()),
@@ -323,6 +325,7 @@ fn test_parse_sentence_line_basic() {
                         },
                         target_id: Some(('D', 1)),
                     },
+                    false,
                     None,
                 )),
             ],
@@ -350,6 +353,7 @@ fn test_parse_sentence_line_with_ascii_and_refs() {
                         },
                         target_id: None,
                     },
+                    true,
                     Some(Reference {
                         target_word: Word {
                             trad: "我們".to_string(),
@@ -366,6 +370,7 @@ fn test_parse_sentence_line_with_ascii_and_refs() {
                         },
                         target_id: Some(('D', 1)),
                     },
+                    true,
                     Some(Reference {
                         target_word: Word {
                             trad: "走吧".to_string(),

@@ -17,6 +17,18 @@ pub enum Tag {
     Full { name: String, category: String },
 }
 
+/// An enum to identify the target entity for an operation.
+/// It holds the primary key of the entity in its respective table.
+#[derive(Debug)]
+pub enum EntryId {
+    Word(SqliteId),
+    Definition(SqliteId),
+    /// id of the dict_shared_pron entry
+    Pinyin(SqliteId),
+    Reference(SqliteId),
+    Sentence(SqliteId),
+}
+
 #[derive(Debug, PartialEq, Eq, Default)]
 pub struct SharedIds {
     pub tag_ids: Vec<SqliteId>,
@@ -588,7 +600,7 @@ pub fn read_tags_for_shared_id(
 
         if let Some(symbol) = ascii_symbol {
             if !symbol.is_empty() {
-                tags.push(Tag::Ascii(symbol.chars().nth(0).unwrap()));
+                tags.push(Tag::Ascii(symbol.chars().next().unwrap()));
             }
         } else {
             tags.push(Tag::Full {
@@ -694,7 +706,7 @@ pub fn get_words(
     Ok(ids)
 }
 
-/// Get ids for words matching trad_or_simp (+ simp) and the optional definition id
+/// Get ids for words matching `trad_or_simp` (+ simp) and the optional definition id
 pub fn get_word_def_ids(
     conn: &Connection,
     trad_or_simp: &str,
@@ -703,15 +715,15 @@ pub fn get_word_def_ids(
 ) -> Vec<(SqliteId, Option<SqliteId>)> {
     // first try trad and simp together, simp either provided or assumed to be same as trad
     let simp = simp.unwrap_or(trad_or_simp);
-    let mut word_ids = get_words(conn, Some(simp), Some(trad_or_simp)).unwrap_or(vec![]);
+    let mut word_ids = get_words(conn, Some(simp), Some(trad_or_simp)).unwrap_or_default();
     // if no words are found, try only trad
     if word_ids.is_empty() {
-        let word_ids_trad = get_words(conn, None, Some(trad_or_simp)).unwrap_or(vec![]);
+        let word_ids_trad = get_words(conn, None, Some(trad_or_simp)).unwrap_or_default();
         word_ids.extend(word_ids_trad);
     }
     // is still no words are found, try only simp
     if word_ids.is_empty() {
-        let word_ids_simp = get_words(conn, Some(trad_or_simp), None).unwrap_or(vec![]);
+        let word_ids_simp = get_words(conn, Some(trad_or_simp), None).unwrap_or_default();
         word_ids.extend(word_ids_simp);
     }
     if ext_def_id.is_none() || word_ids.is_empty() {
@@ -730,6 +742,45 @@ pub fn get_word_def_ids(
         }
     }
     word_def_ids
+}
+
+/// Get reference type id for ascii_char, only if this type already exists in DB
+pub fn get_ref_type_id(
+    conn: &Connection,
+    ref_type_symbol: char,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_ref_type
+        WHERE ascii_symbol = ?1;
+        ",
+    )?;
+    let symbol_str = ref_type_symbol.to_string();
+    match stmt.query_row(params![symbol_str], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+pub fn get_word_id(
+    conn: &Connection,
+    trad: &str,
+    simp: &str,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_word
+        WHERE trad = ?1 AND simp = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![trad, simp], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
 }
 
 pub fn read_word(conn: &Connection, word_id: SqliteId) -> Result<WordEntry, SqliteError> {
@@ -881,4 +932,77 @@ pub fn read_words_with_classes(
     }
 
     Ok(words)
+}
+
+pub fn get_definition_id_for_ext_id(
+    conn: &Connection,
+    word_id: SqliteId,
+    ext_def_id: usize,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_definition
+        WHERE word_id = ?1 AND ext_def_id = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![word_id, ext_def_id], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+pub fn get_definition_id_for_str(
+    conn: &Connection,
+    word_id: SqliteId,
+    definition: &str,
+) -> Result<Option<SqliteId>, SqliteError> {
+    let mut stmt = conn.prepare_cached(
+        r"
+        SELECT id
+        FROM dict_definition
+        WHERE word_id = ?1 AND definition = ?2;
+        ",
+    )?;
+    match stmt.query_row(params![word_id, definition], |row| row.get(0)) {
+        Ok(id) => Ok(Some(id)),
+        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
+/// Retrieves the shared_id for a given target entity.
+pub fn get_shared_id(conn: &Connection, id: &EntryId) -> Result<SqliteId, SqliteError> {
+    match id {
+        EntryId::Word(word_id) => {
+            let mut stmt = conn.prepare_cached("SELECT shared_id FROM dict_word WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![word_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Definition(def_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_definition WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![def_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Pinyin(pinyin_shared_pron_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_shared_pron WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![pinyin_shared_pron_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Reference(ref_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_reference WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![ref_id], |row| row.get(0))?;
+            Ok(id)
+        }
+        EntryId::Sentence(sent_id) => {
+            let mut stmt =
+                conn.prepare_cached("SELECT shared_id FROM dict_sentence WHERE id = ?1")?;
+            let id: SqliteId = stmt.query_row(params![sent_id], |row| row.get(0))?;
+            Ok(id)
+        }
+    }
 }

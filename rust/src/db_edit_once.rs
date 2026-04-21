@@ -1,5 +1,5 @@
 // Functions which may be used occasionally to edit data, e.g. import, cleanup, etc.
-#![allow(clippy::all)]
+#![allow(clippy::all, clippy::pedantic, clippy::nursery)]
 
 use crate::common;
 use crate::common::SqliteId;
@@ -39,7 +39,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
     // Iterate over all definitions from the database
     let definitions = db_read::read_definitions(conn).unwrap();
 
-    'defloop: for (definition, grouping) in definitions {
+    'defloop: for (definition, _grouping) in definitions {
         if !definition.definition.starts_with('(') {
             continue;
         }
@@ -48,11 +48,11 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         if definition.definition.starts_with("(～") {
             if let Some((index, _)) = definition.definition[tag_start_idx..]
                 .char_indices()
-                .find(|(i, c)| *c == '(')
+                .find(|(_i, c)| *c == '(')
             {
                 if let Some((prev_closing_index, _)) = definition.definition[tag_start_idx..]
                     .char_indices()
-                    .find(|(i, c)| *c == ')')
+                    .find(|(_i, c)| *c == ')')
                 {
                     if index - prev_closing_index > 2 {
                         continue; // not at the beginning of the definition -> not a tag group
@@ -64,7 +64,7 @@ pub fn definition_text_to_tags(conn: &Transaction, csv_path: &str) {
         let mut tag_end_idx = tag_start_idx
             + definition.definition[tag_start_idx..]
                 .char_indices()
-                .find(|(i, c)| *c == ')')
+                .find(|(_i, c)| *c == ')')
                 .map(|t| t.0)
                 .unwrap_or(0);
         let tags: Vec<String> = definition.definition[tag_start_idx..tag_end_idx]
@@ -258,9 +258,9 @@ pub fn apply_definition_tags(
 
     for (trad, simp, ext_def_id) in entries {
         // Resolve Word ID
-        if let Some(word_id) = db_edit::get_word_id(conn, &trad, &simp)? {
+        if let Some(word_id) = db_read::get_word_id(conn, &trad, &simp)? {
             // Resolve Definition ID
-            if let Some(def_id) = db_edit::get_definition_id_for_ext_id(conn, word_id, ext_def_id)?
+            if let Some(def_id) = db_read::get_definition_id_for_ext_id(conn, word_id, ext_def_id)?
             {
                 // Add Tags
                 for tag in &tags {
@@ -509,7 +509,7 @@ pub fn add_references_from_json(
     with_ascii_tags: Vec<char>,
 ) -> Result<(), Box<dyn Error>> {
     // Determine id of reference type
-    let _ = db_edit::get_ref_type_id(conn, ref_type)?
+    let _ = db_read::get_ref_type_id(conn, ref_type)?
         .ok_or_else(|| format!("Reference type '{}' not found", ref_type))?;
 
     // Get tag ids for all ascii tags
@@ -534,19 +534,19 @@ pub fn add_references_from_json(
     let mut rank_relative = 0;
     for (src_trad, src_simp, src_def_ext, dst_trad, dst_simp, dst_def_ext) in entries {
         // Resolve word IDs
-        let src_word_id = db_edit::get_word_id(conn, &src_trad, &src_simp)?;
-        let dst_word_id = db_edit::get_word_id(conn, &dst_trad, &dst_simp)?;
+        let src_word_id = db_read::get_word_id(conn, &src_trad, &src_simp)?;
+        let dst_word_id = db_read::get_word_id(conn, &dst_trad, &dst_simp)?;
 
         rank_relative += 1;
 
         // Only proceed if both words exist in the dictionary
         if let (Some(s_id), Some(d_id)) = (src_word_id, dst_word_id) {
             let src_def_id = match src_def_ext {
-                Some(s_def_ext) => db_edit::get_definition_id_for_ext_id(conn, s_id, s_def_ext)?,
+                Some(s_def_ext) => db_read::get_definition_id_for_ext_id(conn, s_id, s_def_ext)?,
                 None => None,
             };
             let dst_def_id = match dst_def_ext {
-                Some(d_def_ext) => db_edit::get_definition_id_for_ext_id(conn, d_id, d_def_ext)?,
+                Some(d_def_ext) => db_read::get_definition_id_for_ext_id(conn, d_id, d_def_ext)?,
                 None => None,
             };
             // Forward direction: Source -> Destination

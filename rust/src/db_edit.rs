@@ -1,18 +1,9 @@
 use crate::common::SqliteId;
 use crate::config;
 use crate::db_read::Tag;
+pub use crate::db_read::EntryId;
+use crate::db_read;
 use rusqlite::{Error as SqliteError, Transaction, params};
-
-/// An enum to identify the target entity for an operation.
-/// It holds the primary key of the entity in its respective table.
-#[derive(Debug)]
-pub enum EntryId {
-    Word(SqliteId),
-    Definition(SqliteId),
-    /// id of the dict_shared_pron entry
-    Pinyin(SqliteId),
-    Reference(SqliteId),
-}
 
 /// Insert a new reference for the specified word or definition
 /// Return (reference id, shared id, is newly added)
@@ -109,112 +100,6 @@ pub fn insert_reference(
     Ok((new_ref_id, shared_id, true))
 }
 
-/// Get reference type id for ascii_char, only if this type already exists in DB
-pub fn get_ref_type_id(
-    conn: &Transaction,
-    ref_type_symbol: char,
-) -> Result<Option<SqliteId>, SqliteError> {
-    let mut stmt = conn.prepare_cached(
-        r"
-        SELECT id
-        FROM dict_ref_type
-        WHERE ascii_symbol = ?1;
-        ",
-    )?;
-    let symbol_str = ref_type_symbol.to_string();
-    match stmt.query_row(params![symbol_str], |row| row.get(0)) {
-        Ok(id) => Ok(Some(id)),
-        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
-        Err(e) => Err(e),
-    }
-}
-
-pub fn get_word_id(
-    conn: &Transaction,
-    trad: &str,
-    simp: &str,
-) -> Result<Option<SqliteId>, SqliteError> {
-    let mut stmt = conn.prepare_cached(
-        r"
-        SELECT id
-        FROM dict_word
-        WHERE trad = ?1 AND simp = ?2;
-        ",
-    )?;
-    match stmt.query_row(params![trad, simp], |row| row.get(0)) {
-        Ok(id) => Ok(Some(id)),
-        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
-        Err(e) => Err(e),
-    }
-}
-
-pub fn get_definition_id_for_ext_id(
-    conn: &Transaction,
-    word_id: SqliteId,
-    ext_def_id: usize,
-) -> Result<Option<SqliteId>, SqliteError> {
-    let mut stmt = conn.prepare_cached(
-        r"
-        SELECT id
-        FROM dict_definition
-        WHERE word_id = ?1 AND ext_def_id = ?2;
-        ",
-    )?;
-    match stmt.query_row(params![word_id, ext_def_id], |row| row.get(0)) {
-        Ok(id) => Ok(Some(id)),
-        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
-        Err(e) => Err(e),
-    }
-}
-
-pub fn get_definition_id_for_str(
-    conn: &Transaction,
-    word_id: SqliteId,
-    definition: &str,
-) -> Result<Option<SqliteId>, SqliteError> {
-    let mut stmt = conn.prepare_cached(
-        r"
-        SELECT id
-        FROM dict_definition
-        WHERE word_id = ?1 AND definition = ?2;
-        ",
-    )?;
-    match stmt.query_row(params![word_id, definition], |row| row.get(0)) {
-        Ok(id) => Ok(Some(id)),
-        Err(SqliteError::QueryReturnedNoRows) => Ok(None),
-        Err(e) => Err(e),
-    }
-}
-
-/// Retrieves the shared_id for a given target entity.
-pub fn get_shared_id(conn: &Transaction, id: EntryId) -> Result<SqliteId, SqliteError> {
-    match id {
-        EntryId::Word(word_id) => {
-            let mut stmt = conn.prepare_cached("SELECT shared_id FROM dict_word WHERE id = ?1")?;
-            let id: SqliteId = stmt.query_row(params![word_id], |row| row.get(0))?;
-            Ok(id)
-        }
-        EntryId::Definition(def_id) => {
-            let mut stmt =
-                conn.prepare_cached("SELECT shared_id FROM dict_definition WHERE id = ?1")?;
-            let id: SqliteId = stmt.query_row(params![def_id], |row| row.get(0))?;
-            Ok(id)
-        }
-        EntryId::Pinyin(pinyin_shared_pron_id) => {
-            let mut stmt =
-                conn.prepare_cached("SELECT shared_id FROM dict_shared_pron WHERE id = ?1")?;
-            let id: SqliteId = stmt.query_row(params![pinyin_shared_pron_id], |row| row.get(0))?;
-            Ok(id)
-        }
-        EntryId::Reference(ref_id) => {
-            let mut stmt =
-                conn.prepare_cached("SELECT shared_id FROM dict_reference WHERE id = ?1")?;
-            let id: SqliteId = stmt.query_row(params![ref_id], |row| row.get(0))?;
-            Ok(id)
-        }
-    }
-}
-
 /// Retrieves the ID of a tag from the dict_tag table.
 /// If the tag does not exist, it is inserted into the table, and the new ID is returned.
 pub fn get_or_insert_tag_id(conn: &Transaction, tag: &Tag) -> Result<SqliteId, SqliteError> {
@@ -260,7 +145,7 @@ pub fn get_or_insert_tag_id(conn: &Transaction, tag: &Tag) -> Result<SqliteId, S
 /// If the target ID does not exist, the function does nothing and succeeds.
 /// If the provided tag does not exist in the dict_tag table, it will be created automatically.
 pub fn add_tag(conn: &Transaction, target: EntryId, tag: Tag) -> Result<(), SqliteError> {
-    let shared_id = get_shared_id(conn, target)?;
+    let shared_id = db_read::get_shared_id(conn, &target)?;
     let tag_id = get_or_insert_tag_id(conn, &tag)?;
     let mut stmt = conn.prepare_cached(
         "INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)",

@@ -1,16 +1,18 @@
+#![allow(clippy::all, clippy::pedantic, clippy::nursery)]
+
 use crate::common::{self, SqliteId};
 use crate::db_read::{self, WordEntry};
 use itertools::Itertools;
+use nom::combinator::Opt;
 use rusqlite::{Connection, Error as SqliteError};
 use serde::{Deserialize, Serialize};
 use std::cmp::{max, min};
 use std::collections::HashMap;
+use std::collections::hash_map::DefaultHasher;
 use std::error::Error;
 use std::fs::File;
-use std::io::{self, BufReader, BufWriter, Write};
-use toml::{self, Table};
-use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
+use std::io::{BufReader, BufWriter, Write};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 struct LlmPromptTemplate {
@@ -168,7 +170,10 @@ pub fn create_prompts_match_definitions(
     Ok(())
 }
 
-pub fn get_subtitle_snippets(sub_db_conn: &Connection, trad: &str) -> Result<Vec<String>, SqliteError> {
+pub fn get_subtitle_snippets(
+    sub_db_conn: &Connection,
+    trad: &str,
+) -> Result<Vec<String>, SqliteError> {
     let mut stmt = sub_db_conn.prepare_cached(
             r#"
             SELECT 
@@ -341,7 +346,7 @@ pub fn create_prompts_identify_definitions_in_subtitles(
         user_prompts: HashMap::new(),
         user_prompts_meta: HashMap::new(),
     };
-    
+
     // get all words in the learners section
     let mut words_no_snippets = vec![];
     let words = db_read::read_words(conn).unwrap();
@@ -382,7 +387,6 @@ pub fn create_prompts_identify_definitions_in_subtitles(
     serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
     writer.flush()?;
 
-
     for trad in words_no_snippets {
         println!("no snippets for: {trad}");
     }
@@ -404,7 +408,7 @@ pub fn create_prompts_identify_stand_alone_definitions_of_chars(
         user_prompts: HashMap::new(),
         user_prompts_meta: HashMap::new(),
     };
-    
+
     // get all chars in the learners section
     let words = db_read::read_words(conn).unwrap();
 
@@ -417,8 +421,7 @@ pub fn create_prompts_identify_stand_alone_definitions_of_chars(
         }
         let word_str = common::format_word_def(&word.trad, &word.simp, None);
         let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
-        let prompt_txt =
-            format!("dictionary entry:\n{word_str}\n{word_defs}");
+        let prompt_txt = format!("dictionary entry:\n{word_str}\n{word_defs}");
         let prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
 
         prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
@@ -448,7 +451,7 @@ pub fn create_prompts_identify_spoken_definitions_of_words(
         user_prompts: HashMap::new(),
         user_prompts_meta: HashMap::new(),
     };
-    
+
     // get all words, but not characters, in the learners section
     let words = db_read::read_words(conn).unwrap();
 
@@ -461,8 +464,7 @@ pub fn create_prompts_identify_spoken_definitions_of_words(
         }
         let word_str = common::format_word_def(&word.trad, &word.simp, None);
         let (_, word_defs) = format_word_defs_for_word_id(conn, word.id, &vec![]);
-        let prompt_txt =
-            format!("dictionary entry:\n{word_str}\n{word_defs}");
+        let prompt_txt = format!("dictionary entry:\n{word_str}\n{word_defs}");
         let prompt_meta = vec![format!("{};{}", word.trad, word.simp)];
 
         prompt_out.user_prompts.insert(word_str.clone(), prompt_txt);
@@ -534,7 +536,6 @@ pub fn create_prompts_match_decomposition(
     Ok(())
 }
 
-
 pub fn create_prompts_find_classifiers(
     conn: &Connection,
     prompt_templates_path: &str,
@@ -562,8 +563,8 @@ pub fn create_prompts_find_classifiers(
     for word in &words {
         let word_defs =
             db_read::read_definitions_for_words(conn, &vec![word.id], &vec![], &exclude_tag_ids)
-            .unwrap();
-        for (def, def_group) in word_defs {
+                .unwrap();
+        for (def, _def_group) in word_defs {
             let mut tag_str = get_formatted_tags(conn, def.shared_id).unwrap();
             if !tag_str.is_empty() {
                 tag_str.push_str(" ");
@@ -572,7 +573,12 @@ pub fn create_prompts_find_classifiers(
                 "{};D{};{}{}\n",
                 word.trad, def.ext_def_id, tag_str, def.definition
             );
-            defs.push((word.trad.to_owned(), word.simp.to_owned(), def.ext_def_id, def_str));
+            defs.push((
+                word.trad.to_owned(),
+                word.simp.to_owned(),
+                def.ext_def_id,
+                def_str,
+            ));
         }
     }
     // chunk definitions into groups of 50
@@ -586,7 +592,9 @@ pub fn create_prompts_find_classifiers(
             prompt_meta.push(format!("{word_trad};{word_simp};{def_id}"));
         }
         let prompt_key = format!("chunk_{chunk_i}");
-        prompt_out.user_prompts.insert(prompt_key.clone(), prompt_txt);
+        prompt_out
+            .user_prompts
+            .insert(prompt_key.clone(), prompt_txt);
         prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
     }
 
@@ -601,7 +609,185 @@ pub fn create_prompts_find_classifiers(
             prompt_meta.push(format!("{word_trad};{word_simp};{def_id}"));
         }
         let prompt_key = format!("chunk_{chunk_i}");
-        prompt_out.user_prompts.insert(prompt_key.clone(), prompt_txt);
+        prompt_out
+            .user_prompts
+            .insert(prompt_key.clone(), prompt_txt);
+        prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
+    }
+
+    let file = File::create(prompt_output_path)?;
+    let mut writer = BufWriter::new(file);
+    serde_json::to_writer_pretty(&mut writer, &prompt_out)?;
+    writer.flush()?;
+    Ok(())
+}
+
+/// Create a json with all the prompts, using data from the dictionary
+/// The input is expected to be a json file with a list of example sentences:
+///  {
+///   "mo": "model name",
+///   "t": "word in traditional characters",
+///   "s": "word in simplified characters",
+///   "d_txt": "definition text (optional)",
+///   "d_id": "definition id (optional)",
+///   "col_t": "collocation in traditional characters (optional)",
+///   "col_s": "collocation in simplified characters (optional)",
+///   "col_d_id": "collocation definition id in simplified characters (optional)",
+///   "s_t": "sentence in traditional characters",
+///   "s_s": "sentence in simplified characters (optional)"
+///  },
+pub fn create_prompts_identify_good_sentences(
+    conn: &Connection,
+    prompt_templates_path: &str,
+    prompt_template_name: &str,
+    prompt_input_path: &str,
+    prompt_output_path: &str,
+) -> Result<(), Box<dyn Error>> {
+    let prompt_template = read_prompt_templates(prompt_templates_path)
+        .get(prompt_template_name)
+        .unwrap()
+        .clone();
+    let mut prompt_out = LlmPromptResult {
+        template: prompt_template,
+        user_prompts: HashMap::new(),
+        user_prompts_meta: HashMap::new(),
+    };
+
+    #[derive(Clone, Debug, Serialize, Deserialize)]
+    struct SentenceInput {
+        mo: String,
+        t: String,
+        s: String,
+        d_txt: Option<String>,
+        d_id: Option<String>,
+        col_t: Option<String>,
+        col_s: Option<String>,
+        col_d_id: Option<String>,
+        s_t: String,
+        s_s: Option<String>,
+    }
+
+    let file = File::open(prompt_input_path)?;
+    let reader = BufReader::new(file);
+    let sentences: Vec<SentenceInput> = serde_json::from_reader(reader)?;
+
+    // - read all sentence structs into a hashmap HashMap<(String, String), Vec<SentenceInput>>, mapping from (t, s) to the full struct for quick lookup
+    // - replace new lines in sentences (s_t and s_s) with three spaces
+    let mut sentence_map: HashMap<(String, String), Vec<SentenceInput>> = HashMap::new();
+    for mut sen in sentences {
+        sen.s_t = sen.s_t.replace('\n', "   ");
+        if let Some(ref mut s_s) = sen.s_s {
+            *s_s = s_s.replace('\n', "   ");
+        }
+        sentence_map
+            .entry((sen.t.clone(), sen.s.clone()))
+            .or_default()
+            .push(sen);
+    }
+
+    let words = db_read::read_words(conn).unwrap();
+    let mut chunk_i = 1;
+
+    let mut prompt_txt = String::new();
+    let mut prompt_meta = Vec::new();
+    let mut sentence_count_in_chunk = 0;
+
+    for word in &words {
+        // if word.trad == "%" {
+        //     break;
+        // }
+
+        // - check if there are sentence available for that word (trad, simp)
+        if let Some(word_sentences) = sentence_map.get(&(word.trad.clone(), word.simp.clone())) {
+            let defs = db_read::read_definitions_for_words(conn, &vec![word.id], &vec![], &vec![])
+                .unwrap_or_default();
+
+            // - group all sentences for each word which are for the same definition using the external id
+            let mut groups: HashMap<u32, Vec<&SentenceInput>> = HashMap::new();
+
+            for sen in word_sentences {
+                // - for each sentence, if d_id.is_some() it is the external id as a string with D prefix
+                let ext_def_id = if let Some(ref d_id) = sen.d_id {
+                    d_id.strip_prefix("D").and_then(|s| s.parse::<u32>().ok())
+                } else if let Some(ref d_txt) = sen.d_txt {
+                    // - if d_id.is_none(), use d_txt (if this is also none skip this sentence) which contains a superset of the definition string
+                    let matching_defs: Vec<_> = defs
+                        .iter()
+                        .filter(|(d, _)| d_txt.contains(&d.definition))
+                        .collect();
+                    // - if there is more than one definition, skip this sentence
+                    if matching_defs.len() == 1 {
+                        Some(matching_defs[0].0.ext_def_id)
+                    } else {
+                        None
+                    }
+                } else {
+                    None // Skip sentence if both d_id and d_txt are missing
+                };
+
+                if let Some(id) = ext_def_id {
+                    groups.entry(id).or_default().push(sen);
+                }
+            }
+
+            let mut sorted_group_keys: Vec<_> = groups.keys().copied().collect();
+            sorted_group_keys.sort_unstable(); // Sort to ensure consistent outputs across runs
+
+            for ext_def_id in sorted_group_keys {
+                let sens = groups.get(&ext_def_id).unwrap();
+                let def_txt = defs
+                    .iter()
+                    .find(|(d, _)| d.ext_def_id == ext_def_id)
+                    .map(|(d, _)| d.definition.clone())
+                    .unwrap_or_default();
+
+                // - for each group, output the "headline" **{word.trad}-D{external_id}:{definition text}**
+                prompt_txt.push_str(&format!("**{}-D{}:{}**\n", word.trad, ext_def_id, def_txt));
+
+                // followed by the sentences in the format {sentence id};{s_t} (all separated by new lines)
+                for sen in sens {
+                    // - assign a unique id to each sentence, which can just be a continuous counter
+                    let sen_out = if sen.mo != "wi" {
+                        // remove existing word separators
+                        sen.s_t.replace(' ', "").to_owned()
+                    } else {
+                        sen.s_t.to_owned()
+                    };
+                    prompt_txt.push_str(&format!("{};{}\n", prompt_meta.len(), sen_out));
+
+                    // - prompt_meta = list of all added SentenceInput as json string
+                    let mut sen_with_id: SentenceInput = (*sen).clone();
+                    sen_with_id.d_id =  Some(format!("D{ext_def_id}"));
+                    prompt_meta.push(serde_json::to_string(&sen_with_id).unwrap());
+                    sentence_count_in_chunk += 1;
+                }
+                prompt_txt.push('\n');
+            }
+        }
+
+        // - chunk the groups that there are no more than roughly 50 sentences per prompt_txt
+        if sentence_count_in_chunk >= 50 {
+            let prompt_key = format!("chunk_{chunk_i}");
+            prompt_out
+                .user_prompts
+                .insert(prompt_key.clone(), prompt_txt.clone());
+            prompt_out
+                .user_prompts_meta
+                .insert(prompt_key, prompt_meta.clone());
+
+            chunk_i += 1;
+            prompt_txt.clear();
+            prompt_meta.clear();
+            sentence_count_in_chunk = 0;
+        }
+    }
+
+    // Capture the remainder in the last chunk
+    if sentence_count_in_chunk > 0 {
+        let prompt_key = format!("chunk_{chunk_i}");
+        prompt_out
+            .user_prompts
+            .insert(prompt_key.clone(), prompt_txt);
         prompt_out.user_prompts_meta.insert(prompt_key, prompt_meta);
     }
 

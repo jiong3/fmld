@@ -337,3 +337,77 @@ expected_schema = '''
 房子;D1;一;個,坐
 民主;D1;/
 '''
+
+
+[identify_good_sentences]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+You are given a list of example sentences for specific definitions of Chinese words.
+Judge each sentence, whether it is a good example sentence for that definition (usually a translation, can also be an explanation or description of the usage).
+A good example sentence should:
+- be correct
+- reflect the natural usage of that definition in modern, contemporary Mandarin (in China or Taiwan)
+- be written in Chinese (繁體字) with Chinese learners in mind
+- be a phrase or sentence with an appropriate length (not too long, short is ok if sufficient)
+
+For each sentence, provide (separated by semicolon):
+- sentence id
+- word
+- definition id (Dx)
+- the sentence, with words separated by spaces
+- a translation in American English of that sentence (without any semicolons or newlines)
+- the score:
+  - G: good, no correction necessary
+  - N: not good, sentence should be corrected or replaced
+- a very brief justification
+
+Do not include additional information.
+
+The sentences are provided in groups, one for each definition, in the following format:
+
+**Chinese word - Dx (definition id): definition**
+sentence id 1;sentence 1 in traditional characters
+sentence id 2;sentence 2 in traditional characters
+...
+
+Example input:
+**燦爛-D1:gorgeous; magnificent; splendid; outstanding; distinguished**
+40;燦爛的煙火照亮了整個夜空。
+41;天空中有一個燦爛的彩虹。
+
+Example output:
+'''
+
+expected_schema = '''
+40;燦爛;D1;燦爛 的 煙火 照亮 了 整個 夜空。;The gorgeous fireworks lit up the entire night sky.;G;correct
+41;燦爛;D1;天空 中 有 一 個 燦爛 的 彩虹。;There is a splendid rainbow in the sky.;G;correct
+'''
+
+
+[generate_graded_sentences]
+
+system_prompt = "You are a teacher, teaching Mandarin Chinese to adult English native speakers using traditional characters (繁體字)."
+
+user_prompt_shared = '''
+Provide five example sentences for each of the definitions provided below. They should reflect the natural usage in modern, spoken Mandarin.
+The sentences should be in traditional characters (繁體字) with words and punctuation separated by spaces.
+Only use the words from the list below in the sentence, since the students don't know more words at this stage.
+If a classifier or collocations are provided along with the definition, each should be included in one of the five sentences.
+
+Do not provide additional explanations.
+
+Provide each example sentence on a separate line in a csv format:
+word;definition id (Dx);sentence;translation
+
+Example output:
+'''
+
+expected_schema = '''
+句子;D1;這 是 一 個 句子 。;This is a sentence.
+'''
+
+# include in user prompt: word list, word + definition, collocations, classifiers
+
+# TODO additional request for separable verbs with ...

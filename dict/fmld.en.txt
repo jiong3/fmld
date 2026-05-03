@@ -3331,7 +3331,7 @@ W|w|著／着
    D36|#figurative|trick; device
  P||zhe5
   C character
-   D37||Particle indicating the continuation of an action or a state. Often used with 正在 (zhèngzài) or 正 (zhèng).
+   D37|+|Particle indicating the continuation of an action or a state. Often used with 正在 (zhèngzài) or 正 (zhèng).
    D38||Particle used after some adjectives to denote comparison of levels.
    D39||Particle denoting a command, request or advice.
 W|w|著
@@ -3917,14 +3917,6 @@ W|w|遠／远
   C character
    D5||to distance oneself from; to keep at a distance
    D6||a surname
-W|w|都會／都会
- X>|a|都#D1;會／会#D2
- P||du1hui4
-  C noun
-   D1||metropolis; major city
-    XC|A|個／个;座#D4
-    X=|a|城市#D1;都市#D1;大邦#D3;都邑#D1
-    X}|A|生活#D1;發展／发展#D1;城市#D1;文化#D3;地區／地区#D2
 W|w|容易
  X>|a|容#D7;易#D5
  P||rong2yi4 |x|yong2yi5
@@ -69761,7 +69753,7 @@ W|w|族
    D2||ethnic group; nationality
     X<||民族;藏族
    D3||group or class of things with common features
-    X<||啃老族
+    X<||啃老族;草莓族
    D4|x #historical|to impose a death penalty on an offender and his entire family, and even on the families of his mother and wife
    D5|- #literary|to gather
    D6|T #specifically|the Taiwanese indigenous peoples
@@ -74278,6 +74270,14 @@ W|w|都市
     X=|a|都會／都会#D1;城市#D1;大邦#D3;都邑#D1
     X{|A|繁華／繁华#D1
     X}|a|人#D1;生活#D1 |A|發展／发展#D1
+W|w|都會／都会
+ X>|a|都#D1;會／会#D2
+ P||du1hui4
+  C noun
+   D1||metropolis; major city
+    XC|A|個／个;座#D4
+    X=|a|城市#D1;都市#D1;大邦#D3;都邑#D1
+    X}|A|生活#D1;發展／发展#D1;文化#D3;地區／地区#D2
 W|w|蠢
  P||chun3
   C character

@@ -1,5 +1,5 @@
 use nom::{
-    AsChar, IResult, Parser, branch::alt, bytes::complete::{tag, take_while1}, character::complete::{anychar, char, newline, none_of, space0, u32}, combinator::{all_consuming, fail, success, map, opt, rest, value}, multi::{many0, many1, separated_list1}, sequence::{delimited, pair, preceded, separated_pair, terminated}
+    AsChar, Err, IResult, Parser, branch::alt, bytes::complete::{tag, take_while1}, error::{Error, ErrorKind}, character::complete::{anychar, char, newline, none_of, space0, u32}, combinator::{all_consuming, fail, map, opt, rest, success, value}, multi::{many0, many1, separated_list1}, sequence::{delimited, pair, preceded, separated_pair}
 };
 
 use crate::common;
@@ -262,7 +262,7 @@ fn parse_word(word_str: &str) -> IResult<&str, Word> {
         ),
         |word_pair| Word {
             trad: word_pair.0.to_owned(),
-            simp: word_pair.1.map(|s| s.to_owned()),
+            simp: word_pair.1.map(std::borrow::ToOwned::to_owned),
         },
     )
     .parse(word_str)
@@ -347,7 +347,7 @@ fn parse_note_line(note_line: &str) -> IResult<&str, Note> {
     Ok((
         remainder,
         Note {
-            id: if id > 0 { Some(id) } else { None },
+            id: (id > 0).then_some(id),
             is_link: is_link.is_some(),
             txt: note.to_owned(),
         },
@@ -393,9 +393,13 @@ fn parse_sentence_word_ascii(sentence_word: &str) -> IResult<&str, SentenceWord>
     let (r, w) = take_while1(|c: char| c.is_ascii() && !c.is_newline()).parse(sentence_word)?;
     if w.ends_with(' ') {
         // leave the trailing space separator
-        Ok((&sentence_word[w.len() - 1..], SentenceWord::AsciiWord(w[..w.len() - 1].to_owned())))
-    } else {
+        Ok((&sentence_word[w.len() - 1..], SentenceWord::AsciiWord(w.strip_suffix(' ').expect("checked above").to_owned())))
+    } else if r.chars().next().is_none_or(|c| c.is_newline()) {
+        // ascii word at the end of the line
         Ok((r, SentenceWord::AsciiWord(w.to_owned())))
+    } else {
+        // not an ascii-only word since it's not separated by a space or at the end of the line
+        Err(Err::Error(Error::new(sentence_word, ErrorKind::Fail)))
     }
 }
 

@@ -286,7 +286,7 @@ fn test_parse_reference_line_full() {
 
 #[test]
 fn test_parse_sentence_line_basic() {
-    let line = "1| | 這是   一個  句子#D1\nThis is a sentence.";
+    let line = "1| | A這是   一個  句子#D1 K\nThis is a sentence.";
     let expected = Ok((
         "",
         SentenceTag {
@@ -296,7 +296,7 @@ fn test_parse_sentence_line_basic() {
                 SentenceWord::DictWord((
                     Reference {
                         target_word: Word {
-                            trad: "這是".to_string(),
+                            trad: "A這是".to_string(),
                             simp: None,
                         },
                         target_id: None,
@@ -328,6 +328,7 @@ fn test_parse_sentence_line_basic() {
                     false,
                     None,
                 )),
+                SentenceWord::AsciiWord("K".to_string()),
             ],
             translation: "This is a sentence.".to_string(),
         },

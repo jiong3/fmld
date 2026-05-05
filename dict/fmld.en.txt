@@ -1209,6 +1209,7 @@ W|w|過／过
    D2|*|(of time) to pass by; to pass
     X=|A|度過／度过#D2
    D3|*|to spend time; to live
+    X}||生活#D1
     X=|A|度過／度过#D1
    D4||to transfer; to move to
    D5||to cause to go through
@@ -1827,7 +1828,7 @@ W|w|還是／还是
    D2||nevertheless; yet
     X{|a|但#D2
    D3|x #chiefly-Wu|used to form comparative structures; -er than
-   D4||had better; it would be best (to do something); one would be well-advised to
+   D4|+|had better; it would be best (to do something); one would be well-advised to
     X=|A|最好#D2;不如#D1;不妨#D1
     X}|a|算了#D1
   C conj
@@ -8323,6 +8324,18 @@ W|w|各
   C character
    D4|x #derogatory #dialectal|sticking out; odd; unusual
    D5||Used in 自各兒／自各儿.
+W||各……各的……
+ X>||各#D1;…A…;各#D1;的;…B…
+ P||ge4...ge4de5
+  C pattern
+   D1||each is A-ing (verb) their own B (optional noun); each separately; everyone does their own thing
+    X.||有#D1;忙#D2;做#D1;吃#D1
+    S1||以後 還是#D4 各<#D 過#D3 各<#D 的<#D 生活#D1 好 了
+      From now on, let’s just live our own separate lives.
+    S2||你們 各<#D 忙#D2 各<#D 的<#D 吧 。
+      You all go do your own things.
+    S3||幸福#D1 的 人 的 幸福#D3 都#D6 是 相似#D1 的 ， 不幸#D1 的 人 卻 各<#D 有 各<#D 的<#D 不幸#D3 。
+      Happy people’s happiness is all similar, but unhappy people each have their own unhappiness.
 W|w|贏／赢
  P||ying2
   C character
@@ -180323,15 +180336,70 @@ W|w|⿱𡩧⿺進⿰貝招
   C character
    D1||Ligature form of 招財進寶／招财进宝 (zhāocáijìnbǎo)
 W||、
+ XG||，;、;：;；
  P|i|dun4hao4
   C punctuation
    D1||comma (used for separating items in a list)
     X=||頓號／顿号#D1
 W||。
+ XG||。;！;？
  P|i|ju4hao4
   C punctuation
    D1||full stop (indicates end of a sentence)
     X=||句號／句号#D1
+W||《
+ XG||《;》;〈;〉
+ P|i|shu1ming2hao4
+  C punctuation
+   D1||(opening double angle bracket, used for book, film and album titles)
+    X=||書名號／书名号#D1
+W||》
+ XG||《;》;〈;〉
+ P|i|shu1ming2hao4
+  C punctuation
+   D1||(closing double angle bracket, used for book, film and album titles)
+    X=||書名號／书名号#D1
+W||〈
+ XG||《;》;〈;〉
+ P|i|shu1ming2hao4
+  C punctuation
+   D1||(opening angle bracket, used for book, film and album titles)
+    X=||書名號／书名号#D1
+W||〉
+ XG||《;》;〈;〉
+ P|i|shu1ming2hao4
+  C punctuation
+   D1||(closing angle bracket, used for book, film and album titles)
+    X=||書名號／书名号#D1
+W||『
+ XG||「;」;『;』
+ P|i|zhi2jiao3 yin3hao4;yin3hao4
+  C punctuation
+   D1||(opening square double quotation mark)
+    X=||直角引號／直角引号#D1
+W||』
+ XG||「;」;『;』
+ P|i|zhi2jiao3 yin3hao4;yin3hao4
+  C punctuation
+   D1||(closing square double quotation mark)
+    X=||直角引號／直角引号#D1
+W||「
+ XG||「;」;『;』
+ P|i|zhi2jiao3 yin3hao4;yin3hao4
+  C punctuation
+   D1||(opening square quotation mark)
+    X=||直角引號／直角引号#D1
+W||」
+ XG||「;」;『;』
+ P|i|zhi2jiao3 yin3hao4;yin3hao4
+  C punctuation
+   D1||(closing square quotation mark)
+    X=||直角引號／直角引号#D1
+W||——
+ P|i|po4zhe2hao4
+  C punctuation
+   D1||(em dash)
+    X=||破折號／破折号#D1
 W|w|の
  P||de5
   C particle
@@ -742815,26 +742883,31 @@ W|w|﨩
   C character
    D1||island mountain
 W||！
+ XG||。;！;？
  P|i|gan3tan4hao4;jing1tan4hao4
   C punctuation
    D1||exclamation mark (indicates end of an exclamory sentence)
     X=|a|嘆號／叹号#D1;感嘆號／感叹号#D1;驚嘆號／惊叹号#D1
 W||，
+ XG||，;、;：;；
  P|i|dou4hao4;dou4dian3
   C punctuation
    D1||comma
     X=||逗號／逗号#D1;逗點／逗点#D1
 W||：
+ XG||，;、;：;；
  P|i|mao4hao4
   C punctuation
    D1||colon (used befor a speech, quotation, summary, explanation, etc.)
     X=||冒號／冒号#D1
 W||；
+ XG||，;、;：;；
  P|i|fen1hao4
   C punctuation
    D1||semicolon
     X=||分號／分号#D2
 W||？
+ XG||。;！;？
  P|i|wen4hao4
   C punctuation
    D1||question mark (indicates end of a question)

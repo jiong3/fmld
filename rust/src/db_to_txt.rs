@@ -237,8 +237,8 @@ impl<'a> DbToTxt<'a> {
             entry.shared_ids.note_id,
             def_id_indent + 1,
         )?;
-        self.write_sentences(entry.id, def_id_indent + 1)?;
         self.write_cross_references(entry.word_id, Some(entry.id), def_id_indent + 1)?;
+        self.write_sentences(entry.id, def_id_indent + 1)?;
         Ok(())
     }
 

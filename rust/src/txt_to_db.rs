@@ -1,6 +1,5 @@
 use rusqlite::{Connection, Error as SqliteError};
 
-use crate::common;
 use crate::config;
 use crate::db_read;
 use crate::pinyin;
@@ -179,7 +178,7 @@ impl<'a> TxtToDb<'a> {
     ) {
         self.conn
             .execute_batch(
-                "PRAGMA synchronous = OFF; PRAGMA journal_mode = MEMORY; BEGIN TRANSACTION",
+                "PRAGMA synchronous = OFF; PRAGMA journal_mode = OFF; BEGIN TRANSACTION",
             )
             .unwrap();
         let parser = ParserIterator::new(lines.into_iter());
@@ -224,9 +223,10 @@ impl<'a> TxtToDb<'a> {
             self.complete_sentence_word_entries();
             self.complete_id_reference_entries();
         } // TODO add another error line indicating that something was skipped due to previous errors?
-        self.conn.execute("COMMIT", ()).unwrap();
+        self.conn.execute_batch("COMMIT; PRAGMA optimize;").unwrap();
     }
 
+    #[must_use]
     pub fn format_errors(&self) -> Vec<String> {
         let mut error_strings = vec![];
         for err in &self.errors {
@@ -527,8 +527,7 @@ impl<'a> TxtToDb<'a> {
                             part_of_parent_def: None,
                             part_of_ext_def_id: part_of_ref
                                 .as_ref()
-                                .map(|r| r.target_id)
-                                .flatten()
+                                .and_then(|r| r.target_id)
                                 .map(|i| i.1),
                             part_of_word: part_of_ref.map(|r| r.target_word),
                             ascii_txt: None,
@@ -590,14 +589,13 @@ impl<'a> TxtToDb<'a> {
             let (part_of_word_id, part_of_def_id) = {
                 if let Some((word_id, def_id)) = word_ref.part_of_parent_def {
                     (Some(word_id), Some(def_id))
-                }
-                else if let Some(word) = word_ref.part_of_word {
+                } else if let Some(word) = word_ref.part_of_word {
                     let word_def_id = self.resolve_to_word_def_id(
                         &word,
                         word_ref.part_of_ext_def_id,
                         word_ref.err_line_idx,
                     );
-                    (word_def_id.map(|e| e.0), word_def_id.map(|e| e.1).flatten())
+                    (word_def_id.map(|e| e.0), word_def_id.and_then(|e| e.1))
                 } else {
                     (None, None)
                 }
@@ -689,7 +687,7 @@ impl<'a> TxtToDb<'a> {
     fn add_line_to_db(&mut self, line_info: &LineInfo, line: DictLine) -> (bool, bool) {
         self.line_stack.truncate(line_info.indentation);
 
-        // store line in case of an error, for references and sentences this error could be triggered after all lines
+        // store line in case of an error, for references and sentences an error could be triggered after all lines
         // have been processed and a referenced word has not been found
         let (line_items, keep_line) = match line {
             DictLine::Word(word_tag_groups) => (self.add_word_line_to_db(word_tag_groups), false),
@@ -728,6 +726,7 @@ impl<'a> TxtToDb<'a> {
         }
     }
 
+    #[allow(clippy::never_loop)]
     fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
         let mut main_variant: Option<DictNode> = None;
@@ -775,13 +774,12 @@ impl<'a> TxtToDb<'a> {
     }
 
     fn add_note_line_to_db(&mut self, note: &Note) -> Result<Vec<DictNode>> {
-        let ext_note_id = match note.id {
-            Some(i) => i,
-            _ => {
-                self.new_notes_num += 1;
-                self.new_notes_num
-                // TODO error if new_notes_num >= 100
-            }
+        let ext_note_id = if let Some(i) = note.id {
+            i
+        } else {
+            self.new_notes_num += 1;
+            self.new_notes_num
+            // TODO error if new_notes_num >= 100
         };
         let note_id: Option<SqliteId> = {
             if note.is_link {
@@ -891,16 +889,16 @@ impl<'a> TxtToDb<'a> {
     ) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
         if let Some(DictNode::Word((_, word_id))) =
-            self.line_stack.first().and_then(|v| v.first().cloned())
+            self.line_stack.first().and_then(|v| v.first().copied())
         {
             if let Some(DictNode::Class(class_id)) =
-                self.line_stack.get(2).and_then(|v| v.first().cloned())
+                self.line_stack.get(2).and_then(|v| v.first().copied())
             {
                 let definition_entry = self.create_definition_entry(
                     word_id,
                     definition_tag,
                     class_id,
-                    self.definition_stack.last().cloned(),
+                    self.definition_stack.last().copied(),
                 )?;
                 if let DictNode::Definition((_, _, definition_id)) = definition_entry {
                     // remember definition id in case it is a parent for a nested definition

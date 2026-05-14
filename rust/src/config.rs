@@ -425,18 +425,18 @@ pub const fn tag_to_txt_ascii_common(ascii_tag: char) -> Option<(&'static str, &
         'i' => ("irregular", "checks", 7), // skip automatic checks
         'A' => ("ai-only", "ai", 6), // content was generated/checked by multiple LLMs
         'a' => ("ai-partly", "ai", 6), // content was partly generated/checked by LLMs (e.g. matching word definitions for references)
-		'E' => ("explanation-only", "explanation", 9), // the definition is not a translation but an explanation
-		'e' => ("explanation-partly", "explanation", 9), // the definition contains both a translation and an explanation
-        'g' => ("graded-sentence", "graded", 5),
+		'E' => ("explanation-only", "explanation", 9), // the definition is not a translation but an explanation TODO not used
+		'e' => ("explanation-partly", "explanation", 9), // the definition contains both a translation and an explanation TODO not used
+		'G' => ("grammatical", "grammar", 6), // the word/definition has a grammatical function TODO not used
+        'g' => ("graded-sentence", "graded", 5), // graded sentence: all words either in top 500 or before % and current word (excl. punctuation)
 		'f' => ("fmld", "source", 4),
 		'w' => ("wiktionary", "source", 3),
-        'm' => ("mdbg", "source", 2),
+        'm' => ("mdbg-cedict", "source", 2),
         '*' => ("active-candidate", "relevance", 1), // candidate for a + tag (suggested by LLMs)
 		'+' => ("active", "relevance", 1), // definition/pronunciation/... can be used in active vocabulary
         '-' => ("extended", "relevance", 1), // extended (passive) vocabulary
         'x' => ("excluded", "relevance", 1), // excluded from the dictionary
         'X' => ("deleted", "relevance", 1),
-		// TODO G for graded only using <1/5/10k words or G for grammar?
         _ => {
             return None;
         }

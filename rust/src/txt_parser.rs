@@ -212,6 +212,7 @@ fn parse_line(line: &str) -> Result<DictLine, ()> {
         map(preceded(char('N'), parse_note_line), DictLine::Note),
         map(preceded(char('#'), parse_comment_line), DictLine::Comment),
     ));
+    let line = line.trim_end_matches(&[';', ' ']);
     match all_consuming(line_parser).parse(line) {
         Ok((_remainder, dict_line)) => Ok(dict_line),
         Err(_e) => Err(()),

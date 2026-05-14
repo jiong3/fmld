@@ -243,12 +243,12 @@ pub fn add_missing_notes_and_tags_for_symmetric_references(
 /// of pronunciations based on their tags.
 ///
 /// The tag-to-score mapping is as follows:
-/// - 'C' (china-only): 1
-/// - 'T' (taiwan-only): 2
-/// - '-' (extended): 5
-/// - 'x' (excluded): 10
-/// - 'X' (deleted): 20
-/// - Any other tag or no tag: 0
+///  - 'C' (china-only): 1
+///  - 'T' (taiwan-only): 2
+///  - '-' (extended): 5
+///  - 'x' (excluded): 10
+///  - 'X' (deleted): 20
+///  - Any other tag or no tag: 0
 /// The final score is the sum of the scores of all tags.
 pub fn sort_pronunciations_by_tag_rank(conn: &Transaction) -> Result<(), SqliteError> {
     // Select all definition_ids that are associated with more than one pronunciation,
@@ -701,7 +701,7 @@ pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
         let symbol_char = ascii_symbol.chars().next().unwrap_or('?');
         let (sort_by_dest_rank, ref_relative_rank) =
             if let Some((_, _, sort_by_dest_rank, rank)) = config::get_ref_type(symbol_char) {
-                (sort_by_dest_rank, rank as i64)
+                (sort_by_dest_rank, i64::from(rank))
             } else {
                 (false, 0)
             };
@@ -721,6 +721,283 @@ pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
     // 5. Apply updates
     let mut stmt_update =
         conn.prepare_cached("UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3")?;
+
+    for (shared_id, new_rank, new_rank_relative) in updates {
+        stmt_update.execute(params![new_rank, new_rank_relative, shared_id])?;
+    }
+
+    Ok(())
+}
+
+/// Adds an ASCII tag 'g' to sentences considered "graded", and removes it from those that are not.
+/// A sentence is "graded" if all its words (excluding punctuation and ASCII words) appear
+/// before the frequency-sorted pivot ('%'), and are either within the first 500 words 
+/// or appear before the word to which the sentence is attached.
+pub fn apply_graded_tags_to_sentences(conn: &Transaction) -> Result<(), SqliteError> {
+    // 1. Get or insert the tag ID for 'g' (graded-sentence)
+    let tag_id = db_edit::get_or_insert_tag_id(conn, &crate::db_read::Tag::Ascii('g'))?;
+
+    // 2. Query all words which have a definition with word class 'punctuation'
+    let mut stmt_punct = conn.prepare_cached(
+        r"
+        SELECT DISTINCT w.id
+        FROM dict_word w
+        JOIN dict_definition d ON w.id = d.word_id
+        JOIN dict_class c ON d.class_id = c.id
+        WHERE c.name = 'punctuation'
+        "
+    )?;
+    let punct_word_ids: HashSet<SqliteId> = stmt_punct
+        .query_map([], |row| row.get(0))?
+        .collect::<Result<HashSet<_>, _>>()?;
+
+    // 3. Find the rank of the word entry for '%'
+    let pivot_rank: i64 = conn.query_row(
+        r"
+        SELECT s.rank
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        WHERE w.trad = '%'
+        LIMIT 1
+        ",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(i64::MAX);
+
+    // 4. Find the rank for the 500th word (representing the base vocabulary boundary)
+    let rank_500: i64 = conn.query_row(
+        r"
+        SELECT s.rank
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        ORDER BY s.rank ASC
+        LIMIT 1 OFFSET 499
+        ",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(i64::MAX);
+
+    // 5. Check all sentences 
+    // Gather sentence metadata, its words, and their respective ranks
+    let mut stmt_sentences = conn.prepare(
+        r"
+        SELECT
+            s.id,
+            s.shared_id,
+            (SELECT 1 FROM dict_shared_tag st WHERE st.for_shared_id = s.shared_id AND st.tag_id = ?1) AS has_tag,
+            w_for_s.rank AS for_rank,
+            sw.word_id,
+            w_sw_s.rank AS sw_rank
+        FROM dict_sentence s
+        JOIN dict_word w_for ON s.for_word_id = w_for.id
+        JOIN dict_shared w_for_s ON w_for.shared_id = w_for_s.id
+        JOIN dict_sentence_word sw ON s.id = sw.sentence_id
+        LEFT JOIN dict_word w_sw ON sw.word_id = w_sw.id
+        LEFT JOIN dict_shared w_sw_s ON w_sw.shared_id = w_sw_s.id
+        ORDER BY s.id
+        "
+    )?;
+
+    let mut current_sentence_id: Option<SqliteId> = None;
+    let mut current_shared_id: SqliteId = 0;
+    let mut has_tag = false;
+    let mut is_graded = true;
+
+    // Buffers for database update
+    let mut tags_to_add: Vec<SqliteId> = Vec::new();
+    let mut tags_to_remove: Vec<SqliteId> = Vec::new();
+
+    let mut rows = stmt_sentences.query(params![tag_id])?;
+
+    while let Some(row) = rows.next()? {
+        let s_id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let tag_present: Option<i32> = row.get(2)?;
+        let for_rank: i64 = row.get(3)?;
+        let word_id: Option<SqliteId> = row.get(4)?;
+        let sw_rank: Option<i64> = row.get(5)?;
+
+        // If we switch to a new sentence, evaluate and flush the status of the previous one
+        if current_sentence_id != Some(s_id) {
+            if current_sentence_id.is_some() {
+                if is_graded && !has_tag {
+                    tags_to_add.push(current_shared_id);
+                } else if !is_graded && has_tag {
+                    tags_to_remove.push(current_shared_id);
+                }
+            }
+
+            current_sentence_id = Some(s_id);
+            current_shared_id = shared_id;
+            has_tag = tag_present.is_some();
+            is_graded = true;
+        }
+
+        // If sentence was already disqualified, skip checking the remaining words in it
+        if is_graded {
+            if let Some(w_id) = word_id {
+                // Exclude punctuation words
+                if punct_word_ids.contains(&w_id) {
+                    continue;
+                }
+
+                if let Some(r) = sw_rank {
+                    // Check conditions
+                    if r > pivot_rank {
+                        is_graded = false; // Disqualified: Extends past the pivot word ('%')
+                    } else if r > rank_500 && r > for_rank {
+                        is_graded = false; // Disqualified: Outside base vocabulary AND outside attached word's boundary
+                    }
+                } else {
+                    is_graded = false; // Graceful fallback if rank somehow wasn't retrieved
+                }
+            }
+        }
+    }
+
+    // Capture the state for the very last sentence
+    if current_sentence_id.is_some() {
+        if is_graded && !has_tag {
+            tags_to_add.push(current_shared_id);
+        } else if !is_graded && has_tag {
+            tags_to_remove.push(current_shared_id);
+        }
+    }
+
+    // Drop the SELECT statement early to free up `conn` borrows
+    //drop(rows);
+    //drop(stmt_sentences);
+
+    // 6. Apply all tag adjustments batched out
+    let mut stmt_add = conn.prepare_cached("INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)")?;
+    for shared_id in tags_to_add {
+        stmt_add.execute(params![shared_id, tag_id])?;
+    }
+
+    let mut stmt_remove = conn.prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1 AND tag_id = ?2")?;
+    for shared_id in tags_to_remove {
+        stmt_remove.execute(params![shared_id, tag_id])?;
+    }
+
+    Ok(())
+}
+
+
+/// Sorts example sentences for a definition by vocabulary frequency. 
+pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
+    // 1. Get word IDs that belong to the 'punctuation' class to exclude them
+    let mut stmt_punct = conn.prepare_cached(
+        r"
+        SELECT DISTINCT w.id
+        FROM dict_word w
+        JOIN dict_definition d ON w.id = d.word_id
+        JOIN dict_class c ON d.class_id = c.id
+        WHERE c.name = 'punctuation'
+        "
+    )?;
+    let punct_word_ids: HashSet<SqliteId> = stmt_punct
+        .query_map([], |row| row.get(0))?
+        .collect::<Result<HashSet<_>, _>>()?;
+
+    // 2. Find the rank of the pivot word ('%')
+    let pivot_rank: i64 = conn.query_row(
+        r"
+        SELECT s.rank
+        FROM dict_word w
+        JOIN dict_shared s ON w.shared_id = s.id
+        WHERE w.trad = '%'
+        LIMIT 1
+        ",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(i64::MAX);
+
+    // 3. Query all sentences, their definitions' ranks, their original ranks, and their words' ranks
+    let mut stmt_sentences = conn.prepare(
+        r"
+        SELECT
+            s.id,
+            s.shared_id,
+            def_s.rank AS def_rank,
+            s_s.rank AS original_sen_rank,
+            sw.word_id,
+            w_s.rank AS sw_rank
+        FROM dict_sentence s
+        JOIN dict_shared s_s ON s.shared_id = s_s.id
+        JOIN dict_definition def ON s.for_definition_id = def.id
+        JOIN dict_shared def_s ON def.shared_id = def_s.id
+        LEFT JOIN dict_sentence_word sw ON s.id = sw.sentence_id
+        LEFT JOIN dict_word w ON sw.word_id = w.id
+        LEFT JOIN dict_shared w_s ON w.shared_id = w_s.id
+        ORDER BY s.id
+        "
+    )?;
+
+    let mut current_sentence_id: Option<SqliteId> = None;
+    let mut current_shared_id: SqliteId = 0;
+    let mut current_def_rank: i64 = 0;
+    let mut current_original_sen_rank: i64 = 0;
+    let mut count_after: i64 = 0;
+    let mut highest_before: i64 = 0;
+
+    let mut updates: Vec<(SqliteId, i64, i64)> = Vec::new();
+
+    let mut rows = stmt_sentences.query([])?;
+
+    while let Some(row) = rows.next()? {
+        let s_id: SqliteId = row.get(0)?;
+        let shared_id: SqliteId = row.get(1)?;
+        let def_rank: i64 = row.get(2)?;
+        let original_sen_rank: i64 = row.get(3)?;
+        let word_id: Option<SqliteId> = row.get(4)?;
+        let sw_rank: Option<i64> = row.get(5)?;
+
+        // Transition to a new sentence
+        if current_sentence_id != Some(s_id) {
+            // Compute and store rank data for the completed sentence
+            if current_sentence_id.is_some() {
+                let rank_rel = (pivot_rank * count_after) 
+                    + highest_before 
+                    + (current_original_sen_rank - current_def_rank);
+                
+                updates.push((current_shared_id, current_def_rank, rank_rel));
+            }
+
+            current_sentence_id = Some(s_id);
+            current_shared_id = shared_id;
+            current_def_rank = def_rank;
+            current_original_sen_rank = original_sen_rank;
+            count_after = 0;
+            highest_before = 0;
+        }
+
+        // Process the sentence word (if it exists)
+        if let Some(w_id) = word_id {
+            if !punct_word_ids.contains(&w_id) {
+                if let Some(r) = sw_rank {
+                    if r > pivot_rank {
+                        count_after += 1;
+                    } else if r > highest_before {
+                        highest_before = r;
+                    }
+                }
+            }
+        }
+    }
+
+    // Capture the calculation for the very last sentence
+    if current_sentence_id.is_some() {
+        let rank_rel = (pivot_rank * count_after) 
+            + highest_before 
+            + (current_original_sen_rank - current_def_rank);
+        
+        updates.push((current_shared_id, current_def_rank, rank_rel));
+    }
+
+    // 4. Update the DB with the new ranks and relative ranks
+    let mut stmt_update = conn.prepare_cached(
+        "UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3"
+    )?;
 
     for (shared_id, new_rank, new_rank_relative) in updates {
         stmt_update.execute(params![new_rank, new_rank_relative, shared_id])?;

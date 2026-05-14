@@ -5,6 +5,18 @@ use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
 use std::collections::HashSet;
 
+pub fn autofix(tx: &Transaction) -> Result<(), SqliteError> {
+    delete_references_marked_for_deletion(&tx)?;
+    add_missing_symmetric_references(&tx)?;
+    add_missing_notes_and_tags_for_symmetric_references(&tx)?;
+    sort_references(&tx)?;
+    sort_sentences(&tx)?;
+    apply_graded_tags_to_sentences(&tx)?;
+    sort_pronunciations_by_tag_rank(&tx)?;
+    sort_words_after_pivot(&tx)?;
+    Ok(())
+}
+
 pub fn finalize_note_ids(conn: &Transaction, max_ext_note_id: u32) -> Result<u32, SqliteError> {
     let mut stmt_max_ext_note_id = conn.prepare(
         r"

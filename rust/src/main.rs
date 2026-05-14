@@ -167,7 +167,7 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
             (SELECT COUNT(dict_reference.id) FROM dict_reference) AS num_refs;
         ",
         )?;
-        let (num_words, num_defs, num_refs, num_notes) = stmt.query_row([], |row| {
+        let (num_words, num_defs, num_references, num_notes) = stmt.query_row([], |row| {
             Ok((
                 row.get("num_words")?,
                 row.get("num_defs")?,
@@ -177,7 +177,7 @@ fn finalize(db_source: &mut DictDb, meta_path: &Path) -> anyhow::Result<()> {
         })?;
         m.num_notes = num_notes;
         m.num_definitions = num_defs;
-        m.num_references = num_refs;
+        m.num_references = num_references;
         m.num_words = num_words;
         m.max_note_id = new_max_ext_note_id;
         let s = serde_json::to_string_pretty(&m)?;
@@ -209,15 +209,14 @@ fn main() -> anyhow::Result<()> {
         for err in err_list {
             eprintln!("{err}");
         }
+    } else {
+        eprintln!("Error in database checks, checks are not executed (shouldn't happen)!");
     }
+    
     let tx = db_source.conn.transaction()?;
 
-    db_autofix::delete_references_marked_for_deletion(&tx)?;
-    db_autofix::add_missing_symmetric_references(&tx)?;
-    db_autofix::add_missing_notes_and_tags_for_symmetric_references(&tx)?;
-    db_autofix::sort_references(&tx)?;
-    db_autofix::sort_pronunciations_by_tag_rank(&tx)?;
-    db_autofix::sort_words_after_pivot(&tx)?;
+    db_autofix::autofix(&tx)?;
+
     tx.commit()?;
 
     if let Some(meta_path) = &cli.finalize_with_meta {
@@ -229,7 +228,7 @@ fn main() -> anyhow::Result<()> {
         if !txt_b.is_empty() && txt_b_out_path.extension().and_then(OsStr::to_str) == Some("txt") {
             let file_out = File::create(txt_b_out_path)?;
             let mut writer_out = BufWriter::new(file_out);
-            writer_out.write(&txt_b)?;
+            writer_out.write_all(&txt_b)?;
         }
         if txt_b.is_empty() {
             eprintln!("Round trip check ok!");

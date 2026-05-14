@@ -61,19 +61,6 @@
           "values": []
         },
         {
-          "name": "definition",
-          "type": "TEXT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "id": 2,
-          "size": 65535
-        },
-        {
           "id": "vYtUxhjeOPNGNx2Ziv2is",
           "name": "class_id",
           "type": "INTEGER",
@@ -100,9 +87,22 @@
           "comment": "",
           "size": "",
           "values": []
+        },
+        {
+          "name": "definition",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 65535
         }
       ],
-      "comment": "Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.\n\nEach entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron) and a class (dict_class), which corresponds to the part of speech.\nWords and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc..\nAll words, definitions, pronunciations and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.\n\nThe order of the text file is preserved using the rank field (dict_shared). New items can be inserted using rank_relative. The fields ascii_symbol (dict_ref_type, dict_tag) refer to the symbol used in the text representation.\n\n\n\next_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id",
+      "comment": "Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.\n\nEach entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron) and a class (dict_class), which corresponds to the part of speech.\nWords and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc.. Definitions can also have example sentences (dict_sentence), which consist of multiple words (dict_sentence_word).\nAll words, definitions, pronunciations, sentences and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.\n\nThe order of the text file is preserved using the rank field (dict_shared). New items can be inserted using rank_relative. The fields ascii_symbol (dict_ref_type, dict_tag) refer to the symbol used in the text representation.\n\n\n\next_def_id is a constant unique id within the scope of all definitions for the same word. It is used for references or internal and external links, similar to ext_note_id",
       "indices": [
         {
           "id": 0,
@@ -927,7 +927,7 @@
           "values": []
         }
       ],
-      "comment": "",
+      "comment": "pronunciations without a tag are used universally, if they are used only in Taiwan or China they are tagged with the corresponding ascii tag",
       "indices": [],
       "color": "#175e7a"
     },

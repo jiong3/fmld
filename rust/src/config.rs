@@ -1,7 +1,7 @@
 pub const WORD_SEP: &str = "／";
 pub const ITEMS_SEP: &str = ";";
 
-pub const APPROX_TXT_FILE_SIZE: usize = 20_000_000;
+pub const APPROX_TXT_FILE_SIZE: usize = 30_000_000;
 
 // TODO ? PRAGMA OPTIMIZE; ANALYZE; ?
 
@@ -14,8 +14,8 @@ PRAGMA user_version = 4;
 /* Schema of a dictionary for Mandarin Chinese. The same data can also be represented as a text file. Some fields in this table exist mainly in order to preserve information of the text representation or make the conversions more convenient.
 
 Each entry consists of a word (dict_word), which can have several definitions (dict_definition). Each definition must have one or more pronunciations (dict_pron) and a class (dict_class), which corresponds to the part of speech.
-Words and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc..
-All words, definitions, pronunciations and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.
+Words and definitions can be linked (dict_reference), e.g. to indicate synonyms, antonyms etc.. Definitions can also have example sentences (dict_sentence), which consist of multiple words (dict_sentence_word).
+All words, definitions, pronunciations, sentences and references can have zero or more tags (dict_tag), and zero or one comment or note. A comment is for meta data, not for a user of the dictionary. A note can provide additional information to the user of the dictionary.
 
 The order of the text file is preserved using the rank field (dict_shared). New items can be inserted using rank_relative. The fields ascii_symbol (dict_ref_type, dict_tag) refer to the symbol used in the text representation.
 
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS "dict_definition" (
 	"ext_def_id" INTEGER NOT NULL,
 	"shared_id" INTEGER NOT NULL,
 	"word_id" INTEGER NOT NULL,
-	"definition" TEXT NOT NULL,
 	"class_id" INTEGER NOT NULL,
 	"parent_id" INTEGER,
+	"definition" TEXT NOT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY ("word_id") REFERENCES "dict_word"("id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
@@ -190,6 +190,7 @@ CREATE TABLE IF NOT EXISTS "dict_ref_type" (
 
 CREATE UNIQUE INDEX IF NOT EXISTS "dict_ref_type_index_0"
 ON "dict_ref_type" ("ascii_symbol");
+/* pronunciations without a tag are used universally, if they are used only in Taiwan or China they are tagged with the corresponding ascii tag */
 CREATE TABLE IF NOT EXISTS "dict_shared_pron" (
 	"id" INTEGER NOT NULL UNIQUE,
 	"shared_id" INTEGER NOT NULL,
@@ -301,6 +302,7 @@ CREATE TABLE IF NOT EXISTS "dict_translation_revision" (
 	"info_json" TEXT NOT NULL,
 	PRIMARY KEY("id")
 );
+
 
 /* ------------------- generated end ---------------------- */
 

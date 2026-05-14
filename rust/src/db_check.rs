@@ -1,9 +1,6 @@
-// LLM generated:
-// - regex check if character is Chinese character (translated from python, which was based on stackoverflow answer)
-// - SQL to check for conflicts and add missing things
-
 use crate::common;
 pub use crate::config::APPROX_TXT_FILE_SIZE;
+use crate::db_autofix;
 use crate::pinyin;
 use regex::Regex;
 use rusqlite::{Connection, Error as SqliteError, Transaction};
@@ -59,6 +56,7 @@ fn get_hanzi_only_regex_pattern() -> Regex {
 
     Regex::new(&pattern).unwrap()
 }
+
 
 #[allow(clippy::similar_names, reason = "a vs b")]
 pub fn check_conflicting_notes_on_symmetric_references(
@@ -197,7 +195,9 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
             .find_iter(&trad)
             .map(|mat| mat.as_str())
             .collect();
-        if trad_hanzi_only.len() == trad.len() || trad_hanzi_only.len() == trad.replace('，', "").len() {
+        if trad_hanzi_only.len() == trad.len()
+            || trad_hanzi_only.len() == trad.replace('，', "").len()
+        {
             let num_trad_chars = trad_hanzi_only.chars().count();
             for pinyin_num in pinyin_nums {
                 if let Some(p_t) = &pinyin_tags {
@@ -230,13 +230,17 @@ pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
     db_to_txt::db_to_txt(&mut txt_a, conn, false, None).unwrap();
 
     eprintln!("Round trip check: txt a -> db");
-    let conn_b = Connection::open_in_memory().unwrap();
+    let mut conn_b = Connection::open_in_memory().unwrap();
     let errors = txt_to_db::txt_to_db(&mut txt_a.as_slice(), &conn_b, None);
     if !errors.is_empty() {
         for err in errors {
             eprintln!("{err}");
         }
     }
+
+    let tx = conn_b.transaction()?;
+    db_autofix::autofix(&tx)?;
+    tx.commit()?;
 
     eprintln!("Round trip check: db -> txt b");
     let mut txt_b: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
@@ -280,7 +284,7 @@ pub fn check_incomplete_decompositions(conn: &Connection) -> Result<Vec<String>,
         GROUP BY word_id_src, src_trad, src_simp
         HAVING GROUP_CONCAT(dst_trad, '') != src_trad 
             OR GROUP_CONCAT(dst_simp, '') != src_simp;
-        "
+        ",
     )?;
 
     let mut rows = stmt.query([])?;
@@ -289,7 +293,9 @@ pub fn check_incomplete_decompositions(conn: &Connection) -> Result<Vec<String>,
         let simp: String = row.get("simp")?;
         let concat_trad: String = row.get("concat_trad")?;
         let concat_simp: String = row.get("concat_simp")?;
-        
+        if concat_trad.contains("…") {
+            continue;
+        }
         let word = common::format_word_def(&trad, &simp, None);
         errors.push(format!(
             "Decomposition Error: Incomplete decomposition for {word}. Components combined to traditional: {concat_trad}, simplified: {concat_simp}"
@@ -384,6 +390,9 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                 let mut all_components_found = true;
 
                 for comp in components {
+                    if comp.trad.starts_with("…") || comp.trad == "，" {
+                        continue;
+                    }
                     let Some(comp_prons) = word_to_def_prons.get(&comp.word_id) else {
                         // If a component has no pronunciation, we can't verify it.
                         // Assuming valid data, this might be skippable or flagged elsewhere.
@@ -410,12 +419,16 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                             continue;
                         }
 
-                        let src_slice = &src_syllables[current_idx..current_idx + comp_syllables.len()];
-                        
+                        let src_slice =
+                            &src_syllables[current_idx..current_idx + comp_syllables.len()];
+
                         // Check if this slice matches the component pronunciation (with fuzzy tone 5)
                         let mut match_seq = true;
                         for k in 0..comp_syllables.len() {
-                            if !pinyin::pinyin_match_excl_neutral_tone(&src_slice[k], &comp_syllables[k]) {
+                            if !pinyin::pinyin_match_excl_neutral_tone(
+                                &src_slice[k],
+                                &comp_syllables[k],
+                            ) {
                                 match_seq = false;
                                 break;
                             }
@@ -428,7 +441,6 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                             break 'comp_pron_loop;
                         }
                     }
-
 
                     if !comp_found {
                         all_components_found = false;

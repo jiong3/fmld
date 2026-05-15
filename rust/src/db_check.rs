@@ -226,7 +226,7 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
 pub fn round_trip_check(conn: &Connection, apply_autofix: bool) -> Result<Vec<u8>, SqliteError> {
     eprintln!("Round trip check: db -> txt a");
     let mut txt_a: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
-    db_to_txt::db_to_txt(&mut txt_a, conn, false, None).unwrap();
+    db_to_txt::db_to_txt(&mut txt_a, conn, false).unwrap();
 
     eprintln!("Round trip check: txt a -> db");
     let mut conn_b = Connection::open_in_memory().unwrap();
@@ -245,7 +245,7 @@ pub fn round_trip_check(conn: &Connection, apply_autofix: bool) -> Result<Vec<u8
 
     eprintln!("Round trip check: db -> txt b");
     let mut txt_b: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
-    db_to_txt::db_to_txt(&mut txt_b, &conn_b, false, None).unwrap();
+    db_to_txt::db_to_txt(&mut txt_b, &conn_b, false).unwrap();
 
     eprintln!("Round trip check: compare txt a and txt b");
 

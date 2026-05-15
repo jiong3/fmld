@@ -10,4 +10,5 @@ pub mod db_convert;
 pub mod db_to_txt;
 pub mod pinyin;
 mod txt_parser;
+pub mod txt_check;
 pub mod txt_to_db;

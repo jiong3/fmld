@@ -40,9 +40,9 @@ struct Cli {
     #[arg(long)]
     finalize_with_meta: Option<PathBuf>,
 
-    /// Limit input or output in text format to all entries up to the provided word
-    #[arg(short, long)]
-    limit_to_word: Option<String>,
+    /// Only run a quick check on the provided txt file
+    #[arg(long)]
+    txt_quick_check: bool,
 
     /// Use tabs for indendation
     #[arg(long)]
@@ -77,7 +77,7 @@ struct DictDb {
     conn: Connection,
 }
 
-fn read_input(path: &Path, limit_to_word: Option<&str>) -> anyhow::Result<DictDb> {
+fn read_input(path: &Path) -> anyhow::Result<DictDb> {
     match path.extension().and_then(OsStr::to_str) {
         Some("db") => {
             let mut conn = Connection::open_in_memory()?;
@@ -97,7 +97,9 @@ fn read_input(path: &Path, limit_to_word: Option<&str>) -> anyhow::Result<DictDb
             let conn = Connection::open_in_memory()?;
             let mut file =
                 File::open(path).context(format!("Could not open txt file {}", path.display()))?;
-            let errors = txt_to_db::txt_to_db(&mut file, &conn, limit_to_word);
+
+            // TODO do quick check here and then file.rewind()?;
+            let errors = txt_to_db::txt_to_db(&mut file, &conn, None);
             Ok(DictDb {
                 source: DbSource::Txt(errors),
                 conn,
@@ -117,12 +119,7 @@ fn write_output(db_source: &DictDb, cli: &Cli) -> anyhow::Result<()> {
             path_out.display()
         ))?;
         let mut writer_out = BufWriter::new(file_out);
-        db_to_txt::db_to_txt(
-            &mut writer_out,
-            &db_source.conn,
-            cli.indent_with_tabs,
-            cli.limit_to_word.as_deref(),
-        )?;
+        db_to_txt::db_to_txt(&mut writer_out, &db_source.conn, cli.indent_with_tabs)?;
     }
 
     if let Some(path_out) = &cli.db {
@@ -191,7 +188,31 @@ fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     let mut status_ok = true;
 
-    let mut db_source = read_input(&cli.input_file, cli.limit_to_word.as_deref())?;
+    if cli.txt_quick_check {
+        if cli.input_file.extension().and_then(OsStr::to_str) == Some("txt") {
+            println!("Quick check...");
+            let mut file = File::open(&cli.input_file).context(format!(
+                "Could not open txt file {}",
+                &cli.input_file.display()
+            ))?;
+            let errors = txt_check::quick_check(&mut file);
+            if !errors.is_empty() {
+                status_ok = false;
+                for err in errors {
+                    eprintln!("{err}");
+                }
+            }
+            println!("Quick check complete.");
+        } else {
+            return Err(anyhow!("Txt required as input for check!"));
+        }
+        if cli.txt.is_none() && cli.db.is_none() {
+            // quit if there is no output file requested
+            return Ok(());
+        }
+    }
+
+    let mut db_source = read_input(&cli.input_file)?;
     if let DbSource::Txt(errors) = &db_source.source {
         if !errors.is_empty() {
             status_ok = false;

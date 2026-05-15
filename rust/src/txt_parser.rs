@@ -67,7 +67,7 @@ pub struct Note {
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum SentenceWord {
-    DictWord((Reference, bool, Option<Reference>)),
+    DictWord((Reference, bool, Option<Reference>)), // bool indicates whether reference 1 is part of another word
     AsciiWord(String),
 }
 

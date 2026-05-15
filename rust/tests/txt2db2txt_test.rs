@@ -34,7 +34,7 @@ fn test_txt_to_db_to_txt() {
     );
 
     let mut txt_out: Vec<u8> = Vec::with_capacity(db_check::APPROX_TXT_FILE_SIZE);
-    db_to_txt::db_to_txt(&mut txt_out, &conn, false, None).unwrap();
+    db_to_txt::db_to_txt(&mut txt_out, &conn, false).unwrap();
 
     let txt_expected = std::fs::read("./tests/txt2db2txt_expected_output.txt").unwrap();
     if txt_expected != txt_out {

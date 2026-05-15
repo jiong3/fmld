@@ -26,7 +26,7 @@ fn test_txt_to_db_to_txt() {
     let new_max_ext_note_id = db_autofix::finalize_note_ids(&tx, 0).unwrap();
     tx.commit().unwrap();
 
-    let round_trip_out_txt = db_check::round_trip_check(&conn);
+    let round_trip_out_txt = db_check::round_trip_check(&conn, false);
     assert_eq!(
         round_trip_out_txt.is_ok_and(|t| t.is_empty()),
         true,

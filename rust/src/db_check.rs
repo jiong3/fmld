@@ -57,7 +57,6 @@ fn get_hanzi_only_regex_pattern() -> Regex {
     Regex::new(&pattern).unwrap()
 }
 
-
 #[allow(clippy::similar_names, reason = "a vs b")]
 pub fn check_conflicting_notes_on_symmetric_references(
     conn: &Transaction,
@@ -224,7 +223,7 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
     Ok(errors)
 }
 
-pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
+pub fn round_trip_check(conn: &Connection, apply_autofix: bool) -> Result<Vec<u8>, SqliteError> {
     eprintln!("Round trip check: db -> txt a");
     let mut txt_a: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);
     db_to_txt::db_to_txt(&mut txt_a, conn, false, None).unwrap();
@@ -238,9 +237,11 @@ pub fn round_trip_check(conn: &Connection) -> Result<Vec<u8>, SqliteError> {
         }
     }
 
-    let tx = conn_b.transaction()?;
-    db_autofix::autofix(&tx)?;
-    tx.commit()?;
+    if apply_autofix {
+        let tx = conn_b.transaction()?;
+        db_autofix::autofix(&tx)?;
+        tx.commit()?;
+    }
 
     eprintln!("Round trip check: db -> txt b");
     let mut txt_b: Vec<u8> = Vec::with_capacity(APPROX_TXT_FILE_SIZE);

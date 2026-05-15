@@ -224,7 +224,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     if let Some(txt_b_out_path) = &cli.round_trip_check {
-        let txt_b = db_check::round_trip_check(&db_source.conn)?;
+        let txt_b = db_check::round_trip_check(&db_source.conn, true)?;
         if !txt_b.is_empty() && txt_b_out_path.extension().and_then(OsStr::to_str) == Some("txt") {
             let file_out = File::create(txt_b_out_path)?;
             let mut writer_out = BufWriter::new(file_out);

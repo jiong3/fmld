@@ -84,82 +84,82 @@ pub fn quick_check(reader: &mut dyn Read) -> Vec<String> {
 
         // Match as an expression handles both assignment and branching
         let (cur_entry, allowed_parents) = match &parsed {
-                    DictLine::Word(word_tag_groups) => {
-                        if let Some(w) = word_tag_groups.first().and_then(|w| w.words.first()) {
+            DictLine::Word(word_tag_groups) => {
+                if let Some(w) = word_tag_groups.first().and_then(|w| w.words.first()) {
                     cur_trad.clone_from(&w.trad);
                     cur_simp.clone_from(&w.simp);
-                        } else {
-                            // should never happen
+                } else {
+                    // should never happen
                     cur_trad.clear();
                     cur_trad.push_str("unknown");
-                            cur_simp = None;
-                        }
-                        for wt in word_tag_groups {
+                    cur_simp = None;
+                }
+                for wt in word_tag_groups {
                     check_tags(&wt.tags, &line.line, &mut errors);
-                        }
+                }
                 ('W', "")
-                    }
-                    DictLine::Pinyin(pinyin_tag_groups) => {
-                        for pt in pinyin_tag_groups {
+            }
+            DictLine::Pinyin(pinyin_tag_groups) => {
+                for pt in pinyin_tag_groups {
                     check_tags(&pt.tags, &line.line, &mut errors);
-                        }
+                }
                 ('P', "PW")
-                    }
+            }
             DictLine::Class(_) => ('C', "P"),
-                    DictLine::Definition(definition_tag) => {
-                        add_def_id(&cur_trad, cur_simp.as_deref(), definition_tag.id);
+            DictLine::Definition(definition_tag) => {
+                add_def_id(&cur_trad, cur_simp.as_deref(), definition_tag.id);
                 check_tags(&definition_tag.tags, &line.line, &mut errors);
                 ('D', "CD")
+            }
+            DictLine::CrossReference(reference_tag_groups) => {
+                if let Some(rt) = reference_tag_groups.first() {
+                    if config::get_ref_type(rt.ref_type).is_none() {
+                        errors.push(format_line_error(
+                            &format!("unknown reference type {}", rt.ref_type),
+                            &line.line,
+                        ));
                     }
-                    DictLine::CrossReference(reference_tag_groups) => {
-                        if let Some(rt) = reference_tag_groups.first() {
-                            if config::get_ref_type(rt.ref_type).is_none() {
-                                errors.push(format_line_error(
-                                    &format!("unknown reference type {}", rt.ref_type),
-                                    &line.line,
-                                ));
-                            }
-                        }
-                        for rt in reference_tag_groups {
-                            for r in &rt.references {
-                                add_ref(r);
-                            }
+                }
+                for rt in reference_tag_groups {
+                    for r in &rt.references {
+                        add_ref(r);
+                    }
                     check_tags(&rt.tags, &line.line, &mut errors);
-                        }
+                }
                 ('X', "WD")
-                    }
-                    DictLine::Sentence(sentence_tag) => {
+            }
+            DictLine::Sentence(sentence_tag) => {
                 check_tags(&sentence_tag.tags, &line.line, &mut errors);
-                        for w in &sentence_tag.words {
-                            if let SentenceWord::DictWord(dw) = w {
-                                add_ref(&dw.0);
-                                if let Some(r) = &dw.2 {
-                                    add_ref(r);
-                                }
-                            }
+                for w in &sentence_tag.words {
+                    if let SentenceWord::DictWord(dw) = w {
+                        add_ref(&dw.0);
+                        if let Some(r) = &dw.2 {
+                            add_ref(r);
                         }
-                ('S', "D")
                     }
+                }
+                ('S', "D")
+            }
             DictLine::Note(_) => ('N', "WPDXS"),
             DictLine::Comment(_) => ('#', "WPDXS"),
         };
 
-                if line.line.indentation > line_stack.len() {
+        if line.line.indentation > line_stack.len() {
                     // this branch is probably never triggered since the additional indentation would add it
                     // to the previous line, which should most likely have a parser error in that case
-                    errors.push(format_line_error(&format!("wrong indendation"), &line.line));
-                } else {
-                    line_stack.truncate(line.line.indentation);
-                    if !allowed_parents.is_empty()
-                        && !allowed_parents.contains(line_stack.last().copied().unwrap_or_default())
-                    {
-                        errors.push(format_line_error(
+                    errors.push(format_line_error("wrong indentation", &line.line));
+        } else {
+            line_stack.truncate(line.line.indentation);
+            if !allowed_parents.is_empty()
+                && !allowed_parents.contains(line_stack.last().copied().unwrap_or_default())
+            {
+                errors.push(format_line_error(
                     &format!("allowed parent elements for {cur_entry} are {allowed_parents},"),
-                            &line.line,
-                        ));
-                    }
-                    line_stack.push(cur_entry);
-                }
+                    &line.line,
+                ));
+            }
+            line_stack.push(cur_entry);
+        }
     }
 
     for (w, def_id) in refs_to_max_def_id {
@@ -169,7 +169,7 @@ pub fn quick_check(reader: &mut dyn Read) -> Vec<String> {
             }
         } else {
             errors.push(format!(
-                "{ERR_PREFIX} referenced word not found in dictionary: {w}"
+                "{ERR_PREFIX} referenced word not found in dictionary (could also be a variant of an existing entry): {w}"
             ));
         }
     }

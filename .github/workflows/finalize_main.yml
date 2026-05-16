@@ -34,7 +34,7 @@ jobs:
 
       - name: Run fmld tool
         id: run_fmld # Assign an ID to this step to check its outcome later
-        run: ./fmld dict/fmld.en.txt --finalize-with-meta dict/fmld.meta.json --txt dict/fmld.en.new.txt
+        run: ./fmld dict/fmld.en.txt --finalize-with-meta dict/fmld.meta.json --txt dict/fmld.en.new.txt --txt-quick-check --db-full-check
 
       - name: Report Failure
         # This step only runs if the previous step ('run_fmld') failed.

@@ -35,7 +35,7 @@ jobs:
 
       - name: Run fmld tool
         id: run_fmld
-        run: ./fmld dict/fmld.en.txt --txt dict/fmld.en.new.txt
+        run: ./fmld dict/fmld.en.txt --txt dict/fmld.en.new.txt --txt-quick-check --db-full-check
         
       - name: Handle check failure
         if: failure() && steps.run_fmld.outcome == 'failure'

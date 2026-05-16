@@ -218,8 +218,6 @@ pub fn check_entries(conn: &Connection) -> Result<Vec<String>, SqliteError> {
     let mut decomp_incomplete_errors = check_incomplete_decompositions(conn)?;
     errors.append(&mut decomp_incomplete_errors);
 
-    println!("Checks complete!");
-
     Ok(errors)
 }
 

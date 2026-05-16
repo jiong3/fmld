@@ -9,6 +9,7 @@ use clap::Parser;
 use std::ffi::OsStr;
 use std::fs;
 use std::fs::File;
+use std::io;
 use std::io::BufWriter;
 use std::io::Write;
 
@@ -43,6 +44,10 @@ struct Cli {
     /// Only run a quick check on the provided txt file
     #[arg(long)]
     txt_quick_check: bool,
+
+    /// Run all available checks and automatic fixes on database
+    #[arg(long)]
+    db_full_check: bool,
 
     /// Use tabs for indendation
     #[arg(long)]
@@ -190,7 +195,8 @@ fn main() -> anyhow::Result<()> {
 
     if cli.txt_quick_check {
         if cli.input_file.extension().and_then(OsStr::to_str) == Some("txt") {
-            println!("Quick check...");
+            print!("Quick txt check ... ");
+            io::stdout().flush().unwrap();
             let mut file = File::open(&cli.input_file).context(format!(
                 "Could not open txt file {}",
                 &cli.input_file.display()
@@ -198,11 +204,13 @@ fn main() -> anyhow::Result<()> {
             let errors = txt_check::quick_check(&mut file);
             if !errors.is_empty() {
                 status_ok = false;
+                print!("found issues:");
                 for err in errors {
                     eprintln!("{err}");
                 }
+            } else {
+                println!("ok!");
             }
-            println!("Quick check complete.");
         } else {
             return Err(anyhow!("Txt required as input for check!"));
         }
@@ -212,6 +220,8 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
+    print!("Database loading ... ");
+    io::stdout().flush().unwrap();
     let mut db_source = read_input(&cli.input_file)?;
     if let DbSource::Txt(errors) = &db_source.source {
         if !errors.is_empty() {
@@ -221,24 +231,32 @@ fn main() -> anyhow::Result<()> {
             }
         }
     }
+    println!("complete!");
 
+    if cli.db_full_check {
+        print!("Database check ... ");
+        io::stdout().flush().unwrap();
     let check_result = db_check::check_entries(&db_source.conn);
     if let Ok(err_list) = check_result {
         if !err_list.is_empty() {
             status_ok = false;
-        }
+                println!("found issues:");
         for err in err_list {
             eprintln!("{err}");
+                }
+            } else {
+                println!("ok!");
         }
     } else {
         eprintln!("Error in database checks, checks are not executed (shouldn't happen)!");
     }
     
+        print!("Database autofix ... ");
+        io::stdout().flush().unwrap();
     let tx = db_source.conn.transaction()?;
-
     db_autofix::autofix(&tx)?;
-
     tx.commit()?;
+    }
 
     if let Some(meta_path) = &cli.finalize_with_meta {
         finalize(&mut db_source, meta_path)?;
@@ -259,7 +277,10 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
+    print!("Writing output ... ");
+    io::stdout().flush().unwrap();
     write_output(&db_source, &cli)?;
+    println!("complete!");
 
     if status_ok {
         Ok(())

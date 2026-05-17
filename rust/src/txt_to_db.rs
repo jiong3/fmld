@@ -223,7 +223,7 @@ impl<'a> TxtToDb<'a> {
             self.complete_sentence_word_entries();
             self.complete_id_reference_entries();
         } // TODO add another error line indicating that something was skipped due to previous errors?
-        self.conn.execute_batch("COMMIT; PRAGMA optimize;").unwrap();
+        self.conn.execute_batch("COMMIT; PRAGMA OPTIMIZE;").unwrap();
     }
 
     #[must_use]
@@ -261,14 +261,14 @@ impl<'a> TxtToDb<'a> {
         // handle error scenarios first
         if word_def_ids.is_empty() {
             self.errors.push(TxtToDbErrorLine {
-                err_line_idx: err_line_idx,
+                err_line_idx,
                 error: TxtToDbError::ReferenceTargetNotFound(format!("{}", &word)),
             });
             return None;
         }
         if word_def_ids.len() > 1 {
             self.errors.push(TxtToDbErrorLine {
-                err_line_idx: err_line_idx,
+                err_line_idx,
                 error: TxtToDbError::ReferenceTargetAmbiguous(format!("{}", &word)),
             });
             return None;
@@ -520,7 +520,7 @@ impl<'a> TxtToDb<'a> {
                 SentenceWord::DictWord((word_ref, is_part_of, part_of_ref)) => {
                     if !is_part_of || part_of_ref.is_some() {
                         SentWordReferenceEntry {
-                            sent_id: sent_id,
+                            sent_id,
                             word_rank: i,
                             word: Some(word_ref.target_word),
                             ext_def_id: word_ref.target_id.map(|i| i.1),
@@ -536,7 +536,7 @@ impl<'a> TxtToDb<'a> {
                     } else {
                         // handle special case where is_part_of is true but target is #D --> use the current definition
                         SentWordReferenceEntry {
-                            sent_id: sent_id,
+                            sent_id,
                             word_rank: i,
                             word: Some(word_ref.target_word),
                             ext_def_id: word_ref.target_id.map(|i| i.1),
@@ -549,7 +549,7 @@ impl<'a> TxtToDb<'a> {
                     }
                 }
                 SentenceWord::AsciiWord(ascii_txt) => SentWordReferenceEntry {
-                    sent_id: sent_id,
+                    sent_id,
                     word_rank: i,
                     word: None,
                     ext_def_id: None,
@@ -726,7 +726,7 @@ impl<'a> TxtToDb<'a> {
         }
     }
 
-    #[allow(clippy::never_loop)]
+    #[allow(clippy::never_loop, reason = "parser more generic than what the database allows")]
     fn add_word_line_to_db(&mut self, word_tag_groups: Vec<WordTagGroup>) -> Result<Vec<DictNode>> {
         let mut line_items = vec![];
         let mut main_variant: Option<DictNode> = None;

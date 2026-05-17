@@ -1,6 +1,6 @@
-use std::{collections::HashSet, usize};
 use std::borrow::Borrow;
 use std::hash::Hash;
+use std::{collections::HashSet, usize};
 
 #[must_use]
 pub fn pinyin_mark_from_num(pinyin_num: &str) -> String {
@@ -175,20 +175,20 @@ pub trait StringContainer {
     fn contains(&self, target: &str) -> bool;
 }
 
-impl<T> StringContainer for HashSet<T> 
-where 
-    T: Hash + Eq + Borrow<str> 
+impl<T> StringContainer for HashSet<T>
+where
+    T: Hash + Eq + Borrow<str>,
 {
     fn contains(&self, target: &str) -> bool {
         self.contains(target)
     }
 }
 
-/// Split str into substrings, with a prioritizing those in good_strings
-/// 
-/// 1st priority: maximize number of characters which are part of a "good string"
-/// 2nd priority: minimize number of substrings which are not in good_strings
-/// 
+/// Split str into substrings, with a prioritizing those in `good_strings`
+///
+/// 1st priority: maximize number of characters which are part of a `good_strings`
+/// 2nd priority: minimize number of substrings which are not in `good_strings`
+///
 /// Return all possible segmentations with equal priority, in order of the number of substrings (less to more)
 pub fn split_into_substrings<'a, S: StringContainer>(
     s: &'a str,
@@ -234,28 +234,13 @@ pub fn split_into_substrings<'a, S: StringContainer>(
                 scores[idx_start].substr_uncovered + 1
             };
 
-            let current_best = {
-                if scores[idx_end].start_idxs.is_empty() {
-                    true
-                } else if bytes_covered > scores[idx_end].bytes_covered {
-                    true
-                } else if bytes_covered == scores[idx_end].bytes_covered
-                    && substr_uncovered < scores[idx_end].substr_uncovered
-                {
-                    true
-                } else {
-                    false
-                }
-            };
-            let current_equal = {
-                if bytes_covered == scores[idx_end].bytes_covered
-                    && substr_uncovered == scores[idx_end].substr_uncovered
-                {
-                    true
-                } else {
-                    false
-                }
-            };
+            let current_best = scores[idx_end].start_idxs.is_empty()
+                || bytes_covered > scores[idx_end].bytes_covered
+                || (bytes_covered == scores[idx_end].bytes_covered
+                    && substr_uncovered < scores[idx_end].substr_uncovered);
+
+            let current_equal = bytes_covered == scores[idx_end].bytes_covered
+                && substr_uncovered == scores[idx_end].substr_uncovered;
 
             if current_best {
                 // replace previous best
@@ -274,7 +259,7 @@ pub fn split_into_substrings<'a, S: StringContainer>(
 
     // build up substrings
     let mut substrings = vec![];
-    let mut stack: Vec<(usize, Vec<&'a str>)> = vec![(s.len(), vec![])];      
+    let mut stack: Vec<(usize, Vec<&'a str>)> = vec![(s.len(), vec![])];
     while let Some((end_idx, mut segmentation)) = stack.pop() {
         if end_idx == 0 {
             segmentation.reverse();
@@ -286,13 +271,11 @@ pub fn split_into_substrings<'a, S: StringContainer>(
             new_segmentation.push(&s[start_idx..end_idx]); // Prepend
             stack.push((start_idx, new_segmentation));
         }
-
     }
-    substrings.sort_by_key(|v| v.len());
+    substrings.sort_by_key(std::vec::Vec::len);
 
     substrings
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -304,6 +287,14 @@ mod tests {
     }
 
     #[test]
+    fn test_pinyin_match_excl_neutral_tone() {
+        let a = "jie1";
+        let b = "jie5";
+        let result = pinyin_match_excl_neutral_tone(a, b);
+        assert!(result);
+    }
+
+    #[test]
     fn test_split_into_substrings() {
         // empty string
         let s = "";
@@ -311,10 +302,22 @@ mod tests {
         let result = split_into_substrings(s, &good);
         assert!(result.is_empty());
 
-        assert_eq!(split_into_substrings("xyz", &HashSet::from(["abc"])), vec![vec!["xyz"]]);
-        assert_eq!(split_into_substrings("a", &HashSet::from(["abc"])), vec![vec!["a"]]);
-        assert_eq!(split_into_substrings("ab", &HashSet::from(["a", "ab", "c"])), vec![vec!["ab"]]);
-        assert_eq!(split_into_substrings("ab", &HashSet::from(["a", "b", "ab", "c"])), vec![vec!["ab"], vec!["a", "b"]]);
+        assert_eq!(
+            split_into_substrings("xyz", &HashSet::from(["abc"])),
+            vec![vec!["xyz"]]
+        );
+        assert_eq!(
+            split_into_substrings("a", &HashSet::from(["abc"])),
+            vec![vec!["a"]]
+        );
+        assert_eq!(
+            split_into_substrings("ab", &HashSet::from(["a", "ab", "c"])),
+            vec![vec!["ab"]]
+        );
+        assert_eq!(
+            split_into_substrings("ab", &HashSet::from(["a", "b", "ab", "c"])),
+            vec![vec!["ab"], vec!["a", "b"]]
+        );
 
         let s = "abc";
         let good = set(&["ab", "bc"]);

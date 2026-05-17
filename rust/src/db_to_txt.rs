@@ -78,6 +78,12 @@ pub struct DbToTxt<'a> {
     word_variants: HashMap<SqliteId, Vec<SqliteId>>,
 }
 
+impl fmt::Debug for DbToTxt<'_> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> std::result::Result<(), std::fmt::Error> {
+        fmt::Debug::fmt(&self.indent_str, f)
+    }
+}
+
 impl<'a> DbToTxt<'a> {
     pub fn new(conn: &'a Connection, writer: &'a mut dyn Write, indent_with_tabs: bool) -> Self {
         DbToTxt {
@@ -324,7 +330,7 @@ impl<'a> DbToTxt<'a> {
                         w_str.push('<');
                         // if the sentence word is part of the word which the definition belongs to, <#D is used
                         if pd_id.is_some() && pd_id.unwrap() == def_id {
-                            w_str.push_str("#D")
+                            w_str.push_str("#D");
                         } else {
                             w_str.push_str(&pw_str);
                         }

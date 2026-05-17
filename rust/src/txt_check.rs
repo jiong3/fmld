@@ -6,12 +6,13 @@ use std::collections::HashMap;
 use std::io::{self, BufRead, BufReader, Read};
 
 /// Do a quick sanity check on the text file using the parser
+#[allow(clippy::too_many_lines, reason = "closures + simple linear flow")]
 pub fn quick_check(reader: &mut dyn Read) -> Vec<String> {
+    const ERR_PREFIX: &str = "Quick check:";
     let reader = BufReader::new(reader);
     let lines = reader.lines().map_while(io::Result::ok);
     let parser = ParserIterator::new(lines);
-    const ERR_PREFIX: &str = "Quick check:";
-    
+
     // track maximum definition ids in entries and references to later check if references are covered by entries
     let mut words_to_max_def_id: HashMap<String, u32> = HashMap::new();
     let mut refs_to_max_def_id: HashMap<String, u32> = HashMap::new();
@@ -69,17 +70,13 @@ pub fn quick_check(reader: &mut dyn Read) -> Vec<String> {
     let mut line_stack: Vec<char> = vec![];
 
     for line in parser.skip(2) {
-        // Handle error gracefully and early to prevent rightward drift
-        let parsed = match line.parsed_line {
-            Ok(p) => p,
-            Err(_) => {
-                let mut msg = "parser_error".to_owned();
-                if line.line.source_line_num > 1 {
-                    msg.push_str(" (check indentation!)"); // spelling fixed
-                }
-                errors.push(format_line_error(&msg, &line.line));
-                continue;
+        let Ok(parsed) = line.parsed_line else {
+            let mut msg = "parser_error".to_owned();
+            if line.line.source_line_num > 1 {
+                msg.push_str(" (check indentation!)");
             }
+            errors.push(format_line_error(&msg, &line.line));
+            continue;
         };
 
         // Match as an expression handles both assignment and branching
@@ -145,9 +142,9 @@ pub fn quick_check(reader: &mut dyn Read) -> Vec<String> {
         };
 
         if line.line.indentation > line_stack.len() {
-                    // this branch is probably never triggered since the additional indentation would add it
-                    // to the previous line, which should most likely have a parser error in that case
-                    errors.push(format_line_error("wrong indentation", &line.line));
+            // this branch is probably never triggered since the additional indentation would add it
+            // to the previous line, which should most likely have a parser error in that case
+            errors.push(format_line_error("wrong indentation", &line.line));
         } else {
             line_stack.truncate(line.line.indentation);
             if !allowed_parents.is_empty()

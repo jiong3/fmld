@@ -307,6 +307,12 @@ pub fn check_incomplete_decompositions(conn: &Connection) -> Result<Vec<String>,
 /// Check if component references from a word have a pronunciation which fits to any pronunciation of the word
 /// Only decompositions on a word level (definition source id of the reference is NULL) are checked
 pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<String>, SqliteError> {
+    struct Component {
+        word_id: u32,
+        def_id: Option<u32>,
+        trad: String,
+        simp: String,
+    }
     let mut errors = vec![];
 
     // 1. Load all pronunciations into memory for fast lookup.
@@ -361,13 +367,6 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
     )?;
 
     let mut rows_refs = stmt_refs.query([])?;
-
-    struct Component {
-        word_id: u32,
-        def_id: Option<u32>,
-        trad: String,
-        simp: String,
-    }
 
     let mut current_src_id = None;
     let mut current_src_trad = String::new();
@@ -460,7 +459,7 @@ pub fn check_decomposition_pronunciations(conn: &Connection) -> Result<Vec<Strin
                     .collect();
                 errors.push(format!(
                     "Decomposition Error: Components of {} do not match any of its pronunciations (allowing neutral tones). Components: {}",
-                    common::format_word_def(&src_trad, &src_simp, None), comp_str.join(";")
+                    common::format_word_def(src_trad, src_simp, None), comp_str.join(";")
                 ));
             }
         };

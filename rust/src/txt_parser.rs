@@ -212,7 +212,7 @@ fn parse_line(line: &str) -> Result<DictLine, ()> {
         map(preceded(char('N'), parse_note_line), DictLine::Note),
         map(preceded(char('#'), parse_comment_line), DictLine::Comment),
     ));
-    let line = line.trim_end_matches(&[';', ' ']);
+    let line = line.trim_end_matches([';', ' ']);
     match all_consuming(line_parser).parse(line) {
         Ok((_remainder, dict_line)) => Ok(dict_line),
         Err(_e) => Err(()),
@@ -395,7 +395,7 @@ fn parse_sentence_word_ascii(sentence_word: &str) -> IResult<&str, SentenceWord>
     if w.ends_with(' ') {
         // leave the trailing space separator
         Ok((&sentence_word[w.len() - 1..], SentenceWord::AsciiWord(w.strip_suffix(' ').expect("checked above").to_owned())))
-    } else if r.chars().next().is_none_or(|c| c.is_newline()) {
+    } else if r.chars().next().is_none_or(nom::AsChar::is_newline) {
         // ascii word at the end of the line
         Ok((r, SentenceWord::AsciiWord(w.to_owned())))
     } else {

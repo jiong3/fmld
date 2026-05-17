@@ -1,19 +1,19 @@
 use crate::common::SqliteId;
-use crate::db_edit;
 use crate::config;
+use crate::db_edit;
 use rusqlite::{Error as SqliteError, Transaction, params};
 use std::cmp::max;
 use std::collections::HashSet;
 
 pub fn autofix(tx: &Transaction) -> Result<(), SqliteError> {
-    delete_references_marked_for_deletion(&tx)?;
-    add_missing_symmetric_references(&tx)?;
-    add_missing_notes_and_tags_for_symmetric_references(&tx)?;
-    sort_references(&tx)?;
-    sort_sentences(&tx)?;
-    apply_graded_tags_to_sentences(&tx)?;
-    sort_pronunciations_by_tag_rank(&tx)?;
-    sort_words_after_pivot(&tx)?;
+    delete_references_marked_for_deletion(tx)?;
+    add_missing_symmetric_references(tx)?;
+    add_missing_notes_and_tags_for_symmetric_references(tx)?;
+    sort_references(tx)?;
+    sort_sentences(tx)?;
+    apply_graded_tags_to_sentences(tx)?;
+    sort_pronunciations_by_tag_rank(tx)?;
+    sort_words_after_pivot(tx)?;
     Ok(())
 }
 
@@ -97,7 +97,15 @@ pub fn add_missing_symmetric_references(conn: &Transaction) -> Result<(), Sqlite
         let word_id_dst: SqliteId = row.get("word_id_dst")?;
         let definition_id_dst: Option<SqliteId> = row.get("definition_id_dst")?;
 
-        db_edit::insert_reference(conn, ascii_symbol.chars().next().unwrap(), word_id_dst, definition_id_dst, word_id_src, definition_id_src, None)?;
+        db_edit::insert_reference(
+            conn,
+            ascii_symbol.chars().next().unwrap(),
+            word_id_dst,
+            definition_id_dst,
+            word_id_src,
+            definition_id_src,
+            None,
+        )?;
     }
     Ok(())
 }
@@ -367,11 +375,11 @@ pub fn sort_pronunciations_by_tag_rank(conn: &Transaction) -> Result<(), SqliteE
 /// Sorts the words in the second part, which is not sorted by frequency, by the codepoint of the first traditional character
 /// The "pivot" indicating the start of the second part is "%" or any other character with a codepoint smaller than "%".
 /// All entries up to "%" keep their order. The internal order of a word block (word, definitions, pronunciations) is preserved.
-/// Word entries which have variant_of != NULL are not considered, since they share the same shared_id as the main variant.
+/// Word entries which have `variant_of` != NULL are not considered, since they share the same `shared_id` as the main variant.
 ///
 /// The goal of the sorting is to be able to split the file into smaller files based on unicode ranges, if necessary.
-/// 
-/// This function assumes the database is in a consistent state (no orphans) and that 'rank_relative'
+///
+/// This function assumes the database is in a consistent state (no orphans) and that '`rank_relative`'
 /// is NULL for all entries in the sorted region before this operation.
 pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
     // 1. Identify the rank of the pivot word (the last word <= "%").
@@ -404,10 +412,7 @@ pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
     )?;
 
     // If there are no words after the pivot, there is nothing to sort.
-    let start_rank = match start_rank {
-        Some(r) => r,
-        None => return Ok(()),
-    };
+    let Some(start_rank) = start_rank else { return Ok(()) };
 
     // 3. Fetch all shared entries in the sortable region.
     // These are the IDs that will be assigned new ranks.
@@ -473,17 +478,12 @@ pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
         // Accumulate IDs into the current block until we hit the shared_id of the next word.
         // Note: matching assumes the DB is consistent (no orphans) and `start_rank` aligns exactly
         // with the first word in the list, which it should by definition.
-        loop {
-            match shared_id_ids_iter.peek() {
-                Some(id) => {
-                    if Some(*id) == next_header_shared_id {
-                        break; // Stop: this ID belongs to the start of the next block
-                    }
-                    block_ids.push(*id);
-                    shared_id_ids_iter.next();
-                }
-                None => break,
+        while let Some(id) = shared_id_ids_iter.peek() {
+            if Some(*id) == next_header_shared_id {
+                break; // Stop: this ID belongs to the start of the next block
             }
+            block_ids.push(*id);
+            shared_id_ids_iter.next();
         }
 
         blocks.push(Block {
@@ -511,8 +511,7 @@ pub fn sort_words_after_pivot(conn: &Transaction) -> Result<(), SqliteError> {
     Ok(())
 }
 
-
-/// Removes all references which have the ascii_tag 'X' (excluded/deleted).
+/// Removes all references which have the `ascii_tag` 'X' (excluded/deleted).
 /// If the reference type is symmetric, also removes the corresponding inverse reference.
 pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), SqliteError> {
     // 1. Get the ID for the 'X' tag
@@ -549,7 +548,7 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
 
     let mut rows = stmt_candidates.query(params![tag_id])?;
     let mut shared_ids_to_delete = HashSet::new();
-    
+
     // Helper list to process symmetric checks outside the borrow of stmt_candidates if strictly needed,
     // but here we can just collect everything first.
     let mut candidates = Vec::new();
@@ -563,7 +562,15 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         let d_dst: Option<SqliteId> = row.get(5)?;
         let is_symmetric: bool = row.get(6)?;
 
-        candidates.push((shared_id, ascii_symbol, w_src, d_src, w_dst, d_dst, is_symmetric));
+        candidates.push((
+            shared_id,
+            ascii_symbol,
+            w_src,
+            d_src,
+            w_dst,
+            d_dst,
+            is_symmetric,
+        ));
     }
     // Drop the statement to free the borrow on conn
     drop(rows);
@@ -588,10 +595,10 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
         if is_symmetric {
             // Find reference where Src and Dst are swapped
             // Note: We map arguments: (ref_id, w_dst, d_dst, w_src, d_src)
-            let inverse_rows = stmt_find_inverse.query_map(
-                params![ascii_symbol, w_dst, d_dst, w_src, d_src],
-                |row| row.get(0),
-            )?;
+            let inverse_rows = stmt_find_inverse
+                .query_map(params![ascii_symbol, w_dst, d_dst, w_src, d_src], |row| {
+                    row.get(0)
+                })?;
 
             for id in inverse_rows {
                 shared_ids_to_delete.insert(id?);
@@ -606,9 +613,11 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
     // 4. Perform deletions
     // Note: Due to foreign key constraints (ON DELETE NO ACTION), we must delete children first.
     // Order: dict_shared_tag -> dict_reference -> dict_shared
-    
-    let mut stmt_del_tag = conn.prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1")?;
-    let mut stmt_del_ref = conn.prepare_cached("DELETE FROM dict_reference WHERE shared_id = ?1")?;
+
+    let mut stmt_del_tag =
+        conn.prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1")?;
+    let mut stmt_del_ref =
+        conn.prepare_cached("DELETE FROM dict_reference WHERE shared_id = ?1")?;
     let mut stmt_del_shared = conn.prepare_cached("DELETE FROM dict_shared WHERE id = ?1")?;
 
     for shared_id in shared_ids_to_delete {
@@ -621,27 +630,26 @@ pub fn delete_references_marked_for_deletion(conn: &Transaction) -> Result<(), S
 }
 
 /// Normalizes the ranks in the DB.
-/// Reads entries in dict_shared ordered by (rank, rank_relative),
-/// then updates them to have a continuous rank sequence and rank_relative = NULL.
+/// Reads entries in `dict_shared` ordered by (rank, `rank_relative`),
+/// then updates them to have a continuous rank sequence and `rank_relative` = NULL.
 ///
 /// This effectively "bakes in" any relative ordering (insertions) into the main rank.
 pub fn normalize_ranks(conn: &Transaction) -> Result<(), SqliteError> {
     // Collect all IDs first because we are modifying the columns used for sorting
     // in the SELECT statement (rank, rank_relative), which could otherwise affect cursor iteration.
-    let mut stmt = conn.prepare(
-        "SELECT id FROM dict_shared ORDER BY rank ASC, rank_relative ASC",
-    )?;
+    let mut stmt =
+        conn.prepare("SELECT id FROM dict_shared ORDER BY rank ASC, rank_relative ASC")?;
 
     let ids: Vec<SqliteId> = stmt
         .query_map([], |row| row.get(0))?
         .collect::<Result<Vec<_>, _>>()?;
 
-    let mut stmt_update = conn.prepare_cached(
-        "UPDATE dict_shared SET rank = ?1, rank_relative = NULL WHERE id = ?2",
-    )?;
+    let mut stmt_update = conn
+        .prepare_cached("UPDATE dict_shared SET rank = ?1, rank_relative = NULL WHERE id = ?2")?;
 
     for (i, id) in ids.iter().enumerate() {
         // Start ranks at 1 to maintain a clean counter
+        #[allow(clippy::cast_possible_wrap, reason = "unlikely to have that many entries")]
         let new_rank = (i as i64) + 1;
         stmt_update.execute(params![new_rank, id])?;
     }
@@ -652,7 +660,7 @@ pub fn normalize_ranks(conn: &Transaction) -> Result<(), SqliteError> {
 /// Re-sorts all references in the database based on the reference type configuration and destination rank.
 pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
     normalize_ranks(conn)?;
-    
+
     // 1. Determine the maximum rank in the database (scaling factor)
     let rank_max: i64 = conn.query_row(
         "SELECT COALESCE(MAX(rank), 0) FROM dict_shared",
@@ -743,7 +751,7 @@ pub fn sort_references(conn: &Transaction) -> Result<(), SqliteError> {
 
 /// Adds an ASCII tag 'g' to sentences considered "graded", and removes it from those that are not.
 /// A sentence is "graded" if all its words (excluding punctuation and ASCII words) appear
-/// before the frequency-sorted pivot ('%'), and are either within the first 500 words 
+/// before the frequency-sorted pivot ('%'), and are either within the first 500 words
 /// or appear before the word to which the sentence is attached.
 pub fn apply_graded_tags_to_sentences(conn: &Transaction) -> Result<(), SqliteError> {
     // 1. Get or insert the tag ID for 'g' (graded-sentence)
@@ -757,39 +765,43 @@ pub fn apply_graded_tags_to_sentences(conn: &Transaction) -> Result<(), SqliteEr
         JOIN dict_definition d ON w.id = d.word_id
         JOIN dict_class c ON d.class_id = c.id
         WHERE c.name = 'punctuation'
-        "
+        ",
     )?;
     let punct_word_ids: HashSet<SqliteId> = stmt_punct
         .query_map([], |row| row.get(0))?
         .collect::<Result<HashSet<_>, _>>()?;
 
     // 3. Find the rank of the word entry for '%'
-    let pivot_rank: i64 = conn.query_row(
-        r"
+    let pivot_rank: i64 = conn
+        .query_row(
+            r"
         SELECT s.rank
         FROM dict_word w
         JOIN dict_shared s ON w.shared_id = s.id
         WHERE w.trad = '%'
         LIMIT 1
         ",
-        [],
-        |row| row.get(0),
-    ).unwrap_or(i64::MAX);
+            [],
+            |row| row.get(0),
+        )
+        .unwrap_or(i64::MAX);
 
     // 4. Find the rank for the 500th word (representing the base vocabulary boundary)
-    let rank_500: i64 = conn.query_row(
-        r"
+    let rank_500: i64 = conn
+        .query_row(
+            r"
         SELECT s.rank
         FROM dict_word w
         JOIN dict_shared s ON w.shared_id = s.id
         ORDER BY s.rank ASC
         LIMIT 1 OFFSET 499
         ",
-        [],
-        |row| row.get(0),
-    ).unwrap_or(i64::MAX);
+            [],
+            |row| row.get(0),
+        )
+        .unwrap_or(i64::MAX);
 
-    // 5. Check all sentences 
+    // 5. Check all sentences
     // Gather sentence metadata, its words, and their respective ranks
     let mut stmt_sentences = conn.prepare(
         r"
@@ -881,12 +893,15 @@ pub fn apply_graded_tags_to_sentences(conn: &Transaction) -> Result<(), SqliteEr
     //drop(stmt_sentences);
 
     // 6. Apply all tag adjustments batched out
-    let mut stmt_add = conn.prepare_cached("INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)")?;
+    let mut stmt_add = conn.prepare_cached(
+        "INSERT OR IGNORE INTO dict_shared_tag (for_shared_id, tag_id) VALUES (?1, ?2)",
+    )?;
     for shared_id in tags_to_add {
         stmt_add.execute(params![shared_id, tag_id])?;
     }
 
-    let mut stmt_remove = conn.prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1 AND tag_id = ?2")?;
+    let mut stmt_remove = conn
+        .prepare_cached("DELETE FROM dict_shared_tag WHERE for_shared_id = ?1 AND tag_id = ?2")?;
     for shared_id in tags_to_remove {
         stmt_remove.execute(params![shared_id, tag_id])?;
     }
@@ -894,8 +909,7 @@ pub fn apply_graded_tags_to_sentences(conn: &Transaction) -> Result<(), SqliteEr
     Ok(())
 }
 
-
-/// Sorts example sentences for a definition by vocabulary frequency. 
+/// Sorts example sentences for a definition by vocabulary frequency.
 pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
     // 1. Get word IDs that belong to the 'punctuation' class to exclude them
     let mut stmt_punct = conn.prepare_cached(
@@ -905,24 +919,26 @@ pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
         JOIN dict_definition d ON w.id = d.word_id
         JOIN dict_class c ON d.class_id = c.id
         WHERE c.name = 'punctuation'
-        "
+        ",
     )?;
     let punct_word_ids: HashSet<SqliteId> = stmt_punct
         .query_map([], |row| row.get(0))?
         .collect::<Result<HashSet<_>, _>>()?;
 
     // 2. Find the rank of the pivot word ('%')
-    let pivot_rank: i64 = conn.query_row(
-        r"
+    let pivot_rank: i64 = conn
+        .query_row(
+            r"
         SELECT s.rank
         FROM dict_word w
         JOIN dict_shared s ON w.shared_id = s.id
         WHERE w.trad = '%'
         LIMIT 1
         ",
-        [],
-        |row| row.get(0),
-    ).unwrap_or(i64::MAX);
+            [],
+            |row| row.get(0),
+        )
+        .unwrap_or(i64::MAX);
 
     // 3. Query all sentences, their definitions' ranks, their original ranks, and their words' ranks
     let mut stmt_sentences = conn.prepare(
@@ -942,7 +958,7 @@ pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
         LEFT JOIN dict_word w ON sw.word_id = w.id
         LEFT JOIN dict_shared w_s ON w.shared_id = w_s.id
         ORDER BY s.id
-        "
+        ",
     )?;
 
     let mut current_sentence_id: Option<SqliteId> = None;
@@ -968,10 +984,10 @@ pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
         if current_sentence_id != Some(s_id) {
             // Compute and store rank data for the completed sentence
             if current_sentence_id.is_some() {
-                let rank_rel = (pivot_rank * count_after) 
-                    + highest_before 
+                let rank_rel = (pivot_rank * count_after)
+                    + highest_before
                     + (current_original_sen_rank - current_def_rank);
-                
+
                 updates.push((current_shared_id, current_def_rank, rank_rel));
             }
 
@@ -999,17 +1015,16 @@ pub fn sort_sentences(conn: &Transaction) -> Result<(), SqliteError> {
 
     // Capture the calculation for the very last sentence
     if current_sentence_id.is_some() {
-        let rank_rel = (pivot_rank * count_after) 
-            + highest_before 
+        let rank_rel = (pivot_rank * count_after)
+            + highest_before
             + (current_original_sen_rank - current_def_rank);
-        
+
         updates.push((current_shared_id, current_def_rank, rank_rel));
     }
 
     // 4. Update the DB with the new ranks and relative ranks
-    let mut stmt_update = conn.prepare_cached(
-        "UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3"
-    )?;
+    let mut stmt_update =
+        conn.prepare_cached("UPDATE dict_shared SET rank = ?1, rank_relative = ?2 WHERE id = ?3")?;
 
     for (shared_id, new_rank, new_rank_relative) in updates {
         stmt_update.execute(params![new_rank, new_rank_relative, shared_id])?;

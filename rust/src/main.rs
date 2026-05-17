@@ -1,6 +1,6 @@
 use fmld::db_autofix;
 use fmld::db_check;
-use fmld::db_edit_once;
+use fmld::txt_check;
 
 use fmld::db_to_txt;
 use fmld::txt_to_db;
@@ -202,14 +202,14 @@ fn main() -> anyhow::Result<()> {
                 &cli.input_file.display()
             ))?;
             let errors = txt_check::quick_check(&mut file);
-            if !errors.is_empty() {
+            if errors.is_empty() {
+                println!("ok!");
+            } else {
                 status_ok = false;
                 print!("found issues:");
                 for err in errors {
                     eprintln!("{err}");
                 }
-            } else {
-                println!("ok!");
             }
         } else {
             return Err(anyhow!("Txt required as input for check!"));
@@ -224,7 +224,9 @@ fn main() -> anyhow::Result<()> {
     io::stdout().flush().unwrap();
     let mut db_source = read_input(&cli.input_file)?;
     if let DbSource::Txt(errors) = &db_source.source {
-        if !errors.is_empty() {
+        if errors.is_empty() {
+            // we're happy
+        } else {
             status_ok = false;
             for err in errors {
                 eprintln!("{err}");
@@ -236,26 +238,26 @@ fn main() -> anyhow::Result<()> {
     if cli.db_full_check {
         print!("Database check ... ");
         io::stdout().flush().unwrap();
-    let check_result = db_check::check_entries(&db_source.conn);
-    if let Ok(err_list) = check_result {
-        if !err_list.is_empty() {
-            status_ok = false;
-                println!("found issues:");
-        for err in err_list {
-            eprintln!("{err}");
-                }
-            } else {
+        let check_result = db_check::check_entries(&db_source.conn);
+        if let Ok(err_list) = check_result {
+            if err_list.is_empty() {
                 println!("ok!");
+            } else {
+                status_ok = false;
+                println!("found issues:");
+                for err in err_list {
+                    eprintln!("{err}");
+                }
+            }
+        } else {
+            eprintln!("Error in database checks, checks are not executed (shouldn't happen)!");
         }
-    } else {
-        eprintln!("Error in database checks, checks are not executed (shouldn't happen)!");
-    }
-    
+
         print!("Database autofix ... ");
         io::stdout().flush().unwrap();
-    let tx = db_source.conn.transaction()?;
-    db_autofix::autofix(&tx)?;
-    tx.commit()?;
+        let tx = db_source.conn.transaction()?;
+        db_autofix::autofix(&tx)?;
+        tx.commit()?;
     }
 
     if let Some(meta_path) = &cli.finalize_with_meta {

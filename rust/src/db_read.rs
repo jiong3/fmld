@@ -23,7 +23,7 @@ pub enum Tag {
 pub enum EntryId {
     Word(SqliteId),
     Definition(SqliteId),
-    /// id of the dict_shared_pron entry
+    /// id of the `dict_shared_pron` entry
     Pinyin(SqliteId),
     Reference(SqliteId),
     Sentence(SqliteId),
@@ -136,11 +136,7 @@ pub fn read_shared_ids(conn: &Connection, shared_id: SqliteId) -> Result<SharedI
         vec![]
     };
 
-    Ok(SharedIds {
-        note_id,
-        comment_id,
-        tag_ids,
-    })
+    Ok(SharedIds { tag_ids, note_id, comment_id })
 }
 
 
@@ -259,7 +255,7 @@ pub fn read_definitions(
     Ok(def_groups)
 }
 
-/// Replace word ids with the target of variant_of (if not NULL), does NOT remove resulting duplicated ids
+/// Replace word ids with the target of `variant_of` (if not NULL), does NOT remove resulting duplicated ids
 pub fn resolve_word_variants(
     conn: &Connection,
     word_ids: &Vec<SqliteId>,
@@ -296,8 +292,8 @@ pub fn resolve_word_variants(
 
     // Replace IDs found in the map, keep others as they are
     let resolved_ids = word_ids
-        .into_iter()
-        .map(|id| *replacement_map.get(&id).unwrap_or(&id))
+        .iter()
+        .map(|id| *replacement_map.get(id).unwrap_or(id))
         .collect();
 
     Ok(resolved_ids)
@@ -605,7 +601,7 @@ pub fn read_tags_for_shared_id(
         } else {
             tags.push(Tag::Full {
                 name: tag,
-                category: category,
+                category,
             });
         }
     }
@@ -744,7 +740,7 @@ pub fn get_word_def_ids(
     word_def_ids
 }
 
-/// Get reference type id for ascii_char, only if this type already exists in DB
+/// Get reference type id for `ascii_char`, only if this type already exists in DB
 pub fn get_ref_type_id(
     conn: &Connection,
     ref_type_symbol: char,
@@ -856,7 +852,7 @@ pub fn read_words(conn: &Connection) -> Result<Vec<WordEntry>, SqliteError> {
         ORDER BY s.rank, s.rank_relative
     ";
 
-    let mut stmt = conn.prepare(&sql)?;
+    let mut stmt = conn.prepare(sql)?;
     let mut rows = stmt.query([])?;
 
     let mut words = vec![];
@@ -972,7 +968,7 @@ pub fn get_definition_id_for_str(
     }
 }
 
-/// Retrieves the shared_id for a given target entity.
+/// Retrieves the `shared_id` for a given target entity.
 pub fn get_shared_id(conn: &Connection, id: &EntryId) -> Result<SqliteId, SqliteError> {
     match id {
         EntryId::Word(word_id) => {

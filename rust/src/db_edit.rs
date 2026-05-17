@@ -7,7 +7,6 @@ use rusqlite::{Error as SqliteError, Transaction, params};
 
 /// Insert a new reference for the specified word or definition
 /// Return (reference id, shared id, is newly added)
-#[allow(clippy::too_many_arguments)]
 pub fn insert_reference(
     conn: &Transaction,
     ascii_symbol: char,
@@ -100,7 +99,7 @@ pub fn insert_reference(
     Ok((new_ref_id, shared_id, true))
 }
 
-/// Retrieves the ID of a tag from the dict_tag table.
+/// Retrieves the ID of a tag from the `dict_tag` table.
 /// If the tag does not exist, it is inserted into the table, and the new ID is returned.
 pub fn get_or_insert_tag_id(conn: &Transaction, tag: &Tag) -> Result<SqliteId, SqliteError> {
     match tag {
@@ -143,7 +142,7 @@ pub fn get_or_insert_tag_id(conn: &Transaction, tag: &Tag) -> Result<SqliteId, S
 /// Adds a tag to a word, definition, pinyin, or reference.
 ///
 /// If the target ID does not exist, the function does nothing and succeeds.
-/// If the provided tag does not exist in the dict_tag table, it will be created automatically.
+/// If the provided tag does not exist in the `dict_tag` table, it will be created automatically.
 pub fn add_tag(conn: &Transaction, target: EntryId, tag: Tag) -> Result<(), SqliteError> {
     let shared_id = db_read::get_shared_id(conn, &target)?;
     let tag_id = get_or_insert_tag_id(conn, &tag)?;
